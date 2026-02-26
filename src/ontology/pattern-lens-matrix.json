@@ -1,0 +1,120 @@
+﻿{
+  "missing-authority": [
+    "absence-lens",
+    "authority-overlay-lens"
+  ],
+  "authority-collision": [
+    "authority-overlay-lens",
+    "conflict-lens"
+  ],
+  "authority-shadowing": [
+    "authority-overlay-lens",
+    "reconciliation-lens"
+  ],
+  "authority-merge-conflict": [
+    "authority-overlay-lens",
+    "conflict-lens",
+    "reconciliation-lens"
+  ],
+  "authority-state-mismatch": [
+    "authority-overlay-lens",
+    "reconciliation-lens"
+  ],
+  "non-deterministic-execution": [
+    "determinism-lens"
+  ],
+  "divergent-outputs": [
+    "convergence-lens"
+  ],
+  "convergence-failure": [
+    "convergence-lens"
+  ],
+  "silent-mutation": [
+    "provenance-trace-lens",
+    "reconciliation-lens"
+  ],
+  "persistence-instability": [
+    "reference-stability-lens"
+  ],
+  "reference-instability": [
+    "reference-stability-lens"
+  ],
+  "constraints-underspecified": [
+    "constraint-sufficiency-lens"
+  ],
+  "incomplete-declaration": [
+    "absence-lens",
+    "constraint-sufficiency-lens"
+  ],
+  "invariant-breakage": [
+    "conflict-lens",
+    "invariant-lens"
+  ],
+  "threshold-breach": [
+    "boundary-compliance-lens"
+  ],
+  "redundant-declaration": [
+    "compression-lens"
+  ],
+  "boundary-leakage": [
+    "boundary-compliance-lens",
+    "isolation-boundary-lens"
+  ],
+  "overreach": [
+    "authority-overlay-lens",
+    "overreach-lens"
+  ],
+  "undeclared-side-effect": [
+    "isolation-boundary-lens",
+    "propagation-lens"
+  ],
+  "unbounded-scope": [
+    "constraint-sufficiency-lens",
+    "escalation-gradient-lens"
+  ],
+  "circular-dependency": [
+    "conflict-lens"
+  ],
+  "orphaned-structure": [
+    "absence-lens"
+  ],
+  "asymmetric-structure": [
+    "authority-overlay-lens",
+    "boundary-compliance-lens"
+  ],
+  "unconstrained-expansion": [
+    "constraint-sufficiency-lens",
+    "escalation-gradient-lens"
+  ],
+  "escalation-growth": [
+    "escalation-gradient-lens"
+  ],
+  "cross-layer-escalation": [
+    "isolation-boundary-lens",
+    "overreach-lens"
+  ],
+  "propagation-amplification": [
+    "escalation-gradient-lens",
+    "propagation-lens"
+  ],
+  "density-spike": [
+    "variance-entropy-lens"
+  ],
+  "density-vacuum": [
+    "absence-lens",
+    "variance-entropy-lens"
+  ],
+  "interface-mismatch": [
+    "interface-contract-lens"
+  ],
+  "contract-drift": [
+    "interface-contract-lens",
+    "reconciliation-lens"
+  ],
+  "schema-breakage": [
+    "normalization-lens"
+  ],
+  "compatibility-violation": [
+    "compatibility-envelope-lens"
+  ]
+}
