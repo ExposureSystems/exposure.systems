@@ -1,5 +1,0 @@
----
-import page from "../../content/pages/seo-mobile-first.mdx";
-export const prerender = true;
----
-{page}

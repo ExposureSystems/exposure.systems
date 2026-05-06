@@ -1,9 +1,8 @@
-\---  
-layer: pattern  
+---
 slug: authority-collision  
 title: Authority Collision  
 status: stable  
-\---
+---
 
 \# Authority Collision
 
