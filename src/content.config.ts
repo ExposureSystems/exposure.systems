@@ -9,7 +9,7 @@ const issues = defineCollection({
   type: "content",
   schema: z
     .object({
-      layer: z.literal("issue").default("issue"),
+      layer: z.literal("issue"),
       ...baseEntry,
       category: z.string(),
       summary: z.string(),
@@ -24,7 +24,7 @@ const patterns = defineCollection({
   type: "content",
   schema: z
     .object({
-      layer: z.literal("pattern").default("pattern"),
+      layer: z.literal("pattern"),
       ...baseEntry,
       summary: z.string(),
       code: z.string().regex(/^PAT-\d{3}$/),
@@ -36,7 +36,7 @@ const lenses = defineCollection({
   type: "content",
   schema: z
     .object({
-      layer: z.literal("lens").default("lens"),
+      layer: z.literal("lens"),
       ...baseEntry,
       summary: z.string(),
       code: z.string().regex(/^LEN-\d{3}$/),
@@ -48,7 +48,7 @@ const categories = defineCollection({
   type: "content",
   schema: z
     .object({
-      layer: z.literal("category").default("category"),
+      layer: z.literal("category"),
       ...baseEntry,
       summary: z.string(),
     })
