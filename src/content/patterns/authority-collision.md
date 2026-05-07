@@ -3,6 +3,7 @@ slug: authority-collision
 title: Authority Collision  
 status: stable  
 summary: A structural condition where multiple authorities claim governance over the same structural region without a declared precedence rule.
+code: PAT-001
 ---
 
 \# Authority Collision
