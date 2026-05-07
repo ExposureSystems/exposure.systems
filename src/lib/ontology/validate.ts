@@ -24,7 +24,11 @@ function isObject(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null && !Array.isArray(value);
 }
 
-function validateMatrixShape(matrix: unknown): asserts matrix is PatternLensMatrix {
+function isKebabCase(value: string) {
+  return /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(value);
+}
+
+function validateMatrix(matrix: unknown): asserts matrix is PatternLensMatrix {
   const errors: string[] = [];
 
   if (!isObject(matrix)) {
@@ -32,6 +36,10 @@ function validateMatrixShape(matrix: unknown): asserts matrix is PatternLensMatr
   }
 
   for (const [patternSlug, entry] of Object.entries(matrix)) {
+    if (!isKebabCase(patternSlug)) {
+      errors.push(`Matrix pattern "${patternSlug}" must be kebab-case.`);
+    }
+
     if (!isObject(entry)) {
       errors.push(`Matrix entry "${patternSlug}" must be an object.`);
       continue;
@@ -39,10 +47,47 @@ function validateMatrixShape(matrix: unknown): asserts matrix is PatternLensMatr
 
     if (!Array.isArray(entry.primary)) {
       errors.push(`Matrix entry "${patternSlug}" must include primary[].`);
+      continue;
     }
 
     if (!Array.isArray(entry.secondary)) {
       errors.push(`Matrix entry "${patternSlug}" must include secondary[].`);
+      continue;
+    }
+
+    const primary = entry.primary;
+    const secondary = entry.secondary;
+
+    if (primary.length < 1 || primary.length > 2) {
+      errors.push(`Matrix entry "${patternSlug}" primary[] must contain 1-2 lenses.`);
+    }
+
+    if (secondary.length > 2) {
+      errors.push(`Matrix entry "${patternSlug}" secondary[] must contain 0-2 lenses.`);
+    }
+
+    const allLenses = [...primary, ...secondary];
+
+    for (const lensSlug of allLenses) {
+      if (typeof lensSlug !== "string" || !isKebabCase(lensSlug)) {
+        errors.push(`Matrix entry "${patternSlug}" has invalid lens slug "${String(lensSlug)}".`);
+      }
+    }
+
+    if (new Set(primary).size !== primary.length) {
+      errors.push(`Matrix entry "${patternSlug}" primary[] contains duplicate lenses.`);
+    }
+
+    if (new Set(secondary).size !== secondary.length) {
+      errors.push(`Matrix entry "${patternSlug}" secondary[] contains duplicate lenses.`);
+    }
+
+    for (const lensSlug of primary) {
+      if (secondary.includes(lensSlug)) {
+        errors.push(
+          `Matrix entry "${patternSlug}" lists "${lensSlug}" in both primary[] and secondary[].`
+        );
+      }
     }
   }
 
@@ -55,7 +100,7 @@ function main() {
   const raw = fs.readFileSync(matrixPath, "utf-8");
   const matrix = JSON.parse(raw);
 
-  validateMatrixShape(matrix);
+  validateMatrix(matrix);
 
   console.log("SERL ontology validation passed.");
 }
