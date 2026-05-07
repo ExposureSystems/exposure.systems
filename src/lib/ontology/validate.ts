@@ -10,6 +10,7 @@ type PatternLensMatrix = Record<string, MatrixEntry>;
 
 const matrixPath = "src/ontology/pattern-lens-matrix.json";
 const patternsDir = "src/content/patterns";
+const lensesDir = "src/content/lenses";
 
 function fail(errors: string[]) {
   console.error("\nSERL ontology validation failed:\n");
@@ -126,12 +127,35 @@ function validateMatrixPatternsHaveFiles(matrix: PatternLensMatrix) {
   }
 }
 
+function validateMatrixLensesHaveFiles(matrix: PatternLensMatrix) {
+  const errors: string[] = [];
+  const lensFileSlugs = getMarkdownSlugs(lensesDir);
+  const matrixLensSlugs = new Set<string>();
+
+  for (const entry of Object.values(matrix)) {
+    for (const lensSlug of [...entry.primary, ...entry.secondary]) {
+      matrixLensSlugs.add(lensSlug);
+    }
+  }
+
+  for (const lensSlug of matrixLensSlugs) {
+    if (!lensFileSlugs.has(lensSlug)) {
+      errors.push(`Matrix lens "${lensSlug}" is missing src/content/lenses/${lensSlug}.md.`);
+    }
+  }
+
+  if (errors.length > 0) {
+    fail(errors);
+  }
+}
+
 function main() {
   const raw = fs.readFileSync(matrixPath, "utf-8");
   const matrix = JSON.parse(raw);
 
   validateMatrix(matrix);
   validateMatrixPatternsHaveFiles(matrix);
+  validateMatrixLensesHaveFiles(matrix);
 
   console.log("SERL ontology validation passed.");
 }
