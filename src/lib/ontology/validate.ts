@@ -206,8 +206,21 @@ function validateIssues(matrix: PatternLensMatrix) {
     const filenameSlug = path.basename(issueFile, ".md");
     const data = readFrontmatter(issueFile);
 
+    const slug = data.slug;
     const primaryPattern = data.primary_pattern;
     const patterns = data.patterns;
+
+    if (typeof slug !== "string" || slug.length === 0) {
+      errors.push(`Issue "${filenameSlug}" must declare slug.`);
+    } else {
+      if (!isKebabCase(slug)) {
+        errors.push(`Issue "${filenameSlug}" slug "${slug}" must be kebab-case.`);
+      }
+
+      if (slug !== filenameSlug) {
+        errors.push(`Issue "${filenameSlug}" frontmatter slug must match filename.`);
+      }
+    }
 
     if (typeof primaryPattern !== "string" || primaryPattern.length === 0) {
       errors.push(`Issue "${filenameSlug}" must declare primary_pattern.`);
