@@ -127,6 +127,22 @@ function validateMatrixPatternsHaveFiles(matrix: PatternLensMatrix) {
   }
 }
 
+function validateNoExtraPatternFiles(matrix: PatternLensMatrix) {
+  const errors: string[] = [];
+  const matrixPatternSlugs = new Set(Object.keys(matrix));
+  const patternFileSlugs = getMarkdownSlugs(patternsDir);
+
+  for (const patternSlug of patternFileSlugs) {
+    if (!matrixPatternSlugs.has(patternSlug)) {
+      errors.push(`Pattern file "${patternSlug}.md" is not defined in the matrix.`);
+    }
+  }
+
+  if (errors.length > 0) {
+    fail(errors);
+  }
+}
+
 function validateMatrixLensesHaveFiles(matrix: PatternLensMatrix) {
   const errors: string[] = [];
   const lensFileSlugs = getMarkdownSlugs(lensesDir);
@@ -155,6 +171,7 @@ function main() {
 
   validateMatrix(matrix);
   validateMatrixPatternsHaveFiles(matrix);
+  validateNoExtraPatternFiles(matrix);
   validateMatrixLensesHaveFiles(matrix);
 
   console.log("SERL ontology validation passed.");
