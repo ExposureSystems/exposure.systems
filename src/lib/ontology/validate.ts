@@ -112,6 +112,18 @@ function getMarkdownSlugs(dir: string) {
   return new Set(slugs);
 }
 
+function getMatrixLensSlugs(matrix: PatternLensMatrix) {
+  const matrixLensSlugs = new Set<string>();
+
+  for (const entry of Object.values(matrix)) {
+    for (const lensSlug of [...entry.primary, ...entry.secondary]) {
+      matrixLensSlugs.add(lensSlug);
+    }
+  }
+
+  return matrixLensSlugs;
+}
+
 function validateMatrixPatternsHaveFiles(matrix: PatternLensMatrix) {
   const errors: string[] = [];
   const patternFileSlugs = getMarkdownSlugs(patternsDir);
@@ -146,17 +158,27 @@ function validateNoExtraPatternFiles(matrix: PatternLensMatrix) {
 function validateMatrixLensesHaveFiles(matrix: PatternLensMatrix) {
   const errors: string[] = [];
   const lensFileSlugs = getMarkdownSlugs(lensesDir);
-  const matrixLensSlugs = new Set<string>();
-
-  for (const entry of Object.values(matrix)) {
-    for (const lensSlug of [...entry.primary, ...entry.secondary]) {
-      matrixLensSlugs.add(lensSlug);
-    }
-  }
+  const matrixLensSlugs = getMatrixLensSlugs(matrix);
 
   for (const lensSlug of matrixLensSlugs) {
     if (!lensFileSlugs.has(lensSlug)) {
       errors.push(`Matrix lens "${lensSlug}" is missing src/content/lenses/${lensSlug}.md.`);
+    }
+  }
+
+  if (errors.length > 0) {
+    fail(errors);
+  }
+}
+
+function validateNoExtraLensFiles(matrix: PatternLensMatrix) {
+  const errors: string[] = [];
+  const lensFileSlugs = getMarkdownSlugs(lensesDir);
+  const matrixLensSlugs = getMatrixLensSlugs(matrix);
+
+  for (const lensSlug of lensFileSlugs) {
+    if (!matrixLensSlugs.has(lensSlug)) {
+      errors.push(`Lens file "${lensSlug}.md" is not referenced by the matrix.`);
     }
   }
 
@@ -173,6 +195,7 @@ function main() {
   validateMatrixPatternsHaveFiles(matrix);
   validateNoExtraPatternFiles(matrix);
   validateMatrixLensesHaveFiles(matrix);
+  validateNoExtraLensFiles(matrix);
 
   console.log("SERL ontology validation passed.");
 }
