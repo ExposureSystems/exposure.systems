@@ -14,7 +14,7 @@ const issues = defineCollection({
       category: z.string(),
       summary: z.string(),
       primary_pattern: z.string(),
-      patterns: z.array(z.string()).min(1),
+      patterns: z.array(z.string()).min(1).max(3),
       search_intents: z.array(z.string()).default([]),
     })
     .strict(),
