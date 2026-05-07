@@ -26,7 +26,7 @@ const patterns = defineCollection({
     .object({
       layer: z.literal("pattern").default("pattern"),
       ...baseEntry,
-      summary: z.string().optional(),
+      summary: z.string(),
     })
     .strict(),
 });
@@ -37,7 +37,7 @@ const lenses = defineCollection({
     .object({
       layer: z.literal("lens").default("lens"),
       ...baseEntry,
-      summary: z.string().optional(),
+      summary: z.string(),
     })
     .strict(),
 });
@@ -48,7 +48,7 @@ const categories = defineCollection({
     .object({
       layer: z.literal("category").default("category"),
       ...baseEntry,
-      summary: z.string().optional(),
+      summary: z.string(),
     })
     .strict(),
 });

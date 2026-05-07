@@ -2,6 +2,7 @@
 slug: authority-collision  
 title: Authority Collision  
 status: stable  
+summary: A structural condition where multiple authorities claim governance over the same structural region without a declared precedence rule.
 ---
 
 \# Authority Collision

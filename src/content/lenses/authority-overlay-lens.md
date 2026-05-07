@@ -2,6 +2,7 @@
 slug: authority-overlay-lens
 title: Authority Overlay Lens
 status: stable
+summary: A diagnostic view that maps declared authority hierarchies onto observed structure to detect absence, override, or conflict.
 ---
 
 # Authority Overlay Lens
