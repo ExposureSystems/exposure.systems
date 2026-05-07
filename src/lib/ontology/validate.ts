@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import matter from "gray-matter";
 
 type MatrixEntry = {
   primary: string[];
@@ -11,6 +12,7 @@ type PatternLensMatrix = Record<string, MatrixEntry>;
 const matrixPath = "src/ontology/pattern-lens-matrix.json";
 const patternsDir = "src/content/patterns";
 const lensesDir = "src/content/lenses";
+const issuesDir = "src/content/issues";
 
 function fail(errors: string[]) {
   console.error("\nSERL ontology validation failed:\n");
@@ -99,16 +101,19 @@ function validateMatrix(matrix: unknown): asserts matrix is PatternLensMatrix {
   }
 }
 
-function getMarkdownSlugs(dir: string) {
+function getMarkdownFiles(dir: string) {
   if (!fs.existsSync(dir)) {
-    return new Set<string>();
+    return [];
   }
 
-  const slugs = fs
+  return fs
     .readdirSync(dir)
     .filter((file) => file.endsWith(".md") && !file.startsWith("_"))
-    .map((file) => path.basename(file, ".md"));
+    .map((file) => path.join(dir, file));
+}
 
+function getMarkdownSlugs(dir: string) {
+  const slugs = getMarkdownFiles(dir).map((file) => path.basename(file, ".md"));
   return new Set(slugs);
 }
 
@@ -187,6 +192,53 @@ function validateNoExtraLensFiles(matrix: PatternLensMatrix) {
   }
 }
 
+function readFrontmatter(filePath: string) {
+  const raw = fs.readFileSync(filePath, "utf-8");
+  return matter(raw).data as Record<string, unknown>;
+}
+
+function validateIssues(matrix: PatternLensMatrix) {
+  const errors: string[] = [];
+  const matrixPatternSlugs = new Set(Object.keys(matrix));
+  const issueFiles = getMarkdownFiles(issuesDir);
+
+  for (const issueFile of issueFiles) {
+    const filenameSlug = path.basename(issueFile, ".md");
+    const data = readFrontmatter(issueFile);
+
+    const primaryPattern = data.primary_pattern;
+    const patterns = data.patterns;
+
+    if (typeof primaryPattern !== "string" || primaryPattern.length === 0) {
+      errors.push(`Issue "${filenameSlug}" must declare primary_pattern.`);
+    }
+
+    if (!Array.isArray(patterns) || patterns.length === 0) {
+      errors.push(`Issue "${filenameSlug}" must declare at least one pattern.`);
+      continue;
+    }
+
+    for (const patternSlug of patterns) {
+      if (typeof patternSlug !== "string") {
+        errors.push(`Issue "${filenameSlug}" has a non-string pattern value.`);
+        continue;
+      }
+
+      if (!matrixPatternSlugs.has(patternSlug)) {
+        errors.push(`Issue "${filenameSlug}" references unknown matrix pattern "${patternSlug}".`);
+      }
+    }
+
+    if (typeof primaryPattern === "string" && !patterns.includes(primaryPattern)) {
+      errors.push(`Issue "${filenameSlug}" primary_pattern must be included in patterns[].`);
+    }
+  }
+
+  if (errors.length > 0) {
+    fail(errors);
+  }
+}
+
 function main() {
   const raw = fs.readFileSync(matrixPath, "utf-8");
   const matrix = JSON.parse(raw);
@@ -196,6 +248,7 @@ function main() {
   validateNoExtraPatternFiles(matrix);
   validateMatrixLensesHaveFiles(matrix);
   validateNoExtraLensFiles(matrix);
+  validateIssues(matrix);
 
   console.log("SERL ontology validation passed.");
 }
