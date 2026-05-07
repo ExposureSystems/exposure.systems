@@ -1,4 +1,5 @@
 ---
+layer: lens
 slug: authority-overlay-lens
 title: Authority Overlay Lens
 status: stable
