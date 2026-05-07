@@ -1,4 +1,5 @@
 import fs from "node:fs";
+import path from "node:path";
 
 type MatrixEntry = {
   primary: string[];
@@ -8,6 +9,7 @@ type MatrixEntry = {
 type PatternLensMatrix = Record<string, MatrixEntry>;
 
 const matrixPath = "src/ontology/pattern-lens-matrix.json";
+const patternsDir = "src/content/patterns";
 
 function fail(errors: string[]) {
   console.error("\nSERL ontology validation failed:\n");
@@ -96,11 +98,40 @@ function validateMatrix(matrix: unknown): asserts matrix is PatternLensMatrix {
   }
 }
 
+function getMarkdownSlugs(dir: string) {
+  if (!fs.existsSync(dir)) {
+    return new Set<string>();
+  }
+
+  const slugs = fs
+    .readdirSync(dir)
+    .filter((file) => file.endsWith(".md") && !file.startsWith("_"))
+    .map((file) => path.basename(file, ".md"));
+
+  return new Set(slugs);
+}
+
+function validateMatrixPatternsHaveFiles(matrix: PatternLensMatrix) {
+  const errors: string[] = [];
+  const patternFileSlugs = getMarkdownSlugs(patternsDir);
+
+  for (const patternSlug of Object.keys(matrix)) {
+    if (!patternFileSlugs.has(patternSlug)) {
+      errors.push(`Matrix pattern "${patternSlug}" is missing src/content/patterns/${patternSlug}.md.`);
+    }
+  }
+
+  if (errors.length > 0) {
+    fail(errors);
+  }
+}
+
 function main() {
   const raw = fs.readFileSync(matrixPath, "utf-8");
   const matrix = JSON.parse(raw);
 
   validateMatrix(matrix);
+  validateMatrixPatternsHaveFiles(matrix);
 
   console.log("SERL ontology validation passed.");
 }
