@@ -13,6 +13,7 @@ const matrixPath = "src/ontology/pattern-lens-matrix.json";
 const patternsDir = "src/content/patterns";
 const lensesDir = "src/content/lenses";
 const issuesDir = "src/content/issues";
+const categoriesDir = "src/content/categories";
 
 function fail(errors: string[]) {
   console.error("\nSERL ontology validation failed:\n");
@@ -293,9 +294,37 @@ function validateLensFrontmatter() {
   }
 }
 
+function validateCategoryFrontmatter() {
+  const errors: string[] = [];
+
+  for (const categoryFile of getMarkdownFiles(categoriesDir)) {
+    const filenameSlug = path.basename(categoryFile, ".md");
+    const data = readFrontmatter(categoryFile);
+
+    const slug = data.slug;
+
+    if (typeof slug !== "string" || slug.length === 0) {
+      errors.push(`Category "${filenameSlug}" must declare slug.`);
+    } else {
+      if (!isKebabCase(slug)) {
+        errors.push(`Category "${filenameSlug}" slug "${slug}" must be kebab-case.`);
+      }
+
+      if (slug !== filenameSlug) {
+        errors.push(`Category "${filenameSlug}" frontmatter slug must match filename.`);
+      }
+    }
+  }
+
+  if (errors.length > 0) {
+    fail(errors);
+  }
+}
+
 function validateIssues(matrix: PatternLensMatrix) {
   const errors: string[] = [];
   const matrixPatternSlugs = new Set(Object.keys(matrix));
+  const categorySlugs = getMarkdownSlugs(categoriesDir);
   const issueFiles = getMarkdownFiles(issuesDir);
 
   for (const issueFile of issueFiles) {
@@ -303,6 +332,7 @@ function validateIssues(matrix: PatternLensMatrix) {
     const data = readFrontmatter(issueFile);
 
     const slug = data.slug;
+    const category = data.category;
     const primaryPattern = data.primary_pattern;
     const patterns = data.patterns;
 
@@ -315,6 +345,18 @@ function validateIssues(matrix: PatternLensMatrix) {
 
       if (slug !== filenameSlug) {
         errors.push(`Issue "${filenameSlug}" frontmatter slug must match filename.`);
+      }
+    }
+
+    if (typeof category !== "string" || category.length === 0) {
+      errors.push(`Issue "${filenameSlug}" must declare category.`);
+    } else {
+      if (!isKebabCase(category)) {
+        errors.push(`Issue "${filenameSlug}" category "${category}" must be kebab-case.`);
+      }
+
+      if (!categorySlugs.has(category)) {
+        errors.push(`Issue "${filenameSlug}" references unknown category "${category}".`);
       }
     }
 
@@ -359,6 +401,7 @@ function main() {
   validateNoExtraLensFiles(matrix);
   validatePatternFrontmatter();
   validateLensFrontmatter();
+  validateCategoryFrontmatter();
   validateIssues(matrix);
 
   console.log("SERL ontology validation passed.");
