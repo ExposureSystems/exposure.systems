@@ -15,6 +15,13 @@ const lensesDir = "src/content/lenses";
 const issuesDir = "src/content/issues";
 const categoriesDir = "src/content/categories";
 
+const forbiddenIssueFields = [
+  "lenses",
+  "related_issues",
+  "derived_lenses",
+  "aift_cards",
+];
+
 function fail(errors: string[]) {
   console.error("\nSERL ontology validation failed:\n");
 
@@ -330,6 +337,12 @@ function validateIssues(matrix: PatternLensMatrix) {
   for (const issueFile of issueFiles) {
     const filenameSlug = path.basename(issueFile, ".md");
     const data = readFrontmatter(issueFile);
+
+    for (const field of forbiddenIssueFields) {
+      if (Object.prototype.hasOwnProperty.call(data, field)) {
+        errors.push(`Issue "${filenameSlug}" must not declare forbidden field "${field}".`);
+      }
+    }
 
     const slug = data.slug;
     const category = data.category;
