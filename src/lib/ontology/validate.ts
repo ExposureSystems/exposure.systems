@@ -33,6 +33,14 @@ function isKebabCase(value: string) {
   return /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(value);
 }
 
+function isPatternCode(value: string) {
+  return /^PAT-\d{3}$/.test(value);
+}
+
+function isLensCode(value: string) {
+  return /^LEN-\d{3}$/.test(value);
+}
+
 function validateMatrix(matrix: unknown): asserts matrix is PatternLensMatrix {
   const errors: string[] = [];
 
@@ -117,6 +125,11 @@ function getMarkdownSlugs(dir: string) {
   return new Set(slugs);
 }
 
+function readFrontmatter(filePath: string) {
+  const raw = fs.readFileSync(filePath, "utf-8");
+  return matter(raw).data as Record<string, unknown>;
+}
+
 function getMatrixLensSlugs(matrix: PatternLensMatrix) {
   const matrixLensSlugs = new Set<string>();
 
@@ -192,9 +205,92 @@ function validateNoExtraLensFiles(matrix: PatternLensMatrix) {
   }
 }
 
-function readFrontmatter(filePath: string) {
-  const raw = fs.readFileSync(filePath, "utf-8");
-  return matter(raw).data as Record<string, unknown>;
+function validatePatternFrontmatter() {
+  const errors: string[] = [];
+  const seenCodes = new Map<string, string>();
+
+  for (const patternFile of getMarkdownFiles(patternsDir)) {
+    const filenameSlug = path.basename(patternFile, ".md");
+    const data = readFrontmatter(patternFile);
+
+    const slug = data.slug;
+    const code = data.code;
+
+    if (typeof slug !== "string" || slug.length === 0) {
+      errors.push(`Pattern "${filenameSlug}" must declare slug.`);
+    } else {
+      if (!isKebabCase(slug)) {
+        errors.push(`Pattern "${filenameSlug}" slug "${slug}" must be kebab-case.`);
+      }
+
+      if (slug !== filenameSlug) {
+        errors.push(`Pattern "${filenameSlug}" frontmatter slug must match filename.`);
+      }
+    }
+
+    if (typeof code !== "string" || code.length === 0) {
+      errors.push(`Pattern "${filenameSlug}" must declare code.`);
+    } else {
+      if (!isPatternCode(code)) {
+        errors.push(`Pattern "${filenameSlug}" code "${code}" must match PAT-###.`);
+      }
+
+      const previous = seenCodes.get(code);
+      if (previous) {
+        errors.push(`Pattern code "${code}" is duplicated by "${previous}" and "${filenameSlug}".`);
+      } else {
+        seenCodes.set(code, filenameSlug);
+      }
+    }
+  }
+
+  if (errors.length > 0) {
+    fail(errors);
+  }
+}
+
+function validateLensFrontmatter() {
+  const errors: string[] = [];
+  const seenCodes = new Map<string, string>();
+
+  for (const lensFile of getMarkdownFiles(lensesDir)) {
+    const filenameSlug = path.basename(lensFile, ".md");
+    const data = readFrontmatter(lensFile);
+
+    const slug = data.slug;
+    const code = data.code;
+
+    if (typeof slug !== "string" || slug.length === 0) {
+      errors.push(`Lens "${filenameSlug}" must declare slug.`);
+    } else {
+      if (!isKebabCase(slug)) {
+        errors.push(`Lens "${filenameSlug}" slug "${slug}" must be kebab-case.`);
+      }
+
+      if (slug !== filenameSlug) {
+        errors.push(`Lens "${filenameSlug}" frontmatter slug must match filename.`);
+      }
+    }
+
+    if (typeof code !== "string" || code.length === 0) {
+      errors.push(`Lens "${filenameSlug}" must declare code.`);
+    } else {
+      if (!isLensCode(code)) {
+        errors.push(`Lens "${filenameSlug}" code "${code}" must match LEN-###.`);
+      }
+
+      const previous = seenCodes.get(code);
+      if (previous) {
+        errors.push(`Lens code "${code}" is duplicated by "${previous}" and "${filenameSlug}".`);
+      } else {
+        seenCodes.set(code, filenameSlug);
+      }
+    }
+  }
+
+  if (errors.length > 0) {
+    fail(errors);
+  }
 }
 
 function validateIssues(matrix: PatternLensMatrix) {
@@ -261,6 +357,8 @@ function main() {
   validateNoExtraPatternFiles(matrix);
   validateMatrixLensesHaveFiles(matrix);
   validateNoExtraLensFiles(matrix);
+  validatePatternFrontmatter();
+  validateLensFrontmatter();
   validateIssues(matrix);
 
   console.log("SERL ontology validation passed.");
