@@ -1,0 +1,54 @@
+---
+import ontologyIndex from "../../../content/_meta/ontology-index.json";
+
+const issues = ontologyIndex.issues;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Issues | Workbench</title>
+    <meta
+      name="description"
+      content="Public issue intake pages in the Workbench ontology."
+    />
+  </head>
+  <body>
+    <main>
+      <p><a href="/workbench/">Workbench</a></p>
+
+      <h1>Issues</h1>
+
+      <p>
+        Issues are public intake and search surfaces. They declare patterns.
+        Lenses are derived through the Pattern → Lens matrix.
+      </p>
+
+      <section aria-labelledby="issue-list">
+        <h2 id="issue-list">Issue Index</h2>
+
+        <ul>
+          {issues.map((issue) => (
+            <li>
+              <h3>
+                <a href={issue.url}>{issue.title}</a>
+              </h3>
+
+              <p>{issue.summary}</p>
+
+              <p>
+                Category: {issue.category_title}
+                {" | "}
+                Patterns: {issue.patterns.length}
+                {" | "}
+                Primary lenses: {issue.derived_lenses.primary.length}
+                {" | "}
+                Secondary lenses: {issue.derived_lenses.secondary.length}
+              </p>
+            </li>
+          ))}
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>
