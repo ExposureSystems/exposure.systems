@@ -1,0 +1,56 @@
+---
+import ontologyIndex from "../../content/_meta/ontology-index.json";
+
+const issueCount = ontologyIndex.issues.length;
+const patternCount = ontologyIndex.patterns.length;
+const lensCount = ontologyIndex.lenses.length;
+const categoryCount = ontologyIndex.categories.length;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Workbench</title>
+    <meta
+      name="description"
+      content="Workbench for exploring issues, patterns, lenses, categories, and derived ontology relationships."
+    />
+  </head>
+  <body>
+    <main>
+      <p><a href="/">Home</a></p>
+
+      <h1>Workbench</h1>
+
+      <p>
+        A structured workbench for exploring issues, patterns, lenses, categories,
+        and derived ontology relationships.
+      </p>
+
+      <section aria-labelledby="counts">
+        <h2 id="counts">Current Index</h2>
+
+        <ul>
+          <li>Issues: {issueCount}</li>
+          <li>Patterns: {patternCount}</li>
+          <li>Lenses: {lensCount}</li>
+          <li>Categories: {categoryCount}</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="sections">
+        <h2 id="sections">Sections</h2>
+
+        <ul>
+          <li><a href="/workbench/issues/">Issues</a></li>
+          <li><a href="/workbench/patterns/">Patterns</a></li>
+          <li><a href="/workbench/lenses/">Lenses</a></li>
+          <li><a href="/workbench/categories/">Categories</a></li>
+          <li><a href="/workbench/check-input/">Check Input</a></li>
+          <li><a href="/workbench/gap-explorer/">Gap Explorer</a></li>
+          <li><a href="/workbench/search/">Search</a></li>
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>
