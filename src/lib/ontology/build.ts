@@ -28,6 +28,22 @@ const lensesDir = "src/content/lenses";
 const categoriesDir = "src/content/categories";
 const outputPath = "src/content/_meta/ontology-index.json";
 
+const routes = {
+  root: "/workbench/",
+  check_input: "/workbench/check-input/",
+  gap_explorer: "/workbench/gap-explorer/",
+  search: "/workbench/search/",
+  issues: "/workbench/issues/",
+  patterns: "/workbench/patterns/",
+  lenses: "/workbench/lenses/",
+  categories: "/workbench/categories/",
+  examples: "/workbench/examples/",
+  field_notes: "/workbench/field-notes/",
+  articles: "/workbench/articles/",
+  videos: "/workbench/videos/",
+  internal: "/workbench/_internal/",
+};
+
 function getMarkdownFiles(dir: string) {
   if (!fs.existsSync(dir)) {
     return [];
@@ -92,7 +108,8 @@ function main() {
         secondary: secondaryLensSlugs,
       },
       search_intents: issue.search_intents ?? [],
-      url: `/ref/issues/${issue.slug}/`,
+      url: `/workbench/issues/${issue.slug}/`,
+      markdown_url: `/workbench/issues/${issue.slug}.md`,
     };
   });
 
@@ -123,7 +140,8 @@ function main() {
         primary: primaryIssueSlugs,
         supporting: supportingIssueSlugs,
       },
-      url: `/ref/patterns/${pattern.slug}/`,
+      url: `/workbench/patterns/${pattern.slug}/`,
+      markdown_url: `/workbench/patterns/${pattern.slug}.md`,
     };
   });
 
@@ -161,7 +179,8 @@ function main() {
         secondary: secondaryPatternSlugs.sort(),
       },
       issues: issueSlugs,
-      url: `/ref/lenses/${lens.slug}/`,
+      url: `/workbench/lenses/${lens.slug}/`,
+      markdown_url: `/workbench/lenses/${lens.slug}.md`,
     };
   });
 
@@ -177,19 +196,17 @@ function main() {
       status: category.status,
       summary: category.summary,
       issues: issueSlugs,
-      url: `/ref/categories/${category.slug}/`,
+      url: `/workbench/categories/${category.slug}/`,
     };
   });
 
   const ontologyIndex = {
     version: 1,
-    routes: {
-      root: "/ref/",
-      issues: "/ref/issues/",
-      patterns: "/ref/patterns/",
-      lenses: "/ref/lenses/",
-      categories: "/ref/categories/",
-      search: "/ref/search/",
+    routes,
+    resolver: {
+      divu: "https://divu.app/wb/[slug]",
+      resolves: ["patterns", "lenses"],
+      does_not_resolve: ["issues"],
     },
     matrix,
     issues: derivedIssues,
@@ -208,7 +225,7 @@ function main() {
 
   fs.writeFileSync(outputPath, `${JSON.stringify(ontologyIndex, null, 2)}\n`);
 
-  console.log(`SERL ontology index written to ${outputPath}.`);
+  console.log(`Workbench ontology index written to ${outputPath}.`);
 }
 
 main();

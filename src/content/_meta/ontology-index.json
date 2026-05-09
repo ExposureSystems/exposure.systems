@@ -1,12 +1,29 @@
 {
   "version": 1,
   "routes": {
-    "root": "/ref/",
-    "issues": "/ref/issues/",
-    "patterns": "/ref/patterns/",
-    "lenses": "/ref/lenses/",
-    "categories": "/ref/categories/",
-    "search": "/ref/search/"
+    "root": "/workbench/",
+    "check_input": "/workbench/check-input/",
+    "gap_explorer": "/workbench/gap-explorer/",
+    "search": "/workbench/search/",
+    "issues": "/workbench/issues/",
+    "patterns": "/workbench/patterns/",
+    "lenses": "/workbench/lenses/",
+    "categories": "/workbench/categories/",
+    "examples": "/workbench/examples/",
+    "field_notes": "/workbench/field-notes/",
+    "articles": "/workbench/articles/",
+    "videos": "/workbench/videos/",
+    "internal": "/workbench/_internal/"
+  },
+  "resolver": {
+    "divu": "https://divu.app/wb/[slug]",
+    "resolves": [
+      "patterns",
+      "lenses"
+    ],
+    "does_not_resolve": [
+      "issues"
+    ]
   },
   "matrix": {
     "authority-collision": {
@@ -45,7 +62,8 @@
       "search_intents": [
         "test issue"
       ],
-      "url": "/ref/issues/issue-0001/"
+      "url": "/workbench/issues/issue-0001/",
+      "markdown_url": "/workbench/issues/issue-0001.md"
     }
   ],
   "patterns": [
@@ -71,7 +89,8 @@
         ],
         "supporting": []
       },
-      "url": "/ref/patterns/authority-collision/"
+      "url": "/workbench/patterns/authority-collision/",
+      "markdown_url": "/workbench/patterns/authority-collision.md"
     }
   ],
   "lenses": [
@@ -90,7 +109,8 @@
       "issues": [
         "issue-0001"
       ],
-      "url": "/ref/lenses/authority-overlay-lens/"
+      "url": "/workbench/lenses/authority-overlay-lens/",
+      "markdown_url": "/workbench/lenses/authority-overlay-lens.md"
     },
     {
       "slug": "conflict-lens",
@@ -107,7 +127,8 @@
       "issues": [
         "issue-0001"
       ],
-      "url": "/ref/lenses/conflict-lens/"
+      "url": "/workbench/lenses/conflict-lens/",
+      "markdown_url": "/workbench/lenses/conflict-lens.md"
     },
     {
       "slug": "invariant-lens",
@@ -124,7 +145,8 @@
       "issues": [
         "issue-0001"
       ],
-      "url": "/ref/lenses/invariant-lens/"
+      "url": "/workbench/lenses/invariant-lens/",
+      "markdown_url": "/workbench/lenses/invariant-lens.md"
     },
     {
       "slug": "reconciliation-lens",
@@ -141,7 +163,8 @@
       "issues": [
         "issue-0001"
       ],
-      "url": "/ref/lenses/reconciliation-lens/"
+      "url": "/workbench/lenses/reconciliation-lens/",
+      "markdown_url": "/workbench/lenses/reconciliation-lens.md"
     }
   ],
   "categories": [
@@ -153,7 +176,7 @@
       "issues": [
         "issue-0001"
       ],
-      "url": "/ref/categories/drift-variance/"
+      "url": "/workbench/categories/drift-variance/"
     }
   ],
   "lookups": {
