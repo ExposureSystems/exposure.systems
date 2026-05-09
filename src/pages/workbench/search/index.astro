@@ -1,0 +1,91 @@
+---
+import searchIndex from "../../../content/_meta/search-index.json";
+
+const items = searchIndex.items;
+const categories = searchIndex.facets.categories;
+const patterns = searchIndex.facets.patterns;
+const lenses = searchIndex.facets.lenses;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Search | Workbench</title>
+    <meta
+      name="description"
+      content="Issue-scoped Workbench search index with derived category, pattern, and lens facets."
+    />
+  </head>
+  <body>
+    <main>
+      <p><a href="/workbench/">Workbench</a></p>
+
+      <h1>Search</h1>
+
+      <p>{searchIndex.note}</p>
+
+      <section aria-labelledby="results">
+        <h2 id="results">Issue Results</h2>
+
+        {items.length > 0 ? (
+          <ul>
+            {items.map((item) => (
+              <li>
+                <h3>
+                  <a href={item.url}>{item.title}</a>
+                </h3>
+
+                <p>{item.summary}</p>
+
+                <p>
+                  Category: {item.category_title}
+                  {" | "}
+                  Primary pattern: {item.primary_pattern}
+                  {" | "}
+                  Patterns: {item.patterns.length}
+                  {" | "}
+                  Primary lenses: {item.lenses.primary.length}
+                  {" | "}
+                  Secondary lenses: {item.lenses.secondary.length}
+                </p>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p>No issue results.</p>
+        )}
+      </section>
+
+      <section aria-labelledby="facets">
+        <h2 id="facets">Facets</h2>
+
+        <h3>Categories</h3>
+        <ul>
+          {categories.map((category) => (
+            <li>
+              {category.title} — {category.count}
+            </li>
+          ))}
+        </ul>
+
+        <h3>Patterns</h3>
+        <ul>
+          {patterns.map((pattern) => (
+            <li>
+              {pattern.code} — {pattern.title} — {pattern.count}
+            </li>
+          ))}
+        </ul>
+
+        <h3>Lenses</h3>
+        <ul>
+          {lenses.map((lens) => (
+            <li>
+              {lens.code} — {lens.title} — {lens.count}
+            </li>
+          ))}
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>
