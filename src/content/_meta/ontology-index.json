@@ -1,0 +1,171 @@
+{
+  "generated_at": "2026-05-09T04:29:15.151Z",
+  "version": 1,
+  "routes": {
+    "root": "/ref/",
+    "issues": "/ref/issues/",
+    "patterns": "/ref/patterns/",
+    "lenses": "/ref/lenses/",
+    "categories": "/ref/categories/",
+    "search": "/ref/search/"
+  },
+  "matrix": {
+    "authority-collision": {
+      "primary": [
+        "conflict-lens",
+        "authority-overlay-lens"
+      ],
+      "secondary": [
+        "reconciliation-lens",
+        "invariant-lens"
+      ]
+    }
+  },
+  "issues": [
+    {
+      "slug": "issue-0001",
+      "title": "Issue 0001",
+      "status": "draft",
+      "summary": "Test issue for frontmatter validation.",
+      "category": "drift-variance",
+      "category_title": "Drift & Variance",
+      "primary_pattern": "authority-collision",
+      "patterns": [
+        "authority-collision"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "authority-overlay-lens",
+          "conflict-lens"
+        ],
+        "secondary": [
+          "invariant-lens",
+          "reconciliation-lens"
+        ]
+      },
+      "search_intents": [
+        "test issue"
+      ],
+      "url": "/ref/issues/issue-0001/"
+    }
+  ],
+  "patterns": [
+    {
+      "slug": "authority-collision",
+      "code": "PAT-001",
+      "title": "Authority Collision",
+      "status": "stable",
+      "summary": "A structural condition where multiple authorities claim governance over the same structural region without a declared precedence rule.",
+      "lenses": {
+        "primary": [
+          "conflict-lens",
+          "authority-overlay-lens"
+        ],
+        "secondary": [
+          "reconciliation-lens",
+          "invariant-lens"
+        ]
+      },
+      "issues": {
+        "primary": [
+          "issue-0001"
+        ],
+        "supporting": []
+      },
+      "url": "/ref/patterns/authority-collision/"
+    }
+  ],
+  "lenses": [
+    {
+      "slug": "authority-overlay-lens",
+      "code": "LEN-001",
+      "title": "Authority Overlay Lens",
+      "status": "stable",
+      "summary": "A diagnostic view that maps declared authority hierarchies onto observed structure to detect absence, override, or conflict.",
+      "patterns": {
+        "primary": [
+          "authority-collision"
+        ],
+        "secondary": []
+      },
+      "issues": [
+        "issue-0001"
+      ],
+      "url": "/ref/lenses/authority-overlay-lens/"
+    },
+    {
+      "slug": "conflict-lens",
+      "code": "LEN-002",
+      "title": "Conflict Lens",
+      "status": "draft",
+      "summary": "A diagnostic view focused on detecting unresolved contradiction, overlap, or incompatible structural claims.",
+      "patterns": {
+        "primary": [
+          "authority-collision"
+        ],
+        "secondary": []
+      },
+      "issues": [
+        "issue-0001"
+      ],
+      "url": "/ref/lenses/conflict-lens/"
+    },
+    {
+      "slug": "invariant-lens",
+      "code": "LEN-004",
+      "title": "Invariant Lens",
+      "status": "draft",
+      "summary": "A diagnostic view focused on whether a required structural condition remains true across states, transitions, or executions.",
+      "patterns": {
+        "primary": [],
+        "secondary": [
+          "authority-collision"
+        ]
+      },
+      "issues": [
+        "issue-0001"
+      ],
+      "url": "/ref/lenses/invariant-lens/"
+    },
+    {
+      "slug": "reconciliation-lens",
+      "code": "LEN-003",
+      "title": "Reconciliation Lens",
+      "status": "draft",
+      "summary": "A diagnostic view focused on whether competing structural claims can be resolved into a coherent declared state.",
+      "patterns": {
+        "primary": [],
+        "secondary": [
+          "authority-collision"
+        ]
+      },
+      "issues": [
+        "issue-0001"
+      ],
+      "url": "/ref/lenses/reconciliation-lens/"
+    }
+  ],
+  "categories": [
+    {
+      "slug": "drift-variance",
+      "title": "Drift & Variance",
+      "status": "draft",
+      "summary": "Navigation shelf for drift and variance issues.",
+      "issues": [
+        "issue-0001"
+      ],
+      "url": "/ref/categories/drift-variance/"
+    }
+  ],
+  "lookups": {
+    "patterns_by_code": {
+      "PAT-001": "authority-collision"
+    },
+    "lenses_by_code": {
+      "LEN-001": "authority-overlay-lens",
+      "LEN-002": "conflict-lens",
+      "LEN-004": "invariant-lens",
+      "LEN-003": "reconciliation-lens"
+    }
+  }
+}
