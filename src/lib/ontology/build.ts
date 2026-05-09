@@ -26,7 +26,8 @@ const issuesDir = "src/content/issues";
 const patternsDir = "src/content/patterns";
 const lensesDir = "src/content/lenses";
 const categoriesDir = "src/content/categories";
-const outputPath = "src/content/_meta/ontology-index.json";
+const ontologyOutputPath = "src/content/_meta/ontology-index.json";
+const searchOutputPath = "src/content/_meta/search-index.json";
 
 const routes = {
   root: "/workbench/",
@@ -223,9 +224,65 @@ function main() {
     },
   };
 
-  fs.writeFileSync(outputPath, `${JSON.stringify(ontologyIndex, null, 2)}\n`);
+  const searchIndex = {
+    version: 1,
+    scope: "issues",
+    note: "Search returns Issues. Patterns, Lenses, and Categories are facets derived from the ontology.",
+    items: derivedIssues.map((issue) => ({
+      type: "issue",
+      slug: issue.slug,
+      title: issue.title,
+      summary: issue.summary,
+      url: issue.url,
+      category: issue.category,
+      category_title: issue.category_title,
+      primary_pattern: issue.primary_pattern,
+      patterns: issue.patterns,
+      lenses: {
+        primary: issue.derived_lenses.primary,
+        secondary: issue.derived_lenses.secondary,
+      },
+      search_intents: issue.search_intents,
+      text: uniqueSorted([
+        issue.title,
+        issue.summary,
+        issue.category ?? "",
+        issue.category_title ?? "",
+        issue.primary_pattern ?? "",
+        ...issue.patterns,
+        ...issue.derived_lenses.primary,
+        ...issue.derived_lenses.secondary,
+        ...issue.search_intents,
+      ].filter(Boolean)).join(" "),
+    })),
+    facets: {
+      categories: derivedCategories.map((category) => ({
+        slug: category.slug,
+        title: category.title,
+        count: category.issues.length,
+      })),
+      patterns: derivedPatterns.map((pattern) => ({
+        slug: pattern.slug,
+        code: pattern.code,
+        title: pattern.title,
+        count:
+          pattern.issues.primary.length +
+          pattern.issues.supporting.length,
+      })),
+      lenses: derivedLenses.map((lens) => ({
+        slug: lens.slug,
+        code: lens.code,
+        title: lens.title,
+        count: lens.issues.length,
+      })),
+    },
+  };
 
-  console.log(`Workbench ontology index written to ${outputPath}.`);
+  fs.writeFileSync(ontologyOutputPath, `${JSON.stringify(ontologyIndex, null, 2)}\n`);
+  fs.writeFileSync(searchOutputPath, `${JSON.stringify(searchIndex, null, 2)}\n`);
+
+  console.log(`Workbench ontology index written to ${ontologyOutputPath}.`);
+  console.log(`Workbench search index written to ${searchOutputPath}.`);
 }
 
 main();

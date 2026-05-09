@@ -1,0 +1,77 @@
+{
+  "version": 1,
+  "scope": "issues",
+  "note": "Search returns Issues. Patterns, Lenses, and Categories are facets derived from the ontology.",
+  "items": [
+    {
+      "type": "issue",
+      "slug": "issue-0001",
+      "title": "Issue 0001",
+      "summary": "Test issue for frontmatter validation.",
+      "url": "/workbench/issues/issue-0001/",
+      "category": "drift-variance",
+      "category_title": "Drift & Variance",
+      "primary_pattern": "authority-collision",
+      "patterns": [
+        "authority-collision"
+      ],
+      "lenses": {
+        "primary": [
+          "authority-overlay-lens",
+          "conflict-lens"
+        ],
+        "secondary": [
+          "invariant-lens",
+          "reconciliation-lens"
+        ]
+      },
+      "search_intents": [
+        "test issue"
+      ],
+      "text": "Drift & Variance Issue 0001 Test issue for frontmatter validation. authority-collision authority-overlay-lens conflict-lens drift-variance invariant-lens reconciliation-lens test issue"
+    }
+  ],
+  "facets": {
+    "categories": [
+      {
+        "slug": "drift-variance",
+        "title": "Drift & Variance",
+        "count": 1
+      }
+    ],
+    "patterns": [
+      {
+        "slug": "authority-collision",
+        "code": "PAT-001",
+        "title": "Authority Collision",
+        "count": 1
+      }
+    ],
+    "lenses": [
+      {
+        "slug": "authority-overlay-lens",
+        "code": "LEN-001",
+        "title": "Authority Overlay Lens",
+        "count": 1
+      },
+      {
+        "slug": "conflict-lens",
+        "code": "LEN-002",
+        "title": "Conflict Lens",
+        "count": 1
+      },
+      {
+        "slug": "invariant-lens",
+        "code": "LEN-004",
+        "title": "Invariant Lens",
+        "count": 1
+      },
+      {
+        "slug": "reconciliation-lens",
+        "code": "LEN-003",
+        "title": "Reconciliation Lens",
+        "count": 1
+      }
+    ]
+  }
+}
