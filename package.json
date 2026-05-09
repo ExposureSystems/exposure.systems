@@ -3,12 +3,12 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-  "dev": "astro dev",
-  "build": "npm run validate && astro build",
-  "validate": "tsx src/lib/ontology/validate.ts",
-  "build:ontology": "tsx src/lib/ontology/build.ts",
-  "preview": "astro preview",
-  "astro": "astro"
+    "dev": "astro dev",
+    "build": "npm run validate && npm run build:ontology && astro build",
+    "validate": "tsx src/lib/ontology/validate.ts",
+    "build:ontology": "tsx src/lib/ontology/build.ts",
+    "preview": "astro preview",
+    "astro": "astro"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.5.0",
@@ -18,6 +18,6 @@
   },
   "devDependencies": {
     "gray-matter": "^4.0.3",
-    "tsx": "^4.21.0"
+    "tsx": "^4.20.6"
   }
 }
