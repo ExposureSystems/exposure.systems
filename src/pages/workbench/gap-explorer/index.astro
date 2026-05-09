@@ -1,11 +1,9 @@
 ---
-const acceptedExamples = [
-  "missing actor",
-  "unclear scope",
-  "unstated constraint",
-  "conflicting dependency",
-  "incomplete sequence",
-];
+import checkInputIndex from "../../../content/_meta/check-input-index.json";
+
+const results = checkInputIndex.results;
+
+const acceptedExamples = results.map((result) => result.detected_gap);
 
 const ignoredExamples = [
   "the model might hallucinate",
@@ -22,7 +20,7 @@ const ignoredExamples = [
     <title>Gap Explorer | Workbench</title>
     <meta
       name="description"
-      content="A controlled gap-term explorer that will map Check Input output to related Patterns and useful Lenses."
+      content="Explore controlled Check Input gap terms through related Patterns and useful Lenses."
     />
   </head>
   <body>
@@ -41,6 +39,10 @@ const ignoredExamples = [
         Lenses.
       </p>
 
+      <p>
+        {checkInputIndex.note}
+      </p>
+
       <section aria-labelledby="flow">
         <h2 id="flow">Flow</h2>
 
@@ -49,7 +51,7 @@ const ignoredExamples = [
           <li>Check Input Matrix</li>
           <li>Related Pattern codes</li>
           <li>Pattern pages</li>
-          <li>Pattern → Lens Matrix</li>
+          <li>Pattern -&gt; Lens Matrix</li>
           <li>Useful Lenses</li>
         </ol>
 
@@ -64,7 +66,7 @@ const ignoredExamples = [
         <p>
           Gap Explorer does not route Detected Gaps to Issues. Issues are public
           intake and search surfaces. Gap Explorer routes controlled gap terms to
-          Patterns, then derives useful Lenses through the Pattern → Lens matrix.
+          Patterns, then derives useful Lenses through the Pattern -&gt; Lens matrix.
         </p>
       </section>
 
@@ -82,12 +84,13 @@ const ignoredExamples = [
 - unstated constraint`}></textarea>
 
         <p>
-          Parser behavior is not active yet.
+          Parser behavior is not active yet. The derived references below are generated
+          from the current Check Input index.
         </p>
       </section>
 
       <section aria-labelledby="accepted">
-        <h2 id="accepted">Accepted Gap Shape</h2>
+        <h2 id="accepted">Accepted Gap Terms</h2>
 
         <p>
           Every accepted line must match: <code>[gap type] [element]</code>.
@@ -98,6 +101,73 @@ const ignoredExamples = [
             <li><code>{example}</code></li>
           ))}
         </ul>
+      </section>
+
+      <section aria-labelledby="exploration-results">
+        <h2 id="exploration-results">Current Exploration Results</h2>
+
+        {results.map((result) => (
+          <article>
+            <h3>{result.detected_gap}</h3>
+
+            <p>{result.caveat}</p>
+
+            <section aria-labelledby={`${result.detected_gap}-patterns`}>
+              <h4 id={`${result.detected_gap}-patterns`}>Related Patterns</h4>
+
+              <h5>Primary</h5>
+              {result.patterns.primary.length > 0 ? (
+                <ul>
+                  {result.patterns.primary.map((pattern) => (
+                    <li>
+                      <a href={pattern.url}>
+                        {pattern.code} — {pattern.title}
+                      </a>
+                      <p>{pattern.summary}</p>
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <p>No primary Patterns.</p>
+              )}
+
+              <h5>Secondary</h5>
+              {result.patterns.secondary.length > 0 ? (
+                <ul>
+                  {result.patterns.secondary.map((pattern) => (
+                    <li>
+                      <a href={pattern.url}>
+                        {pattern.code} — {pattern.title}
+                      </a>
+                      <p>{pattern.summary}</p>
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <p>No secondary Patterns.</p>
+              )}
+            </section>
+
+            <section aria-labelledby={`${result.detected_gap}-lenses`}>
+              <h4 id={`${result.detected_gap}-lenses`}>Useful Lenses</h4>
+
+              {result.useful_lenses.length > 0 ? (
+                <ul>
+                  {result.useful_lenses.map((lens) => (
+                    <li>
+                      <a href={lens.url}>
+                        {lens.code} — {lens.title}
+                      </a>
+                      <p>{lens.summary}</p>
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <p>No useful Lenses derived.</p>
+              )}
+            </section>
+          </article>
+        ))}
       </section>
 
       <section aria-labelledby="ignored">
