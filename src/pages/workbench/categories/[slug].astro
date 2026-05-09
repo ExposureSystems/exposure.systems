@@ -1,0 +1,55 @@
+---
+import ontologyIndex from "../../../content/_meta/ontology-index.json";
+
+export function getStaticPaths() {
+  return ontologyIndex.categories.map((category) => ({
+    params: { slug: category.slug },
+    props: { category },
+  }));
+}
+
+const { category } = Astro.props;
+
+const categoryIssues = category.issues
+  .map((slug) => ontologyIndex.issues.find((issue) => issue.slug === slug))
+  .filter(Boolean);
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{category.title} | Workbench Category</title>
+    <meta name="description" content={category.summary} />
+  </head>
+  <body>
+    <main>
+      <p>
+        <a href="/workbench/">Workbench</a>
+        {" / "}
+        <a href="/workbench/categories/">Categories</a>
+      </p>
+
+      <h1>{category.title}</h1>
+
+      <p><strong>Status:</strong> {category.status}</p>
+      <p>{category.summary}</p>
+
+      <section aria-labelledby="issues">
+        <h2 id="issues">Issues</h2>
+
+        {categoryIssues.length > 0 ? (
+          <ul>
+            {categoryIssues.map((issue) => (
+              <li>
+                <a href={issue.url}>{issue.title}</a>
+                <p>{issue.summary}</p>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p>No issues in this category.</p>
+        )}
+      </section>
+    </main>
+  </body>
+</html>
