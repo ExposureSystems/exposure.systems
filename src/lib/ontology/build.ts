@@ -9,6 +9,15 @@ type MatrixEntry = {
 
 type PatternLensMatrix = Record<string, MatrixEntry>;
 
+type CheckInputMatrixEntry = {
+  patterns: {
+    primary: string[];
+    secondary: string[];
+  };
+};
+
+type CheckInputMatrix = Record<string, CheckInputMatrixEntry>;
+
 type EntryData = {
   slug: string;
   code?: string;
@@ -22,12 +31,16 @@ type EntryData = {
 };
 
 const matrixPath = "src/ontology/pattern-lens-matrix.json";
+const checkInputMatrixPath = "src/ontology/check-input-matrix.json";
+
 const issuesDir = "src/content/issues";
 const patternsDir = "src/content/patterns";
 const lensesDir = "src/content/lenses";
 const categoriesDir = "src/content/categories";
+
 const ontologyOutputPath = "src/content/_meta/ontology-index.json";
 const searchOutputPath = "src/content/_meta/search-index.json";
+const checkInputOutputPath = "src/content/_meta/check-input-index.json";
 
 const routes = {
   root: "/workbench/",
@@ -76,6 +89,9 @@ function readCollection(dir: string) {
 
 function main() {
   const matrix = JSON.parse(fs.readFileSync(matrixPath, "utf-8")) as PatternLensMatrix;
+  const checkInputMatrix = JSON.parse(
+    fs.readFileSync(checkInputMatrixPath, "utf-8")
+  ) as CheckInputMatrix;
 
   const issues = readCollection(issuesDir);
   const patterns = readCollection(patternsDir);
@@ -201,6 +217,70 @@ function main() {
     };
   });
 
+  const patternsByCode = new Map(
+    derivedPatterns
+      .filter((pattern) => typeof pattern.code === "string")
+      .map((pattern) => [pattern.code, pattern])
+  );
+
+  const lensesBySlug = new Map(derivedLenses.map((lens) => [lens.slug, lens]));
+
+  const checkInputIndex = {
+    version: 1,
+    scope: "detected_gaps",
+    note: "Check Input maps controlled gap terms to related Patterns. Useful Lenses are derived through the Pattern -> Lens matrix. Issues are not used as Check Input Step 2 targets.",
+    results: Object.entries(checkInputMatrix).map(([detectedGap, entry]) => {
+      const primaryPatterns = entry.patterns.primary
+        .map((patternCode) => patternsByCode.get(patternCode))
+        .filter(Boolean);
+
+      const secondaryPatterns = entry.patterns.secondary
+        .map((patternCode) => patternsByCode.get(patternCode))
+        .filter(Boolean);
+
+      const allPatterns = [...primaryPatterns, ...secondaryPatterns];
+
+      const usefulLensSlugs = uniqueSorted(
+        allPatterns.flatMap((pattern) => [
+          ...pattern.lenses.primary,
+          ...pattern.lenses.secondary,
+        ])
+      );
+
+      const usefulLenses = usefulLensSlugs
+        .map((lensSlug) => lensesBySlug.get(lensSlug))
+        .filter(Boolean);
+
+      return {
+        detected_gap: detectedGap,
+        patterns: {
+          primary: primaryPatterns.map((pattern) => ({
+            code: pattern.code,
+            slug: pattern.slug,
+            title: pattern.title,
+            summary: pattern.summary,
+            url: pattern.url,
+          })),
+          secondary: secondaryPatterns.map((pattern) => ({
+            code: pattern.code,
+            slug: pattern.slug,
+            title: pattern.title,
+            summary: pattern.summary,
+            url: pattern.url,
+          })),
+        },
+        useful_lenses: usefulLenses.map((lens) => ({
+          code: lens.code,
+          slug: lens.slug,
+          title: lens.title,
+          summary: lens.summary,
+          url: lens.url,
+        })),
+        caveat: "These are related structural references, not a final diagnosis.",
+      };
+    }),
+  };
+
   const ontologyIndex = {
     version: 1,
     routes,
@@ -265,9 +345,7 @@ function main() {
         slug: pattern.slug,
         code: pattern.code,
         title: pattern.title,
-        count:
-          pattern.issues.primary.length +
-          pattern.issues.supporting.length,
+        count: pattern.issues.primary.length + pattern.issues.supporting.length,
       })),
       lenses: derivedLenses.map((lens) => ({
         slug: lens.slug,
@@ -280,9 +358,11 @@ function main() {
 
   fs.writeFileSync(ontologyOutputPath, `${JSON.stringify(ontologyIndex, null, 2)}\n`);
   fs.writeFileSync(searchOutputPath, `${JSON.stringify(searchIndex, null, 2)}\n`);
+  fs.writeFileSync(checkInputOutputPath, `${JSON.stringify(checkInputIndex, null, 2)}\n`);
 
   console.log(`Workbench ontology index written to ${ontologyOutputPath}.`);
   console.log(`Workbench search index written to ${searchOutputPath}.`);
+  console.log(`Workbench Check Input index written to ${checkInputOutputPath}.`);
 }
 
 main();
