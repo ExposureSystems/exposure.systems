@@ -1,0 +1,143 @@
+---
+import ontologyIndex from "../../../content/_meta/ontology-index.json";
+
+export function getStaticPaths() {
+  return ontologyIndex.issues.map((issue) => ({
+    params: { slug: issue.slug },
+    props: { issue },
+  }));
+}
+
+const { issue } = Astro.props;
+
+const category = ontologyIndex.categories.find((item) => item.slug === issue.category);
+
+const primaryPattern = ontologyIndex.patterns.find(
+  (pattern) => pattern.slug === issue.primary_pattern
+);
+
+const declaredPatterns = issue.patterns
+  .map((slug) => ontologyIndex.patterns.find((pattern) => pattern.slug === slug))
+  .filter(Boolean);
+
+const primaryLenses = issue.derived_lenses.primary
+  .map((slug) => ontologyIndex.lenses.find((lens) => lens.slug === slug))
+  .filter(Boolean);
+
+const secondaryLenses = issue.derived_lenses.secondary
+  .map((slug) => ontologyIndex.lenses.find((lens) => lens.slug === slug))
+  .filter(Boolean);
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{issue.title} | Workbench Issue</title>
+    <meta name="description" content={issue.summary} />
+  </head>
+  <body>
+    <main>
+      <p>
+        <a href="/workbench/">Workbench</a>
+        {" / "}
+        <a href="/workbench/issues/">Issues</a>
+      </p>
+
+      <h1>{issue.title}</h1>
+
+      <p><strong>Status:</strong> {issue.status}</p>
+      <p>{issue.summary}</p>
+
+      <section aria-labelledby="category">
+        <h2 id="category">Category</h2>
+
+        {category ? (
+          <p>
+            <a href={category.url}>{category.title}</a>
+          </p>
+        ) : (
+          <p>{issue.category}</p>
+        )}
+      </section>
+
+      <section aria-labelledby="primary-pattern">
+        <h2 id="primary-pattern">Primary Pattern</h2>
+
+        {primaryPattern ? (
+          <p>
+            <a href={primaryPattern.url}>
+              {primaryPattern.code} — {primaryPattern.title}
+            </a>
+          </p>
+        ) : (
+          <p>{issue.primary_pattern}</p>
+        )}
+      </section>
+
+      <section aria-labelledby="declared-patterns">
+        <h2 id="declared-patterns">Declared Patterns</h2>
+
+        {declaredPatterns.length > 0 ? (
+          <ul>
+            {declaredPatterns.map((pattern) => (
+              <li>
+                <a href={pattern.url}>{pattern.code} — {pattern.title}</a>
+                <p>{pattern.summary}</p>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p>No declared patterns.</p>
+        )}
+      </section>
+
+      <section aria-labelledby="primary-lenses">
+        <h2 id="primary-lenses">Derived Primary Lenses</h2>
+
+        {primaryLenses.length > 0 ? (
+          <ul>
+            {primaryLenses.map((lens) => (
+              <li>
+                <a href={lens.url}>{lens.code} — {lens.title}</a>
+                <p>{lens.summary}</p>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p>No primary lenses derived.</p>
+        )}
+      </section>
+
+      <section aria-labelledby="secondary-lenses">
+        <h2 id="secondary-lenses">Derived Secondary Lenses</h2>
+
+        {secondaryLenses.length > 0 ? (
+          <ul>
+            {secondaryLenses.map((lens) => (
+              <li>
+                <a href={lens.url}>{lens.code} — {lens.title}</a>
+                <p>{lens.summary}</p>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p>No secondary lenses derived.</p>
+        )}
+      </section>
+
+      <section aria-labelledby="search-intents">
+        <h2 id="search-intents">Search Intents</h2>
+
+        {issue.search_intents.length > 0 ? (
+          <ul>
+            {issue.search_intents.map((intent) => (
+              <li>{intent}</li>
+            ))}
+          </ul>
+        ) : (
+          <p>No search intents declared.</p>
+        )}
+      </section>
+    </main>
+  </body>
+</html>
