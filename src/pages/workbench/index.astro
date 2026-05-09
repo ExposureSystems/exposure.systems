@@ -5,26 +5,87 @@ const issueCount = ontologyIndex.issues.length;
 const patternCount = ontologyIndex.patterns.length;
 const lensCount = ontologyIndex.lenses.length;
 const categoryCount = ontologyIndex.categories.length;
+
+const sections = [
+  {
+    title: "Check Input",
+    href: "/workbench/check-input/",
+    description: "Narrow the ask before blaming the model.",
+  },
+  {
+    title: "Gap Explorer",
+    href: "/workbench/gap-explorer/",
+    description: "Paste Detected Gaps and explore related Patterns and useful Lenses.",
+  },
+  {
+    title: "Issues",
+    href: "/workbench/issues/",
+    description: "Start with the visible failure surface.",
+  },
+  {
+    title: "Patterns",
+    href: "/workbench/patterns/",
+    description: "Find the recurring structural form behind the problem.",
+  },
+  {
+    title: "Lenses",
+    href: "/workbench/lenses/",
+    description: "Apply diagnostic views to inspect Patterns from different angles.",
+  },
+  {
+    title: "Search",
+    href: "/workbench/search/",
+    description: "Find Workbench references by symptoms, gap terms, names, or codes.",
+  },
+  {
+    title: "Examples",
+    href: "/workbench/examples/",
+    description: "See the structural language applied to real AI-work situations.",
+  },
+  {
+    title: "Field Notes",
+    href: "/workbench/field-notes/",
+    description: "Read informal observations, implementation notes, and structural breakdowns.",
+  },
+  {
+    title: "Articles",
+    href: "/workbench/articles/",
+    description: "Read long-form explanations of Workbench concepts and boundaries.",
+  },
+  {
+    title: "Videos",
+    href: "/workbench/videos/",
+    description: "Watch walkthroughs, explainers, and demonstrations.",
+  },
+];
 ---
 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Workbench</title>
+    <title>Pengo AI Structural Workbench</title>
     <meta
       name="description"
-      content="Workbench for exploring issues, patterns, lenses, categories, and derived ontology relationships."
+      content="A practical workbench for inspecting where AI work loses structure."
     />
   </head>
   <body>
     <main>
       <p><a href="/">Home</a></p>
 
-      <h1>Workbench</h1>
+      <h1>Pengo AI Structural Workbench</h1>
+
+      <p><strong>Stop waiting for AI to magically get better.</strong></p>
 
       <p>
-        A structured workbench for exploring issues, patterns, lenses, categories,
-        and derived ontology relationships.
+        Find the structure. Use it to observe, control, and report what AI systems
+        actually do.
+      </p>
+
+      <p>
+        The Workbench helps you inspect unclear asks, visible failure surfaces,
+        recurring structural Patterns, and diagnostic Lenses before jumping to
+        blame, scores, or governance claims.
       </p>
 
       <section aria-labelledby="counts">
@@ -39,17 +100,26 @@ const categoryCount = ontologyIndex.categories.length;
       </section>
 
       <section aria-labelledby="sections">
-        <h2 id="sections">Sections</h2>
+        <h2 id="sections">Workbench Areas</h2>
 
         <ul>
-          <li><a href="/workbench/issues/">Issues</a></li>
-          <li><a href="/workbench/patterns/">Patterns</a></li>
-          <li><a href="/workbench/lenses/">Lenses</a></li>
-          <li><a href="/workbench/categories/">Categories</a></li>
-          <li><a href="/workbench/check-input/">Check Input</a></li>
-          <li><a href="/workbench/gap-explorer/">Gap Explorer</a></li>
-          <li><a href="/workbench/search/">Search</a></li>
+          {sections.map((section) => (
+            <li>
+              <h3><a href={section.href}>{section.title}</a></h3>
+              <p>{section.description}</p>
+            </li>
+          ))}
         </ul>
+      </section>
+
+      <section aria-labelledby="boundary">
+        <h2 id="boundary">Boundary</h2>
+
+        <p>
+          The Workbench is not a chatbot, risk score, or governance platform. It
+          is a structured set of protocols, indexes, examples, field notes, and
+          machine-readable references for inspecting where AI work loses structure.
+        </p>
       </section>
     </main>
   </body>
