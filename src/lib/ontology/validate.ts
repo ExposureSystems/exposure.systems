@@ -9,7 +9,26 @@ type MatrixEntry = {
 
 type PatternLensMatrix = Record<string, MatrixEntry>;
 
+type CheckInputVocabulary = {
+  version: number;
+  elements: string[];
+  gap_types: string[];
+  finding_shape: string;
+};
+
+type CheckInputMatrixEntry = {
+  patterns: {
+    primary: string[];
+    secondary: string[];
+  };
+};
+
+type CheckInputMatrix = Record<string, CheckInputMatrixEntry>;
+
 const matrixPath = "src/ontology/pattern-lens-matrix.json";
+const checkInputVocabularyPath = "src/ontology/check-input-vocabulary.json";
+const checkInputMatrixPath = "src/ontology/check-input-matrix.json";
+
 const patternsDir = "src/content/patterns";
 const lensesDir = "src/content/lenses";
 const issuesDir = "src/content/issues";
@@ -47,6 +66,10 @@ function isPatternCode(value: string) {
 
 function isLensCode(value: string) {
   return /^LEN-\d{3}$/.test(value);
+}
+
+function readJsonFile(filePath: string): unknown {
+  return JSON.parse(fs.readFileSync(filePath, "utf-8"));
 }
 
 function validateMatrix(matrix: unknown): asserts matrix is PatternLensMatrix {
@@ -301,6 +324,34 @@ function validateLensFrontmatter() {
   }
 }
 
+function getPatternCodeLookup() {
+  const errors: string[] = [];
+  const patternCodes = new Map<string, string>();
+
+  for (const patternFile of getMarkdownFiles(patternsDir)) {
+    const filenameSlug = path.basename(patternFile, ".md");
+    const data = readFrontmatter(patternFile);
+    const code = data.code;
+
+    if (typeof code !== "string") {
+      continue;
+    }
+
+    const previous = patternCodes.get(code);
+    if (previous) {
+      errors.push(`Pattern code "${code}" is duplicated by "${previous}" and "${filenameSlug}".`);
+    } else {
+      patternCodes.set(code, filenameSlug);
+    }
+  }
+
+  if (errors.length > 0) {
+    fail(errors);
+  }
+
+  return patternCodes;
+}
+
 function validateCategoryFrontmatter() {
   const errors: string[] = [];
 
@@ -403,9 +454,154 @@ function validateIssues(matrix: PatternLensMatrix) {
   }
 }
 
+function validateCheckInputVocabulary(value: unknown): asserts value is CheckInputVocabulary {
+  const errors: string[] = [];
+
+  if (!isObject(value)) {
+    fail(["Check Input vocabulary must be a JSON object."]);
+  }
+
+  if (typeof value.version !== "number") {
+    errors.push("Check Input vocabulary must declare numeric version.");
+  }
+
+  if (!Array.isArray(value.elements) || value.elements.length === 0) {
+    errors.push("Check Input vocabulary must declare elements[].");
+  } else {
+    for (const element of value.elements) {
+      if (typeof element !== "string" || !isKebabCase(element)) {
+        errors.push(`Check Input vocabulary element "${String(element)}" must be kebab-case string.`);
+      }
+    }
+
+    if (new Set(value.elements).size !== value.elements.length) {
+      errors.push("Check Input vocabulary elements[] contains duplicates.");
+    }
+  }
+
+  if (!Array.isArray(value.gap_types) || value.gap_types.length === 0) {
+    errors.push("Check Input vocabulary must declare gap_types[].");
+  } else {
+    for (const gapType of value.gap_types) {
+      if (typeof gapType !== "string" || !isKebabCase(gapType)) {
+        errors.push(`Check Input vocabulary gap type "${String(gapType)}" must be kebab-case string.`);
+      }
+    }
+
+    if (new Set(value.gap_types).size !== value.gap_types.length) {
+      errors.push("Check Input vocabulary gap_types[] contains duplicates.");
+    }
+  }
+
+  if (value.finding_shape !== "[gap type] [element]") {
+    errors.push('Check Input vocabulary finding_shape must be "[gap type] [element]".');
+  }
+
+  if (errors.length > 0) {
+    fail(errors);
+  }
+}
+
+function validateCheckInputMatrix(
+  value: unknown,
+  vocabulary: CheckInputVocabulary,
+  patternCodes: Map<string, string>
+): asserts value is CheckInputMatrix {
+  const errors: string[] = [];
+  const validElements = new Set(vocabulary.elements);
+  const validGapTypes = new Set(vocabulary.gap_types);
+
+  if (!isObject(value)) {
+    fail(["Check Input matrix must be a JSON object."]);
+  }
+
+  for (const [finding, entry] of Object.entries(value)) {
+    const parts = finding.split(" ");
+
+    if (parts.length !== 2) {
+      errors.push(`Check Input matrix key "${finding}" must use "[gap type] [element]" format.`);
+      continue;
+    }
+
+    const [gapType, element] = parts;
+
+    if (!validGapTypes.has(gapType)) {
+      errors.push(`Check Input matrix key "${finding}" uses unknown gap type "${gapType}".`);
+    }
+
+    if (!validElements.has(element)) {
+      errors.push(`Check Input matrix key "${finding}" uses unknown element "${element}".`);
+    }
+
+    if (!isObject(entry)) {
+      errors.push(`Check Input matrix entry "${finding}" must be an object.`);
+      continue;
+    }
+
+    if (Object.prototype.hasOwnProperty.call(entry, "lenses")) {
+      errors.push(`Check Input matrix entry "${finding}" must not map directly to lenses.`);
+    }
+
+    const patterns = entry.patterns;
+
+    if (!isObject(patterns)) {
+      errors.push(`Check Input matrix entry "${finding}" must declare patterns object.`);
+      continue;
+    }
+
+    if (!Array.isArray(patterns.primary)) {
+      errors.push(`Check Input matrix entry "${finding}" must declare patterns.primary[].`);
+      continue;
+    }
+
+    if (!Array.isArray(patterns.secondary)) {
+      errors.push(`Check Input matrix entry "${finding}" must declare patterns.secondary[].`);
+      continue;
+    }
+
+    const allPatternCodes = [...patterns.primary, ...patterns.secondary];
+
+    if (patterns.primary.length === 0) {
+      errors.push(`Check Input matrix entry "${finding}" must include at least one primary Pattern code.`);
+    }
+
+    for (const patternCode of allPatternCodes) {
+      if (typeof patternCode !== "string" || !isPatternCode(patternCode)) {
+        errors.push(`Check Input matrix entry "${finding}" has invalid Pattern code "${String(patternCode)}".`);
+        continue;
+      }
+
+      if (!patternCodes.has(patternCode)) {
+        errors.push(`Check Input matrix entry "${finding}" references unknown Pattern code "${patternCode}".`);
+      }
+    }
+
+    if (new Set(patterns.primary).size !== patterns.primary.length) {
+      errors.push(`Check Input matrix entry "${finding}" patterns.primary[] contains duplicate Pattern codes.`);
+    }
+
+    if (new Set(patterns.secondary).size !== patterns.secondary.length) {
+      errors.push(`Check Input matrix entry "${finding}" patterns.secondary[] contains duplicate Pattern codes.`);
+    }
+
+    for (const patternCode of patterns.primary) {
+      if (patterns.secondary.includes(patternCode)) {
+        errors.push(
+          `Check Input matrix entry "${finding}" lists "${patternCode}" in both primary[] and secondary[].`
+        );
+      }
+    }
+  }
+
+  if (errors.length > 0) {
+    fail(errors);
+  }
+}
+
 function main() {
-  const raw = fs.readFileSync(matrixPath, "utf-8");
-  const matrix = JSON.parse(raw);
+  const matrix = readJsonFile(matrixPath);
+  const checkInputVocabulary = readJsonFile(checkInputVocabularyPath);
+  const checkInputMatrix = readJsonFile(checkInputMatrixPath);
 
   validateMatrix(matrix);
   validateMatrixPatternsHaveFiles(matrix);
@@ -416,6 +612,10 @@ function main() {
   validateLensFrontmatter();
   validateCategoryFrontmatter();
   validateIssues(matrix);
+
+  const patternCodes = getPatternCodeLookup();
+  validateCheckInputVocabulary(checkInputVocabulary);
+  validateCheckInputMatrix(checkInputMatrix, checkInputVocabulary, patternCodes);
 
   console.log("SERL ontology validation passed.");
 }
