@@ -105,10 +105,10 @@ const gapTypes = [
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Check Input | Workbench</title>
+    <title>Check Input | Pengo AI Structural Workbench</title>
     <meta
       name="description"
-      content="A copyable protocol for inspecting what an AI input leaves open for the model to guess."
+      content="A copyable protocol for inspecting what an AI ask leaves open for the model to guess."
     />
   </head>
   <body>
@@ -117,11 +117,17 @@ const gapTypes = [
 
       <h1>Check Input</h1>
 
-      <p><strong>Stop guessing. Narrow the ask.</strong></p>
+      <p><strong>Narrow the ask before blaming the model.</strong></p>
 
       <p>
-        Check Input helps inspect an original ask and identify what it left missing,
-        unclear, implied, conflicting, or unstated.
+        Check Input helps you inspect the original ask and identify what it left
+        missing, unclear, implied, conflicting, or unstated.
+      </p>
+
+      <p>
+        It is the first move in the Workbench: before assuming the model failed,
+        inspect what structure the ask actually declared and what it forced the
+        model to guess.
       </p>
 
       <section aria-labelledby="does">
@@ -215,9 +221,15 @@ Detected Gaps
         <h2 id="boundary">Boundary</h2>
 
         <p>
-          Check Input surfaces controlled gap terms. The Gap Explorer will use those
+          Check Input surfaces controlled gap terms. The Gap Explorer uses those
           terms to surface related Patterns and useful Lenses. These are related
           structural references, not a final diagnosis.
+        </p>
+
+        <p>
+          The Workbench helps find the structure. DIVU and related control systems
+          can use declared structure to observe, control, and report what AI systems
+          actually do.
         </p>
       </section>
     </main>
