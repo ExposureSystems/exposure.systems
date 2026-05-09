@@ -42,7 +42,7 @@ const forbiddenIssueFields = [
 ];
 
 function fail(errors: string[]) {
-  console.error("\nSERL ontology validation failed:\n");
+  console.error("\nWorkbench ontology validation failed:\n");
 
   for (const error of errors) {
     console.error(`- ${error}`);
@@ -617,7 +617,7 @@ function main() {
   validateCheckInputVocabulary(checkInputVocabulary);
   validateCheckInputMatrix(checkInputMatrix, checkInputVocabulary, patternCodes);
 
-  console.log("SERL ontology validation passed.");
+  console.log("Workbench ontology validation passed.");
 }
 
 main();
