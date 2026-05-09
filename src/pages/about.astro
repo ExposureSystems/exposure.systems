@@ -1,30 +1,91 @@
 ---
 import SEOPage from "../layouts/SEOPage.astro";
 ---
+
 <SEOPage
-  title="About | Jamstack Template"
-  description="Learn about this fast, mobile-first Astro starter deployed on Cloudflare Pages."
-  url="https://jamstack-template-1ic.pages.dev/about/"
+  title="About | Pengo AI Structural Workbench"
+  description="About the Pengo AI Structural Workbench: a practical inspection surface for finding where AI work loses structure."
+  url="https://pengosystems.com/about/"
 >
   <main class="px-4 py-10 mx-auto max-w-screen-md">
-    <h1 class="text-3xl md:text-4xl font-bold">About this site</h1>
-    <p class="mt-3 text-gray-700">
-      Built with Astro + Tailwind, deployed on Cloudflare Pages. SEO-first, mobile-first.
+    <p class="text-sm uppercase tracking-wide text-gray-500">
+      About the Workbench
     </p>
 
-    <section class="mt-8 grid gap-6 md:grid-cols-2">
-      <div>
-        <h2 class="text-xl font-semibold">Performance</h2>
-        <p class="mt-2 text-gray-700">Pre-rendered HTML, minimal JS, edge CDN.</p>
-      </div>
-      <div>
-        <h2 class="text-xl font-semibold">Authoring</h2>
-        <p class="mt-2 text-gray-700">Reusable SEO layout; content is simple to edit.</p>
-      </div>
+    <h1 class="mt-3 text-3xl md:text-4xl font-bold">
+      About the Pengo AI Structural Workbench
+    </h1>
+
+    <p class="mt-5 text-xl text-gray-700">
+      Stop waiting for AI to magically get better.
+    </p>
+
+    <p class="mt-4 text-lg text-gray-700">
+      Find the structure. Use it to observe, control, and report what AI systems
+      actually do.
+    </p>
+
+    <section class="mt-8">
+      <h2 class="text-2xl font-semibold">Why it exists</h2>
+
+      <p class="mt-3 text-gray-700">
+        Most AI problems are described with loose words: hallucination, drift,
+        overreach, instability, bad prompt, or model failure.
+      </p>
+
+      <p class="mt-3 text-gray-700">
+        The Workbench gives those problems a structural inspection surface. It
+        helps users inspect asks, visible failure surfaces, recurring Patterns,
+        and diagnostic Lenses before jumping to blame, scores, or governance claims.
+      </p>
     </section>
 
-    <a href="/" class="inline-block mt-8 rounded-xl px-5 py-3 bg-black text-white text-sm font-semibold">
-      Back Home
-    </a>
+    <section class="mt-8">
+      <h2 class="text-2xl font-semibold">What it does</h2>
+
+      <ul class="mt-3 list-disc space-y-2 pl-6 text-gray-700">
+        <li>Check what an ask forces an AI system to guess.</li>
+        <li>Surface controlled gap terms through Check Input.</li>
+        <li>Map Detected Gaps to related Patterns and useful Lenses.</li>
+        <li>Explore visible Issue surfaces through structural language.</li>
+        <li>Provide machine-readable indexes and Markdown artifacts.</li>
+      </ul>
+    </section>
+
+    <section class="mt-8">
+      <h2 class="text-2xl font-semibold">What it does not do</h2>
+
+      <ul class="mt-3 list-disc space-y-2 pl-6 text-gray-700">
+        <li>It is not a chatbot.</li>
+        <li>It is not a model judge.</li>
+        <li>It is not a risk score.</li>
+        <li>It is not a receipt system.</li>
+        <li>It is not a governance platform.</li>
+        <li>It is not a promise that AI will magically get better.</li>
+      </ul>
+    </section>
+
+    <section class="mt-8">
+      <h2 class="text-2xl font-semibold">How it fits</h2>
+
+      <p class="mt-3 text-gray-700">
+        The Workbench helps find and inspect structure. That structure can later
+        support systems that observe, control, and report what AI systems actually do.
+      </p>
+    </section>
+
+    <nav class="mt-8 flex flex-wrap gap-3" aria-label="About navigation">
+      <a href="/workbench/" class="rounded-xl px-5 py-3 bg-black text-white text-sm font-semibold">
+        Open Workbench
+      </a>
+
+      <a href="/workbench/check-input/" class="rounded-xl px-5 py-3 border border-gray-300 text-sm font-semibold">
+        Start Check Input
+      </a>
+
+      <a href="/" class="rounded-xl px-5 py-3 border border-gray-300 text-sm font-semibold">
+        Back Home
+      </a>
+    </nav>
   </main>
 </SEOPage>
