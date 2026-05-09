@@ -65,8 +65,6 @@ function main() {
   const lenses = readCollection(lensesDir);
   const categories = readCollection(categoriesDir);
 
-  const patternsBySlug = new Map(patterns.map((pattern) => [pattern.slug, pattern]));
-  const lensesBySlug = new Map(lenses.map((lens) => [lens.slug, lens]));
   const categoriesBySlug = new Map(categories.map((category) => [category.slug, category]));
 
   const derivedIssues = issues.map((issue) => {
@@ -184,7 +182,6 @@ function main() {
   });
 
   const ontologyIndex = {
-    generated_at: new Date().toISOString(),
     version: 1,
     routes: {
       root: "/ref/",
