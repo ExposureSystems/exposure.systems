@@ -1,0 +1,52 @@
+---
+import ontologyIndex from "../../../content/_meta/ontology-index.json";
+
+const lenses = ontologyIndex.lenses;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Lenses | Workbench</title>
+    <meta
+      name="description"
+      content="Diagnostic lenses in the Workbench ontology."
+    />
+  </head>
+  <body>
+    <main>
+      <p><a href="/workbench/">Workbench</a></p>
+
+      <h1>Lenses</h1>
+
+      <p>
+        Lenses are diagnostic views. They are not declared by Issues.
+        They are derived through the Pattern → Lens matrix.
+      </p>
+
+      <section aria-labelledby="lens-list">
+        <h2 id="lens-list">Lens Index</h2>
+
+        <ul>
+          {lenses.map((lens) => (
+            <li>
+              <h3>
+                <a href={lens.url}>{lens.code} — {lens.title}</a>
+              </h3>
+
+              <p>{lens.summary}</p>
+
+              <p>
+                Primary patterns: {lens.patterns.primary.length}
+                {" | "}
+                Secondary patterns: {lens.patterns.secondary.length}
+                {" | "}
+                Related issues: {lens.issues.length}
+              </p>
+            </li>
+          ))}
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>
