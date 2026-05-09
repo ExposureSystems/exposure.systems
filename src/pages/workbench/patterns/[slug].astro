@@ -1,0 +1,118 @@
+---
+import ontologyIndex from "../../../content/_meta/ontology-index.json";
+
+export function getStaticPaths() {
+  return ontologyIndex.patterns.map((pattern) => ({
+    params: { slug: pattern.slug },
+    props: { pattern },
+  }));
+}
+
+const { pattern } = Astro.props;
+
+const primaryLenses = pattern.lenses.primary
+  .map((slug) => ontologyIndex.lenses.find((lens) => lens.slug === slug))
+  .filter(Boolean);
+
+const secondaryLenses = pattern.lenses.secondary
+  .map((slug) => ontologyIndex.lenses.find((lens) => lens.slug === slug))
+  .filter(Boolean);
+
+const primaryIssues = pattern.issues.primary
+  .map((slug) => ontologyIndex.issues.find((issue) => issue.slug === slug))
+  .filter(Boolean);
+
+const supportingIssues = pattern.issues.supporting
+  .map((slug) => ontologyIndex.issues.find((issue) => issue.slug === slug))
+  .filter(Boolean);
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{pattern.code} — {pattern.title} | Workbench Pattern</title>
+    <meta name="description" content={pattern.summary} />
+  </head>
+  <body>
+    <main>
+      <p>
+        <a href="/workbench/">Workbench</a>
+        {" / "}
+        <a href="/workbench/patterns/">Patterns</a>
+      </p>
+
+      <h1>{pattern.code} — {pattern.title}</h1>
+
+      <p><strong>Status:</strong> {pattern.status}</p>
+      <p>{pattern.summary}</p>
+
+      <section aria-labelledby="primary-lenses">
+        <h2 id="primary-lenses">Primary Lenses</h2>
+
+        {primaryLenses.length > 0 ? (
+          <ul>
+            {primaryLenses.map((lens) => (
+              <li>
+                <a href={lens.url}>{lens.code} — {lens.title}</a>
+                <p>{lens.summary}</p>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p>No primary lenses derived.</p>
+        )}
+      </section>
+
+      <section aria-labelledby="secondary-lenses">
+        <h2 id="secondary-lenses">Secondary Lenses</h2>
+
+        {secondaryLenses.length > 0 ? (
+          <ul>
+            {secondaryLenses.map((lens) => (
+              <li>
+                <a href={lens.url}>{lens.code} — {lens.title}</a>
+                <p>{lens.summary}</p>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p>No secondary lenses derived.</p>
+        )}
+      </section>
+
+      <section aria-labelledby="primary-issues">
+        <h2 id="primary-issues">Primary Issue Matches</h2>
+
+        {primaryIssues.length > 0 ? (
+          <ul>
+            {primaryIssues.map((issue) => (
+              <li>
+                <a href={issue.url}>{issue.title}</a>
+                <p>{issue.summary}</p>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p>No primary issue matches.</p>
+        )}
+      </section>
+
+      <section aria-labelledby="supporting-issues">
+        <h2 id="supporting-issues">Supporting Issue Matches</h2>
+
+        {supportingIssues.length > 0 ? (
+          <ul>
+            {supportingIssues.map((issue) => (
+              <li>
+                <a href={issue.url}>{issue.title}</a>
+                <p>{issue.summary}</p>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p>No supporting issue matches.</p>
+        )}
+      </section>
+    </main>
+  </body>
+</html>
