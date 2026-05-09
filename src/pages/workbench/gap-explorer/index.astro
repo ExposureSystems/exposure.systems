@@ -1,0 +1,118 @@
+---
+const acceptedExamples = [
+  "missing actor",
+  "unclear scope",
+  "unstated constraint",
+  "conflicting dependency",
+  "incomplete sequence",
+];
+
+const ignoredExamples = [
+  "the model might hallucinate",
+  "needs more context",
+  "could be better",
+  "bad prompt",
+  "unclear business logic",
+];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Gap Explorer | Workbench</title>
+    <meta
+      name="description"
+      content="A controlled gap-term explorer that will map Check Input output to related Patterns and useful Lenses."
+    />
+  </head>
+  <body>
+    <main>
+      <p>
+        <a href="/workbench/">Workbench</a>
+        {" / "}
+        <a href="/workbench/check-input/">Check Input</a>
+      </p>
+
+      <h1>Gap Explorer</h1>
+
+      <p>
+        Gap Explorer is the second step after Check Input. It takes controlled
+        Detected Gap terms and uses them to surface related Patterns and useful
+        Lenses.
+      </p>
+
+      <section aria-labelledby="flow">
+        <h2 id="flow">Flow</h2>
+
+        <ol>
+          <li>Detected Gaps</li>
+          <li>Check Input Matrix</li>
+          <li>Related Pattern codes</li>
+          <li>Pattern pages</li>
+          <li>Pattern → Lens Matrix</li>
+          <li>Useful Lenses</li>
+        </ol>
+
+        <p>
+          These are related structural references, not a final diagnosis.
+        </p>
+      </section>
+
+      <section aria-labelledby="not-issues">
+        <h2 id="not-issues">Important Boundary</h2>
+
+        <p>
+          Gap Explorer does not route Detected Gaps to Issues. Issues are public
+          intake and search surfaces. Gap Explorer routes controlled gap terms to
+          Patterns, then derives useful Lenses through the Pattern → Lens matrix.
+        </p>
+      </section>
+
+      <section aria-labelledby="future-input">
+        <h2 id="future-input">Future Input</h2>
+
+        <p>
+          This page will later accept either a full Check Input output or only a
+          Detected Gaps list.
+        </p>
+
+        <textarea rows="10" cols="80" placeholder={`Detected Gaps
+- missing actor
+- unclear scope
+- unstated constraint`}></textarea>
+
+        <p>
+          Parser behavior is not active yet.
+        </p>
+      </section>
+
+      <section aria-labelledby="accepted">
+        <h2 id="accepted">Accepted Gap Shape</h2>
+
+        <p>
+          Every accepted line must match: <code>[gap type] [element]</code>.
+        </p>
+
+        <ul>
+          {acceptedExamples.map((example) => (
+            <li><code>{example}</code></li>
+          ))}
+        </ul>
+      </section>
+
+      <section aria-labelledby="ignored">
+        <h2 id="ignored">Ignored Examples</h2>
+
+        <p>
+          Freeform labels do not drive exploration.
+        </p>
+
+        <ul>
+          {ignoredExamples.map((example) => (
+            <li><code>{example}</code></li>
+          ))}
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>
