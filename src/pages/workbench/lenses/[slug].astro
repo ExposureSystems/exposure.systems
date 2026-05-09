@@ -1,0 +1,97 @@
+---
+import ontologyIndex from "../../../content/_meta/ontology-index.json";
+
+export function getStaticPaths() {
+  return ontologyIndex.lenses.map((lens) => ({
+    params: { slug: lens.slug },
+    props: { lens },
+  }));
+}
+
+const { lens } = Astro.props;
+
+const primaryPatterns = lens.patterns.primary
+  .map((slug) => ontologyIndex.patterns.find((pattern) => pattern.slug === slug))
+  .filter(Boolean);
+
+const secondaryPatterns = lens.patterns.secondary
+  .map((slug) => ontologyIndex.patterns.find((pattern) => pattern.slug === slug))
+  .filter(Boolean);
+
+const relatedIssues = lens.issues
+  .map((slug) => ontologyIndex.issues.find((issue) => issue.slug === slug))
+  .filter(Boolean);
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{lens.code} — {lens.title} | Workbench Lens</title>
+    <meta name="description" content={lens.summary} />
+  </head>
+  <body>
+    <main>
+      <p>
+        <a href="/workbench/">Workbench</a>
+        {" / "}
+        <a href="/workbench/lenses/">Lenses</a>
+      </p>
+
+      <h1>{lens.code} — {lens.title}</h1>
+
+      <p><strong>Status:</strong> {lens.status}</p>
+      <p>{lens.summary}</p>
+
+      <section aria-labelledby="primary-patterns">
+        <h2 id="primary-patterns">Primary Pattern Matches</h2>
+
+        {primaryPatterns.length > 0 ? (
+          <ul>
+            {primaryPatterns.map((pattern) => (
+              <li>
+                <a href={pattern.url}>{pattern.code} — {pattern.title}</a>
+                <p>{pattern.summary}</p>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p>No primary pattern matches.</p>
+        )}
+      </section>
+
+      <section aria-labelledby="secondary-patterns">
+        <h2 id="secondary-patterns">Secondary Pattern Matches</h2>
+
+        {secondaryPatterns.length > 0 ? (
+          <ul>
+            {secondaryPatterns.map((pattern) => (
+              <li>
+                <a href={pattern.url}>{pattern.code} — {pattern.title}</a>
+                <p>{pattern.summary}</p>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p>No secondary pattern matches.</p>
+        )}
+      </section>
+
+      <section aria-labelledby="related-issues">
+        <h2 id="related-issues">Related Issues</h2>
+
+        {relatedIssues.length > 0 ? (
+          <ul>
+            {relatedIssues.map((issue) => (
+              <li>
+                <a href={issue.url}>{issue.title}</a>
+                <p>{issue.summary}</p>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p>No related issues.</p>
+        )}
+      </section>
+    </main>
+  </body>
+</html>
