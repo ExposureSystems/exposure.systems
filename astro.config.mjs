@@ -6,7 +6,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://jamstack-template-1ic.pages.dev', // ?? update later if you use a custom domain
+  site: 'https://pengosystems.com', // ?? update later if you use a custom domain
   vite: {
     plugins: [tailwindcss()]
   },
