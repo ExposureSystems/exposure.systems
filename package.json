@@ -3,11 +3,12 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "astro dev",
-    "build": "npm run validate && astro build",
-    "validate": "tsx src/lib/ontology/validate.ts",
-    "preview": "astro preview",
-    "astro": "astro"
+  "dev": "astro dev",
+  "build": "npm run validate && astro build",
+  "validate": "tsx src/lib/ontology/validate.ts",
+  "build:ontology": "tsx src/lib/ontology/build.ts",
+  "preview": "astro preview",
+  "astro": "astro"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.5.0",
