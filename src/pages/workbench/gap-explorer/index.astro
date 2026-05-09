@@ -17,7 +17,7 @@ const ignoredExamples = [
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Gap Explorer | Workbench</title>
+    <title>Gap Explorer | Pengo AI Structural Workbench</title>
     <meta
       name="description"
       content="Explore controlled Check Input gap terms through related Patterns and useful Lenses."
@@ -33,10 +33,12 @@ const ignoredExamples = [
 
       <h1>Gap Explorer</h1>
 
+      <p><strong>Turn Detected Gaps into structural references.</strong></p>
+
       <p>
         Gap Explorer is the second step after Check Input. It takes controlled
-        Detected Gap terms and uses them to surface related Patterns and useful
-        Lenses.
+        Detected Gap terms and surfaces related Patterns and useful Lenses without
+        turning the result into a diagnosis, score, or blame claim.
       </p>
 
       <p>
@@ -44,15 +46,15 @@ const ignoredExamples = [
       </p>
 
       <section aria-labelledby="flow">
-        <h2 id="flow">Flow</h2>
+        <h2 id="flow">How It Works</h2>
 
         <ol>
-          <li>Detected Gaps</li>
-          <li>Check Input Matrix</li>
-          <li>Related Pattern codes</li>
-          <li>Pattern pages</li>
-          <li>Pattern -&gt; Lens Matrix</li>
-          <li>Useful Lenses</li>
+          <li>Start with Detected Gaps from Check Input.</li>
+          <li>Match each controlled gap term against the Check Input Matrix.</li>
+          <li>Resolve related Pattern codes.</li>
+          <li>Open the related Pattern references.</li>
+          <li>Derive useful Lenses through the Pattern -&gt; Lens Matrix.</li>
+          <li>Use those references to inspect what structure may be missing, unclear, crossed, or unstable.</li>
         </ol>
 
         <p>
@@ -64,9 +66,13 @@ const ignoredExamples = [
         <h2 id="not-issues">Important Boundary</h2>
 
         <p>
-          Gap Explorer does not route Detected Gaps to Issues. Issues are public
-          intake and search surfaces. Gap Explorer routes controlled gap terms to
-          Patterns, then derives useful Lenses through the Pattern -&gt; Lens matrix.
+          Gap Explorer does not route Detected Gaps to Issues. Issues are visible
+          failure surfaces. Gap Explorer routes controlled gap terms to Patterns,
+          then derives useful Lenses through the Pattern -&gt; Lens Matrix.
+        </p>
+
+        <p>
+          The goal is to inspect structure, not to prove cause.
         </p>
       </section>
 
