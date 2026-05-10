@@ -30,7 +30,7 @@ const supportingIssues = pattern.issues.supporting
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>{pattern.code} — {pattern.title} | Workbench Pattern</title>
+    <title>{pattern.code} - {pattern.title} | Workbench Pattern</title>
     <meta name="description" content={pattern.summary} />
   </head>
   <body>
@@ -41,7 +41,11 @@ const supportingIssues = pattern.issues.supporting
         <a href="/workbench/patterns/">Patterns</a>
       </p>
 
-      <h1>{pattern.code} — {pattern.title}</h1>
+      <h1>
+        <span class="canonical-term notranslate" translate="no">
+          {pattern.code} - {pattern.title}
+        </span>
+      </h1>
 
       <p><strong>Status:</strong> {pattern.status}</p>
       <p>{pattern.summary}</p>
@@ -53,7 +57,11 @@ const supportingIssues = pattern.issues.supporting
           <ul>
             {primaryLenses.map((lens) => (
               <li>
-                <a href={lens.url}>{lens.code} — {lens.title}</a>
+                <a href={lens.url}>
+                  <span class="canonical-term notranslate" translate="no">
+                    {lens.code} - {lens.title}
+                  </span>
+                </a>
                 <p>{lens.summary}</p>
               </li>
             ))}
@@ -70,7 +78,11 @@ const supportingIssues = pattern.issues.supporting
           <ul>
             {secondaryLenses.map((lens) => (
               <li>
-                <a href={lens.url}>{lens.code} — {lens.title}</a>
+                <a href={lens.url}>
+                  <span class="canonical-term notranslate" translate="no">
+                    {lens.code} - {lens.title}
+                  </span>
+                </a>
                 <p>{lens.summary}</p>
               </li>
             ))}

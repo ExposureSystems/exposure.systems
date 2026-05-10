@@ -26,7 +26,7 @@ const relatedIssues = lens.issues
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>{lens.code} — {lens.title} | Workbench Lens</title>
+    <title>{lens.code} - {lens.title} | Workbench Lens</title>
     <meta name="description" content={lens.summary} />
   </head>
   <body>
@@ -37,7 +37,11 @@ const relatedIssues = lens.issues
         <a href="/workbench/lenses/">Lenses</a>
       </p>
 
-      <h1>{lens.code} — {lens.title}</h1>
+      <h1>
+        <span class="canonical-term notranslate" translate="no">
+          {lens.code} - {lens.title}
+        </span>
+      </h1>
 
       <p><strong>Status:</strong> {lens.status}</p>
       <p>{lens.summary}</p>
@@ -49,7 +53,11 @@ const relatedIssues = lens.issues
           <ul>
             {primaryPatterns.map((pattern) => (
               <li>
-                <a href={pattern.url}>{pattern.code} — {pattern.title}</a>
+                <a href={pattern.url}>
+                  <span class="canonical-term notranslate" translate="no">
+                    {pattern.code} - {pattern.title}
+                  </span>
+                </a>
                 <p>{pattern.summary}</p>
               </li>
             ))}
@@ -66,7 +74,11 @@ const relatedIssues = lens.issues
           <ul>
             {secondaryPatterns.map((pattern) => (
               <li>
-                <a href={pattern.url}>{pattern.code} — {pattern.title}</a>
+                <a href={pattern.url}>
+                  <span class="canonical-term notranslate" translate="no">
+                    {pattern.code} - {pattern.title}
+                  </span>
+                </a>
                 <p>{pattern.summary}</p>
               </li>
             ))}

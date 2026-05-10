@@ -10,7 +10,7 @@ const patterns = ontologyIndex.patterns;
     <title>Patterns | Workbench</title>
     <meta
       name="description"
-      content="Canonical structural patterns in the Workbench ontology."
+      content="Canonical structural Patterns in the Workbench ontology."
     />
   </head>
   <body>
@@ -20,8 +20,8 @@ const patterns = ontologyIndex.patterns;
       <h1>Patterns</h1>
 
       <p>
-        Patterns are canonical structural operators. Issues declare patterns.
-        Lenses are derived from the pattern-lens matrix.
+        Patterns are canonical structural forms. Issues declare Patterns.
+        Lenses are derived from the Pattern -&gt; Lens Matrix.
       </p>
 
       <section aria-labelledby="pattern-list">
@@ -31,7 +31,11 @@ const patterns = ontologyIndex.patterns;
           {patterns.map((pattern) => (
             <li>
               <h3>
-                <a href={pattern.url}>{pattern.code} — {pattern.title}</a>
+                <a href={pattern.url}>
+                  <span class="canonical-term notranslate" translate="no">
+                    {pattern.code} - {pattern.title}
+                  </span>
+                </a>
               </h3>
 
               <p>{pattern.summary}</p>

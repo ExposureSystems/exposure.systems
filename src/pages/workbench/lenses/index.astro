@@ -10,7 +10,7 @@ const lenses = ontologyIndex.lenses;
     <title>Lenses | Workbench</title>
     <meta
       name="description"
-      content="Diagnostic lenses in the Workbench ontology."
+      content="Diagnostic Lenses in the Workbench ontology."
     />
   </head>
   <body>
@@ -21,7 +21,7 @@ const lenses = ontologyIndex.lenses;
 
       <p>
         Lenses are diagnostic views. They are not declared by Issues.
-        They are derived through the Pattern → Lens matrix.
+        They are derived through the Pattern -&gt; Lens Matrix.
       </p>
 
       <section aria-labelledby="lens-list">
@@ -31,7 +31,11 @@ const lenses = ontologyIndex.lenses;
           {lenses.map((lens) => (
             <li>
               <h3>
-                <a href={lens.url}>{lens.code} — {lens.title}</a>
+                <a href={lens.url}>
+                  <span class="canonical-term notranslate" translate="no">
+                    {lens.code} - {lens.title}
+                  </span>
+                </a>
               </h3>
 
               <p>{lens.summary}</p>
