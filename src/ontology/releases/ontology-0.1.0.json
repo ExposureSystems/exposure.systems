@@ -1,0 +1,303 @@
+{
+  "version": 1,
+  "snapshot_type": "ontology_release",
+  "ontology_release": "0.1.0",
+  "released_at": "2026-05-10T00:00:00Z",
+  "public_state": "current",
+  "notes": "Initial Workbench ontology scaffold.",
+  "source_files": {
+    "release": "src/ontology/ontology-release.json",
+    "ontology_index": "src/content/_meta/ontology-index.json",
+    "public_changelog": "src/ontology/changelog.public.json"
+  },
+  "counts": {
+    "issues": 1,
+    "patterns": 1,
+    "lenses": 4,
+    "categories": 1,
+    "public_changelog_entries": 7
+  },
+  "ontology_index": {
+    "version": 1,
+    "translation_policy": {
+      "canonical_terms": "do_not_translate",
+      "canonical_codes": [
+        "PAT",
+        "LEN"
+      ],
+      "canonical_titles": "do_not_translate",
+      "canonical_slugs": "do_not_translate",
+      "localized_explanations": "v2_optional_overlay",
+      "note": "Canonical Pattern and Lens codes, slugs, and titles must remain unchanged. Localized explanations may be provided separately, but they do not replace canonical ontology terms."
+    },
+    "routes": {
+      "root": "/workbench/",
+      "check_input": "/workbench/check-input/",
+      "gap_explorer": "/workbench/gap-explorer/",
+      "search": "/workbench/search/",
+      "issues": "/workbench/issues/",
+      "patterns": "/workbench/patterns/",
+      "lenses": "/workbench/lenses/",
+      "categories": "/workbench/categories/",
+      "examples": "/workbench/examples/",
+      "field_notes": "/workbench/field-notes/",
+      "articles": "/workbench/articles/",
+      "videos": "/workbench/videos/",
+      "internal": "/workbench/_internal/"
+    },
+    "resolver": {
+      "divu": "https://divu.app/wb/[slug]",
+      "resolves": [
+        "patterns",
+        "lenses"
+      ],
+      "does_not_resolve": [
+        "issues"
+      ]
+    },
+    "matrix": {
+      "authority-collision": {
+        "primary": [
+          "conflict-lens",
+          "authority-overlay-lens"
+        ],
+        "secondary": [
+          "reconciliation-lens",
+          "invariant-lens"
+        ]
+      }
+    },
+    "issues": [
+      {
+        "slug": "issue-0001",
+        "title": "Issue 0001",
+        "status": "draft",
+        "summary": "Test issue for frontmatter validation.",
+        "category": "drift-variance",
+        "category_title": "Drift & Variance",
+        "primary_pattern": "authority-collision",
+        "patterns": [
+          "authority-collision"
+        ],
+        "derived_lenses": {
+          "primary": [
+            "authority-overlay-lens",
+            "conflict-lens"
+          ],
+          "secondary": [
+            "invariant-lens",
+            "reconciliation-lens"
+          ]
+        },
+        "search_intents": [
+          "test issue"
+        ],
+        "url": "/workbench/issues/issue-0001/",
+        "markdown_url": "/workbench/issues/issue-0001.md"
+      }
+    ],
+    "patterns": [
+      {
+        "slug": "authority-collision",
+        "code": "PAT-0100",
+        "title": "Authority Collision",
+        "status": "stable",
+        "summary": "A structural condition where multiple authorities claim governance over the same structural region without a declared precedence rule.",
+        "lenses": {
+          "primary": [
+            "conflict-lens",
+            "authority-overlay-lens"
+          ],
+          "secondary": [
+            "reconciliation-lens",
+            "invariant-lens"
+          ]
+        },
+        "issues": {
+          "primary": [
+            "issue-0001"
+          ],
+          "supporting": []
+        },
+        "url": "/workbench/patterns/authority-collision/",
+        "markdown_url": "/workbench/patterns/authority-collision.md"
+      }
+    ],
+    "lenses": [
+      {
+        "slug": "authority-overlay-lens",
+        "code": "LEN-0100",
+        "title": "Authority Overlay Lens",
+        "status": "stable",
+        "summary": "A diagnostic view that maps declared authority hierarchies onto observed structure to detect absence, override, or conflict.",
+        "patterns": {
+          "primary": [
+            "authority-collision"
+          ],
+          "secondary": []
+        },
+        "issues": [
+          "issue-0001"
+        ],
+        "url": "/workbench/lenses/authority-overlay-lens/",
+        "markdown_url": "/workbench/lenses/authority-overlay-lens.md"
+      },
+      {
+        "slug": "conflict-lens",
+        "code": "LEN-0110",
+        "title": "Conflict Lens",
+        "status": "draft",
+        "summary": "A diagnostic view focused on detecting unresolved contradiction, overlap, or incompatible structural claims.",
+        "patterns": {
+          "primary": [
+            "authority-collision"
+          ],
+          "secondary": []
+        },
+        "issues": [
+          "issue-0001"
+        ],
+        "url": "/workbench/lenses/conflict-lens/",
+        "markdown_url": "/workbench/lenses/conflict-lens.md"
+      },
+      {
+        "slug": "invariant-lens",
+        "code": "LEN-0130",
+        "title": "Invariant Lens",
+        "status": "draft",
+        "summary": "A diagnostic view focused on whether a required structural condition remains true across states, transitions, or executions.",
+        "patterns": {
+          "primary": [],
+          "secondary": [
+            "authority-collision"
+          ]
+        },
+        "issues": [
+          "issue-0001"
+        ],
+        "url": "/workbench/lenses/invariant-lens/",
+        "markdown_url": "/workbench/lenses/invariant-lens.md"
+      },
+      {
+        "slug": "reconciliation-lens",
+        "code": "LEN-0120",
+        "title": "Reconciliation Lens",
+        "status": "draft",
+        "summary": "A diagnostic view focused on whether competing structural claims can be resolved into a coherent declared state.",
+        "patterns": {
+          "primary": [],
+          "secondary": [
+            "authority-collision"
+          ]
+        },
+        "issues": [
+          "issue-0001"
+        ],
+        "url": "/workbench/lenses/reconciliation-lens/",
+        "markdown_url": "/workbench/lenses/reconciliation-lens.md"
+      }
+    ],
+    "categories": [
+      {
+        "slug": "drift-variance",
+        "title": "Drift & Variance",
+        "status": "draft",
+        "summary": "Navigation shelf for drift and variance issues.",
+        "issues": [
+          "issue-0001"
+        ],
+        "url": "/workbench/categories/drift-variance/"
+      }
+    ],
+    "lookups": {
+      "patterns_by_code": {
+        "PAT-0100": "authority-collision"
+      },
+      "lenses_by_code": {
+        "LEN-0100": "authority-overlay-lens",
+        "LEN-0110": "conflict-lens",
+        "LEN-0130": "invariant-lens",
+        "LEN-0120": "reconciliation-lens"
+      }
+    }
+  },
+  "public_changelog_entries": [
+    {
+      "date": "2026-05-10T00:00:00Z",
+      "ontology_release": "0.1.0",
+      "object_code": "ISS-0001",
+      "object_slug": "issue-0001",
+      "object_type": "issue",
+      "entry_version": "0.1.0",
+      "change_type": "created",
+      "public_summary": "Initial Issue scaffold added for Workbench validation.",
+      "receipt_impact": "none"
+    },
+    {
+      "date": "2026-05-10T00:00:00Z",
+      "ontology_release": "0.1.0",
+      "object_code": "CAT-0100",
+      "object_slug": "drift-variance",
+      "object_type": "category",
+      "entry_version": "0.1.0",
+      "change_type": "created",
+      "public_summary": "Initial Category scaffold added for Workbench navigation validation.",
+      "receipt_impact": "none"
+    },
+    {
+      "date": "2026-05-10T00:00:00Z",
+      "ontology_release": "0.1.0",
+      "object_code": "PAT-0100",
+      "object_slug": "authority-collision",
+      "object_type": "pattern",
+      "entry_version": "0.1.0",
+      "change_type": "created",
+      "public_summary": "Initial Pattern scaffold added for Workbench ontology validation.",
+      "receipt_impact": "none"
+    },
+    {
+      "date": "2026-05-10T00:00:00Z",
+      "ontology_release": "0.1.0",
+      "object_code": "LEN-0100",
+      "object_slug": "authority-overlay-lens",
+      "object_type": "lens",
+      "entry_version": "0.1.0",
+      "change_type": "created",
+      "public_summary": "Initial Lens scaffold added for Workbench ontology validation.",
+      "receipt_impact": "none"
+    },
+    {
+      "date": "2026-05-10T00:00:00Z",
+      "ontology_release": "0.1.0",
+      "object_code": "LEN-0110",
+      "object_slug": "conflict-lens",
+      "object_type": "lens",
+      "entry_version": "0.1.0",
+      "change_type": "created",
+      "public_summary": "Initial Lens scaffold added for Workbench ontology validation.",
+      "receipt_impact": "none"
+    },
+    {
+      "date": "2026-05-10T00:00:00Z",
+      "ontology_release": "0.1.0",
+      "object_code": "LEN-0120",
+      "object_slug": "reconciliation-lens",
+      "object_type": "lens",
+      "entry_version": "0.1.0",
+      "change_type": "created",
+      "public_summary": "Initial Lens scaffold added for Workbench ontology validation.",
+      "receipt_impact": "none"
+    },
+    {
+      "date": "2026-05-10T00:00:00Z",
+      "ontology_release": "0.1.0",
+      "object_code": "LEN-0130",
+      "object_slug": "invariant-lens",
+      "object_type": "lens",
+      "entry_version": "0.1.0",
+      "change_type": "created",
+      "public_summary": "Initial Lens scaffold added for Workbench ontology validation.",
+      "receipt_impact": "none"
+    }
+  ]
+}
