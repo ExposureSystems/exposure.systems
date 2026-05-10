@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "astro dev",
     "build": "npm run validate && npm run build:ontology && astro build",
-    "validate": "tsx src/lib/ontology/validate.ts",
+    "validate": "npm run validate:ontology && npm run validate:import-review",
+    "validate:ontology": "tsx src/lib/ontology/validate.ts",
+    "validate:import-review": "node scripts/validate-import-review.mjs",
     "build:ontology": "tsx src/lib/ontology/build.ts",
     "preview": "astro preview",
     "astro": "astro"
