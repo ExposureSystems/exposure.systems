@@ -2,22 +2,106 @@
 
 This folder is the review and enrichment workspace between raw imported ontology candidates and public Workbench ontology content.
 
-## Purpose
+## Three-Lane Model
+
+Workbench content has three separate lanes.
+
+### Lane 1: Canonical Ontology Information
+
+This is the actual public ontology object once promoted.
+
+Examples:
+
+- Pattern canonical information: `PAT-####`
+- Lens canonical information: `LEN-####`
+- Issue canonical information: `ISS-####`
+- Category/Subcategory canonical information: `CAT-####`
+
+Canonical public entries live in:
+
+    src/content/patterns/
+    src/content/lenses/
+    src/content/issues/
+    src/content/categories/
+
+This lane includes the object meaning:
+
+- code
+- slug
+- title
+- summary
+- definition
+- structural signature
+- deterministic test
+- structural limits
+- entry version
+- updated timestamp
+
+### Lane 2: Derived Cross-Matrix Relationships
+
+This is how public ontology objects connect to each other.
+
+Examples:
+
+- Pattern to Lens relationships
+- Issue to Pattern relationships
+- Issue to Category relationships
+- Category to Issue relationships
+- Lens to Pattern relationships derived from Pattern relationships
+
+Current sources include:
+
+    src/ontology/pattern-lens-matrix.json
+    src/content/issues/
+    src/content/categories/
+    src/content/_meta/ontology-index.json
+
+This lane directly affects how Workbench pages assemble related ontology objects.
+
+### Lane 3: Supporting Site and Page Artifacts
+
+This is other useful content that can attach to Workbench pages later.
+
+Examples:
+
+- articles
+- videos
+- examples
+- field notes
+- diagnostics
+- checklists
+- templates
+- walkthroughs
+- receipts
+
+Lane 3 is not required for v1 import review.
+
+Do not design Lane 1 or Lane 2 in a way that prevents Lane 3 from attaching later.
+
+A rendered Workbench page is an assembled artifact. It may eventually combine:
+
+- canonical ontology information
+- derived ontology relationships
+- supporting site/page artifacts
+
+The reviewed draft is not the whole future page.
+
+## Purpose of `docs/import-review`
 
 Raw imported files live in:
 
     docs/import-clean/patterns/
     docs/import-clean/lenses/
 
-Public ontology files live in:
-
-    src/content/patterns/
-    src/content/lenses/
-
-Reviewed Workbench-ready drafts live here:
+Reviewed proposed drafts live in:
 
     docs/import-review/patterns/
     docs/import-review/lenses/
+
+Public canonical ontology files live in:
+
+    src/content/patterns/
+    src/content/lenses/
 
 Do not promote raw import-clean entries directly into public ontology content.
 
@@ -31,9 +115,51 @@ Meaning:
 
 1. Start with an existing imported Pattern or Lens.
 2. Review whether it is still a valid Workbench ontology object.
-3. Rewrite and complete it as a Workbench-ready draft in docs/import-review.
+3. Rewrite and complete it as a proposed Workbench-ready draft in `docs/import-review`.
 4. Validate that the reviewed draft has the required fields and sections.
-5. Promote only reviewed drafts into src/content.
+5. Promote only reviewed drafts into `src/content`.
+
+## Important Boundaries
+
+### Import Review Drafts Are Not Canonical
+
+Files in `docs/import-review` are proposed reviewed drafts.
+
+They are not canonical public ontology entries.
+
+The canonical public entry exists only after promotion into:
+
+    src/content/patterns/
+    src/content/lenses/
+    src/content/issues/
+    src/content/categories/
+
+### Validation Is Not Approval
+
+Validation only checks structure and completeness.
+
+Validation does not decide:
+
+- whether an object should exist
+- whether the definition is correct
+- whether the code assignment is right
+- whether the relationships are semantically correct
+
+Those remain review decisions.
+
+### Rendered Pages Are Assembled Artifacts
+
+The public Workbench page is not limited to the Markdown body of the ontology entry.
+
+A page may include:
+
+- the canonical ontology object
+- derived relationships from the ontology index/matrix
+- related supporting content added later
+
+For v1, import review focuses on Lane 1 and Lane 2 only.
+
+Lane 3 content should remain possible later, but it is not required now.
 
 ## What Review Means
 
@@ -48,7 +174,7 @@ Review answers:
 - What public code is approved?
 - What version does this entry start at?
 - What relationships does it have to Patterns or Lenses?
-- Is the body complete enough for Workbench use?
+- Is the ontology core complete enough for Workbench use?
 
 ## Reviewed Pattern Requirements
 
@@ -81,6 +207,8 @@ Required Pattern body sections:
 - Distinguish From
 - Related Lenses
 - Structural Limits
+
+These sections support the proposed canonical Pattern core and authored guidance. They are not the entire future page artifact.
 
 Optional Pattern body sections:
 
@@ -120,6 +248,8 @@ Required Lens body sections:
 - Distinguish From
 - Structural Limits
 
+These sections support the proposed canonical Lens core and authored guidance. They are not the entire future page artifact.
+
 Optional Lens body sections:
 
 - Example Signals
@@ -137,11 +267,11 @@ Allowed review states:
 - rejected
 - merged
 
-Only entries marked ready_for_promotion should be eligible for promotion.
+Only entries marked `ready_for_promotion` should be eligible for promotion.
 
 ## Code Rules
 
-The review draft must include an approved public code.
+The review draft must include an approved public code before promotion.
 
 The code is a human review decision.
 
@@ -149,16 +279,16 @@ Automation may validate code format and uniqueness, but it must not assign codes
 
 Expected formats:
 
-- Patterns: PAT-####
-- Lenses: LEN-####
+- Patterns: `PAT-####`
+- Lenses: `LEN-####`
 
 ## Body Source Rule
 
-The reviewed draft is the source for promotion.
+The reviewed draft is the proposed source for promotion.
 
-Promotion should not copy directly from docs/import-clean unless the reviewed draft explicitly preserves that body.
+Promotion should not copy directly from `docs/import-clean` unless the reviewed draft explicitly preserves that body.
 
-If the imported body is incomplete, unclear, too thin, or missing Workbench-specific sections, complete it in docs/import-review before promotion.
+If the imported body is incomplete, unclear, too thin, or missing Workbench-specific sections, complete it in `docs/import-review` before promotion.
 
 ## Relationship Rule
 
