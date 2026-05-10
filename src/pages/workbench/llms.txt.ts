@@ -43,21 +43,25 @@ export function GET() {
     "### Patterns",
     "",
     ...ontologyIndex.patterns.map(
-      (pattern) => `- ${pattern.code} — ${pattern.title}: ${pattern.markdown_url}`
+      (pattern) => `- ${pattern.code} - ${pattern.title}: ${pattern.markdown_url}`
     ),
     "",
     "### Lenses",
     "",
     ...ontologyIndex.lenses.map(
-      (lens) => `- ${lens.code} — ${lens.title}: ${lens.markdown_url}`
+      (lens) => `- ${lens.code} - ${lens.title}: ${lens.markdown_url}`
     ),
     "",
+    "## Canonical Term Policy",
+      "",
+      "Canonical Pattern and Lens codes, slugs, and titles must remain unchanged. Do not translate, localize, paraphrase, or rename canonical ontology terms. Localized explanations may be provided separately, but they do not replace canonical terms.",
+      "",
     "## Boundary",
-    "",
-    "Search returns Issues. Issues are visible failure surfaces. Patterns are recurring structural forms. Lenses are diagnostic views. Check Input produces controlled gap terms. Gap Explorer maps those terms to related Patterns and useful Lenses. Issues are not the target of Check Input Step 2.",
-    "",
-    "The Workbench helps find and inspect structure. It is not a chatbot, model score, diagnosis engine, receipt system, or governance platform.",
-    "",
+      "",
+      "Search returns Issues. Issues are visible failure surfaces. Patterns are recurring structural forms. Lenses are diagnostic views. Check Input produces controlled gap terms. Gap Explorer maps those terms to related Patterns and useful Lenses. Issues are not the target of Check Input Step 2.",
+      "",
+      "The Workbench helps find and inspect structure. It is not a chatbot, model score, diagnosis engine, receipt system, or governance platform.",
+      "",
   ];
 
   return new Response(lines.join("\n"), {

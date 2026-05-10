@@ -283,6 +283,15 @@ function main() {
 
   const ontologyIndex = {
     version: 1,
+    translation_policy: {
+    canonical_terms: "do_not_translate",
+    canonical_codes: ["PAT", "LEN"],
+    canonical_titles: "do_not_translate",
+    canonical_slugs: "do_not_translate",
+    localized_explanations: "v2_optional_overlay",
+    note:
+      "Canonical Pattern and Lens codes, slugs, and titles must remain unchanged. Localized explanations may be provided separately, but they do not replace canonical ontology terms.",
+  },
     routes,
     resolver: {
       divu: "https://divu.app/wb/[slug]",
