@@ -13,6 +13,8 @@ const issues = defineCollection({
       ...baseEntry,
       code: z.string().regex(/^ISS-\d{4}$/),
       category: z.string(),
+      primary_cat_code: z.string().regex(/^CAT-\d{4}$/),
+      secondary_cat_codes: z.array(z.string().regex(/^CAT-\d{4}$/)).default([]),
       summary: z.string(),
       primary_pattern: z.string(),
       patterns: z.array(z.string()).min(1).max(3),

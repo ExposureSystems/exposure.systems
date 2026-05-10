@@ -429,10 +429,39 @@ function validateCategoryFrontmatter() {
   }
 }
 
+function getCategoryCodeLookup() {
+  const errors: string[] = [];
+  const categoryCodes = new Map<string, string>();
+
+  for (const categoryFile of getMarkdownFiles(categoriesDir)) {
+    const filenameSlug = path.basename(categoryFile, ".md");
+    const data = readFrontmatter(categoryFile);
+    const code = data.code;
+
+    if (typeof code !== "string") {
+      continue;
+    }
+
+    const previous = categoryCodes.get(code);
+    if (previous) {
+      errors.push(`Category code "${code}" is duplicated by "${previous}" and "${filenameSlug}".`);
+    } else {
+      categoryCodes.set(code, filenameSlug);
+    }
+  }
+
+  if (errors.length > 0) {
+    fail(errors);
+  }
+
+  return categoryCodes;
+}
+
 function validateIssues(matrix: PatternLensMatrix) {
   const errors: string[] = [];
   const matrixPatternSlugs = new Set(Object.keys(matrix));
   const categorySlugs = getMarkdownSlugs(categoriesDir);
+  const categoryCodes = getCategoryCodeLookup();
   const issueFiles = getMarkdownFiles(issuesDir);
   const seenCodes = new Map<string, string>();
 
@@ -449,6 +478,8 @@ function validateIssues(matrix: PatternLensMatrix) {
     const slug = data.slug;
     const code = data.code;
     const category = data.category;
+    const primaryCatCode = data.primary_cat_code;
+    const secondaryCatCodes = data.secondary_cat_codes;
     const primaryPattern = data.primary_pattern;
     const patterns = data.patterns;
 
@@ -488,6 +519,50 @@ function validateIssues(matrix: PatternLensMatrix) {
 
       if (!categorySlugs.has(category)) {
         errors.push(`Issue "${filenameSlug}" references unknown category "${category}".`);
+      }
+    }
+
+    if (typeof primaryCatCode !== "string" || primaryCatCode.length === 0) {
+      errors.push(`Issue "${filenameSlug}" must declare primary_cat_code.`);
+    } else {
+      if (!isCategoryCode(primaryCatCode)) {
+        errors.push(`Issue "${filenameSlug}" primary_cat_code "${primaryCatCode}" must match CAT-####.`);
+      }
+
+      if (!categoryCodes.has(primaryCatCode)) {
+        errors.push(`Issue "${filenameSlug}" references unknown primary_cat_code "${primaryCatCode}".`);
+      }
+    }
+
+    if (!Array.isArray(secondaryCatCodes)) {
+      errors.push(`Issue "${filenameSlug}" secondary_cat_codes must be an array.`);
+    } else {
+      const seenSecondaryCatCodes = new Set<string>();
+
+      for (const secondaryCatCode of secondaryCatCodes) {
+        if (typeof secondaryCatCode !== "string") {
+          errors.push(`Issue "${filenameSlug}" has a non-string secondary_cat_codes value.`);
+          continue;
+        }
+
+        if (!isCategoryCode(secondaryCatCode)) {
+          errors.push(`Issue "${filenameSlug}" secondary_cat_codes value "${secondaryCatCode}" must match CAT-####.`);
+          continue;
+        }
+
+        if (!categoryCodes.has(secondaryCatCode)) {
+          errors.push(`Issue "${filenameSlug}" references unknown secondary_cat_code "${secondaryCatCode}".`);
+        }
+
+        if (seenSecondaryCatCodes.has(secondaryCatCode)) {
+          errors.push(`Issue "${filenameSlug}" secondary_cat_codes contains duplicate "${secondaryCatCode}".`);
+        } else {
+          seenSecondaryCatCodes.add(secondaryCatCode);
+        }
+
+        if (typeof primaryCatCode === "string" && secondaryCatCode === primaryCatCode) {
+          errors.push(`Issue "${filenameSlug}" must not list primary_cat_code "${primaryCatCode}" in secondary_cat_codes.`);
+        }
       }
     }
 
