@@ -4,7 +4,7 @@ slug: reconciliation-lens
 title: Reconciliation Lens
 status: draft
 summary: A diagnostic view focused on whether competing structural claims can be resolved into a coherent declared state.
-code: LEN-003
+code: LEN-0120
 ---
 
 # Reconciliation Lens
@@ -28,3 +28,4 @@ Draft.
 ## Structural Limits
 
 Draft.
+

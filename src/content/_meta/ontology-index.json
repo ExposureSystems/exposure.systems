@@ -80,7 +80,7 @@
   "patterns": [
     {
       "slug": "authority-collision",
-      "code": "PAT-001",
+      "code": "PAT-0100",
       "title": "Authority Collision",
       "status": "stable",
       "summary": "A structural condition where multiple authorities claim governance over the same structural region without a declared precedence rule.",
@@ -107,7 +107,7 @@
   "lenses": [
     {
       "slug": "authority-overlay-lens",
-      "code": "LEN-001",
+      "code": "LEN-0100",
       "title": "Authority Overlay Lens",
       "status": "stable",
       "summary": "A diagnostic view that maps declared authority hierarchies onto observed structure to detect absence, override, or conflict.",
@@ -125,7 +125,7 @@
     },
     {
       "slug": "conflict-lens",
-      "code": "LEN-002",
+      "code": "LEN-0110",
       "title": "Conflict Lens",
       "status": "draft",
       "summary": "A diagnostic view focused on detecting unresolved contradiction, overlap, or incompatible structural claims.",
@@ -143,7 +143,7 @@
     },
     {
       "slug": "invariant-lens",
-      "code": "LEN-004",
+      "code": "LEN-0130",
       "title": "Invariant Lens",
       "status": "draft",
       "summary": "A diagnostic view focused on whether a required structural condition remains true across states, transitions, or executions.",
@@ -161,7 +161,7 @@
     },
     {
       "slug": "reconciliation-lens",
-      "code": "LEN-003",
+      "code": "LEN-0120",
       "title": "Reconciliation Lens",
       "status": "draft",
       "summary": "A diagnostic view focused on whether competing structural claims can be resolved into a coherent declared state.",
@@ -192,13 +192,13 @@
   ],
   "lookups": {
     "patterns_by_code": {
-      "PAT-001": "authority-collision"
+      "PAT-0100": "authority-collision"
     },
     "lenses_by_code": {
-      "LEN-001": "authority-overlay-lens",
-      "LEN-002": "conflict-lens",
-      "LEN-004": "invariant-lens",
-      "LEN-003": "reconciliation-lens"
+      "LEN-0100": "authority-overlay-lens",
+      "LEN-0110": "conflict-lens",
+      "LEN-0130": "invariant-lens",
+      "LEN-0120": "reconciliation-lens"
     }
   }
 }

@@ -4,7 +4,7 @@ slug: authority-overlay-lens
 title: Authority Overlay Lens
 status: stable
 summary: A diagnostic view that maps declared authority hierarchies onto observed structure to detect absence, override, or conflict.
-code: LEN-001
+code: LEN-0100
 ---
 
 # Authority Overlay Lens
@@ -39,3 +39,4 @@ Failure exists when structural regions lack declared authority or contain overla
 
 Evaluates authority alignment only.
 Does not resolve authority conflicts.
+

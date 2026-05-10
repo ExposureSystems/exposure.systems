@@ -4,7 +4,7 @@ slug: invariant-lens
 title: Invariant Lens
 status: draft
 summary: A diagnostic view focused on whether a required structural condition remains true across states, transitions, or executions.
-code: LEN-004
+code: LEN-0130
 ---
 
 # Invariant Lens
@@ -28,3 +28,4 @@ Draft.
 ## Structural Limits
 
 Draft.
+

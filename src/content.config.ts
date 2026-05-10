@@ -27,7 +27,7 @@ const patterns = defineCollection({
       layer: z.literal("pattern"),
       ...baseEntry,
       summary: z.string(),
-      code: z.string().regex(/^PAT-\d{3}$/),
+      code: z.string().regex(/^PAT-\d{4}$/),
     })
     .strict(),
 });
@@ -39,7 +39,7 @@ const lenses = defineCollection({
       layer: z.literal("lens"),
       ...baseEntry,
       summary: z.string(),
-      code: z.string().regex(/^LEN-\d{3}$/),
+      code: z.string().regex(/^LEN-\d{4}$/),
     })
     .strict(),
 });

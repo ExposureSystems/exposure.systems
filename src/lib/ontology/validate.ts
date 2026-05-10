@@ -61,11 +61,11 @@ function isKebabCase(value: string) {
 }
 
 function isPatternCode(value: string) {
-  return /^PAT-\d{3}$/.test(value);
+  return /^PAT-\d{4}$/.test(value);
 }
 
 function isLensCode(value: string) {
-  return /^LEN-\d{3}$/.test(value);
+  return /^LEN-\d{4}$/.test(value);
 }
 
 function readJsonFile(filePath: string): unknown {
@@ -263,7 +263,7 @@ function validatePatternFrontmatter() {
       errors.push(`Pattern "${filenameSlug}" must declare code.`);
     } else {
       if (!isPatternCode(code)) {
-        errors.push(`Pattern "${filenameSlug}" code "${code}" must match PAT-###.`);
+        errors.push(`Pattern "${filenameSlug}" code "${code}" must match PAT-####.`);
       }
 
       const previous = seenCodes.get(code);
@@ -307,7 +307,7 @@ function validateLensFrontmatter() {
       errors.push(`Lens "${filenameSlug}" must declare code.`);
     } else {
       if (!isLensCode(code)) {
-        errors.push(`Lens "${filenameSlug}" code "${code}" must match LEN-###.`);
+        errors.push(`Lens "${filenameSlug}" code "${code}" must match LEN-####.`);
       }
 
       const previous = seenCodes.get(code);

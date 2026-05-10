@@ -42,7 +42,7 @@
     "patterns": [
       {
         "slug": "authority-collision",
-        "code": "PAT-001",
+        "code": "PAT-0100",
         "title": "Authority Collision",
         "count": 1
       }
@@ -50,25 +50,25 @@
     "lenses": [
       {
         "slug": "authority-overlay-lens",
-        "code": "LEN-001",
+        "code": "LEN-0100",
         "title": "Authority Overlay Lens",
         "count": 1
       },
       {
         "slug": "conflict-lens",
-        "code": "LEN-002",
+        "code": "LEN-0110",
         "title": "Conflict Lens",
         "count": 1
       },
       {
         "slug": "invariant-lens",
-        "code": "LEN-004",
+        "code": "LEN-0130",
         "title": "Invariant Lens",
         "count": 1
       },
       {
         "slug": "reconciliation-lens",
-        "code": "LEN-003",
+        "code": "LEN-0120",
         "title": "Reconciliation Lens",
         "count": 1
       }

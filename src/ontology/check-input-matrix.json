@@ -2,7 +2,7 @@
   "missing actor": {
     "patterns": {
       "primary": [
-        "PAT-001"
+        "PAT-0100"
       ],
       "secondary": []
     }
@@ -10,7 +10,7 @@
   "unclear scope": {
     "patterns": {
       "primary": [
-        "PAT-001"
+        "PAT-0100"
       ],
       "secondary": []
     }
@@ -18,7 +18,7 @@
   "unstated constraint": {
     "patterns": {
       "primary": [
-        "PAT-001"
+        "PAT-0100"
       ],
       "secondary": []
     }
@@ -26,7 +26,7 @@
   "conflicting dependency": {
     "patterns": {
       "primary": [
-        "PAT-001"
+        "PAT-0100"
       ],
       "secondary": []
     }
