@@ -1,6 +1,11 @@
 import fs from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
+import {
+  getCategoryKind,
+  getParentCategoryCode,
+  isCategoryCode,
+} from "./category-codes";
 
 type MatrixEntry = {
   primary: string[];
@@ -70,10 +75,6 @@ function isLensCode(value: string) {
 
 function isIssueCode(value: string) {
   return /^ISS-\d{4}$/.test(value);
-}
-
-function isCategoryCode(value: string) {
-  return /^CAT-\d{4}$/.test(value);
 }
 
 function readJsonFile(filePath: string): unknown {
@@ -407,6 +408,18 @@ function validateCategoryFrontmatter() {
         errors.push(`Category code "${code}" is duplicated by "${previous}" and "${filenameSlug}".`);
       } else {
         seenCodes.set(code, filenameSlug);
+      }
+    }
+  }
+
+  for (const [code, filenameSlug] of seenCodes.entries()) {
+    if (getCategoryKind(code) === "subcategory") {
+      const parentCode = getParentCategoryCode(code);
+
+      if (!seenCodes.has(parentCode)) {
+        errors.push(
+          `Category "${filenameSlug}" code "${code}" is a subcategory, but parent category "${parentCode}" is missing.`
+        );
       }
     }
   }
