@@ -5,6 +5,18 @@ Stop waiting for AI to magically get better.
 
 Find the structure. Use it to observe, control, and report what AI systems actually do.
 
+## Site Architecture
+
+This repository currently serves two public surfaces:
+
+    /
+    Pengo Systems front door
+
+    /workbench/
+    Pengo AI Structural Workbench front door
+
+The root homepage should remain company-level. The Workbench homepage should remain the entry point for the public Workbench/library surface.
+
 ## Deployment Target
 
 This repository is built for Cloudflare Pages.
@@ -15,6 +27,7 @@ Use Cloudflare-native files for platform concerns:
 
 - `public/_redirects` for redirects
 - `public/_headers` for headers, crawler hints, and cache/security headers
+- `public/robots.txt` for crawler discovery hints
 
 ## Build
 
@@ -62,6 +75,7 @@ Configured in:
 
 Current rule shape:
 
+    /llms.txt        /workbench/llms.txt       301
     /wb              /workbench/              301
     /wb/             /workbench/              301
     /wb/*            /workbench/:splat        301
@@ -81,6 +95,30 @@ Current intent:
 - keep `llms.txt` indexable
 - keep `_internal` JSON machine-accessible but `noindex`
 - add basic security headers
+
+## Discovery
+
+Root-level LLM discovery is handled through:
+
+    /llms.txt
+
+That path redirects to:
+
+    /workbench/llms.txt
+
+Crawler discovery is handled through:
+
+    /robots.txt
+
+The standard Astro sitemap is:
+
+    /sitemap-index.xml
+
+The Workbench machine sitemap is:
+
+    /workbench/machine-sitemap.xml
+
+The machine sitemap intentionally lists machine-readable Workbench artifacts, especially Issue Markdown.
 
 ## Machine Artifacts
 
@@ -142,5 +180,5 @@ This is a Cloudflare Pages static site.
 
 Build real content as Astro/static files.
 
-Use Cloudflare Pages features for redirects, headers, and edge behavior.
+Use Cloudflare Pages features for redirects, headers, crawler hints, and edge behavior.
 '@ | Set-Content README.md
