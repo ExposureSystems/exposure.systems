@@ -1,4 +1,5 @@
 import ontologyIndex from "../../../content/_meta/ontology-index.json";
+import release from "../../../ontology/ontology-release.json";
 
 export function getStaticPaths() {
   return ontologyIndex.issues.map((issue) => ({
@@ -31,7 +32,12 @@ export function GET({ props }: { props: { issue: (typeof ontologyIndex.issues)[n
   const body = [
     `# ${issue.title}`,
     "",
-    `Status: ${issue.status}`,
+    "## Ontology Metadata",
+    "",
+    `Code: ${issue.code}`,
+    `Version: ${issue.code}@${issue.entry_version}`,
+    `Ontology release: ${release.ontology_release}`,
+    `Updated: ${issue.updated_at}`,
     `Canonical URL: ${issue.url}`,
     "",
     "## Summary",
@@ -41,7 +47,7 @@ export function GET({ props }: { props: { issue: (typeof ontologyIndex.issues)[n
     "## Category",
     "",
     category
-      ? `- ${category.title}\n  - URL: ${category.url}\n  - Summary: ${category.summary}`
+      ? `- ${category.code} — ${category.title}\n  - URL: ${category.url}\n  - Summary: ${category.summary}`
       : `- ${issue.category}`,
     "",
     "## Primary Pattern",

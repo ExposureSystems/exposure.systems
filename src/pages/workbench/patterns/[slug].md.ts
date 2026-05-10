@@ -1,4 +1,5 @@
 import ontologyIndex from "../../../content/_meta/ontology-index.json";
+import release from "../../../ontology/ontology-release.json";
 
 export function getStaticPaths() {
   return ontologyIndex.patterns.map((pattern) => ({
@@ -29,7 +30,12 @@ export function GET({ props }: { props: { pattern: (typeof ontologyIndex.pattern
   const body = [
     `# ${pattern.code} — ${pattern.title}`,
     "",
-    `Status: ${pattern.status}`,
+    "## Ontology Metadata",
+    "",
+    `Code: ${pattern.code}`,
+    `Version: ${pattern.code}@${pattern.entry_version}`,
+    `Ontology release: ${release.ontology_release}`,
+    `Updated: ${pattern.updated_at}`,
     `Canonical URL: ${pattern.url}`,
     "",
     "## Summary",
@@ -73,13 +79,13 @@ function formatLinkedItems(items: Array<{ code?: string; title: string; url: str
   ]);
 }
 
-function formatIssueItems(items: Array<{ title: string; url: string; summary: string }>) {
+function formatIssueItems(items: Array<{ code?: string; title: string; url: string; summary: string }>) {
   if (items.length === 0) {
     return ["None."];
   }
 
   return items.flatMap((item) => [
-    `- ${item.title}`,
+    `- ${item.code ? `${item.code} — ` : ""}${item.title}`,
     `  - URL: ${item.url}`,
     `  - Summary: ${item.summary}`,
   ]);
