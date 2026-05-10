@@ -1,0 +1,143 @@
+---
+import changelog from "../../../../ontology/changelog.public.json";
+import release from "../../../../ontology/ontology-release.json";
+
+const typeLabels = {
+  issue: "Issue",
+  pattern: "Pattern",
+  lens: "Lens",
+  category: "Category",
+};
+
+const changeTypeLabels = {
+  created: "Created",
+  expanded: "Expanded",
+  clarified: "Clarified",
+  renamed: "Renamed",
+  moved: "Moved",
+  split: "Split",
+  merged: "Merged",
+  deprecated: "Deprecated",
+  superseded: "Superseded",
+  semantic_revision: "Semantic revision",
+};
+
+const receiptImpactLabels = {
+  none: "None",
+  minor: "Minor",
+  review_recommended: "Review recommended",
+  breaking: "Breaking",
+};
+
+const entries = [...changelog.entries].sort((a, b) => {
+  const dateCompare = b.date.localeCompare(a.date);
+
+  if (dateCompare !== 0) {
+    return dateCompare;
+  }
+
+  return a.object_code.localeCompare(b.object_code);
+});
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Ontology Changelog | Pengo AI Structural Workbench</title>
+    <meta
+      name="description"
+      content="Public changelog for Workbench Issues, Patterns, Lenses, Categories, and Subcategories."
+    />
+  </head>
+  <body>
+    <main>
+      <p>
+        <a href="/workbench/">Workbench</a>
+      </p>
+
+      <h1>Ontology Changelog</h1>
+
+      <p>
+        Public change history for Workbench Issues, Patterns, Lenses, Categories,
+        and Subcategories.
+      </p>
+
+      <section aria-labelledby="current-release">
+        <h2 id="current-release">Current Ontology Release</h2>
+
+        <dl>
+          <dt>Release</dt>
+          <dd>{release.ontology_release}</dd>
+
+          <dt>Released</dt>
+          <dd>{release.released_at}</dd>
+
+          <dt>Public state</dt>
+          <dd>{release.public_state}</dd>
+
+          <dt>Notes</dt>
+          <dd>{release.notes}</dd>
+        </dl>
+      </section>
+
+      <section aria-labelledby="scope">
+        <h2 id="scope">Scope</h2>
+
+        <p>This changelog records public ontology-object changes only.</p>
+
+        <ul>
+          <li>Issues: <code>ISS-####</code></li>
+          <li>Patterns: <code>PAT-####</code></li>
+          <li>Lenses: <code>LEN-####</code></li>
+          <li>Categories/Subcategories: <code>CAT-####</code></li>
+        </ul>
+
+        <p>
+          It does not include repository maintenance, Cloudflare configuration,
+          README edits, build tooling, or internal import-audit decisions.
+        </p>
+      </section>
+
+      <section aria-labelledby="entries">
+        <h2 id="entries">Changes</h2>
+
+        {entries.length === 0 ? (
+          <p>No public ontology changes recorded yet.</p>
+        ) : (
+          <ol>
+            {entries.map((entry) => (
+              <li id={`${entry.object_code.toLowerCase()}-${entry.entry_version.replaceAll(".", "-")}`}>
+                <article>
+                  <h3>
+                    <code>{entry.object_code}@{entry.entry_version}</code>
+                    {" — "}
+                    {entry.object_slug}
+                  </h3>
+
+                  <dl>
+                    <dt>Date</dt>
+                    <dd>{entry.date}</dd>
+
+                    <dt>Ontology release</dt>
+                    <dd>{entry.ontology_release}</dd>
+
+                    <dt>Object type</dt>
+                    <dd>{typeLabels[entry.object_type] ?? entry.object_type}</dd>
+
+                    <dt>Change</dt>
+                    <dd>{changeTypeLabels[entry.change_type] ?? entry.change_type}</dd>
+
+                    <dt>Receipt impact</dt>
+                    <dd>{receiptImpactLabels[entry.receipt_impact] ?? entry.receipt_impact}</dd>
+                  </dl>
+
+                  <p>{entry.public_summary}</p>
+                </article>
+              </li>
+            ))}
+          </ol>
+        )}
+      </section>
+    </main>
+  </body>
+</html>
