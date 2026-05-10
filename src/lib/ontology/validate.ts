@@ -30,6 +30,14 @@ type CheckInputMatrixEntry = {
 
 type CheckInputMatrix = Record<string, CheckInputMatrixEntry>;
 
+type OntologyRelease = {
+  ontology_release: string;
+  released_at: string;
+  public_state: string;
+  notes: string;
+};
+
+const ontologyReleasePath = "src/ontology/ontology-release.json";
 const matrixPath = "src/ontology/pattern-lens-matrix.json";
 const checkInputVocabularyPath = "src/ontology/check-input-vocabulary.json";
 const checkInputMatrixPath = "src/ontology/check-input-matrix.json";
@@ -45,6 +53,8 @@ const forbiddenIssueFields = [
   "derived_lenses",
   "aift_cards",
 ];
+
+const allowedPublicStates = new Set(["current", "deprecated", "superseded", "archived"]);
 
 function fail(errors: string[]) {
   console.error("\nWorkbench ontology validation failed:\n");
@@ -113,6 +123,44 @@ function validateVersionFields(
 
 function readJsonFile(filePath: string): unknown {
   return JSON.parse(fs.readFileSync(filePath, "utf-8"));
+}
+
+function validateOntologyRelease(value: unknown): asserts value is OntologyRelease {
+  const errors: string[] = [];
+
+  if (!isObject(value)) {
+    fail(["Ontology release metadata must be a JSON object."]);
+  }
+
+  if (
+    typeof value.ontology_release !== "string" ||
+    !isEntryVersion(value.ontology_release)
+  ) {
+    errors.push("Ontology release metadata must declare ontology_release as major.minor.patch.");
+  }
+
+  if (typeof value.released_at !== "string" || !isUtcDateTime(value.released_at)) {
+    errors.push(
+      "Ontology release metadata must declare released_at as UTC format YYYY-MM-DDTHH:mm:ssZ."
+    );
+  }
+
+  if (
+    typeof value.public_state !== "string" ||
+    !allowedPublicStates.has(value.public_state)
+  ) {
+    errors.push(
+      `Ontology release metadata public_state must be one of: ${[...allowedPublicStates].join(", ")}.`
+    );
+  }
+
+  if (typeof value.notes !== "string" || value.notes.length === 0) {
+    errors.push("Ontology release metadata must declare notes.");
+  }
+
+  if (errors.length > 0) {
+    fail(errors);
+  }
 }
 
 function validateMatrix(matrix: unknown): asserts matrix is PatternLensMatrix {
@@ -784,10 +832,12 @@ function validateCheckInputMatrix(
 }
 
 function main() {
+  const ontologyRelease = readJsonFile(ontologyReleasePath);
   const matrix = readJsonFile(matrixPath);
   const checkInputVocabulary = readJsonFile(checkInputVocabularyPath);
   const checkInputMatrix = readJsonFile(checkInputMatrixPath);
 
+  validateOntologyRelease(ontologyRelease);
   validateMatrix(matrix);
   validateMatrixPatternsHaveFiles(matrix);
   validateNoExtraPatternFiles(matrix);
