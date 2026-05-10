@@ -1,4 +1,3 @@
-@'
 # Pengo AI Structural Workbench
 
 Stop waiting for AI to magically get better.
@@ -181,4 +180,3 @@ This is a Cloudflare Pages static site.
 Build real content as Astro/static files.
 
 Use Cloudflare Pages features for redirects, headers, crawler hints, and edge behavior.
-'@ | Set-Content README.md
