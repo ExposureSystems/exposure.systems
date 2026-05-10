@@ -1,5 +1,13 @@
 ---
 import ontologyIndex from "../../../content/_meta/ontology-index.json";
+import changelog from "../../../ontology/changelog.public.json";
+import release from "../../../ontology/ontology-release.json";
+import {
+  getChangeTypeLabel,
+  getObjectHistory,
+  getReceiptImpactLabel,
+  getVersionLabel,
+} from "../../../lib/ontology/page-metadata";
 
 export function getStaticPaths() {
   return ontologyIndex.categories.map((category) => ({
@@ -13,6 +21,8 @@ const { category } = Astro.props;
 const categoryIssues = category.issues
   .map((slug) => ontologyIndex.issues.find((issue) => issue.slug === slug))
   .filter(Boolean);
+
+const history = getObjectHistory(changelog, category);
 ---
 
 <html lang="en">
@@ -31,7 +41,6 @@ const categoryIssues = category.issues
 
       <h1>{category.title}</h1>
 
-      <p><strong>Status:</strong> {category.status}</p>
       <p>{category.summary}</p>
 
       <section aria-labelledby="issues">
@@ -49,6 +58,50 @@ const categoryIssues = category.issues
         ) : (
           <p>No issues in this category.</p>
         )}
+      </section>
+
+      <section aria-labelledby="ontology-metadata">
+        <h2 id="ontology-metadata">Ontology Metadata</h2>
+
+        <dl>
+          <dt>Code</dt>
+          <dd><code>{category.code}</code></dd>
+
+          <dt>Version</dt>
+          <dd><code>{getVersionLabel(category)}</code></dd>
+
+          <dt>Ontology release</dt>
+          <dd>{release.ontology_release}</dd>
+
+          <dt>Updated</dt>
+          <dd>{category.updated_at}</dd>
+        </dl>
+
+        <h3>History</h3>
+
+        {history.length > 0 ? (
+          <ul>
+            {history.map((entry) => (
+              <li>
+                <p>
+                  <strong>{entry.entry_version}</strong>
+                  {" — "}
+                  {entry.date}
+                  {" — "}
+                  {getChangeTypeLabel(entry.change_type)}
+                </p>
+                <p>{entry.public_summary}</p>
+                <p>Receipt impact: {getReceiptImpactLabel(entry.receipt_impact)}</p>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p>No public history entries recorded.</p>
+        )}
+
+        <p>
+          <a href="/workbench/ontology/changelog/">View full ontology changelog</a>
+        </p>
       </section>
     </main>
   </body>

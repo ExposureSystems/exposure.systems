@@ -1,5 +1,13 @@
 ---
 import ontologyIndex from "../../../content/_meta/ontology-index.json";
+import changelog from "../../../ontology/changelog.public.json";
+import release from "../../../ontology/ontology-release.json";
+import {
+  getChangeTypeLabel,
+  getObjectHistory,
+  getReceiptImpactLabel,
+  getVersionLabel,
+} from "../../../lib/ontology/page-metadata";
 
 export function getStaticPaths() {
   return ontologyIndex.lenses.map((lens) => ({
@@ -21,6 +29,8 @@ const secondaryPatterns = lens.patterns.secondary
 const relatedIssues = lens.issues
   .map((slug) => ontologyIndex.issues.find((issue) => issue.slug === slug))
   .filter(Boolean);
+
+const history = getObjectHistory(changelog, lens);
 ---
 
 <html lang="en">
@@ -43,7 +53,6 @@ const relatedIssues = lens.issues
         </span>
       </h1>
 
-      <p><strong>Status:</strong> {lens.status}</p>
       <p>{lens.summary}</p>
 
       <section aria-labelledby="primary-patterns">
@@ -103,6 +112,50 @@ const relatedIssues = lens.issues
         ) : (
           <p>No related issues.</p>
         )}
+      </section>
+
+      <section aria-labelledby="ontology-metadata">
+        <h2 id="ontology-metadata">Ontology Metadata</h2>
+
+        <dl>
+          <dt>Code</dt>
+          <dd><code>{lens.code}</code></dd>
+
+          <dt>Version</dt>
+          <dd><code>{getVersionLabel(lens)}</code></dd>
+
+          <dt>Ontology release</dt>
+          <dd>{release.ontology_release}</dd>
+
+          <dt>Updated</dt>
+          <dd>{lens.updated_at}</dd>
+        </dl>
+
+        <h3>History</h3>
+
+        {history.length > 0 ? (
+          <ul>
+            {history.map((entry) => (
+              <li>
+                <p>
+                  <strong>{entry.entry_version}</strong>
+                  {" — "}
+                  {entry.date}
+                  {" — "}
+                  {getChangeTypeLabel(entry.change_type)}
+                </p>
+                <p>{entry.public_summary}</p>
+                <p>Receipt impact: {getReceiptImpactLabel(entry.receipt_impact)}</p>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p>No public history entries recorded.</p>
+        )}
+
+        <p>
+          <a href="/workbench/ontology/changelog/">View full ontology changelog</a>
+        </p>
       </section>
     </main>
   </body>
