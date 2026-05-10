@@ -3,6 +3,8 @@ import { defineCollection, z } from "astro:content";
 const baseEntry = {
   title: z.string(),
   status: z.enum(["draft", "stable"]).default("draft"),
+  entry_version: z.string().regex(/^\d+\.\d+\.\d+$/),
+  updated_at: z.string().datetime({ offset: true }),
 };
 
 const issues = defineCollection({

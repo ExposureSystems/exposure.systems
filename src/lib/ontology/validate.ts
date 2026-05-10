@@ -77,6 +77,40 @@ function isIssueCode(value: string) {
   return /^ISS-\d{4}$/.test(value);
 }
 
+function isEntryVersion(value: string) {
+  return /^\d+\.\d+\.\d+$/.test(value);
+}
+
+function isUtcDateTime(value: string) {
+  return /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$/.test(value);
+}
+
+function validateVersionFields(
+  errors: string[],
+  kind: string,
+  filenameSlug: string,
+  data: Record<string, unknown>
+) {
+  const entryVersion = data.entry_version;
+  const updatedAt = data.updated_at;
+
+  if (typeof entryVersion !== "string" || entryVersion.length === 0) {
+    errors.push(`${kind} "${filenameSlug}" must declare entry_version.`);
+  } else if (!isEntryVersion(entryVersion)) {
+    errors.push(
+      `${kind} "${filenameSlug}" entry_version "${entryVersion}" must use major.minor.patch format.`
+    );
+  }
+
+  if (typeof updatedAt !== "string" || updatedAt.length === 0) {
+    errors.push(`${kind} "${filenameSlug}" must declare updated_at.`);
+  } else if (!isUtcDateTime(updatedAt)) {
+    errors.push(
+      `${kind} "${filenameSlug}" updated_at "${updatedAt}" must use UTC format YYYY-MM-DDTHH:mm:ssZ.`
+    );
+  }
+}
+
 function readJsonFile(filePath: string): unknown {
   return JSON.parse(fs.readFileSync(filePath, "utf-8"));
 }
@@ -128,9 +162,7 @@ function validateMatrix(matrix: unknown): asserts matrix is PatternLensMatrix {
     for (const lensSlug of allLenses) {
       if (typeof lensSlug !== "string" || !isKebabCase(lensSlug)) {
         errors.push(
-          `Matrix entry "${patternSlug}" has invalid lens slug "${String(
-            lensSlug
-          )}".`
+          `Matrix entry "${patternSlug}" has invalid lens slug "${String(lensSlug)}".`
         );
       }
     }
@@ -268,6 +300,8 @@ function validatePatternFrontmatter() {
     const slug = data.slug;
     const code = data.code;
 
+    validateVersionFields(errors, "Pattern", filenameSlug, data);
+
     if (typeof slug !== "string" || slug.length === 0) {
       errors.push(`Pattern "${filenameSlug}" must declare slug.`);
     } else {
@@ -311,6 +345,8 @@ function validateLensFrontmatter() {
 
     const slug = data.slug;
     const code = data.code;
+
+    validateVersionFields(errors, "Lens", filenameSlug, data);
 
     if (typeof slug !== "string" || slug.length === 0) {
       errors.push(`Lens "${filenameSlug}" must declare slug.`);
@@ -383,6 +419,8 @@ function validateCategoryFrontmatter() {
 
     const slug = data.slug;
     const code = data.code;
+
+    validateVersionFields(errors, "Category", filenameSlug, data);
 
     if (typeof slug !== "string" || slug.length === 0) {
       errors.push(`Category "${filenameSlug}" must declare slug.`);
@@ -478,6 +516,9 @@ function validateIssues(matrix: PatternLensMatrix) {
     const slug = data.slug;
     const code = data.code;
     const category = data.category;
+
+    validateVersionFields(errors, "Issue", filenameSlug, data);
+
     const primaryCatCode = data.primary_cat_code;
     const secondaryCatCodes = data.secondary_cat_codes;
     const primaryPattern = data.primary_pattern;

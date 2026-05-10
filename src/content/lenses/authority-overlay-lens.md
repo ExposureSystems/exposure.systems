@@ -3,6 +3,8 @@ layer: lens
 slug: authority-overlay-lens
 title: Authority Overlay Lens
 status: stable
+entry_version: 0.1.0
+updated_at: "2026-05-10T00:00:00Z"
 summary: A diagnostic view that maps declared authority hierarchies onto observed structure to detect absence, override, or conflict.
 code: LEN-0100
 ---
@@ -16,14 +18,17 @@ Maps declared authority hierarchies onto observed structure to detect absence, o
 ## Structural Transform
 
 Input:
+
 - Structural graph
 - Declared authority hierarchy
 
 Operation:
+
 - Map authority declarations to structural regions
 - Identify overlap or absence
 
 Output:
+
 - Authority alignment classification
 - Conflict regions if present
 
@@ -38,5 +43,5 @@ Failure exists when structural regions lack declared authority or contain overla
 ## Structural Limits
 
 Evaluates authority alignment only.
-Does not resolve authority conflicts.
 
+Does not resolve authority conflicts.
