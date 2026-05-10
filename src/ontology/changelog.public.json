@@ -1,0 +1,82 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "date": "2026-05-10T00:00:00Z",
+      "ontology_release": "0.1.0",
+      "object_code": "ISS-0001",
+      "object_slug": "issue-0001",
+      "object_type": "issue",
+      "entry_version": "0.1.0",
+      "change_type": "created",
+      "public_summary": "Initial Issue scaffold added for Workbench validation.",
+      "receipt_impact": "none"
+    },
+    {
+      "date": "2026-05-10T00:00:00Z",
+      "ontology_release": "0.1.0",
+      "object_code": "CAT-0100",
+      "object_slug": "drift-variance",
+      "object_type": "category",
+      "entry_version": "0.1.0",
+      "change_type": "created",
+      "public_summary": "Initial Category scaffold added for Workbench navigation validation.",
+      "receipt_impact": "none"
+    },
+    {
+      "date": "2026-05-10T00:00:00Z",
+      "ontology_release": "0.1.0",
+      "object_code": "PAT-0100",
+      "object_slug": "authority-collision",
+      "object_type": "pattern",
+      "entry_version": "0.1.0",
+      "change_type": "created",
+      "public_summary": "Initial Pattern scaffold added for Workbench ontology validation.",
+      "receipt_impact": "none"
+    },
+    {
+      "date": "2026-05-10T00:00:00Z",
+      "ontology_release": "0.1.0",
+      "object_code": "LEN-0100",
+      "object_slug": "authority-overlay-lens",
+      "object_type": "lens",
+      "entry_version": "0.1.0",
+      "change_type": "created",
+      "public_summary": "Initial Lens scaffold added for Workbench ontology validation.",
+      "receipt_impact": "none"
+    },
+    {
+      "date": "2026-05-10T00:00:00Z",
+      "ontology_release": "0.1.0",
+      "object_code": "LEN-0110",
+      "object_slug": "conflict-lens",
+      "object_type": "lens",
+      "entry_version": "0.1.0",
+      "change_type": "created",
+      "public_summary": "Initial Lens scaffold added for Workbench ontology validation.",
+      "receipt_impact": "none"
+    },
+    {
+      "date": "2026-05-10T00:00:00Z",
+      "ontology_release": "0.1.0",
+      "object_code": "LEN-0120",
+      "object_slug": "reconciliation-lens",
+      "object_type": "lens",
+      "entry_version": "0.1.0",
+      "change_type": "created",
+      "public_summary": "Initial Lens scaffold added for Workbench ontology validation.",
+      "receipt_impact": "none"
+    },
+    {
+      "date": "2026-05-10T00:00:00Z",
+      "ontology_release": "0.1.0",
+      "object_code": "LEN-0130",
+      "object_slug": "invariant-lens",
+      "object_type": "lens",
+      "entry_version": "0.1.0",
+      "change_type": "created",
+      "public_summary": "Initial Lens scaffold added for Workbench ontology validation.",
+      "receipt_impact": "none"
+    }
+  ]
+}

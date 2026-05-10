@@ -6,6 +6,7 @@ import {
   getParentCategoryCode,
   isCategoryCode,
 } from "./category-codes";
+import { validatePublicChangelog } from "./changelog-public";
 
 type MatrixEntry = {
   primary: string[];
@@ -38,6 +39,7 @@ type OntologyRelease = {
 };
 
 const ontologyReleasePath = "src/ontology/ontology-release.json";
+const publicChangelogPath = "src/ontology/changelog.public.json";
 const matrixPath = "src/ontology/pattern-lens-matrix.json";
 const checkInputVocabularyPath = "src/ontology/check-input-vocabulary.json";
 const checkInputMatrixPath = "src/ontology/check-input-matrix.json";
@@ -833,11 +835,18 @@ function validateCheckInputMatrix(
 
 function main() {
   const ontologyRelease = readJsonFile(ontologyReleasePath);
+  const publicChangelog = readJsonFile(publicChangelogPath);
   const matrix = readJsonFile(matrixPath);
   const checkInputVocabulary = readJsonFile(checkInputVocabularyPath);
   const checkInputMatrix = readJsonFile(checkInputMatrixPath);
 
   validateOntologyRelease(ontologyRelease);
+
+  const publicChangelogErrors = validatePublicChangelog(publicChangelog);
+  if (publicChangelogErrors.length > 0) {
+    fail(publicChangelogErrors);
+  }
+
   validateMatrix(matrix);
   validateMatrixPatternsHaveFiles(matrix);
   validateNoExtraPatternFiles(matrix);
