@@ -5,24 +5,27 @@ const patternSourceDir = "docs/import-clean/patterns";
 const lensSourceDir = "docs/import-clean/lenses";
 const outputDir = "docs/import-audit";
 
-const existingPublicCodes = {
+const reviewCycle = "ontology-import-2026-05";
+const targetOntologyRelease = "0.1.0";
+
+const currentSrcCodes = {
   patterns: {
-    "authority-collision": "PAT-0100"
+    "authority-collision": "PAT-0100",
   },
   lenses: {
     "authority-overlay-lens": "LEN-0100",
     "conflict-lens": "LEN-0110",
     "reconciliation-lens": "LEN-0120",
-    "invariant-lens": "LEN-0130"
-  }
+    "invariant-lens": "LEN-0130",
+  },
 };
 
-const knownExistingPublicEntries = new Set([
+const currentSrcEntries = new Set([
   "authority-collision",
   "authority-overlay-lens",
   "conflict-lens",
   "reconciliation-lens",
-  "invariant-lens"
+  "invariant-lens",
 ]);
 
 function readMarkdownFiles(dir) {
@@ -59,7 +62,9 @@ function parseFrontmatter(raw) {
 }
 
 function findSections(body) {
-  return [...body.matchAll(/^##\s+(.+)$/gm)].map((match) => match[1].trim());
+  return [...body.matchAll(/^##\s+(.+)$/gm)].map((match) =>
+    match[1].trim()
+  );
 }
 
 function makeAuditEntry(filePath, kind) {
@@ -68,15 +73,15 @@ function makeAuditEntry(filePath, kind) {
   const { data, body } = parseFrontmatter(raw);
   const sections = findSections(body);
 
-  const existingCode =
+  const currentSrcCode =
     kind === "pattern"
-      ? existingPublicCodes.patterns[slug] || null
-      : existingPublicCodes.lenses[slug] || null;
+      ? currentSrcCodes.patterns[slug] || null
+      : currentSrcCodes.lenses[slug] || null;
 
   const missing =
     kind === "pattern"
       ? [
-          "code assignment or approval",
+          "approved code",
           "current summary",
           "canonical frontmatter",
           "translation_policy",
@@ -86,10 +91,10 @@ function makeAuditEntry(filePath, kind) {
           "common_contexts",
           "distinguish_from nearby patterns",
           "body completeness review",
-          "status decision"
+          "publication/version decision",
         ]
       : [
-          "code assignment or approval",
+          "approved code",
           "current summary",
           "canonical frontmatter",
           "translation_policy",
@@ -99,7 +104,7 @@ function makeAuditEntry(filePath, kind) {
           "output or finding shape",
           "distinguish_from nearby lenses",
           "body completeness review",
-          "status decision"
+          "publication/version decision",
         ];
 
   return {
@@ -107,10 +112,13 @@ function makeAuditEntry(filePath, kind) {
     title: data.title || "",
     layer: data.layer || kind,
     imported_status: data.status || "",
+    review_cycle: reviewCycle,
+    target_ontology_release: targetOntologyRelease,
     import_state: "needs_review",
-    existing_public_code: existingCode,
-    provisional_code: null,
-    known_existing_public_entry: knownExistingPublicEntries.has(slug),
+    current_src_entry: currentSrcEntries.has(slug),
+    current_src_code: currentSrcCode,
+    proposed_code: null,
+    approved_code: null,
     source_file: filePath.replaceAll("\\", "/"),
     body_sections_found: sections,
     missing,
@@ -121,16 +129,16 @@ function makeAuditEntry(filePath, kind) {
             "Is this Pattern distinct from nearby Patterns?",
             "What Issue language should map to this Pattern?",
             "Which Lenses actually inspect this Pattern?",
-            "Should this be planned, draft, stable, rejected, or merged?"
+            "Should this be promoted, rejected, merged, or kept for later review?",
           ]
         : [
             "Does this Lens still represent the current diagnostic view?",
             "Which Patterns does this Lens actually inspect?",
             "What inputs does this Lens require?",
             "What output or finding shape should it produce?",
-            "Should this be planned, draft, stable, rejected, or merged?"
+            "Should this be promoted, rejected, merged, or kept for later review?",
           ],
-    notes: ""
+    notes: "",
   };
 }
 
@@ -149,27 +157,35 @@ const lenses = readMarkdownFiles(lensSourceDir).map((filePath) =>
 );
 
 writeJson(path.join(outputDir, "patterns.audit.json"), {
-  version: 1,
+  version: 2,
+  review_cycle: reviewCycle,
+  target_ontology_release: targetOntologyRelease,
   source_dir: patternSourceDir,
   rules: {
     do_not_promote_until_reviewed: true,
     default_import_state: "needs_review",
-    provisional_codes_are_not_final_until_approved: true,
-    imported_status_is_not_authoritative: true
+    imported_status_is_not_authoritative: true,
+    current_src_code_is_not_approval: true,
+    proposed_code_is_not_approval: true,
+    approved_code_required_for_promotion: true,
   },
-  patterns
+  patterns,
 });
 
 writeJson(path.join(outputDir, "lenses.audit.json"), {
-  version: 1,
+  version: 2,
+  review_cycle: reviewCycle,
+  target_ontology_release: targetOntologyRelease,
   source_dir: lensSourceDir,
   rules: {
     do_not_promote_until_reviewed: true,
     default_import_state: "needs_review",
-    provisional_codes_are_not_final_until_approved: true,
-    imported_status_is_not_authoritative: true
+    imported_status_is_not_authoritative: true,
+    current_src_code_is_not_approval: true,
+    proposed_code_is_not_approval: true,
+    approved_code_required_for_promotion: true,
   },
-  lenses
+  lenses,
 });
 
 console.log(`Wrote ${patterns.length} pattern audit entries.`);

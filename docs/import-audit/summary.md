@@ -1,5 +1,16 @@
 # Ontology Import Audit Summary
 
+Review cycle: ontology-import-2026-05
+Target ontology release: 0.1.0
+
+## Rules
+
+- Current source presence does not mean approval.
+- Current source code does not mean approval.
+- Proposed code does not mean approval.
+- Approved code is required before promotion into public ontology content.
+- Imported source status is not authoritative.
+
 ## Patterns
 
 Total: 33
@@ -8,13 +19,22 @@ Import states:
 
 - needs_review: 33
 
-Existing public entries:
+Current source overlaps:
 
-- authority-collision
+- authority-collision (PAT-0100)
 
-Entries without approved/provisional code:
+Approved codes this cycle:
+
+- None
+
+Proposed codes this cycle:
+
+- None
+
+Entries needing approved code:
 
 - asymmetric-structure
+- authority-collision
 - authority-merge-conflict
 - authority-shadowing
 - authority-state-mismatch
@@ -59,29 +79,41 @@ Import states:
 
 - needs_review: 20
 
-Existing public entries:
+Current source overlaps:
 
-- authority-overlay-lens
-- conflict-lens
-- invariant-lens
-- reconciliation-lens
+- authority-overlay-lens (LEN-0100)
+- conflict-lens (LEN-0110)
+- invariant-lens (LEN-0130)
+- reconciliation-lens (LEN-0120)
 
-Entries without approved/provisional code:
+Approved codes this cycle:
+
+- None
+
+Proposed codes this cycle:
+
+- None
+
+Entries needing approved code:
 
 - absence-lens
+- authority-overlay-lens
 - boundary-compliance-lens
 - compatibility-envelope-lens
 - compression-lens
+- conflict-lens
 - constraint-sufficiency-lens
 - convergence-lens
 - determinism-lens
 - escalation-gradient-lens
 - interface-contract-lens
+- invariant-lens
 - isolation-boundary-lens
 - normalization-lens
 - overreach-lens
 - propagation-lens
 - provenance-trace-lens
+- reconciliation-lens
 - reference-stability-lens
 - variance-entropy-lens
 
@@ -100,4 +132,4 @@ No imported Pattern or Lens should be promoted into `src/content/` until it has:
 - search intents
 - relationship mapping
 - body completeness review
-- status decision
+- publication/version decision

@@ -1,11 +1,15 @@
 {
-  "version": 1,
+  "version": 2,
+  "review_cycle": "ontology-import-2026-05",
+  "target_ontology_release": "0.1.0",
   "source_dir": "docs/import-clean/lenses",
   "rules": {
     "do_not_promote_until_reviewed": true,
     "default_import_state": "needs_review",
-    "provisional_codes_are_not_final_until_approved": true,
-    "imported_status_is_not_authoritative": true
+    "imported_status_is_not_authoritative": true,
+    "current_src_code_is_not_approval": true,
+    "proposed_code_is_not_approval": true,
+    "approved_code_required_for_promotion": true
   },
   "lenses": [
     {
@@ -13,10 +17,13 @@
       "title": "Absence Lens",
       "layer": "lens",
       "imported_status": "stable",
+      "review_cycle": "ontology-import-2026-05",
+      "target_ontology_release": "0.1.0",
       "import_state": "needs_review",
-      "existing_public_code": null,
-      "provisional_code": null,
-      "known_existing_public_entry": false,
+      "current_src_entry": false,
+      "current_src_code": null,
+      "proposed_code": null,
+      "approved_code": null,
       "source_file": "docs/import-clean/lenses/absence-lens.md",
       "body_sections_found": [
         "Definition",
@@ -26,7 +33,7 @@
         "Structural Limits"
       ],
       "missing": [
-        "code assignment or approval",
+        "approved code",
         "current summary",
         "canonical frontmatter",
         "translation_policy",
@@ -36,14 +43,14 @@
         "output or finding shape",
         "distinguish_from nearby lenses",
         "body completeness review",
-        "status decision"
+        "publication/version decision"
       ],
       "review_questions": [
         "Does this Lens still represent the current diagnostic view?",
         "Which Patterns does this Lens actually inspect?",
         "What inputs does this Lens require?",
         "What output or finding shape should it produce?",
-        "Should this be planned, draft, stable, rejected, or merged?"
+        "Should this be promoted, rejected, merged, or kept for later review?"
       ],
       "notes": ""
     },
@@ -52,10 +59,13 @@
       "title": "Authority Overlay Lens",
       "layer": "lens",
       "imported_status": "stable",
+      "review_cycle": "ontology-import-2026-05",
+      "target_ontology_release": "0.1.0",
       "import_state": "needs_review",
-      "existing_public_code": "LEN-0100",
-      "provisional_code": null,
-      "known_existing_public_entry": true,
+      "current_src_entry": true,
+      "current_src_code": "LEN-0100",
+      "proposed_code": null,
+      "approved_code": null,
       "source_file": "docs/import-clean/lenses/authority-overlay-lens.md",
       "body_sections_found": [
         "Definition",
@@ -65,7 +75,7 @@
         "Structural Limits"
       ],
       "missing": [
-        "code assignment or approval",
+        "approved code",
         "current summary",
         "canonical frontmatter",
         "translation_policy",
@@ -75,14 +85,14 @@
         "output or finding shape",
         "distinguish_from nearby lenses",
         "body completeness review",
-        "status decision"
+        "publication/version decision"
       ],
       "review_questions": [
         "Does this Lens still represent the current diagnostic view?",
         "Which Patterns does this Lens actually inspect?",
         "What inputs does this Lens require?",
         "What output or finding shape should it produce?",
-        "Should this be planned, draft, stable, rejected, or merged?"
+        "Should this be promoted, rejected, merged, or kept for later review?"
       ],
       "notes": ""
     },
@@ -91,10 +101,13 @@
       "title": "Boundary Compliance Lens",
       "layer": "lens",
       "imported_status": "stable",
+      "review_cycle": "ontology-import-2026-05",
+      "target_ontology_release": "0.1.0",
       "import_state": "needs_review",
-      "existing_public_code": null,
-      "provisional_code": null,
-      "known_existing_public_entry": false,
+      "current_src_entry": false,
+      "current_src_code": null,
+      "proposed_code": null,
+      "approved_code": null,
       "source_file": "docs/import-clean/lenses/boundary-compliance-lens.md",
       "body_sections_found": [
         "Definition",
@@ -104,7 +117,7 @@
         "Structural Limits"
       ],
       "missing": [
-        "code assignment or approval",
+        "approved code",
         "current summary",
         "canonical frontmatter",
         "translation_policy",
@@ -114,14 +127,14 @@
         "output or finding shape",
         "distinguish_from nearby lenses",
         "body completeness review",
-        "status decision"
+        "publication/version decision"
       ],
       "review_questions": [
         "Does this Lens still represent the current diagnostic view?",
         "Which Patterns does this Lens actually inspect?",
         "What inputs does this Lens require?",
         "What output or finding shape should it produce?",
-        "Should this be planned, draft, stable, rejected, or merged?"
+        "Should this be promoted, rejected, merged, or kept for later review?"
       ],
       "notes": ""
     },
@@ -130,10 +143,13 @@
       "title": "Compatibility Envelope Lens",
       "layer": "lens",
       "imported_status": "stable",
+      "review_cycle": "ontology-import-2026-05",
+      "target_ontology_release": "0.1.0",
       "import_state": "needs_review",
-      "existing_public_code": null,
-      "provisional_code": null,
-      "known_existing_public_entry": false,
+      "current_src_entry": false,
+      "current_src_code": null,
+      "proposed_code": null,
+      "approved_code": null,
       "source_file": "docs/import-clean/lenses/compatibility-envelope-lens.md",
       "body_sections_found": [
         "Definition",
@@ -143,7 +159,7 @@
         "Structural Limits"
       ],
       "missing": [
-        "code assignment or approval",
+        "approved code",
         "current summary",
         "canonical frontmatter",
         "translation_policy",
@@ -153,14 +169,14 @@
         "output or finding shape",
         "distinguish_from nearby lenses",
         "body completeness review",
-        "status decision"
+        "publication/version decision"
       ],
       "review_questions": [
         "Does this Lens still represent the current diagnostic view?",
         "Which Patterns does this Lens actually inspect?",
         "What inputs does this Lens require?",
         "What output or finding shape should it produce?",
-        "Should this be planned, draft, stable, rejected, or merged?"
+        "Should this be promoted, rejected, merged, or kept for later review?"
       ],
       "notes": ""
     },
@@ -169,10 +185,13 @@
       "title": "Compression Lens",
       "layer": "lens",
       "imported_status": "stable",
+      "review_cycle": "ontology-import-2026-05",
+      "target_ontology_release": "0.1.0",
       "import_state": "needs_review",
-      "existing_public_code": null,
-      "provisional_code": null,
-      "known_existing_public_entry": false,
+      "current_src_entry": false,
+      "current_src_code": null,
+      "proposed_code": null,
+      "approved_code": null,
       "source_file": "docs/import-clean/lenses/compression-lens.md",
       "body_sections_found": [
         "Definition",
@@ -182,7 +201,7 @@
         "Structural Limits"
       ],
       "missing": [
-        "code assignment or approval",
+        "approved code",
         "current summary",
         "canonical frontmatter",
         "translation_policy",
@@ -192,14 +211,14 @@
         "output or finding shape",
         "distinguish_from nearby lenses",
         "body completeness review",
-        "status decision"
+        "publication/version decision"
       ],
       "review_questions": [
         "Does this Lens still represent the current diagnostic view?",
         "Which Patterns does this Lens actually inspect?",
         "What inputs does this Lens require?",
         "What output or finding shape should it produce?",
-        "Should this be planned, draft, stable, rejected, or merged?"
+        "Should this be promoted, rejected, merged, or kept for later review?"
       ],
       "notes": ""
     },
@@ -208,10 +227,13 @@
       "title": "Conflict Lens",
       "layer": "lens",
       "imported_status": "stable",
+      "review_cycle": "ontology-import-2026-05",
+      "target_ontology_release": "0.1.0",
       "import_state": "needs_review",
-      "existing_public_code": "LEN-0110",
-      "provisional_code": null,
-      "known_existing_public_entry": true,
+      "current_src_entry": true,
+      "current_src_code": "LEN-0110",
+      "proposed_code": null,
+      "approved_code": null,
       "source_file": "docs/import-clean/lenses/conflict-lens.md",
       "body_sections_found": [
         "Definition",
@@ -221,7 +243,7 @@
         "Structural Limits"
       ],
       "missing": [
-        "code assignment or approval",
+        "approved code",
         "current summary",
         "canonical frontmatter",
         "translation_policy",
@@ -231,14 +253,14 @@
         "output or finding shape",
         "distinguish_from nearby lenses",
         "body completeness review",
-        "status decision"
+        "publication/version decision"
       ],
       "review_questions": [
         "Does this Lens still represent the current diagnostic view?",
         "Which Patterns does this Lens actually inspect?",
         "What inputs does this Lens require?",
         "What output or finding shape should it produce?",
-        "Should this be planned, draft, stable, rejected, or merged?"
+        "Should this be promoted, rejected, merged, or kept for later review?"
       ],
       "notes": ""
     },
@@ -247,10 +269,13 @@
       "title": "Constraint Sufficiency Lens",
       "layer": "lens",
       "imported_status": "stable",
+      "review_cycle": "ontology-import-2026-05",
+      "target_ontology_release": "0.1.0",
       "import_state": "needs_review",
-      "existing_public_code": null,
-      "provisional_code": null,
-      "known_existing_public_entry": false,
+      "current_src_entry": false,
+      "current_src_code": null,
+      "proposed_code": null,
+      "approved_code": null,
       "source_file": "docs/import-clean/lenses/constraint-sufficiency-lens.md",
       "body_sections_found": [
         "Definition",
@@ -260,7 +285,7 @@
         "Structural Limits"
       ],
       "missing": [
-        "code assignment or approval",
+        "approved code",
         "current summary",
         "canonical frontmatter",
         "translation_policy",
@@ -270,14 +295,14 @@
         "output or finding shape",
         "distinguish_from nearby lenses",
         "body completeness review",
-        "status decision"
+        "publication/version decision"
       ],
       "review_questions": [
         "Does this Lens still represent the current diagnostic view?",
         "Which Patterns does this Lens actually inspect?",
         "What inputs does this Lens require?",
         "What output or finding shape should it produce?",
-        "Should this be planned, draft, stable, rejected, or merged?"
+        "Should this be promoted, rejected, merged, or kept for later review?"
       ],
       "notes": ""
     },
@@ -286,10 +311,13 @@
       "title": "Convergence Lens",
       "layer": "lens",
       "imported_status": "stable",
+      "review_cycle": "ontology-import-2026-05",
+      "target_ontology_release": "0.1.0",
       "import_state": "needs_review",
-      "existing_public_code": null,
-      "provisional_code": null,
-      "known_existing_public_entry": false,
+      "current_src_entry": false,
+      "current_src_code": null,
+      "proposed_code": null,
+      "approved_code": null,
       "source_file": "docs/import-clean/lenses/convergence-lens.md",
       "body_sections_found": [
         "Definition",
@@ -299,7 +327,7 @@
         "Structural Limits"
       ],
       "missing": [
-        "code assignment or approval",
+        "approved code",
         "current summary",
         "canonical frontmatter",
         "translation_policy",
@@ -309,14 +337,14 @@
         "output or finding shape",
         "distinguish_from nearby lenses",
         "body completeness review",
-        "status decision"
+        "publication/version decision"
       ],
       "review_questions": [
         "Does this Lens still represent the current diagnostic view?",
         "Which Patterns does this Lens actually inspect?",
         "What inputs does this Lens require?",
         "What output or finding shape should it produce?",
-        "Should this be planned, draft, stable, rejected, or merged?"
+        "Should this be promoted, rejected, merged, or kept for later review?"
       ],
       "notes": ""
     },
@@ -325,10 +353,13 @@
       "title": "Determinism Lens",
       "layer": "lens",
       "imported_status": "stable",
+      "review_cycle": "ontology-import-2026-05",
+      "target_ontology_release": "0.1.0",
       "import_state": "needs_review",
-      "existing_public_code": null,
-      "provisional_code": null,
-      "known_existing_public_entry": false,
+      "current_src_entry": false,
+      "current_src_code": null,
+      "proposed_code": null,
+      "approved_code": null,
       "source_file": "docs/import-clean/lenses/determinism-lens.md",
       "body_sections_found": [
         "Definition",
@@ -338,7 +369,7 @@
         "Structural Limits"
       ],
       "missing": [
-        "code assignment or approval",
+        "approved code",
         "current summary",
         "canonical frontmatter",
         "translation_policy",
@@ -348,14 +379,14 @@
         "output or finding shape",
         "distinguish_from nearby lenses",
         "body completeness review",
-        "status decision"
+        "publication/version decision"
       ],
       "review_questions": [
         "Does this Lens still represent the current diagnostic view?",
         "Which Patterns does this Lens actually inspect?",
         "What inputs does this Lens require?",
         "What output or finding shape should it produce?",
-        "Should this be planned, draft, stable, rejected, or merged?"
+        "Should this be promoted, rejected, merged, or kept for later review?"
       ],
       "notes": ""
     },
@@ -364,10 +395,13 @@
       "title": "Escalation Gradient Lens",
       "layer": "lens",
       "imported_status": "stable",
+      "review_cycle": "ontology-import-2026-05",
+      "target_ontology_release": "0.1.0",
       "import_state": "needs_review",
-      "existing_public_code": null,
-      "provisional_code": null,
-      "known_existing_public_entry": false,
+      "current_src_entry": false,
+      "current_src_code": null,
+      "proposed_code": null,
+      "approved_code": null,
       "source_file": "docs/import-clean/lenses/escalation-gradient-lens.md",
       "body_sections_found": [
         "Definition",
@@ -377,7 +411,7 @@
         "Structural Limits"
       ],
       "missing": [
-        "code assignment or approval",
+        "approved code",
         "current summary",
         "canonical frontmatter",
         "translation_policy",
@@ -387,14 +421,14 @@
         "output or finding shape",
         "distinguish_from nearby lenses",
         "body completeness review",
-        "status decision"
+        "publication/version decision"
       ],
       "review_questions": [
         "Does this Lens still represent the current diagnostic view?",
         "Which Patterns does this Lens actually inspect?",
         "What inputs does this Lens require?",
         "What output or finding shape should it produce?",
-        "Should this be planned, draft, stable, rejected, or merged?"
+        "Should this be promoted, rejected, merged, or kept for later review?"
       ],
       "notes": ""
     },
@@ -403,10 +437,13 @@
       "title": "Interface Contract Lens",
       "layer": "lens",
       "imported_status": "stable",
+      "review_cycle": "ontology-import-2026-05",
+      "target_ontology_release": "0.1.0",
       "import_state": "needs_review",
-      "existing_public_code": null,
-      "provisional_code": null,
-      "known_existing_public_entry": false,
+      "current_src_entry": false,
+      "current_src_code": null,
+      "proposed_code": null,
+      "approved_code": null,
       "source_file": "docs/import-clean/lenses/interface-contract-lens.md",
       "body_sections_found": [
         "Definition",
@@ -416,7 +453,7 @@
         "Structural Limits"
       ],
       "missing": [
-        "code assignment or approval",
+        "approved code",
         "current summary",
         "canonical frontmatter",
         "translation_policy",
@@ -426,14 +463,14 @@
         "output or finding shape",
         "distinguish_from nearby lenses",
         "body completeness review",
-        "status decision"
+        "publication/version decision"
       ],
       "review_questions": [
         "Does this Lens still represent the current diagnostic view?",
         "Which Patterns does this Lens actually inspect?",
         "What inputs does this Lens require?",
         "What output or finding shape should it produce?",
-        "Should this be planned, draft, stable, rejected, or merged?"
+        "Should this be promoted, rejected, merged, or kept for later review?"
       ],
       "notes": ""
     },
@@ -442,10 +479,13 @@
       "title": "Invariant Lens",
       "layer": "lens",
       "imported_status": "stable",
+      "review_cycle": "ontology-import-2026-05",
+      "target_ontology_release": "0.1.0",
       "import_state": "needs_review",
-      "existing_public_code": "LEN-0130",
-      "provisional_code": null,
-      "known_existing_public_entry": true,
+      "current_src_entry": true,
+      "current_src_code": "LEN-0130",
+      "proposed_code": null,
+      "approved_code": null,
       "source_file": "docs/import-clean/lenses/invariant-lens.md",
       "body_sections_found": [
         "Definition",
@@ -455,7 +495,7 @@
         "Structural Limits"
       ],
       "missing": [
-        "code assignment or approval",
+        "approved code",
         "current summary",
         "canonical frontmatter",
         "translation_policy",
@@ -465,14 +505,14 @@
         "output or finding shape",
         "distinguish_from nearby lenses",
         "body completeness review",
-        "status decision"
+        "publication/version decision"
       ],
       "review_questions": [
         "Does this Lens still represent the current diagnostic view?",
         "Which Patterns does this Lens actually inspect?",
         "What inputs does this Lens require?",
         "What output or finding shape should it produce?",
-        "Should this be planned, draft, stable, rejected, or merged?"
+        "Should this be promoted, rejected, merged, or kept for later review?"
       ],
       "notes": ""
     },
@@ -481,10 +521,13 @@
       "title": "Isolation Boundary Lens",
       "layer": "lens",
       "imported_status": "stable",
+      "review_cycle": "ontology-import-2026-05",
+      "target_ontology_release": "0.1.0",
       "import_state": "needs_review",
-      "existing_public_code": null,
-      "provisional_code": null,
-      "known_existing_public_entry": false,
+      "current_src_entry": false,
+      "current_src_code": null,
+      "proposed_code": null,
+      "approved_code": null,
       "source_file": "docs/import-clean/lenses/isolation-boundary-lens.md",
       "body_sections_found": [
         "Definition",
@@ -494,7 +537,7 @@
         "Structural Limits"
       ],
       "missing": [
-        "code assignment or approval",
+        "approved code",
         "current summary",
         "canonical frontmatter",
         "translation_policy",
@@ -504,14 +547,14 @@
         "output or finding shape",
         "distinguish_from nearby lenses",
         "body completeness review",
-        "status decision"
+        "publication/version decision"
       ],
       "review_questions": [
         "Does this Lens still represent the current diagnostic view?",
         "Which Patterns does this Lens actually inspect?",
         "What inputs does this Lens require?",
         "What output or finding shape should it produce?",
-        "Should this be planned, draft, stable, rejected, or merged?"
+        "Should this be promoted, rejected, merged, or kept for later review?"
       ],
       "notes": ""
     },
@@ -520,10 +563,13 @@
       "title": "Normalization Lens",
       "layer": "lens",
       "imported_status": "stable",
+      "review_cycle": "ontology-import-2026-05",
+      "target_ontology_release": "0.1.0",
       "import_state": "needs_review",
-      "existing_public_code": null,
-      "provisional_code": null,
-      "known_existing_public_entry": false,
+      "current_src_entry": false,
+      "current_src_code": null,
+      "proposed_code": null,
+      "approved_code": null,
       "source_file": "docs/import-clean/lenses/normalization-lens.md",
       "body_sections_found": [
         "Definition",
@@ -533,7 +579,7 @@
         "Structural Limits"
       ],
       "missing": [
-        "code assignment or approval",
+        "approved code",
         "current summary",
         "canonical frontmatter",
         "translation_policy",
@@ -543,14 +589,14 @@
         "output or finding shape",
         "distinguish_from nearby lenses",
         "body completeness review",
-        "status decision"
+        "publication/version decision"
       ],
       "review_questions": [
         "Does this Lens still represent the current diagnostic view?",
         "Which Patterns does this Lens actually inspect?",
         "What inputs does this Lens require?",
         "What output or finding shape should it produce?",
-        "Should this be planned, draft, stable, rejected, or merged?"
+        "Should this be promoted, rejected, merged, or kept for later review?"
       ],
       "notes": ""
     },
@@ -559,10 +605,13 @@
       "title": "Overreach Lens",
       "layer": "lens",
       "imported_status": "stable",
+      "review_cycle": "ontology-import-2026-05",
+      "target_ontology_release": "0.1.0",
       "import_state": "needs_review",
-      "existing_public_code": null,
-      "provisional_code": null,
-      "known_existing_public_entry": false,
+      "current_src_entry": false,
+      "current_src_code": null,
+      "proposed_code": null,
+      "approved_code": null,
       "source_file": "docs/import-clean/lenses/overreach-lens.md",
       "body_sections_found": [
         "Definition",
@@ -572,7 +621,7 @@
         "Structural Limits"
       ],
       "missing": [
-        "code assignment or approval",
+        "approved code",
         "current summary",
         "canonical frontmatter",
         "translation_policy",
@@ -582,14 +631,14 @@
         "output or finding shape",
         "distinguish_from nearby lenses",
         "body completeness review",
-        "status decision"
+        "publication/version decision"
       ],
       "review_questions": [
         "Does this Lens still represent the current diagnostic view?",
         "Which Patterns does this Lens actually inspect?",
         "What inputs does this Lens require?",
         "What output or finding shape should it produce?",
-        "Should this be planned, draft, stable, rejected, or merged?"
+        "Should this be promoted, rejected, merged, or kept for later review?"
       ],
       "notes": ""
     },
@@ -598,10 +647,13 @@
       "title": "Propagation Lens",
       "layer": "lens",
       "imported_status": "stable",
+      "review_cycle": "ontology-import-2026-05",
+      "target_ontology_release": "0.1.0",
       "import_state": "needs_review",
-      "existing_public_code": null,
-      "provisional_code": null,
-      "known_existing_public_entry": false,
+      "current_src_entry": false,
+      "current_src_code": null,
+      "proposed_code": null,
+      "approved_code": null,
       "source_file": "docs/import-clean/lenses/propagation-lens.md",
       "body_sections_found": [
         "Definition",
@@ -611,7 +663,7 @@
         "Structural Limits"
       ],
       "missing": [
-        "code assignment or approval",
+        "approved code",
         "current summary",
         "canonical frontmatter",
         "translation_policy",
@@ -621,14 +673,14 @@
         "output or finding shape",
         "distinguish_from nearby lenses",
         "body completeness review",
-        "status decision"
+        "publication/version decision"
       ],
       "review_questions": [
         "Does this Lens still represent the current diagnostic view?",
         "Which Patterns does this Lens actually inspect?",
         "What inputs does this Lens require?",
         "What output or finding shape should it produce?",
-        "Should this be planned, draft, stable, rejected, or merged?"
+        "Should this be promoted, rejected, merged, or kept for later review?"
       ],
       "notes": ""
     },
@@ -637,10 +689,13 @@
       "title": "Provenance Trace Lens",
       "layer": "lens",
       "imported_status": "stable",
+      "review_cycle": "ontology-import-2026-05",
+      "target_ontology_release": "0.1.0",
       "import_state": "needs_review",
-      "existing_public_code": null,
-      "provisional_code": null,
-      "known_existing_public_entry": false,
+      "current_src_entry": false,
+      "current_src_code": null,
+      "proposed_code": null,
+      "approved_code": null,
       "source_file": "docs/import-clean/lenses/provenance-trace-lens.md",
       "body_sections_found": [
         "Definition",
@@ -650,7 +705,7 @@
         "Structural Limits"
       ],
       "missing": [
-        "code assignment or approval",
+        "approved code",
         "current summary",
         "canonical frontmatter",
         "translation_policy",
@@ -660,14 +715,14 @@
         "output or finding shape",
         "distinguish_from nearby lenses",
         "body completeness review",
-        "status decision"
+        "publication/version decision"
       ],
       "review_questions": [
         "Does this Lens still represent the current diagnostic view?",
         "Which Patterns does this Lens actually inspect?",
         "What inputs does this Lens require?",
         "What output or finding shape should it produce?",
-        "Should this be planned, draft, stable, rejected, or merged?"
+        "Should this be promoted, rejected, merged, or kept for later review?"
       ],
       "notes": ""
     },
@@ -676,10 +731,13 @@
       "title": "Reconciliation Lens",
       "layer": "lens",
       "imported_status": "stable",
+      "review_cycle": "ontology-import-2026-05",
+      "target_ontology_release": "0.1.0",
       "import_state": "needs_review",
-      "existing_public_code": "LEN-0120",
-      "provisional_code": null,
-      "known_existing_public_entry": true,
+      "current_src_entry": true,
+      "current_src_code": "LEN-0120",
+      "proposed_code": null,
+      "approved_code": null,
       "source_file": "docs/import-clean/lenses/reconciliation-lens.md",
       "body_sections_found": [
         "Definition",
@@ -689,7 +747,7 @@
         "Structural Limits"
       ],
       "missing": [
-        "code assignment or approval",
+        "approved code",
         "current summary",
         "canonical frontmatter",
         "translation_policy",
@@ -699,14 +757,14 @@
         "output or finding shape",
         "distinguish_from nearby lenses",
         "body completeness review",
-        "status decision"
+        "publication/version decision"
       ],
       "review_questions": [
         "Does this Lens still represent the current diagnostic view?",
         "Which Patterns does this Lens actually inspect?",
         "What inputs does this Lens require?",
         "What output or finding shape should it produce?",
-        "Should this be planned, draft, stable, rejected, or merged?"
+        "Should this be promoted, rejected, merged, or kept for later review?"
       ],
       "notes": ""
     },
@@ -715,10 +773,13 @@
       "title": "Reference Stability Lens",
       "layer": "lens",
       "imported_status": "stable",
+      "review_cycle": "ontology-import-2026-05",
+      "target_ontology_release": "0.1.0",
       "import_state": "needs_review",
-      "existing_public_code": null,
-      "provisional_code": null,
-      "known_existing_public_entry": false,
+      "current_src_entry": false,
+      "current_src_code": null,
+      "proposed_code": null,
+      "approved_code": null,
       "source_file": "docs/import-clean/lenses/reference-stability-lens.md",
       "body_sections_found": [
         "Definition",
@@ -728,7 +789,7 @@
         "Structural Limits"
       ],
       "missing": [
-        "code assignment or approval",
+        "approved code",
         "current summary",
         "canonical frontmatter",
         "translation_policy",
@@ -738,14 +799,14 @@
         "output or finding shape",
         "distinguish_from nearby lenses",
         "body completeness review",
-        "status decision"
+        "publication/version decision"
       ],
       "review_questions": [
         "Does this Lens still represent the current diagnostic view?",
         "Which Patterns does this Lens actually inspect?",
         "What inputs does this Lens require?",
         "What output or finding shape should it produce?",
-        "Should this be planned, draft, stable, rejected, or merged?"
+        "Should this be promoted, rejected, merged, or kept for later review?"
       ],
       "notes": ""
     },
@@ -754,10 +815,13 @@
       "title": "Variance / Entropy Lens",
       "layer": "lens",
       "imported_status": "stable",
+      "review_cycle": "ontology-import-2026-05",
+      "target_ontology_release": "0.1.0",
       "import_state": "needs_review",
-      "existing_public_code": null,
-      "provisional_code": null,
-      "known_existing_public_entry": false,
+      "current_src_entry": false,
+      "current_src_code": null,
+      "proposed_code": null,
+      "approved_code": null,
       "source_file": "docs/import-clean/lenses/variance-entropy-lens.md",
       "body_sections_found": [
         "Definition",
@@ -767,7 +831,7 @@
         "Structural Limits"
       ],
       "missing": [
-        "code assignment or approval",
+        "approved code",
         "current summary",
         "canonical frontmatter",
         "translation_policy",
@@ -777,14 +841,14 @@
         "output or finding shape",
         "distinguish_from nearby lenses",
         "body completeness review",
-        "status decision"
+        "publication/version decision"
       ],
       "review_questions": [
         "Does this Lens still represent the current diagnostic view?",
         "Which Patterns does this Lens actually inspect?",
         "What inputs does this Lens require?",
         "What output or finding shape should it produce?",
-        "Should this be planned, draft, stable, rejected, or merged?"
+        "Should this be promoted, rejected, merged, or kept for later review?"
       ],
       "notes": ""
     }

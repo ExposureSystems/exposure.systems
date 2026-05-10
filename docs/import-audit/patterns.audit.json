@@ -1,11 +1,15 @@
 {
-  "version": 1,
+  "version": 2,
+  "review_cycle": "ontology-import-2026-05",
+  "target_ontology_release": "0.1.0",
   "source_dir": "docs/import-clean/patterns",
   "rules": {
     "do_not_promote_until_reviewed": true,
     "default_import_state": "needs_review",
-    "provisional_codes_are_not_final_until_approved": true,
-    "imported_status_is_not_authoritative": true
+    "imported_status_is_not_authoritative": true,
+    "current_src_code_is_not_approval": true,
+    "proposed_code_is_not_approval": true,
+    "approved_code_required_for_promotion": true
   },
   "patterns": [
     {
@@ -13,10 +17,13 @@
       "title": "Asymmetric Structure",
       "layer": "pattern",
       "imported_status": "stable",
+      "review_cycle": "ontology-import-2026-05",
+      "target_ontology_release": "0.1.0",
       "import_state": "needs_review",
-      "existing_public_code": null,
-      "provisional_code": null,
-      "known_existing_public_entry": false,
+      "current_src_entry": false,
+      "current_src_code": null,
+      "proposed_code": null,
+      "approved_code": null,
       "source_file": "docs/import-clean/patterns/asymmetric-structure.md",
       "body_sections_found": [
         "Definition",
@@ -25,7 +32,7 @@
         "Structural Limits"
       ],
       "missing": [
-        "code assignment or approval",
+        "approved code",
         "current summary",
         "canonical frontmatter",
         "translation_policy",
@@ -35,14 +42,14 @@
         "common_contexts",
         "distinguish_from nearby patterns",
         "body completeness review",
-        "status decision"
+        "publication/version decision"
       ],
       "review_questions": [
         "Does this still represent the current Pattern definition?",
         "Is this Pattern distinct from nearby Patterns?",
         "What Issue language should map to this Pattern?",
         "Which Lenses actually inspect this Pattern?",
-        "Should this be planned, draft, stable, rejected, or merged?"
+        "Should this be promoted, rejected, merged, or kept for later review?"
       ],
       "notes": ""
     },
@@ -51,10 +58,13 @@
       "title": "Authority Collision",
       "layer": "pattern",
       "imported_status": "stable",
+      "review_cycle": "ontology-import-2026-05",
+      "target_ontology_release": "0.1.0",
       "import_state": "needs_review",
-      "existing_public_code": "PAT-0100",
-      "provisional_code": null,
-      "known_existing_public_entry": true,
+      "current_src_entry": true,
+      "current_src_code": "PAT-0100",
+      "proposed_code": null,
+      "approved_code": null,
       "source_file": "docs/import-clean/patterns/authority-collision.md",
       "body_sections_found": [
         "Definition",
@@ -63,7 +73,7 @@
         "Structural Limits"
       ],
       "missing": [
-        "code assignment or approval",
+        "approved code",
         "current summary",
         "canonical frontmatter",
         "translation_policy",
@@ -73,14 +83,14 @@
         "common_contexts",
         "distinguish_from nearby patterns",
         "body completeness review",
-        "status decision"
+        "publication/version decision"
       ],
       "review_questions": [
         "Does this still represent the current Pattern definition?",
         "Is this Pattern distinct from nearby Patterns?",
         "What Issue language should map to this Pattern?",
         "Which Lenses actually inspect this Pattern?",
-        "Should this be planned, draft, stable, rejected, or merged?"
+        "Should this be promoted, rejected, merged, or kept for later review?"
       ],
       "notes": ""
     },
@@ -89,10 +99,13 @@
       "title": "Authority Merge Conflict",
       "layer": "pattern",
       "imported_status": "stable",
+      "review_cycle": "ontology-import-2026-05",
+      "target_ontology_release": "0.1.0",
       "import_state": "needs_review",
-      "existing_public_code": null,
-      "provisional_code": null,
-      "known_existing_public_entry": false,
+      "current_src_entry": false,
+      "current_src_code": null,
+      "proposed_code": null,
+      "approved_code": null,
       "source_file": "docs/import-clean/patterns/authority-merge-conflict.md",
       "body_sections_found": [
         "Definition",
@@ -101,7 +114,7 @@
         "Structural Limits"
       ],
       "missing": [
-        "code assignment or approval",
+        "approved code",
         "current summary",
         "canonical frontmatter",
         "translation_policy",
@@ -111,14 +124,14 @@
         "common_contexts",
         "distinguish_from nearby patterns",
         "body completeness review",
-        "status decision"
+        "publication/version decision"
       ],
       "review_questions": [
         "Does this still represent the current Pattern definition?",
         "Is this Pattern distinct from nearby Patterns?",
         "What Issue language should map to this Pattern?",
         "Which Lenses actually inspect this Pattern?",
-        "Should this be planned, draft, stable, rejected, or merged?"
+        "Should this be promoted, rejected, merged, or kept for later review?"
       ],
       "notes": ""
     },
@@ -127,10 +140,13 @@
       "title": "Authority Shadowing",
       "layer": "pattern",
       "imported_status": "stable",
+      "review_cycle": "ontology-import-2026-05",
+      "target_ontology_release": "0.1.0",
       "import_state": "needs_review",
-      "existing_public_code": null,
-      "provisional_code": null,
-      "known_existing_public_entry": false,
+      "current_src_entry": false,
+      "current_src_code": null,
+      "proposed_code": null,
+      "approved_code": null,
       "source_file": "docs/import-clean/patterns/authority-shadowing.md",
       "body_sections_found": [
         "Definition",
@@ -139,7 +155,7 @@
         "Structural Limits"
       ],
       "missing": [
-        "code assignment or approval",
+        "approved code",
         "current summary",
         "canonical frontmatter",
         "translation_policy",
@@ -149,14 +165,14 @@
         "common_contexts",
         "distinguish_from nearby patterns",
         "body completeness review",
-        "status decision"
+        "publication/version decision"
       ],
       "review_questions": [
         "Does this still represent the current Pattern definition?",
         "Is this Pattern distinct from nearby Patterns?",
         "What Issue language should map to this Pattern?",
         "Which Lenses actually inspect this Pattern?",
-        "Should this be planned, draft, stable, rejected, or merged?"
+        "Should this be promoted, rejected, merged, or kept for later review?"
       ],
       "notes": ""
     },
@@ -165,10 +181,13 @@
       "title": "Authority-State Mismatch",
       "layer": "pattern",
       "imported_status": "stable",
+      "review_cycle": "ontology-import-2026-05",
+      "target_ontology_release": "0.1.0",
       "import_state": "needs_review",
-      "existing_public_code": null,
-      "provisional_code": null,
-      "known_existing_public_entry": false,
+      "current_src_entry": false,
+      "current_src_code": null,
+      "proposed_code": null,
+      "approved_code": null,
       "source_file": "docs/import-clean/patterns/authority-state-mismatch.md",
       "body_sections_found": [
         "Definition",
@@ -177,7 +196,7 @@
         "Structural Limits"
       ],
       "missing": [
-        "code assignment or approval",
+        "approved code",
         "current summary",
         "canonical frontmatter",
         "translation_policy",
@@ -187,14 +206,14 @@
         "common_contexts",
         "distinguish_from nearby patterns",
         "body completeness review",
-        "status decision"
+        "publication/version decision"
       ],
       "review_questions": [
         "Does this still represent the current Pattern definition?",
         "Is this Pattern distinct from nearby Patterns?",
         "What Issue language should map to this Pattern?",
         "Which Lenses actually inspect this Pattern?",
-        "Should this be planned, draft, stable, rejected, or merged?"
+        "Should this be promoted, rejected, merged, or kept for later review?"
       ],
       "notes": ""
     },
@@ -203,10 +222,13 @@
       "title": "Boundary Leakage",
       "layer": "pattern",
       "imported_status": "stable",
+      "review_cycle": "ontology-import-2026-05",
+      "target_ontology_release": "0.1.0",
       "import_state": "needs_review",
-      "existing_public_code": null,
-      "provisional_code": null,
-      "known_existing_public_entry": false,
+      "current_src_entry": false,
+      "current_src_code": null,
+      "proposed_code": null,
+      "approved_code": null,
       "source_file": "docs/import-clean/patterns/boundary-leakage.md",
       "body_sections_found": [
         "Definition",
@@ -215,7 +237,7 @@
         "Structural Limits"
       ],
       "missing": [
-        "code assignment or approval",
+        "approved code",
         "current summary",
         "canonical frontmatter",
         "translation_policy",
@@ -225,14 +247,14 @@
         "common_contexts",
         "distinguish_from nearby patterns",
         "body completeness review",
-        "status decision"
+        "publication/version decision"
       ],
       "review_questions": [
         "Does this still represent the current Pattern definition?",
         "Is this Pattern distinct from nearby Patterns?",
         "What Issue language should map to this Pattern?",
         "Which Lenses actually inspect this Pattern?",
-        "Should this be planned, draft, stable, rejected, or merged?"
+        "Should this be promoted, rejected, merged, or kept for later review?"
       ],
       "notes": ""
     },
@@ -241,10 +263,13 @@
       "title": "Circular Dependency",
       "layer": "pattern",
       "imported_status": "stable",
+      "review_cycle": "ontology-import-2026-05",
+      "target_ontology_release": "0.1.0",
       "import_state": "needs_review",
-      "existing_public_code": null,
-      "provisional_code": null,
-      "known_existing_public_entry": false,
+      "current_src_entry": false,
+      "current_src_code": null,
+      "proposed_code": null,
+      "approved_code": null,
       "source_file": "docs/import-clean/patterns/circular-dependency.md",
       "body_sections_found": [
         "Definition",
@@ -253,7 +278,7 @@
         "Structural Limits"
       ],
       "missing": [
-        "code assignment or approval",
+        "approved code",
         "current summary",
         "canonical frontmatter",
         "translation_policy",
@@ -263,14 +288,14 @@
         "common_contexts",
         "distinguish_from nearby patterns",
         "body completeness review",
-        "status decision"
+        "publication/version decision"
       ],
       "review_questions": [
         "Does this still represent the current Pattern definition?",
         "Is this Pattern distinct from nearby Patterns?",
         "What Issue language should map to this Pattern?",
         "Which Lenses actually inspect this Pattern?",
-        "Should this be planned, draft, stable, rejected, or merged?"
+        "Should this be promoted, rejected, merged, or kept for later review?"
       ],
       "notes": ""
     },
@@ -279,10 +304,13 @@
       "title": "Compatibility Violation",
       "layer": "pattern",
       "imported_status": "stable",
+      "review_cycle": "ontology-import-2026-05",
+      "target_ontology_release": "0.1.0",
       "import_state": "needs_review",
-      "existing_public_code": null,
-      "provisional_code": null,
-      "known_existing_public_entry": false,
+      "current_src_entry": false,
+      "current_src_code": null,
+      "proposed_code": null,
+      "approved_code": null,
       "source_file": "docs/import-clean/patterns/compatibility-violation.md",
       "body_sections_found": [
         "Definition",
@@ -291,7 +319,7 @@
         "Structural Limits"
       ],
       "missing": [
-        "code assignment or approval",
+        "approved code",
         "current summary",
         "canonical frontmatter",
         "translation_policy",
@@ -301,14 +329,14 @@
         "common_contexts",
         "distinguish_from nearby patterns",
         "body completeness review",
-        "status decision"
+        "publication/version decision"
       ],
       "review_questions": [
         "Does this still represent the current Pattern definition?",
         "Is this Pattern distinct from nearby Patterns?",
         "What Issue language should map to this Pattern?",
         "Which Lenses actually inspect this Pattern?",
-        "Should this be planned, draft, stable, rejected, or merged?"
+        "Should this be promoted, rejected, merged, or kept for later review?"
       ],
       "notes": ""
     },
@@ -317,10 +345,13 @@
       "title": "Constraints Underspecified",
       "layer": "pattern",
       "imported_status": "stable",
+      "review_cycle": "ontology-import-2026-05",
+      "target_ontology_release": "0.1.0",
       "import_state": "needs_review",
-      "existing_public_code": null,
-      "provisional_code": null,
-      "known_existing_public_entry": false,
+      "current_src_entry": false,
+      "current_src_code": null,
+      "proposed_code": null,
+      "approved_code": null,
       "source_file": "docs/import-clean/patterns/constraints-underspecified.md",
       "body_sections_found": [
         "Definition",
@@ -329,7 +360,7 @@
         "Structural Limits"
       ],
       "missing": [
-        "code assignment or approval",
+        "approved code",
         "current summary",
         "canonical frontmatter",
         "translation_policy",
@@ -339,14 +370,14 @@
         "common_contexts",
         "distinguish_from nearby patterns",
         "body completeness review",
-        "status decision"
+        "publication/version decision"
       ],
       "review_questions": [
         "Does this still represent the current Pattern definition?",
         "Is this Pattern distinct from nearby Patterns?",
         "What Issue language should map to this Pattern?",
         "Which Lenses actually inspect this Pattern?",
-        "Should this be planned, draft, stable, rejected, or merged?"
+        "Should this be promoted, rejected, merged, or kept for later review?"
       ],
       "notes": ""
     },
@@ -355,10 +386,13 @@
       "title": "Contract Drift",
       "layer": "pattern",
       "imported_status": "stable",
+      "review_cycle": "ontology-import-2026-05",
+      "target_ontology_release": "0.1.0",
       "import_state": "needs_review",
-      "existing_public_code": null,
-      "provisional_code": null,
-      "known_existing_public_entry": false,
+      "current_src_entry": false,
+      "current_src_code": null,
+      "proposed_code": null,
+      "approved_code": null,
       "source_file": "docs/import-clean/patterns/contract-drift.md",
       "body_sections_found": [
         "Definition",
@@ -367,7 +401,7 @@
         "Structural Limits"
       ],
       "missing": [
-        "code assignment or approval",
+        "approved code",
         "current summary",
         "canonical frontmatter",
         "translation_policy",
@@ -377,14 +411,14 @@
         "common_contexts",
         "distinguish_from nearby patterns",
         "body completeness review",
-        "status decision"
+        "publication/version decision"
       ],
       "review_questions": [
         "Does this still represent the current Pattern definition?",
         "Is this Pattern distinct from nearby Patterns?",
         "What Issue language should map to this Pattern?",
         "Which Lenses actually inspect this Pattern?",
-        "Should this be planned, draft, stable, rejected, or merged?"
+        "Should this be promoted, rejected, merged, or kept for later review?"
       ],
       "notes": ""
     },
@@ -393,10 +427,13 @@
       "title": "Convergence Failure",
       "layer": "pattern",
       "imported_status": "stable",
+      "review_cycle": "ontology-import-2026-05",
+      "target_ontology_release": "0.1.0",
       "import_state": "needs_review",
-      "existing_public_code": null,
-      "provisional_code": null,
-      "known_existing_public_entry": false,
+      "current_src_entry": false,
+      "current_src_code": null,
+      "proposed_code": null,
+      "approved_code": null,
       "source_file": "docs/import-clean/patterns/convergence-failure.md",
       "body_sections_found": [
         "Definition",
@@ -405,7 +442,7 @@
         "Structural Limits"
       ],
       "missing": [
-        "code assignment or approval",
+        "approved code",
         "current summary",
         "canonical frontmatter",
         "translation_policy",
@@ -415,14 +452,14 @@
         "common_contexts",
         "distinguish_from nearby patterns",
         "body completeness review",
-        "status decision"
+        "publication/version decision"
       ],
       "review_questions": [
         "Does this still represent the current Pattern definition?",
         "Is this Pattern distinct from nearby Patterns?",
         "What Issue language should map to this Pattern?",
         "Which Lenses actually inspect this Pattern?",
-        "Should this be planned, draft, stable, rejected, or merged?"
+        "Should this be promoted, rejected, merged, or kept for later review?"
       ],
       "notes": ""
     },
@@ -431,10 +468,13 @@
       "title": "Cross-Layer Escalation",
       "layer": "pattern",
       "imported_status": "stable",
+      "review_cycle": "ontology-import-2026-05",
+      "target_ontology_release": "0.1.0",
       "import_state": "needs_review",
-      "existing_public_code": null,
-      "provisional_code": null,
-      "known_existing_public_entry": false,
+      "current_src_entry": false,
+      "current_src_code": null,
+      "proposed_code": null,
+      "approved_code": null,
       "source_file": "docs/import-clean/patterns/cross-layer-escalation.md",
       "body_sections_found": [
         "Definition",
@@ -443,7 +483,7 @@
         "Structural Limits"
       ],
       "missing": [
-        "code assignment or approval",
+        "approved code",
         "current summary",
         "canonical frontmatter",
         "translation_policy",
@@ -453,14 +493,14 @@
         "common_contexts",
         "distinguish_from nearby patterns",
         "body completeness review",
-        "status decision"
+        "publication/version decision"
       ],
       "review_questions": [
         "Does this still represent the current Pattern definition?",
         "Is this Pattern distinct from nearby Patterns?",
         "What Issue language should map to this Pattern?",
         "Which Lenses actually inspect this Pattern?",
-        "Should this be planned, draft, stable, rejected, or merged?"
+        "Should this be promoted, rejected, merged, or kept for later review?"
       ],
       "notes": ""
     },
@@ -469,10 +509,13 @@
       "title": "Density Spike",
       "layer": "pattern",
       "imported_status": "stable",
+      "review_cycle": "ontology-import-2026-05",
+      "target_ontology_release": "0.1.0",
       "import_state": "needs_review",
-      "existing_public_code": null,
-      "provisional_code": null,
-      "known_existing_public_entry": false,
+      "current_src_entry": false,
+      "current_src_code": null,
+      "proposed_code": null,
+      "approved_code": null,
       "source_file": "docs/import-clean/patterns/density-spike.md",
       "body_sections_found": [
         "Definition",
@@ -481,7 +524,7 @@
         "Structural Limits"
       ],
       "missing": [
-        "code assignment or approval",
+        "approved code",
         "current summary",
         "canonical frontmatter",
         "translation_policy",
@@ -491,14 +534,14 @@
         "common_contexts",
         "distinguish_from nearby patterns",
         "body completeness review",
-        "status decision"
+        "publication/version decision"
       ],
       "review_questions": [
         "Does this still represent the current Pattern definition?",
         "Is this Pattern distinct from nearby Patterns?",
         "What Issue language should map to this Pattern?",
         "Which Lenses actually inspect this Pattern?",
-        "Should this be planned, draft, stable, rejected, or merged?"
+        "Should this be promoted, rejected, merged, or kept for later review?"
       ],
       "notes": ""
     },
@@ -507,10 +550,13 @@
       "title": "Density Vacuum",
       "layer": "pattern",
       "imported_status": "stable",
+      "review_cycle": "ontology-import-2026-05",
+      "target_ontology_release": "0.1.0",
       "import_state": "needs_review",
-      "existing_public_code": null,
-      "provisional_code": null,
-      "known_existing_public_entry": false,
+      "current_src_entry": false,
+      "current_src_code": null,
+      "proposed_code": null,
+      "approved_code": null,
       "source_file": "docs/import-clean/patterns/density-vacuum.md",
       "body_sections_found": [
         "Definition",
@@ -519,7 +565,7 @@
         "Structural Limits"
       ],
       "missing": [
-        "code assignment or approval",
+        "approved code",
         "current summary",
         "canonical frontmatter",
         "translation_policy",
@@ -529,14 +575,14 @@
         "common_contexts",
         "distinguish_from nearby patterns",
         "body completeness review",
-        "status decision"
+        "publication/version decision"
       ],
       "review_questions": [
         "Does this still represent the current Pattern definition?",
         "Is this Pattern distinct from nearby Patterns?",
         "What Issue language should map to this Pattern?",
         "Which Lenses actually inspect this Pattern?",
-        "Should this be planned, draft, stable, rejected, or merged?"
+        "Should this be promoted, rejected, merged, or kept for later review?"
       ],
       "notes": ""
     },
@@ -545,10 +591,13 @@
       "title": "Divergent Outputs",
       "layer": "pattern",
       "imported_status": "stable",
+      "review_cycle": "ontology-import-2026-05",
+      "target_ontology_release": "0.1.0",
       "import_state": "needs_review",
-      "existing_public_code": null,
-      "provisional_code": null,
-      "known_existing_public_entry": false,
+      "current_src_entry": false,
+      "current_src_code": null,
+      "proposed_code": null,
+      "approved_code": null,
       "source_file": "docs/import-clean/patterns/divergent-outputs.md",
       "body_sections_found": [
         "Definition",
@@ -557,7 +606,7 @@
         "Structural Limits"
       ],
       "missing": [
-        "code assignment or approval",
+        "approved code",
         "current summary",
         "canonical frontmatter",
         "translation_policy",
@@ -567,14 +616,14 @@
         "common_contexts",
         "distinguish_from nearby patterns",
         "body completeness review",
-        "status decision"
+        "publication/version decision"
       ],
       "review_questions": [
         "Does this still represent the current Pattern definition?",
         "Is this Pattern distinct from nearby Patterns?",
         "What Issue language should map to this Pattern?",
         "Which Lenses actually inspect this Pattern?",
-        "Should this be planned, draft, stable, rejected, or merged?"
+        "Should this be promoted, rejected, merged, or kept for later review?"
       ],
       "notes": ""
     },
@@ -583,10 +632,13 @@
       "title": "Escalation Growth",
       "layer": "pattern",
       "imported_status": "stable",
+      "review_cycle": "ontology-import-2026-05",
+      "target_ontology_release": "0.1.0",
       "import_state": "needs_review",
-      "existing_public_code": null,
-      "provisional_code": null,
-      "known_existing_public_entry": false,
+      "current_src_entry": false,
+      "current_src_code": null,
+      "proposed_code": null,
+      "approved_code": null,
       "source_file": "docs/import-clean/patterns/escalation-growth.md",
       "body_sections_found": [
         "Definition",
@@ -595,7 +647,7 @@
         "Structural Limits"
       ],
       "missing": [
-        "code assignment or approval",
+        "approved code",
         "current summary",
         "canonical frontmatter",
         "translation_policy",
@@ -605,14 +657,14 @@
         "common_contexts",
         "distinguish_from nearby patterns",
         "body completeness review",
-        "status decision"
+        "publication/version decision"
       ],
       "review_questions": [
         "Does this still represent the current Pattern definition?",
         "Is this Pattern distinct from nearby Patterns?",
         "What Issue language should map to this Pattern?",
         "Which Lenses actually inspect this Pattern?",
-        "Should this be planned, draft, stable, rejected, or merged?"
+        "Should this be promoted, rejected, merged, or kept for later review?"
       ],
       "notes": ""
     },
@@ -621,10 +673,13 @@
       "title": "Incomplete Declaration",
       "layer": "pattern",
       "imported_status": "stable",
+      "review_cycle": "ontology-import-2026-05",
+      "target_ontology_release": "0.1.0",
       "import_state": "needs_review",
-      "existing_public_code": null,
-      "provisional_code": null,
-      "known_existing_public_entry": false,
+      "current_src_entry": false,
+      "current_src_code": null,
+      "proposed_code": null,
+      "approved_code": null,
       "source_file": "docs/import-clean/patterns/incomplete-declaration.md",
       "body_sections_found": [
         "Definition",
@@ -633,7 +688,7 @@
         "Structural Limits"
       ],
       "missing": [
-        "code assignment or approval",
+        "approved code",
         "current summary",
         "canonical frontmatter",
         "translation_policy",
@@ -643,14 +698,14 @@
         "common_contexts",
         "distinguish_from nearby patterns",
         "body completeness review",
-        "status decision"
+        "publication/version decision"
       ],
       "review_questions": [
         "Does this still represent the current Pattern definition?",
         "Is this Pattern distinct from nearby Patterns?",
         "What Issue language should map to this Pattern?",
         "Which Lenses actually inspect this Pattern?",
-        "Should this be planned, draft, stable, rejected, or merged?"
+        "Should this be promoted, rejected, merged, or kept for later review?"
       ],
       "notes": ""
     },
@@ -659,10 +714,13 @@
       "title": "Interface Mismatch",
       "layer": "pattern",
       "imported_status": "stable",
+      "review_cycle": "ontology-import-2026-05",
+      "target_ontology_release": "0.1.0",
       "import_state": "needs_review",
-      "existing_public_code": null,
-      "provisional_code": null,
-      "known_existing_public_entry": false,
+      "current_src_entry": false,
+      "current_src_code": null,
+      "proposed_code": null,
+      "approved_code": null,
       "source_file": "docs/import-clean/patterns/interface-mismatch.md",
       "body_sections_found": [
         "Definition",
@@ -671,7 +729,7 @@
         "Structural Limits"
       ],
       "missing": [
-        "code assignment or approval",
+        "approved code",
         "current summary",
         "canonical frontmatter",
         "translation_policy",
@@ -681,14 +739,14 @@
         "common_contexts",
         "distinguish_from nearby patterns",
         "body completeness review",
-        "status decision"
+        "publication/version decision"
       ],
       "review_questions": [
         "Does this still represent the current Pattern definition?",
         "Is this Pattern distinct from nearby Patterns?",
         "What Issue language should map to this Pattern?",
         "Which Lenses actually inspect this Pattern?",
-        "Should this be planned, draft, stable, rejected, or merged?"
+        "Should this be promoted, rejected, merged, or kept for later review?"
       ],
       "notes": ""
     },
@@ -697,10 +755,13 @@
       "title": "Invariant Breakage",
       "layer": "pattern",
       "imported_status": "stable",
+      "review_cycle": "ontology-import-2026-05",
+      "target_ontology_release": "0.1.0",
       "import_state": "needs_review",
-      "existing_public_code": null,
-      "provisional_code": null,
-      "known_existing_public_entry": false,
+      "current_src_entry": false,
+      "current_src_code": null,
+      "proposed_code": null,
+      "approved_code": null,
       "source_file": "docs/import-clean/patterns/invariant-breakage.md",
       "body_sections_found": [
         "Definition",
@@ -709,7 +770,7 @@
         "Structural Limits"
       ],
       "missing": [
-        "code assignment or approval",
+        "approved code",
         "current summary",
         "canonical frontmatter",
         "translation_policy",
@@ -719,14 +780,14 @@
         "common_contexts",
         "distinguish_from nearby patterns",
         "body completeness review",
-        "status decision"
+        "publication/version decision"
       ],
       "review_questions": [
         "Does this still represent the current Pattern definition?",
         "Is this Pattern distinct from nearby Patterns?",
         "What Issue language should map to this Pattern?",
         "Which Lenses actually inspect this Pattern?",
-        "Should this be planned, draft, stable, rejected, or merged?"
+        "Should this be promoted, rejected, merged, or kept for later review?"
       ],
       "notes": ""
     },
@@ -735,10 +796,13 @@
       "title": "Missing Authority",
       "layer": "pattern",
       "imported_status": "stable",
+      "review_cycle": "ontology-import-2026-05",
+      "target_ontology_release": "0.1.0",
       "import_state": "needs_review",
-      "existing_public_code": null,
-      "provisional_code": null,
-      "known_existing_public_entry": false,
+      "current_src_entry": false,
+      "current_src_code": null,
+      "proposed_code": null,
+      "approved_code": null,
       "source_file": "docs/import-clean/patterns/missing-authority.md",
       "body_sections_found": [
         "Definition",
@@ -747,7 +811,7 @@
         "Structural Limits"
       ],
       "missing": [
-        "code assignment or approval",
+        "approved code",
         "current summary",
         "canonical frontmatter",
         "translation_policy",
@@ -757,14 +821,14 @@
         "common_contexts",
         "distinguish_from nearby patterns",
         "body completeness review",
-        "status decision"
+        "publication/version decision"
       ],
       "review_questions": [
         "Does this still represent the current Pattern definition?",
         "Is this Pattern distinct from nearby Patterns?",
         "What Issue language should map to this Pattern?",
         "Which Lenses actually inspect this Pattern?",
-        "Should this be planned, draft, stable, rejected, or merged?"
+        "Should this be promoted, rejected, merged, or kept for later review?"
       ],
       "notes": ""
     },
@@ -773,10 +837,13 @@
       "title": "Non-Deterministic Execution",
       "layer": "pattern",
       "imported_status": "stable",
+      "review_cycle": "ontology-import-2026-05",
+      "target_ontology_release": "0.1.0",
       "import_state": "needs_review",
-      "existing_public_code": null,
-      "provisional_code": null,
-      "known_existing_public_entry": false,
+      "current_src_entry": false,
+      "current_src_code": null,
+      "proposed_code": null,
+      "approved_code": null,
       "source_file": "docs/import-clean/patterns/non-deterministic-execution.md",
       "body_sections_found": [
         "Definition",
@@ -785,7 +852,7 @@
         "Structural Limits"
       ],
       "missing": [
-        "code assignment or approval",
+        "approved code",
         "current summary",
         "canonical frontmatter",
         "translation_policy",
@@ -795,14 +862,14 @@
         "common_contexts",
         "distinguish_from nearby patterns",
         "body completeness review",
-        "status decision"
+        "publication/version decision"
       ],
       "review_questions": [
         "Does this still represent the current Pattern definition?",
         "Is this Pattern distinct from nearby Patterns?",
         "What Issue language should map to this Pattern?",
         "Which Lenses actually inspect this Pattern?",
-        "Should this be planned, draft, stable, rejected, or merged?"
+        "Should this be promoted, rejected, merged, or kept for later review?"
       ],
       "notes": ""
     },
@@ -811,10 +878,13 @@
       "title": "Orphaned Structure",
       "layer": "pattern",
       "imported_status": "stable",
+      "review_cycle": "ontology-import-2026-05",
+      "target_ontology_release": "0.1.0",
       "import_state": "needs_review",
-      "existing_public_code": null,
-      "provisional_code": null,
-      "known_existing_public_entry": false,
+      "current_src_entry": false,
+      "current_src_code": null,
+      "proposed_code": null,
+      "approved_code": null,
       "source_file": "docs/import-clean/patterns/orphaned-structure.md",
       "body_sections_found": [
         "Definition",
@@ -823,7 +893,7 @@
         "Structural Limits"
       ],
       "missing": [
-        "code assignment or approval",
+        "approved code",
         "current summary",
         "canonical frontmatter",
         "translation_policy",
@@ -833,14 +903,14 @@
         "common_contexts",
         "distinguish_from nearby patterns",
         "body completeness review",
-        "status decision"
+        "publication/version decision"
       ],
       "review_questions": [
         "Does this still represent the current Pattern definition?",
         "Is this Pattern distinct from nearby Patterns?",
         "What Issue language should map to this Pattern?",
         "Which Lenses actually inspect this Pattern?",
-        "Should this be planned, draft, stable, rejected, or merged?"
+        "Should this be promoted, rejected, merged, or kept for later review?"
       ],
       "notes": ""
     },
@@ -849,10 +919,13 @@
       "title": "Overreach",
       "layer": "pattern",
       "imported_status": "stable",
+      "review_cycle": "ontology-import-2026-05",
+      "target_ontology_release": "0.1.0",
       "import_state": "needs_review",
-      "existing_public_code": null,
-      "provisional_code": null,
-      "known_existing_public_entry": false,
+      "current_src_entry": false,
+      "current_src_code": null,
+      "proposed_code": null,
+      "approved_code": null,
       "source_file": "docs/import-clean/patterns/overreach.md",
       "body_sections_found": [
         "Definition",
@@ -861,7 +934,7 @@
         "Structural Limits"
       ],
       "missing": [
-        "code assignment or approval",
+        "approved code",
         "current summary",
         "canonical frontmatter",
         "translation_policy",
@@ -871,14 +944,14 @@
         "common_contexts",
         "distinguish_from nearby patterns",
         "body completeness review",
-        "status decision"
+        "publication/version decision"
       ],
       "review_questions": [
         "Does this still represent the current Pattern definition?",
         "Is this Pattern distinct from nearby Patterns?",
         "What Issue language should map to this Pattern?",
         "Which Lenses actually inspect this Pattern?",
-        "Should this be planned, draft, stable, rejected, or merged?"
+        "Should this be promoted, rejected, merged, or kept for later review?"
       ],
       "notes": ""
     },
@@ -887,10 +960,13 @@
       "title": "Persistence Instability",
       "layer": "pattern",
       "imported_status": "stable",
+      "review_cycle": "ontology-import-2026-05",
+      "target_ontology_release": "0.1.0",
       "import_state": "needs_review",
-      "existing_public_code": null,
-      "provisional_code": null,
-      "known_existing_public_entry": false,
+      "current_src_entry": false,
+      "current_src_code": null,
+      "proposed_code": null,
+      "approved_code": null,
       "source_file": "docs/import-clean/patterns/persistence-instability.md",
       "body_sections_found": [
         "Definition",
@@ -899,7 +975,7 @@
         "Structural Limits"
       ],
       "missing": [
-        "code assignment or approval",
+        "approved code",
         "current summary",
         "canonical frontmatter",
         "translation_policy",
@@ -909,14 +985,14 @@
         "common_contexts",
         "distinguish_from nearby patterns",
         "body completeness review",
-        "status decision"
+        "publication/version decision"
       ],
       "review_questions": [
         "Does this still represent the current Pattern definition?",
         "Is this Pattern distinct from nearby Patterns?",
         "What Issue language should map to this Pattern?",
         "Which Lenses actually inspect this Pattern?",
-        "Should this be planned, draft, stable, rejected, or merged?"
+        "Should this be promoted, rejected, merged, or kept for later review?"
       ],
       "notes": ""
     },
@@ -925,10 +1001,13 @@
       "title": "Propagation Amplification",
       "layer": "pattern",
       "imported_status": "stable",
+      "review_cycle": "ontology-import-2026-05",
+      "target_ontology_release": "0.1.0",
       "import_state": "needs_review",
-      "existing_public_code": null,
-      "provisional_code": null,
-      "known_existing_public_entry": false,
+      "current_src_entry": false,
+      "current_src_code": null,
+      "proposed_code": null,
+      "approved_code": null,
       "source_file": "docs/import-clean/patterns/propagation-amplification.md",
       "body_sections_found": [
         "Definition",
@@ -937,7 +1016,7 @@
         "Structural Limits"
       ],
       "missing": [
-        "code assignment or approval",
+        "approved code",
         "current summary",
         "canonical frontmatter",
         "translation_policy",
@@ -947,14 +1026,14 @@
         "common_contexts",
         "distinguish_from nearby patterns",
         "body completeness review",
-        "status decision"
+        "publication/version decision"
       ],
       "review_questions": [
         "Does this still represent the current Pattern definition?",
         "Is this Pattern distinct from nearby Patterns?",
         "What Issue language should map to this Pattern?",
         "Which Lenses actually inspect this Pattern?",
-        "Should this be planned, draft, stable, rejected, or merged?"
+        "Should this be promoted, rejected, merged, or kept for later review?"
       ],
       "notes": ""
     },
@@ -963,10 +1042,13 @@
       "title": "Redundant Declaration",
       "layer": "pattern",
       "imported_status": "stable",
+      "review_cycle": "ontology-import-2026-05",
+      "target_ontology_release": "0.1.0",
       "import_state": "needs_review",
-      "existing_public_code": null,
-      "provisional_code": null,
-      "known_existing_public_entry": false,
+      "current_src_entry": false,
+      "current_src_code": null,
+      "proposed_code": null,
+      "approved_code": null,
       "source_file": "docs/import-clean/patterns/redundant-declaration.md",
       "body_sections_found": [
         "Definition",
@@ -975,7 +1057,7 @@
         "Structural Limits"
       ],
       "missing": [
-        "code assignment or approval",
+        "approved code",
         "current summary",
         "canonical frontmatter",
         "translation_policy",
@@ -985,14 +1067,14 @@
         "common_contexts",
         "distinguish_from nearby patterns",
         "body completeness review",
-        "status decision"
+        "publication/version decision"
       ],
       "review_questions": [
         "Does this still represent the current Pattern definition?",
         "Is this Pattern distinct from nearby Patterns?",
         "What Issue language should map to this Pattern?",
         "Which Lenses actually inspect this Pattern?",
-        "Should this be planned, draft, stable, rejected, or merged?"
+        "Should this be promoted, rejected, merged, or kept for later review?"
       ],
       "notes": ""
     },
@@ -1001,10 +1083,13 @@
       "title": "Reference Instability",
       "layer": "pattern",
       "imported_status": "stable",
+      "review_cycle": "ontology-import-2026-05",
+      "target_ontology_release": "0.1.0",
       "import_state": "needs_review",
-      "existing_public_code": null,
-      "provisional_code": null,
-      "known_existing_public_entry": false,
+      "current_src_entry": false,
+      "current_src_code": null,
+      "proposed_code": null,
+      "approved_code": null,
       "source_file": "docs/import-clean/patterns/reference-instability.md",
       "body_sections_found": [
         "Definition",
@@ -1013,7 +1098,7 @@
         "Structural Limits"
       ],
       "missing": [
-        "code assignment or approval",
+        "approved code",
         "current summary",
         "canonical frontmatter",
         "translation_policy",
@@ -1023,14 +1108,14 @@
         "common_contexts",
         "distinguish_from nearby patterns",
         "body completeness review",
-        "status decision"
+        "publication/version decision"
       ],
       "review_questions": [
         "Does this still represent the current Pattern definition?",
         "Is this Pattern distinct from nearby Patterns?",
         "What Issue language should map to this Pattern?",
         "Which Lenses actually inspect this Pattern?",
-        "Should this be planned, draft, stable, rejected, or merged?"
+        "Should this be promoted, rejected, merged, or kept for later review?"
       ],
       "notes": ""
     },
@@ -1039,10 +1124,13 @@
       "title": "Schema Breakage",
       "layer": "pattern",
       "imported_status": "stable",
+      "review_cycle": "ontology-import-2026-05",
+      "target_ontology_release": "0.1.0",
       "import_state": "needs_review",
-      "existing_public_code": null,
-      "provisional_code": null,
-      "known_existing_public_entry": false,
+      "current_src_entry": false,
+      "current_src_code": null,
+      "proposed_code": null,
+      "approved_code": null,
       "source_file": "docs/import-clean/patterns/schema-breakage.md",
       "body_sections_found": [
         "Definition",
@@ -1051,7 +1139,7 @@
         "Structural Limits"
       ],
       "missing": [
-        "code assignment or approval",
+        "approved code",
         "current summary",
         "canonical frontmatter",
         "translation_policy",
@@ -1061,14 +1149,14 @@
         "common_contexts",
         "distinguish_from nearby patterns",
         "body completeness review",
-        "status decision"
+        "publication/version decision"
       ],
       "review_questions": [
         "Does this still represent the current Pattern definition?",
         "Is this Pattern distinct from nearby Patterns?",
         "What Issue language should map to this Pattern?",
         "Which Lenses actually inspect this Pattern?",
-        "Should this be planned, draft, stable, rejected, or merged?"
+        "Should this be promoted, rejected, merged, or kept for later review?"
       ],
       "notes": ""
     },
@@ -1077,10 +1165,13 @@
       "title": "Silent Mutation",
       "layer": "pattern",
       "imported_status": "stable",
+      "review_cycle": "ontology-import-2026-05",
+      "target_ontology_release": "0.1.0",
       "import_state": "needs_review",
-      "existing_public_code": null,
-      "provisional_code": null,
-      "known_existing_public_entry": false,
+      "current_src_entry": false,
+      "current_src_code": null,
+      "proposed_code": null,
+      "approved_code": null,
       "source_file": "docs/import-clean/patterns/silent-mutation.md",
       "body_sections_found": [
         "Definition",
@@ -1089,7 +1180,7 @@
         "Structural Limits"
       ],
       "missing": [
-        "code assignment or approval",
+        "approved code",
         "current summary",
         "canonical frontmatter",
         "translation_policy",
@@ -1099,14 +1190,14 @@
         "common_contexts",
         "distinguish_from nearby patterns",
         "body completeness review",
-        "status decision"
+        "publication/version decision"
       ],
       "review_questions": [
         "Does this still represent the current Pattern definition?",
         "Is this Pattern distinct from nearby Patterns?",
         "What Issue language should map to this Pattern?",
         "Which Lenses actually inspect this Pattern?",
-        "Should this be planned, draft, stable, rejected, or merged?"
+        "Should this be promoted, rejected, merged, or kept for later review?"
       ],
       "notes": ""
     },
@@ -1115,10 +1206,13 @@
       "title": "Threshold Breach",
       "layer": "pattern",
       "imported_status": "stable",
+      "review_cycle": "ontology-import-2026-05",
+      "target_ontology_release": "0.1.0",
       "import_state": "needs_review",
-      "existing_public_code": null,
-      "provisional_code": null,
-      "known_existing_public_entry": false,
+      "current_src_entry": false,
+      "current_src_code": null,
+      "proposed_code": null,
+      "approved_code": null,
       "source_file": "docs/import-clean/patterns/threshold-breach.md",
       "body_sections_found": [
         "Definition",
@@ -1127,7 +1221,7 @@
         "Structural Limits"
       ],
       "missing": [
-        "code assignment or approval",
+        "approved code",
         "current summary",
         "canonical frontmatter",
         "translation_policy",
@@ -1137,14 +1231,14 @@
         "common_contexts",
         "distinguish_from nearby patterns",
         "body completeness review",
-        "status decision"
+        "publication/version decision"
       ],
       "review_questions": [
         "Does this still represent the current Pattern definition?",
         "Is this Pattern distinct from nearby Patterns?",
         "What Issue language should map to this Pattern?",
         "Which Lenses actually inspect this Pattern?",
-        "Should this be planned, draft, stable, rejected, or merged?"
+        "Should this be promoted, rejected, merged, or kept for later review?"
       ],
       "notes": ""
     },
@@ -1153,10 +1247,13 @@
       "title": "Unbounded Scope",
       "layer": "pattern",
       "imported_status": "stable",
+      "review_cycle": "ontology-import-2026-05",
+      "target_ontology_release": "0.1.0",
       "import_state": "needs_review",
-      "existing_public_code": null,
-      "provisional_code": null,
-      "known_existing_public_entry": false,
+      "current_src_entry": false,
+      "current_src_code": null,
+      "proposed_code": null,
+      "approved_code": null,
       "source_file": "docs/import-clean/patterns/unbounded-scope.md",
       "body_sections_found": [
         "Definition",
@@ -1165,7 +1262,7 @@
         "Structural Limits"
       ],
       "missing": [
-        "code assignment or approval",
+        "approved code",
         "current summary",
         "canonical frontmatter",
         "translation_policy",
@@ -1175,14 +1272,14 @@
         "common_contexts",
         "distinguish_from nearby patterns",
         "body completeness review",
-        "status decision"
+        "publication/version decision"
       ],
       "review_questions": [
         "Does this still represent the current Pattern definition?",
         "Is this Pattern distinct from nearby Patterns?",
         "What Issue language should map to this Pattern?",
         "Which Lenses actually inspect this Pattern?",
-        "Should this be planned, draft, stable, rejected, or merged?"
+        "Should this be promoted, rejected, merged, or kept for later review?"
       ],
       "notes": ""
     },
@@ -1191,10 +1288,13 @@
       "title": "Unconstrained Expansion",
       "layer": "pattern",
       "imported_status": "stable",
+      "review_cycle": "ontology-import-2026-05",
+      "target_ontology_release": "0.1.0",
       "import_state": "needs_review",
-      "existing_public_code": null,
-      "provisional_code": null,
-      "known_existing_public_entry": false,
+      "current_src_entry": false,
+      "current_src_code": null,
+      "proposed_code": null,
+      "approved_code": null,
       "source_file": "docs/import-clean/patterns/unconstrained-expansion.md",
       "body_sections_found": [
         "Definition",
@@ -1203,7 +1303,7 @@
         "Structural Limits"
       ],
       "missing": [
-        "code assignment or approval",
+        "approved code",
         "current summary",
         "canonical frontmatter",
         "translation_policy",
@@ -1213,14 +1313,14 @@
         "common_contexts",
         "distinguish_from nearby patterns",
         "body completeness review",
-        "status decision"
+        "publication/version decision"
       ],
       "review_questions": [
         "Does this still represent the current Pattern definition?",
         "Is this Pattern distinct from nearby Patterns?",
         "What Issue language should map to this Pattern?",
         "Which Lenses actually inspect this Pattern?",
-        "Should this be planned, draft, stable, rejected, or merged?"
+        "Should this be promoted, rejected, merged, or kept for later review?"
       ],
       "notes": ""
     },
@@ -1229,10 +1329,13 @@
       "title": "Undeclared Side Effect",
       "layer": "pattern",
       "imported_status": "stable",
+      "review_cycle": "ontology-import-2026-05",
+      "target_ontology_release": "0.1.0",
       "import_state": "needs_review",
-      "existing_public_code": null,
-      "provisional_code": null,
-      "known_existing_public_entry": false,
+      "current_src_entry": false,
+      "current_src_code": null,
+      "proposed_code": null,
+      "approved_code": null,
       "source_file": "docs/import-clean/patterns/undeclared-side-effect.md",
       "body_sections_found": [
         "Definition",
@@ -1241,7 +1344,7 @@
         "Structural Limits"
       ],
       "missing": [
-        "code assignment or approval",
+        "approved code",
         "current summary",
         "canonical frontmatter",
         "translation_policy",
@@ -1251,14 +1354,14 @@
         "common_contexts",
         "distinguish_from nearby patterns",
         "body completeness review",
-        "status decision"
+        "publication/version decision"
       ],
       "review_questions": [
         "Does this still represent the current Pattern definition?",
         "Is this Pattern distinct from nearby Patterns?",
         "What Issue language should map to this Pattern?",
         "Which Lenses actually inspect this Pattern?",
-        "Should this be planned, draft, stable, rejected, or merged?"
+        "Should this be promoted, rejected, merged, or kept for later review?"
       ],
       "notes": ""
     }

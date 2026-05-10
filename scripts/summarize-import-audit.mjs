@@ -9,19 +9,31 @@ function readJson(filePath) {
 
 function summarizeEntries(entries) {
   const byState = {};
-  const existingPublic = [];
-  const noCode = [];
+  const currentSrcEntries = [];
+  const approvedCodes = [];
+  const proposedCodes = [];
+  const needsApprovedCode = [];
   const importedStable = [];
 
   for (const entry of entries) {
     byState[entry.import_state] = (byState[entry.import_state] || 0) + 1;
 
-    if (entry.known_existing_public_entry) {
-      existingPublic.push(entry.slug);
+    if (entry.current_src_entry) {
+      currentSrcEntries.push(
+        entry.current_src_code
+          ? `${entry.slug} (${entry.current_src_code})`
+          : entry.slug
+      );
     }
 
-    if (!entry.existing_public_code && !entry.provisional_code) {
-      noCode.push(entry.slug);
+    if (entry.approved_code) {
+      approvedCodes.push(`${entry.slug} (${entry.approved_code})`);
+    } else {
+      needsApprovedCode.push(entry.slug);
+    }
+
+    if (entry.proposed_code) {
+      proposedCodes.push(`${entry.slug} (${entry.proposed_code})`);
     }
 
     if (entry.imported_status === "stable") {
@@ -32,14 +44,18 @@ function summarizeEntries(entries) {
   return {
     count: entries.length,
     byState,
-    existingPublic,
-    noCode,
+    currentSrcEntries,
+    approvedCodes,
+    proposedCodes,
+    needsApprovedCode,
     importedStableCount: importedStable.length,
   };
 }
 
 function listItems(items) {
-  return items.length > 0 ? items.map((item) => `- ${item}`).join("\n") : "- None";
+  return items.length > 0
+    ? items.map((item) => `- ${item}`).join("\n")
+    : "- None";
 }
 
 function listStateCounts(byState) {
@@ -56,6 +72,17 @@ const lensSummary = summarizeEntries(lensAudit.lenses);
 
 const report = `# Ontology Import Audit Summary
 
+Review cycle: ${patternAudit.review_cycle}
+Target ontology release: ${patternAudit.target_ontology_release}
+
+## Rules
+
+- Current source presence does not mean approval.
+- Current source code does not mean approval.
+- Proposed code does not mean approval.
+- Approved code is required before promotion into public ontology content.
+- Imported source status is not authoritative.
+
 ## Patterns
 
 Total: ${patternSummary.count}
@@ -64,13 +91,21 @@ Import states:
 
 ${listStateCounts(patternSummary.byState)}
 
-Existing public entries:
+Current source overlaps:
 
-${listItems(patternSummary.existingPublic)}
+${listItems(patternSummary.currentSrcEntries)}
 
-Entries without approved/provisional code:
+Approved codes this cycle:
 
-${listItems(patternSummary.noCode)}
+${listItems(patternSummary.approvedCodes)}
+
+Proposed codes this cycle:
+
+${listItems(patternSummary.proposedCodes)}
+
+Entries needing approved code:
+
+${listItems(patternSummary.needsApprovedCode)}
 
 Imported entries marked stable in source docs: ${patternSummary.importedStableCount}
 
@@ -84,13 +119,21 @@ Import states:
 
 ${listStateCounts(lensSummary.byState)}
 
-Existing public entries:
+Current source overlaps:
 
-${listItems(lensSummary.existingPublic)}
+${listItems(lensSummary.currentSrcEntries)}
 
-Entries without approved/provisional code:
+Approved codes this cycle:
 
-${listItems(lensSummary.noCode)}
+${listItems(lensSummary.approvedCodes)}
+
+Proposed codes this cycle:
+
+${listItems(lensSummary.proposedCodes)}
+
+Entries needing approved code:
+
+${listItems(lensSummary.needsApprovedCode)}
 
 Imported entries marked stable in source docs: ${lensSummary.importedStableCount}
 
@@ -107,7 +150,7 @@ No imported Pattern or Lens should be promoted into \`src/content/\` until it ha
 - search intents
 - relationship mapping
 - body completeness review
-- status decision
+- publication/version decision
 `;
 
 fs.writeFileSync("docs/import-audit/summary.md", report);
