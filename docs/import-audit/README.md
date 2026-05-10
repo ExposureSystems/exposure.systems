@@ -29,3 +29,4 @@ They are not complete public ontology entries until reviewed, enriched, validate
 - `approved_for_stable`: may be promoted as stable public content
 - `rejected`: should not be promoted
 - `merged`: concept has been merged into another Pattern or Lens
+
