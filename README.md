@@ -1,46 +1,146 @@
-# Astro Starter Kit: Basics
+@'
+# Pengo AI Structural Workbench
 
-```sh
-npm create astro@latest -- --template basics
-```
+Stop waiting for AI to magically get better.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Find the structure. Use it to observe, control, and report what AI systems actually do.
 
-## 🚀 Project Structure
+## Deployment Target
 
-Inside of your Astro project, you'll see the following folders and files:
+This repository is built for Cloudflare Pages.
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
+Do not create Astro pages just to simulate Cloudflare platform behavior.
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+Use Cloudflare-native files for platform concerns:
 
-## 🧞 Commands
+- `public/_redirects` for redirects
+- `public/_headers` for headers, crawler hints, and cache/security headers
 
-All commands are run from the root of the project, from a terminal:
+## Build
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+Run:
 
-## 👀 Want to learn more?
+    npm run build
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+The production build writes to:
+
+    dist/
+
+Current build flow:
+
+    npm run validate
+    npm run build:ontology
+    astro build
+
+## Workbench Routes
+
+Human-facing Workbench pages live under:
+
+    /workbench/
+
+Primary pages:
+
+    /workbench/check-input/
+    /workbench/gap-explorer/
+    /workbench/search/
+    /workbench/issues/
+    /workbench/patterns/
+    /workbench/lenses/
+    /workbench/categories/
+    /workbench/examples/
+    /workbench/field-notes/
+    /workbench/articles/
+    /workbench/videos/
+
+## Cloudflare Redirects
+
+Short Workbench paths are handled by Cloudflare Pages redirects, not Astro pages.
+
+Configured in:
+
+    public/_redirects
+
+Current rule shape:
+
+    /wb              /workbench/              301
+    /wb/             /workbench/              301
+    /wb/*            /workbench/:splat        301
+
+Do not recreate `src/pages/wb/` redirect pages.
+
+## Cloudflare Headers
+
+Headers are configured in:
+
+    public/_headers
+
+Current intent:
+
+- keep human pages indexable
+- keep Markdown artifacts indexable
+- keep `llms.txt` indexable
+- keep `_internal` JSON machine-accessible but `noindex`
+- add basic security headers
+
+## Machine Artifacts
+
+Machine-readable Workbench artifacts are published under:
+
+    /workbench/_internal/
+
+Current machine endpoints:
+
+    /workbench/_internal/ontology-index.json
+    /workbench/_internal/search-index.json
+    /workbench/_internal/pattern-lens-matrix.json
+    /workbench/_internal/check-input-vocabulary.json
+    /workbench/_internal/check-input-matrix.json
+    /workbench/_internal/check-input-index.json
+
+Machine-readable Markdown artifacts are also published:
+
+    /workbench/issues/[slug].md
+    /workbench/patterns/[slug].md
+    /workbench/lenses/[slug].md
+
+## Canonical Ontology Terms
+
+Canonical Pattern and Lens terms are mechanical labels.
+
+Do not translate, localize, paraphrase, or rename:
+
+- Pattern codes
+- Lens codes
+- Pattern slugs
+- Lens slugs
+- canonical Pattern titles
+- canonical Lens titles
+
+Localized explanations may be added later as a v2 overlay, but they must not replace canonical ontology terms.
+
+UI pages should mark canonical Pattern/Lens labels with:
+
+    <span class="canonical-term notranslate" translate="no">
+      PAT-001 - Authority Collision
+    </span>
+
+## Source Data
+
+Ontology source files live under:
+
+    src/ontology/
+
+Generated metadata lives under:
+
+    src/content/_meta/
+
+Generated metadata is committed intentionally so diffs remain visible and deterministic.
+
+## Important Project Rule
+
+This is a Cloudflare Pages static site.
+
+Build real content as Astro/static files.
+
+Use Cloudflare Pages features for redirects, headers, and edge behavior.
+'@ | Set-Content README.md
