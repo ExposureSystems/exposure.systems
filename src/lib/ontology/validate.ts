@@ -68,6 +68,14 @@ function isLensCode(value: string) {
   return /^LEN-\d{4}$/.test(value);
 }
 
+function isIssueCode(value: string) {
+  return /^ISS-\d{4}$/.test(value);
+}
+
+function isCategoryCode(value: string) {
+  return /^CAT-\d{4}$/.test(value);
+}
+
 function readJsonFile(filePath: string): unknown {
   return JSON.parse(fs.readFileSync(filePath, "utf-8"));
 }
@@ -103,18 +111,26 @@ function validateMatrix(matrix: unknown): asserts matrix is PatternLensMatrix {
     const secondary = entry.secondary;
 
     if (primary.length < 1 || primary.length > 2) {
-      errors.push(`Matrix entry "${patternSlug}" primary[] must contain 1-2 lenses.`);
+      errors.push(
+        `Matrix entry "${patternSlug}" primary[] must contain 1-2 lenses.`
+      );
     }
 
     if (secondary.length > 2) {
-      errors.push(`Matrix entry "${patternSlug}" secondary[] must contain 0-2 lenses.`);
+      errors.push(
+        `Matrix entry "${patternSlug}" secondary[] must contain 0-2 lenses.`
+      );
     }
 
     const allLenses = [...primary, ...secondary];
 
     for (const lensSlug of allLenses) {
       if (typeof lensSlug !== "string" || !isKebabCase(lensSlug)) {
-        errors.push(`Matrix entry "${patternSlug}" has invalid lens slug "${String(lensSlug)}".`);
+        errors.push(
+          `Matrix entry "${patternSlug}" has invalid lens slug "${String(
+            lensSlug
+          )}".`
+        );
       }
     }
 
@@ -179,7 +195,9 @@ function validateMatrixPatternsHaveFiles(matrix: PatternLensMatrix) {
 
   for (const patternSlug of Object.keys(matrix)) {
     if (!patternFileSlugs.has(patternSlug)) {
-      errors.push(`Matrix pattern "${patternSlug}" is missing src/content/patterns/${patternSlug}.md.`);
+      errors.push(
+        `Matrix pattern "${patternSlug}" is missing src/content/patterns/${patternSlug}.md.`
+      );
     }
   }
 
@@ -211,7 +229,9 @@ function validateMatrixLensesHaveFiles(matrix: PatternLensMatrix) {
 
   for (const lensSlug of matrixLensSlugs) {
     if (!lensFileSlugs.has(lensSlug)) {
-      errors.push(`Matrix lens "${lensSlug}" is missing src/content/lenses/${lensSlug}.md.`);
+      errors.push(
+        `Matrix lens "${lensSlug}" is missing src/content/lenses/${lensSlug}.md.`
+      );
     }
   }
 
@@ -354,12 +374,14 @@ function getPatternCodeLookup() {
 
 function validateCategoryFrontmatter() {
   const errors: string[] = [];
+  const seenCodes = new Map<string, string>();
 
   for (const categoryFile of getMarkdownFiles(categoriesDir)) {
     const filenameSlug = path.basename(categoryFile, ".md");
     const data = readFrontmatter(categoryFile);
 
     const slug = data.slug;
+    const code = data.code;
 
     if (typeof slug !== "string" || slug.length === 0) {
       errors.push(`Category "${filenameSlug}" must declare slug.`);
@@ -370,6 +392,21 @@ function validateCategoryFrontmatter() {
 
       if (slug !== filenameSlug) {
         errors.push(`Category "${filenameSlug}" frontmatter slug must match filename.`);
+      }
+    }
+
+    if (typeof code !== "string" || code.length === 0) {
+      errors.push(`Category "${filenameSlug}" must declare code.`);
+    } else {
+      if (!isCategoryCode(code)) {
+        errors.push(`Category "${filenameSlug}" code "${code}" must match CAT-####.`);
+      }
+
+      const previous = seenCodes.get(code);
+      if (previous) {
+        errors.push(`Category code "${code}" is duplicated by "${previous}" and "${filenameSlug}".`);
+      } else {
+        seenCodes.set(code, filenameSlug);
       }
     }
   }
@@ -384,6 +421,7 @@ function validateIssues(matrix: PatternLensMatrix) {
   const matrixPatternSlugs = new Set(Object.keys(matrix));
   const categorySlugs = getMarkdownSlugs(categoriesDir);
   const issueFiles = getMarkdownFiles(issuesDir);
+  const seenCodes = new Map<string, string>();
 
   for (const issueFile of issueFiles) {
     const filenameSlug = path.basename(issueFile, ".md");
@@ -396,6 +434,7 @@ function validateIssues(matrix: PatternLensMatrix) {
     }
 
     const slug = data.slug;
+    const code = data.code;
     const category = data.category;
     const primaryPattern = data.primary_pattern;
     const patterns = data.patterns;
@@ -409,6 +448,21 @@ function validateIssues(matrix: PatternLensMatrix) {
 
       if (slug !== filenameSlug) {
         errors.push(`Issue "${filenameSlug}" frontmatter slug must match filename.`);
+      }
+    }
+
+    if (typeof code !== "string" || code.length === 0) {
+      errors.push(`Issue "${filenameSlug}" must declare code.`);
+    } else {
+      if (!isIssueCode(code)) {
+        errors.push(`Issue "${filenameSlug}" code "${code}" must match ISS-####.`);
+      }
+
+      const previous = seenCodes.get(code);
+      if (previous) {
+        errors.push(`Issue code "${code}" is duplicated by "${previous}" and "${filenameSlug}".`);
+      } else {
+        seenCodes.set(code, filenameSlug);
       }
     }
 
@@ -567,7 +621,9 @@ function validateCheckInputMatrix(
 
     for (const patternCode of allPatternCodes) {
       if (typeof patternCode !== "string" || !isPatternCode(patternCode)) {
-        errors.push(`Check Input matrix entry "${finding}" has invalid Pattern code "${String(patternCode)}".`);
+        errors.push(
+          `Check Input matrix entry "${finding}" has invalid Pattern code "${String(patternCode)}".`
+        );
         continue;
       }
 

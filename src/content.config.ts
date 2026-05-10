@@ -11,6 +11,7 @@ const issues = defineCollection({
     .object({
       layer: z.literal("issue"),
       ...baseEntry,
+      code: z.string().regex(/^ISS-\d{4}$/),
       category: z.string(),
       summary: z.string(),
       primary_pattern: z.string(),
@@ -51,6 +52,7 @@ const categories = defineCollection({
       layer: z.literal("category"),
       ...baseEntry,
       summary: z.string(),
+      code: z.string().regex(/^CAT-\d{4}$/),
     })
     .strict(),
 });
