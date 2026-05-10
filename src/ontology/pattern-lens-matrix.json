@@ -8,5 +8,15 @@
       "reconciliation-lens",
       "invariant-lens"
     ]
+  },
+  "asymmetric-structure": {
+    "primary": [
+      "conflict-lens",
+      "invariant-lens"
+    ],
+    "secondary": [
+      "authority-overlay-lens",
+      "reconciliation-lens"
+    ]
   }
 }

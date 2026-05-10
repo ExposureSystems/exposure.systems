@@ -37,6 +37,17 @@
     {
       "date": "2026-05-10T00:00:00Z",
       "ontology_release": "0.1.0",
+      "object_code": "PAT-0110",
+      "object_slug": "asymmetric-structure",
+      "object_type": "pattern",
+      "entry_version": "0.1.0",
+      "change_type": "created",
+      "public_summary": "Added Asymmetric Structure as a Pattern for unequal rule, constraint, or authority application across comparable structural regions.",
+      "receipt_impact": "none"
+    },
+    {
+      "date": "2026-05-10T00:00:00Z",
+      "ontology_release": "0.1.0",
       "object_code": "LEN-0100",
       "object_slug": "authority-overlay-lens",
       "object_type": "lens",

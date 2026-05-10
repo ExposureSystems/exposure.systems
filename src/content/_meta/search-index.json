@@ -41,6 +41,12 @@
     ],
     "patterns": [
       {
+        "slug": "asymmetric-structure",
+        "code": "PAT-0110",
+        "title": "Asymmetric Structure",
+        "count": 0
+      },
+      {
         "slug": "authority-collision",
         "code": "PAT-0100",
         "title": "Authority Collision",

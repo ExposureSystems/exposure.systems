@@ -46,6 +46,16 @@
         "reconciliation-lens",
         "invariant-lens"
       ]
+    },
+    "asymmetric-structure": {
+      "primary": [
+        "conflict-lens",
+        "invariant-lens"
+      ],
+      "secondary": [
+        "authority-overlay-lens",
+        "reconciliation-lens"
+      ]
     }
   },
   "issues": [
@@ -78,6 +88,29 @@
     }
   ],
   "patterns": [
+    {
+      "slug": "asymmetric-structure",
+      "code": "PAT-0110",
+      "title": "Asymmetric Structure",
+      "status": "stable",
+      "summary": "A structural condition where comparable regions receive unequal rule, constraint, or authority application without a declared differentiation rule.",
+      "lenses": {
+        "primary": [
+          "conflict-lens",
+          "invariant-lens"
+        ],
+        "secondary": [
+          "authority-overlay-lens",
+          "reconciliation-lens"
+        ]
+      },
+      "issues": {
+        "primary": [],
+        "supporting": []
+      },
+      "url": "/workbench/patterns/asymmetric-structure/",
+      "markdown_url": "/workbench/patterns/asymmetric-structure.md"
+    },
     {
       "slug": "authority-collision",
       "code": "PAT-0100",
@@ -115,7 +148,9 @@
         "primary": [
           "authority-collision"
         ],
-        "secondary": []
+        "secondary": [
+          "asymmetric-structure"
+        ]
       },
       "issues": [
         "issue-0001"
@@ -131,6 +166,7 @@
       "summary": "A diagnostic view focused on detecting unresolved contradiction, overlap, or incompatible structural claims.",
       "patterns": {
         "primary": [
+          "asymmetric-structure",
           "authority-collision"
         ],
         "secondary": []
@@ -148,7 +184,9 @@
       "status": "draft",
       "summary": "A diagnostic view focused on whether a required structural condition remains true across states, transitions, or executions.",
       "patterns": {
-        "primary": [],
+        "primary": [
+          "asymmetric-structure"
+        ],
         "secondary": [
           "authority-collision"
         ]
@@ -168,6 +206,7 @@
       "patterns": {
         "primary": [],
         "secondary": [
+          "asymmetric-structure",
           "authority-collision"
         ]
       },
@@ -192,6 +231,7 @@
   ],
   "lookups": {
     "patterns_by_code": {
+      "PAT-0110": "asymmetric-structure",
       "PAT-0100": "authority-collision"
     },
     "lenses_by_code": {
