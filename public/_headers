@@ -1,0 +1,23 @@
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+
+/workbench/_internal/*
+  X-Robots-Tag: noindex, follow
+  Cache-Control: public, max-age=300
+
+/workbench/issues/*.md
+  X-Robots-Tag: index, follow
+  Cache-Control: public, max-age=300
+
+/workbench/patterns/*.md
+  X-Robots-Tag: index, follow
+  Cache-Control: public, max-age=300
+
+/workbench/lenses/*.md
+  X-Robots-Tag: index, follow
+  Cache-Control: public, max-age=300
+
+/workbench/llms.txt
+  X-Robots-Tag: index, follow
+  Cache-Control: public, max-age=300
