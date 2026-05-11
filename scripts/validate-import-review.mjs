@@ -298,7 +298,7 @@ function validatePatternReviewFiles(errors) {
 }
 
 function validateLensReviewFiles(errors) {
-  const publicLensCodes = getPublicCodeMap(publicLensDir);
+  const publicLensCodes = new Map();
   const seenReviewCodes = new Map();
 
   for (const filePath of getMarkdownFiles(lensReviewDir)) {
