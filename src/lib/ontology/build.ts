@@ -1,4 +1,4 @@
-import fs from "node:fs";
+﻿import fs from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
 
@@ -20,6 +20,7 @@ type CheckInputMatrix = Record<string, CheckInputMatrixEntry>;
 
 type EntryData = {
   slug: string;
+  ontology_slug?: string;
   code?: string;
   title: string;
   status: string;
@@ -72,7 +73,12 @@ function getMarkdownFiles(dir: string) {
 function readEntry(filePath: string): EntryData {
   const raw = fs.readFileSync(filePath, "utf-8");
   const data = matter(raw).data as EntryData;
-  return data;
+  const filenameSlug = path.basename(filePath, ".md");
+
+  return {
+    ...data,
+    slug: data.ontology_slug ?? data.slug ?? filenameSlug,
+  };
 }
 
 function sortBySlug<T extends { slug: string }>(items: T[]) {

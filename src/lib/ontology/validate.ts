@@ -1,4 +1,4 @@
-import fs from "node:fs";
+﻿import fs from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
 import {
@@ -347,20 +347,20 @@ function validatePatternFrontmatter() {
     const filenameSlug = path.basename(patternFile, ".md");
     const data = readFrontmatter(patternFile);
 
-    const slug = data.slug;
+    const ontologySlug = data.ontology_slug;
     const code = data.code;
 
     validateVersionFields(errors, "Pattern", filenameSlug, data);
 
-    if (typeof slug !== "string" || slug.length === 0) {
-      errors.push(`Pattern "${filenameSlug}" must declare slug.`);
+    if (typeof ontologySlug !== "string" || ontologySlug.length === 0) {
+      errors.push(`Pattern "${filenameSlug}" must declare ontology_slug.`);
     } else {
-      if (!isKebabCase(slug)) {
-        errors.push(`Pattern "${filenameSlug}" slug "${slug}" must be kebab-case.`);
+      if (!isKebabCase(ontologySlug)) {
+        errors.push(`Pattern "${filenameSlug}" ontology_slug "${ontologySlug}" must be kebab-case.`);
       }
 
-      if (slug !== filenameSlug) {
-        errors.push(`Pattern "${filenameSlug}" frontmatter slug must match filename.`);
+      if (ontologySlug !== filenameSlug) {
+        errors.push(`Pattern "${filenameSlug}" ontology_slug must match filename.`);
       }
     }
 
@@ -393,20 +393,20 @@ function validateLensFrontmatter() {
     const filenameSlug = path.basename(lensFile, ".md");
     const data = readFrontmatter(lensFile);
 
-    const slug = data.slug;
+    const ontologySlug = data.ontology_slug;
     const code = data.code;
 
     validateVersionFields(errors, "Lens", filenameSlug, data);
 
-    if (typeof slug !== "string" || slug.length === 0) {
-      errors.push(`Lens "${filenameSlug}" must declare slug.`);
+    if (typeof ontologySlug !== "string" || ontologySlug.length === 0) {
+      errors.push(`Lens "${filenameSlug}" must declare ontology_slug.`);
     } else {
-      if (!isKebabCase(slug)) {
-        errors.push(`Lens "${filenameSlug}" slug "${slug}" must be kebab-case.`);
+      if (!isKebabCase(ontologySlug)) {
+        errors.push(`Lens "${filenameSlug}" ontology_slug "${ontologySlug}" must be kebab-case.`);
       }
 
-      if (slug !== filenameSlug) {
-        errors.push(`Lens "${filenameSlug}" frontmatter slug must match filename.`);
+      if (ontologySlug !== filenameSlug) {
+        errors.push(`Lens "${filenameSlug}" ontology_slug must match filename.`);
       }
     }
 

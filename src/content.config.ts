@@ -1,4 +1,4 @@
-import { defineCollection, z } from "astro:content";
+﻿import { defineCollection, z } from "astro:content";
 
 const baseEntry = {
   title: z.string(),
@@ -30,6 +30,7 @@ const patterns = defineCollection({
   schema: z
     .object({
       layer: z.literal("pattern"),
+      ontology_slug: z.string(),
       ...baseEntry,
       summary: z.string(),
       code: z.string().regex(/^PAT-\d{4}$/),
@@ -42,6 +43,7 @@ const lenses = defineCollection({
   schema: z
     .object({
       layer: z.literal("lens"),
+      ontology_slug: z.string(),
       ...baseEntry,
       summary: z.string(),
       code: z.string().regex(/^LEN-\d{4}$/),
@@ -67,3 +69,4 @@ export const collections = {
   lenses,
   categories,
 };
+

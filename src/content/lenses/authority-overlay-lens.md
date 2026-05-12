@@ -1,19 +1,42 @@
 ---
 layer: lens
-slug: authority-overlay-lens
+ontology_slug: authority-overlay-lens
 title: Authority Overlay Lens
 status: stable
 entry_version: 0.1.0
-updated_at: "2026-05-10T00:00:00Z"
-summary: A diagnostic view that maps declared authority hierarchies onto observed structure to detect absence, override, or conflict.
-code: LEN-0100
+updated_at: '2026-05-10T00:00:00Z'
+summary: >-
+  Maps declared authority hierarchies onto observed structure to detect absence,
+  override, or conflict.
+code: LEN-0110
 ---
-
 # Authority Overlay Lens
 
 ## Definition
 
-Maps declared authority hierarchies onto observed structure to detect absence, override, or conflict.
+Authority Overlay Lens maps declared authority hierarchies onto observed structure to detect absence, override, or conflict.
+
+It is used when the main question is whether the system’s declared authorities actually line up with the regions, actions, states, or decisions they are supposed to govern.
+
+## Use This Lens When
+
+Use this Lens when authority, ownership, governance, permission, or approval appears unclear, missing, overlapping, or overridden.
+
+Common triggers include:
+
+- A structural region has no declared authority.
+- Multiple authorities appear to govern the same region.
+- The effective authority differs from the declared hierarchy.
+- A tool, model, agent, workflow, or policy acts under unclear governance.
+- A decision depends on knowing who or what governs a region.
+
+## Input Requirements
+
+- Observed structural graph
+- Declared authority hierarchy
+- Explicit authority definitions
+
+The Lens needs authority declarations. Without them, it can identify that authority is unknown, but it cannot fully classify alignment.
 
 ## Structural Transform
 
@@ -25,23 +48,74 @@ Input:
 Operation:
 
 - Map authority declarations to structural regions
-- Identify overlap or absence
+- Identify regions with missing authority
+- Identify regions with overlapping or unresolved authority
+- Compare declared authority with observed control where possible
 
 Output:
 
 - Authority alignment classification
-- Conflict regions if present
+- Missing authority regions, if present
+- Conflict or overlap regions, if present
+- Shadowed or overridden authority regions, if present
 
-## Input Requirements
+## Output / Finding Shape
 
-- Explicit authority definitions
+This Lens should produce:
 
-## Structural Signature of Failure
+- the structural region being inspected
+- the declared authority or authorities mapped to it
+- whether authority is missing, overlapping, overridden, or aligned
+- the unresolved region or claim if failure is present
 
-Failure exists when structural regions lack declared authority or contain overlapping unresolved authority.
+## Related Patterns
+
+Related Patterns are surfaced from the Pattern/Lens matrix.
+
+Primary Pattern matches are cases where authority mapping is one of the strongest detection mechanisms.
+
+Current primary Pattern matches:
+
+- Missing Authority
+- Authority Collision
+- Authority Shadowing
+
+Current secondary Pattern matches:
+
+- Authority Merge Conflict
+
+## Distinguish From
+
+### Conflict Lens
+
+Conflict Lens detects incompatible claims or states.
+
+Authority Overlay Lens specifically maps authority declarations onto structure. It may reveal conflict, but it begins with authority alignment.
+
+### Reconciliation Lens
+
+Reconciliation Lens helps resolve incompatible states into a coherent result.
+
+Authority Overlay Lens identifies authority absence, overlap, or override before resolution.
+
+### Absence Lens
+
+Absence Lens detects required missing structure generally.
+
+Authority Overlay Lens detects missing authority as part of a broader authority map.
 
 ## Structural Limits
 
-Evaluates authority alignment only.
+Authority Overlay Lens evaluates authority alignment only.
 
-Does not resolve authority conflicts.
+It does not decide which authority is legitimate, ethical, correct, or preferred.
+
+It does not resolve authority conflicts by itself.
+
+## Workbench Notes
+
+Authority Overlay Lens is useful when the fastest question is:
+
+“Who or what governs this region?”
+
+If the answer is missing, overlapping, or different from the declared hierarchy, the Lens surfaces the authority alignment failure.

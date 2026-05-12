@@ -11,7 +11,7 @@
             "code": "PAT-0100",
             "slug": "authority-collision",
             "title": "Authority Collision",
-            "summary": "A structural condition where multiple authorities claim governance over the same structural region without a declared precedence rule.",
+            "summary": "A structural condition where multiple authorities claim governance over the same region without a declared precedence or resolution rule.",
             "url": "/workbench/patterns/authority-collision/"
           }
         ],
@@ -19,31 +19,31 @@
       },
       "useful_lenses": [
         {
-          "code": "LEN-0100",
+          "code": "LEN-0110",
           "slug": "authority-overlay-lens",
           "title": "Authority Overlay Lens",
-          "summary": "A diagnostic view that maps declared authority hierarchies onto observed structure to detect absence, override, or conflict.",
+          "summary": "Maps declared authority hierarchies onto observed structure to detect absence, override, or conflict.",
           "url": "/workbench/lenses/authority-overlay-lens/"
         },
         {
-          "code": "LEN-0110",
+          "code": "LEN-0150",
           "slug": "conflict-lens",
           "title": "Conflict Lens",
-          "summary": "A diagnostic view focused on detecting unresolved contradiction, overlap, or incompatible structural claims.",
+          "summary": "Detects mutually incompatible constraints, claims, states, or declarations that cannot be simultaneously satisfied.",
           "url": "/workbench/lenses/conflict-lens/"
         },
         {
-          "code": "LEN-0130",
+          "code": "LEN-0210",
           "slug": "invariant-lens",
           "title": "Invariant Lens",
-          "summary": "A diagnostic view focused on whether a required structural condition remains true across states, transitions, or executions.",
+          "summary": "Verifies that declared invariants are structurally enforceable and not contradicted by observed structure.",
           "url": "/workbench/lenses/invariant-lens/"
         },
         {
-          "code": "LEN-0120",
+          "code": "LEN-0270",
           "slug": "reconciliation-lens",
           "title": "Reconciliation Lens",
-          "summary": "A diagnostic view focused on whether competing structural claims can be resolved into a coherent declared state.",
+          "summary": "Evaluates whether structural changes align with declared authority updates, version changes, or reconciliation rules.",
           "url": "/workbench/lenses/reconciliation-lens/"
         }
       ],
@@ -57,7 +57,7 @@
             "code": "PAT-0100",
             "slug": "authority-collision",
             "title": "Authority Collision",
-            "summary": "A structural condition where multiple authorities claim governance over the same structural region without a declared precedence rule.",
+            "summary": "A structural condition where multiple authorities claim governance over the same region without a declared precedence or resolution rule.",
             "url": "/workbench/patterns/authority-collision/"
           }
         ],
@@ -65,31 +65,31 @@
       },
       "useful_lenses": [
         {
-          "code": "LEN-0100",
+          "code": "LEN-0110",
           "slug": "authority-overlay-lens",
           "title": "Authority Overlay Lens",
-          "summary": "A diagnostic view that maps declared authority hierarchies onto observed structure to detect absence, override, or conflict.",
+          "summary": "Maps declared authority hierarchies onto observed structure to detect absence, override, or conflict.",
           "url": "/workbench/lenses/authority-overlay-lens/"
         },
         {
-          "code": "LEN-0110",
+          "code": "LEN-0150",
           "slug": "conflict-lens",
           "title": "Conflict Lens",
-          "summary": "A diagnostic view focused on detecting unresolved contradiction, overlap, or incompatible structural claims.",
+          "summary": "Detects mutually incompatible constraints, claims, states, or declarations that cannot be simultaneously satisfied.",
           "url": "/workbench/lenses/conflict-lens/"
         },
         {
-          "code": "LEN-0130",
+          "code": "LEN-0210",
           "slug": "invariant-lens",
           "title": "Invariant Lens",
-          "summary": "A diagnostic view focused on whether a required structural condition remains true across states, transitions, or executions.",
+          "summary": "Verifies that declared invariants are structurally enforceable and not contradicted by observed structure.",
           "url": "/workbench/lenses/invariant-lens/"
         },
         {
-          "code": "LEN-0120",
+          "code": "LEN-0270",
           "slug": "reconciliation-lens",
           "title": "Reconciliation Lens",
-          "summary": "A diagnostic view focused on whether competing structural claims can be resolved into a coherent declared state.",
+          "summary": "Evaluates whether structural changes align with declared authority updates, version changes, or reconciliation rules.",
           "url": "/workbench/lenses/reconciliation-lens/"
         }
       ],
@@ -103,7 +103,7 @@
             "code": "PAT-0100",
             "slug": "authority-collision",
             "title": "Authority Collision",
-            "summary": "A structural condition where multiple authorities claim governance over the same structural region without a declared precedence rule.",
+            "summary": "A structural condition where multiple authorities claim governance over the same region without a declared precedence or resolution rule.",
             "url": "/workbench/patterns/authority-collision/"
           }
         ],
@@ -111,31 +111,31 @@
       },
       "useful_lenses": [
         {
-          "code": "LEN-0100",
+          "code": "LEN-0110",
           "slug": "authority-overlay-lens",
           "title": "Authority Overlay Lens",
-          "summary": "A diagnostic view that maps declared authority hierarchies onto observed structure to detect absence, override, or conflict.",
+          "summary": "Maps declared authority hierarchies onto observed structure to detect absence, override, or conflict.",
           "url": "/workbench/lenses/authority-overlay-lens/"
         },
         {
-          "code": "LEN-0110",
+          "code": "LEN-0150",
           "slug": "conflict-lens",
           "title": "Conflict Lens",
-          "summary": "A diagnostic view focused on detecting unresolved contradiction, overlap, or incompatible structural claims.",
+          "summary": "Detects mutually incompatible constraints, claims, states, or declarations that cannot be simultaneously satisfied.",
           "url": "/workbench/lenses/conflict-lens/"
         },
         {
-          "code": "LEN-0130",
+          "code": "LEN-0210",
           "slug": "invariant-lens",
           "title": "Invariant Lens",
-          "summary": "A diagnostic view focused on whether a required structural condition remains true across states, transitions, or executions.",
+          "summary": "Verifies that declared invariants are structurally enforceable and not contradicted by observed structure.",
           "url": "/workbench/lenses/invariant-lens/"
         },
         {
-          "code": "LEN-0120",
+          "code": "LEN-0270",
           "slug": "reconciliation-lens",
           "title": "Reconciliation Lens",
-          "summary": "A diagnostic view focused on whether competing structural claims can be resolved into a coherent declared state.",
+          "summary": "Evaluates whether structural changes align with declared authority updates, version changes, or reconciliation rules.",
           "url": "/workbench/lenses/reconciliation-lens/"
         }
       ],
@@ -149,7 +149,7 @@
             "code": "PAT-0100",
             "slug": "authority-collision",
             "title": "Authority Collision",
-            "summary": "A structural condition where multiple authorities claim governance over the same structural region without a declared precedence rule.",
+            "summary": "A structural condition where multiple authorities claim governance over the same region without a declared precedence or resolution rule.",
             "url": "/workbench/patterns/authority-collision/"
           }
         ],
@@ -157,31 +157,31 @@
       },
       "useful_lenses": [
         {
-          "code": "LEN-0100",
+          "code": "LEN-0110",
           "slug": "authority-overlay-lens",
           "title": "Authority Overlay Lens",
-          "summary": "A diagnostic view that maps declared authority hierarchies onto observed structure to detect absence, override, or conflict.",
+          "summary": "Maps declared authority hierarchies onto observed structure to detect absence, override, or conflict.",
           "url": "/workbench/lenses/authority-overlay-lens/"
         },
         {
-          "code": "LEN-0110",
+          "code": "LEN-0150",
           "slug": "conflict-lens",
           "title": "Conflict Lens",
-          "summary": "A diagnostic view focused on detecting unresolved contradiction, overlap, or incompatible structural claims.",
+          "summary": "Detects mutually incompatible constraints, claims, states, or declarations that cannot be simultaneously satisfied.",
           "url": "/workbench/lenses/conflict-lens/"
         },
         {
-          "code": "LEN-0130",
+          "code": "LEN-0210",
           "slug": "invariant-lens",
           "title": "Invariant Lens",
-          "summary": "A diagnostic view focused on whether a required structural condition remains true across states, transitions, or executions.",
+          "summary": "Verifies that declared invariants are structurally enforceable and not contradicted by observed structure.",
           "url": "/workbench/lenses/invariant-lens/"
         },
         {
-          "code": "LEN-0120",
+          "code": "LEN-0270",
           "slug": "reconciliation-lens",
           "title": "Reconciliation Lens",
-          "summary": "A diagnostic view focused on whether competing structural claims can be resolved into a coherent declared state.",
+          "summary": "Evaluates whether structural changes align with declared authority updates, version changes, or reconciliation rules.",
           "url": "/workbench/lenses/reconciliation-lens/"
         }
       ],

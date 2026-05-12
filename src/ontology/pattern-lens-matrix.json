@@ -1,4 +1,13 @@
 {
+  "asymmetric-structure": {
+    "primary": [
+      "convergence-lens",
+      "variance-entropy-lens"
+    ],
+    "secondary": [
+      "compression-lens"
+    ]
+  },
   "authority-collision": {
     "primary": [
       "conflict-lens",
@@ -9,14 +18,280 @@
       "invariant-lens"
     ]
   },
-  "asymmetric-structure": {
+  "authority-merge-conflict": {
     "primary": [
       "conflict-lens",
+      "reconciliation-lens"
+    ],
+    "secondary": [
+      "authority-overlay-lens"
+    ]
+  },
+  "authority-shadowing": {
+    "primary": [
+      "authority-overlay-lens"
+    ],
+    "secondary": [
+      "conflict-lens",
+      "reconciliation-lens"
+    ]
+  },
+  "authority-state-mismatch": {
+    "primary": [
+      "reconciliation-lens"
+    ],
+    "secondary": [
+      "convergence-lens",
+      "reference-stability-lens"
+    ]
+  },
+  "boundary-leakage": {
+    "primary": [
+      "isolation-boundary-lens",
+      "propagation-lens"
+    ],
+    "secondary": [
+      "boundary-compliance-lens"
+    ]
+  },
+  "circular-dependency": {
+    "primary": [
+      "conflict-lens",
+      "propagation-lens"
+    ],
+    "secondary": [
+      "normalization-lens"
+    ]
+  },
+  "compatibility-violation": {
+    "primary": [
+      "compatibility-envelope-lens"
+    ],
+    "secondary": [
+      "boundary-compliance-lens"
+    ]
+  },
+  "constraints-underspecified": {
+    "primary": [
+      "constraint-sufficiency-lens"
+    ],
+    "secondary": [
+      "determinism-lens",
+      "variance-entropy-lens"
+    ]
+  },
+  "contract-drift": {
+    "primary": [
+      "reconciliation-lens",
+      "convergence-lens"
+    ],
+    "secondary": [
+      "determinism-lens"
+    ]
+  },
+  "convergence-failure": {
+    "primary": [
+      "convergence-lens"
+    ],
+    "secondary": [
+      "variance-entropy-lens",
+      "reconciliation-lens"
+    ]
+  },
+  "cross-layer-escalation": {
+    "primary": [
+      "propagation-lens",
+      "isolation-boundary-lens"
+    ],
+    "secondary": [
+      "escalation-gradient-lens"
+    ]
+  },
+  "density-spike": {
+    "primary": [
+      "compression-lens",
+      "variance-entropy-lens"
+    ],
+    "secondary": [
+      "escalation-gradient-lens"
+    ]
+  },
+  "density-vacuum": {
+    "primary": [
+      "absence-lens",
+      "compression-lens"
+    ],
+    "secondary": [
+      "constraint-sufficiency-lens"
+    ]
+  },
+  "divergent-outputs": {
+    "primary": [
+      "convergence-lens",
+      "variance-entropy-lens"
+    ],
+    "secondary": [
+      "determinism-lens",
+      "compression-lens"
+    ]
+  },
+  "escalation-growth": {
+    "primary": [
+      "escalation-gradient-lens",
+      "variance-entropy-lens"
+    ],
+    "secondary": [
+      "propagation-lens"
+    ]
+  },
+  "incomplete-declaration": {
+    "primary": [
+      "absence-lens",
+      "constraint-sufficiency-lens"
+    ],
+    "secondary": [
+      "interface-contract-lens"
+    ]
+  },
+  "interface-mismatch": {
+    "primary": [
+      "interface-contract-lens"
+    ],
+    "secondary": [
+      "normalization-lens"
+    ]
+  },
+  "invariant-breakage": {
+    "primary": [
+      "invariant-lens",
+      "conflict-lens"
+    ],
+    "secondary": [
+      "interface-contract-lens"
+    ]
+  },
+  "missing-authority": {
+    "primary": [
+      "authority-overlay-lens",
+      "absence-lens"
+    ],
+    "secondary": [
+      "conflict-lens",
+      "reconciliation-lens"
+    ]
+  },
+  "non-deterministic-execution": {
+    "primary": [
+      "determinism-lens",
+      "variance-entropy-lens"
+    ],
+    "secondary": [
+      "convergence-lens",
+      "reference-stability-lens"
+    ]
+  },
+  "orphaned-structure": {
+    "primary": [
+      "absence-lens"
+    ],
+    "secondary": [
+      "propagation-lens"
+    ]
+  },
+  "overreach": {
+    "primary": [
+      "overreach-lens",
+      "boundary-compliance-lens"
+    ],
+    "secondary": [
+      "propagation-lens"
+    ]
+  },
+  "persistence-instability": {
+    "primary": [
+      "reference-stability-lens"
+    ],
+    "secondary": [
+      "determinism-lens"
+    ]
+  },
+  "propagation-amplification": {
+    "primary": [
+      "propagation-lens",
+      "escalation-gradient-lens"
+    ],
+    "secondary": [
+      "variance-entropy-lens"
+    ]
+  },
+  "redundant-declaration": {
+    "primary": [
+      "normalization-lens",
+      "conflict-lens"
+    ],
+    "secondary": [
+      "compression-lens"
+    ]
+  },
+  "reference-instability": {
+    "primary": [
+      "reference-stability-lens"
+    ],
+    "secondary": [
+      "determinism-lens"
+    ]
+  },
+  "schema-breakage": {
+    "primary": [
+      "interface-contract-lens",
       "invariant-lens"
     ],
     "secondary": [
-      "authority-overlay-lens",
-      "reconciliation-lens"
+      "conflict-lens"
+    ]
+  },
+  "silent-mutation": {
+    "primary": [
+      "reference-stability-lens",
+      "determinism-lens"
+    ],
+    "secondary": [
+      "provenance-trace-lens"
+    ]
+  },
+  "threshold-breach": {
+    "primary": [
+      "invariant-lens"
+    ],
+    "secondary": [
+      "boundary-compliance-lens"
+    ]
+  },
+  "unbounded-scope": {
+    "primary": [
+      "isolation-boundary-lens",
+      "constraint-sufficiency-lens"
+    ],
+    "secondary": [
+      "escalation-gradient-lens"
+    ]
+  },
+  "unconstrained-expansion": {
+    "primary": [
+      "escalation-gradient-lens",
+      "compression-lens"
+    ],
+    "secondary": [
+      "variance-entropy-lens"
+    ]
+  },
+  "undeclared-side-effect": {
+    "primary": [
+      "overreach-lens",
+      "propagation-lens"
+    ],
+    "secondary": [
+      "isolation-boundary-lens"
     ]
   }
 }

@@ -51,32 +51,314 @@
         "code": "PAT-0100",
         "title": "Authority Collision",
         "count": 1
+      },
+      {
+        "slug": "authority-merge-conflict",
+        "code": "PAT-0220",
+        "title": "Authority Merge Conflict",
+        "count": 0
+      },
+      {
+        "slug": "authority-shadowing",
+        "code": "PAT-0230",
+        "title": "Authority Shadowing",
+        "count": 0
+      },
+      {
+        "slug": "authority-state-mismatch",
+        "code": "PAT-0240",
+        "title": "Authority-State Mismatch",
+        "count": 0
+      },
+      {
+        "slug": "boundary-leakage",
+        "code": "PAT-0140",
+        "title": "Boundary Leakage",
+        "count": 0
+      },
+      {
+        "slug": "circular-dependency",
+        "code": "PAT-0250",
+        "title": "Circular Dependency",
+        "count": 0
+      },
+      {
+        "slug": "compatibility-violation",
+        "code": "PAT-0180",
+        "title": "Compatibility Violation",
+        "count": 0
+      },
+      {
+        "slug": "constraints-underspecified",
+        "code": "PAT-0170",
+        "title": "Constraints Underspecified",
+        "count": 0
+      },
+      {
+        "slug": "contract-drift",
+        "code": "PAT-0190",
+        "title": "Contract Drift",
+        "count": 0
+      },
+      {
+        "slug": "convergence-failure",
+        "code": "PAT-0320",
+        "title": "Convergence Failure",
+        "count": 0
+      },
+      {
+        "slug": "cross-layer-escalation",
+        "code": "PAT-0260",
+        "title": "Cross-Layer Escalation",
+        "count": 0
+      },
+      {
+        "slug": "density-spike",
+        "code": "PAT-0270",
+        "title": "Density Spike",
+        "count": 0
+      },
+      {
+        "slug": "density-vacuum",
+        "code": "PAT-0280",
+        "title": "Density Vacuum",
+        "count": 0
+      },
+      {
+        "slug": "divergent-outputs",
+        "code": "PAT-0290",
+        "title": "Divergent Outputs",
+        "count": 0
+      },
+      {
+        "slug": "escalation-growth",
+        "code": "PAT-0300",
+        "title": "Escalation Growth",
+        "count": 0
+      },
+      {
+        "slug": "incomplete-declaration",
+        "code": "PAT-0130",
+        "title": "Incomplete Declaration",
+        "count": 0
+      },
+      {
+        "slug": "interface-mismatch",
+        "code": "PAT-0150",
+        "title": "Interface Mismatch",
+        "count": 0
+      },
+      {
+        "slug": "invariant-breakage",
+        "code": "PAT-0330",
+        "title": "Invariant Breakage",
+        "count": 0
+      },
+      {
+        "slug": "missing-authority",
+        "code": "PAT-0120",
+        "title": "Missing Authority",
+        "count": 0
+      },
+      {
+        "slug": "non-deterministic-execution",
+        "code": "PAT-0210",
+        "title": "Non-Deterministic Execution",
+        "count": 0
+      },
+      {
+        "slug": "orphaned-structure",
+        "code": "PAT-0310",
+        "title": "Orphaned Structure",
+        "count": 0
+      },
+      {
+        "slug": "overreach",
+        "code": "PAT-0340",
+        "title": "Overreach",
+        "count": 0
+      },
+      {
+        "slug": "persistence-instability",
+        "code": "PAT-0350",
+        "title": "Persistence Instability",
+        "count": 0
+      },
+      {
+        "slug": "propagation-amplification",
+        "code": "PAT-0360",
+        "title": "Propagation Amplification",
+        "count": 0
+      },
+      {
+        "slug": "redundant-declaration",
+        "code": "PAT-0370",
+        "title": "Redundant Declaration",
+        "count": 0
+      },
+      {
+        "slug": "reference-instability",
+        "code": "PAT-0200",
+        "title": "Reference Instability",
+        "count": 0
+      },
+      {
+        "slug": "schema-breakage",
+        "code": "PAT-0160",
+        "title": "Schema Breakage",
+        "count": 0
+      },
+      {
+        "slug": "silent-mutation",
+        "code": "PAT-0380",
+        "title": "Silent Mutation",
+        "count": 0
+      },
+      {
+        "slug": "threshold-breach",
+        "code": "PAT-0390",
+        "title": "Threshold Breach",
+        "count": 0
+      },
+      {
+        "slug": "unbounded-scope",
+        "code": "PAT-0400",
+        "title": "Unbounded Scope",
+        "count": 0
+      },
+      {
+        "slug": "unconstrained-expansion",
+        "code": "PAT-0410",
+        "title": "Unconstrained Expansion",
+        "count": 0
+      },
+      {
+        "slug": "undeclared-side-effect",
+        "code": "PAT-0420",
+        "title": "Undeclared Side Effect",
+        "count": 0
       }
     ],
     "lenses": [
       {
-        "slug": "authority-overlay-lens",
+        "slug": "absence-lens",
         "code": "LEN-0100",
+        "title": "Absence Lens",
+        "count": 0
+      },
+      {
+        "slug": "authority-overlay-lens",
+        "code": "LEN-0110",
         "title": "Authority Overlay Lens",
         "count": 1
       },
       {
+        "slug": "boundary-compliance-lens",
+        "code": "LEN-0120",
+        "title": "Boundary Compliance Lens",
+        "count": 0
+      },
+      {
+        "slug": "compatibility-envelope-lens",
+        "code": "LEN-0130",
+        "title": "Compatibility Envelope Lens",
+        "count": 0
+      },
+      {
+        "slug": "compression-lens",
+        "code": "LEN-0140",
+        "title": "Compression Lens",
+        "count": 0
+      },
+      {
         "slug": "conflict-lens",
-        "code": "LEN-0110",
+        "code": "LEN-0150",
         "title": "Conflict Lens",
         "count": 1
       },
       {
+        "slug": "constraint-sufficiency-lens",
+        "code": "LEN-0160",
+        "title": "Constraint Sufficiency Lens",
+        "count": 0
+      },
+      {
+        "slug": "convergence-lens",
+        "code": "LEN-0170",
+        "title": "Convergence Lens",
+        "count": 0
+      },
+      {
+        "slug": "determinism-lens",
+        "code": "LEN-0180",
+        "title": "Determinism Lens",
+        "count": 0
+      },
+      {
+        "slug": "escalation-gradient-lens",
+        "code": "LEN-0190",
+        "title": "Escalation Gradient Lens",
+        "count": 0
+      },
+      {
+        "slug": "interface-contract-lens",
+        "code": "LEN-0200",
+        "title": "Interface Contract Lens",
+        "count": 0
+      },
+      {
         "slug": "invariant-lens",
-        "code": "LEN-0130",
+        "code": "LEN-0210",
         "title": "Invariant Lens",
         "count": 1
       },
       {
+        "slug": "isolation-boundary-lens",
+        "code": "LEN-0220",
+        "title": "Isolation Boundary Lens",
+        "count": 0
+      },
+      {
+        "slug": "normalization-lens",
+        "code": "LEN-0230",
+        "title": "Normalization Lens",
+        "count": 0
+      },
+      {
+        "slug": "overreach-lens",
+        "code": "LEN-0240",
+        "title": "Overreach Lens",
+        "count": 0
+      },
+      {
+        "slug": "propagation-lens",
+        "code": "LEN-0250",
+        "title": "Propagation Lens",
+        "count": 0
+      },
+      {
+        "slug": "provenance-trace-lens",
+        "code": "LEN-0260",
+        "title": "Provenance Trace Lens",
+        "count": 0
+      },
+      {
         "slug": "reconciliation-lens",
-        "code": "LEN-0120",
+        "code": "LEN-0270",
         "title": "Reconciliation Lens",
         "count": 1
+      },
+      {
+        "slug": "reference-stability-lens",
+        "code": "LEN-0280",
+        "title": "Reference Stability Lens",
+        "count": 0
+      },
+      {
+        "slug": "variance-entropy-lens",
+        "code": "LEN-0290",
+        "title": "Variance / Entropy Lens",
+        "count": 0
       }
     ]
   }
