@@ -1,0 +1,46 @@
+---
+import ontologyIndex from "../../../content/_meta/ontology-index.json";
+
+const categories = ontologyIndex.categories;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Categories | Workbench</title>
+    <meta
+      name="description"
+      content="Navigation categories for Workbench issues."
+    />
+  </head>
+  <body>
+    <main>
+      <p><a href="/workbench/">Workbench</a></p>
+
+      <h1>Categories</h1>
+
+      <p>
+        Categories are navigation shelves for Issues. They do not replace
+        Patterns or Lenses.
+      </p>
+
+      <section aria-labelledby="category-list">
+        <h2 id="category-list">Category Index</h2>
+
+        <ul>
+          {categories.map((category) => (
+            <li>
+              <h3>
+                <a href={category.url}>{category.title}</a>
+              </h3>
+
+              <p>{category.summary}</p>
+
+              <p>Issues: {category.issues.length}</p>
+            </li>
+          ))}
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>

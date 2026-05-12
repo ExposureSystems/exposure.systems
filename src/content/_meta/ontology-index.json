@@ -1,0 +1,1587 @@
+{
+  "version": 1,
+  "translation_policy": {
+    "canonical_terms": "do_not_translate",
+    "canonical_codes": [
+      "PAT",
+      "LEN"
+    ],
+    "canonical_titles": "do_not_translate",
+    "canonical_slugs": "do_not_translate",
+    "localized_explanations": "v2_optional_overlay",
+    "note": "Canonical Pattern and Lens codes, slugs, and titles must remain unchanged. Localized explanations may be provided separately, but they do not replace canonical ontology terms."
+  },
+  "routes": {
+    "root": "/workbench/",
+    "check_input": "/workbench/check-input/",
+    "gap_explorer": "/workbench/gap-explorer/",
+    "search": "/workbench/search/",
+    "issues": "/workbench/issues/",
+    "patterns": "/workbench/patterns/",
+    "lenses": "/workbench/lenses/",
+    "categories": "/workbench/categories/",
+    "examples": "/workbench/examples/",
+    "field_notes": "/workbench/field-notes/",
+    "articles": "/workbench/articles/",
+    "videos": "/workbench/videos/",
+    "internal": "/workbench/_internal/"
+  },
+  "resolver": {
+    "divu": "https://divu.app/wb/[slug]",
+    "resolves": [
+      "patterns",
+      "lenses"
+    ],
+    "does_not_resolve": [
+      "issues"
+    ]
+  },
+  "matrix": {
+    "asymmetric-structure": {
+      "primary": [
+        "convergence-lens",
+        "variance-entropy-lens"
+      ],
+      "secondary": [
+        "compression-lens"
+      ]
+    },
+    "authority-collision": {
+      "primary": [
+        "conflict-lens",
+        "authority-overlay-lens"
+      ],
+      "secondary": [
+        "reconciliation-lens",
+        "invariant-lens"
+      ]
+    },
+    "authority-merge-conflict": {
+      "primary": [
+        "conflict-lens",
+        "reconciliation-lens"
+      ],
+      "secondary": [
+        "authority-overlay-lens"
+      ]
+    },
+    "authority-shadowing": {
+      "primary": [
+        "authority-overlay-lens"
+      ],
+      "secondary": [
+        "conflict-lens",
+        "reconciliation-lens"
+      ]
+    },
+    "authority-state-mismatch": {
+      "primary": [
+        "reconciliation-lens"
+      ],
+      "secondary": [
+        "convergence-lens",
+        "reference-stability-lens"
+      ]
+    },
+    "boundary-leakage": {
+      "primary": [
+        "isolation-boundary-lens",
+        "propagation-lens"
+      ],
+      "secondary": [
+        "boundary-compliance-lens"
+      ]
+    },
+    "circular-dependency": {
+      "primary": [
+        "conflict-lens",
+        "propagation-lens"
+      ],
+      "secondary": [
+        "normalization-lens"
+      ]
+    },
+    "compatibility-violation": {
+      "primary": [
+        "compatibility-envelope-lens"
+      ],
+      "secondary": [
+        "boundary-compliance-lens"
+      ]
+    },
+    "constraints-underspecified": {
+      "primary": [
+        "constraint-sufficiency-lens"
+      ],
+      "secondary": [
+        "determinism-lens",
+        "variance-entropy-lens"
+      ]
+    },
+    "contract-drift": {
+      "primary": [
+        "reconciliation-lens",
+        "convergence-lens"
+      ],
+      "secondary": [
+        "determinism-lens"
+      ]
+    },
+    "convergence-failure": {
+      "primary": [
+        "convergence-lens"
+      ],
+      "secondary": [
+        "variance-entropy-lens",
+        "reconciliation-lens"
+      ]
+    },
+    "cross-layer-escalation": {
+      "primary": [
+        "propagation-lens",
+        "isolation-boundary-lens"
+      ],
+      "secondary": [
+        "escalation-gradient-lens"
+      ]
+    },
+    "density-spike": {
+      "primary": [
+        "compression-lens",
+        "variance-entropy-lens"
+      ],
+      "secondary": [
+        "escalation-gradient-lens"
+      ]
+    },
+    "density-vacuum": {
+      "primary": [
+        "absence-lens",
+        "compression-lens"
+      ],
+      "secondary": [
+        "constraint-sufficiency-lens"
+      ]
+    },
+    "divergent-outputs": {
+      "primary": [
+        "convergence-lens",
+        "variance-entropy-lens"
+      ],
+      "secondary": [
+        "determinism-lens",
+        "compression-lens"
+      ]
+    },
+    "escalation-growth": {
+      "primary": [
+        "escalation-gradient-lens",
+        "variance-entropy-lens"
+      ],
+      "secondary": [
+        "propagation-lens"
+      ]
+    },
+    "incomplete-declaration": {
+      "primary": [
+        "absence-lens",
+        "constraint-sufficiency-lens"
+      ],
+      "secondary": [
+        "interface-contract-lens"
+      ]
+    },
+    "interface-mismatch": {
+      "primary": [
+        "interface-contract-lens"
+      ],
+      "secondary": [
+        "normalization-lens"
+      ]
+    },
+    "invariant-breakage": {
+      "primary": [
+        "invariant-lens",
+        "conflict-lens"
+      ],
+      "secondary": [
+        "interface-contract-lens"
+      ]
+    },
+    "missing-authority": {
+      "primary": [
+        "authority-overlay-lens",
+        "absence-lens"
+      ],
+      "secondary": [
+        "conflict-lens",
+        "reconciliation-lens"
+      ]
+    },
+    "non-deterministic-execution": {
+      "primary": [
+        "determinism-lens",
+        "variance-entropy-lens"
+      ],
+      "secondary": [
+        "convergence-lens",
+        "reference-stability-lens"
+      ]
+    },
+    "orphaned-structure": {
+      "primary": [
+        "absence-lens"
+      ],
+      "secondary": [
+        "propagation-lens"
+      ]
+    },
+    "overreach": {
+      "primary": [
+        "overreach-lens",
+        "boundary-compliance-lens"
+      ],
+      "secondary": [
+        "propagation-lens"
+      ]
+    },
+    "persistence-instability": {
+      "primary": [
+        "reference-stability-lens"
+      ],
+      "secondary": [
+        "determinism-lens"
+      ]
+    },
+    "propagation-amplification": {
+      "primary": [
+        "propagation-lens",
+        "escalation-gradient-lens"
+      ],
+      "secondary": [
+        "variance-entropy-lens"
+      ]
+    },
+    "redundant-declaration": {
+      "primary": [
+        "normalization-lens",
+        "conflict-lens"
+      ],
+      "secondary": [
+        "compression-lens"
+      ]
+    },
+    "reference-instability": {
+      "primary": [
+        "reference-stability-lens"
+      ],
+      "secondary": [
+        "determinism-lens"
+      ]
+    },
+    "schema-breakage": {
+      "primary": [
+        "interface-contract-lens",
+        "invariant-lens"
+      ],
+      "secondary": [
+        "conflict-lens"
+      ]
+    },
+    "silent-mutation": {
+      "primary": [
+        "reference-stability-lens",
+        "determinism-lens"
+      ],
+      "secondary": [
+        "provenance-trace-lens"
+      ]
+    },
+    "threshold-breach": {
+      "primary": [
+        "invariant-lens"
+      ],
+      "secondary": [
+        "boundary-compliance-lens"
+      ]
+    },
+    "unbounded-scope": {
+      "primary": [
+        "isolation-boundary-lens",
+        "constraint-sufficiency-lens"
+      ],
+      "secondary": [
+        "escalation-gradient-lens"
+      ]
+    },
+    "unconstrained-expansion": {
+      "primary": [
+        "escalation-gradient-lens",
+        "compression-lens"
+      ],
+      "secondary": [
+        "variance-entropy-lens"
+      ]
+    },
+    "undeclared-side-effect": {
+      "primary": [
+        "overreach-lens",
+        "propagation-lens"
+      ],
+      "secondary": [
+        "isolation-boundary-lens"
+      ]
+    }
+  },
+  "issues": [
+    {
+      "slug": "issue-0001",
+      "title": "Issue 0001",
+      "status": "draft",
+      "summary": "Test issue for frontmatter validation.",
+      "category": "drift-variance",
+      "category_title": "Drift & Variance",
+      "primary_pattern": "authority-collision",
+      "patterns": [
+        "authority-collision"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "authority-overlay-lens",
+          "conflict-lens"
+        ],
+        "secondary": [
+          "invariant-lens",
+          "reconciliation-lens"
+        ]
+      },
+      "search_intents": [
+        "test issue"
+      ],
+      "url": "/workbench/issues/issue-0001/",
+      "markdown_url": "/workbench/issues/issue-0001.md"
+    }
+  ],
+  "patterns": [
+    {
+      "slug": "asymmetric-structure",
+      "code": "PAT-0110",
+      "title": "Asymmetric Structure",
+      "status": "stable",
+      "summary": "A structural condition where comparable regions receive unequal rule, constraint, or authority application without a declared differentiation rule.",
+      "lenses": {
+        "primary": [
+          "convergence-lens",
+          "variance-entropy-lens"
+        ],
+        "secondary": [
+          "compression-lens"
+        ]
+      },
+      "issues": {
+        "primary": [],
+        "supporting": []
+      },
+      "url": "/workbench/patterns/asymmetric-structure/",
+      "markdown_url": "/workbench/patterns/asymmetric-structure.md"
+    },
+    {
+      "slug": "authority-collision",
+      "code": "PAT-0100",
+      "title": "Authority Collision",
+      "status": "stable",
+      "summary": "A structural condition where multiple authorities claim governance over the same region without a declared precedence or resolution rule.",
+      "lenses": {
+        "primary": [
+          "conflict-lens",
+          "authority-overlay-lens"
+        ],
+        "secondary": [
+          "reconciliation-lens",
+          "invariant-lens"
+        ]
+      },
+      "issues": {
+        "primary": [
+          "issue-0001"
+        ],
+        "supporting": []
+      },
+      "url": "/workbench/patterns/authority-collision/",
+      "markdown_url": "/workbench/patterns/authority-collision.md"
+    },
+    {
+      "slug": "authority-merge-conflict",
+      "code": "PAT-0220",
+      "title": "Authority Merge Conflict",
+      "status": "stable",
+      "summary": "A structural condition where multiple authority states are combined over a shared scope without a declared merge, precedence, or reconciliation rule.",
+      "lenses": {
+        "primary": [
+          "conflict-lens",
+          "reconciliation-lens"
+        ],
+        "secondary": [
+          "authority-overlay-lens"
+        ]
+      },
+      "issues": {
+        "primary": [],
+        "supporting": []
+      },
+      "url": "/workbench/patterns/authority-merge-conflict/",
+      "markdown_url": "/workbench/patterns/authority-merge-conflict.md"
+    },
+    {
+      "slug": "authority-shadowing",
+      "code": "PAT-0230",
+      "title": "Authority Shadowing",
+      "status": "stable",
+      "summary": "A structural condition where a declared authority is functionally overridden by another authority without an explicit override rule.",
+      "lenses": {
+        "primary": [
+          "authority-overlay-lens"
+        ],
+        "secondary": [
+          "conflict-lens",
+          "reconciliation-lens"
+        ]
+      },
+      "issues": {
+        "primary": [],
+        "supporting": []
+      },
+      "url": "/workbench/patterns/authority-shadowing/",
+      "markdown_url": "/workbench/patterns/authority-shadowing.md"
+    },
+    {
+      "slug": "authority-state-mismatch",
+      "code": "PAT-0240",
+      "title": "Authority-State Mismatch",
+      "status": "stable",
+      "summary": "A structural condition where observed system state no longer aligns with the declared authority state that is supposed to govern it.",
+      "lenses": {
+        "primary": [
+          "reconciliation-lens"
+        ],
+        "secondary": [
+          "convergence-lens",
+          "reference-stability-lens"
+        ]
+      },
+      "issues": {
+        "primary": [],
+        "supporting": []
+      },
+      "url": "/workbench/patterns/authority-state-mismatch/",
+      "markdown_url": "/workbench/patterns/authority-state-mismatch.md"
+    },
+    {
+      "slug": "boundary-leakage",
+      "code": "PAT-0140",
+      "title": "Boundary Leakage",
+      "status": "stable",
+      "summary": "A structural condition where effects, permissions, state, data, or authority cross a declared boundary without an authorized exception.",
+      "lenses": {
+        "primary": [
+          "isolation-boundary-lens",
+          "propagation-lens"
+        ],
+        "secondary": [
+          "boundary-compliance-lens"
+        ]
+      },
+      "issues": {
+        "primary": [],
+        "supporting": []
+      },
+      "url": "/workbench/patterns/boundary-leakage/",
+      "markdown_url": "/workbench/patterns/boundary-leakage.md"
+    },
+    {
+      "slug": "circular-dependency",
+      "code": "PAT-0250",
+      "title": "Circular Dependency",
+      "status": "stable",
+      "summary": "A structural condition where two or more elements depend on each other in a closed loop without an independent base condition or declared resolution mechanism.",
+      "lenses": {
+        "primary": [
+          "conflict-lens",
+          "propagation-lens"
+        ],
+        "secondary": [
+          "normalization-lens"
+        ]
+      },
+      "issues": {
+        "primary": [],
+        "supporting": []
+      },
+      "url": "/workbench/patterns/circular-dependency/",
+      "markdown_url": "/workbench/patterns/circular-dependency.md"
+    },
+    {
+      "slug": "compatibility-violation",
+      "code": "PAT-0180",
+      "title": "Compatibility Violation",
+      "status": "stable",
+      "summary": "A structural condition where a graph, object, behavior, or runtime state exceeds a declared compatibility envelope without an authorized exception.",
+      "lenses": {
+        "primary": [
+          "compatibility-envelope-lens"
+        ],
+        "secondary": [
+          "boundary-compliance-lens"
+        ]
+      },
+      "issues": {
+        "primary": [],
+        "supporting": []
+      },
+      "url": "/workbench/patterns/compatibility-violation/",
+      "markdown_url": "/workbench/patterns/compatibility-violation.md"
+    },
+    {
+      "slug": "constraints-underspecified",
+      "code": "PAT-0170",
+      "title": "Constraints Underspecified",
+      "status": "stable",
+      "summary": "A structural condition where declared constraints are insufficient to eliminate ambiguity or multiple admissible states.",
+      "lenses": {
+        "primary": [
+          "constraint-sufficiency-lens"
+        ],
+        "secondary": [
+          "determinism-lens",
+          "variance-entropy-lens"
+        ]
+      },
+      "issues": {
+        "primary": [],
+        "supporting": []
+      },
+      "url": "/workbench/patterns/constraints-underspecified/",
+      "markdown_url": "/workbench/patterns/constraints-underspecified.md"
+    },
+    {
+      "slug": "contract-drift",
+      "code": "PAT-0190",
+      "title": "Contract Drift",
+      "status": "stable",
+      "summary": "A structural condition where a declared contract changes but connected structures, implementations, consumers, or expectations do not update in sync.",
+      "lenses": {
+        "primary": [
+          "reconciliation-lens",
+          "convergence-lens"
+        ],
+        "secondary": [
+          "determinism-lens"
+        ]
+      },
+      "issues": {
+        "primary": [],
+        "supporting": []
+      },
+      "url": "/workbench/patterns/contract-drift/",
+      "markdown_url": "/workbench/patterns/contract-drift.md"
+    },
+    {
+      "slug": "convergence-failure",
+      "code": "PAT-0320",
+      "title": "Convergence Failure",
+      "status": "stable",
+      "summary": "A structural condition where sequential or parallel states fail to resolve into an equivalent or coherent structure under shared authority and constraints.",
+      "lenses": {
+        "primary": [
+          "convergence-lens"
+        ],
+        "secondary": [
+          "variance-entropy-lens",
+          "reconciliation-lens"
+        ]
+      },
+      "issues": {
+        "primary": [],
+        "supporting": []
+      },
+      "url": "/workbench/patterns/convergence-failure/",
+      "markdown_url": "/workbench/patterns/convergence-failure.md"
+    },
+    {
+      "slug": "cross-layer-escalation",
+      "code": "PAT-0260",
+      "title": "Cross-Layer Escalation",
+      "status": "stable",
+      "summary": "A structural condition where escalation originating in one layer propagates into another authority, boundary, or control layer without explicit authorization.",
+      "lenses": {
+        "primary": [
+          "propagation-lens",
+          "isolation-boundary-lens"
+        ],
+        "secondary": [
+          "escalation-gradient-lens"
+        ]
+      },
+      "issues": {
+        "primary": [],
+        "supporting": []
+      },
+      "url": "/workbench/patterns/cross-layer-escalation/",
+      "markdown_url": "/workbench/patterns/cross-layer-escalation.md"
+    },
+    {
+      "slug": "density-spike",
+      "code": "PAT-0270",
+      "title": "Density Spike",
+      "status": "stable",
+      "summary": "A structural condition where nodes, edges, dependencies, decisions, or effects concentrate sharply within a localized region beyond declared thresholds.",
+      "lenses": {
+        "primary": [
+          "compression-lens",
+          "variance-entropy-lens"
+        ],
+        "secondary": [
+          "escalation-gradient-lens"
+        ]
+      },
+      "issues": {
+        "primary": [],
+        "supporting": []
+      },
+      "url": "/workbench/patterns/density-spike/",
+      "markdown_url": "/workbench/patterns/density-spike.md"
+    },
+    {
+      "slug": "density-vacuum",
+      "code": "PAT-0280",
+      "title": "Density Vacuum",
+      "status": "stable",
+      "summary": "A structural condition where a region expected to contain sufficient nodes, edges, coverage, or relationships falls below declared density thresholds.",
+      "lenses": {
+        "primary": [
+          "absence-lens",
+          "compression-lens"
+        ],
+        "secondary": [
+          "constraint-sufficiency-lens"
+        ]
+      },
+      "issues": {
+        "primary": [],
+        "supporting": []
+      },
+      "url": "/workbench/patterns/density-vacuum/",
+      "markdown_url": "/workbench/patterns/density-vacuum.md"
+    },
+    {
+      "slug": "divergent-outputs",
+      "code": "PAT-0290",
+      "title": "Divergent Outputs",
+      "status": "stable",
+      "summary": "A structural condition where parallel evaluations under comparable scope and shared authority produce non-equivalent outputs.",
+      "lenses": {
+        "primary": [
+          "convergence-lens",
+          "variance-entropy-lens"
+        ],
+        "secondary": [
+          "determinism-lens",
+          "compression-lens"
+        ]
+      },
+      "issues": {
+        "primary": [],
+        "supporting": []
+      },
+      "url": "/workbench/patterns/divergent-outputs/",
+      "markdown_url": "/workbench/patterns/divergent-outputs.md"
+    },
+    {
+      "slug": "escalation-growth",
+      "code": "PAT-0300",
+      "title": "Escalation Growth",
+      "status": "stable",
+      "summary": "A structural condition where impact, authority, scope, or consequence increases across sequential states without a declared limiting mechanism.",
+      "lenses": {
+        "primary": [
+          "escalation-gradient-lens",
+          "variance-entropy-lens"
+        ],
+        "secondary": [
+          "propagation-lens"
+        ]
+      },
+      "issues": {
+        "primary": [],
+        "supporting": []
+      },
+      "url": "/workbench/patterns/escalation-growth/",
+      "markdown_url": "/workbench/patterns/escalation-growth.md"
+    },
+    {
+      "slug": "incomplete-declaration",
+      "code": "PAT-0130",
+      "title": "Incomplete Declaration",
+      "status": "stable",
+      "summary": "A structural condition where an element is declared but required attributes, dependencies, or linked definitions are missing.",
+      "lenses": {
+        "primary": [
+          "absence-lens",
+          "constraint-sufficiency-lens"
+        ],
+        "secondary": [
+          "interface-contract-lens"
+        ]
+      },
+      "issues": {
+        "primary": [],
+        "supporting": []
+      },
+      "url": "/workbench/patterns/incomplete-declaration/",
+      "markdown_url": "/workbench/patterns/incomplete-declaration.md"
+    },
+    {
+      "slug": "interface-mismatch",
+      "code": "PAT-0150",
+      "title": "Interface Mismatch",
+      "status": "stable",
+      "summary": "A structural condition where observed interface behavior, shape, or exchange differs from the declared interface contract.",
+      "lenses": {
+        "primary": [
+          "interface-contract-lens"
+        ],
+        "secondary": [
+          "normalization-lens"
+        ]
+      },
+      "issues": {
+        "primary": [],
+        "supporting": []
+      },
+      "url": "/workbench/patterns/interface-mismatch/",
+      "markdown_url": "/workbench/patterns/interface-mismatch.md"
+    },
+    {
+      "slug": "invariant-breakage",
+      "code": "PAT-0330",
+      "title": "Invariant Breakage",
+      "status": "stable",
+      "summary": "A structural condition where an observed state violates a declared invariant that is supposed to remain true.",
+      "lenses": {
+        "primary": [
+          "invariant-lens",
+          "conflict-lens"
+        ],
+        "secondary": [
+          "interface-contract-lens"
+        ]
+      },
+      "issues": {
+        "primary": [],
+        "supporting": []
+      },
+      "url": "/workbench/patterns/invariant-breakage/",
+      "markdown_url": "/workbench/patterns/invariant-breakage.md"
+    },
+    {
+      "slug": "missing-authority",
+      "code": "PAT-0120",
+      "title": "Missing Authority",
+      "status": "stable",
+      "summary": "A structural condition where a region, action, state, or decision path exists without a declared governing authority.",
+      "lenses": {
+        "primary": [
+          "authority-overlay-lens",
+          "absence-lens"
+        ],
+        "secondary": [
+          "conflict-lens",
+          "reconciliation-lens"
+        ]
+      },
+      "issues": {
+        "primary": [],
+        "supporting": []
+      },
+      "url": "/workbench/patterns/missing-authority/",
+      "markdown_url": "/workbench/patterns/missing-authority.md"
+    },
+    {
+      "slug": "non-deterministic-execution",
+      "code": "PAT-0210",
+      "title": "Non-Deterministic Execution",
+      "status": "stable",
+      "summary": "A structural condition where equivalent inputs and declared constraints produce divergent outputs across executions.",
+      "lenses": {
+        "primary": [
+          "determinism-lens",
+          "variance-entropy-lens"
+        ],
+        "secondary": [
+          "convergence-lens",
+          "reference-stability-lens"
+        ]
+      },
+      "issues": {
+        "primary": [],
+        "supporting": []
+      },
+      "url": "/workbench/patterns/non-deterministic-execution/",
+      "markdown_url": "/workbench/patterns/non-deterministic-execution.md"
+    },
+    {
+      "slug": "orphaned-structure",
+      "code": "PAT-0310",
+      "title": "Orphaned Structure",
+      "status": "stable",
+      "summary": "A structural condition where a node, region, object, state, or declaration exists without linkage to the governing graph or integration pathway.",
+      "lenses": {
+        "primary": [
+          "absence-lens"
+        ],
+        "secondary": [
+          "propagation-lens"
+        ]
+      },
+      "issues": {
+        "primary": [],
+        "supporting": []
+      },
+      "url": "/workbench/patterns/orphaned-structure/",
+      "markdown_url": "/workbench/patterns/orphaned-structure.md"
+    },
+    {
+      "slug": "overreach",
+      "code": "PAT-0340",
+      "title": "Overreach",
+      "status": "stable",
+      "summary": "A structural condition where actions, effects, authority, or modifications extend beyond declared scope without authorization.",
+      "lenses": {
+        "primary": [
+          "overreach-lens",
+          "boundary-compliance-lens"
+        ],
+        "secondary": [
+          "propagation-lens"
+        ]
+      },
+      "issues": {
+        "primary": [],
+        "supporting": []
+      },
+      "url": "/workbench/patterns/overreach/",
+      "markdown_url": "/workbench/patterns/overreach.md"
+    },
+    {
+      "slug": "persistence-instability",
+      "code": "PAT-0350",
+      "title": "Persistence Instability",
+      "status": "stable",
+      "summary": "A structural condition where persisted state cannot be stored and restored into an equivalent structure without alteration.",
+      "lenses": {
+        "primary": [
+          "reference-stability-lens"
+        ],
+        "secondary": [
+          "determinism-lens"
+        ]
+      },
+      "issues": {
+        "primary": [],
+        "supporting": []
+      },
+      "url": "/workbench/patterns/persistence-instability/",
+      "markdown_url": "/workbench/patterns/persistence-instability.md"
+    },
+    {
+      "slug": "propagation-amplification",
+      "code": "PAT-0360",
+      "title": "Propagation Amplification",
+      "status": "stable",
+      "summary": "A structural condition where an effect, declaration, authority, constraint, or state increases in scope or intensity as it propagates beyond declared bounds.",
+      "lenses": {
+        "primary": [
+          "propagation-lens",
+          "escalation-gradient-lens"
+        ],
+        "secondary": [
+          "variance-entropy-lens"
+        ]
+      },
+      "issues": {
+        "primary": [],
+        "supporting": []
+      },
+      "url": "/workbench/patterns/propagation-amplification/",
+      "markdown_url": "/workbench/patterns/propagation-amplification.md"
+    },
+    {
+      "slug": "redundant-declaration",
+      "code": "PAT-0370",
+      "title": "Redundant Declaration",
+      "status": "stable",
+      "summary": "A structural condition where multiple declarations produce equivalent structural effect without semantic differentiation.",
+      "lenses": {
+        "primary": [
+          "normalization-lens",
+          "conflict-lens"
+        ],
+        "secondary": [
+          "compression-lens"
+        ]
+      },
+      "issues": {
+        "primary": [],
+        "supporting": []
+      },
+      "url": "/workbench/patterns/redundant-declaration/",
+      "markdown_url": "/workbench/patterns/redundant-declaration.md"
+    },
+    {
+      "slug": "reference-instability",
+      "code": "PAT-0200",
+      "title": "Reference Instability",
+      "status": "stable",
+      "summary": "A structural condition where references, identifiers, links, or anchors change across equivalent evaluations without a declared cause.",
+      "lenses": {
+        "primary": [
+          "reference-stability-lens"
+        ],
+        "secondary": [
+          "determinism-lens"
+        ]
+      },
+      "issues": {
+        "primary": [],
+        "supporting": []
+      },
+      "url": "/workbench/patterns/reference-instability/",
+      "markdown_url": "/workbench/patterns/reference-instability.md"
+    },
+    {
+      "slug": "schema-breakage",
+      "code": "PAT-0160",
+      "title": "Schema Breakage",
+      "status": "stable",
+      "summary": "A structural condition where an instance, graph, payload, or object violates the type, shape, or rule requirements of a declared schema.",
+      "lenses": {
+        "primary": [
+          "interface-contract-lens",
+          "invariant-lens"
+        ],
+        "secondary": [
+          "conflict-lens"
+        ]
+      },
+      "issues": {
+        "primary": [],
+        "supporting": []
+      },
+      "url": "/workbench/patterns/schema-breakage/",
+      "markdown_url": "/workbench/patterns/schema-breakage.md"
+    },
+    {
+      "slug": "silent-mutation",
+      "code": "PAT-0380",
+      "title": "Silent Mutation",
+      "status": "stable",
+      "summary": "A structural condition where a change occurs without a corresponding declared update, authority update, or version change.",
+      "lenses": {
+        "primary": [
+          "reference-stability-lens",
+          "determinism-lens"
+        ],
+        "secondary": [
+          "provenance-trace-lens"
+        ]
+      },
+      "issues": {
+        "primary": [],
+        "supporting": []
+      },
+      "url": "/workbench/patterns/silent-mutation/",
+      "markdown_url": "/workbench/patterns/silent-mutation.md"
+    },
+    {
+      "slug": "threshold-breach",
+      "code": "PAT-0390",
+      "title": "Threshold Breach",
+      "status": "stable",
+      "summary": "A structural condition where an observed metric, value, state, or condition exceeds a declared quantitative or qualitative threshold.",
+      "lenses": {
+        "primary": [
+          "invariant-lens"
+        ],
+        "secondary": [
+          "boundary-compliance-lens"
+        ]
+      },
+      "issues": {
+        "primary": [],
+        "supporting": []
+      },
+      "url": "/workbench/patterns/threshold-breach/",
+      "markdown_url": "/workbench/patterns/threshold-breach.md"
+    },
+    {
+      "slug": "unbounded-scope",
+      "code": "PAT-0400",
+      "title": "Unbounded Scope",
+      "status": "stable",
+      "summary": "A structural condition where an operation, authority, rule, or expansion has no declared upper bound, boundary, or termination condition.",
+      "lenses": {
+        "primary": [
+          "isolation-boundary-lens",
+          "constraint-sufficiency-lens"
+        ],
+        "secondary": [
+          "escalation-gradient-lens"
+        ]
+      },
+      "issues": {
+        "primary": [],
+        "supporting": []
+      },
+      "url": "/workbench/patterns/unbounded-scope/",
+      "markdown_url": "/workbench/patterns/unbounded-scope.md"
+    },
+    {
+      "slug": "unconstrained-expansion",
+      "code": "PAT-0410",
+      "title": "Unconstrained Expansion",
+      "status": "stable",
+      "summary": "A structural condition where a region, process, authority, or effect expands without governing constraints limiting growth.",
+      "lenses": {
+        "primary": [
+          "escalation-gradient-lens",
+          "compression-lens"
+        ],
+        "secondary": [
+          "variance-entropy-lens"
+        ]
+      },
+      "issues": {
+        "primary": [],
+        "supporting": []
+      },
+      "url": "/workbench/patterns/unconstrained-expansion/",
+      "markdown_url": "/workbench/patterns/unconstrained-expansion.md"
+    },
+    {
+      "slug": "undeclared-side-effect",
+      "code": "PAT-0420",
+      "title": "Undeclared Side Effect",
+      "status": "stable",
+      "summary": "A structural condition where an operation modifies regions outside its declared target scope without a declared propagation or side-effect rule.",
+      "lenses": {
+        "primary": [
+          "overreach-lens",
+          "propagation-lens"
+        ],
+        "secondary": [
+          "isolation-boundary-lens"
+        ]
+      },
+      "issues": {
+        "primary": [],
+        "supporting": []
+      },
+      "url": "/workbench/patterns/undeclared-side-effect/",
+      "markdown_url": "/workbench/patterns/undeclared-side-effect.md"
+    }
+  ],
+  "lenses": [
+    {
+      "slug": "absence-lens",
+      "code": "LEN-0100",
+      "title": "Absence Lens",
+      "status": "stable",
+      "summary": "Detects structurally required elements that are missing from the observed structure.",
+      "patterns": {
+        "primary": [
+          "density-vacuum",
+          "incomplete-declaration",
+          "missing-authority",
+          "orphaned-structure"
+        ],
+        "secondary": []
+      },
+      "issues": [],
+      "url": "/workbench/lenses/absence-lens/",
+      "markdown_url": "/workbench/lenses/absence-lens.md"
+    },
+    {
+      "slug": "authority-overlay-lens",
+      "code": "LEN-0110",
+      "title": "Authority Overlay Lens",
+      "status": "stable",
+      "summary": "Maps declared authority hierarchies onto observed structure to detect absence, override, or conflict.",
+      "patterns": {
+        "primary": [
+          "authority-collision",
+          "authority-shadowing",
+          "missing-authority"
+        ],
+        "secondary": [
+          "authority-merge-conflict"
+        ]
+      },
+      "issues": [
+        "issue-0001"
+      ],
+      "url": "/workbench/lenses/authority-overlay-lens/",
+      "markdown_url": "/workbench/lenses/authority-overlay-lens.md"
+    },
+    {
+      "slug": "boundary-compliance-lens",
+      "code": "LEN-0120",
+      "title": "Boundary Compliance Lens",
+      "status": "stable",
+      "summary": "Evaluates observed structure against declared boundary posture, including allow, block, and exception rules.",
+      "patterns": {
+        "primary": [
+          "overreach"
+        ],
+        "secondary": [
+          "boundary-leakage",
+          "compatibility-violation",
+          "threshold-breach"
+        ]
+      },
+      "issues": [],
+      "url": "/workbench/lenses/boundary-compliance-lens/",
+      "markdown_url": "/workbench/lenses/boundary-compliance-lens.md"
+    },
+    {
+      "slug": "compatibility-envelope-lens",
+      "code": "LEN-0130",
+      "title": "Compatibility Envelope Lens",
+      "status": "stable",
+      "summary": "Determines whether structure fits within declared runtime, platform, version, or support constraints.",
+      "patterns": {
+        "primary": [
+          "compatibility-violation"
+        ],
+        "secondary": []
+      },
+      "issues": [],
+      "url": "/workbench/lenses/compatibility-envelope-lens/",
+      "markdown_url": "/workbench/lenses/compatibility-envelope-lens.md"
+    },
+    {
+      "slug": "compression-lens",
+      "code": "LEN-0140",
+      "title": "Compression Lens",
+      "status": "stable",
+      "summary": "Reduces structural graphs into stable minimal representations for comparison, redundancy detection, and diffing.",
+      "patterns": {
+        "primary": [
+          "density-spike",
+          "density-vacuum",
+          "unconstrained-expansion"
+        ],
+        "secondary": [
+          "asymmetric-structure",
+          "divergent-outputs",
+          "redundant-declaration"
+        ]
+      },
+      "issues": [],
+      "url": "/workbench/lenses/compression-lens/",
+      "markdown_url": "/workbench/lenses/compression-lens.md"
+    },
+    {
+      "slug": "conflict-lens",
+      "code": "LEN-0150",
+      "title": "Conflict Lens",
+      "status": "stable",
+      "summary": "Detects mutually incompatible constraints, claims, states, or declarations that cannot be simultaneously satisfied.",
+      "patterns": {
+        "primary": [
+          "authority-collision",
+          "authority-merge-conflict",
+          "circular-dependency",
+          "invariant-breakage",
+          "redundant-declaration"
+        ],
+        "secondary": [
+          "authority-shadowing",
+          "missing-authority",
+          "schema-breakage"
+        ]
+      },
+      "issues": [
+        "issue-0001"
+      ],
+      "url": "/workbench/lenses/conflict-lens/",
+      "markdown_url": "/workbench/lenses/conflict-lens.md"
+    },
+    {
+      "slug": "constraint-sufficiency-lens",
+      "code": "LEN-0160",
+      "title": "Constraint Sufficiency Lens",
+      "status": "stable",
+      "summary": "Evaluates whether declared constraints are sufficient to eliminate structural degrees of freedom.",
+      "patterns": {
+        "primary": [
+          "constraints-underspecified",
+          "incomplete-declaration",
+          "unbounded-scope"
+        ],
+        "secondary": [
+          "density-vacuum"
+        ]
+      },
+      "issues": [],
+      "url": "/workbench/lenses/constraint-sufficiency-lens/",
+      "markdown_url": "/workbench/lenses/constraint-sufficiency-lens.md"
+    },
+    {
+      "slug": "convergence-lens",
+      "code": "LEN-0170",
+      "title": "Convergence Lens",
+      "status": "stable",
+      "summary": "Compares parallel structural systems to determine whether they align under shared authority.",
+      "patterns": {
+        "primary": [
+          "asymmetric-structure",
+          "contract-drift",
+          "convergence-failure",
+          "divergent-outputs"
+        ],
+        "secondary": [
+          "authority-state-mismatch",
+          "non-deterministic-execution"
+        ]
+      },
+      "issues": [],
+      "url": "/workbench/lenses/convergence-lens/",
+      "markdown_url": "/workbench/lenses/convergence-lens.md"
+    },
+    {
+      "slug": "determinism-lens",
+      "code": "LEN-0180",
+      "title": "Determinism Lens",
+      "status": "stable",
+      "summary": "Evaluates whether identical structural inputs produce equivalent structural outputs across repeated executions.",
+      "patterns": {
+        "primary": [
+          "non-deterministic-execution",
+          "silent-mutation"
+        ],
+        "secondary": [
+          "constraints-underspecified",
+          "contract-drift",
+          "divergent-outputs",
+          "persistence-instability",
+          "reference-instability"
+        ]
+      },
+      "issues": [],
+      "url": "/workbench/lenses/determinism-lens/",
+      "markdown_url": "/workbench/lenses/determinism-lens.md"
+    },
+    {
+      "slug": "escalation-gradient-lens",
+      "code": "LEN-0190",
+      "title": "Escalation Gradient Lens",
+      "status": "stable",
+      "summary": "Measures structural growth or intensification across sequential executions, states, or transitions.",
+      "patterns": {
+        "primary": [
+          "escalation-growth",
+          "propagation-amplification",
+          "unconstrained-expansion"
+        ],
+        "secondary": [
+          "cross-layer-escalation",
+          "density-spike",
+          "unbounded-scope"
+        ]
+      },
+      "issues": [],
+      "url": "/workbench/lenses/escalation-gradient-lens/",
+      "markdown_url": "/workbench/lenses/escalation-gradient-lens.md"
+    },
+    {
+      "slug": "interface-contract-lens",
+      "code": "LEN-0200",
+      "title": "Interface Contract Lens",
+      "status": "stable",
+      "summary": "Compares declared interface structure to observed runtime structure to detect contract deviations.",
+      "patterns": {
+        "primary": [
+          "interface-mismatch",
+          "schema-breakage"
+        ],
+        "secondary": [
+          "incomplete-declaration",
+          "invariant-breakage"
+        ]
+      },
+      "issues": [],
+      "url": "/workbench/lenses/interface-contract-lens/",
+      "markdown_url": "/workbench/lenses/interface-contract-lens.md"
+    },
+    {
+      "slug": "invariant-lens",
+      "code": "LEN-0210",
+      "title": "Invariant Lens",
+      "status": "stable",
+      "summary": "Verifies that declared invariants are structurally enforceable and not contradicted by observed structure.",
+      "patterns": {
+        "primary": [
+          "invariant-breakage",
+          "schema-breakage",
+          "threshold-breach"
+        ],
+        "secondary": [
+          "authority-collision"
+        ]
+      },
+      "issues": [
+        "issue-0001"
+      ],
+      "url": "/workbench/lenses/invariant-lens/",
+      "markdown_url": "/workbench/lenses/invariant-lens.md"
+    },
+    {
+      "slug": "isolation-boundary-lens",
+      "code": "LEN-0220",
+      "title": "Isolation Boundary Lens",
+      "status": "stable",
+      "summary": "Evaluates whether structural constraints, effects, and regions remain contained within declared boundaries.",
+      "patterns": {
+        "primary": [
+          "boundary-leakage",
+          "cross-layer-escalation",
+          "unbounded-scope"
+        ],
+        "secondary": [
+          "undeclared-side-effect"
+        ]
+      },
+      "issues": [],
+      "url": "/workbench/lenses/isolation-boundary-lens/",
+      "markdown_url": "/workbench/lenses/isolation-boundary-lens.md"
+    },
+    {
+      "slug": "normalization-lens",
+      "code": "LEN-0230",
+      "title": "Normalization Lens",
+      "status": "stable",
+      "summary": "Transforms structurally equivalent variants into a canonical form to prevent false divergence.",
+      "patterns": {
+        "primary": [
+          "redundant-declaration"
+        ],
+        "secondary": [
+          "circular-dependency",
+          "interface-mismatch"
+        ]
+      },
+      "issues": [],
+      "url": "/workbench/lenses/normalization-lens/",
+      "markdown_url": "/workbench/lenses/normalization-lens.md"
+    },
+    {
+      "slug": "overreach-lens",
+      "code": "LEN-0240",
+      "title": "Overreach Lens",
+      "status": "stable",
+      "summary": "Detects structure that exceeds declared scope or authority reach.",
+      "patterns": {
+        "primary": [
+          "overreach",
+          "undeclared-side-effect"
+        ],
+        "secondary": []
+      },
+      "issues": [],
+      "url": "/workbench/lenses/overreach-lens/",
+      "markdown_url": "/workbench/lenses/overreach-lens.md"
+    },
+    {
+      "slug": "propagation-lens",
+      "code": "LEN-0250",
+      "title": "Propagation Lens",
+      "status": "stable",
+      "summary": "Traces how structural declarations, effects, or state changes propagate across boundaries or stages.",
+      "patterns": {
+        "primary": [
+          "boundary-leakage",
+          "circular-dependency",
+          "cross-layer-escalation",
+          "propagation-amplification",
+          "undeclared-side-effect"
+        ],
+        "secondary": [
+          "escalation-growth",
+          "orphaned-structure",
+          "overreach"
+        ]
+      },
+      "issues": [],
+      "url": "/workbench/lenses/propagation-lens/",
+      "markdown_url": "/workbench/lenses/propagation-lens.md"
+    },
+    {
+      "slug": "provenance-trace-lens",
+      "code": "LEN-0260",
+      "title": "Provenance Trace Lens",
+      "status": "stable",
+      "summary": "Attaches stable lineage to structural regions by mapping origin, reference history, and transformation path.",
+      "patterns": {
+        "primary": [],
+        "secondary": [
+          "silent-mutation"
+        ]
+      },
+      "issues": [],
+      "url": "/workbench/lenses/provenance-trace-lens/",
+      "markdown_url": "/workbench/lenses/provenance-trace-lens.md"
+    },
+    {
+      "slug": "reconciliation-lens",
+      "code": "LEN-0270",
+      "title": "Reconciliation Lens",
+      "status": "stable",
+      "summary": "Evaluates whether structural changes align with declared authority updates, version changes, or reconciliation rules.",
+      "patterns": {
+        "primary": [
+          "authority-merge-conflict",
+          "authority-state-mismatch",
+          "contract-drift"
+        ],
+        "secondary": [
+          "authority-collision",
+          "authority-shadowing",
+          "convergence-failure",
+          "missing-authority"
+        ]
+      },
+      "issues": [
+        "issue-0001"
+      ],
+      "url": "/workbench/lenses/reconciliation-lens/",
+      "markdown_url": "/workbench/lenses/reconciliation-lens.md"
+    },
+    {
+      "slug": "reference-stability-lens",
+      "code": "LEN-0280",
+      "title": "Reference Stability Lens",
+      "status": "stable",
+      "summary": "Evaluates whether structural references, identifiers, nodes, and edges remain consistent across execution cycles or comparable states.",
+      "patterns": {
+        "primary": [
+          "persistence-instability",
+          "reference-instability",
+          "silent-mutation"
+        ],
+        "secondary": [
+          "authority-state-mismatch",
+          "non-deterministic-execution"
+        ]
+      },
+      "issues": [],
+      "url": "/workbench/lenses/reference-stability-lens/",
+      "markdown_url": "/workbench/lenses/reference-stability-lens.md"
+    },
+    {
+      "slug": "variance-entropy-lens",
+      "code": "LEN-0290",
+      "title": "Variance / Entropy Lens",
+      "status": "stable",
+      "summary": "Measures structural variability across repeated or comparable evaluations and identifies divergence beyond expected bounds.",
+      "patterns": {
+        "primary": [
+          "asymmetric-structure",
+          "density-spike",
+          "divergent-outputs",
+          "escalation-growth",
+          "non-deterministic-execution"
+        ],
+        "secondary": [
+          "constraints-underspecified",
+          "convergence-failure",
+          "propagation-amplification",
+          "unconstrained-expansion"
+        ]
+      },
+      "issues": [],
+      "url": "/workbench/lenses/variance-entropy-lens/",
+      "markdown_url": "/workbench/lenses/variance-entropy-lens.md"
+    }
+  ],
+  "categories": [
+    {
+      "slug": "drift-variance",
+      "title": "Drift & Variance",
+      "status": "draft",
+      "summary": "Navigation shelf for drift and variance issues.",
+      "issues": [
+        "issue-0001"
+      ],
+      "url": "/workbench/categories/drift-variance/"
+    }
+  ],
+  "lookups": {
+    "patterns_by_code": {
+      "PAT-0110": "asymmetric-structure",
+      "PAT-0100": "authority-collision",
+      "PAT-0220": "authority-merge-conflict",
+      "PAT-0230": "authority-shadowing",
+      "PAT-0240": "authority-state-mismatch",
+      "PAT-0140": "boundary-leakage",
+      "PAT-0250": "circular-dependency",
+      "PAT-0180": "compatibility-violation",
+      "PAT-0170": "constraints-underspecified",
+      "PAT-0190": "contract-drift",
+      "PAT-0320": "convergence-failure",
+      "PAT-0260": "cross-layer-escalation",
+      "PAT-0270": "density-spike",
+      "PAT-0280": "density-vacuum",
+      "PAT-0290": "divergent-outputs",
+      "PAT-0300": "escalation-growth",
+      "PAT-0130": "incomplete-declaration",
+      "PAT-0150": "interface-mismatch",
+      "PAT-0330": "invariant-breakage",
+      "PAT-0120": "missing-authority",
+      "PAT-0210": "non-deterministic-execution",
+      "PAT-0310": "orphaned-structure",
+      "PAT-0340": "overreach",
+      "PAT-0350": "persistence-instability",
+      "PAT-0360": "propagation-amplification",
+      "PAT-0370": "redundant-declaration",
+      "PAT-0200": "reference-instability",
+      "PAT-0160": "schema-breakage",
+      "PAT-0380": "silent-mutation",
+      "PAT-0390": "threshold-breach",
+      "PAT-0400": "unbounded-scope",
+      "PAT-0410": "unconstrained-expansion",
+      "PAT-0420": "undeclared-side-effect"
+    },
+    "lenses_by_code": {
+      "LEN-0100": "absence-lens",
+      "LEN-0110": "authority-overlay-lens",
+      "LEN-0120": "boundary-compliance-lens",
+      "LEN-0130": "compatibility-envelope-lens",
+      "LEN-0140": "compression-lens",
+      "LEN-0150": "conflict-lens",
+      "LEN-0160": "constraint-sufficiency-lens",
+      "LEN-0170": "convergence-lens",
+      "LEN-0180": "determinism-lens",
+      "LEN-0190": "escalation-gradient-lens",
+      "LEN-0200": "interface-contract-lens",
+      "LEN-0210": "invariant-lens",
+      "LEN-0220": "isolation-boundary-lens",
+      "LEN-0230": "normalization-lens",
+      "LEN-0240": "overreach-lens",
+      "LEN-0250": "propagation-lens",
+      "LEN-0260": "provenance-trace-lens",
+      "LEN-0270": "reconciliation-lens",
+      "LEN-0280": "reference-stability-lens",
+      "LEN-0290": "variance-entropy-lens"
+    }
+  }
+}

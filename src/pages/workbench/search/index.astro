@@ -1,0 +1,114 @@
+---
+import searchIndex from "../../../content/_meta/search-index.json";
+
+const items = searchIndex.items;
+const categories = searchIndex.facets.categories;
+const patterns = searchIndex.facets.patterns;
+const lenses = searchIndex.facets.lenses;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Search | Pengo AI Structural Workbench</title>
+    <meta
+      name="description"
+      content="Search the Pengo AI Structural Workbench by issue surfaces, gap terms, Patterns, Lenses, names, or codes."
+    />
+  </head>
+  <body>
+    <main>
+      <p><a href="/workbench/">Workbench</a></p>
+
+      <h1>Search</h1>
+
+      <p><strong>Find the structure behind the visible failure surface.</strong></p>
+
+      <p>
+        Search is issue-scoped. It returns visible Issue surfaces and uses
+        Categories, Patterns, and Lenses as derived facets for exploration.
+      </p>
+
+      <p>
+        {searchIndex.note}
+      </p>
+
+      <section aria-labelledby="results">
+        <h2 id="results">Issue Results</h2>
+
+        {items.length > 0 ? (
+          <ul>
+            {items.map((item) => (
+              <li>
+                <h3>
+                  <a href={item.url}>{item.title}</a>
+                </h3>
+
+                <p>{item.summary}</p>
+
+                <p>
+                  Category: {item.category_title}
+                  {" | "}
+                  Primary Pattern: {item.primary_pattern}
+                  {" | "}
+                  Patterns: {item.patterns.length}
+                  {" | "}
+                  Primary Lenses: {item.lenses.primary.length}
+                  {" | "}
+                  Secondary Lenses: {item.lenses.secondary.length}
+                </p>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p>No Issue results.</p>
+        )}
+      </section>
+
+      <section aria-labelledby="facets">
+        <h2 id="facets">Derived Facets</h2>
+
+        <p>
+          Facets help you explore the structural language around each visible
+          Issue surface. They do not prove cause or diagnose the model.
+        </p>
+
+        <h3>Categories</h3>
+        <ul>
+          {categories.map((category) => (
+            <li>
+              {category.title} — {category.count}
+            </li>
+          ))}
+        </ul>
+
+        <h3>Patterns</h3>
+        <ul>
+          {patterns.map((pattern) => (
+            <li>
+              {pattern.code} — {pattern.title} — {pattern.count}
+            </li>
+          ))}
+        </ul>
+
+        <h3>Lenses</h3>
+        <ul>
+          {lenses.map((lens) => (
+            <li>
+              {lens.code} — {lens.title} — {lens.count}
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section aria-labelledby="boundary">
+        <h2 id="boundary">Boundary</h2>
+
+        <p>
+          Search helps surface related Workbench references. It does not validate
+          a prompt, score a model, prove causality, or replace Check Input.
+        </p>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,58 @@
+---
+import ontologyIndex from "../../../content/_meta/ontology-index.json";
+
+const patterns = ontologyIndex.patterns;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Patterns | Workbench</title>
+    <meta
+      name="description"
+      content="Canonical structural Patterns in the Workbench ontology."
+    />
+  </head>
+  <body>
+    <main>
+      <p><a href="/workbench/">Workbench</a></p>
+
+      <h1>Patterns</h1>
+
+      <p>
+        Patterns are canonical structural forms. Issues declare Patterns.
+        Lenses are derived from the Pattern -&gt; Lens Matrix.
+      </p>
+
+      <section aria-labelledby="pattern-list">
+        <h2 id="pattern-list">Pattern Index</h2>
+
+        <ul>
+          {patterns.map((pattern) => (
+            <li>
+              <h3>
+                <a href={pattern.url}>
+                  <span class="canonical-term notranslate" translate="no">
+                    {pattern.code} - {pattern.title}
+                  </span>
+                </a>
+              </h3>
+
+              <p>{pattern.summary}</p>
+
+              <p>
+                Primary lenses: {pattern.lenses.primary.length}
+                {" | "}
+                Secondary lenses: {pattern.lenses.secondary.length}
+                {" | "}
+                Primary issues: {pattern.issues.primary.length}
+                {" | "}
+                Supporting issues: {pattern.issues.supporting.length}
+              </p>
+            </li>
+          ))}
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>

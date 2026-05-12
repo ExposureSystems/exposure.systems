@@ -1,4 +1,25 @@
 User-agent: *
 Allow: /
 
-Sitemap: /sitemap.xml
+Sitemap: https://pengosystems.com/sitemap-index.xml
+Sitemap: https://pengosystems.com/workbench/machine-sitemap.xml
+
+# Primary Workbench discovery
+Allow: /workbench/
+Allow: /workbench/llms.txt
+
+# High-value machine-readable Workbench artifacts
+Allow: /workbench/issues/*.md
+Allow: /workbench/patterns/*.md
+Allow: /workbench/lenses/*.md
+
+# Human-facing Workbench library surfaces
+Allow: /workbench/issues/
+Allow: /workbench/patterns/
+Allow: /workbench/lenses/
+Allow: /workbench/search/
+Allow: /workbench/gap-explorer/
+Allow: /workbench/check-input/
+
+# Raw JSON indexes are machine-accessible but marked noindex by headers.
+Allow: /workbench/_internal/

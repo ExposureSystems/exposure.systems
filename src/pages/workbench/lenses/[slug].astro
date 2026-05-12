@@ -1,0 +1,162 @@
+---
+import ontologyIndex from "../../../content/_meta/ontology-index.json";
+import changelog from "../../../ontology/changelog.public.json";
+import release from "../../../ontology/ontology-release.json";
+import {
+  getChangeTypeLabel,
+  getObjectHistory,
+  getReceiptImpactLabel,
+  getVersionLabel,
+} from "../../../lib/ontology/page-metadata";
+
+export function getStaticPaths() {
+  return ontologyIndex.lenses.map((lens) => ({
+    params: { slug: lens.slug },
+    props: { lens },
+  }));
+}
+
+const { lens } = Astro.props;
+
+const primaryPatterns = lens.patterns.primary
+  .map((slug) => ontologyIndex.patterns.find((pattern) => pattern.slug === slug))
+  .filter(Boolean);
+
+const secondaryPatterns = lens.patterns.secondary
+  .map((slug) => ontologyIndex.patterns.find((pattern) => pattern.slug === slug))
+  .filter(Boolean);
+
+const relatedIssues = lens.issues
+  .map((slug) => ontologyIndex.issues.find((issue) => issue.slug === slug))
+  .filter(Boolean);
+
+const history = getObjectHistory(changelog, lens);
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{lens.code} - {lens.title} | Workbench Lens</title>
+    <meta name="description" content={lens.summary} />
+  </head>
+  <body>
+    <main>
+      <p>
+        <a href="/workbench/">Workbench</a>
+        {" / "}
+        <a href="/workbench/lenses/">Lenses</a>
+      </p>
+
+      <h1>
+        <span class="canonical-term notranslate" translate="no">
+          {lens.code} - {lens.title}
+        </span>
+      </h1>
+
+      <p>{lens.summary}</p>
+
+      <section aria-labelledby="primary-patterns">
+        <h2 id="primary-patterns">Primary Pattern Matches</h2>
+
+        {primaryPatterns.length > 0 ? (
+          <ul>
+            {primaryPatterns.map((pattern) => (
+              <li>
+                <a href={pattern.url}>
+                  <span class="canonical-term notranslate" translate="no">
+                    {pattern.code} - {pattern.title}
+                  </span>
+                </a>
+                <p>{pattern.summary}</p>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p>No primary pattern matches.</p>
+        )}
+      </section>
+
+      <section aria-labelledby="secondary-patterns">
+        <h2 id="secondary-patterns">Secondary Pattern Matches</h2>
+
+        {secondaryPatterns.length > 0 ? (
+          <ul>
+            {secondaryPatterns.map((pattern) => (
+              <li>
+                <a href={pattern.url}>
+                  <span class="canonical-term notranslate" translate="no">
+                    {pattern.code} - {pattern.title}
+                  </span>
+                </a>
+                <p>{pattern.summary}</p>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p>No secondary pattern matches.</p>
+        )}
+      </section>
+
+      <section aria-labelledby="related-issues">
+        <h2 id="related-issues">Related Issues</h2>
+
+        {relatedIssues.length > 0 ? (
+          <ul>
+            {relatedIssues.map((issue) => (
+              <li>
+                <a href={issue.url}>{issue.title}</a>
+                <p>{issue.summary}</p>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p>No related issues.</p>
+        )}
+      </section>
+
+      <section aria-labelledby="ontology-metadata">
+        <h2 id="ontology-metadata">Ontology Metadata</h2>
+
+        <dl>
+          <dt>Code</dt>
+          <dd><code>{lens.code}</code></dd>
+
+          <dt>Version</dt>
+          <dd><code>{getVersionLabel(lens)}</code></dd>
+
+          <dt>Ontology release</dt>
+          <dd>{release.ontology_release}</dd>
+
+          <dt>Updated</dt>
+          <dd>{lens.updated_at}</dd>
+        </dl>
+
+        <h3>History</h3>
+
+        {history.length > 0 ? (
+          <ul>
+            {history.map((entry) => (
+              <li>
+                <p>
+                  <strong>{entry.entry_version}</strong>
+                  {" — "}
+                  {entry.date}
+                  {" — "}
+                  {getChangeTypeLabel(entry.change_type)}
+                </p>
+                <p>{entry.public_summary}</p>
+                <p>Receipt impact: {getReceiptImpactLabel(entry.receipt_impact)}</p>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p>No public history entries recorded.</p>
+        )}
+
+        <p>
+          <a href="/workbench/ontology/changelog/">View full ontology changelog</a>
+        </p>
+      </section>
+    </main>
+  </body>
+</html>

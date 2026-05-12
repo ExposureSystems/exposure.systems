@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "elements": [
+    "actor",
+    "trigger",
+    "action",
+    "outcome",
+    "scope",
+    "constraint",
+    "dependency",
+    "sequence"
+  ],
+  "gap_types": [
+    "missing",
+    "unclear",
+    "ambiguous",
+    "unstated",
+    "undefined",
+    "conflicting",
+    "incomplete",
+    "implied"
+  ],
+  "finding_shape": "[gap type] [element]"
+}
