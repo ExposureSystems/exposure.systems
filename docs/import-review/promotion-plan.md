@@ -19,6 +19,10 @@ docs/import-review/patterns/*.md -> src/content/patterns/*.md
 docs/import-review/lenses/*.md -> src/content/lenses/*.md
 ```
 
+Promotion must respect the current public Astro content schema.
+
+Public Pattern and Lens entries currently allow a smaller frontmatter set than import-review drafts. Promotion must therefore strip review-only and matrix-derived fields before writing to `src/content`.
+
 ## Current State
 
 Reviewed drafts exist in:
@@ -56,42 +60,76 @@ Do not promote:
 
 ## Fields Carried Forward
 
-The following frontmatter fields should carry forward into public content:
+The following public frontmatter fields should carry forward into public Pattern and Lens content:
 
 ```yaml
 layer:
-slug:
 title:
 code:
 entry_version:
 updated_at:
 summary:
-search_intents:
-related_lenses:      # Patterns only
-related_patterns:    # Lenses only
 ```
 
 The Markdown body should carry forward as reviewed.
 
-## Fields Stripped During Promotion
+## Fields Added During Promotion
 
-The following import-review-only fields should not be copied into public ontology content:
+The following public-only field should be added during promotion:
 
 ```yaml
-review_state:
-source_file:
+status: stable
 ```
 
 Reason:
 
+- Public content schema currently requires `status`.
+- Reviewed drafts use `review_state` for internal workflow instead.
+
+## Fields Stripped During Promotion
+
+The following import-review, review-only, or non-public-schema fields should not be copied into public Pattern or Lens ontology content:
+
+```yaml
+slug:
+review_state:
+source_file:
+search_intents:
+related_lenses:
+related_patterns:
+```
+
+Reason:
+
+- `slug` is represented by the filename in public content.
 - `review_state` describes internal review workflow, not public ontology meaning.
 - `source_file` describes import provenance for review, not public ontology meaning.
+- `search_intents` are useful review/search metadata but are not allowed by the current public Pattern/Lens schema.
+- `related_lenses` and `related_patterns` are derived through the Pattern/Lens matrix under the current public ontology validator.
+
+## Public Schema Rule
+
+Promotion must produce public Pattern and Lens files that match the current `src/content.config.ts` schema.
+
+For public Patterns and Lenses, the allowed frontmatter set is currently:
+
+```yaml
+layer:
+title:
+status:
+entry_version:
+updated_at:
+summary:
+code:
+```
+
+Do not copy extra import-review fields into public Pattern or Lens files unless the public schema is intentionally expanded first.
 
 ## Placeholder Replacement Rule
 
 Reviewed import-review entries win over placeholder public entries.
 
-If a reviewed draft has the same slug as an existing public placeholder, promotion may overwrite the public file.
+If a reviewed draft has the same slug/filename as an existing public placeholder, promotion may overwrite the public file.
 
 If a reviewed draft has a code that conflicts with an existing public placeholder, the reviewed draft may still be promoted.
 
@@ -134,11 +172,19 @@ Exact changelog format must match the existing `src/ontology/changelog.public.js
 
 ## Relationship Rule
 
-Pattern/Lens relationships must match the reviewed draft frontmatter and the Pattern/Lens cross matrix.
+Pattern/Lens relationships are public through the Pattern/Lens matrix under the current repo design.
 
 Promotion must not invent new relationships.
 
-If relationship drift is found, stop and correct the reviewed draft or matrix before promotion.
+Promotion must not copy review-only relationship frontmatter into public Pattern or Lens entries unless the public schema is intentionally expanded first.
+
+Relationship data currently lives in:
+
+```text
+src/ontology/pattern-lens-matrix.json
+```
+
+If relationship drift is found between reviewed drafts and the matrix, stop and correct the reviewed draft or matrix before promotion.
 
 ## Batch Strategy
 
@@ -173,7 +219,7 @@ Expected result:
 Workbench ontology validation passed.
 Import review validation passed.
 Astro build complete.
-Only expected src/content and generated metadata files changed.
+Only expected src/content, changelog, and generated metadata files changed.
 ```
 
 Generated files may include:
@@ -219,7 +265,7 @@ If promotion causes validation or build failure:
 
 1. Do not commit.
 2. Inspect the failing file or generated output.
-3. Fix the reviewed draft or promotion script.
+3. Fix the reviewed draft, matrix, changelog, schema, or promotion script.
 4. Re-run build.
 5. Commit only after validation passes.
 
@@ -238,6 +284,7 @@ This plan does not:
 - finalize future page artifact rendering
 - decide relationship summary storage
 - replace the Pattern/Lens matrix design
+- expand the public Astro content schema
 
 ## Working Principle
 
@@ -245,4 +292,4 @@ Promotion should be boring.
 
 The meaning should already exist in the reviewed draft.
 
-The promotion step should move approved reviewed ontology objects into public content, strip review-only fields, update generated indexes, and record the public ontology change.
+The promotion step should move approved reviewed ontology objects into public content, strip review-only and non-public-schema fields, add required public fields, update generated indexes, and record the public ontology change.
