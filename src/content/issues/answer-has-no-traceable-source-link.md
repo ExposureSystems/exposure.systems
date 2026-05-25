@@ -25,7 +25,6 @@ search_intents:
   - answer has no evidence trail
 ---
 
-# Answer Has No Traceable Source Link
 
 ## What This Looks Like
 

@@ -25,7 +25,6 @@ search_intents:
   - reference points to unrelated source
 ---
 
-# Citation Points to Wrong Source
 
 ## What This Looks Like
 

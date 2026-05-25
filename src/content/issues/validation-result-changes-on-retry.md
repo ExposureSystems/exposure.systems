@@ -25,7 +25,6 @@ search_intents:
   - validation output is not stable
 ---
 
-# Validation Result Changes on Retry
 
 ## What This Looks Like
 

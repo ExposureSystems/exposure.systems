@@ -25,7 +25,6 @@ search_intents:
   - saved prompt reference changed
 ---
 
-# Saved Reference No Longer Works
 
 ## What This Looks Like
 

@@ -24,7 +24,6 @@ search_intents:
   - AI response changes after retry
 ---
 
-# Prompt Only Works After Retry
 
 ## What This Looks Like
 

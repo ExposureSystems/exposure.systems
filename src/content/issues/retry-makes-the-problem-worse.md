@@ -25,7 +25,6 @@ search_intents:
   - AI repair made new mistakes
 ---
 
-# Retry Makes the Problem Worse
 
 ## What This Looks Like
 

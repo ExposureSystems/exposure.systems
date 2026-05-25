@@ -24,7 +24,6 @@ search_intents:
   - AI decision path is inconsistent
 ---
 
-# Similar Cases Route to Different Outcomes
 
 ## What This Looks Like
 

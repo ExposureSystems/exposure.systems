@@ -1,4 +1,5 @@
 ---
+import { getCollection } from "astro:content";
 import ontologyIndex from "../../../content/_meta/ontology-index.json";
 import changelog from "../../../ontology/changelog.public.json";
 import release from "../../../ontology/ontology-release.json";
@@ -9,14 +10,23 @@ import {
   getVersionLabel,
 } from "../../../lib/ontology/page-metadata";
 
-export function getStaticPaths() {
-  return ontologyIndex.issues.map((issue) => ({
-    params: { slug: issue.slug },
-    props: { issue },
-  }));
+export async function getStaticPaths() {
+  const entries = await getCollection("issues");
+
+  return entries.map((entry) => {
+    const issue = ontologyIndex.issues.find(
+      (item) => item.ontology_slug === entry.data.ontology_slug
+    );
+
+    return {
+      params: { slug: entry.data.ontology_slug },
+      props: { entry, issue },
+    };
+  });
 }
 
-const { issue } = Astro.props;
+const { entry, issue } = Astro.props;
+const { Content } = await entry.render();
 
 const category = ontologyIndex.categories.find((item) => item.slug === issue.category);
 
@@ -42,7 +52,6 @@ const relatedAiAdjIssues = (issue.related_ai_adj_issues ?? [])
 
 const history = getObjectHistory(changelog, issue);
 
-
 ---
 
 <html lang="en">
@@ -61,7 +70,11 @@ const history = getObjectHistory(changelog, issue);
 
       <h1>{issue.title}</h1>
 
-      <p>{issue.summary}</p>
+        <p>{issue.summary}</p>
+
+        <article>
+          <Content />
+        </article>
 
       <section aria-labelledby="category">
         <h2 id="category">Category</h2>
