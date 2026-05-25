@@ -336,6 +336,50 @@
   },
   "issues": [
     {
+      "slug": "actual-policy-differs-from-declared-policy",
+      "ontology_slug": "actual-policy-differs-from-declared-policy",
+      "code": "ISS-0040",
+      "title": "Actual Policy Differs From Declared Policy",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "The policy the AI or workflow actually follows differs from the policy that is documented, declared, displayed, or expected.",
+      "category": "rules-and-policies",
+      "category_title": "Rules & Policies",
+      "primary_cat_code": "CAT-0060",
+      "secondary_cat_codes": [
+        "CAT-0080"
+      ],
+      "primary_pattern": "contract-drift",
+      "patterns": [
+        "contract-drift",
+        "authority-state-mismatch",
+        "silent-mutation"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "convergence-lens",
+          "determinism-lens",
+          "reconciliation-lens",
+          "reference-stability-lens"
+        ],
+        "secondary": [
+          "provenance-trace-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "actual policy differs from declared policy",
+        "AI behavior does not match policy",
+        "documented policy differs from actual behavior",
+        "policy says one thing AI does another",
+        "declared policy not followed",
+        "runtime policy differs from docs"
+      ],
+      "url": "/workbench/issues/actual-policy-differs-from-declared-policy/",
+      "markdown_url": "/workbench/issues/actual-policy-differs-from-declared-policy.md"
+    },
+    {
       "slug": "agent-keeps-expanding-the-task",
       "ontology_slug": "agent-keeps-expanding-the-task",
       "code": "ISS-0008",
@@ -653,6 +697,49 @@
       ],
       "url": "/workbench/issues/citation-points-to-wrong-source/",
       "markdown_url": "/workbench/issues/citation-points-to-wrong-source.md"
+    },
+    {
+      "slug": "conflicting-instructions-from-different-authorities",
+      "ontology_slug": "conflicting-instructions-from-different-authorities",
+      "code": "ISS-0035",
+      "title": "Conflicting Instructions From Different Authorities",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "Instructions from different sources, roles, policies, prompts, tools, or workflow authorities conflict without a clear rule for which one governs.",
+      "category": "rules-and-policies",
+      "category_title": "Rules & Policies",
+      "primary_cat_code": "CAT-0060",
+      "secondary_cat_codes": [
+        "CAT-0050"
+      ],
+      "primary_pattern": "authority-collision",
+      "patterns": [
+        "authority-collision",
+        "authority-shadowing",
+        "authority-merge-conflict"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "authority-overlay-lens",
+          "conflict-lens",
+          "reconciliation-lens"
+        ],
+        "secondary": [
+          "invariant-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "conflicting instructions from different authorities",
+        "AI got conflicting instructions",
+        "system and user instructions conflict",
+        "policy conflicts with prompt",
+        "tool rule conflicts with user request",
+        "different authorities give different instructions"
+      ],
+      "url": "/workbench/issues/conflicting-instructions-from-different-authorities/",
+      "markdown_url": "/workbench/issues/conflicting-instructions-from-different-authorities.md"
     },
     {
       "slug": "context-changes-after-restore",
@@ -979,6 +1066,98 @@
       "markdown_url": "/workbench/issues/hallucinated-fields.md"
     },
     {
+      "slug": "hidden-rule-overrides-visible-instruction",
+      "ontology_slug": "hidden-rule-overrides-visible-instruction",
+      "code": "ISS-0039",
+      "title": "Hidden Rule Overrides Visible Instruction",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "A hidden, upstream, system, policy, tool, or product rule changes or overrides the visible instruction the user expects the AI to follow.",
+      "category": "rules-and-policies",
+      "category_title": "Rules & Policies",
+      "primary_cat_code": "CAT-0060",
+      "secondary_cat_codes": [
+        "CAT-0050"
+      ],
+      "primary_pattern": "authority-shadowing",
+      "patterns": [
+        "authority-shadowing",
+        "authority-collision",
+        "boundary-leakage"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "authority-overlay-lens",
+          "conflict-lens",
+          "isolation-boundary-lens",
+          "propagation-lens"
+        ],
+        "secondary": [
+          "boundary-compliance-lens",
+          "invariant-lens",
+          "reconciliation-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "hidden rule overrides visible instruction",
+        "AI ignored prompt because hidden rule",
+        "system rule overrides user instruction",
+        "invisible policy changed AI behavior",
+        "hidden instruction affected output",
+        "AI follows rule I cannot see"
+      ],
+      "url": "/workbench/issues/hidden-rule-overrides-visible-instruction/",
+      "markdown_url": "/workbench/issues/hidden-rule-overrides-visible-instruction.md"
+    },
+    {
+      "slug": "human-review-and-automation-disagree",
+      "ontology_slug": "human-review-and-automation-disagree",
+      "code": "ISS-0036",
+      "title": "Human Review and Automation Disagree",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "A human review result and an automated AI or workflow result disagree without a declared rule for resolving the difference.",
+      "category": "workflow-and-handoffs",
+      "category_title": "Workflow & Handoffs",
+      "primary_cat_code": "CAT-0070",
+      "secondary_cat_codes": [
+        "CAT-0050"
+      ],
+      "primary_pattern": "authority-collision",
+      "patterns": [
+        "authority-collision",
+        "convergence-failure",
+        "authority-state-mismatch"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "authority-overlay-lens",
+          "conflict-lens",
+          "convergence-lens",
+          "reconciliation-lens"
+        ],
+        "secondary": [
+          "invariant-lens",
+          "reference-stability-lens",
+          "variance-entropy-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "human review and automation disagree",
+        "human and AI review disagree",
+        "automated decision conflicts with reviewer",
+        "AI says pass human says fail",
+        "workflow review disagreement",
+        "no rule for human AI disagreement"
+      ],
+      "url": "/workbench/issues/human-review-and-automation-disagree/",
+      "markdown_url": "/workbench/issues/human-review-and-automation-disagree.md"
+    },
+    {
       "slug": "invalid-json-output",
       "ontology_slug": "invalid-json-output",
       "code": "ISS-0021",
@@ -1068,6 +1247,52 @@
       ],
       "url": "/workbench/issues/missing-required-fields/",
       "markdown_url": "/workbench/issues/missing-required-fields.md"
+    },
+    {
+      "slug": "model-and-workflow-disagree-on-next-step",
+      "ontology_slug": "model-and-workflow-disagree-on-next-step",
+      "code": "ISS-0038",
+      "title": "Model and Workflow Disagree on Next Step",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "The AI model recommends or selects a next step that conflicts with the workflow state, required handoff, routing rule, or process sequence.",
+      "category": "workflow-and-handoffs",
+      "category_title": "Workflow & Handoffs",
+      "primary_cat_code": "CAT-0070",
+      "secondary_cat_codes": [
+        "CAT-0060"
+      ],
+      "primary_pattern": "authority-state-mismatch",
+      "patterns": [
+        "authority-state-mismatch",
+        "interface-mismatch",
+        "compatibility-violation"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "compatibility-envelope-lens",
+          "interface-contract-lens",
+          "reconciliation-lens"
+        ],
+        "secondary": [
+          "boundary-compliance-lens",
+          "convergence-lens",
+          "normalization-lens",
+          "reference-stability-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "model and workflow disagree on next step",
+        "AI chose wrong workflow step",
+        "model says one thing workflow says another",
+        "AI next step conflicts with process",
+        "workflow state disagrees with AI recommendation",
+        "AI routing conflicts with workflow"
+      ],
+      "url": "/workbench/issues/model-and-workflow-disagree-on-next-step/",
+      "markdown_url": "/workbench/issues/model-and-workflow-disagree-on-next-step.md"
     },
     {
       "slug": "nested-fields-do-not-match",
@@ -1335,6 +1560,93 @@
       "markdown_url": "/workbench/issues/retry-makes-the-problem-worse.md"
     },
     {
+      "slug": "same-case-has-conflicting-policies",
+      "ontology_slug": "same-case-has-conflicting-policies",
+      "code": "ISS-0037",
+      "title": "Same Case Has Conflicting Policies",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "The same case appears to be governed by multiple policies, rules, or standards that point to incompatible outcomes.",
+      "category": "rules-and-policies",
+      "category_title": "Rules & Policies",
+      "primary_cat_code": "CAT-0060",
+      "secondary_cat_codes": [
+        "CAT-0050"
+      ],
+      "primary_pattern": "authority-collision",
+      "patterns": [
+        "authority-collision",
+        "authority-merge-conflict",
+        "authority-shadowing"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "authority-overlay-lens",
+          "conflict-lens",
+          "reconciliation-lens"
+        ],
+        "secondary": [
+          "invariant-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "same case has conflicting policies",
+        "AI sees policy conflict",
+        "policies disagree for same case",
+        "same case allowed and blocked",
+        "conflicting rules apply to one case",
+        "policy conflict in AI decision"
+      ],
+      "url": "/workbench/issues/same-case-has-conflicting-policies/",
+      "markdown_url": "/workbench/issues/same-case-has-conflicting-policies.md"
+    },
+    {
+      "slug": "saved-memory-not-used",
+      "ontology_slug": "saved-memory-not-used",
+      "code": "ISS-0033",
+      "title": "Saved Memory Not Used",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "A saved memory, preference, instruction, or durable context item exists but does not affect the AI output when it should.",
+      "category": "memory-and-context",
+      "category_title": "Memory & Context",
+      "primary_cat_code": "CAT-0020",
+      "secondary_cat_codes": [
+        "CAT-0120"
+      ],
+      "primary_pattern": "persistence-instability",
+      "patterns": [
+        "persistence-instability",
+        "incomplete-declaration",
+        "reference-instability"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "absence-lens",
+          "constraint-sufficiency-lens",
+          "reference-stability-lens"
+        ],
+        "secondary": [
+          "determinism-lens",
+          "interface-contract-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "saved memory not used",
+        "AI ignored saved memory",
+        "ChatGPT did not use memory",
+        "saved preference not applied",
+        "AI forgot saved instruction",
+        "memory exists but output ignores it"
+      ],
+      "url": "/workbench/issues/saved-memory-not-used/",
+      "markdown_url": "/workbench/issues/saved-memory-not-used.md"
+    },
+    {
       "slug": "saved-reference-no-longer-works",
       "ontology_slug": "saved-reference-no-longer-works",
       "code": "ISS-0004",
@@ -1421,6 +1733,50 @@
       ],
       "url": "/workbench/issues/similar-cases-route-to-different-outcomes/",
       "markdown_url": "/workbench/issues/similar-cases-route-to-different-outcomes.md"
+    },
+    {
+      "slug": "stale-context-affects-output",
+      "ontology_slug": "stale-context-affects-output",
+      "code": "ISS-0034",
+      "title": "Stale Context Affects Output",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "Old context, prior instructions, outdated references, or earlier task state continue to affect output after they should no longer apply.",
+      "category": "memory-and-context",
+      "category_title": "Memory & Context",
+      "primary_cat_code": "CAT-0020",
+      "secondary_cat_codes": [
+        "CAT-0080"
+      ],
+      "primary_pattern": "contract-drift",
+      "patterns": [
+        "contract-drift",
+        "persistence-instability",
+        "silent-mutation"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "convergence-lens",
+          "determinism-lens",
+          "reconciliation-lens",
+          "reference-stability-lens"
+        ],
+        "secondary": [
+          "provenance-trace-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "stale context affects output",
+        "AI used old context",
+        "outdated context changed answer",
+        "AI keeps using previous instruction",
+        "old information affects new output",
+        "stale memory changed response"
+      ],
+      "url": "/workbench/issues/stale-context-affects-output/",
+      "markdown_url": "/workbench/issues/stale-context-affects-output.md"
     },
     {
       "slug": "task-has-no-clear-limit",
@@ -1903,9 +2259,14 @@
       },
       "issues": {
         "primary": [
-          "permissions-conflict-after-being-combined"
+          "conflicting-instructions-from-different-authorities",
+          "human-review-and-automation-disagree",
+          "permissions-conflict-after-being-combined",
+          "same-case-has-conflicting-policies"
         ],
-        "supporting": []
+        "supporting": [
+          "hidden-rule-overrides-visible-instruction"
+        ]
       },
       "url": "/workbench/patterns/authority-collision/",
       "markdown_url": "/workbench/patterns/authority-collision.md"
@@ -1931,7 +2292,9 @@
       "issues": {
         "primary": [],
         "supporting": [
-          "permissions-conflict-after-being-combined"
+          "conflicting-instructions-from-different-authorities",
+          "permissions-conflict-after-being-combined",
+          "same-case-has-conflicting-policies"
         ]
       },
       "url": "/workbench/patterns/authority-merge-conflict/",
@@ -1956,9 +2319,13 @@
         ]
       },
       "issues": {
-        "primary": [],
+        "primary": [
+          "hidden-rule-overrides-visible-instruction"
+        ],
         "supporting": [
-          "permissions-conflict-after-being-combined"
+          "conflicting-instructions-from-different-authorities",
+          "permissions-conflict-after-being-combined",
+          "same-case-has-conflicting-policies"
         ]
       },
       "url": "/workbench/patterns/authority-shadowing/",
@@ -1984,9 +2351,12 @@
       },
       "issues": {
         "primary": [
-          "declared-owner-cannot-control-outcome"
+          "declared-owner-cannot-control-outcome",
+          "model-and-workflow-disagree-on-next-step"
         ],
         "supporting": [
+          "actual-policy-differs-from-declared-policy",
+          "human-review-and-automation-disagree",
           "no-owner-for-agent-action",
           "similar-cases-route-to-different-outcomes"
         ]
@@ -2016,7 +2386,9 @@
         "primary": [
           "context-leaks-between-tasks"
         ],
-        "supporting": []
+        "supporting": [
+          "hidden-rule-overrides-visible-instruction"
+        ]
       },
       "url": "/workbench/patterns/boundary-leakage/",
       "markdown_url": "/workbench/patterns/boundary-leakage.md"
@@ -2073,6 +2445,7 @@
           "ai-output-breaks-parser",
           "citation-points-to-wrong-source",
           "declared-owner-cannot-control-outcome",
+          "model-and-workflow-disagree-on-next-step",
           "saved-reference-no-longer-works",
           "tool-call-contract-mismatch",
           "wrong-field-types"
@@ -2135,7 +2508,9 @@
       },
       "issues": {
         "primary": [
-          "context-changes-after-restore"
+          "actual-policy-differs-from-declared-policy",
+          "context-changes-after-restore",
+          "stale-context-affects-output"
         ],
         "supporting": [
           "ai-forgets-earlier-constraints",
@@ -2168,6 +2543,7 @@
         "primary": [],
         "supporting": [
           "agent-keeps-expanding-the-task",
+          "human-review-and-automation-disagree",
           "task-progress-is-lost-midway"
         ]
       },
@@ -2340,6 +2716,7 @@
         "supporting": [
           "fallback-authority-is-missing",
           "format-rule-too-weak",
+          "saved-memory-not-used",
           "task-has-no-clear-limit",
           "workflow-step-has-no-decision-owner"
         ]
@@ -2372,6 +2749,7 @@
           "ai-output-breaks-parser",
           "citation-points-to-wrong-source",
           "invalid-json-output",
+          "model-and-workflow-disagree-on-next-step",
           "nested-fields-do-not-match",
           "output-breaks-the-next-step",
           "tool-exists-but-required-inputs-are-missing",
@@ -2550,11 +2928,13 @@
       "issues": {
         "primary": [
           "ai-forgets-earlier-constraints",
+          "saved-memory-not-used",
           "task-progress-is-lost-midway"
         ],
         "supporting": [
           "context-changes-after-restore",
-          "context-leaks-between-tasks"
+          "context-leaks-between-tasks",
+          "stale-context-affects-output"
         ]
       },
       "url": "/workbench/patterns/persistence-instability/",
@@ -2638,7 +3018,8 @@
           "saved-reference-no-longer-works"
         ],
         "supporting": [
-          "answer-has-no-traceable-source-link"
+          "answer-has-no-traceable-source-link",
+          "saved-memory-not-used"
         ]
       },
       "url": "/workbench/patterns/reference-instability/",
@@ -2703,8 +3084,10 @@
       "issues": {
         "primary": [],
         "supporting": [
+          "actual-policy-differs-from-declared-policy",
           "context-changes-after-restore",
-          "retry-makes-the-problem-worse"
+          "retry-makes-the-problem-worse",
+          "stale-context-affects-output"
         ]
       },
       "url": "/workbench/patterns/silent-mutation/",
@@ -2847,6 +3230,7 @@
         "format-rule-too-weak",
         "missing-required-fields",
         "no-owner-for-agent-action",
+        "saved-memory-not-used",
         "task-has-no-clear-limit",
         "task-progress-is-lost-midway",
         "tool-exists-but-required-inputs-are-missing",
@@ -2876,10 +3260,14 @@
         ]
       },
       "issues": [
+        "conflicting-instructions-from-different-authorities",
         "declared-owner-cannot-control-outcome",
         "fallback-authority-is-missing",
+        "hidden-rule-overrides-visible-instruction",
+        "human-review-and-automation-disagree",
         "no-owner-for-agent-action",
         "permissions-conflict-after-being-combined",
+        "same-case-has-conflicting-policies",
         "workflow-step-has-no-decision-owner"
       ],
       "url": "/workbench/lenses/authority-overlay-lens/",
@@ -2912,6 +3300,8 @@
         "context-leaks-between-tasks",
         "declared-owner-cannot-control-outcome",
         "hallucinated-fields",
+        "hidden-rule-overrides-visible-instruction",
+        "model-and-workflow-disagree-on-next-step",
         "output-breaks-the-next-step",
         "saved-reference-no-longer-works",
         "tool-call-contract-mismatch",
@@ -2939,6 +3329,7 @@
         "ai-output-breaks-parser",
         "citation-points-to-wrong-source",
         "declared-owner-cannot-control-outcome",
+        "model-and-workflow-disagree-on-next-step",
         "output-breaks-the-next-step",
         "saved-reference-no-longer-works",
         "tool-call-contract-mismatch",
@@ -3006,17 +3397,21 @@
       },
       "issues": [
         "ai-output-breaks-parser",
+        "conflicting-instructions-from-different-authorities",
         "declared-owner-cannot-control-outcome",
         "duplicate-fields-with-same-meaning",
         "fallback-authority-is-missing",
         "format-rule-too-weak",
         "hallucinated-fields",
+        "hidden-rule-overrides-visible-instruction",
+        "human-review-and-automation-disagree",
         "invalid-json-output",
         "missing-required-fields",
         "nested-fields-do-not-match",
         "no-owner-for-agent-action",
         "output-breaks-the-next-step",
         "permissions-conflict-after-being-combined",
+        "same-case-has-conflicting-policies",
         "tool-call-contract-mismatch",
         "validation-result-changes-on-retry",
         "workflow-step-has-no-decision-owner",
@@ -3055,6 +3450,7 @@
         "invalid-json-output",
         "missing-required-fields",
         "prompt-only-works-after-retry",
+        "saved-memory-not-used",
         "task-has-no-clear-limit",
         "tool-exists-but-required-inputs-are-missing",
         "workflow-step-has-no-decision-owner"
@@ -3084,14 +3480,18 @@
         ]
       },
       "issues": [
+        "actual-policy-differs-from-declared-policy",
         "agent-keeps-expanding-the-task",
         "ai-forgets-earlier-constraints",
         "context-changes-after-restore",
         "declared-owner-cannot-control-outcome",
+        "human-review-and-automation-disagree",
+        "model-and-workflow-disagree-on-next-step",
         "no-owner-for-agent-action",
         "prompt-only-works-after-retry",
         "saved-reference-no-longer-works",
         "similar-cases-route-to-different-outcomes",
+        "stale-context-affects-output",
         "task-progress-is-lost-midway",
         "tool-result-not-integrated-correctly",
         "validation-result-changes-on-retry"
@@ -3122,6 +3522,7 @@
         ]
       },
       "issues": [
+        "actual-policy-differs-from-declared-policy",
         "ai-forgets-earlier-constraints",
         "answer-has-no-traceable-source-link",
         "answer-has-too-many-paths",
@@ -3132,8 +3533,10 @@
         "invalid-json-output",
         "prompt-only-works-after-retry",
         "retry-makes-the-problem-worse",
+        "saved-memory-not-used",
         "saved-reference-no-longer-works",
         "similar-cases-route-to-different-outcomes",
+        "stale-context-affects-output",
         "task-has-no-clear-limit",
         "task-progress-is-lost-midway",
         "tool-exists-but-required-inputs-are-missing",
@@ -3206,8 +3609,10 @@
         "hallucinated-fields",
         "invalid-json-output",
         "missing-required-fields",
+        "model-and-workflow-disagree-on-next-step",
         "nested-fields-do-not-match",
         "output-breaks-the-next-step",
+        "saved-memory-not-used",
         "task-has-no-clear-limit",
         "tool-call-contract-mismatch",
         "tool-exists-but-required-inputs-are-missing",
@@ -3240,14 +3645,18 @@
       },
       "issues": [
         "ai-output-breaks-parser",
+        "conflicting-instructions-from-different-authorities",
         "duplicate-fields-with-same-meaning",
         "format-rule-too-weak",
         "hallucinated-fields",
+        "hidden-rule-overrides-visible-instruction",
+        "human-review-and-automation-disagree",
         "invalid-json-output",
         "missing-required-fields",
         "nested-fields-do-not-match",
         "output-breaks-the-next-step",
         "permissions-conflict-after-being-combined",
+        "same-case-has-conflicting-policies",
         "tool-call-contract-mismatch",
         "validation-result-changes-on-retry",
         "wrong-field-types"
@@ -3279,6 +3688,7 @@
         "answer-has-too-many-paths",
         "context-leaks-between-tasks",
         "hallucinated-fields",
+        "hidden-rule-overrides-visible-instruction",
         "no-owner-for-agent-action",
         "task-has-no-clear-limit"
       ],
@@ -3309,6 +3719,7 @@
         "duplicate-fields-with-same-meaning",
         "fallback-authority-is-missing",
         "invalid-json-output",
+        "model-and-workflow-disagree-on-next-step",
         "nested-fields-do-not-match",
         "output-breaks-the-next-step",
         "tool-call-contract-mismatch",
@@ -3373,6 +3784,7 @@
         "context-leaks-between-tasks",
         "fallback-authority-is-missing",
         "hallucinated-fields",
+        "hidden-rule-overrides-visible-instruction",
         "no-owner-for-agent-action",
         "retry-makes-the-problem-worse",
         "task-progress-is-lost-midway",
@@ -3398,8 +3810,10 @@
         ]
       },
       "issues": [
+        "actual-policy-differs-from-declared-policy",
         "context-changes-after-restore",
-        "retry-makes-the-problem-worse"
+        "retry-makes-the-problem-worse",
+        "stale-context-affects-output"
       ],
       "url": "/workbench/lenses/provenance-trace-lens/",
       "markdown_url": "/workbench/lenses/provenance-trace-lens.md"
@@ -3427,15 +3841,22 @@
         ]
       },
       "issues": [
+        "actual-policy-differs-from-declared-policy",
         "agent-keeps-expanding-the-task",
         "ai-forgets-earlier-constraints",
+        "conflicting-instructions-from-different-authorities",
         "context-changes-after-restore",
         "declared-owner-cannot-control-outcome",
         "fallback-authority-is-missing",
+        "hidden-rule-overrides-visible-instruction",
+        "human-review-and-automation-disagree",
+        "model-and-workflow-disagree-on-next-step",
         "no-owner-for-agent-action",
         "permissions-conflict-after-being-combined",
+        "same-case-has-conflicting-policies",
         "saved-reference-no-longer-works",
         "similar-cases-route-to-different-outcomes",
+        "stale-context-affects-output",
         "task-progress-is-lost-midway",
         "tool-result-not-integrated-correctly",
         "workflow-step-has-no-decision-owner"
@@ -3464,17 +3885,22 @@
         ]
       },
       "issues": [
+        "actual-policy-differs-from-declared-policy",
         "ai-forgets-earlier-constraints",
         "answer-has-no-traceable-source-link",
         "citation-points-to-wrong-source",
         "context-changes-after-restore",
         "context-leaks-between-tasks",
         "declared-owner-cannot-control-outcome",
+        "human-review-and-automation-disagree",
+        "model-and-workflow-disagree-on-next-step",
         "no-owner-for-agent-action",
         "prompt-only-works-after-retry",
         "retry-makes-the-problem-worse",
+        "saved-memory-not-used",
         "saved-reference-no-longer-works",
         "similar-cases-route-to-different-outcomes",
+        "stale-context-affects-output",
         "task-progress-is-lost-midway",
         "validation-result-changes-on-retry"
       ],
@@ -3512,6 +3938,7 @@
         "context-leaks-between-tasks",
         "duplicate-fields-with-same-meaning",
         "format-rule-too-weak",
+        "human-review-and-automation-disagree",
         "invalid-json-output",
         "prompt-only-works-after-retry",
         "retry-makes-the-problem-worse",
@@ -3564,7 +3991,9 @@
         "saved-reference-no-longer-works"
       ],
       "secondary_issues": [
-        "context-changes-after-restore"
+        "actual-policy-differs-from-declared-policy",
+        "context-changes-after-restore",
+        "stale-context-affects-output"
       ],
       "url": "/workbench/categories/changes-and-versions/"
     },
@@ -3587,6 +4016,7 @@
         "answer-has-no-traceable-source-link",
         "citation-points-to-wrong-source",
         "missing-required-fields",
+        "saved-memory-not-used",
         "tool-exists-but-required-inputs-are-missing"
       ],
       "url": "/workbench/categories/coverage-and-guidance/"
@@ -3686,12 +4116,16 @@
         "ai-forgets-earlier-constraints",
         "context-changes-after-restore",
         "context-leaks-between-tasks",
+        "saved-memory-not-used",
+        "stale-context-affects-output",
         "task-progress-is-lost-midway"
       ],
       "primary_issues": [
         "ai-forgets-earlier-constraints",
         "context-changes-after-restore",
         "context-leaks-between-tasks",
+        "saved-memory-not-used",
+        "stale-context-affects-output",
         "task-progress-is-lost-midway"
       ],
       "secondary_issues": [],
@@ -3761,6 +4195,10 @@
         "permissions-conflict-after-being-combined"
       ],
       "secondary_issues": [
+        "conflicting-instructions-from-different-authorities",
+        "hidden-rule-overrides-visible-instruction",
+        "human-review-and-automation-disagree",
+        "same-case-has-conflicting-policies",
         "workflow-step-has-no-decision-owner"
       ],
       "url": "/workbench/categories/permissions-and-approvals/"
@@ -3774,10 +4212,21 @@
       "entry_version": "0.1.0",
       "updated_at": "2026-05-10T00:00:00Z",
       "summary": "Problems where prompts, policies, rules, roles, constraints, or declared behavior conflict, drift, duplicate each other, or fail to match actual behavior.",
-      "issues": [],
-      "primary_issues": [],
+      "issues": [
+        "actual-policy-differs-from-declared-policy",
+        "conflicting-instructions-from-different-authorities",
+        "hidden-rule-overrides-visible-instruction",
+        "same-case-has-conflicting-policies"
+      ],
+      "primary_issues": [
+        "actual-policy-differs-from-declared-policy",
+        "conflicting-instructions-from-different-authorities",
+        "hidden-rule-overrides-visible-instruction",
+        "same-case-has-conflicting-policies"
+      ],
       "secondary_issues": [
         "declared-owner-cannot-control-outcome",
+        "model-and-workflow-disagree-on-next-step",
         "permissions-conflict-after-being-combined"
       ],
       "url": "/workbench/categories/rules-and-policies/"
@@ -3834,9 +4283,13 @@
       "updated_at": "2026-05-10T00:00:00Z",
       "summary": "Problems where review steps, handoffs, task progress, workflow ownership, downstream steps, or process coordination break, loop, disagree, or lose resolution.",
       "issues": [
+        "human-review-and-automation-disagree",
+        "model-and-workflow-disagree-on-next-step",
         "workflow-step-has-no-decision-owner"
       ],
       "primary_issues": [
+        "human-review-and-automation-disagree",
+        "model-and-workflow-disagree-on-next-step",
         "workflow-step-has-no-decision-owner"
       ],
       "secondary_issues": [
