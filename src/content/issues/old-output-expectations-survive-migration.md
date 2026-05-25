@@ -11,10 +11,10 @@ category: changes-and-versions
 primary_cat_code: CAT-0080
 secondary_cat_codes:
   - CAT-0010
-primary_pattern: persistence-instability
+primary_pattern: contract-drift
 patterns:
-  - persistence-instability
   - contract-drift
+  - persistence-instability
   - redundant-declaration
 search_intents:
   - old output expectations survive migration

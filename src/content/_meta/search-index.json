@@ -48,6 +48,52 @@
     },
     {
       "type": "issue",
+      "slug": "action-triggered-by-confidence-score",
+      "ontology_slug": "action-triggered-by-confidence-score",
+      "code": "ISS-0064",
+      "title": "Action Triggered by Confidence Score",
+      "summary": "A confidence score, certainty label, risk level, or probability-like value triggers an action without enough approval, calibration, or authority control.",
+      "url": "/workbench/issues/action-triggered-by-confidence-score/",
+      "category": "permissions-and-approvals",
+      "category_title": "Permissions & Approvals",
+      "primary_cat_code": "CAT-0050",
+      "secondary_cat_codes": [
+        "CAT-0110"
+      ],
+      "primary_pattern": "threshold-breach",
+      "patterns": [
+        "threshold-breach",
+        "missing-authority",
+        "escalation-growth"
+      ],
+      "lenses": {
+        "primary": [
+          "absence-lens",
+          "authority-overlay-lens",
+          "escalation-gradient-lens",
+          "invariant-lens",
+          "variance-entropy-lens"
+        ],
+        "secondary": [
+          "boundary-compliance-lens",
+          "conflict-lens",
+          "propagation-lens",
+          "reconciliation-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "action triggered by confidence score",
+        "AI confidence score triggered action",
+        "confidence threshold caused workflow action",
+        "AI score started automation",
+        "model confidence caused escalation",
+        "action based on AI confidence"
+      ],
+      "text": "A confidence score, certainty label, risk level, or probability-like value triggers an action without enough approval, calibration, or authority control. AI confidence score triggered action AI score started automation Action Triggered by Confidence Score CAT-0050 CAT-0110 ISS-0064 Permissions & Approvals absence-lens action based on AI confidence action triggered by confidence score authority-overlay-lens boundary-compliance-lens confidence threshold caused workflow action conflict-lens escalation-gradient-lens escalation-growth invariant-lens missing-authority model confidence caused escalation permissions-and-approvals propagation-lens reconciliation-lens threshold-breach variance-entropy-lens"
+    },
+    {
+      "type": "issue",
       "slug": "actual-policy-differs-from-declared-policy",
       "ontology_slug": "actual-policy-differs-from-declared-policy",
       "code": "ISS-0040",
@@ -1279,10 +1325,10 @@
       "secondary_cat_codes": [
         "CAT-0010"
       ],
-      "primary_pattern": "persistence-instability",
+      "primary_pattern": "contract-drift",
       "patterns": [
-        "persistence-instability",
         "contract-drift",
+        "persistence-instability",
         "redundant-declaration"
       ],
       "lenses": {
@@ -1395,6 +1441,92 @@
         "downstream parser rejects AI output"
       ],
       "text": "AI output breaks workflow AI output fails downstream CAT-0010 CAT-0040 ISS-0018 MCP, Tools & Integrations Output Breaks the Next Step The AI output looks acceptable by itself but cannot be used by the next tool, workflow step, parser, reviewer, or downstream consumer. boundary-compliance-lens compatibility-envelope-lens compatibility-violation conflict-lens downstream parser rejects AI output interface-contract-lens interface-mismatch invariant-lens mcp-tools-and-integrations normalization-lens output breaks the next step output looks right but next step fails response cannot be used by next tool schema-breakage"
+    },
+    {
+      "type": "issue",
+      "slug": "output-changed-without-declared-change",
+      "ontology_slug": "output-changed-without-declared-change",
+      "code": "ISS-0059",
+      "title": "Output Changed Without Declared Change",
+      "summary": "Output shape, content, format, fields, or behavior changes without a declared change to the prompt, schema, model, workflow, or governing rule.",
+      "url": "/workbench/issues/output-changed-without-declared-change/",
+      "category": "changes-and-versions",
+      "category_title": "Changes & Versions",
+      "primary_cat_code": "CAT-0080",
+      "secondary_cat_codes": [
+        "CAT-0010"
+      ],
+      "primary_pattern": "silent-mutation",
+      "patterns": [
+        "silent-mutation",
+        "contract-drift",
+        "compatibility-violation"
+      ],
+      "lenses": {
+        "primary": [
+          "compatibility-envelope-lens",
+          "convergence-lens",
+          "determinism-lens",
+          "reconciliation-lens",
+          "reference-stability-lens"
+        ],
+        "secondary": [
+          "boundary-compliance-lens",
+          "provenance-trace-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "output changed without declared change",
+        "AI output changed without update",
+        "output format changed silently",
+        "structured output changed no version change",
+        "AI response changed unexpectedly",
+        "output changed but prompt did not"
+      ],
+      "text": "AI output changed without update AI response changed unexpectedly CAT-0010 CAT-0080 Changes & Versions ISS-0059 Output Changed Without Declared Change Output shape, content, format, fields, or behavior changes without a declared change to the prompt, schema, model, workflow, or governing rule. boundary-compliance-lens changes-and-versions compatibility-envelope-lens compatibility-violation contract-drift convergence-lens determinism-lens output changed but prompt did not output changed without declared change output format changed silently provenance-trace-lens reconciliation-lens reference-stability-lens silent-mutation structured output changed no version change"
+    },
+    {
+      "type": "issue",
+      "slug": "output-exceeds-length-limit",
+      "ontology_slug": "output-exceeds-length-limit",
+      "code": "ISS-0060",
+      "title": "Output Exceeds Length Limit",
+      "summary": "The AI output exceeds a declared length, token, word, character, section, field, or size limit.",
+      "url": "/workbench/issues/output-exceeds-length-limit/",
+      "category": "output",
+      "category_title": "Output",
+      "primary_cat_code": "CAT-0010",
+      "secondary_cat_codes": [],
+      "primary_pattern": "threshold-breach",
+      "patterns": [
+        "threshold-breach",
+        "constraints-underspecified",
+        "density-spike"
+      ],
+      "lenses": {
+        "primary": [
+          "compression-lens",
+          "constraint-sufficiency-lens",
+          "invariant-lens",
+          "variance-entropy-lens"
+        ],
+        "secondary": [
+          "boundary-compliance-lens",
+          "determinism-lens",
+          "escalation-gradient-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "output exceeds length limit",
+        "AI response too long",
+        "ChatGPT ignored word limit",
+        "output over character limit",
+        "AI exceeded token budget",
+        "answer longer than requested"
+      ],
+      "text": "AI exceeded token budget AI response too long CAT-0010 ChatGPT ignored word limit ISS-0060 Output Output Exceeds Length Limit The AI output exceeds a declared length, token, word, character, section, field, or size limit. answer longer than requested boundary-compliance-lens compression-lens constraint-sufficiency-lens constraints-underspecified density-spike determinism-lens escalation-gradient-lens invariant-lens output output exceeds length limit output over character limit threshold-breach variance-entropy-lens"
     },
     {
       "type": "issue",
@@ -1523,6 +1655,50 @@
     },
     {
       "type": "issue",
+      "slug": "prompt-behavior-changed-without-version-change",
+      "ontology_slug": "prompt-behavior-changed-without-version-change",
+      "code": "ISS-0058",
+      "title": "Prompt Behavior Changed Without Version Change",
+      "summary": "A prompt begins producing different behavior even though no prompt version, model version, workflow version, or declared dependency change is recorded.",
+      "url": "/workbench/issues/prompt-behavior-changed-without-version-change/",
+      "category": "changes-and-versions",
+      "category_title": "Changes & Versions",
+      "primary_cat_code": "CAT-0080",
+      "secondary_cat_codes": [
+        "CAT-0090"
+      ],
+      "primary_pattern": "silent-mutation",
+      "patterns": [
+        "silent-mutation",
+        "contract-drift",
+        "divergent-outputs"
+      ],
+      "lenses": {
+        "primary": [
+          "convergence-lens",
+          "determinism-lens",
+          "reconciliation-lens",
+          "reference-stability-lens",
+          "variance-entropy-lens"
+        ],
+        "secondary": [
+          "compression-lens",
+          "provenance-trace-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "prompt behavior changed without version change",
+        "prompt changed behavior but version same",
+        "AI prompt started acting different",
+        "same prompt different behavior no update",
+        "prompt drift without version change",
+        "AI behavior changed silently"
+      ],
+      "text": "A prompt begins producing different behavior even though no prompt version, model version, workflow version, or declared dependency change is recorded. AI behavior changed silently AI prompt started acting different CAT-0080 CAT-0090 Changes & Versions ISS-0058 Prompt Behavior Changed Without Version Change changes-and-versions compression-lens contract-drift convergence-lens determinism-lens divergent-outputs prompt behavior changed without version change prompt changed behavior but version same prompt drift without version change provenance-trace-lens reconciliation-lens reference-stability-lens same prompt different behavior no update silent-mutation variance-entropy-lens"
+    },
+    {
+      "type": "issue",
       "slug": "prompt-changed-but-workflow-did-not",
       "ontology_slug": "prompt-changed-but-workflow-did-not",
       "code": "ISS-0054",
@@ -1647,6 +1823,91 @@
         "AI patch created new problem"
       ],
       "text": "A repair, correction, retry, or fix step addresses one problem but introduces a new failure elsewhere. AI fix broke something else AI patch created new problem CAT-0070 CAT-0110 ISS-0047 Repair Step Created New Breakage Spread & Escalation correction caused new failure escalation-gradient-lens escalation-growth fix made another part wrong isolation-boundary-lens overreach-lens propagation-amplification propagation-lens repair introduced new error repair step created new breakage spread-and-escalation undeclared-side-effect variance-entropy-lens"
+    },
+    {
+      "type": "issue",
+      "slug": "results-vary-too-much",
+      "ontology_slug": "results-vary-too-much",
+      "code": "ISS-0063",
+      "title": "Results Vary Too Much",
+      "summary": "Repeated or comparable runs produce outputs that vary more than the task, workflow, or user can tolerate.",
+      "url": "/workbench/issues/results-vary-too-much/",
+      "category": "inconsistent-behavior",
+      "category_title": "Inconsistent Behavior",
+      "primary_cat_code": "CAT-0090",
+      "secondary_cat_codes": [],
+      "primary_pattern": "divergent-outputs",
+      "patterns": [
+        "divergent-outputs",
+        "non-deterministic-execution",
+        "constraints-underspecified"
+      ],
+      "lenses": {
+        "primary": [
+          "constraint-sufficiency-lens",
+          "convergence-lens",
+          "determinism-lens",
+          "variance-entropy-lens"
+        ],
+        "secondary": [
+          "compression-lens",
+          "reference-stability-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "results vary too much",
+        "AI results inconsistent",
+        "same prompt gives very different answers",
+        "output varies too much",
+        "AI answer changes too much",
+        "model results are unstable"
+      ],
+      "text": "AI answer changes too much AI results inconsistent CAT-0090 ISS-0063 Inconsistent Behavior Repeated or comparable runs produce outputs that vary more than the task, workflow, or user can tolerate. Results Vary Too Much compression-lens constraint-sufficiency-lens constraints-underspecified convergence-lens determinism-lens divergent-outputs inconsistent-behavior model results are unstable non-deterministic-execution output varies too much reference-stability-lens results vary too much same prompt gives very different answers variance-entropy-lens"
+    },
+    {
+      "type": "issue",
+      "slug": "retrieval-exceeds-evidence-limit",
+      "ontology_slug": "retrieval-exceeds-evidence-limit",
+      "code": "ISS-0062",
+      "title": "Retrieval Exceeds Evidence Limit",
+      "summary": "The AI retrieves, uses, cites, or considers more evidence than the task permits or more than the review surface can support.",
+      "url": "/workbench/issues/retrieval-exceeds-evidence-limit/",
+      "category": "scope-and-boundaries",
+      "category_title": "Scope & Boundaries",
+      "primary_cat_code": "CAT-0100",
+      "secondary_cat_codes": [
+        "CAT-0010"
+      ],
+      "primary_pattern": "boundary-leakage",
+      "patterns": [
+        "boundary-leakage",
+        "density-spike",
+        "overreach"
+      ],
+      "lenses": {
+        "primary": [
+          "boundary-compliance-lens",
+          "compression-lens",
+          "isolation-boundary-lens",
+          "overreach-lens",
+          "propagation-lens",
+          "variance-entropy-lens"
+        ],
+        "secondary": [
+          "escalation-gradient-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "retrieval exceeds evidence limit",
+        "AI used too many sources",
+        "evidence limit exceeded",
+        "AI retrieved outside allowed evidence",
+        "too much retrieved evidence",
+        "answer uses more sources than allowed"
+      ],
+      "text": "AI retrieved outside allowed evidence AI used too many sources CAT-0010 CAT-0100 ISS-0062 Retrieval Exceeds Evidence Limit Scope & Boundaries The AI retrieves, uses, cites, or considers more evidence than the task permits or more than the review surface can support. answer uses more sources than allowed boundary-compliance-lens boundary-leakage compression-lens density-spike escalation-gradient-lens evidence limit exceeded isolation-boundary-lens overreach overreach-lens propagation-lens retrieval exceeds evidence limit scope-and-boundaries too much retrieved evidence variance-entropy-lens"
     },
     {
       "type": "issue",
@@ -1856,6 +2117,49 @@
         "policy conflict in AI decision"
       ],
       "text": "AI sees policy conflict CAT-0050 CAT-0060 ISS-0037 Rules & Policies Same Case Has Conflicting Policies The same case appears to be governed by multiple policies, rules, or standards that point to incompatible outcomes. authority-collision authority-merge-conflict authority-overlay-lens authority-shadowing conflict-lens conflicting rules apply to one case invariant-lens policies disagree for same case policy conflict in AI decision reconciliation-lens rules-and-policies same case allowed and blocked same case has conflicting policies"
+    },
+    {
+      "type": "issue",
+      "slug": "same-contract-name-has-different-meanings",
+      "ontology_slug": "same-contract-name-has-different-meanings",
+      "code": "ISS-0057",
+      "title": "Same Contract Name Has Different Meanings",
+      "summary": "The same prompt, schema, field, policy, tool, or workflow contract name is used in different places with different meanings.",
+      "url": "/workbench/issues/same-contract-name-has-different-meanings/",
+      "category": "changes-and-versions",
+      "category_title": "Changes & Versions",
+      "primary_cat_code": "CAT-0080",
+      "secondary_cat_codes": [
+        "CAT-0060"
+      ],
+      "primary_pattern": "contract-drift",
+      "patterns": [
+        "contract-drift",
+        "reference-instability",
+        "interface-mismatch"
+      ],
+      "lenses": {
+        "primary": [
+          "convergence-lens",
+          "interface-contract-lens",
+          "reconciliation-lens",
+          "reference-stability-lens"
+        ],
+        "secondary": [
+          "determinism-lens",
+          "normalization-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "same contract name has different meanings",
+        "same schema name different meaning",
+        "prompt contract changed meaning",
+        "same field name means different things",
+        "AI workflow contract mismatch",
+        "policy name reused with different meaning"
+      ],
+      "text": "AI workflow contract mismatch CAT-0060 CAT-0080 Changes & Versions ISS-0057 Same Contract Name Has Different Meanings The same prompt, schema, field, policy, tool, or workflow contract name is used in different places with different meanings. changes-and-versions contract-drift convergence-lens determinism-lens interface-contract-lens interface-mismatch normalization-lens policy name reused with different meaning prompt contract changed meaning reconciliation-lens reference-instability reference-stability-lens same contract name has different meanings same field name means different things same schema name different meaning"
     },
     {
       "type": "issue",
@@ -2110,6 +2414,50 @@
         "AI forgot completed steps"
       ],
       "text": "AI forgot completed steps AI lost track of progress AI restarted task midway CAT-0020 CAT-0070 ChatGPT forgot where we were ISS-0030 Memory & Context Task Progress Is Lost Midway The AI loses track of completed work, prior decisions, current position, or remaining steps before the task is finished. absence-lens convergence-failure convergence-lens determinism-lens memory-and-context orphaned-structure persistence-instability progress lost during AI workflow propagation-lens reconciliation-lens reference-stability-lens task progress is lost midway variance-entropy-lens"
+    },
+    {
+      "type": "issue",
+      "slug": "too-many-tool-calls",
+      "ontology_slug": "too-many-tool-calls",
+      "code": "ISS-0061",
+      "title": "Too Many Tool Calls",
+      "summary": "The AI or agent makes more tool calls, searches, retrievals, API calls, or integration actions than the task requires or permits.",
+      "url": "/workbench/issues/too-many-tool-calls/",
+      "category": "mcp-tools-and-integrations",
+      "category_title": "MCP, Tools & Integrations",
+      "primary_cat_code": "CAT-0040",
+      "secondary_cat_codes": [
+        "CAT-0100"
+      ],
+      "primary_pattern": "unbounded-scope",
+      "patterns": [
+        "unbounded-scope",
+        "escalation-growth",
+        "overreach"
+      ],
+      "lenses": {
+        "primary": [
+          "boundary-compliance-lens",
+          "constraint-sufficiency-lens",
+          "escalation-gradient-lens",
+          "isolation-boundary-lens",
+          "overreach-lens",
+          "variance-entropy-lens"
+        ],
+        "secondary": [
+          "propagation-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "too many tool calls",
+        "AI called tools too many times",
+        "agent keeps calling tools",
+        "excessive MCP tool calls",
+        "AI overuses search tools",
+        "tool loop too many calls"
+      ],
+      "text": "AI called tools too many times AI overuses search tools CAT-0040 CAT-0100 ISS-0061 MCP, Tools & Integrations The AI or agent makes more tool calls, searches, retrievals, API calls, or integration actions than the task requires or permits. Too Many Tool Calls agent keeps calling tools boundary-compliance-lens constraint-sufficiency-lens escalation-gradient-lens escalation-growth excessive MCP tool calls isolation-boundary-lens mcp-tools-and-integrations overreach overreach-lens propagation-lens too many tool calls tool loop too many calls unbounded-scope variance-entropy-lens"
     },
     {
       "type": "issue",
@@ -2494,8 +2842,8 @@
         "ontology_slug": "changes-and-versions",
         "code": "CAT-0080",
         "title": "Changes & Versions",
-        "count": 11,
-        "primary_count": 6,
+        "count": 14,
+        "primary_count": 9,
         "secondary_count": 5
       },
       {
@@ -2521,9 +2869,9 @@
         "ontology_slug": "inconsistent-behavior",
         "code": "CAT-0090",
         "title": "Inconsistent Behavior",
-        "count": 4,
-        "primary_count": 3,
-        "secondary_count": 1
+        "count": 6,
+        "primary_count": 4,
+        "secondary_count": 2
       },
       {
         "slug": "loops-and-resolution",
@@ -2539,8 +2887,8 @@
         "ontology_slug": "mcp-tools-and-integrations",
         "code": "CAT-0040",
         "title": "MCP, Tools & Integrations",
-        "count": 5,
-        "primary_count": 4,
+        "count": 6,
+        "primary_count": 5,
         "secondary_count": 1
       },
       {
@@ -2557,17 +2905,17 @@
         "ontology_slug": "output",
         "code": "CAT-0010",
         "title": "Output",
-        "count": 20,
-        "primary_count": 9,
-        "secondary_count": 11
+        "count": 23,
+        "primary_count": 10,
+        "secondary_count": 13
       },
       {
         "slug": "permissions-and-approvals",
         "ontology_slug": "permissions-and-approvals",
         "code": "CAT-0050",
         "title": "Permissions & Approvals",
-        "count": 12,
-        "primary_count": 7,
+        "count": 13,
+        "primary_count": 8,
         "secondary_count": 5
       },
       {
@@ -2575,27 +2923,27 @@
         "ontology_slug": "rules-and-policies",
         "code": "CAT-0060",
         "title": "Rules & Policies",
-        "count": 11,
+        "count": 12,
         "primary_count": 5,
-        "secondary_count": 6
+        "secondary_count": 7
       },
       {
         "slug": "scope-and-boundaries",
         "ontology_slug": "scope-and-boundaries",
         "code": "CAT-0100",
         "title": "Scope & Boundaries",
-        "count": 10,
-        "primary_count": 4,
-        "secondary_count": 6
+        "count": 12,
+        "primary_count": 5,
+        "secondary_count": 7
       },
       {
         "slug": "spread-and-escalation",
         "ontology_slug": "spread-and-escalation",
         "code": "CAT-0110",
         "title": "Spread & Escalation",
-        "count": 6,
+        "count": 7,
         "primary_count": 4,
-        "secondary_count": 2
+        "secondary_count": 3
       },
       {
         "slug": "workflow-and-handoffs",
@@ -2648,7 +2996,7 @@
         "ontology_slug": "boundary-leakage",
         "code": "PAT-0140",
         "title": "Boundary Leakage",
-        "count": 8
+        "count": 9
       },
       {
         "slug": "circular-dependency",
@@ -2662,21 +3010,21 @@
         "ontology_slug": "compatibility-violation",
         "code": "PAT-0180",
         "title": "Compatibility Violation",
-        "count": 11
+        "count": 12
       },
       {
         "slug": "constraints-underspecified",
         "ontology_slug": "constraints-underspecified",
         "code": "PAT-0170",
         "title": "Constraints Underspecified",
-        "count": 7
+        "count": 9
       },
       {
         "slug": "contract-drift",
         "ontology_slug": "contract-drift",
         "code": "PAT-0190",
         "title": "Contract Drift",
-        "count": 13
+        "count": 16
       },
       {
         "slug": "convergence-failure",
@@ -2697,7 +3045,7 @@
         "ontology_slug": "density-spike",
         "code": "PAT-0270",
         "title": "Density Spike",
-        "count": 2
+        "count": 4
       },
       {
         "slug": "density-vacuum",
@@ -2711,14 +3059,14 @@
         "ontology_slug": "divergent-outputs",
         "code": "PAT-0290",
         "title": "Divergent Outputs",
-        "count": 4
+        "count": 6
       },
       {
         "slug": "escalation-growth",
         "ontology_slug": "escalation-growth",
         "code": "PAT-0300",
         "title": "Escalation Growth",
-        "count": 3
+        "count": 5
       },
       {
         "slug": "incomplete-declaration",
@@ -2732,7 +3080,7 @@
         "ontology_slug": "interface-mismatch",
         "code": "PAT-0150",
         "title": "Interface Mismatch",
-        "count": 11
+        "count": 12
       },
       {
         "slug": "invariant-breakage",
@@ -2746,14 +3094,14 @@
         "ontology_slug": "missing-authority",
         "code": "PAT-0120",
         "title": "Missing Authority",
-        "count": 5
+        "count": 6
       },
       {
         "slug": "non-deterministic-execution",
         "ontology_slug": "non-deterministic-execution",
         "code": "PAT-0210",
         "title": "Non-Deterministic Execution",
-        "count": 3
+        "count": 4
       },
       {
         "slug": "orphaned-structure",
@@ -2767,7 +3115,7 @@
         "ontology_slug": "overreach",
         "code": "PAT-0340",
         "title": "Overreach",
-        "count": 8
+        "count": 10
       },
       {
         "slug": "persistence-instability",
@@ -2795,7 +3143,7 @@
         "ontology_slug": "reference-instability",
         "code": "PAT-0200",
         "title": "Reference Instability",
-        "count": 7
+        "count": 8
       },
       {
         "slug": "schema-breakage",
@@ -2809,21 +3157,21 @@
         "ontology_slug": "silent-mutation",
         "code": "PAT-0380",
         "title": "Silent Mutation",
-        "count": 4
+        "count": 6
       },
       {
         "slug": "threshold-breach",
         "ontology_slug": "threshold-breach",
         "code": "PAT-0390",
         "title": "Threshold Breach",
-        "count": 0
+        "count": 2
       },
       {
         "slug": "unbounded-scope",
         "ontology_slug": "unbounded-scope",
         "code": "PAT-0400",
         "title": "Unbounded Scope",
-        "count": 5
+        "count": 6
       },
       {
         "slug": "unconstrained-expansion",
@@ -2846,140 +3194,140 @@
         "ontology_slug": "absence-lens",
         "code": "LEN-0100",
         "title": "Absence Lens",
-        "count": 13
+        "count": 14
       },
       {
         "slug": "authority-overlay-lens",
         "ontology_slug": "authority-overlay-lens",
         "code": "LEN-0110",
         "title": "Authority Overlay Lens",
-        "count": 11
+        "count": 12
       },
       {
         "slug": "boundary-compliance-lens",
         "ontology_slug": "boundary-compliance-lens",
         "code": "LEN-0120",
         "title": "Boundary Compliance Lens",
-        "count": 23
+        "count": 28
       },
       {
         "slug": "compatibility-envelope-lens",
         "ontology_slug": "compatibility-envelope-lens",
         "code": "LEN-0130",
         "title": "Compatibility Envelope Lens",
-        "count": 11
+        "count": 12
       },
       {
         "slug": "compression-lens",
         "ontology_slug": "compression-lens",
         "code": "LEN-0140",
         "title": "Compression Lens",
-        "count": 10
+        "count": 14
       },
       {
         "slug": "conflict-lens",
         "ontology_slug": "conflict-lens",
         "code": "LEN-0150",
         "title": "Conflict Lens",
-        "count": 23
+        "count": 24
       },
       {
         "slug": "constraint-sufficiency-lens",
         "ontology_slug": "constraint-sufficiency-lens",
         "code": "LEN-0160",
         "title": "Constraint Sufficiency Lens",
-        "count": 15
+        "count": 18
       },
       {
         "slug": "convergence-lens",
         "ontology_slug": "convergence-lens",
         "code": "LEN-0170",
         "title": "Convergence Lens",
-        "count": 23
+        "count": 27
       },
       {
         "slug": "determinism-lens",
         "ontology_slug": "determinism-lens",
         "code": "LEN-0180",
         "title": "Determinism Lens",
-        "count": 28
+        "count": 33
       },
       {
         "slug": "escalation-gradient-lens",
         "ontology_slug": "escalation-gradient-lens",
         "code": "LEN-0190",
         "title": "Escalation Gradient Lens",
-        "count": 14
+        "count": 18
       },
       {
         "slug": "interface-contract-lens",
         "ontology_slug": "interface-contract-lens",
         "code": "LEN-0200",
         "title": "Interface Contract Lens",
-        "count": 21
+        "count": 22
       },
       {
         "slug": "invariant-lens",
         "ontology_slug": "invariant-lens",
         "code": "LEN-0210",
         "title": "Invariant Lens",
-        "count": 16
+        "count": 18
       },
       {
         "slug": "isolation-boundary-lens",
         "ontology_slug": "isolation-boundary-lens",
         "code": "LEN-0220",
         "title": "Isolation Boundary Lens",
-        "count": 15
+        "count": 17
       },
       {
         "slug": "normalization-lens",
         "ontology_slug": "normalization-lens",
         "code": "LEN-0230",
         "title": "Normalization Lens",
-        "count": 14
+        "count": 15
       },
       {
         "slug": "overreach-lens",
         "ontology_slug": "overreach-lens",
         "code": "LEN-0240",
         "title": "Overreach Lens",
-        "count": 13
+        "count": 15
       },
       {
         "slug": "propagation-lens",
         "ontology_slug": "propagation-lens",
         "code": "LEN-0250",
         "title": "Propagation Lens",
-        "count": 20
+        "count": 23
       },
       {
         "slug": "provenance-trace-lens",
         "ontology_slug": "provenance-trace-lens",
         "code": "LEN-0260",
         "title": "Provenance Trace Lens",
-        "count": 4
+        "count": 6
       },
       {
         "slug": "reconciliation-lens",
         "ontology_slug": "reconciliation-lens",
         "code": "LEN-0270",
         "title": "Reconciliation Lens",
-        "count": 28
+        "count": 32
       },
       {
         "slug": "reference-stability-lens",
         "ontology_slug": "reference-stability-lens",
         "code": "LEN-0280",
         "title": "Reference Stability Lens",
-        "count": 25
+        "count": 29
       },
       {
         "slug": "variance-entropy-lens",
         "ontology_slug": "variance-entropy-lens",
         "code": "LEN-0290",
         "title": "Variance / Entropy Lens",
-        "count": 21
+        "count": 27
       }
     ]
   }

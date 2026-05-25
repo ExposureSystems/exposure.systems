@@ -381,6 +381,54 @@
       "markdown_url": "/workbench/issues/action-changed-something-else-too.md"
     },
     {
+      "slug": "action-triggered-by-confidence-score",
+      "ontology_slug": "action-triggered-by-confidence-score",
+      "code": "ISS-0064",
+      "title": "Action Triggered by Confidence Score",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "A confidence score, certainty label, risk level, or probability-like value triggers an action without enough approval, calibration, or authority control.",
+      "category": "permissions-and-approvals",
+      "category_title": "Permissions & Approvals",
+      "primary_cat_code": "CAT-0050",
+      "secondary_cat_codes": [
+        "CAT-0110"
+      ],
+      "primary_pattern": "threshold-breach",
+      "patterns": [
+        "threshold-breach",
+        "missing-authority",
+        "escalation-growth"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "absence-lens",
+          "authority-overlay-lens",
+          "escalation-gradient-lens",
+          "invariant-lens",
+          "variance-entropy-lens"
+        ],
+        "secondary": [
+          "boundary-compliance-lens",
+          "conflict-lens",
+          "propagation-lens",
+          "reconciliation-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "action triggered by confidence score",
+        "AI confidence score triggered action",
+        "confidence threshold caused workflow action",
+        "AI score started automation",
+        "model confidence caused escalation",
+        "action based on AI confidence"
+      ],
+      "url": "/workbench/issues/action-triggered-by-confidence-score/",
+      "markdown_url": "/workbench/issues/action-triggered-by-confidence-score.md"
+    },
+    {
       "slug": "actual-policy-differs-from-declared-policy",
       "ontology_slug": "actual-policy-differs-from-declared-policy",
       "code": "ISS-0040",
@@ -1670,10 +1718,10 @@
       "secondary_cat_codes": [
         "CAT-0010"
       ],
-      "primary_pattern": "persistence-instability",
+      "primary_pattern": "contract-drift",
       "patterns": [
-        "persistence-instability",
         "contract-drift",
+        "persistence-instability",
         "redundant-declaration"
       ],
       "derived_lenses": {
@@ -1791,6 +1839,96 @@
       ],
       "url": "/workbench/issues/output-breaks-the-next-step/",
       "markdown_url": "/workbench/issues/output-breaks-the-next-step.md"
+    },
+    {
+      "slug": "output-changed-without-declared-change",
+      "ontology_slug": "output-changed-without-declared-change",
+      "code": "ISS-0059",
+      "title": "Output Changed Without Declared Change",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "Output shape, content, format, fields, or behavior changes without a declared change to the prompt, schema, model, workflow, or governing rule.",
+      "category": "changes-and-versions",
+      "category_title": "Changes & Versions",
+      "primary_cat_code": "CAT-0080",
+      "secondary_cat_codes": [
+        "CAT-0010"
+      ],
+      "primary_pattern": "silent-mutation",
+      "patterns": [
+        "silent-mutation",
+        "contract-drift",
+        "compatibility-violation"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "compatibility-envelope-lens",
+          "convergence-lens",
+          "determinism-lens",
+          "reconciliation-lens",
+          "reference-stability-lens"
+        ],
+        "secondary": [
+          "boundary-compliance-lens",
+          "provenance-trace-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "output changed without declared change",
+        "AI output changed without update",
+        "output format changed silently",
+        "structured output changed no version change",
+        "AI response changed unexpectedly",
+        "output changed but prompt did not"
+      ],
+      "url": "/workbench/issues/output-changed-without-declared-change/",
+      "markdown_url": "/workbench/issues/output-changed-without-declared-change.md"
+    },
+    {
+      "slug": "output-exceeds-length-limit",
+      "ontology_slug": "output-exceeds-length-limit",
+      "code": "ISS-0060",
+      "title": "Output Exceeds Length Limit",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "The AI output exceeds a declared length, token, word, character, section, field, or size limit.",
+      "category": "output",
+      "category_title": "Output",
+      "primary_cat_code": "CAT-0010",
+      "secondary_cat_codes": [],
+      "primary_pattern": "threshold-breach",
+      "patterns": [
+        "threshold-breach",
+        "constraints-underspecified",
+        "density-spike"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "compression-lens",
+          "constraint-sufficiency-lens",
+          "invariant-lens",
+          "variance-entropy-lens"
+        ],
+        "secondary": [
+          "boundary-compliance-lens",
+          "determinism-lens",
+          "escalation-gradient-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "output exceeds length limit",
+        "AI response too long",
+        "ChatGPT ignored word limit",
+        "output over character limit",
+        "AI exceeded token budget",
+        "answer longer than requested"
+      ],
+      "url": "/workbench/issues/output-exceeds-length-limit/",
+      "markdown_url": "/workbench/issues/output-exceeds-length-limit.md"
     },
     {
       "slug": "permissions-conflict-after-being-combined",
@@ -1924,6 +2062,52 @@
       "markdown_url": "/workbench/issues/policy-update-not-reflected-in-output.md"
     },
     {
+      "slug": "prompt-behavior-changed-without-version-change",
+      "ontology_slug": "prompt-behavior-changed-without-version-change",
+      "code": "ISS-0058",
+      "title": "Prompt Behavior Changed Without Version Change",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "A prompt begins producing different behavior even though no prompt version, model version, workflow version, or declared dependency change is recorded.",
+      "category": "changes-and-versions",
+      "category_title": "Changes & Versions",
+      "primary_cat_code": "CAT-0080",
+      "secondary_cat_codes": [
+        "CAT-0090"
+      ],
+      "primary_pattern": "silent-mutation",
+      "patterns": [
+        "silent-mutation",
+        "contract-drift",
+        "divergent-outputs"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "convergence-lens",
+          "determinism-lens",
+          "reconciliation-lens",
+          "reference-stability-lens",
+          "variance-entropy-lens"
+        ],
+        "secondary": [
+          "compression-lens",
+          "provenance-trace-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "prompt behavior changed without version change",
+        "prompt changed behavior but version same",
+        "AI prompt started acting different",
+        "same prompt different behavior no update",
+        "prompt drift without version change",
+        "AI behavior changed silently"
+      ],
+      "url": "/workbench/issues/prompt-behavior-changed-without-version-change/",
+      "markdown_url": "/workbench/issues/prompt-behavior-changed-without-version-change.md"
+    },
+    {
       "slug": "prompt-changed-but-workflow-did-not",
       "ontology_slug": "prompt-changed-but-workflow-did-not",
       "code": "ISS-0054",
@@ -2055,6 +2239,95 @@
       ],
       "url": "/workbench/issues/repair-step-created-new-breakage/",
       "markdown_url": "/workbench/issues/repair-step-created-new-breakage.md"
+    },
+    {
+      "slug": "results-vary-too-much",
+      "ontology_slug": "results-vary-too-much",
+      "code": "ISS-0063",
+      "title": "Results Vary Too Much",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "Repeated or comparable runs produce outputs that vary more than the task, workflow, or user can tolerate.",
+      "category": "inconsistent-behavior",
+      "category_title": "Inconsistent Behavior",
+      "primary_cat_code": "CAT-0090",
+      "secondary_cat_codes": [],
+      "primary_pattern": "divergent-outputs",
+      "patterns": [
+        "divergent-outputs",
+        "non-deterministic-execution",
+        "constraints-underspecified"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "constraint-sufficiency-lens",
+          "convergence-lens",
+          "determinism-lens",
+          "variance-entropy-lens"
+        ],
+        "secondary": [
+          "compression-lens",
+          "reference-stability-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "results vary too much",
+        "AI results inconsistent",
+        "same prompt gives very different answers",
+        "output varies too much",
+        "AI answer changes too much",
+        "model results are unstable"
+      ],
+      "url": "/workbench/issues/results-vary-too-much/",
+      "markdown_url": "/workbench/issues/results-vary-too-much.md"
+    },
+    {
+      "slug": "retrieval-exceeds-evidence-limit",
+      "ontology_slug": "retrieval-exceeds-evidence-limit",
+      "code": "ISS-0062",
+      "title": "Retrieval Exceeds Evidence Limit",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "The AI retrieves, uses, cites, or considers more evidence than the task permits or more than the review surface can support.",
+      "category": "scope-and-boundaries",
+      "category_title": "Scope & Boundaries",
+      "primary_cat_code": "CAT-0100",
+      "secondary_cat_codes": [
+        "CAT-0010"
+      ],
+      "primary_pattern": "boundary-leakage",
+      "patterns": [
+        "boundary-leakage",
+        "density-spike",
+        "overreach"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "boundary-compliance-lens",
+          "compression-lens",
+          "isolation-boundary-lens",
+          "overreach-lens",
+          "propagation-lens",
+          "variance-entropy-lens"
+        ],
+        "secondary": [
+          "escalation-gradient-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "retrieval exceeds evidence limit",
+        "AI used too many sources",
+        "evidence limit exceeded",
+        "AI retrieved outside allowed evidence",
+        "too much retrieved evidence",
+        "answer uses more sources than allowed"
+      ],
+      "url": "/workbench/issues/retrieval-exceeds-evidence-limit/",
+      "markdown_url": "/workbench/issues/retrieval-exceeds-evidence-limit.md"
     },
     {
       "slug": "retry-makes-the-problem-worse",
@@ -2274,6 +2547,51 @@
       ],
       "url": "/workbench/issues/same-case-has-conflicting-policies/",
       "markdown_url": "/workbench/issues/same-case-has-conflicting-policies.md"
+    },
+    {
+      "slug": "same-contract-name-has-different-meanings",
+      "ontology_slug": "same-contract-name-has-different-meanings",
+      "code": "ISS-0057",
+      "title": "Same Contract Name Has Different Meanings",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "The same prompt, schema, field, policy, tool, or workflow contract name is used in different places with different meanings.",
+      "category": "changes-and-versions",
+      "category_title": "Changes & Versions",
+      "primary_cat_code": "CAT-0080",
+      "secondary_cat_codes": [
+        "CAT-0060"
+      ],
+      "primary_pattern": "contract-drift",
+      "patterns": [
+        "contract-drift",
+        "reference-instability",
+        "interface-mismatch"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "convergence-lens",
+          "interface-contract-lens",
+          "reconciliation-lens",
+          "reference-stability-lens"
+        ],
+        "secondary": [
+          "determinism-lens",
+          "normalization-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "same contract name has different meanings",
+        "same schema name different meaning",
+        "prompt contract changed meaning",
+        "same field name means different things",
+        "AI workflow contract mismatch",
+        "policy name reused with different meaning"
+      ],
+      "url": "/workbench/issues/same-contract-name-has-different-meanings/",
+      "markdown_url": "/workbench/issues/same-contract-name-has-different-meanings.md"
     },
     {
       "slug": "saved-memory-not-used",
@@ -2540,6 +2858,52 @@
       ],
       "url": "/workbench/issues/task-progress-is-lost-midway/",
       "markdown_url": "/workbench/issues/task-progress-is-lost-midway.md"
+    },
+    {
+      "slug": "too-many-tool-calls",
+      "ontology_slug": "too-many-tool-calls",
+      "code": "ISS-0061",
+      "title": "Too Many Tool Calls",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "The AI or agent makes more tool calls, searches, retrievals, API calls, or integration actions than the task requires or permits.",
+      "category": "mcp-tools-and-integrations",
+      "category_title": "MCP, Tools & Integrations",
+      "primary_cat_code": "CAT-0040",
+      "secondary_cat_codes": [
+        "CAT-0100"
+      ],
+      "primary_pattern": "unbounded-scope",
+      "patterns": [
+        "unbounded-scope",
+        "escalation-growth",
+        "overreach"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "boundary-compliance-lens",
+          "constraint-sufficiency-lens",
+          "escalation-gradient-lens",
+          "isolation-boundary-lens",
+          "overreach-lens",
+          "variance-entropy-lens"
+        ],
+        "secondary": [
+          "propagation-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "too many tool calls",
+        "AI called tools too many times",
+        "agent keeps calling tools",
+        "excessive MCP tool calls",
+        "AI overuses search tools",
+        "tool loop too many calls"
+      ],
+      "url": "/workbench/issues/too-many-tool-calls/",
+      "markdown_url": "/workbench/issues/too-many-tool-calls.md"
     },
     {
       "slug": "tool-call-contract-mismatch",
@@ -3109,6 +3473,7 @@
           "ai-uses-external-information-when-forbidden",
           "context-leaks-between-tasks",
           "file-bounded-task-uses-outside-content",
+          "retrieval-exceeds-evidence-limit",
           "review-outcome-changes-unrelated-environment"
         ],
         "supporting": [
@@ -3175,6 +3540,7 @@
           "citation-points-to-wrong-source",
           "declared-owner-cannot-control-outcome",
           "model-and-workflow-disagree-on-next-step",
+          "output-changed-without-declared-change",
           "prompt-changed-but-workflow-did-not",
           "saved-reference-no-longer-works",
           "tool-call-contract-mismatch",
@@ -3211,7 +3577,9 @@
           "ai-forgets-earlier-constraints",
           "answer-has-too-many-paths",
           "invalid-json-output",
+          "output-exceeds-length-limit",
           "prompt-only-works-after-retry",
+          "results-vary-too-much",
           "task-has-no-clear-limit",
           "tool-exists-but-required-inputs-are-missing"
         ]
@@ -3241,16 +3609,19 @@
         "primary": [
           "actual-policy-differs-from-declared-policy",
           "context-changes-after-restore",
+          "old-output-expectations-survive-migration",
           "policy-update-not-reflected-in-output",
           "prompt-changed-but-workflow-did-not",
           "rubric-changed-but-results-did-not",
+          "same-contract-name-has-different-meanings",
           "stale-context-affects-output",
           "version-change-breaks-existing-prompt"
         ],
         "supporting": [
           "ai-forgets-earlier-constraints",
-          "old-output-expectations-survive-migration",
           "output-breaks-after-model-change",
+          "output-changed-without-declared-change",
+          "prompt-behavior-changed-without-version-change",
           "revoked-approval-still-treated-as-active",
           "saved-reference-no-longer-works",
           "tool-result-not-integrated-correctly"
@@ -3336,7 +3707,9 @@
           "answer-has-too-many-paths"
         ],
         "supporting": [
-          "duplicate-fields-with-same-meaning"
+          "duplicate-fields-with-same-meaning",
+          "output-exceeds-length-limit",
+          "retrieval-exceeds-evidence-limit"
         ]
       },
       "url": "/workbench/patterns/density-spike/",
@@ -3390,9 +3763,12 @@
         ]
       },
       "issues": {
-        "primary": [],
+        "primary": [
+          "results-vary-too-much"
+        ],
         "supporting": [
           "output-breaks-after-model-change",
+          "prompt-behavior-changed-without-version-change",
           "prompt-only-works-after-retry",
           "similar-cases-route-to-different-outcomes",
           "validation-result-changes-on-retry"
@@ -3424,8 +3800,10 @@
           "retry-makes-the-problem-worse"
         ],
         "supporting": [
+          "action-triggered-by-confidence-score",
           "model-output-triggers-unapproved-action",
-          "repair-step-created-new-breakage"
+          "repair-step-created-new-breakage",
+          "too-many-tool-calls"
         ]
       },
       "url": "/workbench/patterns/escalation-growth/",
@@ -3495,6 +3873,7 @@
           "nested-fields-do-not-match",
           "output-breaks-the-next-step",
           "prompt-changed-but-workflow-did-not",
+          "same-contract-name-has-different-meanings",
           "tool-exists-but-required-inputs-are-missing",
           "tool-result-not-integrated-correctly",
           "wrong-field-types"
@@ -3556,6 +3935,7 @@
           "workflow-step-has-no-decision-owner"
         ],
         "supporting": [
+          "action-triggered-by-confidence-score",
           "declared-owner-cannot-control-outcome",
           "model-output-triggers-unapproved-action"
         ]
@@ -3588,7 +3968,9 @@
           "similar-cases-route-to-different-outcomes",
           "validation-result-changes-on-retry"
         ],
-        "supporting": []
+        "supporting": [
+          "results-vary-too-much"
+        ]
       },
       "url": "/workbench/patterns/non-deterministic-execution/",
       "markdown_url": "/workbench/patterns/non-deterministic-execution.md"
@@ -3651,7 +4033,9 @@
           "ai-uses-external-information-when-forbidden",
           "behavior-does-not-match-declared-role",
           "file-bounded-task-uses-outside-content",
-          "policy-exception-spreads-too-far"
+          "policy-exception-spreads-too-far",
+          "retrieval-exceeds-evidence-limit",
+          "too-many-tool-calls"
         ]
       },
       "url": "/workbench/patterns/overreach/",
@@ -3677,13 +4061,13 @@
       "issues": {
         "primary": [
           "ai-forgets-earlier-constraints",
-          "old-output-expectations-survive-migration",
           "saved-memory-not-used",
           "task-progress-is-lost-midway"
         ],
         "supporting": [
           "context-changes-after-restore",
           "context-leaks-between-tasks",
+          "old-output-expectations-survive-migration",
           "policy-update-not-reflected-in-output",
           "revoked-approval-still-treated-as-active",
           "rubric-changed-but-results-did-not",
@@ -3781,6 +4165,7 @@
           "answer-has-no-traceable-source-link",
           "file-bounded-task-uses-outside-content",
           "policy-update-not-reflected-in-output",
+          "same-contract-name-has-different-meanings",
           "saved-memory-not-used",
           "version-change-breaks-existing-prompt"
         ]
@@ -3845,7 +4230,10 @@
         ]
       },
       "issues": {
-        "primary": [],
+        "primary": [
+          "output-changed-without-declared-change",
+          "prompt-behavior-changed-without-version-change"
+        ],
         "supporting": [
           "actual-policy-differs-from-declared-policy",
           "context-changes-after-restore",
@@ -3874,7 +4262,10 @@
         ]
       },
       "issues": {
-        "primary": [],
+        "primary": [
+          "action-triggered-by-confidence-score",
+          "output-exceeds-length-limit"
+        ],
         "supporting": []
       },
       "url": "/workbench/patterns/threshold-breach/",
@@ -3900,7 +4291,8 @@
       },
       "issues": {
         "primary": [
-          "task-has-no-clear-limit"
+          "task-has-no-clear-limit",
+          "too-many-tool-calls"
         ],
         "supporting": [
           "ai-adds-work-not-requested",
@@ -3994,6 +4386,7 @@
         "secondary": []
       },
       "issues": [
+        "action-triggered-by-confidence-score",
         "answer-has-no-traceable-source-link",
         "declared-owner-cannot-control-outcome",
         "fallback-authority-is-missing",
@@ -4031,6 +4424,7 @@
         ]
       },
       "issues": [
+        "action-triggered-by-confidence-score",
         "behavior-does-not-match-declared-role",
         "conflicting-instructions-from-different-authorities",
         "declared-owner-cannot-control-outcome",
@@ -4067,6 +4461,7 @@
       },
       "issues": [
         "action-changed-something-else-too",
+        "action-triggered-by-confidence-score",
         "agent-keeps-expanding-the-task",
         "ai-adds-work-not-requested",
         "ai-output-breaks-parser",
@@ -4082,10 +4477,14 @@
         "model-and-workflow-disagree-on-next-step",
         "output-breaks-after-model-change",
         "output-breaks-the-next-step",
+        "output-changed-without-declared-change",
+        "output-exceeds-length-limit",
         "policy-exception-spreads-too-far",
         "prompt-changed-but-workflow-did-not",
+        "retrieval-exceeds-evidence-limit",
         "review-outcome-changes-unrelated-environment",
         "saved-reference-no-longer-works",
+        "too-many-tool-calls",
         "tool-call-contract-mismatch",
         "version-change-breaks-existing-prompt",
         "wrong-field-types"
@@ -4115,6 +4514,7 @@
         "model-and-workflow-disagree-on-next-step",
         "output-breaks-after-model-change",
         "output-breaks-the-next-step",
+        "output-changed-without-declared-change",
         "prompt-changed-but-workflow-did-not",
         "saved-reference-no-longer-works",
         "tool-call-contract-mismatch",
@@ -4153,7 +4553,11 @@
         "missing-required-fields",
         "old-output-expectations-survive-migration",
         "output-breaks-after-model-change",
+        "output-exceeds-length-limit",
+        "prompt-behavior-changed-without-version-change",
         "prompt-only-works-after-retry",
+        "results-vary-too-much",
+        "retrieval-exceeds-evidence-limit",
         "similar-cases-route-to-different-outcomes",
         "validation-result-changes-on-retry"
       ],
@@ -4184,6 +4588,7 @@
         ]
       },
       "issues": [
+        "action-triggered-by-confidence-score",
         "ai-output-breaks-parser",
         "behavior-does-not-match-declared-role",
         "conflicting-instructions-from-different-authorities",
@@ -4241,9 +4646,12 @@
         "hallucinated-fields",
         "invalid-json-output",
         "missing-required-fields",
+        "output-exceeds-length-limit",
         "prompt-only-works-after-retry",
+        "results-vary-too-much",
         "saved-memory-not-used",
         "task-has-no-clear-limit",
+        "too-many-tool-calls",
         "tool-exists-but-required-inputs-are-missing",
         "workflow-step-has-no-decision-owner"
       ],
@@ -4283,11 +4691,15 @@
         "no-owner-for-agent-action",
         "old-output-expectations-survive-migration",
         "output-breaks-after-model-change",
+        "output-changed-without-declared-change",
         "policy-update-not-reflected-in-output",
+        "prompt-behavior-changed-without-version-change",
         "prompt-changed-but-workflow-did-not",
         "prompt-only-works-after-retry",
+        "results-vary-too-much",
         "revoked-approval-still-treated-as-active",
         "rubric-changed-but-results-did-not",
+        "same-contract-name-has-different-meanings",
         "saved-reference-no-longer-works",
         "similar-cases-route-to-different-outcomes",
         "stale-context-affects-output",
@@ -4334,12 +4746,17 @@
         "invalid-json-output",
         "old-output-expectations-survive-migration",
         "output-breaks-after-model-change",
+        "output-changed-without-declared-change",
+        "output-exceeds-length-limit",
         "policy-update-not-reflected-in-output",
+        "prompt-behavior-changed-without-version-change",
         "prompt-changed-but-workflow-did-not",
         "prompt-only-works-after-retry",
+        "results-vary-too-much",
         "retry-makes-the-problem-worse",
         "revoked-approval-still-treated-as-active",
         "rubric-changed-but-results-did-not",
+        "same-contract-name-has-different-meanings",
         "saved-memory-not-used",
         "saved-reference-no-longer-works",
         "similar-cases-route-to-different-outcomes",
@@ -4377,6 +4794,7 @@
       },
       "issues": [
         "action-changed-something-else-too",
+        "action-triggered-by-confidence-score",
         "agent-keeps-expanding-the-task",
         "ai-adds-work-not-requested",
         "ai-touches-unrelated-scope",
@@ -4385,11 +4803,14 @@
         "duplicate-fields-with-same-meaning",
         "hallucinated-fields",
         "model-output-triggers-unapproved-action",
+        "output-exceeds-length-limit",
         "policy-exception-spreads-too-far",
         "repair-step-created-new-breakage",
+        "retrieval-exceeds-evidence-limit",
         "retry-makes-the-problem-worse",
         "review-outcome-changes-unrelated-environment",
-        "task-has-no-clear-limit"
+        "task-has-no-clear-limit",
+        "too-many-tool-calls"
       ],
       "url": "/workbench/lenses/escalation-gradient-lens/",
       "markdown_url": "/workbench/lenses/escalation-gradient-lens.md"
@@ -4427,6 +4848,7 @@
         "nested-fields-do-not-match",
         "output-breaks-the-next-step",
         "prompt-changed-but-workflow-did-not",
+        "same-contract-name-has-different-meanings",
         "saved-memory-not-used",
         "task-has-no-clear-limit",
         "tool-call-contract-mismatch",
@@ -4459,6 +4881,7 @@
         ]
       },
       "issues": [
+        "action-triggered-by-confidence-score",
         "ai-output-breaks-parser",
         "conflicting-instructions-from-different-authorities",
         "duplicate-fields-with-same-meaning",
@@ -4470,6 +4893,7 @@
         "missing-required-fields",
         "nested-fields-do-not-match",
         "output-breaks-the-next-step",
+        "output-exceeds-length-limit",
         "permissions-conflict-after-being-combined",
         "same-case-has-conflicting-policies",
         "tool-call-contract-mismatch",
@@ -4512,8 +4936,10 @@
         "no-owner-for-agent-action",
         "policy-exception-spreads-too-far",
         "repair-step-created-new-breakage",
+        "retrieval-exceeds-evidence-limit",
         "review-outcome-changes-unrelated-environment",
-        "task-has-no-clear-limit"
+        "task-has-no-clear-limit",
+        "too-many-tool-calls"
       ],
       "url": "/workbench/lenses/isolation-boundary-lens/",
       "markdown_url": "/workbench/lenses/isolation-boundary-lens.md"
@@ -4547,6 +4973,7 @@
         "old-output-expectations-survive-migration",
         "output-breaks-the-next-step",
         "prompt-changed-but-workflow-did-not",
+        "same-contract-name-has-different-meanings",
         "tool-call-contract-mismatch",
         "tool-exists-but-required-inputs-are-missing",
         "tool-result-not-integrated-correctly",
@@ -4584,7 +5011,9 @@
         "no-owner-for-agent-action",
         "policy-exception-spreads-too-far",
         "repair-step-created-new-breakage",
-        "review-outcome-changes-unrelated-environment"
+        "retrieval-exceeds-evidence-limit",
+        "review-outcome-changes-unrelated-environment",
+        "too-many-tool-calls"
       ],
       "url": "/workbench/lenses/overreach-lens/",
       "markdown_url": "/workbench/lenses/overreach-lens.md"
@@ -4614,6 +5043,7 @@
       },
       "issues": [
         "action-changed-something-else-too",
+        "action-triggered-by-confidence-score",
         "agent-keeps-expanding-the-task",
         "ai-adds-work-not-requested",
         "ai-touches-unrelated-scope",
@@ -4628,9 +5058,11 @@
         "no-owner-for-agent-action",
         "policy-exception-spreads-too-far",
         "repair-step-created-new-breakage",
+        "retrieval-exceeds-evidence-limit",
         "retry-makes-the-problem-worse",
         "review-outcome-changes-unrelated-environment",
         "task-progress-is-lost-midway",
+        "too-many-tool-calls",
         "tool-result-not-integrated-correctly",
         "workflow-step-has-no-decision-owner"
       ],
@@ -4655,6 +5087,8 @@
       "issues": [
         "actual-policy-differs-from-declared-policy",
         "context-changes-after-restore",
+        "output-changed-without-declared-change",
+        "prompt-behavior-changed-without-version-change",
         "retry-makes-the-problem-worse",
         "stale-context-affects-output"
       ],
@@ -4684,6 +5118,7 @@
         ]
       },
       "issues": [
+        "action-triggered-by-confidence-score",
         "actual-policy-differs-from-declared-policy",
         "agent-keeps-expanding-the-task",
         "ai-forgets-earlier-constraints",
@@ -4699,12 +5134,15 @@
         "no-owner-for-agent-action",
         "old-output-expectations-survive-migration",
         "output-breaks-after-model-change",
+        "output-changed-without-declared-change",
         "permissions-conflict-after-being-combined",
         "policy-update-not-reflected-in-output",
+        "prompt-behavior-changed-without-version-change",
         "prompt-changed-but-workflow-did-not",
         "revoked-approval-still-treated-as-active",
         "rubric-changed-but-results-did-not",
         "same-case-has-conflicting-policies",
+        "same-contract-name-has-different-meanings",
         "saved-reference-no-longer-works",
         "similar-cases-route-to-different-outcomes",
         "stale-context-affects-output",
@@ -4750,11 +5188,15 @@
         "model-and-workflow-disagree-on-next-step",
         "no-owner-for-agent-action",
         "old-output-expectations-survive-migration",
+        "output-changed-without-declared-change",
         "policy-update-not-reflected-in-output",
+        "prompt-behavior-changed-without-version-change",
         "prompt-only-works-after-retry",
+        "results-vary-too-much",
         "retry-makes-the-problem-worse",
         "revoked-approval-still-treated-as-active",
         "rubric-changed-but-results-did-not",
+        "same-contract-name-has-different-meanings",
         "saved-memory-not-used",
         "saved-reference-no-longer-works",
         "similar-cases-route-to-different-outcomes",
@@ -4792,6 +5234,7 @@
       },
       "issues": [
         "action-changed-something-else-too",
+        "action-triggered-by-confidence-score",
         "agent-keeps-expanding-the-task",
         "ai-forgets-earlier-constraints",
         "answer-has-too-many-paths",
@@ -4802,14 +5245,19 @@
         "invalid-json-output",
         "model-output-triggers-unapproved-action",
         "output-breaks-after-model-change",
+        "output-exceeds-length-limit",
         "policy-exception-spreads-too-far",
+        "prompt-behavior-changed-without-version-change",
         "prompt-only-works-after-retry",
         "repair-step-created-new-breakage",
+        "results-vary-too-much",
+        "retrieval-exceeds-evidence-limit",
         "retry-makes-the-problem-worse",
         "review-outcome-changes-unrelated-environment",
         "similar-cases-route-to-different-outcomes",
         "task-has-no-clear-limit",
         "task-progress-is-lost-midway",
+        "too-many-tool-calls",
         "tool-exists-but-required-inputs-are-missing",
         "validation-result-changes-on-retry"
       ],
@@ -4853,16 +5301,22 @@
       "issues": [
         "old-output-expectations-survive-migration",
         "output-breaks-after-model-change",
+        "output-changed-without-declared-change",
+        "prompt-behavior-changed-without-version-change",
         "prompt-changed-but-workflow-did-not",
         "rubric-changed-but-results-did-not",
+        "same-contract-name-has-different-meanings",
         "saved-reference-no-longer-works",
         "version-change-breaks-existing-prompt"
       ],
       "primary_issues": [
         "old-output-expectations-survive-migration",
         "output-breaks-after-model-change",
+        "output-changed-without-declared-change",
+        "prompt-behavior-changed-without-version-change",
         "prompt-changed-but-workflow-did-not",
         "rubric-changed-but-results-did-not",
+        "same-contract-name-has-different-meanings",
         "saved-reference-no-longer-works",
         "version-change-breaks-existing-prompt"
       ],
@@ -4928,15 +5382,18 @@
       "summary": "Problems where similar inputs, repeated attempts, validations, prompts, routes, or cases produce different results without a clear reason.",
       "issues": [
         "prompt-only-works-after-retry",
+        "results-vary-too-much",
         "similar-cases-route-to-different-outcomes",
         "validation-result-changes-on-retry"
       ],
       "primary_issues": [
         "prompt-only-works-after-retry",
+        "results-vary-too-much",
         "similar-cases-route-to-different-outcomes",
         "validation-result-changes-on-retry"
       ],
       "secondary_issues": [
+        "prompt-behavior-changed-without-version-change",
         "retry-makes-the-problem-worse"
       ],
       "url": "/workbench/categories/inconsistent-behavior/"
@@ -4966,12 +5423,14 @@
       "summary": "Problems involving tool calls, MCP surfaces, integration contracts, required tool inputs, tool results, parser consumers, or downstream systems that depend on AI output.",
       "issues": [
         "output-breaks-the-next-step",
+        "too-many-tool-calls",
         "tool-call-contract-mismatch",
         "tool-exists-but-required-inputs-are-missing",
         "tool-result-not-integrated-correctly"
       ],
       "primary_issues": [
         "output-breaks-the-next-step",
+        "too-many-tool-calls",
         "tool-call-contract-mismatch",
         "tool-exists-but-required-inputs-are-missing",
         "tool-result-not-integrated-correctly"
@@ -5027,6 +5486,7 @@
         "invalid-json-output",
         "missing-required-fields",
         "nested-fields-do-not-match",
+        "output-exceeds-length-limit",
         "wrong-field-types"
       ],
       "primary_issues": [
@@ -5038,6 +5498,7 @@
         "invalid-json-output",
         "missing-required-fields",
         "nested-fields-do-not-match",
+        "output-exceeds-length-limit",
         "wrong-field-types"
       ],
       "secondary_issues": [
@@ -5047,6 +5508,8 @@
         "old-output-expectations-survive-migration",
         "output-breaks-after-model-change",
         "output-breaks-the-next-step",
+        "output-changed-without-declared-change",
+        "retrieval-exceeds-evidence-limit",
         "saved-reference-no-longer-works",
         "tool-call-contract-mismatch",
         "tool-result-not-integrated-correctly",
@@ -5065,6 +5528,7 @@
       "updated_at": "2026-05-10T00:00:00Z",
       "summary": "Problems where ownership, approval, authority, permission state, responsible control, or action rights are missing, stale, bypassed, conflicting, or unclear.",
       "issues": [
+        "action-triggered-by-confidence-score",
         "behavior-does-not-match-declared-role",
         "declared-owner-cannot-control-outcome",
         "fallback-authority-is-missing",
@@ -5074,6 +5538,7 @@
         "revoked-approval-still-treated-as-active"
       ],
       "primary_issues": [
+        "action-triggered-by-confidence-score",
         "behavior-does-not-match-declared-role",
         "declared-owner-cannot-control-outcome",
         "fallback-authority-is-missing",
@@ -5120,7 +5585,8 @@
         "declared-owner-cannot-control-outcome",
         "model-and-workflow-disagree-on-next-step",
         "permissions-conflict-after-being-combined",
-        "policy-exception-spreads-too-far"
+        "policy-exception-spreads-too-far",
+        "same-contract-name-has-different-meanings"
       ],
       "url": "/workbench/categories/rules-and-policies/"
     },
@@ -5137,12 +5603,14 @@
         "ai-touches-unrelated-scope",
         "ai-uses-external-information-when-forbidden",
         "file-bounded-task-uses-outside-content",
+        "retrieval-exceeds-evidence-limit",
         "task-has-no-clear-limit"
       ],
       "primary_issues": [
         "ai-touches-unrelated-scope",
         "ai-uses-external-information-when-forbidden",
         "file-bounded-task-uses-outside-content",
+        "retrieval-exceeds-evidence-limit",
         "task-has-no-clear-limit"
       ],
       "secondary_issues": [
@@ -5151,7 +5619,8 @@
         "ai-adds-work-not-requested",
         "answer-has-too-many-paths",
         "context-leaks-between-tasks",
-        "hallucinated-fields"
+        "hallucinated-fields",
+        "too-many-tool-calls"
       ],
       "url": "/workbench/categories/scope-and-boundaries/"
     },
@@ -5177,6 +5646,7 @@
         "retry-makes-the-problem-worse"
       ],
       "secondary_issues": [
+        "action-triggered-by-confidence-score",
         "model-output-triggers-unapproved-action",
         "review-outcome-changes-unrelated-environment"
       ],
