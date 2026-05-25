@@ -58,7 +58,7 @@ const relatedIssues = (indexEntry?.related_issues ?? [])
                   <a href={issue.url}>{issue.title}</a>
                 </h3>
                 <p>{issue.summary}</p>
-                <p><code>{issue.code}</code></p>
+                <p><code translate="no" class="notranslate" lang="en">{issue.code}</code></p>
               </li>
             ))}
           </ul>
@@ -84,13 +84,13 @@ const relatedIssues = (indexEntry?.related_issues ?? [])
 
         <dl>
           <dt>Code</dt>
-          <dd><code>{entry.data.code}</code></dd>
+          <dd><code translate="no" class="notranslate" lang="en">{entry.data.code}</code></dd>
 
           <dt>Layer</dt>
-          <dd><code>{entry.data.layer}</code></dd>
+          <dd><code translate="no" class="notranslate" lang="en">{entry.data.layer}</code></dd>
 
           <dt>Version</dt>
-          <dd><code>{entry.data.entry_version}</code></dd>
+          <dd><code translate="no" class="notranslate" lang="en">{entry.data.entry_version}</code></dd>
 
           <dt>Updated</dt>
           <dd>{entry.data.updated_at}</dd>

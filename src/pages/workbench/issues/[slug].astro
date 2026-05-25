@@ -93,7 +93,7 @@ const history = getObjectHistory(changelog, issue);
 
         {primaryPattern ? (
           <p>
-            <a href={primaryPattern.url}>
+            <a href={primaryPattern.url} translate="no" class="notranslate" lang="en">
               {primaryPattern.code} — {primaryPattern.title}
             </a>
           </p>
@@ -109,7 +109,9 @@ const history = getObjectHistory(changelog, issue);
           <ul>
             {declaredPatterns.map((pattern) => (
               <li>
-                <a href={pattern.url}>{pattern.code} — {pattern.title}</a>
+                <a href={pattern.url} translate="no" class="notranslate" lang="en">
+                  {pattern.code} — {pattern.title}
+                </a>
                 <p>{pattern.summary}</p>
               </li>
             ))}
@@ -126,7 +128,9 @@ const history = getObjectHistory(changelog, issue);
           <ul>
             {primaryLenses.map((lens) => (
               <li>
-                <a href={lens.url}>{lens.code} — {lens.title}</a>
+                <a href={lens.url} translate="no" class="notranslate" lang="en">
+                  {lens.code} — {lens.title}
+                </a>
                 <p>{lens.summary}</p>
               </li>
             ))}
@@ -143,7 +147,9 @@ const history = getObjectHistory(changelog, issue);
           <ul>
             {secondaryLenses.map((lens) => (
               <li>
-                <a href={lens.url}>{lens.code} — {lens.title}</a>
+                <a href={lens.url} translate="no" class="notranslate" lang="en">
+                  {lens.code} — {lens.title}
+                </a>
                 <p>{lens.summary}</p>
               </li>
             ))}
@@ -164,7 +170,7 @@ const history = getObjectHistory(changelog, issue);
                   <a href={entry.url}>{entry.title}</a>
                 </h3>
                 <p>{entry.summary}</p>
-                <p><code>{entry.code}</code></p>
+                <p><code translate="no" class="notranslate" lang="en">{entry.code}</code></p>
               </li>
             ))}
           </ul>
@@ -190,10 +196,10 @@ const history = getObjectHistory(changelog, issue);
 
         <dl>
           <dt>Code</dt>
-          <dd><code>{issue.code}</code></dd>
+          <dd><code translate="no" class="notranslate" lang="en">{issue.code}</code></dd>
 
           <dt>Version</dt>
-          <dd><code>{getVersionLabel(issue)}</code></dd>
+          <dd><code translate="no" class="notranslate" lang="en">{getVersionLabel(issue)}</code></dd>
 
           <dt>Ontology release</dt>
           <dd>{release.ontology_release}</dd>

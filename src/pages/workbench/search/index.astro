@@ -25,7 +25,7 @@ const lenses = searchIndex.facets.lenses;
 
       <h1>Search</h1>
 
-      <p><strong>Find the structure behind the visible failure surface.</strong></p>q
+      <p><strong>Find the structure behind the visible failure surface.</strong></p>
 
       <p>
         {searchIndex.note}
@@ -106,7 +106,11 @@ const lenses = searchIndex.facets.lenses;
         <ul>
           {patterns.map((pattern) => (
             <li>
-              {pattern.code} — {pattern.title} — {pattern.count}
+              <span translate="no" class="notranslate" lang="en">
+                {pattern.code} — {pattern.title}
+              </span>
+              {" — "}
+              {pattern.count}
             </li>
           ))}
         </ul>
@@ -115,7 +119,11 @@ const lenses = searchIndex.facets.lenses;
         <ul>
           {lenses.map((lens) => (
             <li>
-              {lens.code} — {lens.title} — {lens.count}
+              <span translate="no" class="notranslate" lang="en">
+                {lens.code} — {lens.title}
+              </span>
+              {" — "}
+              {lens.count}
             </li>
           ))}
         </ul>
