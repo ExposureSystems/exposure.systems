@@ -1519,6 +1519,54 @@
       "markdown_url": "/workbench/issues/model-and-workflow-disagree-on-next-step.md"
     },
     {
+      "slug": "model-output-triggers-unapproved-action",
+      "ontology_slug": "model-output-triggers-unapproved-action",
+      "code": "ISS-0050",
+      "title": "Model Output Triggers Unapproved Action",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "AI output causes, recommends, or triggers an action that has not passed the required approval, permission, or authority check.",
+      "category": "permissions-and-approvals",
+      "category_title": "Permissions & Approvals",
+      "primary_cat_code": "CAT-0050",
+      "secondary_cat_codes": [
+        "CAT-0110"
+      ],
+      "primary_pattern": "undeclared-side-effect",
+      "patterns": [
+        "undeclared-side-effect",
+        "missing-authority",
+        "escalation-growth"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "absence-lens",
+          "authority-overlay-lens",
+          "escalation-gradient-lens",
+          "overreach-lens",
+          "propagation-lens",
+          "variance-entropy-lens"
+        ],
+        "secondary": [
+          "conflict-lens",
+          "isolation-boundary-lens",
+          "reconciliation-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "model output triggers unapproved action",
+        "AI triggered action without approval",
+        "model output caused unauthorized action",
+        "AI recommendation started workflow without permission",
+        "unapproved action from AI output",
+        "AI output bypassed approval"
+      ],
+      "url": "/workbench/issues/model-output-triggers-unapproved-action/",
+      "markdown_url": "/workbench/issues/model-output-triggers-unapproved-action.md"
+    },
+    {
       "slug": "nested-fields-do-not-match",
       "ontology_slug": "nested-fields-do-not-match",
       "code": "ISS-0025",
@@ -1606,6 +1654,98 @@
       ],
       "url": "/workbench/issues/no-owner-for-agent-action/",
       "markdown_url": "/workbench/issues/no-owner-for-agent-action.md"
+    },
+    {
+      "slug": "old-output-expectations-survive-migration",
+      "ontology_slug": "old-output-expectations-survive-migration",
+      "code": "ISS-0056",
+      "title": "Old Output Expectations Survive Migration",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "Expectations from a prior model, prompt, schema, tool, or workflow survive a migration and continue shaping review or downstream handling after they should be replaced.",
+      "category": "changes-and-versions",
+      "category_title": "Changes & Versions",
+      "primary_cat_code": "CAT-0080",
+      "secondary_cat_codes": [
+        "CAT-0010"
+      ],
+      "primary_pattern": "persistence-instability",
+      "patterns": [
+        "persistence-instability",
+        "contract-drift",
+        "redundant-declaration"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "conflict-lens",
+          "convergence-lens",
+          "normalization-lens",
+          "reconciliation-lens",
+          "reference-stability-lens"
+        ],
+        "secondary": [
+          "compression-lens",
+          "determinism-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "old output expectations survive migration",
+        "old AI output format still expected",
+        "migration kept old output assumptions",
+        "workflow expects old model output",
+        "old schema expectations remain after migration",
+        "legacy output rules survived update"
+      ],
+      "url": "/workbench/issues/old-output-expectations-survive-migration/",
+      "markdown_url": "/workbench/issues/old-output-expectations-survive-migration.md"
+    },
+    {
+      "slug": "output-breaks-after-model-change",
+      "ontology_slug": "output-breaks-after-model-change",
+      "code": "ISS-0052",
+      "title": "Output Breaks After Model Change",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "Output that previously worked begins failing after a model, mode, runtime, or product behavior changes.",
+      "category": "changes-and-versions",
+      "category_title": "Changes & Versions",
+      "primary_cat_code": "CAT-0080",
+      "secondary_cat_codes": [
+        "CAT-0010"
+      ],
+      "primary_pattern": "compatibility-violation",
+      "patterns": [
+        "compatibility-violation",
+        "contract-drift",
+        "divergent-outputs"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "compatibility-envelope-lens",
+          "convergence-lens",
+          "reconciliation-lens",
+          "variance-entropy-lens"
+        ],
+        "secondary": [
+          "boundary-compliance-lens",
+          "compression-lens",
+          "determinism-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "output breaks after model change",
+        "AI output changed after model update",
+        "model change broke output format",
+        "prompt worked before model update",
+        "output no longer works after upgrade",
+        "model version changed output"
+      ],
+      "url": "/workbench/issues/output-breaks-after-model-change/",
+      "markdown_url": "/workbench/issues/output-breaks-after-model-change.md"
     },
     {
       "slug": "output-breaks-the-next-step",
@@ -1696,6 +1836,51 @@
       "markdown_url": "/workbench/issues/permissions-conflict-after-being-combined.md"
     },
     {
+      "slug": "policy-exception-spreads-too-far",
+      "ontology_slug": "policy-exception-spreads-too-far",
+      "code": "ISS-0049",
+      "title": "Policy Exception Spreads Too Far",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "A narrow policy exception, allowance, or special case spreads beyond its intended scope and begins governing broader cases.",
+      "category": "spread-and-escalation",
+      "category_title": "Spread & Escalation",
+      "primary_cat_code": "CAT-0110",
+      "secondary_cat_codes": [
+        "CAT-0060"
+      ],
+      "primary_pattern": "propagation-amplification",
+      "patterns": [
+        "propagation-amplification",
+        "boundary-leakage",
+        "overreach"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "boundary-compliance-lens",
+          "escalation-gradient-lens",
+          "isolation-boundary-lens",
+          "overreach-lens",
+          "propagation-lens"
+        ],
+        "secondary": [
+          "variance-entropy-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "policy exception spreads too far",
+        "AI applies exception too broadly",
+        "policy exception used for other cases",
+        "exception becomes general rule",
+        "AI over-applies exception",
+        "special case spreads into policy"
+      ],
+      "url": "/workbench/issues/policy-exception-spreads-too-far/",
+      "markdown_url": "/workbench/issues/policy-exception-spreads-too-far.md"
+    },
+    {
       "slug": "policy-update-not-reflected-in-output",
       "ontology_slug": "policy-update-not-reflected-in-output",
       "code": "ISS-0042",
@@ -1737,6 +1922,52 @@
       ],
       "url": "/workbench/issues/policy-update-not-reflected-in-output/",
       "markdown_url": "/workbench/issues/policy-update-not-reflected-in-output.md"
+    },
+    {
+      "slug": "prompt-changed-but-workflow-did-not",
+      "ontology_slug": "prompt-changed-but-workflow-did-not",
+      "code": "ISS-0054",
+      "title": "Prompt Changed but Workflow Did Not",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "A prompt changes but the workflow, parser, review step, routing rule, or downstream expectation still assumes the old prompt behavior.",
+      "category": "changes-and-versions",
+      "category_title": "Changes & Versions",
+      "primary_cat_code": "CAT-0080",
+      "secondary_cat_codes": [
+        "CAT-0070"
+      ],
+      "primary_pattern": "contract-drift",
+      "patterns": [
+        "contract-drift",
+        "interface-mismatch",
+        "compatibility-violation"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "compatibility-envelope-lens",
+          "convergence-lens",
+          "interface-contract-lens",
+          "reconciliation-lens"
+        ],
+        "secondary": [
+          "boundary-compliance-lens",
+          "determinism-lens",
+          "normalization-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "prompt changed but workflow did not",
+        "prompt update broke workflow",
+        "workflow still expects old prompt",
+        "AI prompt changed downstream did not",
+        "updated prompt incompatible with workflow",
+        "prompt changed parser still old"
+      ],
+      "url": "/workbench/issues/prompt-changed-but-workflow-did-not/",
+      "markdown_url": "/workbench/issues/prompt-changed-but-workflow-did-not.md"
     },
     {
       "slug": "prompt-only-works-after-retry",
@@ -1871,6 +2102,51 @@
       "markdown_url": "/workbench/issues/retry-makes-the-problem-worse.md"
     },
     {
+      "slug": "review-outcome-changes-unrelated-environment",
+      "ontology_slug": "review-outcome-changes-unrelated-environment",
+      "code": "ISS-0051",
+      "title": "Review Outcome Changes Unrelated Environment",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "A review result, approval, rejection, or classification changes state outside the environment, case, file, or workflow it was meant to govern.",
+      "category": "workflow-and-handoffs",
+      "category_title": "Workflow & Handoffs",
+      "primary_cat_code": "CAT-0070",
+      "secondary_cat_codes": [
+        "CAT-0110"
+      ],
+      "primary_pattern": "boundary-leakage",
+      "patterns": [
+        "boundary-leakage",
+        "undeclared-side-effect",
+        "propagation-amplification"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "escalation-gradient-lens",
+          "isolation-boundary-lens",
+          "overreach-lens",
+          "propagation-lens"
+        ],
+        "secondary": [
+          "boundary-compliance-lens",
+          "variance-entropy-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "review outcome changes unrelated environment",
+        "AI review affected other environment",
+        "approval changed unrelated workflow",
+        "review result caused side effect",
+        "AI classification affected another case",
+        "review outcome propagated too far"
+      ],
+      "url": "/workbench/issues/review-outcome-changes-unrelated-environment/",
+      "markdown_url": "/workbench/issues/review-outcome-changes-unrelated-environment.md"
+    },
+    {
       "slug": "revoked-approval-still-treated-as-active",
       "ontology_slug": "revoked-approval-still-treated-as-active",
       "code": "ISS-0041",
@@ -1912,6 +2188,49 @@
       ],
       "url": "/workbench/issues/revoked-approval-still-treated-as-active/",
       "markdown_url": "/workbench/issues/revoked-approval-still-treated-as-active.md"
+    },
+    {
+      "slug": "rubric-changed-but-results-did-not",
+      "ontology_slug": "rubric-changed-but-results-did-not",
+      "code": "ISS-0055",
+      "title": "Rubric Changed but Results Did Not",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "A review rubric, scoring rule, evaluation standard, or classification criterion changes, but AI results continue to reflect the old rubric.",
+      "category": "changes-and-versions",
+      "category_title": "Changes & Versions",
+      "primary_cat_code": "CAT-0080",
+      "secondary_cat_codes": [
+        "CAT-0070"
+      ],
+      "primary_pattern": "contract-drift",
+      "patterns": [
+        "contract-drift",
+        "persistence-instability",
+        "authority-state-mismatch"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "convergence-lens",
+          "reconciliation-lens",
+          "reference-stability-lens"
+        ],
+        "secondary": [
+          "determinism-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "rubric changed but results did not",
+        "AI still uses old rubric",
+        "evaluation rubric changed but output same",
+        "scoring rule update not reflected",
+        "AI review ignores new criteria",
+        "classification criteria changed but result did not"
+      ],
+      "url": "/workbench/issues/rubric-changed-but-results-did-not/",
+      "markdown_url": "/workbench/issues/rubric-changed-but-results-did-not.md"
     },
     {
       "slug": "same-case-has-conflicting-policies",
@@ -2410,6 +2729,51 @@
       "markdown_url": "/workbench/issues/validation-result-changes-on-retry.md"
     },
     {
+      "slug": "version-change-breaks-existing-prompt",
+      "ontology_slug": "version-change-breaks-existing-prompt",
+      "code": "ISS-0053",
+      "title": "Version Change Breaks Existing Prompt",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "A prompt that previously produced usable results stops working after a version change in the model, tool, policy, schema, product surface, or workflow.",
+      "category": "changes-and-versions",
+      "category_title": "Changes & Versions",
+      "primary_cat_code": "CAT-0080",
+      "secondary_cat_codes": [
+        "CAT-0010"
+      ],
+      "primary_pattern": "contract-drift",
+      "patterns": [
+        "contract-drift",
+        "compatibility-violation",
+        "reference-instability"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "compatibility-envelope-lens",
+          "convergence-lens",
+          "reconciliation-lens",
+          "reference-stability-lens"
+        ],
+        "secondary": [
+          "boundary-compliance-lens",
+          "determinism-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "version change breaks existing prompt",
+        "prompt broke after version change",
+        "old prompt stopped working",
+        "AI prompt no longer works after update",
+        "version update changed prompt behavior",
+        "prompt incompatible with new version"
+      ],
+      "url": "/workbench/issues/version-change-breaks-existing-prompt/",
+      "markdown_url": "/workbench/issues/version-change-breaks-existing-prompt.md"
+    },
+    {
       "slug": "workflow-step-has-no-decision-owner",
       "ontology_slug": "workflow-step-has-no-decision-owner",
       "code": "ISS-0013",
@@ -2715,6 +3079,7 @@
           "actual-policy-differs-from-declared-policy",
           "human-review-and-automation-disagree",
           "no-owner-for-agent-action",
+          "rubric-changed-but-results-did-not",
           "similar-cases-route-to-different-outcomes"
         ]
       },
@@ -2743,12 +3108,14 @@
         "primary": [
           "ai-uses-external-information-when-forbidden",
           "context-leaks-between-tasks",
-          "file-bounded-task-uses-outside-content"
+          "file-bounded-task-uses-outside-content",
+          "review-outcome-changes-unrelated-environment"
         ],
         "supporting": [
           "action-changed-something-else-too",
           "ai-touches-unrelated-scope",
-          "hidden-rule-overrides-visible-instruction"
+          "hidden-rule-overrides-visible-instruction",
+          "policy-exception-spreads-too-far"
         ]
       },
       "url": "/workbench/patterns/boundary-leakage/",
@@ -2800,6 +3167,7 @@
       },
       "issues": {
         "primary": [
+          "output-breaks-after-model-change",
           "output-breaks-the-next-step"
         ],
         "supporting": [
@@ -2807,8 +3175,10 @@
           "citation-points-to-wrong-source",
           "declared-owner-cannot-control-outcome",
           "model-and-workflow-disagree-on-next-step",
+          "prompt-changed-but-workflow-did-not",
           "saved-reference-no-longer-works",
           "tool-call-contract-mismatch",
+          "version-change-breaks-existing-prompt",
           "wrong-field-types"
         ]
       },
@@ -2872,10 +3242,15 @@
           "actual-policy-differs-from-declared-policy",
           "context-changes-after-restore",
           "policy-update-not-reflected-in-output",
-          "stale-context-affects-output"
+          "prompt-changed-but-workflow-did-not",
+          "rubric-changed-but-results-did-not",
+          "stale-context-affects-output",
+          "version-change-breaks-existing-prompt"
         ],
         "supporting": [
           "ai-forgets-earlier-constraints",
+          "old-output-expectations-survive-migration",
+          "output-breaks-after-model-change",
           "revoked-approval-still-treated-as-active",
           "saved-reference-no-longer-works",
           "tool-result-not-integrated-correctly"
@@ -3017,6 +3392,7 @@
       "issues": {
         "primary": [],
         "supporting": [
+          "output-breaks-after-model-change",
           "prompt-only-works-after-retry",
           "similar-cases-route-to-different-outcomes",
           "validation-result-changes-on-retry"
@@ -3048,6 +3424,7 @@
           "retry-makes-the-problem-worse"
         ],
         "supporting": [
+          "model-output-triggers-unapproved-action",
           "repair-step-created-new-breakage"
         ]
       },
@@ -3117,6 +3494,7 @@
           "model-and-workflow-disagree-on-next-step",
           "nested-fields-do-not-match",
           "output-breaks-the-next-step",
+          "prompt-changed-but-workflow-did-not",
           "tool-exists-but-required-inputs-are-missing",
           "tool-result-not-integrated-correctly",
           "wrong-field-types"
@@ -3178,7 +3556,8 @@
           "workflow-step-has-no-decision-owner"
         ],
         "supporting": [
-          "declared-owner-cannot-control-outcome"
+          "declared-owner-cannot-control-outcome",
+          "model-output-triggers-unapproved-action"
         ]
       },
       "url": "/workbench/patterns/missing-authority/",
@@ -3271,7 +3650,8 @@
           "agent-keeps-expanding-the-task",
           "ai-uses-external-information-when-forbidden",
           "behavior-does-not-match-declared-role",
-          "file-bounded-task-uses-outside-content"
+          "file-bounded-task-uses-outside-content",
+          "policy-exception-spreads-too-far"
         ]
       },
       "url": "/workbench/patterns/overreach/",
@@ -3297,6 +3677,7 @@
       "issues": {
         "primary": [
           "ai-forgets-earlier-constraints",
+          "old-output-expectations-survive-migration",
           "saved-memory-not-used",
           "task-progress-is-lost-midway"
         ],
@@ -3305,6 +3686,7 @@
           "context-leaks-between-tasks",
           "policy-update-not-reflected-in-output",
           "revoked-approval-still-treated-as-active",
+          "rubric-changed-but-results-did-not",
           "stale-context-affects-output"
         ]
       },
@@ -3331,12 +3713,14 @@
       },
       "issues": {
         "primary": [
+          "policy-exception-spreads-too-far",
           "repair-step-created-new-breakage"
         ],
         "supporting": [
           "action-changed-something-else-too",
           "context-leaks-between-tasks",
-          "retry-makes-the-problem-worse"
+          "retry-makes-the-problem-worse",
+          "review-outcome-changes-unrelated-environment"
         ]
       },
       "url": "/workbench/patterns/propagation-amplification/",
@@ -3364,7 +3748,9 @@
         "primary": [
           "duplicate-fields-with-same-meaning"
         ],
-        "supporting": []
+        "supporting": [
+          "old-output-expectations-survive-migration"
+        ]
       },
       "url": "/workbench/patterns/redundant-declaration/",
       "markdown_url": "/workbench/patterns/redundant-declaration.md"
@@ -3395,7 +3781,8 @@
           "answer-has-no-traceable-source-link",
           "file-bounded-task-uses-outside-content",
           "policy-update-not-reflected-in-output",
-          "saved-memory-not-used"
+          "saved-memory-not-used",
+          "version-change-breaks-existing-prompt"
         ]
       },
       "url": "/workbench/patterns/reference-instability/",
@@ -3572,13 +3959,15 @@
       },
       "issues": {
         "primary": [
-          "action-changed-something-else-too"
+          "action-changed-something-else-too",
+          "model-output-triggers-unapproved-action"
         ],
         "supporting": [
           "ai-adds-work-not-requested",
           "ai-uses-external-information-when-forbidden",
           "no-owner-for-agent-action",
-          "repair-step-created-new-breakage"
+          "repair-step-created-new-breakage",
+          "review-outcome-changes-unrelated-environment"
         ]
       },
       "url": "/workbench/patterns/undeclared-side-effect/",
@@ -3610,6 +3999,7 @@
         "fallback-authority-is-missing",
         "format-rule-too-weak",
         "missing-required-fields",
+        "model-output-triggers-unapproved-action",
         "no-owner-for-agent-action",
         "saved-memory-not-used",
         "task-has-no-clear-limit",
@@ -3647,6 +4037,7 @@
         "fallback-authority-is-missing",
         "hidden-rule-overrides-visible-instruction",
         "human-review-and-automation-disagree",
+        "model-output-triggers-unapproved-action",
         "no-owner-for-agent-action",
         "permissions-conflict-after-being-combined",
         "same-case-has-conflicting-policies",
@@ -3689,9 +4080,14 @@
         "hallucinated-fields",
         "hidden-rule-overrides-visible-instruction",
         "model-and-workflow-disagree-on-next-step",
+        "output-breaks-after-model-change",
         "output-breaks-the-next-step",
+        "policy-exception-spreads-too-far",
+        "prompt-changed-but-workflow-did-not",
+        "review-outcome-changes-unrelated-environment",
         "saved-reference-no-longer-works",
         "tool-call-contract-mismatch",
+        "version-change-breaks-existing-prompt",
         "wrong-field-types"
       ],
       "url": "/workbench/lenses/boundary-compliance-lens/",
@@ -3717,9 +4113,12 @@
         "citation-points-to-wrong-source",
         "declared-owner-cannot-control-outcome",
         "model-and-workflow-disagree-on-next-step",
+        "output-breaks-after-model-change",
         "output-breaks-the-next-step",
+        "prompt-changed-but-workflow-did-not",
         "saved-reference-no-longer-works",
         "tool-call-contract-mismatch",
+        "version-change-breaks-existing-prompt",
         "wrong-field-types"
       ],
       "url": "/workbench/lenses/compatibility-envelope-lens/",
@@ -3752,6 +4151,8 @@
         "answer-has-too-many-paths",
         "duplicate-fields-with-same-meaning",
         "missing-required-fields",
+        "old-output-expectations-survive-migration",
+        "output-breaks-after-model-change",
         "prompt-only-works-after-retry",
         "similar-cases-route-to-different-outcomes",
         "validation-result-changes-on-retry"
@@ -3795,8 +4196,10 @@
         "human-review-and-automation-disagree",
         "invalid-json-output",
         "missing-required-fields",
+        "model-output-triggers-unapproved-action",
         "nested-fields-do-not-match",
         "no-owner-for-agent-action",
+        "old-output-expectations-survive-migration",
         "output-breaks-the-next-step",
         "permissions-conflict-after-being-combined",
         "same-case-has-conflicting-policies",
@@ -3878,15 +4281,20 @@
         "human-review-and-automation-disagree",
         "model-and-workflow-disagree-on-next-step",
         "no-owner-for-agent-action",
+        "old-output-expectations-survive-migration",
+        "output-breaks-after-model-change",
         "policy-update-not-reflected-in-output",
+        "prompt-changed-but-workflow-did-not",
         "prompt-only-works-after-retry",
         "revoked-approval-still-treated-as-active",
+        "rubric-changed-but-results-did-not",
         "saved-reference-no-longer-works",
         "similar-cases-route-to-different-outcomes",
         "stale-context-affects-output",
         "task-progress-is-lost-midway",
         "tool-result-not-integrated-correctly",
-        "validation-result-changes-on-retry"
+        "validation-result-changes-on-retry",
+        "version-change-breaks-existing-prompt"
       ],
       "url": "/workbench/lenses/convergence-lens/",
       "markdown_url": "/workbench/lenses/convergence-lens.md"
@@ -3924,10 +4332,14 @@
         "file-bounded-task-uses-outside-content",
         "format-rule-too-weak",
         "invalid-json-output",
+        "old-output-expectations-survive-migration",
+        "output-breaks-after-model-change",
         "policy-update-not-reflected-in-output",
+        "prompt-changed-but-workflow-did-not",
         "prompt-only-works-after-retry",
         "retry-makes-the-problem-worse",
         "revoked-approval-still-treated-as-active",
+        "rubric-changed-but-results-did-not",
         "saved-memory-not-used",
         "saved-reference-no-longer-works",
         "similar-cases-route-to-different-outcomes",
@@ -3936,7 +4348,8 @@
         "task-progress-is-lost-midway",
         "tool-exists-but-required-inputs-are-missing",
         "tool-result-not-integrated-correctly",
-        "validation-result-changes-on-retry"
+        "validation-result-changes-on-retry",
+        "version-change-breaks-existing-prompt"
       ],
       "url": "/workbench/lenses/determinism-lens/",
       "markdown_url": "/workbench/lenses/determinism-lens.md"
@@ -3971,8 +4384,11 @@
         "context-leaks-between-tasks",
         "duplicate-fields-with-same-meaning",
         "hallucinated-fields",
+        "model-output-triggers-unapproved-action",
+        "policy-exception-spreads-too-far",
         "repair-step-created-new-breakage",
         "retry-makes-the-problem-worse",
+        "review-outcome-changes-unrelated-environment",
         "task-has-no-clear-limit"
       ],
       "url": "/workbench/lenses/escalation-gradient-lens/",
@@ -4010,6 +4426,7 @@
         "model-and-workflow-disagree-on-next-step",
         "nested-fields-do-not-match",
         "output-breaks-the-next-step",
+        "prompt-changed-but-workflow-did-not",
         "saved-memory-not-used",
         "task-has-no-clear-limit",
         "tool-call-contract-mismatch",
@@ -4091,8 +4508,11 @@
         "file-bounded-task-uses-outside-content",
         "hallucinated-fields",
         "hidden-rule-overrides-visible-instruction",
+        "model-output-triggers-unapproved-action",
         "no-owner-for-agent-action",
+        "policy-exception-spreads-too-far",
         "repair-step-created-new-breakage",
+        "review-outcome-changes-unrelated-environment",
         "task-has-no-clear-limit"
       ],
       "url": "/workbench/lenses/isolation-boundary-lens/",
@@ -4124,7 +4544,9 @@
         "invalid-json-output",
         "model-and-workflow-disagree-on-next-step",
         "nested-fields-do-not-match",
+        "old-output-expectations-survive-migration",
         "output-breaks-the-next-step",
+        "prompt-changed-but-workflow-did-not",
         "tool-call-contract-mismatch",
         "tool-exists-but-required-inputs-are-missing",
         "tool-result-not-integrated-correctly",
@@ -4158,8 +4580,11 @@
         "behavior-does-not-match-declared-role",
         "file-bounded-task-uses-outside-content",
         "hallucinated-fields",
+        "model-output-triggers-unapproved-action",
         "no-owner-for-agent-action",
-        "repair-step-created-new-breakage"
+        "policy-exception-spreads-too-far",
+        "repair-step-created-new-breakage",
+        "review-outcome-changes-unrelated-environment"
       ],
       "url": "/workbench/lenses/overreach-lens/",
       "markdown_url": "/workbench/lenses/overreach-lens.md"
@@ -4199,9 +4624,12 @@
         "file-bounded-task-uses-outside-content",
         "hallucinated-fields",
         "hidden-rule-overrides-visible-instruction",
+        "model-output-triggers-unapproved-action",
         "no-owner-for-agent-action",
+        "policy-exception-spreads-too-far",
         "repair-step-created-new-breakage",
         "retry-makes-the-problem-worse",
+        "review-outcome-changes-unrelated-environment",
         "task-progress-is-lost-midway",
         "tool-result-not-integrated-correctly",
         "workflow-step-has-no-decision-owner"
@@ -4267,16 +4695,22 @@
         "hidden-rule-overrides-visible-instruction",
         "human-review-and-automation-disagree",
         "model-and-workflow-disagree-on-next-step",
+        "model-output-triggers-unapproved-action",
         "no-owner-for-agent-action",
+        "old-output-expectations-survive-migration",
+        "output-breaks-after-model-change",
         "permissions-conflict-after-being-combined",
         "policy-update-not-reflected-in-output",
+        "prompt-changed-but-workflow-did-not",
         "revoked-approval-still-treated-as-active",
+        "rubric-changed-but-results-did-not",
         "same-case-has-conflicting-policies",
         "saved-reference-no-longer-works",
         "similar-cases-route-to-different-outcomes",
         "stale-context-affects-output",
         "task-progress-is-lost-midway",
         "tool-result-not-integrated-correctly",
+        "version-change-breaks-existing-prompt",
         "workflow-step-has-no-decision-owner"
       ],
       "url": "/workbench/lenses/reconciliation-lens/",
@@ -4315,16 +4749,19 @@
         "human-review-and-automation-disagree",
         "model-and-workflow-disagree-on-next-step",
         "no-owner-for-agent-action",
+        "old-output-expectations-survive-migration",
         "policy-update-not-reflected-in-output",
         "prompt-only-works-after-retry",
         "retry-makes-the-problem-worse",
         "revoked-approval-still-treated-as-active",
+        "rubric-changed-but-results-did-not",
         "saved-memory-not-used",
         "saved-reference-no-longer-works",
         "similar-cases-route-to-different-outcomes",
         "stale-context-affects-output",
         "task-progress-is-lost-midway",
-        "validation-result-changes-on-retry"
+        "validation-result-changes-on-retry",
+        "version-change-breaks-existing-prompt"
       ],
       "url": "/workbench/lenses/reference-stability-lens/",
       "markdown_url": "/workbench/lenses/reference-stability-lens.md"
@@ -4363,9 +4800,13 @@
         "format-rule-too-weak",
         "human-review-and-automation-disagree",
         "invalid-json-output",
+        "model-output-triggers-unapproved-action",
+        "output-breaks-after-model-change",
+        "policy-exception-spreads-too-far",
         "prompt-only-works-after-retry",
         "repair-step-created-new-breakage",
         "retry-makes-the-problem-worse",
+        "review-outcome-changes-unrelated-environment",
         "similar-cases-route-to-different-outcomes",
         "task-has-no-clear-limit",
         "task-progress-is-lost-midway",
@@ -4410,10 +4851,20 @@
       "updated_at": "2026-05-10T00:00:00Z",
       "summary": "Problems where model behavior, prompts, contracts, schemas, outputs, references, rubrics, or expectations change without the surrounding workflow updating correctly.",
       "issues": [
-        "saved-reference-no-longer-works"
+        "old-output-expectations-survive-migration",
+        "output-breaks-after-model-change",
+        "prompt-changed-but-workflow-did-not",
+        "rubric-changed-but-results-did-not",
+        "saved-reference-no-longer-works",
+        "version-change-breaks-existing-prompt"
       ],
       "primary_issues": [
-        "saved-reference-no-longer-works"
+        "old-output-expectations-survive-migration",
+        "output-breaks-after-model-change",
+        "prompt-changed-but-workflow-did-not",
+        "rubric-changed-but-results-did-not",
+        "saved-reference-no-longer-works",
+        "version-change-breaks-existing-prompt"
       ],
       "secondary_issues": [
         "actual-policy-differs-from-declared-policy",
@@ -4593,11 +5044,14 @@
         "duplicate-fields-with-same-meaning",
         "file-bounded-task-uses-outside-content",
         "format-rule-too-weak",
+        "old-output-expectations-survive-migration",
+        "output-breaks-after-model-change",
         "output-breaks-the-next-step",
         "saved-reference-no-longer-works",
         "tool-call-contract-mismatch",
         "tool-result-not-integrated-correctly",
-        "validation-result-changes-on-retry"
+        "validation-result-changes-on-retry",
+        "version-change-breaks-existing-prompt"
       ],
       "url": "/workbench/categories/output/"
     },
@@ -4614,6 +5068,7 @@
         "behavior-does-not-match-declared-role",
         "declared-owner-cannot-control-outcome",
         "fallback-authority-is-missing",
+        "model-output-triggers-unapproved-action",
         "no-owner-for-agent-action",
         "permissions-conflict-after-being-combined",
         "revoked-approval-still-treated-as-active"
@@ -4622,6 +5077,7 @@
         "behavior-does-not-match-declared-role",
         "declared-owner-cannot-control-outcome",
         "fallback-authority-is-missing",
+        "model-output-triggers-unapproved-action",
         "no-owner-for-agent-action",
         "permissions-conflict-after-being-combined",
         "revoked-approval-still-treated-as-active"
@@ -4663,7 +5119,8 @@
         "behavior-does-not-match-declared-role",
         "declared-owner-cannot-control-outcome",
         "model-and-workflow-disagree-on-next-step",
-        "permissions-conflict-after-being-combined"
+        "permissions-conflict-after-being-combined",
+        "policy-exception-spreads-too-far"
       ],
       "url": "/workbench/categories/rules-and-policies/"
     },
@@ -4709,15 +5166,20 @@
       "summary": "Problems where small errors, local exceptions, risk signals, retries, permissions, or outputs spread downstream, grow in consequence, or trigger broader actions.",
       "issues": [
         "action-changed-something-else-too",
+        "policy-exception-spreads-too-far",
         "repair-step-created-new-breakage",
         "retry-makes-the-problem-worse"
       ],
       "primary_issues": [
         "action-changed-something-else-too",
+        "policy-exception-spreads-too-far",
         "repair-step-created-new-breakage",
         "retry-makes-the-problem-worse"
       ],
-      "secondary_issues": [],
+      "secondary_issues": [
+        "model-output-triggers-unapproved-action",
+        "review-outcome-changes-unrelated-environment"
+      ],
       "url": "/workbench/categories/spread-and-escalation/"
     },
     {
@@ -4732,16 +5194,20 @@
       "issues": [
         "human-review-and-automation-disagree",
         "model-and-workflow-disagree-on-next-step",
+        "review-outcome-changes-unrelated-environment",
         "workflow-step-has-no-decision-owner"
       ],
       "primary_issues": [
         "human-review-and-automation-disagree",
         "model-and-workflow-disagree-on-next-step",
+        "review-outcome-changes-unrelated-environment",
         "workflow-step-has-no-decision-owner"
       ],
       "secondary_issues": [
         "fallback-authority-is-missing",
+        "prompt-changed-but-workflow-did-not",
         "repair-step-created-new-breakage",
+        "rubric-changed-but-results-did-not",
         "task-progress-is-lost-midway",
         "tool-result-not-integrated-correctly"
       ],

@@ -1136,6 +1136,52 @@
     },
     {
       "type": "issue",
+      "slug": "model-output-triggers-unapproved-action",
+      "ontology_slug": "model-output-triggers-unapproved-action",
+      "code": "ISS-0050",
+      "title": "Model Output Triggers Unapproved Action",
+      "summary": "AI output causes, recommends, or triggers an action that has not passed the required approval, permission, or authority check.",
+      "url": "/workbench/issues/model-output-triggers-unapproved-action/",
+      "category": "permissions-and-approvals",
+      "category_title": "Permissions & Approvals",
+      "primary_cat_code": "CAT-0050",
+      "secondary_cat_codes": [
+        "CAT-0110"
+      ],
+      "primary_pattern": "undeclared-side-effect",
+      "patterns": [
+        "undeclared-side-effect",
+        "missing-authority",
+        "escalation-growth"
+      ],
+      "lenses": {
+        "primary": [
+          "absence-lens",
+          "authority-overlay-lens",
+          "escalation-gradient-lens",
+          "overreach-lens",
+          "propagation-lens",
+          "variance-entropy-lens"
+        ],
+        "secondary": [
+          "conflict-lens",
+          "isolation-boundary-lens",
+          "reconciliation-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "model output triggers unapproved action",
+        "AI triggered action without approval",
+        "model output caused unauthorized action",
+        "AI recommendation started workflow without permission",
+        "unapproved action from AI output",
+        "AI output bypassed approval"
+      ],
+      "text": "AI output bypassed approval AI output causes, recommends, or triggers an action that has not passed the required approval, permission, or authority check. AI recommendation started workflow without permission AI triggered action without approval CAT-0050 CAT-0110 ISS-0050 Model Output Triggers Unapproved Action Permissions & Approvals absence-lens authority-overlay-lens conflict-lens escalation-gradient-lens escalation-growth isolation-boundary-lens missing-authority model output caused unauthorized action model output triggers unapproved action overreach-lens permissions-and-approvals propagation-lens reconciliation-lens unapproved action from AI output undeclared-side-effect variance-entropy-lens"
+    },
+    {
+      "type": "issue",
       "slug": "nested-fields-do-not-match",
       "ontology_slug": "nested-fields-do-not-match",
       "code": "ISS-0025",
@@ -1218,6 +1264,94 @@
         "AI action has no decision owner"
       ],
       "text": "AI action has no decision owner AI agent acted without owner An agent action can affect the system without a declared responsible owner, authority, or accountable decision path. CAT-0030 CAT-0050 ISS-0012 No Owner for Agent Action Permissions & Approvals absence-lens agent action has no accountable person agent changed something without responsibility authority-overlay-lens authority-state-mismatch conflict-lens convergence-lens isolation-boundary-lens missing-authority no owner for agent action overreach-lens permissions-and-approvals propagation-lens reconciliation-lens reference-stability-lens undeclared-side-effect who approved the agent action"
+    },
+    {
+      "type": "issue",
+      "slug": "old-output-expectations-survive-migration",
+      "ontology_slug": "old-output-expectations-survive-migration",
+      "code": "ISS-0056",
+      "title": "Old Output Expectations Survive Migration",
+      "summary": "Expectations from a prior model, prompt, schema, tool, or workflow survive a migration and continue shaping review or downstream handling after they should be replaced.",
+      "url": "/workbench/issues/old-output-expectations-survive-migration/",
+      "category": "changes-and-versions",
+      "category_title": "Changes & Versions",
+      "primary_cat_code": "CAT-0080",
+      "secondary_cat_codes": [
+        "CAT-0010"
+      ],
+      "primary_pattern": "persistence-instability",
+      "patterns": [
+        "persistence-instability",
+        "contract-drift",
+        "redundant-declaration"
+      ],
+      "lenses": {
+        "primary": [
+          "conflict-lens",
+          "convergence-lens",
+          "normalization-lens",
+          "reconciliation-lens",
+          "reference-stability-lens"
+        ],
+        "secondary": [
+          "compression-lens",
+          "determinism-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "old output expectations survive migration",
+        "old AI output format still expected",
+        "migration kept old output assumptions",
+        "workflow expects old model output",
+        "old schema expectations remain after migration",
+        "legacy output rules survived update"
+      ],
+      "text": "CAT-0010 CAT-0080 Changes & Versions Expectations from a prior model, prompt, schema, tool, or workflow survive a migration and continue shaping review or downstream handling after they should be replaced. ISS-0056 Old Output Expectations Survive Migration changes-and-versions compression-lens conflict-lens contract-drift convergence-lens determinism-lens legacy output rules survived update migration kept old output assumptions normalization-lens old AI output format still expected old output expectations survive migration old schema expectations remain after migration persistence-instability reconciliation-lens redundant-declaration reference-stability-lens workflow expects old model output"
+    },
+    {
+      "type": "issue",
+      "slug": "output-breaks-after-model-change",
+      "ontology_slug": "output-breaks-after-model-change",
+      "code": "ISS-0052",
+      "title": "Output Breaks After Model Change",
+      "summary": "Output that previously worked begins failing after a model, mode, runtime, or product behavior changes.",
+      "url": "/workbench/issues/output-breaks-after-model-change/",
+      "category": "changes-and-versions",
+      "category_title": "Changes & Versions",
+      "primary_cat_code": "CAT-0080",
+      "secondary_cat_codes": [
+        "CAT-0010"
+      ],
+      "primary_pattern": "compatibility-violation",
+      "patterns": [
+        "compatibility-violation",
+        "contract-drift",
+        "divergent-outputs"
+      ],
+      "lenses": {
+        "primary": [
+          "compatibility-envelope-lens",
+          "convergence-lens",
+          "reconciliation-lens",
+          "variance-entropy-lens"
+        ],
+        "secondary": [
+          "boundary-compliance-lens",
+          "compression-lens",
+          "determinism-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "output breaks after model change",
+        "AI output changed after model update",
+        "model change broke output format",
+        "prompt worked before model update",
+        "output no longer works after upgrade",
+        "model version changed output"
+      ],
+      "text": "AI output changed after model update CAT-0010 CAT-0080 Changes & Versions ISS-0052 Output Breaks After Model Change Output that previously worked begins failing after a model, mode, runtime, or product behavior changes. boundary-compliance-lens changes-and-versions compatibility-envelope-lens compatibility-violation compression-lens contract-drift convergence-lens determinism-lens divergent-outputs model change broke output format model version changed output output breaks after model change output no longer works after upgrade prompt worked before model update reconciliation-lens variance-entropy-lens"
     },
     {
       "type": "issue",
@@ -1305,6 +1439,49 @@
     },
     {
       "type": "issue",
+      "slug": "policy-exception-spreads-too-far",
+      "ontology_slug": "policy-exception-spreads-too-far",
+      "code": "ISS-0049",
+      "title": "Policy Exception Spreads Too Far",
+      "summary": "A narrow policy exception, allowance, or special case spreads beyond its intended scope and begins governing broader cases.",
+      "url": "/workbench/issues/policy-exception-spreads-too-far/",
+      "category": "spread-and-escalation",
+      "category_title": "Spread & Escalation",
+      "primary_cat_code": "CAT-0110",
+      "secondary_cat_codes": [
+        "CAT-0060"
+      ],
+      "primary_pattern": "propagation-amplification",
+      "patterns": [
+        "propagation-amplification",
+        "boundary-leakage",
+        "overreach"
+      ],
+      "lenses": {
+        "primary": [
+          "boundary-compliance-lens",
+          "escalation-gradient-lens",
+          "isolation-boundary-lens",
+          "overreach-lens",
+          "propagation-lens"
+        ],
+        "secondary": [
+          "variance-entropy-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "policy exception spreads too far",
+        "AI applies exception too broadly",
+        "policy exception used for other cases",
+        "exception becomes general rule",
+        "AI over-applies exception",
+        "special case spreads into policy"
+      ],
+      "text": "A narrow policy exception, allowance, or special case spreads beyond its intended scope and begins governing broader cases. AI applies exception too broadly AI over-applies exception CAT-0060 CAT-0110 ISS-0049 Policy Exception Spreads Too Far Spread & Escalation boundary-compliance-lens boundary-leakage escalation-gradient-lens exception becomes general rule isolation-boundary-lens overreach overreach-lens policy exception spreads too far policy exception used for other cases propagation-amplification propagation-lens special case spreads into policy spread-and-escalation variance-entropy-lens"
+    },
+    {
+      "type": "issue",
       "slug": "policy-update-not-reflected-in-output",
       "ontology_slug": "policy-update-not-reflected-in-output",
       "code": "ISS-0042",
@@ -1343,6 +1520,50 @@
         "new policy not reflected in response"
       ],
       "text": "A policy, rule, standard, or instruction has been updated, but the AI output still follows the older version. AI follows outdated policy AI used old policy CAT-0060 CAT-0080 ISS-0042 Policy Update Not Reflected in Output Rules & Policies contract-drift convergence-lens determinism-lens new policy not reflected in response persistence-instability policy changed but AI output did not policy update not reflected in output reconciliation-lens reference-instability reference-stability-lens rules-and-policies updated rule not applied"
+    },
+    {
+      "type": "issue",
+      "slug": "prompt-changed-but-workflow-did-not",
+      "ontology_slug": "prompt-changed-but-workflow-did-not",
+      "code": "ISS-0054",
+      "title": "Prompt Changed but Workflow Did Not",
+      "summary": "A prompt changes but the workflow, parser, review step, routing rule, or downstream expectation still assumes the old prompt behavior.",
+      "url": "/workbench/issues/prompt-changed-but-workflow-did-not/",
+      "category": "changes-and-versions",
+      "category_title": "Changes & Versions",
+      "primary_cat_code": "CAT-0080",
+      "secondary_cat_codes": [
+        "CAT-0070"
+      ],
+      "primary_pattern": "contract-drift",
+      "patterns": [
+        "contract-drift",
+        "interface-mismatch",
+        "compatibility-violation"
+      ],
+      "lenses": {
+        "primary": [
+          "compatibility-envelope-lens",
+          "convergence-lens",
+          "interface-contract-lens",
+          "reconciliation-lens"
+        ],
+        "secondary": [
+          "boundary-compliance-lens",
+          "determinism-lens",
+          "normalization-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "prompt changed but workflow did not",
+        "prompt update broke workflow",
+        "workflow still expects old prompt",
+        "AI prompt changed downstream did not",
+        "updated prompt incompatible with workflow",
+        "prompt changed parser still old"
+      ],
+      "text": "A prompt changes but the workflow, parser, review step, routing rule, or downstream expectation still assumes the old prompt behavior. AI prompt changed downstream did not CAT-0070 CAT-0080 Changes & Versions ISS-0054 Prompt Changed but Workflow Did Not boundary-compliance-lens changes-and-versions compatibility-envelope-lens compatibility-violation contract-drift convergence-lens determinism-lens interface-contract-lens interface-mismatch normalization-lens prompt changed but workflow did not prompt changed parser still old prompt update broke workflow reconciliation-lens updated prompt incompatible with workflow workflow still expects old prompt"
     },
     {
       "type": "issue",
@@ -1472,6 +1693,49 @@
     },
     {
       "type": "issue",
+      "slug": "review-outcome-changes-unrelated-environment",
+      "ontology_slug": "review-outcome-changes-unrelated-environment",
+      "code": "ISS-0051",
+      "title": "Review Outcome Changes Unrelated Environment",
+      "summary": "A review result, approval, rejection, or classification changes state outside the environment, case, file, or workflow it was meant to govern.",
+      "url": "/workbench/issues/review-outcome-changes-unrelated-environment/",
+      "category": "workflow-and-handoffs",
+      "category_title": "Workflow & Handoffs",
+      "primary_cat_code": "CAT-0070",
+      "secondary_cat_codes": [
+        "CAT-0110"
+      ],
+      "primary_pattern": "boundary-leakage",
+      "patterns": [
+        "boundary-leakage",
+        "undeclared-side-effect",
+        "propagation-amplification"
+      ],
+      "lenses": {
+        "primary": [
+          "escalation-gradient-lens",
+          "isolation-boundary-lens",
+          "overreach-lens",
+          "propagation-lens"
+        ],
+        "secondary": [
+          "boundary-compliance-lens",
+          "variance-entropy-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "review outcome changes unrelated environment",
+        "AI review affected other environment",
+        "approval changed unrelated workflow",
+        "review result caused side effect",
+        "AI classification affected another case",
+        "review outcome propagated too far"
+      ],
+      "text": "A review result, approval, rejection, or classification changes state outside the environment, case, file, or workflow it was meant to govern. AI classification affected another case AI review affected other environment CAT-0070 CAT-0110 ISS-0051 Review Outcome Changes Unrelated Environment Workflow & Handoffs approval changed unrelated workflow boundary-compliance-lens boundary-leakage escalation-gradient-lens isolation-boundary-lens overreach-lens propagation-amplification propagation-lens review outcome changes unrelated environment review outcome propagated too far review result caused side effect undeclared-side-effect variance-entropy-lens workflow-and-handoffs"
+    },
+    {
+      "type": "issue",
       "slug": "revoked-approval-still-treated-as-active",
       "ontology_slug": "revoked-approval-still-treated-as-active",
       "code": "ISS-0041",
@@ -1510,6 +1774,47 @@
         "AI treats expired approval as valid"
       ],
       "text": "AI still uses revoked approval AI treats expired approval as valid An approval, permission, exception, or authorization that was revoked continues to affect AI behavior or workflow decisions as if it were still active. CAT-0050 CAT-0080 ISS-0041 Permissions & Approvals Revoked Approval Still Treated as Active approval removed but workflow still uses it authority-state-mismatch contract-drift convergence-lens determinism-lens old permission still active permissions-and-approvals persistence-instability reconciliation-lens reference-stability-lens revoked approval still treated as active revoked authorization ignored"
+    },
+    {
+      "type": "issue",
+      "slug": "rubric-changed-but-results-did-not",
+      "ontology_slug": "rubric-changed-but-results-did-not",
+      "code": "ISS-0055",
+      "title": "Rubric Changed but Results Did Not",
+      "summary": "A review rubric, scoring rule, evaluation standard, or classification criterion changes, but AI results continue to reflect the old rubric.",
+      "url": "/workbench/issues/rubric-changed-but-results-did-not/",
+      "category": "changes-and-versions",
+      "category_title": "Changes & Versions",
+      "primary_cat_code": "CAT-0080",
+      "secondary_cat_codes": [
+        "CAT-0070"
+      ],
+      "primary_pattern": "contract-drift",
+      "patterns": [
+        "contract-drift",
+        "persistence-instability",
+        "authority-state-mismatch"
+      ],
+      "lenses": {
+        "primary": [
+          "convergence-lens",
+          "reconciliation-lens",
+          "reference-stability-lens"
+        ],
+        "secondary": [
+          "determinism-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "rubric changed but results did not",
+        "AI still uses old rubric",
+        "evaluation rubric changed but output same",
+        "scoring rule update not reflected",
+        "AI review ignores new criteria",
+        "classification criteria changed but result did not"
+      ],
+      "text": "A review rubric, scoring rule, evaluation standard, or classification criterion changes, but AI results continue to reflect the old rubric. AI review ignores new criteria AI still uses old rubric CAT-0070 CAT-0080 Changes & Versions ISS-0055 Rubric Changed but Results Did Not authority-state-mismatch changes-and-versions classification criteria changed but result did not contract-drift convergence-lens determinism-lens evaluation rubric changed but output same persistence-instability reconciliation-lens reference-stability-lens rubric changed but results did not scoring rule update not reflected"
     },
     {
       "type": "issue",
@@ -1987,6 +2292,49 @@
     },
     {
       "type": "issue",
+      "slug": "version-change-breaks-existing-prompt",
+      "ontology_slug": "version-change-breaks-existing-prompt",
+      "code": "ISS-0053",
+      "title": "Version Change Breaks Existing Prompt",
+      "summary": "A prompt that previously produced usable results stops working after a version change in the model, tool, policy, schema, product surface, or workflow.",
+      "url": "/workbench/issues/version-change-breaks-existing-prompt/",
+      "category": "changes-and-versions",
+      "category_title": "Changes & Versions",
+      "primary_cat_code": "CAT-0080",
+      "secondary_cat_codes": [
+        "CAT-0010"
+      ],
+      "primary_pattern": "contract-drift",
+      "patterns": [
+        "contract-drift",
+        "compatibility-violation",
+        "reference-instability"
+      ],
+      "lenses": {
+        "primary": [
+          "compatibility-envelope-lens",
+          "convergence-lens",
+          "reconciliation-lens",
+          "reference-stability-lens"
+        ],
+        "secondary": [
+          "boundary-compliance-lens",
+          "determinism-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "version change breaks existing prompt",
+        "prompt broke after version change",
+        "old prompt stopped working",
+        "AI prompt no longer works after update",
+        "version update changed prompt behavior",
+        "prompt incompatible with new version"
+      ],
+      "text": "A prompt that previously produced usable results stops working after a version change in the model, tool, policy, schema, product surface, or workflow. AI prompt no longer works after update CAT-0010 CAT-0080 Changes & Versions ISS-0053 Version Change Breaks Existing Prompt boundary-compliance-lens changes-and-versions compatibility-envelope-lens compatibility-violation contract-drift convergence-lens determinism-lens old prompt stopped working prompt broke after version change prompt incompatible with new version reconciliation-lens reference-instability reference-stability-lens version change breaks existing prompt version update changed prompt behavior"
+    },
+    {
+      "type": "issue",
       "slug": "workflow-step-has-no-decision-owner",
       "ontology_slug": "workflow-step-has-no-decision-owner",
       "code": "ISS-0013",
@@ -2146,8 +2494,8 @@
         "ontology_slug": "changes-and-versions",
         "code": "CAT-0080",
         "title": "Changes & Versions",
-        "count": 6,
-        "primary_count": 1,
+        "count": 11,
+        "primary_count": 6,
         "secondary_count": 5
       },
       {
@@ -2209,17 +2557,17 @@
         "ontology_slug": "output",
         "code": "CAT-0010",
         "title": "Output",
-        "count": 17,
+        "count": 20,
         "primary_count": 9,
-        "secondary_count": 8
+        "secondary_count": 11
       },
       {
         "slug": "permissions-and-approvals",
         "ontology_slug": "permissions-and-approvals",
         "code": "CAT-0050",
         "title": "Permissions & Approvals",
-        "count": 11,
-        "primary_count": 6,
+        "count": 12,
+        "primary_count": 7,
         "secondary_count": 5
       },
       {
@@ -2227,9 +2575,9 @@
         "ontology_slug": "rules-and-policies",
         "code": "CAT-0060",
         "title": "Rules & Policies",
-        "count": 10,
+        "count": 11,
         "primary_count": 5,
-        "secondary_count": 5
+        "secondary_count": 6
       },
       {
         "slug": "scope-and-boundaries",
@@ -2245,18 +2593,18 @@
         "ontology_slug": "spread-and-escalation",
         "code": "CAT-0110",
         "title": "Spread & Escalation",
-        "count": 3,
-        "primary_count": 3,
-        "secondary_count": 0
+        "count": 6,
+        "primary_count": 4,
+        "secondary_count": 2
       },
       {
         "slug": "workflow-and-handoffs",
         "ontology_slug": "workflow-and-handoffs",
         "code": "CAT-0070",
         "title": "Workflow & Handoffs",
-        "count": 7,
-        "primary_count": 3,
-        "secondary_count": 4
+        "count": 10,
+        "primary_count": 4,
+        "secondary_count": 6
       }
     ],
     "patterns": [
@@ -2293,14 +2641,14 @@
         "ontology_slug": "authority-state-mismatch",
         "code": "PAT-0240",
         "title": "Authority-State Mismatch",
-        "count": 8
+        "count": 9
       },
       {
         "slug": "boundary-leakage",
         "ontology_slug": "boundary-leakage",
         "code": "PAT-0140",
         "title": "Boundary Leakage",
-        "count": 6
+        "count": 8
       },
       {
         "slug": "circular-dependency",
@@ -2314,7 +2662,7 @@
         "ontology_slug": "compatibility-violation",
         "code": "PAT-0180",
         "title": "Compatibility Violation",
-        "count": 8
+        "count": 11
       },
       {
         "slug": "constraints-underspecified",
@@ -2328,7 +2676,7 @@
         "ontology_slug": "contract-drift",
         "code": "PAT-0190",
         "title": "Contract Drift",
-        "count": 8
+        "count": 13
       },
       {
         "slug": "convergence-failure",
@@ -2363,14 +2711,14 @@
         "ontology_slug": "divergent-outputs",
         "code": "PAT-0290",
         "title": "Divergent Outputs",
-        "count": 3
+        "count": 4
       },
       {
         "slug": "escalation-growth",
         "ontology_slug": "escalation-growth",
         "code": "PAT-0300",
         "title": "Escalation Growth",
-        "count": 2
+        "count": 3
       },
       {
         "slug": "incomplete-declaration",
@@ -2384,7 +2732,7 @@
         "ontology_slug": "interface-mismatch",
         "code": "PAT-0150",
         "title": "Interface Mismatch",
-        "count": 10
+        "count": 11
       },
       {
         "slug": "invariant-breakage",
@@ -2398,7 +2746,7 @@
         "ontology_slug": "missing-authority",
         "code": "PAT-0120",
         "title": "Missing Authority",
-        "count": 4
+        "count": 5
       },
       {
         "slug": "non-deterministic-execution",
@@ -2419,35 +2767,35 @@
         "ontology_slug": "overreach",
         "code": "PAT-0340",
         "title": "Overreach",
-        "count": 7
+        "count": 8
       },
       {
         "slug": "persistence-instability",
         "ontology_slug": "persistence-instability",
         "code": "PAT-0350",
         "title": "Persistence Instability",
-        "count": 8
+        "count": 10
       },
       {
         "slug": "propagation-amplification",
         "ontology_slug": "propagation-amplification",
         "code": "PAT-0360",
         "title": "Propagation Amplification",
-        "count": 4
+        "count": 6
       },
       {
         "slug": "redundant-declaration",
         "ontology_slug": "redundant-declaration",
         "code": "PAT-0370",
         "title": "Redundant Declaration",
-        "count": 1
+        "count": 2
       },
       {
         "slug": "reference-instability",
         "ontology_slug": "reference-instability",
         "code": "PAT-0200",
         "title": "Reference Instability",
-        "count": 6
+        "count": 7
       },
       {
         "slug": "schema-breakage",
@@ -2489,7 +2837,7 @@
         "ontology_slug": "undeclared-side-effect",
         "code": "PAT-0420",
         "title": "Undeclared Side Effect",
-        "count": 5
+        "count": 7
       }
     ],
     "lenses": [
@@ -2498,42 +2846,42 @@
         "ontology_slug": "absence-lens",
         "code": "LEN-0100",
         "title": "Absence Lens",
-        "count": 12
+        "count": 13
       },
       {
         "slug": "authority-overlay-lens",
         "ontology_slug": "authority-overlay-lens",
         "code": "LEN-0110",
         "title": "Authority Overlay Lens",
-        "count": 10
+        "count": 11
       },
       {
         "slug": "boundary-compliance-lens",
         "ontology_slug": "boundary-compliance-lens",
         "code": "LEN-0120",
         "title": "Boundary Compliance Lens",
-        "count": 18
+        "count": 23
       },
       {
         "slug": "compatibility-envelope-lens",
         "ontology_slug": "compatibility-envelope-lens",
         "code": "LEN-0130",
         "title": "Compatibility Envelope Lens",
-        "count": 8
+        "count": 11
       },
       {
         "slug": "compression-lens",
         "ontology_slug": "compression-lens",
         "code": "LEN-0140",
         "title": "Compression Lens",
-        "count": 8
+        "count": 10
       },
       {
         "slug": "conflict-lens",
         "ontology_slug": "conflict-lens",
         "code": "LEN-0150",
         "title": "Conflict Lens",
-        "count": 21
+        "count": 23
       },
       {
         "slug": "constraint-sufficiency-lens",
@@ -2547,28 +2895,28 @@
         "ontology_slug": "convergence-lens",
         "code": "LEN-0170",
         "title": "Convergence Lens",
-        "count": 18
+        "count": 23
       },
       {
         "slug": "determinism-lens",
         "ontology_slug": "determinism-lens",
         "code": "LEN-0180",
         "title": "Determinism Lens",
-        "count": 23
+        "count": 28
       },
       {
         "slug": "escalation-gradient-lens",
         "ontology_slug": "escalation-gradient-lens",
         "code": "LEN-0190",
         "title": "Escalation Gradient Lens",
-        "count": 11
+        "count": 14
       },
       {
         "slug": "interface-contract-lens",
         "ontology_slug": "interface-contract-lens",
         "code": "LEN-0200",
         "title": "Interface Contract Lens",
-        "count": 20
+        "count": 21
       },
       {
         "slug": "invariant-lens",
@@ -2582,28 +2930,28 @@
         "ontology_slug": "isolation-boundary-lens",
         "code": "LEN-0220",
         "title": "Isolation Boundary Lens",
-        "count": 12
+        "count": 15
       },
       {
         "slug": "normalization-lens",
         "ontology_slug": "normalization-lens",
         "code": "LEN-0230",
         "title": "Normalization Lens",
-        "count": 12
+        "count": 14
       },
       {
         "slug": "overreach-lens",
         "ontology_slug": "overreach-lens",
         "code": "LEN-0240",
         "title": "Overreach Lens",
-        "count": 10
+        "count": 13
       },
       {
         "slug": "propagation-lens",
         "ontology_slug": "propagation-lens",
         "code": "LEN-0250",
         "title": "Propagation Lens",
-        "count": 17
+        "count": 20
       },
       {
         "slug": "provenance-trace-lens",
@@ -2617,21 +2965,21 @@
         "ontology_slug": "reconciliation-lens",
         "code": "LEN-0270",
         "title": "Reconciliation Lens",
-        "count": 22
+        "count": 28
       },
       {
         "slug": "reference-stability-lens",
         "ontology_slug": "reference-stability-lens",
         "code": "LEN-0280",
         "title": "Reference Stability Lens",
-        "count": 22
+        "count": 25
       },
       {
         "slug": "variance-entropy-lens",
         "ontology_slug": "variance-entropy-lens",
         "code": "LEN-0290",
         "title": "Variance / Entropy Lens",
-        "count": 17
+        "count": 21
       }
     ]
   }
