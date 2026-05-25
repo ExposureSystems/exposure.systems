@@ -1152,6 +1152,52 @@
       "markdown_url": "/workbench/issues/duplicate-fields-with-same-meaning.md"
     },
     {
+      "slug": "duplicate-output-sections",
+      "ontology_slug": "duplicate-output-sections",
+      "code": "ISS-0066",
+      "title": "Duplicate Output Sections",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "The AI repeats sections, headings, blocks, or output areas in a way that creates redundancy, confusion, or downstream handling problems.",
+      "category": "duplication-and-overload",
+      "category_title": "Duplication & Overload",
+      "primary_cat_code": "CAT-0140",
+      "secondary_cat_codes": [
+        "CAT-0010"
+      ],
+      "primary_pattern": "redundant-declaration",
+      "patterns": [
+        "redundant-declaration",
+        "density-spike",
+        "schema-breakage"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "compression-lens",
+          "conflict-lens",
+          "interface-contract-lens",
+          "invariant-lens",
+          "normalization-lens",
+          "variance-entropy-lens"
+        ],
+        "secondary": [
+          "escalation-gradient-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "duplicate output sections",
+        "AI repeated sections",
+        "ChatGPT duplicated headings",
+        "output has duplicate blocks",
+        "AI response repeated same section",
+        "duplicate structured output sections"
+      ],
+      "url": "/workbench/issues/duplicate-output-sections/",
+      "markdown_url": "/workbench/issues/duplicate-output-sections.md"
+    },
+    {
       "slug": "fallback-authority-is-missing",
       "ontology_slug": "fallback-authority-is-missing",
       "code": "ISS-0014",
@@ -1613,6 +1659,52 @@
       ],
       "url": "/workbench/issues/model-output-triggers-unapproved-action/",
       "markdown_url": "/workbench/issues/model-output-triggers-unapproved-action.md"
+    },
+    {
+      "slug": "multiple-policies-say-the-same-thing",
+      "ontology_slug": "multiple-policies-say-the-same-thing",
+      "code": "ISS-0070",
+      "title": "Multiple Policies Say the Same Thing",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "Multiple policies, rules, or guidance documents express the same requirement, creating redundancy and uncertainty about which one governs.",
+      "category": "duplication-and-overload",
+      "category_title": "Duplication & Overload",
+      "primary_cat_code": "CAT-0140",
+      "secondary_cat_codes": [
+        "CAT-0060"
+      ],
+      "primary_pattern": "redundant-declaration",
+      "patterns": [
+        "redundant-declaration",
+        "authority-merge-conflict",
+        "density-spike"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "compression-lens",
+          "conflict-lens",
+          "normalization-lens",
+          "reconciliation-lens",
+          "variance-entropy-lens"
+        ],
+        "secondary": [
+          "authority-overlay-lens",
+          "escalation-gradient-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "multiple policies say the same thing",
+        "duplicate policies",
+        "redundant policy rules",
+        "AI sees multiple policies with same rule",
+        "same requirement in multiple policies",
+        "policy duplication causes confusion"
+      ],
+      "url": "/workbench/issues/multiple-policies-say-the-same-thing/",
+      "markdown_url": "/workbench/issues/multiple-policies-say-the-same-thing.md"
     },
     {
       "slug": "nested-fields-do-not-match",
@@ -2154,6 +2246,51 @@
       "markdown_url": "/workbench/issues/prompt-changed-but-workflow-did-not.md"
     },
     {
+      "slug": "prompt-has-too-many-valid-interpretations",
+      "ontology_slug": "prompt-has-too-many-valid-interpretations",
+      "code": "ISS-0071",
+      "title": "Prompt Has Too Many Valid Interpretations",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "The prompt allows too many reasonable interpretations, causing the AI to choose among valid paths without enough guidance.",
+      "category": "coverage-and-guidance",
+      "category_title": "Coverage & Guidance",
+      "primary_cat_code": "CAT-0120",
+      "secondary_cat_codes": [
+        "CAT-0090"
+      ],
+      "primary_pattern": "constraints-underspecified",
+      "patterns": [
+        "constraints-underspecified",
+        "divergent-outputs",
+        "density-spike"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "compression-lens",
+          "constraint-sufficiency-lens",
+          "convergence-lens",
+          "variance-entropy-lens"
+        ],
+        "secondary": [
+          "determinism-lens",
+          "escalation-gradient-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "prompt has too many valid interpretations",
+        "AI prompt is ambiguous",
+        "prompt allows too many meanings",
+        "same prompt can mean different things",
+        "AI chose wrong interpretation",
+        "prompt needs clearer criteria"
+      ],
+      "url": "/workbench/issues/prompt-has-too-many-valid-interpretations/",
+      "markdown_url": "/workbench/issues/prompt-has-too-many-valid-interpretations.md"
+    },
+    {
       "slug": "prompt-only-works-after-retry",
       "ontology_slug": "prompt-only-works-after-retry",
       "code": "ISS-0005",
@@ -2239,6 +2376,52 @@
       ],
       "url": "/workbench/issues/repair-step-created-new-breakage/",
       "markdown_url": "/workbench/issues/repair-step-created-new-breakage.md"
+    },
+    {
+      "slug": "repeated-constraints-create-confusion",
+      "ontology_slug": "repeated-constraints-create-confusion",
+      "code": "ISS-0068",
+      "title": "Repeated Constraints Create Confusion",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "Repeated constraints, instructions, limits, or exclusions make the task harder to interpret instead of clearer.",
+      "category": "duplication-and-overload",
+      "category_title": "Duplication & Overload",
+      "primary_cat_code": "CAT-0140",
+      "secondary_cat_codes": [
+        "CAT-0060"
+      ],
+      "primary_pattern": "redundant-declaration",
+      "patterns": [
+        "redundant-declaration",
+        "density-spike",
+        "constraints-underspecified"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "compression-lens",
+          "conflict-lens",
+          "constraint-sufficiency-lens",
+          "normalization-lens",
+          "variance-entropy-lens"
+        ],
+        "secondary": [
+          "determinism-lens",
+          "escalation-gradient-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "repeated constraints create confusion",
+        "AI confused by repeated constraints",
+        "too many repeated instructions",
+        "repeated prompt constraints conflict",
+        "duplicated limits confuse output",
+        "repeated exclusions make task unclear"
+      ],
+      "url": "/workbench/issues/repeated-constraints-create-confusion/",
+      "markdown_url": "/workbench/issues/repeated-constraints-create-confusion.md"
     },
     {
       "slug": "results-vary-too-much",
@@ -2463,6 +2646,54 @@
       "markdown_url": "/workbench/issues/revoked-approval-still-treated-as-active.md"
     },
     {
+      "slug": "risk-score-triggers-wrong-escalation",
+      "ontology_slug": "risk-score-triggers-wrong-escalation",
+      "code": "ISS-0065",
+      "title": "Risk Score Triggers Wrong Escalation",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "A risk score, severity label, confidence value, or threshold result triggers the wrong escalation path.",
+      "category": "spread-and-escalation",
+      "category_title": "Spread & Escalation",
+      "primary_cat_code": "CAT-0110",
+      "secondary_cat_codes": [
+        "CAT-0050"
+      ],
+      "primary_pattern": "escalation-growth",
+      "patterns": [
+        "escalation-growth",
+        "threshold-breach",
+        "missing-authority"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "absence-lens",
+          "authority-overlay-lens",
+          "escalation-gradient-lens",
+          "invariant-lens",
+          "variance-entropy-lens"
+        ],
+        "secondary": [
+          "boundary-compliance-lens",
+          "conflict-lens",
+          "propagation-lens",
+          "reconciliation-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "risk score triggers wrong escalation",
+        "AI risk score escalated wrong case",
+        "wrong escalation from model score",
+        "risk threshold caused wrong workflow",
+        "AI severity score triggered escalation",
+        "confidence score sent case to wrong review"
+      ],
+      "url": "/workbench/issues/risk-score-triggers-wrong-escalation/",
+      "markdown_url": "/workbench/issues/risk-score-triggers-wrong-escalation.md"
+    },
+    {
       "slug": "rubric-changed-but-results-did-not",
       "ontology_slug": "rubric-changed-but-results-did-not",
       "code": "ISS-0055",
@@ -2592,6 +2823,144 @@
       ],
       "url": "/workbench/issues/same-contract-name-has-different-meanings/",
       "markdown_url": "/workbench/issues/same-contract-name-has-different-meanings.md"
+    },
+    {
+      "slug": "same-instructions-allow-different-outputs",
+      "ontology_slug": "same-instructions-allow-different-outputs",
+      "code": "ISS-0072",
+      "title": "Same Instructions Allow Different Outputs",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "The same instructions are broad or underspecified enough to allow materially different outputs that all appear compliant.",
+      "category": "inconsistent-behavior",
+      "category_title": "Inconsistent Behavior",
+      "primary_cat_code": "CAT-0090",
+      "secondary_cat_codes": [
+        "CAT-0120"
+      ],
+      "primary_pattern": "divergent-outputs",
+      "patterns": [
+        "divergent-outputs",
+        "non-deterministic-execution",
+        "constraints-underspecified"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "constraint-sufficiency-lens",
+          "convergence-lens",
+          "determinism-lens",
+          "variance-entropy-lens"
+        ],
+        "secondary": [
+          "compression-lens",
+          "reference-stability-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "same instructions allow different outputs",
+        "same prompt allows different answers",
+        "AI outputs differ but follow instructions",
+        "instructions too broad for stable output",
+        "different compliant outputs from same prompt",
+        "prompt allows too much variation"
+      ],
+      "url": "/workbench/issues/same-instructions-allow-different-outputs/",
+      "markdown_url": "/workbench/issues/same-instructions-allow-different-outputs.md"
+    },
+    {
+      "slug": "same-rule-declared-in-multiple-places",
+      "ontology_slug": "same-rule-declared-in-multiple-places",
+      "code": "ISS-0067",
+      "title": "Same Rule Declared in Multiple Places",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "The same rule, constraint, instruction, or policy appears in multiple places, creating redundancy and possible drift.",
+      "category": "duplication-and-overload",
+      "category_title": "Duplication & Overload",
+      "primary_cat_code": "CAT-0140",
+      "secondary_cat_codes": [
+        "CAT-0060"
+      ],
+      "primary_pattern": "redundant-declaration",
+      "patterns": [
+        "redundant-declaration",
+        "contract-drift",
+        "density-spike"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "compression-lens",
+          "conflict-lens",
+          "convergence-lens",
+          "normalization-lens",
+          "reconciliation-lens",
+          "variance-entropy-lens"
+        ],
+        "secondary": [
+          "determinism-lens",
+          "escalation-gradient-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "same rule declared in multiple places",
+        "duplicate AI rules",
+        "same instruction appears twice",
+        "policy duplicated in multiple places",
+        "repeated rule creates confusion",
+        "same constraint declared more than once"
+      ],
+      "url": "/workbench/issues/same-rule-declared-in-multiple-places/",
+      "markdown_url": "/workbench/issues/same-rule-declared-in-multiple-places.md"
+    },
+    {
+      "slug": "same-workflow-check-happens-twice",
+      "ontology_slug": "same-workflow-check-happens-twice",
+      "code": "ISS-0069",
+      "title": "Same Workflow Check Happens Twice",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "The same review, validation, approval, routing, or safety check occurs more than once in the workflow without a clear reason.",
+      "category": "duplication-and-overload",
+      "category_title": "Duplication & Overload",
+      "primary_cat_code": "CAT-0140",
+      "secondary_cat_codes": [
+        "CAT-0070"
+      ],
+      "primary_pattern": "redundant-declaration",
+      "patterns": [
+        "redundant-declaration",
+        "density-spike",
+        "convergence-failure"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "compression-lens",
+          "conflict-lens",
+          "convergence-lens",
+          "normalization-lens",
+          "variance-entropy-lens"
+        ],
+        "secondary": [
+          "escalation-gradient-lens",
+          "reconciliation-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "same workflow check happens twice",
+        "duplicate workflow check",
+        "AI workflow repeats validation",
+        "same review step runs twice",
+        "duplicate approval check",
+        "repeated workflow gate"
+      ],
+      "url": "/workbench/issues/same-workflow-check-happens-twice/",
+      "markdown_url": "/workbench/issues/same-workflow-check-happens-twice.md"
     },
     {
       "slug": "saved-memory-not-used",
@@ -3375,6 +3744,7 @@
         "primary": [],
         "supporting": [
           "conflicting-instructions-from-different-authorities",
+          "multiple-policies-say-the-same-thing",
           "permissions-conflict-after-being-combined",
           "same-case-has-conflicting-policies"
         ]
@@ -3571,7 +3941,8 @@
       },
       "issues": {
         "primary": [
-          "format-rule-too-weak"
+          "format-rule-too-weak",
+          "prompt-has-too-many-valid-interpretations"
         ],
         "supporting": [
           "ai-forgets-earlier-constraints",
@@ -3579,7 +3950,9 @@
           "invalid-json-output",
           "output-exceeds-length-limit",
           "prompt-only-works-after-retry",
+          "repeated-constraints-create-confusion",
           "results-vary-too-much",
+          "same-instructions-allow-different-outputs",
           "task-has-no-clear-limit",
           "tool-exists-but-required-inputs-are-missing"
         ]
@@ -3623,6 +3996,7 @@
           "output-changed-without-declared-change",
           "prompt-behavior-changed-without-version-change",
           "revoked-approval-still-treated-as-active",
+          "same-rule-declared-in-multiple-places",
           "saved-reference-no-longer-works",
           "tool-result-not-integrated-correctly"
         ]
@@ -3653,6 +4027,7 @@
         "supporting": [
           "agent-keeps-expanding-the-task",
           "human-review-and-automation-disagree",
+          "same-workflow-check-happens-twice",
           "task-progress-is-lost-midway"
         ]
       },
@@ -3708,8 +4083,14 @@
         ],
         "supporting": [
           "duplicate-fields-with-same-meaning",
+          "duplicate-output-sections",
+          "multiple-policies-say-the-same-thing",
           "output-exceeds-length-limit",
-          "retrieval-exceeds-evidence-limit"
+          "prompt-has-too-many-valid-interpretations",
+          "repeated-constraints-create-confusion",
+          "retrieval-exceeds-evidence-limit",
+          "same-rule-declared-in-multiple-places",
+          "same-workflow-check-happens-twice"
         ]
       },
       "url": "/workbench/patterns/density-spike/",
@@ -3764,11 +4145,13 @@
       },
       "issues": {
         "primary": [
-          "results-vary-too-much"
+          "results-vary-too-much",
+          "same-instructions-allow-different-outputs"
         ],
         "supporting": [
           "output-breaks-after-model-change",
           "prompt-behavior-changed-without-version-change",
+          "prompt-has-too-many-valid-interpretations",
           "prompt-only-works-after-retry",
           "similar-cases-route-to-different-outcomes",
           "validation-result-changes-on-retry"
@@ -3797,7 +4180,8 @@
       },
       "issues": {
         "primary": [
-          "retry-makes-the-problem-worse"
+          "retry-makes-the-problem-worse",
+          "risk-score-triggers-wrong-escalation"
         ],
         "supporting": [
           "action-triggered-by-confidence-score",
@@ -3937,7 +4321,8 @@
         "supporting": [
           "action-triggered-by-confidence-score",
           "declared-owner-cannot-control-outcome",
-          "model-output-triggers-unapproved-action"
+          "model-output-triggers-unapproved-action",
+          "risk-score-triggers-wrong-escalation"
         ]
       },
       "url": "/workbench/patterns/missing-authority/",
@@ -3969,7 +4354,8 @@
           "validation-result-changes-on-retry"
         ],
         "supporting": [
-          "results-vary-too-much"
+          "results-vary-too-much",
+          "same-instructions-allow-different-outputs"
         ]
       },
       "url": "/workbench/patterns/non-deterministic-execution/",
@@ -4130,7 +4516,12 @@
       },
       "issues": {
         "primary": [
-          "duplicate-fields-with-same-meaning"
+          "duplicate-fields-with-same-meaning",
+          "duplicate-output-sections",
+          "multiple-policies-say-the-same-thing",
+          "repeated-constraints-create-confusion",
+          "same-rule-declared-in-multiple-places",
+          "same-workflow-check-happens-twice"
         ],
         "supporting": [
           "old-output-expectations-survive-migration"
@@ -4200,6 +4591,7 @@
         ],
         "supporting": [
           "duplicate-fields-with-same-meaning",
+          "duplicate-output-sections",
           "format-rule-too-weak",
           "hallucinated-fields",
           "missing-required-fields",
@@ -4266,7 +4658,9 @@
           "action-triggered-by-confidence-score",
           "output-exceeds-length-limit"
         ],
-        "supporting": []
+        "supporting": [
+          "risk-score-triggers-wrong-escalation"
+        ]
       },
       "url": "/workbench/patterns/threshold-breach/",
       "markdown_url": "/workbench/patterns/threshold-breach.md"
@@ -4394,6 +4788,7 @@
         "missing-required-fields",
         "model-output-triggers-unapproved-action",
         "no-owner-for-agent-action",
+        "risk-score-triggers-wrong-escalation",
         "saved-memory-not-used",
         "task-has-no-clear-limit",
         "task-progress-is-lost-midway",
@@ -4432,8 +4827,10 @@
         "hidden-rule-overrides-visible-instruction",
         "human-review-and-automation-disagree",
         "model-output-triggers-unapproved-action",
+        "multiple-policies-say-the-same-thing",
         "no-owner-for-agent-action",
         "permissions-conflict-after-being-combined",
+        "risk-score-triggers-wrong-escalation",
         "same-case-has-conflicting-policies",
         "workflow-step-has-no-decision-owner"
       ],
@@ -4483,6 +4880,7 @@
         "prompt-changed-but-workflow-did-not",
         "retrieval-exceeds-evidence-limit",
         "review-outcome-changes-unrelated-environment",
+        "risk-score-triggers-wrong-escalation",
         "saved-reference-no-longer-works",
         "too-many-tool-calls",
         "tool-call-contract-mismatch",
@@ -4550,14 +4948,21 @@
         "answer-has-no-traceable-source-link",
         "answer-has-too-many-paths",
         "duplicate-fields-with-same-meaning",
+        "duplicate-output-sections",
         "missing-required-fields",
+        "multiple-policies-say-the-same-thing",
         "old-output-expectations-survive-migration",
         "output-breaks-after-model-change",
         "output-exceeds-length-limit",
         "prompt-behavior-changed-without-version-change",
+        "prompt-has-too-many-valid-interpretations",
         "prompt-only-works-after-retry",
+        "repeated-constraints-create-confusion",
         "results-vary-too-much",
         "retrieval-exceeds-evidence-limit",
+        "same-instructions-allow-different-outputs",
+        "same-rule-declared-in-multiple-places",
+        "same-workflow-check-happens-twice",
         "similar-cases-route-to-different-outcomes",
         "validation-result-changes-on-retry"
       ],
@@ -4594,6 +4999,7 @@
         "conflicting-instructions-from-different-authorities",
         "declared-owner-cannot-control-outcome",
         "duplicate-fields-with-same-meaning",
+        "duplicate-output-sections",
         "fallback-authority-is-missing",
         "format-rule-too-weak",
         "hallucinated-fields",
@@ -4602,12 +5008,17 @@
         "invalid-json-output",
         "missing-required-fields",
         "model-output-triggers-unapproved-action",
+        "multiple-policies-say-the-same-thing",
         "nested-fields-do-not-match",
         "no-owner-for-agent-action",
         "old-output-expectations-survive-migration",
         "output-breaks-the-next-step",
         "permissions-conflict-after-being-combined",
+        "repeated-constraints-create-confusion",
+        "risk-score-triggers-wrong-escalation",
         "same-case-has-conflicting-policies",
+        "same-rule-declared-in-multiple-places",
+        "same-workflow-check-happens-twice",
         "tool-call-contract-mismatch",
         "validation-result-changes-on-retry",
         "workflow-step-has-no-decision-owner",
@@ -4647,8 +5058,11 @@
         "invalid-json-output",
         "missing-required-fields",
         "output-exceeds-length-limit",
+        "prompt-has-too-many-valid-interpretations",
         "prompt-only-works-after-retry",
+        "repeated-constraints-create-confusion",
         "results-vary-too-much",
+        "same-instructions-allow-different-outputs",
         "saved-memory-not-used",
         "task-has-no-clear-limit",
         "too-many-tool-calls",
@@ -4695,11 +5109,15 @@
         "policy-update-not-reflected-in-output",
         "prompt-behavior-changed-without-version-change",
         "prompt-changed-but-workflow-did-not",
+        "prompt-has-too-many-valid-interpretations",
         "prompt-only-works-after-retry",
         "results-vary-too-much",
         "revoked-approval-still-treated-as-active",
         "rubric-changed-but-results-did-not",
         "same-contract-name-has-different-meanings",
+        "same-instructions-allow-different-outputs",
+        "same-rule-declared-in-multiple-places",
+        "same-workflow-check-happens-twice",
         "saved-reference-no-longer-works",
         "similar-cases-route-to-different-outcomes",
         "stale-context-affects-output",
@@ -4751,12 +5169,16 @@
         "policy-update-not-reflected-in-output",
         "prompt-behavior-changed-without-version-change",
         "prompt-changed-but-workflow-did-not",
+        "prompt-has-too-many-valid-interpretations",
         "prompt-only-works-after-retry",
+        "repeated-constraints-create-confusion",
         "results-vary-too-much",
         "retry-makes-the-problem-worse",
         "revoked-approval-still-treated-as-active",
         "rubric-changed-but-results-did-not",
         "same-contract-name-has-different-meanings",
+        "same-instructions-allow-different-outputs",
+        "same-rule-declared-in-multiple-places",
         "saved-memory-not-used",
         "saved-reference-no-longer-works",
         "similar-cases-route-to-different-outcomes",
@@ -4801,14 +5223,21 @@
         "answer-has-too-many-paths",
         "context-leaks-between-tasks",
         "duplicate-fields-with-same-meaning",
+        "duplicate-output-sections",
         "hallucinated-fields",
         "model-output-triggers-unapproved-action",
+        "multiple-policies-say-the-same-thing",
         "output-exceeds-length-limit",
         "policy-exception-spreads-too-far",
+        "prompt-has-too-many-valid-interpretations",
         "repair-step-created-new-breakage",
+        "repeated-constraints-create-confusion",
         "retrieval-exceeds-evidence-limit",
         "retry-makes-the-problem-worse",
         "review-outcome-changes-unrelated-environment",
+        "risk-score-triggers-wrong-escalation",
+        "same-rule-declared-in-multiple-places",
+        "same-workflow-check-happens-twice",
         "task-has-no-clear-limit",
         "too-many-tool-calls"
       ],
@@ -4839,6 +5268,7 @@
         "answer-has-no-traceable-source-link",
         "citation-points-to-wrong-source",
         "duplicate-fields-with-same-meaning",
+        "duplicate-output-sections",
         "fallback-authority-is-missing",
         "format-rule-too-weak",
         "hallucinated-fields",
@@ -4885,6 +5315,7 @@
         "ai-output-breaks-parser",
         "conflicting-instructions-from-different-authorities",
         "duplicate-fields-with-same-meaning",
+        "duplicate-output-sections",
         "format-rule-too-weak",
         "hallucinated-fields",
         "hidden-rule-overrides-visible-instruction",
@@ -4895,6 +5326,7 @@
         "output-breaks-the-next-step",
         "output-exceeds-length-limit",
         "permissions-conflict-after-being-combined",
+        "risk-score-triggers-wrong-escalation",
         "same-case-has-conflicting-policies",
         "tool-call-contract-mismatch",
         "validation-result-changes-on-retry",
@@ -4966,14 +5398,19 @@
         "ai-output-breaks-parser",
         "citation-points-to-wrong-source",
         "duplicate-fields-with-same-meaning",
+        "duplicate-output-sections",
         "fallback-authority-is-missing",
         "invalid-json-output",
         "model-and-workflow-disagree-on-next-step",
+        "multiple-policies-say-the-same-thing",
         "nested-fields-do-not-match",
         "old-output-expectations-survive-migration",
         "output-breaks-the-next-step",
         "prompt-changed-but-workflow-did-not",
+        "repeated-constraints-create-confusion",
         "same-contract-name-has-different-meanings",
+        "same-rule-declared-in-multiple-places",
+        "same-workflow-check-happens-twice",
         "tool-call-contract-mismatch",
         "tool-exists-but-required-inputs-are-missing",
         "tool-result-not-integrated-correctly",
@@ -5061,6 +5498,7 @@
         "retrieval-exceeds-evidence-limit",
         "retry-makes-the-problem-worse",
         "review-outcome-changes-unrelated-environment",
+        "risk-score-triggers-wrong-escalation",
         "task-progress-is-lost-midway",
         "too-many-tool-calls",
         "tool-result-not-integrated-correctly",
@@ -5131,6 +5569,7 @@
         "human-review-and-automation-disagree",
         "model-and-workflow-disagree-on-next-step",
         "model-output-triggers-unapproved-action",
+        "multiple-policies-say-the-same-thing",
         "no-owner-for-agent-action",
         "old-output-expectations-survive-migration",
         "output-breaks-after-model-change",
@@ -5140,9 +5579,12 @@
         "prompt-behavior-changed-without-version-change",
         "prompt-changed-but-workflow-did-not",
         "revoked-approval-still-treated-as-active",
+        "risk-score-triggers-wrong-escalation",
         "rubric-changed-but-results-did-not",
         "same-case-has-conflicting-policies",
         "same-contract-name-has-different-meanings",
+        "same-rule-declared-in-multiple-places",
+        "same-workflow-check-happens-twice",
         "saved-reference-no-longer-works",
         "similar-cases-route-to-different-outcomes",
         "stale-context-affects-output",
@@ -5197,6 +5639,7 @@
         "revoked-approval-still-treated-as-active",
         "rubric-changed-but-results-did-not",
         "same-contract-name-has-different-meanings",
+        "same-instructions-allow-different-outputs",
         "saved-memory-not-used",
         "saved-reference-no-longer-works",
         "similar-cases-route-to-different-outcomes",
@@ -5240,20 +5683,28 @@
         "answer-has-too-many-paths",
         "context-leaks-between-tasks",
         "duplicate-fields-with-same-meaning",
+        "duplicate-output-sections",
         "format-rule-too-weak",
         "human-review-and-automation-disagree",
         "invalid-json-output",
         "model-output-triggers-unapproved-action",
+        "multiple-policies-say-the-same-thing",
         "output-breaks-after-model-change",
         "output-exceeds-length-limit",
         "policy-exception-spreads-too-far",
         "prompt-behavior-changed-without-version-change",
+        "prompt-has-too-many-valid-interpretations",
         "prompt-only-works-after-retry",
         "repair-step-created-new-breakage",
+        "repeated-constraints-create-confusion",
         "results-vary-too-much",
         "retrieval-exceeds-evidence-limit",
         "retry-makes-the-problem-worse",
         "review-outcome-changes-unrelated-environment",
+        "risk-score-triggers-wrong-escalation",
+        "same-instructions-allow-different-outputs",
+        "same-rule-declared-in-multiple-places",
+        "same-workflow-check-happens-twice",
         "similar-cases-route-to-different-outcomes",
         "task-has-no-clear-limit",
         "task-progress-is-lost-midway",
@@ -5339,15 +5790,18 @@
       "updated_at": "2026-05-10T00:00:00Z",
       "summary": "Problems where prompts, rubrics, diagnostics, fallback rules, examples, requirements, or relationship maps are incomplete, underspecified, or missing needed guidance.",
       "issues": [
-        "format-rule-too-weak"
+        "format-rule-too-weak",
+        "prompt-has-too-many-valid-interpretations"
       ],
       "primary_issues": [
-        "format-rule-too-weak"
+        "format-rule-too-weak",
+        "prompt-has-too-many-valid-interpretations"
       ],
       "secondary_issues": [
         "answer-has-no-traceable-source-link",
         "citation-points-to-wrong-source",
         "missing-required-fields",
+        "same-instructions-allow-different-outputs",
         "saved-memory-not-used",
         "tool-exists-but-required-inputs-are-missing"
       ],
@@ -5363,10 +5817,20 @@
       "updated_at": "2026-05-10T00:00:00Z",
       "summary": "Problems where fields, sections, rules, checks, prompts, workflow steps, or review queues become duplicated, overloaded, bottlenecked, or carry too many meanings.",
       "issues": [
-        "duplicate-fields-with-same-meaning"
+        "duplicate-fields-with-same-meaning",
+        "duplicate-output-sections",
+        "multiple-policies-say-the-same-thing",
+        "repeated-constraints-create-confusion",
+        "same-rule-declared-in-multiple-places",
+        "same-workflow-check-happens-twice"
       ],
       "primary_issues": [
-        "duplicate-fields-with-same-meaning"
+        "duplicate-fields-with-same-meaning",
+        "duplicate-output-sections",
+        "multiple-policies-say-the-same-thing",
+        "repeated-constraints-create-confusion",
+        "same-rule-declared-in-multiple-places",
+        "same-workflow-check-happens-twice"
       ],
       "secondary_issues": [],
       "url": "/workbench/categories/duplication-and-overload/"
@@ -5383,17 +5847,20 @@
       "issues": [
         "prompt-only-works-after-retry",
         "results-vary-too-much",
+        "same-instructions-allow-different-outputs",
         "similar-cases-route-to-different-outcomes",
         "validation-result-changes-on-retry"
       ],
       "primary_issues": [
         "prompt-only-works-after-retry",
         "results-vary-too-much",
+        "same-instructions-allow-different-outputs",
         "similar-cases-route-to-different-outcomes",
         "validation-result-changes-on-retry"
       ],
       "secondary_issues": [
         "prompt-behavior-changed-without-version-change",
+        "prompt-has-too-many-valid-interpretations",
         "retry-makes-the-problem-worse"
       ],
       "url": "/workbench/categories/inconsistent-behavior/"
@@ -5503,6 +5970,7 @@
       ],
       "secondary_issues": [
         "duplicate-fields-with-same-meaning",
+        "duplicate-output-sections",
         "file-bounded-task-uses-outside-content",
         "format-rule-too-weak",
         "old-output-expectations-survive-migration",
@@ -5551,6 +6019,7 @@
         "conflicting-instructions-from-different-authorities",
         "hidden-rule-overrides-visible-instruction",
         "human-review-and-automation-disagree",
+        "risk-score-triggers-wrong-escalation",
         "same-case-has-conflicting-policies",
         "workflow-step-has-no-decision-owner"
       ],
@@ -5584,9 +6053,12 @@
         "behavior-does-not-match-declared-role",
         "declared-owner-cannot-control-outcome",
         "model-and-workflow-disagree-on-next-step",
+        "multiple-policies-say-the-same-thing",
         "permissions-conflict-after-being-combined",
         "policy-exception-spreads-too-far",
-        "same-contract-name-has-different-meanings"
+        "repeated-constraints-create-confusion",
+        "same-contract-name-has-different-meanings",
+        "same-rule-declared-in-multiple-places"
       ],
       "url": "/workbench/categories/rules-and-policies/"
     },
@@ -5637,13 +6109,15 @@
         "action-changed-something-else-too",
         "policy-exception-spreads-too-far",
         "repair-step-created-new-breakage",
-        "retry-makes-the-problem-worse"
+        "retry-makes-the-problem-worse",
+        "risk-score-triggers-wrong-escalation"
       ],
       "primary_issues": [
         "action-changed-something-else-too",
         "policy-exception-spreads-too-far",
         "repair-step-created-new-breakage",
-        "retry-makes-the-problem-worse"
+        "retry-makes-the-problem-worse",
+        "risk-score-triggers-wrong-escalation"
       ],
       "secondary_issues": [
         "action-triggered-by-confidence-score",
@@ -5678,6 +6152,7 @@
         "prompt-changed-but-workflow-did-not",
         "repair-step-created-new-breakage",
         "rubric-changed-but-results-did-not",
+        "same-workflow-check-happens-twice",
         "task-progress-is-lost-midway",
         "tool-result-not-integrated-correctly"
       ],
