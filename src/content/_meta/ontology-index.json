@@ -1106,6 +1106,49 @@
       "markdown_url": "/workbench/issues/declared-owner-cannot-control-outcome.md"
     },
     {
+      "slug": "diagnostic-area-has-no-coverage",
+      "ontology_slug": "diagnostic-area-has-no-coverage",
+      "code": "ISS-0077",
+      "title": "Diagnostic Area Has No Coverage",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "A known diagnostic area, failure mode, requirement, or review dimension has no Issue, check, rubric item, or workflow coverage.",
+      "category": "coverage-and-guidance",
+      "category_title": "Coverage & Guidance",
+      "primary_cat_code": "CAT-0120",
+      "secondary_cat_codes": [],
+      "primary_pattern": "density-vacuum",
+      "patterns": [
+        "density-vacuum",
+        "incomplete-declaration",
+        "constraints-underspecified"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "absence-lens",
+          "compression-lens",
+          "constraint-sufficiency-lens"
+        ],
+        "secondary": [
+          "determinism-lens",
+          "interface-contract-lens",
+          "variance-entropy-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "diagnostic area has no coverage",
+        "missing diagnostic coverage",
+        "no check for this AI issue",
+        "workflow does not cover failure mode",
+        "review has coverage gap",
+        "AI diagnosis missing area"
+      ],
+      "url": "/workbench/issues/diagnostic-area-has-no-coverage/",
+      "markdown_url": "/workbench/issues/diagnostic-area-has-no-coverage.md"
+    },
+    {
       "slug": "duplicate-fields-with-same-meaning",
       "ontology_slug": "duplicate-fields-with-same-meaning",
       "code": "ISS-0027",
@@ -1520,6 +1563,53 @@
       ],
       "url": "/workbench/issues/invalid-json-output/",
       "markdown_url": "/workbench/issues/invalid-json-output.md"
+    },
+    {
+      "slug": "missing-fallback-for-unavailable-information",
+      "ontology_slug": "missing-fallback-for-unavailable-information",
+      "code": "ISS-0074",
+      "title": "Missing Fallback for Unavailable Information",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "The task does not declare what the AI should do when required information, sources, tools, fields, or evidence are unavailable.",
+      "category": "coverage-and-guidance",
+      "category_title": "Coverage & Guidance",
+      "primary_cat_code": "CAT-0120",
+      "secondary_cat_codes": [
+        "CAT-0050"
+      ],
+      "primary_pattern": "incomplete-declaration",
+      "patterns": [
+        "incomplete-declaration",
+        "missing-authority",
+        "constraints-underspecified"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "absence-lens",
+          "authority-overlay-lens",
+          "constraint-sufficiency-lens"
+        ],
+        "secondary": [
+          "conflict-lens",
+          "determinism-lens",
+          "interface-contract-lens",
+          "reconciliation-lens",
+          "variance-entropy-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "missing fallback for unavailable information",
+        "AI does not know what to do when information missing",
+        "no fallback when source unavailable",
+        "missing information fallback",
+        "AI guesses when information unavailable",
+        "no rule for unavailable evidence"
+      ],
+      "url": "/workbench/issues/missing-fallback-for-unavailable-information/",
+      "markdown_url": "/workbench/issues/missing-fallback-for-unavailable-information.md"
     },
     {
       "slug": "missing-required-fields",
@@ -2066,6 +2156,51 @@
       "markdown_url": "/workbench/issues/permissions-conflict-after-being-combined.md"
     },
     {
+      "slug": "policy-area-has-no-examples",
+      "ontology_slug": "policy-area-has-no-examples",
+      "code": "ISS-0079",
+      "title": "Policy Area Has No Examples",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "A policy, rule, standard, or guidance area has no examples showing how it should apply to real cases.",
+      "category": "coverage-and-guidance",
+      "category_title": "Coverage & Guidance",
+      "primary_cat_code": "CAT-0120",
+      "secondary_cat_codes": [
+        "CAT-0060"
+      ],
+      "primary_pattern": "density-vacuum",
+      "patterns": [
+        "density-vacuum",
+        "incomplete-declaration",
+        "reference-instability"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "absence-lens",
+          "compression-lens",
+          "constraint-sufficiency-lens",
+          "reference-stability-lens"
+        ],
+        "secondary": [
+          "determinism-lens",
+          "interface-contract-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "policy area has no examples",
+        "AI policy lacks examples",
+        "no examples for policy rule",
+        "policy guidance has no cases",
+        "missing examples for AI review",
+        "policy hard to apply without examples"
+      ],
+      "url": "/workbench/issues/policy-area-has-no-examples/",
+      "markdown_url": "/workbench/issues/policy-area-has-no-examples.md"
+    },
+    {
       "slug": "policy-exception-spreads-too-far",
       "ontology_slug": "policy-exception-spreads-too-far",
       "code": "ISS-0049",
@@ -2246,6 +2381,52 @@
       "markdown_url": "/workbench/issues/prompt-changed-but-workflow-did-not.md"
     },
     {
+      "slug": "prompt-does-not-say-what-to-exclude",
+      "ontology_slug": "prompt-does-not-say-what-to-exclude",
+      "code": "ISS-0076",
+      "title": "Prompt Does Not Say What to Exclude",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "The prompt declares what to include but does not declare what should be excluded, allowing unwanted scope, sources, content, or actions into the result.",
+      "category": "coverage-and-guidance",
+      "category_title": "Coverage & Guidance",
+      "primary_cat_code": "CAT-0120",
+      "secondary_cat_codes": [
+        "CAT-0100"
+      ],
+      "primary_pattern": "constraints-underspecified",
+      "patterns": [
+        "constraints-underspecified",
+        "boundary-leakage",
+        "unbounded-scope"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "constraint-sufficiency-lens",
+          "isolation-boundary-lens",
+          "propagation-lens"
+        ],
+        "secondary": [
+          "boundary-compliance-lens",
+          "determinism-lens",
+          "escalation-gradient-lens",
+          "variance-entropy-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "prompt does not say what to exclude",
+        "AI included things I did not want",
+        "missing exclusion rule",
+        "prompt only says what to include",
+        "AI used unwanted content",
+        "need to tell AI what not to include"
+      ],
+      "url": "/workbench/issues/prompt-does-not-say-what-to-exclude/",
+      "markdown_url": "/workbench/issues/prompt-does-not-say-what-to-exclude.md"
+    },
+    {
       "slug": "prompt-has-too-many-valid-interpretations",
       "ontology_slug": "prompt-has-too-many-valid-interpretations",
       "code": "ISS-0071",
@@ -2332,6 +2513,51 @@
       ],
       "url": "/workbench/issues/prompt-only-works-after-retry/",
       "markdown_url": "/workbench/issues/prompt-only-works-after-retry.md"
+    },
+    {
+      "slug": "relationship-map-has-missing-links",
+      "ontology_slug": "relationship-map-has-missing-links",
+      "code": "ISS-0080",
+      "title": "Relationship Map Has Missing Links",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "A map of related Issues, rules, patterns, cases, fields, tools, or workflow steps is missing links needed to navigate or reason over the structure.",
+      "category": "coverage-and-guidance",
+      "category_title": "Coverage & Guidance",
+      "primary_cat_code": "CAT-0120",
+      "secondary_cat_codes": [
+        "CAT-0070"
+      ],
+      "primary_pattern": "incomplete-declaration",
+      "patterns": [
+        "incomplete-declaration",
+        "orphaned-structure",
+        "reference-instability"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "absence-lens",
+          "constraint-sufficiency-lens",
+          "reference-stability-lens"
+        ],
+        "secondary": [
+          "determinism-lens",
+          "interface-contract-lens",
+          "propagation-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "relationship map has missing links",
+        "missing links in issue map",
+        "AI relationship map incomplete",
+        "related items not connected",
+        "workflow map missing relationships",
+        "ontology links missing"
+      ],
+      "url": "/workbench/issues/relationship-map-has-missing-links/",
+      "markdown_url": "/workbench/issues/relationship-map-has-missing-links.md"
     },
     {
       "slug": "repair-step-created-new-breakage",
@@ -2601,6 +2827,51 @@
       ],
       "url": "/workbench/issues/review-outcome-changes-unrelated-environment/",
       "markdown_url": "/workbench/issues/review-outcome-changes-unrelated-environment.md"
+    },
+    {
+      "slug": "review-rubric-missing-required-criteria",
+      "ontology_slug": "review-rubric-missing-required-criteria",
+      "code": "ISS-0075",
+      "title": "Review Rubric Missing Required Criteria",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "A review rubric, grading rule, evaluation checklist, or classification standard lacks criteria required to make the review reliable.",
+      "category": "coverage-and-guidance",
+      "category_title": "Coverage & Guidance",
+      "primary_cat_code": "CAT-0120",
+      "secondary_cat_codes": [
+        "CAT-0070"
+      ],
+      "primary_pattern": "incomplete-declaration",
+      "patterns": [
+        "incomplete-declaration",
+        "density-vacuum",
+        "constraints-underspecified"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "absence-lens",
+          "compression-lens",
+          "constraint-sufficiency-lens"
+        ],
+        "secondary": [
+          "determinism-lens",
+          "interface-contract-lens",
+          "variance-entropy-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "review rubric missing required criteria",
+        "AI rubric missing criteria",
+        "review checklist incomplete",
+        "grading criteria missing",
+        "evaluation rubric not complete",
+        "AI review lacks required criteria"
+      ],
+      "url": "/workbench/issues/review-rubric-missing-required-criteria/",
+      "markdown_url": "/workbench/issues/review-rubric-missing-required-criteria.md"
     },
     {
       "slug": "revoked-approval-still-treated-as-active",
@@ -3507,6 +3778,50 @@
       "markdown_url": "/workbench/issues/version-change-breaks-existing-prompt.md"
     },
     {
+      "slug": "workflow-stage-has-too-few-checks",
+      "ontology_slug": "workflow-stage-has-too-few-checks",
+      "code": "ISS-0078",
+      "title": "Workflow Stage Has Too Few Checks",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "A workflow stage lacks enough checks, gates, criteria, or review conditions to safely support the work it controls.",
+      "category": "workflow-and-handoffs",
+      "category_title": "Workflow & Handoffs",
+      "primary_cat_code": "CAT-0070",
+      "secondary_cat_codes": [
+        "CAT-0120"
+      ],
+      "primary_pattern": "density-vacuum",
+      "patterns": [
+        "density-vacuum",
+        "incomplete-declaration",
+        "orphaned-structure"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "absence-lens",
+          "compression-lens",
+          "constraint-sufficiency-lens"
+        ],
+        "secondary": [
+          "interface-contract-lens",
+          "propagation-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "workflow stage has too few checks",
+        "AI workflow missing checks",
+        "workflow gate too weak",
+        "not enough review checks",
+        "stage lacks validation",
+        "workflow stage underchecked"
+      ],
+      "url": "/workbench/issues/workflow-stage-has-too-few-checks/",
+      "markdown_url": "/workbench/issues/workflow-stage-has-too-few-checks.md"
+    },
+    {
       "slug": "workflow-step-has-no-decision-owner",
       "ontology_slug": "workflow-step-has-no-decision-owner",
       "code": "ISS-0013",
@@ -3551,6 +3866,51 @@
       ],
       "url": "/workbench/issues/workflow-step-has-no-decision-owner/",
       "markdown_url": "/workbench/issues/workflow-step-has-no-decision-owner.md"
+    },
+    {
+      "slug": "workflow-step-lacks-required-conditions",
+      "ontology_slug": "workflow-step-lacks-required-conditions",
+      "code": "ISS-0073",
+      "title": "Workflow Step Lacks Required Conditions",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "A workflow step can run, route, approve, reject, or continue without the required conditions being declared or checked.",
+      "category": "workflow-and-handoffs",
+      "category_title": "Workflow & Handoffs",
+      "primary_cat_code": "CAT-0070",
+      "secondary_cat_codes": [
+        "CAT-0120"
+      ],
+      "primary_pattern": "incomplete-declaration",
+      "patterns": [
+        "incomplete-declaration",
+        "constraints-underspecified",
+        "orphaned-structure"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "absence-lens",
+          "constraint-sufficiency-lens"
+        ],
+        "secondary": [
+          "determinism-lens",
+          "interface-contract-lens",
+          "propagation-lens",
+          "variance-entropy-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "workflow step lacks required conditions",
+        "AI workflow missing required conditions",
+        "step runs without checks",
+        "workflow condition missing",
+        "AI workflow skipped required condition",
+        "required conditions not declared"
+      ],
+      "url": "/workbench/issues/workflow-step-lacks-required-conditions/",
+      "markdown_url": "/workbench/issues/workflow-step-lacks-required-conditions.md"
     },
     {
       "slug": "wrong-field-types",
@@ -3850,7 +4210,8 @@
           "action-changed-something-else-too",
           "ai-touches-unrelated-scope",
           "hidden-rule-overrides-visible-instruction",
-          "policy-exception-spreads-too-far"
+          "policy-exception-spreads-too-far",
+          "prompt-does-not-say-what-to-exclude"
         ]
       },
       "url": "/workbench/patterns/boundary-leakage/",
@@ -3942,19 +4303,24 @@
       "issues": {
         "primary": [
           "format-rule-too-weak",
+          "prompt-does-not-say-what-to-exclude",
           "prompt-has-too-many-valid-interpretations"
         ],
         "supporting": [
           "ai-forgets-earlier-constraints",
           "answer-has-too-many-paths",
+          "diagnostic-area-has-no-coverage",
           "invalid-json-output",
+          "missing-fallback-for-unavailable-information",
           "output-exceeds-length-limit",
           "prompt-only-works-after-retry",
           "repeated-constraints-create-confusion",
           "results-vary-too-much",
+          "review-rubric-missing-required-criteria",
           "same-instructions-allow-different-outputs",
           "task-has-no-clear-limit",
-          "tool-exists-but-required-inputs-are-missing"
+          "tool-exists-but-required-inputs-are-missing",
+          "workflow-step-lacks-required-conditions"
         ]
       },
       "url": "/workbench/patterns/constraints-underspecified/",
@@ -4115,10 +4481,15 @@
         ]
       },
       "issues": {
-        "primary": [],
+        "primary": [
+          "diagnostic-area-has-no-coverage",
+          "policy-area-has-no-examples",
+          "workflow-stage-has-too-few-checks"
+        ],
         "supporting": [
           "answer-has-no-traceable-source-link",
-          "missing-required-fields"
+          "missing-required-fields",
+          "review-rubric-missing-required-criteria"
         ]
       },
       "url": "/workbench/patterns/density-vacuum/",
@@ -4214,14 +4585,21 @@
       "issues": {
         "primary": [
           "answer-has-no-traceable-source-link",
+          "missing-fallback-for-unavailable-information",
           "missing-required-fields",
-          "tool-exists-but-required-inputs-are-missing"
+          "relationship-map-has-missing-links",
+          "review-rubric-missing-required-criteria",
+          "tool-exists-but-required-inputs-are-missing",
+          "workflow-step-lacks-required-conditions"
         ],
         "supporting": [
+          "diagnostic-area-has-no-coverage",
           "fallback-authority-is-missing",
           "format-rule-too-weak",
+          "policy-area-has-no-examples",
           "saved-memory-not-used",
           "task-has-no-clear-limit",
+          "workflow-stage-has-too-few-checks",
           "workflow-step-has-no-decision-owner"
         ]
       },
@@ -4321,6 +4699,7 @@
         "supporting": [
           "action-triggered-by-confidence-score",
           "declared-owner-cannot-control-outcome",
+          "missing-fallback-for-unavailable-information",
           "model-output-triggers-unapproved-action",
           "risk-score-triggers-wrong-escalation"
         ]
@@ -4383,8 +4762,11 @@
           "tool-result-not-integrated-correctly"
         ],
         "supporting": [
+          "relationship-map-has-missing-links",
           "task-progress-is-lost-midway",
-          "workflow-step-has-no-decision-owner"
+          "workflow-stage-has-too-few-checks",
+          "workflow-step-has-no-decision-owner",
+          "workflow-step-lacks-required-conditions"
         ]
       },
       "url": "/workbench/patterns/orphaned-structure/",
@@ -4555,7 +4937,9 @@
         "supporting": [
           "answer-has-no-traceable-source-link",
           "file-bounded-task-uses-outside-content",
+          "policy-area-has-no-examples",
           "policy-update-not-reflected-in-output",
+          "relationship-map-has-missing-links",
           "same-contract-name-has-different-meanings",
           "saved-memory-not-used",
           "version-change-breaks-existing-prompt"
@@ -4692,7 +5076,8 @@
           "ai-adds-work-not-requested",
           "ai-touches-unrelated-scope",
           "answer-has-too-many-paths",
-          "hallucinated-fields"
+          "hallucinated-fields",
+          "prompt-does-not-say-what-to-exclude"
         ]
       },
       "url": "/workbench/patterns/unbounded-scope/",
@@ -4783,18 +5168,25 @@
         "action-triggered-by-confidence-score",
         "answer-has-no-traceable-source-link",
         "declared-owner-cannot-control-outcome",
+        "diagnostic-area-has-no-coverage",
         "fallback-authority-is-missing",
         "format-rule-too-weak",
+        "missing-fallback-for-unavailable-information",
         "missing-required-fields",
         "model-output-triggers-unapproved-action",
         "no-owner-for-agent-action",
+        "policy-area-has-no-examples",
+        "relationship-map-has-missing-links",
+        "review-rubric-missing-required-criteria",
         "risk-score-triggers-wrong-escalation",
         "saved-memory-not-used",
         "task-has-no-clear-limit",
         "task-progress-is-lost-midway",
         "tool-exists-but-required-inputs-are-missing",
         "tool-result-not-integrated-correctly",
-        "workflow-step-has-no-decision-owner"
+        "workflow-stage-has-too-few-checks",
+        "workflow-step-has-no-decision-owner",
+        "workflow-step-lacks-required-conditions"
       ],
       "url": "/workbench/lenses/absence-lens/",
       "markdown_url": "/workbench/lenses/absence-lens.md"
@@ -4826,6 +5218,7 @@
         "fallback-authority-is-missing",
         "hidden-rule-overrides-visible-instruction",
         "human-review-and-automation-disagree",
+        "missing-fallback-for-unavailable-information",
         "model-output-triggers-unapproved-action",
         "multiple-policies-say-the-same-thing",
         "no-owner-for-agent-action",
@@ -4878,6 +5271,7 @@
         "output-exceeds-length-limit",
         "policy-exception-spreads-too-far",
         "prompt-changed-but-workflow-did-not",
+        "prompt-does-not-say-what-to-exclude",
         "retrieval-exceeds-evidence-limit",
         "review-outcome-changes-unrelated-environment",
         "risk-score-triggers-wrong-escalation",
@@ -4947,6 +5341,7 @@
         "agent-keeps-expanding-the-task",
         "answer-has-no-traceable-source-link",
         "answer-has-too-many-paths",
+        "diagnostic-area-has-no-coverage",
         "duplicate-fields-with-same-meaning",
         "duplicate-output-sections",
         "missing-required-fields",
@@ -4954,17 +5349,20 @@
         "old-output-expectations-survive-migration",
         "output-breaks-after-model-change",
         "output-exceeds-length-limit",
+        "policy-area-has-no-examples",
         "prompt-behavior-changed-without-version-change",
         "prompt-has-too-many-valid-interpretations",
         "prompt-only-works-after-retry",
         "repeated-constraints-create-confusion",
         "results-vary-too-much",
         "retrieval-exceeds-evidence-limit",
+        "review-rubric-missing-required-criteria",
         "same-instructions-allow-different-outputs",
         "same-rule-declared-in-multiple-places",
         "same-workflow-check-happens-twice",
         "similar-cases-route-to-different-outcomes",
-        "validation-result-changes-on-retry"
+        "validation-result-changes-on-retry",
+        "workflow-stage-has-too-few-checks"
       ],
       "url": "/workbench/lenses/compression-lens/",
       "markdown_url": "/workbench/lenses/compression-lens.md"
@@ -5006,6 +5404,7 @@
         "hidden-rule-overrides-visible-instruction",
         "human-review-and-automation-disagree",
         "invalid-json-output",
+        "missing-fallback-for-unavailable-information",
         "missing-required-fields",
         "model-output-triggers-unapproved-action",
         "multiple-policies-say-the-same-thing",
@@ -5052,22 +5451,30 @@
         "ai-touches-unrelated-scope",
         "answer-has-no-traceable-source-link",
         "answer-has-too-many-paths",
+        "diagnostic-area-has-no-coverage",
         "fallback-authority-is-missing",
         "format-rule-too-weak",
         "hallucinated-fields",
         "invalid-json-output",
+        "missing-fallback-for-unavailable-information",
         "missing-required-fields",
         "output-exceeds-length-limit",
+        "policy-area-has-no-examples",
+        "prompt-does-not-say-what-to-exclude",
         "prompt-has-too-many-valid-interpretations",
         "prompt-only-works-after-retry",
+        "relationship-map-has-missing-links",
         "repeated-constraints-create-confusion",
         "results-vary-too-much",
+        "review-rubric-missing-required-criteria",
         "same-instructions-allow-different-outputs",
         "saved-memory-not-used",
         "task-has-no-clear-limit",
         "too-many-tool-calls",
         "tool-exists-but-required-inputs-are-missing",
-        "workflow-step-has-no-decision-owner"
+        "workflow-stage-has-too-few-checks",
+        "workflow-step-has-no-decision-owner",
+        "workflow-step-lacks-required-conditions"
       ],
       "url": "/workbench/lenses/constraint-sufficiency-lens/",
       "markdown_url": "/workbench/lenses/constraint-sufficiency-lens.md"
@@ -5159,21 +5566,27 @@
         "citation-points-to-wrong-source",
         "context-changes-after-restore",
         "context-leaks-between-tasks",
+        "diagnostic-area-has-no-coverage",
         "file-bounded-task-uses-outside-content",
         "format-rule-too-weak",
         "invalid-json-output",
+        "missing-fallback-for-unavailable-information",
         "old-output-expectations-survive-migration",
         "output-breaks-after-model-change",
         "output-changed-without-declared-change",
         "output-exceeds-length-limit",
+        "policy-area-has-no-examples",
         "policy-update-not-reflected-in-output",
         "prompt-behavior-changed-without-version-change",
         "prompt-changed-but-workflow-did-not",
+        "prompt-does-not-say-what-to-exclude",
         "prompt-has-too-many-valid-interpretations",
         "prompt-only-works-after-retry",
+        "relationship-map-has-missing-links",
         "repeated-constraints-create-confusion",
         "results-vary-too-much",
         "retry-makes-the-problem-worse",
+        "review-rubric-missing-required-criteria",
         "revoked-approval-still-treated-as-active",
         "rubric-changed-but-results-did-not",
         "same-contract-name-has-different-meanings",
@@ -5188,7 +5601,8 @@
         "tool-exists-but-required-inputs-are-missing",
         "tool-result-not-integrated-correctly",
         "validation-result-changes-on-retry",
-        "version-change-breaks-existing-prompt"
+        "version-change-breaks-existing-prompt",
+        "workflow-step-lacks-required-conditions"
       ],
       "url": "/workbench/lenses/determinism-lens/",
       "markdown_url": "/workbench/lenses/determinism-lens.md"
@@ -5229,6 +5643,7 @@
         "multiple-policies-say-the-same-thing",
         "output-exceeds-length-limit",
         "policy-exception-spreads-too-far",
+        "prompt-does-not-say-what-to-exclude",
         "prompt-has-too-many-valid-interpretations",
         "repair-step-created-new-breakage",
         "repeated-constraints-create-confusion",
@@ -5267,17 +5682,22 @@
         "ai-output-breaks-parser",
         "answer-has-no-traceable-source-link",
         "citation-points-to-wrong-source",
+        "diagnostic-area-has-no-coverage",
         "duplicate-fields-with-same-meaning",
         "duplicate-output-sections",
         "fallback-authority-is-missing",
         "format-rule-too-weak",
         "hallucinated-fields",
         "invalid-json-output",
+        "missing-fallback-for-unavailable-information",
         "missing-required-fields",
         "model-and-workflow-disagree-on-next-step",
         "nested-fields-do-not-match",
         "output-breaks-the-next-step",
+        "policy-area-has-no-examples",
         "prompt-changed-but-workflow-did-not",
+        "relationship-map-has-missing-links",
+        "review-rubric-missing-required-criteria",
         "same-contract-name-has-different-meanings",
         "saved-memory-not-used",
         "task-has-no-clear-limit",
@@ -5285,7 +5705,9 @@
         "tool-exists-but-required-inputs-are-missing",
         "tool-result-not-integrated-correctly",
         "validation-result-changes-on-retry",
+        "workflow-stage-has-too-few-checks",
         "workflow-step-has-no-decision-owner",
+        "workflow-step-lacks-required-conditions",
         "wrong-field-types"
       ],
       "url": "/workbench/lenses/interface-contract-lens/",
@@ -5367,6 +5789,7 @@
         "model-output-triggers-unapproved-action",
         "no-owner-for-agent-action",
         "policy-exception-spreads-too-far",
+        "prompt-does-not-say-what-to-exclude",
         "repair-step-created-new-breakage",
         "retrieval-exceeds-evidence-limit",
         "review-outcome-changes-unrelated-environment",
@@ -5494,6 +5917,8 @@
         "model-output-triggers-unapproved-action",
         "no-owner-for-agent-action",
         "policy-exception-spreads-too-far",
+        "prompt-does-not-say-what-to-exclude",
+        "relationship-map-has-missing-links",
         "repair-step-created-new-breakage",
         "retrieval-exceeds-evidence-limit",
         "retry-makes-the-problem-worse",
@@ -5502,7 +5927,9 @@
         "task-progress-is-lost-midway",
         "too-many-tool-calls",
         "tool-result-not-integrated-correctly",
-        "workflow-step-has-no-decision-owner"
+        "workflow-stage-has-too-few-checks",
+        "workflow-step-has-no-decision-owner",
+        "workflow-step-lacks-required-conditions"
       ],
       "url": "/workbench/lenses/propagation-lens/",
       "markdown_url": "/workbench/lenses/propagation-lens.md"
@@ -5567,6 +5994,7 @@
         "fallback-authority-is-missing",
         "hidden-rule-overrides-visible-instruction",
         "human-review-and-automation-disagree",
+        "missing-fallback-for-unavailable-information",
         "model-and-workflow-disagree-on-next-step",
         "model-output-triggers-unapproved-action",
         "multiple-policies-say-the-same-thing",
@@ -5631,9 +6059,11 @@
         "no-owner-for-agent-action",
         "old-output-expectations-survive-migration",
         "output-changed-without-declared-change",
+        "policy-area-has-no-examples",
         "policy-update-not-reflected-in-output",
         "prompt-behavior-changed-without-version-change",
         "prompt-only-works-after-retry",
+        "relationship-map-has-missing-links",
         "results-vary-too-much",
         "retry-makes-the-problem-worse",
         "revoked-approval-still-treated-as-active",
@@ -5682,17 +6112,20 @@
         "ai-forgets-earlier-constraints",
         "answer-has-too-many-paths",
         "context-leaks-between-tasks",
+        "diagnostic-area-has-no-coverage",
         "duplicate-fields-with-same-meaning",
         "duplicate-output-sections",
         "format-rule-too-weak",
         "human-review-and-automation-disagree",
         "invalid-json-output",
+        "missing-fallback-for-unavailable-information",
         "model-output-triggers-unapproved-action",
         "multiple-policies-say-the-same-thing",
         "output-breaks-after-model-change",
         "output-exceeds-length-limit",
         "policy-exception-spreads-too-far",
         "prompt-behavior-changed-without-version-change",
+        "prompt-does-not-say-what-to-exclude",
         "prompt-has-too-many-valid-interpretations",
         "prompt-only-works-after-retry",
         "repair-step-created-new-breakage",
@@ -5701,6 +6134,7 @@
         "retrieval-exceeds-evidence-limit",
         "retry-makes-the-problem-worse",
         "review-outcome-changes-unrelated-environment",
+        "review-rubric-missing-required-criteria",
         "risk-score-triggers-wrong-escalation",
         "same-instructions-allow-different-outputs",
         "same-rule-declared-in-multiple-places",
@@ -5710,7 +6144,8 @@
         "task-progress-is-lost-midway",
         "too-many-tool-calls",
         "tool-exists-but-required-inputs-are-missing",
-        "validation-result-changes-on-retry"
+        "validation-result-changes-on-retry",
+        "workflow-step-lacks-required-conditions"
       ],
       "url": "/workbench/lenses/variance-entropy-lens/",
       "markdown_url": "/workbench/lenses/variance-entropy-lens.md"
@@ -5790,12 +6225,24 @@
       "updated_at": "2026-05-10T00:00:00Z",
       "summary": "Problems where prompts, rubrics, diagnostics, fallback rules, examples, requirements, or relationship maps are incomplete, underspecified, or missing needed guidance.",
       "issues": [
+        "diagnostic-area-has-no-coverage",
         "format-rule-too-weak",
-        "prompt-has-too-many-valid-interpretations"
+        "missing-fallback-for-unavailable-information",
+        "policy-area-has-no-examples",
+        "prompt-does-not-say-what-to-exclude",
+        "prompt-has-too-many-valid-interpretations",
+        "relationship-map-has-missing-links",
+        "review-rubric-missing-required-criteria"
       ],
       "primary_issues": [
+        "diagnostic-area-has-no-coverage",
         "format-rule-too-weak",
-        "prompt-has-too-many-valid-interpretations"
+        "missing-fallback-for-unavailable-information",
+        "policy-area-has-no-examples",
+        "prompt-does-not-say-what-to-exclude",
+        "prompt-has-too-many-valid-interpretations",
+        "relationship-map-has-missing-links",
+        "review-rubric-missing-required-criteria"
       ],
       "secondary_issues": [
         "answer-has-no-traceable-source-link",
@@ -5803,7 +6250,9 @@
         "missing-required-fields",
         "same-instructions-allow-different-outputs",
         "saved-memory-not-used",
-        "tool-exists-but-required-inputs-are-missing"
+        "tool-exists-but-required-inputs-are-missing",
+        "workflow-stage-has-too-few-checks",
+        "workflow-step-lacks-required-conditions"
       ],
       "url": "/workbench/categories/coverage-and-guidance/"
     },
@@ -6019,6 +6468,7 @@
         "conflicting-instructions-from-different-authorities",
         "hidden-rule-overrides-visible-instruction",
         "human-review-and-automation-disagree",
+        "missing-fallback-for-unavailable-information",
         "risk-score-triggers-wrong-escalation",
         "same-case-has-conflicting-policies",
         "workflow-step-has-no-decision-owner"
@@ -6055,6 +6505,7 @@
         "model-and-workflow-disagree-on-next-step",
         "multiple-policies-say-the-same-thing",
         "permissions-conflict-after-being-combined",
+        "policy-area-has-no-examples",
         "policy-exception-spreads-too-far",
         "repeated-constraints-create-confusion",
         "same-contract-name-has-different-meanings",
@@ -6092,6 +6543,7 @@
         "answer-has-too-many-paths",
         "context-leaks-between-tasks",
         "hallucinated-fields",
+        "prompt-does-not-say-what-to-exclude",
         "too-many-tool-calls"
       ],
       "url": "/workbench/categories/scope-and-boundaries/"
@@ -6139,18 +6591,24 @@
         "human-review-and-automation-disagree",
         "model-and-workflow-disagree-on-next-step",
         "review-outcome-changes-unrelated-environment",
-        "workflow-step-has-no-decision-owner"
+        "workflow-stage-has-too-few-checks",
+        "workflow-step-has-no-decision-owner",
+        "workflow-step-lacks-required-conditions"
       ],
       "primary_issues": [
         "human-review-and-automation-disagree",
         "model-and-workflow-disagree-on-next-step",
         "review-outcome-changes-unrelated-environment",
-        "workflow-step-has-no-decision-owner"
+        "workflow-stage-has-too-few-checks",
+        "workflow-step-has-no-decision-owner",
+        "workflow-step-lacks-required-conditions"
       ],
       "secondary_issues": [
         "fallback-authority-is-missing",
         "prompt-changed-but-workflow-did-not",
+        "relationship-map-has-missing-links",
         "repair-step-created-new-breakage",
+        "review-rubric-missing-required-criteria",
         "rubric-changed-but-results-did-not",
         "same-workflow-check-happens-twice",
         "task-progress-is-lost-midway",

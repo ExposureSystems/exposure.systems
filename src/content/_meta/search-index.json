@@ -741,6 +741,47 @@
     },
     {
       "type": "issue",
+      "slug": "diagnostic-area-has-no-coverage",
+      "ontology_slug": "diagnostic-area-has-no-coverage",
+      "code": "ISS-0077",
+      "title": "Diagnostic Area Has No Coverage",
+      "summary": "A known diagnostic area, failure mode, requirement, or review dimension has no Issue, check, rubric item, or workflow coverage.",
+      "url": "/workbench/issues/diagnostic-area-has-no-coverage/",
+      "category": "coverage-and-guidance",
+      "category_title": "Coverage & Guidance",
+      "primary_cat_code": "CAT-0120",
+      "secondary_cat_codes": [],
+      "primary_pattern": "density-vacuum",
+      "patterns": [
+        "density-vacuum",
+        "incomplete-declaration",
+        "constraints-underspecified"
+      ],
+      "lenses": {
+        "primary": [
+          "absence-lens",
+          "compression-lens",
+          "constraint-sufficiency-lens"
+        ],
+        "secondary": [
+          "determinism-lens",
+          "interface-contract-lens",
+          "variance-entropy-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "diagnostic area has no coverage",
+        "missing diagnostic coverage",
+        "no check for this AI issue",
+        "workflow does not cover failure mode",
+        "review has coverage gap",
+        "AI diagnosis missing area"
+      ],
+      "text": "A known diagnostic area, failure mode, requirement, or review dimension has no Issue, check, rubric item, or workflow coverage. AI diagnosis missing area CAT-0120 Coverage & Guidance Diagnostic Area Has No Coverage ISS-0077 absence-lens compression-lens constraint-sufficiency-lens constraints-underspecified coverage-and-guidance density-vacuum determinism-lens diagnostic area has no coverage incomplete-declaration interface-contract-lens missing diagnostic coverage no check for this AI issue review has coverage gap variance-entropy-lens workflow does not cover failure mode"
+    },
+    {
+      "type": "issue",
       "slug": "duplicate-fields-with-same-meaning",
       "ontology_slug": "duplicate-fields-with-same-meaning",
       "code": "ISS-0027",
@@ -1136,6 +1177,51 @@
         "malformed structured output"
       ],
       "text": "AI gave JSON that will not parse AI invalid JSON CAT-0010 ChatGPT malformed JSON ISS-0021 Invalid JSON Output JSON parse error AI output LLM output invalid JSON Output The AI returns malformed JSON or structured output that cannot be parsed. conflict-lens constraint-sufficiency-lens constraints-underspecified determinism-lens interface-contract-lens interface-mismatch invariant-lens malformed structured output normalization-lens output runtime-behavior-does-not-match-docs schema-breakage variance-entropy-lens"
+    },
+    {
+      "type": "issue",
+      "slug": "missing-fallback-for-unavailable-information",
+      "ontology_slug": "missing-fallback-for-unavailable-information",
+      "code": "ISS-0074",
+      "title": "Missing Fallback for Unavailable Information",
+      "summary": "The task does not declare what the AI should do when required information, sources, tools, fields, or evidence are unavailable.",
+      "url": "/workbench/issues/missing-fallback-for-unavailable-information/",
+      "category": "coverage-and-guidance",
+      "category_title": "Coverage & Guidance",
+      "primary_cat_code": "CAT-0120",
+      "secondary_cat_codes": [
+        "CAT-0050"
+      ],
+      "primary_pattern": "incomplete-declaration",
+      "patterns": [
+        "incomplete-declaration",
+        "missing-authority",
+        "constraints-underspecified"
+      ],
+      "lenses": {
+        "primary": [
+          "absence-lens",
+          "authority-overlay-lens",
+          "constraint-sufficiency-lens"
+        ],
+        "secondary": [
+          "conflict-lens",
+          "determinism-lens",
+          "interface-contract-lens",
+          "reconciliation-lens",
+          "variance-entropy-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "missing fallback for unavailable information",
+        "AI does not know what to do when information missing",
+        "no fallback when source unavailable",
+        "missing information fallback",
+        "AI guesses when information unavailable",
+        "no rule for unavailable evidence"
+      ],
+      "text": "AI does not know what to do when information missing AI guesses when information unavailable CAT-0050 CAT-0120 Coverage & Guidance ISS-0074 Missing Fallback for Unavailable Information The task does not declare what the AI should do when required information, sources, tools, fields, or evidence are unavailable. absence-lens authority-overlay-lens conflict-lens constraint-sufficiency-lens constraints-underspecified coverage-and-guidance determinism-lens incomplete-declaration interface-contract-lens missing fallback for unavailable information missing information fallback missing-authority no fallback when source unavailable no rule for unavailable evidence reconciliation-lens variance-entropy-lens"
     },
     {
       "type": "issue",
@@ -1659,6 +1745,49 @@
     },
     {
       "type": "issue",
+      "slug": "policy-area-has-no-examples",
+      "ontology_slug": "policy-area-has-no-examples",
+      "code": "ISS-0079",
+      "title": "Policy Area Has No Examples",
+      "summary": "A policy, rule, standard, or guidance area has no examples showing how it should apply to real cases.",
+      "url": "/workbench/issues/policy-area-has-no-examples/",
+      "category": "coverage-and-guidance",
+      "category_title": "Coverage & Guidance",
+      "primary_cat_code": "CAT-0120",
+      "secondary_cat_codes": [
+        "CAT-0060"
+      ],
+      "primary_pattern": "density-vacuum",
+      "patterns": [
+        "density-vacuum",
+        "incomplete-declaration",
+        "reference-instability"
+      ],
+      "lenses": {
+        "primary": [
+          "absence-lens",
+          "compression-lens",
+          "constraint-sufficiency-lens",
+          "reference-stability-lens"
+        ],
+        "secondary": [
+          "determinism-lens",
+          "interface-contract-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "policy area has no examples",
+        "AI policy lacks examples",
+        "no examples for policy rule",
+        "policy guidance has no cases",
+        "missing examples for AI review",
+        "policy hard to apply without examples"
+      ],
+      "text": "A policy, rule, standard, or guidance area has no examples showing how it should apply to real cases. AI policy lacks examples CAT-0060 CAT-0120 Coverage & Guidance ISS-0079 Policy Area Has No Examples absence-lens compression-lens constraint-sufficiency-lens coverage-and-guidance density-vacuum determinism-lens incomplete-declaration interface-contract-lens missing examples for AI review no examples for policy rule policy area has no examples policy guidance has no cases policy hard to apply without examples reference-instability reference-stability-lens"
+    },
+    {
+      "type": "issue",
       "slug": "policy-exception-spreads-too-far",
       "ontology_slug": "policy-exception-spreads-too-far",
       "code": "ISS-0049",
@@ -1831,6 +1960,50 @@
     },
     {
       "type": "issue",
+      "slug": "prompt-does-not-say-what-to-exclude",
+      "ontology_slug": "prompt-does-not-say-what-to-exclude",
+      "code": "ISS-0076",
+      "title": "Prompt Does Not Say What to Exclude",
+      "summary": "The prompt declares what to include but does not declare what should be excluded, allowing unwanted scope, sources, content, or actions into the result.",
+      "url": "/workbench/issues/prompt-does-not-say-what-to-exclude/",
+      "category": "coverage-and-guidance",
+      "category_title": "Coverage & Guidance",
+      "primary_cat_code": "CAT-0120",
+      "secondary_cat_codes": [
+        "CAT-0100"
+      ],
+      "primary_pattern": "constraints-underspecified",
+      "patterns": [
+        "constraints-underspecified",
+        "boundary-leakage",
+        "unbounded-scope"
+      ],
+      "lenses": {
+        "primary": [
+          "constraint-sufficiency-lens",
+          "isolation-boundary-lens",
+          "propagation-lens"
+        ],
+        "secondary": [
+          "boundary-compliance-lens",
+          "determinism-lens",
+          "escalation-gradient-lens",
+          "variance-entropy-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "prompt does not say what to exclude",
+        "AI included things I did not want",
+        "missing exclusion rule",
+        "prompt only says what to include",
+        "AI used unwanted content",
+        "need to tell AI what not to include"
+      ],
+      "text": "AI included things I did not want AI used unwanted content CAT-0100 CAT-0120 Coverage & Guidance ISS-0076 Prompt Does Not Say What to Exclude The prompt declares what to include but does not declare what should be excluded, allowing unwanted scope, sources, content, or actions into the result. boundary-compliance-lens boundary-leakage constraint-sufficiency-lens constraints-underspecified coverage-and-guidance determinism-lens escalation-gradient-lens isolation-boundary-lens missing exclusion rule need to tell AI what not to include prompt does not say what to exclude prompt only says what to include propagation-lens unbounded-scope variance-entropy-lens"
+    },
+    {
+      "type": "issue",
       "slug": "prompt-has-too-many-valid-interpretations",
       "ontology_slug": "prompt-has-too-many-valid-interpretations",
       "code": "ISS-0071",
@@ -1912,6 +2085,49 @@
         "AI response changes after retry"
       ],
       "text": "AI only works when I try again AI response changes after retry CAT-0090 ISS-0005 Inconsistent Behavior Prompt Only Works After Retry The prompt fails, misroutes, or produces an unusable response on one attempt but works after retry without a meaningful change to the input. compression-lens constraint-sufficiency-lens constraints-underspecified convergence-lens determinism-lens divergent-outputs inconsistent-behavior non-deterministic-execution prompt fails randomly prompt only works after retry reference-stability-lens retry fixes AI answer same prompt works on second try variance-entropy-lens"
+    },
+    {
+      "type": "issue",
+      "slug": "relationship-map-has-missing-links",
+      "ontology_slug": "relationship-map-has-missing-links",
+      "code": "ISS-0080",
+      "title": "Relationship Map Has Missing Links",
+      "summary": "A map of related Issues, rules, patterns, cases, fields, tools, or workflow steps is missing links needed to navigate or reason over the structure.",
+      "url": "/workbench/issues/relationship-map-has-missing-links/",
+      "category": "coverage-and-guidance",
+      "category_title": "Coverage & Guidance",
+      "primary_cat_code": "CAT-0120",
+      "secondary_cat_codes": [
+        "CAT-0070"
+      ],
+      "primary_pattern": "incomplete-declaration",
+      "patterns": [
+        "incomplete-declaration",
+        "orphaned-structure",
+        "reference-instability"
+      ],
+      "lenses": {
+        "primary": [
+          "absence-lens",
+          "constraint-sufficiency-lens",
+          "reference-stability-lens"
+        ],
+        "secondary": [
+          "determinism-lens",
+          "interface-contract-lens",
+          "propagation-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "relationship map has missing links",
+        "missing links in issue map",
+        "AI relationship map incomplete",
+        "related items not connected",
+        "workflow map missing relationships",
+        "ontology links missing"
+      ],
+      "text": "A map of related Issues, rules, patterns, cases, fields, tools, or workflow steps is missing links needed to navigate or reason over the structure. AI relationship map incomplete CAT-0070 CAT-0120 Coverage & Guidance ISS-0080 Relationship Map Has Missing Links absence-lens constraint-sufficiency-lens coverage-and-guidance determinism-lens incomplete-declaration interface-contract-lens missing links in issue map ontology links missing orphaned-structure propagation-lens reference-instability reference-stability-lens related items not connected relationship map has missing links workflow map missing relationships"
     },
     {
       "type": "issue",
@@ -2169,6 +2385,49 @@
         "review outcome propagated too far"
       ],
       "text": "A review result, approval, rejection, or classification changes state outside the environment, case, file, or workflow it was meant to govern. AI classification affected another case AI review affected other environment CAT-0070 CAT-0110 ISS-0051 Review Outcome Changes Unrelated Environment Workflow & Handoffs approval changed unrelated workflow boundary-compliance-lens boundary-leakage escalation-gradient-lens isolation-boundary-lens overreach-lens propagation-amplification propagation-lens review outcome changes unrelated environment review outcome propagated too far review result caused side effect undeclared-side-effect variance-entropy-lens workflow-and-handoffs"
+    },
+    {
+      "type": "issue",
+      "slug": "review-rubric-missing-required-criteria",
+      "ontology_slug": "review-rubric-missing-required-criteria",
+      "code": "ISS-0075",
+      "title": "Review Rubric Missing Required Criteria",
+      "summary": "A review rubric, grading rule, evaluation checklist, or classification standard lacks criteria required to make the review reliable.",
+      "url": "/workbench/issues/review-rubric-missing-required-criteria/",
+      "category": "coverage-and-guidance",
+      "category_title": "Coverage & Guidance",
+      "primary_cat_code": "CAT-0120",
+      "secondary_cat_codes": [
+        "CAT-0070"
+      ],
+      "primary_pattern": "incomplete-declaration",
+      "patterns": [
+        "incomplete-declaration",
+        "density-vacuum",
+        "constraints-underspecified"
+      ],
+      "lenses": {
+        "primary": [
+          "absence-lens",
+          "compression-lens",
+          "constraint-sufficiency-lens"
+        ],
+        "secondary": [
+          "determinism-lens",
+          "interface-contract-lens",
+          "variance-entropy-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "review rubric missing required criteria",
+        "AI rubric missing criteria",
+        "review checklist incomplete",
+        "grading criteria missing",
+        "evaluation rubric not complete",
+        "AI review lacks required criteria"
+      ],
+      "text": "A review rubric, grading rule, evaluation checklist, or classification standard lacks criteria required to make the review reliable. AI review lacks required criteria AI rubric missing criteria CAT-0070 CAT-0120 Coverage & Guidance ISS-0075 Review Rubric Missing Required Criteria absence-lens compression-lens constraint-sufficiency-lens constraints-underspecified coverage-and-guidance density-vacuum determinism-lens evaluation rubric not complete grading criteria missing incomplete-declaration interface-contract-lens review checklist incomplete review rubric missing required criteria variance-entropy-lens"
     },
     {
       "type": "issue",
@@ -3036,6 +3295,48 @@
     },
     {
       "type": "issue",
+      "slug": "workflow-stage-has-too-few-checks",
+      "ontology_slug": "workflow-stage-has-too-few-checks",
+      "code": "ISS-0078",
+      "title": "Workflow Stage Has Too Few Checks",
+      "summary": "A workflow stage lacks enough checks, gates, criteria, or review conditions to safely support the work it controls.",
+      "url": "/workbench/issues/workflow-stage-has-too-few-checks/",
+      "category": "workflow-and-handoffs",
+      "category_title": "Workflow & Handoffs",
+      "primary_cat_code": "CAT-0070",
+      "secondary_cat_codes": [
+        "CAT-0120"
+      ],
+      "primary_pattern": "density-vacuum",
+      "patterns": [
+        "density-vacuum",
+        "incomplete-declaration",
+        "orphaned-structure"
+      ],
+      "lenses": {
+        "primary": [
+          "absence-lens",
+          "compression-lens",
+          "constraint-sufficiency-lens"
+        ],
+        "secondary": [
+          "interface-contract-lens",
+          "propagation-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "workflow stage has too few checks",
+        "AI workflow missing checks",
+        "workflow gate too weak",
+        "not enough review checks",
+        "stage lacks validation",
+        "workflow stage underchecked"
+      ],
+      "text": "A workflow stage lacks enough checks, gates, criteria, or review conditions to safely support the work it controls. AI workflow missing checks CAT-0070 CAT-0120 ISS-0078 Workflow & Handoffs Workflow Stage Has Too Few Checks absence-lens compression-lens constraint-sufficiency-lens density-vacuum incomplete-declaration interface-contract-lens not enough review checks orphaned-structure propagation-lens stage lacks validation workflow gate too weak workflow stage has too few checks workflow stage underchecked workflow-and-handoffs"
+    },
+    {
+      "type": "issue",
       "slug": "workflow-step-has-no-decision-owner",
       "ontology_slug": "workflow-step-has-no-decision-owner",
       "code": "ISS-0013",
@@ -3077,6 +3378,49 @@
         "unclear who decides next step"
       ],
       "text": "A workflow step requires a decision, approval, judgment, or routing choice, but no owner is declared for making it. AI workflow has no approver CAT-0050 CAT-0070 ISS-0013 Workflow & Handoffs Workflow Step Has No Decision Owner absence-lens authority-overlay-lens conflict-lens constraint-sufficiency-lens handoff has no decision owner incomplete-declaration interface-contract-lens missing-authority no one owns the workflow decision orphaned-structure propagation-lens reconciliation-lens unclear who decides next step workflow step has no decision owner workflow step needs approval but owner missing workflow-and-handoffs"
+    },
+    {
+      "type": "issue",
+      "slug": "workflow-step-lacks-required-conditions",
+      "ontology_slug": "workflow-step-lacks-required-conditions",
+      "code": "ISS-0073",
+      "title": "Workflow Step Lacks Required Conditions",
+      "summary": "A workflow step can run, route, approve, reject, or continue without the required conditions being declared or checked.",
+      "url": "/workbench/issues/workflow-step-lacks-required-conditions/",
+      "category": "workflow-and-handoffs",
+      "category_title": "Workflow & Handoffs",
+      "primary_cat_code": "CAT-0070",
+      "secondary_cat_codes": [
+        "CAT-0120"
+      ],
+      "primary_pattern": "incomplete-declaration",
+      "patterns": [
+        "incomplete-declaration",
+        "constraints-underspecified",
+        "orphaned-structure"
+      ],
+      "lenses": {
+        "primary": [
+          "absence-lens",
+          "constraint-sufficiency-lens"
+        ],
+        "secondary": [
+          "determinism-lens",
+          "interface-contract-lens",
+          "propagation-lens",
+          "variance-entropy-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "workflow step lacks required conditions",
+        "AI workflow missing required conditions",
+        "step runs without checks",
+        "workflow condition missing",
+        "AI workflow skipped required condition",
+        "required conditions not declared"
+      ],
+      "text": "A workflow step can run, route, approve, reject, or continue without the required conditions being declared or checked. AI workflow missing required conditions AI workflow skipped required condition CAT-0070 CAT-0120 ISS-0073 Workflow & Handoffs Workflow Step Lacks Required Conditions absence-lens constraint-sufficiency-lens constraints-underspecified determinism-lens incomplete-declaration interface-contract-lens orphaned-structure propagation-lens required conditions not declared step runs without checks variance-entropy-lens workflow condition missing workflow step lacks required conditions workflow-and-handoffs"
     },
     {
       "type": "issue",
@@ -3204,9 +3548,9 @@
         "ontology_slug": "coverage-and-guidance",
         "code": "CAT-0120",
         "title": "Coverage & Guidance",
-        "count": 8,
-        "primary_count": 2,
-        "secondary_count": 6
+        "count": 16,
+        "primary_count": 8,
+        "secondary_count": 8
       },
       {
         "slug": "duplication-and-overload",
@@ -3267,27 +3611,27 @@
         "ontology_slug": "permissions-and-approvals",
         "code": "CAT-0050",
         "title": "Permissions & Approvals",
-        "count": 14,
+        "count": 15,
         "primary_count": 8,
-        "secondary_count": 6
+        "secondary_count": 7
       },
       {
         "slug": "rules-and-policies",
         "ontology_slug": "rules-and-policies",
         "code": "CAT-0060",
         "title": "Rules & Policies",
-        "count": 15,
+        "count": 16,
         "primary_count": 5,
-        "secondary_count": 10
+        "secondary_count": 11
       },
       {
         "slug": "scope-and-boundaries",
         "ontology_slug": "scope-and-boundaries",
         "code": "CAT-0100",
         "title": "Scope & Boundaries",
-        "count": 12,
+        "count": 13,
         "primary_count": 5,
-        "secondary_count": 7
+        "secondary_count": 8
       },
       {
         "slug": "spread-and-escalation",
@@ -3303,9 +3647,9 @@
         "ontology_slug": "workflow-and-handoffs",
         "code": "CAT-0070",
         "title": "Workflow & Handoffs",
-        "count": 11,
-        "primary_count": 4,
-        "secondary_count": 7
+        "count": 15,
+        "primary_count": 6,
+        "secondary_count": 9
       }
     ],
     "patterns": [
@@ -3349,7 +3693,7 @@
         "ontology_slug": "boundary-leakage",
         "code": "PAT-0140",
         "title": "Boundary Leakage",
-        "count": 9
+        "count": 10
       },
       {
         "slug": "circular-dependency",
@@ -3370,7 +3714,7 @@
         "ontology_slug": "constraints-underspecified",
         "code": "PAT-0170",
         "title": "Constraints Underspecified",
-        "count": 12
+        "count": 17
       },
       {
         "slug": "contract-drift",
@@ -3405,7 +3749,7 @@
         "ontology_slug": "density-vacuum",
         "code": "PAT-0280",
         "title": "Density Vacuum",
-        "count": 2
+        "count": 6
       },
       {
         "slug": "divergent-outputs",
@@ -3426,7 +3770,7 @@
         "ontology_slug": "incomplete-declaration",
         "code": "PAT-0130",
         "title": "Incomplete Declaration",
-        "count": 8
+        "count": 15
       },
       {
         "slug": "interface-mismatch",
@@ -3447,7 +3791,7 @@
         "ontology_slug": "missing-authority",
         "code": "PAT-0120",
         "title": "Missing Authority",
-        "count": 7
+        "count": 8
       },
       {
         "slug": "non-deterministic-execution",
@@ -3461,7 +3805,7 @@
         "ontology_slug": "orphaned-structure",
         "code": "PAT-0310",
         "title": "Orphaned Structure",
-        "count": 3
+        "count": 6
       },
       {
         "slug": "overreach",
@@ -3496,7 +3840,7 @@
         "ontology_slug": "reference-instability",
         "code": "PAT-0200",
         "title": "Reference Instability",
-        "count": 8
+        "count": 10
       },
       {
         "slug": "schema-breakage",
@@ -3524,7 +3868,7 @@
         "ontology_slug": "unbounded-scope",
         "code": "PAT-0400",
         "title": "Unbounded Scope",
-        "count": 6
+        "count": 7
       },
       {
         "slug": "unconstrained-expansion",
@@ -3547,21 +3891,21 @@
         "ontology_slug": "absence-lens",
         "code": "LEN-0100",
         "title": "Absence Lens",
-        "count": 15
+        "count": 22
       },
       {
         "slug": "authority-overlay-lens",
         "ontology_slug": "authority-overlay-lens",
         "code": "LEN-0110",
         "title": "Authority Overlay Lens",
-        "count": 14
+        "count": 15
       },
       {
         "slug": "boundary-compliance-lens",
         "ontology_slug": "boundary-compliance-lens",
         "code": "LEN-0120",
         "title": "Boundary Compliance Lens",
-        "count": 29
+        "count": 30
       },
       {
         "slug": "compatibility-envelope-lens",
@@ -3575,21 +3919,21 @@
         "ontology_slug": "compression-lens",
         "code": "LEN-0140",
         "title": "Compression Lens",
-        "count": 21
+        "count": 25
       },
       {
         "slug": "conflict-lens",
         "ontology_slug": "conflict-lens",
         "code": "LEN-0150",
         "title": "Conflict Lens",
-        "count": 30
+        "count": 31
       },
       {
         "slug": "constraint-sufficiency-lens",
         "ontology_slug": "constraint-sufficiency-lens",
         "code": "LEN-0160",
         "title": "Constraint Sufficiency Lens",
-        "count": 21
+        "count": 29
       },
       {
         "slug": "convergence-lens",
@@ -3603,21 +3947,21 @@
         "ontology_slug": "determinism-lens",
         "code": "LEN-0180",
         "title": "Determinism Lens",
-        "count": 37
+        "count": 44
       },
       {
         "slug": "escalation-gradient-lens",
         "ontology_slug": "escalation-gradient-lens",
         "code": "LEN-0190",
         "title": "Escalation Gradient Lens",
-        "count": 25
+        "count": 26
       },
       {
         "slug": "interface-contract-lens",
         "ontology_slug": "interface-contract-lens",
         "code": "LEN-0200",
         "title": "Interface Contract Lens",
-        "count": 23
+        "count": 30
       },
       {
         "slug": "invariant-lens",
@@ -3631,7 +3975,7 @@
         "ontology_slug": "isolation-boundary-lens",
         "code": "LEN-0220",
         "title": "Isolation Boundary Lens",
-        "count": 17
+        "count": 18
       },
       {
         "slug": "normalization-lens",
@@ -3652,7 +3996,7 @@
         "ontology_slug": "propagation-lens",
         "code": "LEN-0250",
         "title": "Propagation Lens",
-        "count": 24
+        "count": 28
       },
       {
         "slug": "provenance-trace-lens",
@@ -3666,21 +4010,21 @@
         "ontology_slug": "reconciliation-lens",
         "code": "LEN-0270",
         "title": "Reconciliation Lens",
-        "count": 36
+        "count": 37
       },
       {
         "slug": "reference-stability-lens",
         "ontology_slug": "reference-stability-lens",
         "code": "LEN-0280",
         "title": "Reference Stability Lens",
-        "count": 30
+        "count": 32
       },
       {
         "slug": "variance-entropy-lens",
         "ontology_slug": "variance-entropy-lens",
         "code": "LEN-0290",
         "title": "Variance / Entropy Lens",
-        "count": 35
+        "count": 40
       }
     ]
   }
