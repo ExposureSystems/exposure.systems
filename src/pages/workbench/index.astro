@@ -5,6 +5,7 @@ const issueCount = ontologyIndex.issues.length;
 const patternCount = ontologyIndex.patterns.length;
 const lensCount = ontologyIndex.lenses.length;
 const categoryCount = ontologyIndex.categories.length;
+const aiAdjIssueCount = ontologyIndex.ai_adj_issues?.length ?? 0;
 
 const sections = [
   {
@@ -74,17 +75,17 @@ const sections = [
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Pengo AI Structural Workbench</title>
+    <title>Pengo Workbench</title>
     <meta
       name="description"
-      content="A practical workbench for inspecting where AI work loses structure."
+      content="A practical workbench for inspecting where AI work and systems lose structure."
     />
   </head>
   <body>
     <main>
       <p><a href="/">Home</a></p>
 
-      <h1>Pengo AI Structural Workbench</h1>
+      <h1>Pengo  Workbench</h1>
 
       <p><strong>Stop waiting for AI to magically get better.</strong></p>
 
@@ -104,6 +105,7 @@ const sections = [
 
         <ul>
           <li>Issues: {issueCount}</li>
+          <li>AI-Adjacent Issues: {aiAdjIssueCount}</li>
           <li>Patterns: {patternCount}</li>
           <li>Lenses: {lensCount}</li>
           <li>Categories: {categoryCount}</li>
@@ -129,7 +131,7 @@ const sections = [
         <p>
           The Workbench is not a chatbot, risk score, or governance platform. It
           is a structured set of protocols, indexes, examples, field notes, and
-          machine-readable references for inspecting where AI work loses structure.
+          machine-readable references for inspecting where AI work and systems lose structure.
         </p>
       </section>
     </main>
