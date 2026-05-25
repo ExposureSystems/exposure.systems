@@ -39,6 +39,6 @@ The visible failure looks like the agent is calling the tool incorrectly. In man
 - Whether downstream parsers still expect the old response shape
 - Whether the workflow records which tool schema version it expects
 
-## Boundary
+## When This Is AI-Adjacent
 
 Use this AI-Adjacent Issue when the agent is operating from an outdated tool schema. If the schema is current but the agent still sends the wrong call shape, use the related Workbench Issue for tool call contract mismatch. If the prompt changed but the workflow did not, use that related Issue.

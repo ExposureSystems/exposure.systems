@@ -39,6 +39,6 @@ The user sees the change after generating or regenerating output, so the AI appe
 - Whether saved references point to stable identifiers or generated labels
 - Whether metadata changes are included in review or diff output
 
-## Boundary
+## When This Is AI-Adjacent
 
 Use this AI-Adjacent Issue when generated output changes hidden metadata or system-managed state. If a saved reference no longer works, use the related Workbench Issue for reference instability. If the output change itself is undeclared, use the related output-change Issue.

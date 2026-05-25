@@ -37,6 +37,6 @@ The failure usually appears inside an AI workflow, so the user experiences it as
 - Whether required tool inputs are missing
 - Whether the same task works in another account, workspace, or environment
 
-## Boundary
+## When This Is AI-Adjacent
 
 Use this AI-Adjacent Issue when the tool appears unavailable because of environment, mode, permission, runtime, or product-surface constraints. If the tool is available but the AI calls it with the wrong name, arguments, or schema, use the related Workbench Issue for tool call contract mismatch.

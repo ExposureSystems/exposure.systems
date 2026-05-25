@@ -39,6 +39,6 @@ The failure may appear as many AI tasks failing at the same time. Users may thin
 - Whether review queues or downstream steps depend on the tool output
 - Whether each workflow truly needs direct access to the same tool
 
-## Boundary
+## When This Is AI-Adjacent
 
 Use this AI-Adjacent Issue when many workflows depend on one shared tool or integration. If the tool can act without responsible authority, use the related Workbench Issue for tool authority. If a small tool change causes large downstream effects, use the related propagation Issue.

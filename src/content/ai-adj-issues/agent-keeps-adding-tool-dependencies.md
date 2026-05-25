@@ -39,6 +39,6 @@ The user experiences the agent as refusing to finish or making the task bigger. 
 - Whether the agent is overusing search, retrieval, or connector calls
 - Whether tool availability differs by workspace, mode, or runtime
 
-## Boundary
+## When This Is AI-Adjacent
 
 Use this AI-Adjacent Issue when the visible problem is tool dependency growth around an agent task. If the agent keeps expanding the task itself, use the related Workbench Issue for task expansion. If the agent repeatedly calls tools beyond what the task permits, use the related Issue for too many tool calls.

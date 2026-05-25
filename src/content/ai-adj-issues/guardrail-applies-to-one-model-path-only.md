@@ -39,6 +39,6 @@ The behavior appears inconsistent across AI paths. The user may see one route bl
 - Whether routing can move the task away from the guarded path
 - Whether logs show which path applied which check
 
-## Boundary
+## When This Is AI-Adjacent
 
 Use this AI-Adjacent Issue when a guardrail applies to one model path or runtime route but not another. If the result is unexplained routing or inconsistent outcomes between similar cases, use the related Workbench Issues for routing divergence or excessive variance.

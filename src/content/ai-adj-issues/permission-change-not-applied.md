@@ -39,6 +39,6 @@ The behavior appears in the AI workflow, so the user may think the AI ignored th
 - Whether revoked approval is still present in prompt or workflow context
 - Whether docs and runtime behavior reflect the same permission model
 
-## Boundary
+## When This Is AI-Adjacent
 
 Use this AI-Adjacent Issue when a permission or authority change appears not to apply at runtime. If a revoked approval continues to govern behavior, use the related Workbench Issue for revoked approval still treated as active. If declared policy and actual behavior differ, use that related Issue.

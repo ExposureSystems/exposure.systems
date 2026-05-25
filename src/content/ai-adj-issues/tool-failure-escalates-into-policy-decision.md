@@ -39,6 +39,6 @@ The user sees the final AI behavior, not the low-level tool failure. The respons
 - Whether escalation rules treat missing tool data as risk
 - Whether human review sees the actual failure cause
 
-## Boundary
+## When This Is AI-Adjacent
 
 Use this AI-Adjacent Issue when a technical tool failure is elevated into a policy or governance decision. If the risk signal escalates beyond evidence, use the related Workbench Issue. If human and automated review disagree after the failure, use the related review-disagreement Issue.

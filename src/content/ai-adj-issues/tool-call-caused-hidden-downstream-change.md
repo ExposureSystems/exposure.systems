@@ -39,6 +39,6 @@ The downstream effect is discovered after the AI action, so the AI looks respons
 - Whether the final AI response mentions all tool effects
 - Whether downstream consumers treat the tool result as authoritative
 
-## Boundary
+## When This Is AI-Adjacent
 
 Use this AI-Adjacent Issue when a tool call causes hidden downstream change. If the downstream effect is a Workbench structural failure, use related Issues for undeclared side effects, downstream amplification, output handoff failure, or tool-result integration failure.

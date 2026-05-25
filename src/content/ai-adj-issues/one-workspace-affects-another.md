@@ -39,6 +39,6 @@ The user experiences the AI as mixing projects, accounts, contexts, or tasks. Th
 - Whether the same account or integration is active across workspaces
 - Whether product settings separate workspace context clearly
 
-## Boundary
+## When This Is AI-Adjacent
 
 Use this AI-Adjacent Issue when workspace isolation may be failing or unclear. If context crosses between tasks, use the related Workbench Issue for context leakage. If an agent actually modifies unrelated state, use the related Issue for agent-modified unrelated state.

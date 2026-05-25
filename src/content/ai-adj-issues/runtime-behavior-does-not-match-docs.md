@@ -39,6 +39,6 @@ The mismatch often appears inside an AI task, so the user may experience it as t
 - Whether the docs describe expected behavior but not current product behavior
 - Whether a hidden policy, permission, or tool constraint changes runtime behavior
 
-## Boundary
+## When This Is AI-Adjacent
 
 Use this AI-Adjacent Issue when documented behavior and observed runtime behavior disagree. If the mismatch creates a structural Workbench failure, use the related Issues for policy drift, output change, prompt behavior change, contract-name drift, or tool call contract mismatch.

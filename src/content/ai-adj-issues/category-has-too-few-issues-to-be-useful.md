@@ -38,6 +38,6 @@ Users may experience the system as failing to classify or diagnose their problem
 - Whether the category is too broad for the current Issue set
 - Whether missing links or rubric gaps make the category feel empty
 
-## Boundary
+## When This Is AI-Adjacent
 
 Use this AI-Adjacent Issue when the problem is category coverage, not a single AI failure. If a known diagnostic area has no Issue at all, use the related Workbench Issue for diagnostic coverage gap. If the rubric or relationship map is incomplete, use those related Issues.

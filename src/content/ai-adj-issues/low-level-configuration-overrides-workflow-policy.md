@@ -39,6 +39,6 @@ The user sees the AI behaving against the visible workflow policy. The actual ca
 - Whether configuration differs between environments
 - Whether the user can inspect which rule actually governed behavior
 
-## Boundary
+## When This Is AI-Adjacent
 
 Use this AI-Adjacent Issue when low-level configuration overrides the workflow policy expected by the user. If a hidden rule overrides a visible instruction, use the related Workbench Issue. If tool and prompt rules conflict, use that related Issue.

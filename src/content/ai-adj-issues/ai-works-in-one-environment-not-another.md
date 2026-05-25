@@ -39,6 +39,6 @@ The user often sees the same prompt or task produce different behavior and assum
 - Whether one environment has a newer runtime, schema, or product behavior
 - Whether the task depends on undocumented behavior from the working environment
 
-## Boundary
+## When This Is AI-Adjacent
 
 Use this AI-Adjacent Issue when environment differences may explain why the AI task works in one place but not another. If the same environment produces unstable results across repeated runs, use the related Workbench Issues for variance, prompt behavior drift, or output change.

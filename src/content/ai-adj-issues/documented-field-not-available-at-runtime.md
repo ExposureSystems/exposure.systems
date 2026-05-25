@@ -38,6 +38,6 @@ The failure often appears when the AI tries to use or reason about the documente
 - Whether a tool schema changed but the prompt or agent still expects the old field
 - Whether the field exists under a different name, namespace, or response shape
 
-## Boundary
+## When This Is AI-Adjacent
 
 Use this AI-Adjacent Issue when a documented field or capability is missing at runtime. If the AI has all available fields but omits a required field in generated output, use the related Workbench Issue for missing required fields. If the tool call shape is wrong, use tool call contract mismatch.

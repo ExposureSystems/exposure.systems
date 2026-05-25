@@ -39,6 +39,6 @@ The effect appears after an AI or agent action, so the user may experience it as
 - Whether read scope and write scope are separated
 - Whether the workflow compares intended change surface to actual change surface
 
-## Boundary
+## When This Is AI-Adjacent
 
 Use this AI-Adjacent Issue when a tool effect crosses the intended target boundary. If the agent modified unrelated state, use the related Workbench Issue for agent-modified unrelated state. If the requested action changed something else too, use the related side-effect Issue.
