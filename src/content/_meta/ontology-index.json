@@ -20,6 +20,7 @@
     "patterns": "/workbench/patterns/",
     "lenses": "/workbench/lenses/",
     "categories": "/workbench/categories/",
+    "ai_adj_issues": "/workbench/ai-adj-issues/",
     "examples": "/workbench/examples/",
     "field_notes": "/workbench/field-notes/",
     "articles": "/workbench/articles/",
@@ -335,36 +336,293 @@
   },
   "issues": [
     {
-      "slug": "issue-0001",
-      "title": "Issue 0001",
-      "status": "draft",
-      "summary": "Test issue for frontmatter validation.",
-      "category": "drift-variance",
-      "category_title": "Drift & Variance",
-      "primary_pattern": "authority-collision",
+      "slug": "agent-keeps-expanding-the-task",
+      "ontology_slug": "agent-keeps-expanding-the-task",
+      "code": "ISS-0008",
+      "title": "Agent Keeps Expanding the Task",
+      "status": "stable",
+      "summary": "The agent repeatedly expands the task, plan, scope, or next-step list instead of completing the declared work.",
+      "category": "agents",
+      "category_title": "Agents",
+      "primary_cat_code": "CAT-0030",
+      "secondary_cat_codes": [
+        "CAT-0100"
+      ],
+      "primary_pattern": "unconstrained-expansion",
       "patterns": [
-        "authority-collision"
+        "unconstrained-expansion",
+        "overreach",
+        "convergence-failure"
       ],
       "derived_lenses": {
         "primary": [
-          "authority-overlay-lens",
-          "conflict-lens"
+          "boundary-compliance-lens",
+          "compression-lens",
+          "convergence-lens",
+          "escalation-gradient-lens",
+          "overreach-lens"
         ],
         "secondary": [
-          "invariant-lens",
-          "reconciliation-lens"
+          "propagation-lens",
+          "reconciliation-lens",
+          "variance-entropy-lens"
         ]
       },
+      "related_ai_adj_issues": [],
       "search_intents": [
-        "test issue"
+        "agent keeps expanding the task",
+        "AI keeps adding more steps",
+        "agent keeps making the plan bigger",
+        "AI keeps adding follow up work",
+        "agent expands task on each pass",
+        "diagnosis keeps expanding"
       ],
-      "url": "/workbench/issues/issue-0001/",
-      "markdown_url": "/workbench/issues/issue-0001.md"
+      "url": "/workbench/issues/agent-keeps-expanding-the-task/",
+      "markdown_url": "/workbench/issues/agent-keeps-expanding-the-task.md"
+    },
+    {
+      "slug": "ai-forgets-earlier-constraints",
+      "ontology_slug": "ai-forgets-earlier-constraints",
+      "code": "ISS-0029",
+      "title": "AI Forgets Earlier Constraints",
+      "status": "stable",
+      "summary": "A constraint, instruction, preference, or decision that should persist through the task stops affecting later output.",
+      "category": "memory-and-context",
+      "category_title": "Memory & Context",
+      "primary_cat_code": "CAT-0020",
+      "secondary_cat_codes": [],
+      "primary_pattern": "persistence-instability",
+      "patterns": [
+        "persistence-instability",
+        "constraints-underspecified",
+        "contract-drift"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "constraint-sufficiency-lens",
+          "convergence-lens",
+          "reconciliation-lens",
+          "reference-stability-lens"
+        ],
+        "secondary": [
+          "determinism-lens",
+          "variance-entropy-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "AI forgets earlier constraints",
+        "ChatGPT forgot my instructions",
+        "agent forgot the rule",
+        "AI stopped following earlier constraint",
+        "AI followed the rule at first then forgot"
+      ],
+      "url": "/workbench/issues/ai-forgets-earlier-constraints/",
+      "markdown_url": "/workbench/issues/ai-forgets-earlier-constraints.md"
+    },
+    {
+      "slug": "invalid-json-output",
+      "ontology_slug": "invalid-json-output",
+      "code": "ISS-0021",
+      "title": "Invalid JSON Output",
+      "status": "stable",
+      "summary": "The AI returns malformed JSON or structured output that cannot be parsed.",
+      "category": "output",
+      "category_title": "Output",
+      "primary_cat_code": "CAT-0010",
+      "secondary_cat_codes": [],
+      "primary_pattern": "schema-breakage",
+      "patterns": [
+        "schema-breakage",
+        "interface-mismatch",
+        "constraints-underspecified"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "constraint-sufficiency-lens",
+          "interface-contract-lens",
+          "invariant-lens"
+        ],
+        "secondary": [
+          "conflict-lens",
+          "determinism-lens",
+          "normalization-lens",
+          "variance-entropy-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "AI invalid JSON",
+        "ChatGPT malformed JSON",
+        "JSON parse error AI output",
+        "LLM output invalid JSON",
+        "AI gave JSON that will not parse"
+      ],
+      "url": "/workbench/issues/invalid-json-output/",
+      "markdown_url": "/workbench/issues/invalid-json-output.md"
+    },
+    {
+      "slug": "no-owner-for-agent-action",
+      "ontology_slug": "no-owner-for-agent-action",
+      "code": "ISS-0012",
+      "title": "No Owner for Agent Action",
+      "status": "stable",
+      "summary": "An agent action can affect the system without a declared responsible owner, authority, or accountable decision path.",
+      "category": "permissions-and-approvals",
+      "category_title": "Permissions & Approvals",
+      "primary_cat_code": "CAT-0050",
+      "secondary_cat_codes": [
+        "CAT-0030"
+      ],
+      "primary_pattern": "missing-authority",
+      "patterns": [
+        "missing-authority",
+        "overreach",
+        "authority-state-mismatch"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "absence-lens",
+          "authority-overlay-lens",
+          "boundary-compliance-lens",
+          "overreach-lens",
+          "reconciliation-lens"
+        ],
+        "secondary": [
+          "conflict-lens",
+          "convergence-lens",
+          "propagation-lens",
+          "reference-stability-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "no owner for agent action",
+        "who owns this AI action",
+        "agent acted but nobody is responsible",
+        "AI action has no responsible owner",
+        "unowned agent action"
+      ],
+      "url": "/workbench/issues/no-owner-for-agent-action/",
+      "markdown_url": "/workbench/issues/no-owner-for-agent-action.md"
+    },
+    {
+      "slug": "tool-call-contract-mismatch",
+      "ontology_slug": "tool-call-contract-mismatch",
+      "code": "ISS-0017",
+      "title": "Tool Call Contract Mismatch",
+      "status": "stable",
+      "summary": "The AI or agent calls a tool with names, arguments, types, modes, or shapes that do not match the declared tool interface.",
+      "category": "mcp-tools-and-integrations",
+      "category_title": "MCP, Tools & Integrations",
+      "primary_cat_code": "CAT-0040",
+      "secondary_cat_codes": [
+        "CAT-0010"
+      ],
+      "primary_pattern": "interface-mismatch",
+      "patterns": [
+        "interface-mismatch",
+        "schema-breakage",
+        "compatibility-violation"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "compatibility-envelope-lens",
+          "interface-contract-lens",
+          "invariant-lens"
+        ],
+        "secondary": [
+          "boundary-compliance-lens",
+          "conflict-lens",
+          "normalization-lens"
+        ]
+      },
+      "related_ai_adj_issues": [
+        "tool-not-supported-in-this-mode"
+      ],
+      "search_intents": [
+        "AI tool call wrong arguments",
+        "tool call contract mismatch",
+        "function call invalid arguments",
+        "AI called tool with wrong schema",
+        "agent used wrong tool parameters",
+        "tool choice is underspecified"
+      ],
+      "url": "/workbench/issues/tool-call-contract-mismatch/",
+      "markdown_url": "/workbench/issues/tool-call-contract-mismatch.md"
+    }
+  ],
+  "ai_adj_issues": [
+    {
+      "slug": "ai-works-in-one-environment-not-another",
+      "ontology_slug": "ai-works-in-one-environment-not-another",
+      "code": "ADJ-0002",
+      "title": "AI Works in One Environment Not Another",
+      "status": "stable",
+      "summary": "The same AI task appears to work in one app, mode, model, account, workspace, or runtime but fails or behaves differently in another.",
+      "related_issues": [
+        "output-breaks-after-model-change",
+        "version-change-breaks-existing-prompt",
+        "prompt-behavior-changed-without-version-change",
+        "results-vary-too-much"
+      ],
+      "search_intents": [
+        "AI works in one environment not another",
+        "same prompt works in one app but not another",
+        "AI works here but fails there",
+        "model behaves differently in another environment"
+      ],
+      "url": "/workbench/ai-adj-issues/ai-works-in-one-environment-not-another/",
+      "markdown_url": "/workbench/ai-adj-issues/ai-works-in-one-environment-not-another.md"
+    },
+    {
+      "slug": "runtime-behavior-does-not-match-docs",
+      "ontology_slug": "runtime-behavior-does-not-match-docs",
+      "code": "ADJ-0005",
+      "title": "Runtime Behavior Does Not Match Docs",
+      "status": "stable",
+      "summary": "Documented behavior, fields, tool schemas, permissions, or runtime capabilities do not match what actually happens during use.",
+      "related_issues": [
+        "actual-policy-differs-from-declared-policy",
+        "output-changed-without-declared-change",
+        "prompt-behavior-changed-without-version-change",
+        "same-contract-name-has-different-meanings"
+      ],
+      "search_intents": [
+        "runtime behavior does not match docs",
+        "docs do not match runtime",
+        "documented behavior is wrong",
+        "API docs say one thing but runtime does another"
+      ],
+      "url": "/workbench/ai-adj-issues/runtime-behavior-does-not-match-docs/",
+      "markdown_url": "/workbench/ai-adj-issues/runtime-behavior-does-not-match-docs.md"
+    },
+    {
+      "slug": "tool-not-supported-in-this-mode",
+      "ontology_slug": "tool-not-supported-in-this-mode",
+      "code": "ADJ-0001",
+      "title": "Tool Not Supported in This Mode",
+      "status": "stable",
+      "summary": "A tool or capability appears unavailable in the current mode, environment, product surface, or runtime context.",
+      "related_issues": [
+        "tool-call-contract-mismatch",
+        "tool-exists-but-required-inputs-are-missing",
+        "agent-cannot-choose-tool-without-tool-result"
+      ],
+      "search_intents": [
+        "tool not supported in this mode",
+        "AI tool not available",
+        "agent cannot use tool",
+        "MCP tool not showing up"
+      ],
+      "url": "/workbench/ai-adj-issues/tool-not-supported-in-this-mode/",
+      "markdown_url": "/workbench/ai-adj-issues/tool-not-supported-in-this-mode.md"
     }
   ],
   "patterns": [
     {
       "slug": "asymmetric-structure",
+      "ontology_slug": "asymmetric-structure",
       "code": "PAT-0110",
       "title": "Asymmetric Structure",
       "status": "stable",
@@ -387,6 +645,7 @@
     },
     {
       "slug": "authority-collision",
+      "ontology_slug": "authority-collision",
       "code": "PAT-0100",
       "title": "Authority Collision",
       "status": "stable",
@@ -402,9 +661,7 @@
         ]
       },
       "issues": {
-        "primary": [
-          "issue-0001"
-        ],
+        "primary": [],
         "supporting": []
       },
       "url": "/workbench/patterns/authority-collision/",
@@ -412,6 +669,7 @@
     },
     {
       "slug": "authority-merge-conflict",
+      "ontology_slug": "authority-merge-conflict",
       "code": "PAT-0220",
       "title": "Authority Merge Conflict",
       "status": "stable",
@@ -434,6 +692,7 @@
     },
     {
       "slug": "authority-shadowing",
+      "ontology_slug": "authority-shadowing",
       "code": "PAT-0230",
       "title": "Authority Shadowing",
       "status": "stable",
@@ -456,6 +715,7 @@
     },
     {
       "slug": "authority-state-mismatch",
+      "ontology_slug": "authority-state-mismatch",
       "code": "PAT-0240",
       "title": "Authority-State Mismatch",
       "status": "stable",
@@ -471,13 +731,16 @@
       },
       "issues": {
         "primary": [],
-        "supporting": []
+        "supporting": [
+          "no-owner-for-agent-action"
+        ]
       },
       "url": "/workbench/patterns/authority-state-mismatch/",
       "markdown_url": "/workbench/patterns/authority-state-mismatch.md"
     },
     {
       "slug": "boundary-leakage",
+      "ontology_slug": "boundary-leakage",
       "code": "PAT-0140",
       "title": "Boundary Leakage",
       "status": "stable",
@@ -500,6 +763,7 @@
     },
     {
       "slug": "circular-dependency",
+      "ontology_slug": "circular-dependency",
       "code": "PAT-0250",
       "title": "Circular Dependency",
       "status": "stable",
@@ -522,6 +786,7 @@
     },
     {
       "slug": "compatibility-violation",
+      "ontology_slug": "compatibility-violation",
       "code": "PAT-0180",
       "title": "Compatibility Violation",
       "status": "stable",
@@ -536,13 +801,16 @@
       },
       "issues": {
         "primary": [],
-        "supporting": []
+        "supporting": [
+          "tool-call-contract-mismatch"
+        ]
       },
       "url": "/workbench/patterns/compatibility-violation/",
       "markdown_url": "/workbench/patterns/compatibility-violation.md"
     },
     {
       "slug": "constraints-underspecified",
+      "ontology_slug": "constraints-underspecified",
       "code": "PAT-0170",
       "title": "Constraints Underspecified",
       "status": "stable",
@@ -558,13 +826,17 @@
       },
       "issues": {
         "primary": [],
-        "supporting": []
+        "supporting": [
+          "ai-forgets-earlier-constraints",
+          "invalid-json-output"
+        ]
       },
       "url": "/workbench/patterns/constraints-underspecified/",
       "markdown_url": "/workbench/patterns/constraints-underspecified.md"
     },
     {
       "slug": "contract-drift",
+      "ontology_slug": "contract-drift",
       "code": "PAT-0190",
       "title": "Contract Drift",
       "status": "stable",
@@ -580,13 +852,16 @@
       },
       "issues": {
         "primary": [],
-        "supporting": []
+        "supporting": [
+          "ai-forgets-earlier-constraints"
+        ]
       },
       "url": "/workbench/patterns/contract-drift/",
       "markdown_url": "/workbench/patterns/contract-drift.md"
     },
     {
       "slug": "convergence-failure",
+      "ontology_slug": "convergence-failure",
       "code": "PAT-0320",
       "title": "Convergence Failure",
       "status": "stable",
@@ -602,13 +877,16 @@
       },
       "issues": {
         "primary": [],
-        "supporting": []
+        "supporting": [
+          "agent-keeps-expanding-the-task"
+        ]
       },
       "url": "/workbench/patterns/convergence-failure/",
       "markdown_url": "/workbench/patterns/convergence-failure.md"
     },
     {
       "slug": "cross-layer-escalation",
+      "ontology_slug": "cross-layer-escalation",
       "code": "PAT-0260",
       "title": "Cross-Layer Escalation",
       "status": "stable",
@@ -631,6 +909,7 @@
     },
     {
       "slug": "density-spike",
+      "ontology_slug": "density-spike",
       "code": "PAT-0270",
       "title": "Density Spike",
       "status": "stable",
@@ -653,6 +932,7 @@
     },
     {
       "slug": "density-vacuum",
+      "ontology_slug": "density-vacuum",
       "code": "PAT-0280",
       "title": "Density Vacuum",
       "status": "stable",
@@ -675,6 +955,7 @@
     },
     {
       "slug": "divergent-outputs",
+      "ontology_slug": "divergent-outputs",
       "code": "PAT-0290",
       "title": "Divergent Outputs",
       "status": "stable",
@@ -698,6 +979,7 @@
     },
     {
       "slug": "escalation-growth",
+      "ontology_slug": "escalation-growth",
       "code": "PAT-0300",
       "title": "Escalation Growth",
       "status": "stable",
@@ -720,6 +1002,7 @@
     },
     {
       "slug": "incomplete-declaration",
+      "ontology_slug": "incomplete-declaration",
       "code": "PAT-0130",
       "title": "Incomplete Declaration",
       "status": "stable",
@@ -742,6 +1025,7 @@
     },
     {
       "slug": "interface-mismatch",
+      "ontology_slug": "interface-mismatch",
       "code": "PAT-0150",
       "title": "Interface Mismatch",
       "status": "stable",
@@ -755,14 +1039,19 @@
         ]
       },
       "issues": {
-        "primary": [],
-        "supporting": []
+        "primary": [
+          "tool-call-contract-mismatch"
+        ],
+        "supporting": [
+          "invalid-json-output"
+        ]
       },
       "url": "/workbench/patterns/interface-mismatch/",
       "markdown_url": "/workbench/patterns/interface-mismatch.md"
     },
     {
       "slug": "invariant-breakage",
+      "ontology_slug": "invariant-breakage",
       "code": "PAT-0330",
       "title": "Invariant Breakage",
       "status": "stable",
@@ -785,6 +1074,7 @@
     },
     {
       "slug": "missing-authority",
+      "ontology_slug": "missing-authority",
       "code": "PAT-0120",
       "title": "Missing Authority",
       "status": "stable",
@@ -800,7 +1090,9 @@
         ]
       },
       "issues": {
-        "primary": [],
+        "primary": [
+          "no-owner-for-agent-action"
+        ],
         "supporting": []
       },
       "url": "/workbench/patterns/missing-authority/",
@@ -808,6 +1100,7 @@
     },
     {
       "slug": "non-deterministic-execution",
+      "ontology_slug": "non-deterministic-execution",
       "code": "PAT-0210",
       "title": "Non-Deterministic Execution",
       "status": "stable",
@@ -831,6 +1124,7 @@
     },
     {
       "slug": "orphaned-structure",
+      "ontology_slug": "orphaned-structure",
       "code": "PAT-0310",
       "title": "Orphaned Structure",
       "status": "stable",
@@ -852,6 +1146,7 @@
     },
     {
       "slug": "overreach",
+      "ontology_slug": "overreach",
       "code": "PAT-0340",
       "title": "Overreach",
       "status": "stable",
@@ -867,13 +1162,17 @@
       },
       "issues": {
         "primary": [],
-        "supporting": []
+        "supporting": [
+          "agent-keeps-expanding-the-task",
+          "no-owner-for-agent-action"
+        ]
       },
       "url": "/workbench/patterns/overreach/",
       "markdown_url": "/workbench/patterns/overreach.md"
     },
     {
       "slug": "persistence-instability",
+      "ontology_slug": "persistence-instability",
       "code": "PAT-0350",
       "title": "Persistence Instability",
       "status": "stable",
@@ -887,7 +1186,9 @@
         ]
       },
       "issues": {
-        "primary": [],
+        "primary": [
+          "ai-forgets-earlier-constraints"
+        ],
         "supporting": []
       },
       "url": "/workbench/patterns/persistence-instability/",
@@ -895,6 +1196,7 @@
     },
     {
       "slug": "propagation-amplification",
+      "ontology_slug": "propagation-amplification",
       "code": "PAT-0360",
       "title": "Propagation Amplification",
       "status": "stable",
@@ -917,6 +1219,7 @@
     },
     {
       "slug": "redundant-declaration",
+      "ontology_slug": "redundant-declaration",
       "code": "PAT-0370",
       "title": "Redundant Declaration",
       "status": "stable",
@@ -939,6 +1242,7 @@
     },
     {
       "slug": "reference-instability",
+      "ontology_slug": "reference-instability",
       "code": "PAT-0200",
       "title": "Reference Instability",
       "status": "stable",
@@ -960,6 +1264,7 @@
     },
     {
       "slug": "schema-breakage",
+      "ontology_slug": "schema-breakage",
       "code": "PAT-0160",
       "title": "Schema Breakage",
       "status": "stable",
@@ -974,14 +1279,19 @@
         ]
       },
       "issues": {
-        "primary": [],
-        "supporting": []
+        "primary": [
+          "invalid-json-output"
+        ],
+        "supporting": [
+          "tool-call-contract-mismatch"
+        ]
       },
       "url": "/workbench/patterns/schema-breakage/",
       "markdown_url": "/workbench/patterns/schema-breakage.md"
     },
     {
       "slug": "silent-mutation",
+      "ontology_slug": "silent-mutation",
       "code": "PAT-0380",
       "title": "Silent Mutation",
       "status": "stable",
@@ -1004,6 +1314,7 @@
     },
     {
       "slug": "threshold-breach",
+      "ontology_slug": "threshold-breach",
       "code": "PAT-0390",
       "title": "Threshold Breach",
       "status": "stable",
@@ -1025,6 +1336,7 @@
     },
     {
       "slug": "unbounded-scope",
+      "ontology_slug": "unbounded-scope",
       "code": "PAT-0400",
       "title": "Unbounded Scope",
       "status": "stable",
@@ -1047,6 +1359,7 @@
     },
     {
       "slug": "unconstrained-expansion",
+      "ontology_slug": "unconstrained-expansion",
       "code": "PAT-0410",
       "title": "Unconstrained Expansion",
       "status": "stable",
@@ -1061,7 +1374,9 @@
         ]
       },
       "issues": {
-        "primary": [],
+        "primary": [
+          "agent-keeps-expanding-the-task"
+        ],
         "supporting": []
       },
       "url": "/workbench/patterns/unconstrained-expansion/",
@@ -1069,6 +1384,7 @@
     },
     {
       "slug": "undeclared-side-effect",
+      "ontology_slug": "undeclared-side-effect",
       "code": "PAT-0420",
       "title": "Undeclared Side Effect",
       "status": "stable",
@@ -1093,6 +1409,7 @@
   "lenses": [
     {
       "slug": "absence-lens",
+      "ontology_slug": "absence-lens",
       "code": "LEN-0100",
       "title": "Absence Lens",
       "status": "stable",
@@ -1106,12 +1423,15 @@
         ],
         "secondary": []
       },
-      "issues": [],
+      "issues": [
+        "no-owner-for-agent-action"
+      ],
       "url": "/workbench/lenses/absence-lens/",
       "markdown_url": "/workbench/lenses/absence-lens.md"
     },
     {
       "slug": "authority-overlay-lens",
+      "ontology_slug": "authority-overlay-lens",
       "code": "LEN-0110",
       "title": "Authority Overlay Lens",
       "status": "stable",
@@ -1127,13 +1447,14 @@
         ]
       },
       "issues": [
-        "issue-0001"
+        "no-owner-for-agent-action"
       ],
       "url": "/workbench/lenses/authority-overlay-lens/",
       "markdown_url": "/workbench/lenses/authority-overlay-lens.md"
     },
     {
       "slug": "boundary-compliance-lens",
+      "ontology_slug": "boundary-compliance-lens",
       "code": "LEN-0120",
       "title": "Boundary Compliance Lens",
       "status": "stable",
@@ -1148,12 +1469,17 @@
           "threshold-breach"
         ]
       },
-      "issues": [],
+      "issues": [
+        "agent-keeps-expanding-the-task",
+        "no-owner-for-agent-action",
+        "tool-call-contract-mismatch"
+      ],
       "url": "/workbench/lenses/boundary-compliance-lens/",
       "markdown_url": "/workbench/lenses/boundary-compliance-lens.md"
     },
     {
       "slug": "compatibility-envelope-lens",
+      "ontology_slug": "compatibility-envelope-lens",
       "code": "LEN-0130",
       "title": "Compatibility Envelope Lens",
       "status": "stable",
@@ -1164,12 +1490,15 @@
         ],
         "secondary": []
       },
-      "issues": [],
+      "issues": [
+        "tool-call-contract-mismatch"
+      ],
       "url": "/workbench/lenses/compatibility-envelope-lens/",
       "markdown_url": "/workbench/lenses/compatibility-envelope-lens.md"
     },
     {
       "slug": "compression-lens",
+      "ontology_slug": "compression-lens",
       "code": "LEN-0140",
       "title": "Compression Lens",
       "status": "stable",
@@ -1186,12 +1515,15 @@
           "redundant-declaration"
         ]
       },
-      "issues": [],
+      "issues": [
+        "agent-keeps-expanding-the-task"
+      ],
       "url": "/workbench/lenses/compression-lens/",
       "markdown_url": "/workbench/lenses/compression-lens.md"
     },
     {
       "slug": "conflict-lens",
+      "ontology_slug": "conflict-lens",
       "code": "LEN-0150",
       "title": "Conflict Lens",
       "status": "stable",
@@ -1211,13 +1543,16 @@
         ]
       },
       "issues": [
-        "issue-0001"
+        "invalid-json-output",
+        "no-owner-for-agent-action",
+        "tool-call-contract-mismatch"
       ],
       "url": "/workbench/lenses/conflict-lens/",
       "markdown_url": "/workbench/lenses/conflict-lens.md"
     },
     {
       "slug": "constraint-sufficiency-lens",
+      "ontology_slug": "constraint-sufficiency-lens",
       "code": "LEN-0160",
       "title": "Constraint Sufficiency Lens",
       "status": "stable",
@@ -1232,12 +1567,16 @@
           "density-vacuum"
         ]
       },
-      "issues": [],
+      "issues": [
+        "ai-forgets-earlier-constraints",
+        "invalid-json-output"
+      ],
       "url": "/workbench/lenses/constraint-sufficiency-lens/",
       "markdown_url": "/workbench/lenses/constraint-sufficiency-lens.md"
     },
     {
       "slug": "convergence-lens",
+      "ontology_slug": "convergence-lens",
       "code": "LEN-0170",
       "title": "Convergence Lens",
       "status": "stable",
@@ -1254,12 +1593,17 @@
           "non-deterministic-execution"
         ]
       },
-      "issues": [],
+      "issues": [
+        "agent-keeps-expanding-the-task",
+        "ai-forgets-earlier-constraints",
+        "no-owner-for-agent-action"
+      ],
       "url": "/workbench/lenses/convergence-lens/",
       "markdown_url": "/workbench/lenses/convergence-lens.md"
     },
     {
       "slug": "determinism-lens",
+      "ontology_slug": "determinism-lens",
       "code": "LEN-0180",
       "title": "Determinism Lens",
       "status": "stable",
@@ -1277,12 +1621,16 @@
           "reference-instability"
         ]
       },
-      "issues": [],
+      "issues": [
+        "ai-forgets-earlier-constraints",
+        "invalid-json-output"
+      ],
       "url": "/workbench/lenses/determinism-lens/",
       "markdown_url": "/workbench/lenses/determinism-lens.md"
     },
     {
       "slug": "escalation-gradient-lens",
+      "ontology_slug": "escalation-gradient-lens",
       "code": "LEN-0190",
       "title": "Escalation Gradient Lens",
       "status": "stable",
@@ -1299,12 +1647,15 @@
           "unbounded-scope"
         ]
       },
-      "issues": [],
+      "issues": [
+        "agent-keeps-expanding-the-task"
+      ],
       "url": "/workbench/lenses/escalation-gradient-lens/",
       "markdown_url": "/workbench/lenses/escalation-gradient-lens.md"
     },
     {
       "slug": "interface-contract-lens",
+      "ontology_slug": "interface-contract-lens",
       "code": "LEN-0200",
       "title": "Interface Contract Lens",
       "status": "stable",
@@ -1319,12 +1670,16 @@
           "invariant-breakage"
         ]
       },
-      "issues": [],
+      "issues": [
+        "invalid-json-output",
+        "tool-call-contract-mismatch"
+      ],
       "url": "/workbench/lenses/interface-contract-lens/",
       "markdown_url": "/workbench/lenses/interface-contract-lens.md"
     },
     {
       "slug": "invariant-lens",
+      "ontology_slug": "invariant-lens",
       "code": "LEN-0210",
       "title": "Invariant Lens",
       "status": "stable",
@@ -1340,13 +1695,15 @@
         ]
       },
       "issues": [
-        "issue-0001"
+        "invalid-json-output",
+        "tool-call-contract-mismatch"
       ],
       "url": "/workbench/lenses/invariant-lens/",
       "markdown_url": "/workbench/lenses/invariant-lens.md"
     },
     {
       "slug": "isolation-boundary-lens",
+      "ontology_slug": "isolation-boundary-lens",
       "code": "LEN-0220",
       "title": "Isolation Boundary Lens",
       "status": "stable",
@@ -1367,6 +1724,7 @@
     },
     {
       "slug": "normalization-lens",
+      "ontology_slug": "normalization-lens",
       "code": "LEN-0230",
       "title": "Normalization Lens",
       "status": "stable",
@@ -1380,12 +1738,16 @@
           "interface-mismatch"
         ]
       },
-      "issues": [],
+      "issues": [
+        "invalid-json-output",
+        "tool-call-contract-mismatch"
+      ],
       "url": "/workbench/lenses/normalization-lens/",
       "markdown_url": "/workbench/lenses/normalization-lens.md"
     },
     {
       "slug": "overreach-lens",
+      "ontology_slug": "overreach-lens",
       "code": "LEN-0240",
       "title": "Overreach Lens",
       "status": "stable",
@@ -1397,12 +1759,16 @@
         ],
         "secondary": []
       },
-      "issues": [],
+      "issues": [
+        "agent-keeps-expanding-the-task",
+        "no-owner-for-agent-action"
+      ],
       "url": "/workbench/lenses/overreach-lens/",
       "markdown_url": "/workbench/lenses/overreach-lens.md"
     },
     {
       "slug": "propagation-lens",
+      "ontology_slug": "propagation-lens",
       "code": "LEN-0250",
       "title": "Propagation Lens",
       "status": "stable",
@@ -1421,12 +1787,16 @@
           "overreach"
         ]
       },
-      "issues": [],
+      "issues": [
+        "agent-keeps-expanding-the-task",
+        "no-owner-for-agent-action"
+      ],
       "url": "/workbench/lenses/propagation-lens/",
       "markdown_url": "/workbench/lenses/propagation-lens.md"
     },
     {
       "slug": "provenance-trace-lens",
+      "ontology_slug": "provenance-trace-lens",
       "code": "LEN-0260",
       "title": "Provenance Trace Lens",
       "status": "stable",
@@ -1443,6 +1813,7 @@
     },
     {
       "slug": "reconciliation-lens",
+      "ontology_slug": "reconciliation-lens",
       "code": "LEN-0270",
       "title": "Reconciliation Lens",
       "status": "stable",
@@ -1461,13 +1832,16 @@
         ]
       },
       "issues": [
-        "issue-0001"
+        "agent-keeps-expanding-the-task",
+        "ai-forgets-earlier-constraints",
+        "no-owner-for-agent-action"
       ],
       "url": "/workbench/lenses/reconciliation-lens/",
       "markdown_url": "/workbench/lenses/reconciliation-lens.md"
     },
     {
       "slug": "reference-stability-lens",
+      "ontology_slug": "reference-stability-lens",
       "code": "LEN-0280",
       "title": "Reference Stability Lens",
       "status": "stable",
@@ -1483,12 +1857,16 @@
           "non-deterministic-execution"
         ]
       },
-      "issues": [],
+      "issues": [
+        "ai-forgets-earlier-constraints",
+        "no-owner-for-agent-action"
+      ],
       "url": "/workbench/lenses/reference-stability-lens/",
       "markdown_url": "/workbench/lenses/reference-stability-lens.md"
     },
     {
       "slug": "variance-entropy-lens",
+      "ontology_slug": "variance-entropy-lens",
       "code": "LEN-0290",
       "title": "Variance / Entropy Lens",
       "status": "stable",
@@ -1508,21 +1886,165 @@
           "unconstrained-expansion"
         ]
       },
-      "issues": [],
+      "issues": [
+        "agent-keeps-expanding-the-task",
+        "ai-forgets-earlier-constraints",
+        "invalid-json-output"
+      ],
       "url": "/workbench/lenses/variance-entropy-lens/",
       "markdown_url": "/workbench/lenses/variance-entropy-lens.md"
     }
   ],
   "categories": [
     {
-      "slug": "drift-variance",
-      "title": "Drift & Variance",
-      "status": "draft",
-      "summary": "Navigation shelf for drift and variance issues.",
+      "slug": "agents",
+      "ontology_slug": "agents",
+      "code": "CAT-0030",
+      "title": "Agents",
+      "status": "stable",
+      "summary": "Problems where agent behavior expands, acts outside intent, fails to finish, modifies state, or chooses actions without enough stable control.",
       "issues": [
-        "issue-0001"
+        "agent-keeps-expanding-the-task"
       ],
-      "url": "/workbench/categories/drift-variance/"
+      "url": "/workbench/categories/agents/"
+    },
+    {
+      "slug": "changes-and-versions",
+      "ontology_slug": "changes-and-versions",
+      "code": "CAT-0080",
+      "title": "Changes & Versions",
+      "status": "stable",
+      "summary": "Problems where model behavior, prompts, contracts, schemas, outputs, references, rubrics, or expectations change without the surrounding workflow updating correctly.",
+      "issues": [],
+      "url": "/workbench/categories/changes-and-versions/"
+    },
+    {
+      "slug": "coverage-and-guidance",
+      "ontology_slug": "coverage-and-guidance",
+      "code": "CAT-0120",
+      "title": "Coverage & Guidance",
+      "status": "stable",
+      "summary": "Problems where prompts, rubrics, diagnostics, fallback rules, examples, requirements, or relationship maps are incomplete, underspecified, or missing needed guidance.",
+      "issues": [],
+      "url": "/workbench/categories/coverage-and-guidance/"
+    },
+    {
+      "slug": "duplication-and-overload",
+      "ontology_slug": "duplication-and-overload",
+      "code": "CAT-0140",
+      "title": "Duplication & Overload",
+      "status": "stable",
+      "summary": "Problems where fields, sections, rules, checks, prompts, workflow steps, or review queues become duplicated, overloaded, bottlenecked, or carry too many meanings.",
+      "issues": [],
+      "url": "/workbench/categories/duplication-and-overload/"
+    },
+    {
+      "slug": "inconsistent-behavior",
+      "ontology_slug": "inconsistent-behavior",
+      "code": "CAT-0090",
+      "title": "Inconsistent Behavior",
+      "status": "stable",
+      "summary": "Problems where similar inputs, repeated attempts, validations, prompts, routes, or cases produce different results without a clear reason.",
+      "issues": [],
+      "url": "/workbench/categories/inconsistent-behavior/"
+    },
+    {
+      "slug": "loops-and-resolution",
+      "ontology_slug": "loops-and-resolution",
+      "code": "CAT-0130",
+      "title": "Loops & Resolution",
+      "status": "stable",
+      "summary": "Problems where agents, workflows, reviews, approvals, policies, schemas, or routing paths loop, wait on themselves, fail to settle, or cannot identify a final state.",
+      "issues": [],
+      "url": "/workbench/categories/loops-and-resolution/"
+    },
+    {
+      "slug": "mcp-tools-and-integrations",
+      "ontology_slug": "mcp-tools-and-integrations",
+      "code": "CAT-0040",
+      "title": "MCP, Tools & Integrations",
+      "status": "stable",
+      "summary": "Problems involving tool calls, MCP surfaces, integration contracts, required tool inputs, tool results, parser consumers, or downstream systems that depend on AI output.",
+      "issues": [
+        "tool-call-contract-mismatch"
+      ],
+      "url": "/workbench/categories/mcp-tools-and-integrations/"
+    },
+    {
+      "slug": "memory-and-context",
+      "ontology_slug": "memory-and-context",
+      "code": "CAT-0020",
+      "title": "Memory & Context",
+      "status": "stable",
+      "summary": "Problems where task state, prior instructions, saved memory, restored context, stale information, or cross-task context affects behavior incorrectly.",
+      "issues": [
+        "ai-forgets-earlier-constraints"
+      ],
+      "url": "/workbench/categories/memory-and-context/"
+    },
+    {
+      "slug": "output",
+      "ontology_slug": "output",
+      "code": "CAT-0010",
+      "title": "Output",
+      "status": "stable",
+      "summary": "Problems where generated content, citations, fields, formats, parser-facing output, or structured responses are missing, malformed, unsupported, or unusable.",
+      "issues": [
+        "invalid-json-output"
+      ],
+      "url": "/workbench/categories/output/"
+    },
+    {
+      "slug": "permissions-and-approvals",
+      "ontology_slug": "permissions-and-approvals",
+      "code": "CAT-0050",
+      "title": "Permissions & Approvals",
+      "status": "stable",
+      "summary": "Problems where ownership, approval, authority, permission state, responsible control, or action rights are missing, stale, bypassed, conflicting, or unclear.",
+      "issues": [
+        "no-owner-for-agent-action"
+      ],
+      "url": "/workbench/categories/permissions-and-approvals/"
+    },
+    {
+      "slug": "rules-and-policies",
+      "ontology_slug": "rules-and-policies",
+      "code": "CAT-0060",
+      "title": "Rules & Policies",
+      "status": "stable",
+      "summary": "Problems where prompts, policies, rules, roles, constraints, or declared behavior conflict, drift, duplicate each other, or fail to match actual behavior.",
+      "issues": [],
+      "url": "/workbench/categories/rules-and-policies/"
+    },
+    {
+      "slug": "scope-and-boundaries",
+      "ontology_slug": "scope-and-boundaries",
+      "code": "CAT-0100",
+      "title": "Scope & Boundaries",
+      "status": "stable",
+      "summary": "Problems where tasks, files, context, retrieval, permissions, actions, or outputs cross limits, use outside information, or lack clear operating boundaries.",
+      "issues": [],
+      "url": "/workbench/categories/scope-and-boundaries/"
+    },
+    {
+      "slug": "spread-and-escalation",
+      "ontology_slug": "spread-and-escalation",
+      "code": "CAT-0110",
+      "title": "Spread & Escalation",
+      "status": "stable",
+      "summary": "Problems where small errors, local exceptions, risk signals, retries, permissions, or outputs spread downstream, grow in consequence, or trigger broader actions.",
+      "issues": [],
+      "url": "/workbench/categories/spread-and-escalation/"
+    },
+    {
+      "slug": "workflow-and-handoffs",
+      "ontology_slug": "workflow-and-handoffs",
+      "code": "CAT-0070",
+      "title": "Workflow & Handoffs",
+      "status": "stable",
+      "summary": "Problems where review steps, handoffs, task progress, workflow ownership, downstream steps, or process coordination break, loop, disagree, or lose resolution.",
+      "issues": [],
+      "url": "/workbench/categories/workflow-and-handoffs/"
     }
   ],
   "lookups": {
