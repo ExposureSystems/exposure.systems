@@ -25,32 +25,31 @@ search_intents:
   - diagnosis keeps expanding
 ---
 
-# Agent Keeps Expanding the Task
-
 ## What This Looks Like
 
-The agent keeps adding steps, checks, dependencies, files, analysis paths, or follow-up work instead of finishing the requested task. Each pass makes the task larger rather than closer to done.
+The agent starts with a bounded task but keeps adding steps, checks, dependencies, files, analysis paths, or follow-up work instead of finishing the requested output. Each pass makes the work surface larger. The user may see new subtasks appear, new investigations start, or a simple request turn into a growing plan that never reaches completion.
 
 ## Why It Matters
 
-Agentic workflows need stopping rules. If the agent keeps expanding the task, users lose control over scope, cost, review burden, and completion. The agent can turn a bounded request into an open-ended investigation.
+Agentic workflows need a way to stop. If the agent keeps expanding the task, the user loses control over scope, review burden, cost, time, and completion. The system may look productive because it is still planning or investigating, but the actual work is moving farther from a finished deliverable.
 
 ## Structural Signal
 
-A task has an expected completion boundary, but the agent repeatedly expands the work surface without a sufficient limiting rule. The workflow fails to converge on a final output.
+The task has an expected completion boundary, but the agent repeatedly expands the work surface without a sufficient limiting rule. The issue is not that the agent discovered one necessary missing step; it is that expansion becomes the operating pattern and the workflow fails to converge on a final output.
 
 ## Common Triggers
 
-- No clear done condition
-- Open-ended planning prompts
-- Agent loops that reward more investigation
-- Missing limits on files, tools, depth, or time
-- Unclear distinction between required work and optional follow-up
+- The task has no clear done condition
+- The prompt rewards planning, diagnosis, or exploration more than completion
+- The agent treats optional follow-up work as required work
+- Tool results create new branches instead of narrowing the task
+- File, source, or dependency checks are not bounded
+- The agent is allowed to keep proposing next steps without returning a final answer
 
 ## When to Use This Issue
 
-Use this Issue when the agent’s main failure is uncontrolled task growth rather than one wrong answer.
+Use this Issue when the agent’s main failure is uncontrolled task growth. The user asked for work to be completed, but the agent keeps broadening the task, adding new paths, or turning a bounded request into an open-ended investigation.
 
 ## When Not to Use This Issue
 
-Do not use this Issue when the agent adds a small amount of clearly necessary work to complete the task. The issue applies when expansion is not bounded, justified, or necessary.
+Do not use this Issue when the agent adds a small amount of clearly necessary work to complete the task. Do not use it when the real problem is one wrong answer, one bad tool call, or one missing permission. This Issue applies when expansion itself is the recurring failure pattern.
