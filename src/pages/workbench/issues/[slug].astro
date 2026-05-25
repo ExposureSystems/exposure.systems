@@ -36,7 +36,13 @@ const secondaryLenses = issue.derived_lenses.secondary
   .map((slug) => ontologyIndex.lenses.find((lens) => lens.slug === slug))
   .filter(Boolean);
 
+const relatedAiAdjIssues = (issue.related_ai_adj_issues ?? [])
+  .map((slug) => ontologyIndex.ai_adj_issues.find((entry) => entry.slug === slug))
+  .filter(Boolean);
+
 const history = getObjectHistory(changelog, issue);
+
+
 ---
 
 <html lang="en">
@@ -133,6 +139,24 @@ const history = getObjectHistory(changelog, issue);
           <p>No secondary lenses derived.</p>
         )}
       </section>
+
+      {relatedAiAdjIssues.length > 0 && (
+        <section aria-labelledby="related-ai-adj-issues">
+          <h2 id="related-ai-adj-issues">Related AI-Adjacent Issues</h2>
+
+          <ul>
+            {relatedAiAdjIssues.map((entry) => (
+              <li>
+                <h3>
+                  <a href={entry.url}>{entry.title}</a>
+                </h3>
+                <p>{entry.summary}</p>
+                <p><code>{entry.code}</code></p>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
 
       <section aria-labelledby="search-intents">
         <h2 id="search-intents">Search Intents</h2>

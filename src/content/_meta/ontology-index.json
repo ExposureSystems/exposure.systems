@@ -341,6 +341,8 @@
       "code": "ISS-0008",
       "title": "Agent Keeps Expanding the Task",
       "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
       "summary": "The agent repeatedly expands the task, plan, scope, or next-step list instead of completing the declared work.",
       "category": "agents",
       "category_title": "Agents",
@@ -386,6 +388,8 @@
       "code": "ISS-0029",
       "title": "AI Forgets Earlier Constraints",
       "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
       "summary": "A constraint, instruction, preference, or decision that should persist through the task stops affecting later output.",
       "category": "memory-and-context",
       "category_title": "Memory & Context",
@@ -426,6 +430,8 @@
       "code": "ISS-0021",
       "title": "Invalid JSON Output",
       "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
       "summary": "The AI returns malformed JSON or structured output that cannot be parsed.",
       "category": "output",
       "category_title": "Output",
@@ -467,6 +473,8 @@
       "code": "ISS-0012",
       "title": "No Owner for Agent Action",
       "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
       "summary": "An agent action can affect the system without a declared responsible owner, authority, or accountable decision path.",
       "category": "permissions-and-approvals",
       "category_title": "Permissions & Approvals",
@@ -512,6 +520,8 @@
       "code": "ISS-0017",
       "title": "Tool Call Contract Mismatch",
       "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
       "summary": "The AI or agent calls a tool with names, arguments, types, modes, or shapes that do not match the declared tool interface.",
       "category": "mcp-tools-and-integrations",
       "category_title": "MCP, Tools & Integrations",
@@ -559,6 +569,8 @@
       "code": "ADJ-0002",
       "title": "AI Works in One Environment Not Another",
       "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
       "summary": "The same AI task appears to work in one app, mode, model, account, workspace, or runtime but fails or behaves differently in another.",
       "related_issues": [
         "output-breaks-after-model-change",
@@ -581,6 +593,8 @@
       "code": "ADJ-0005",
       "title": "Runtime Behavior Does Not Match Docs",
       "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
       "summary": "Documented behavior, fields, tool schemas, permissions, or runtime capabilities do not match what actually happens during use.",
       "related_issues": [
         "actual-policy-differs-from-declared-policy",
@@ -603,6 +617,8 @@
       "code": "ADJ-0001",
       "title": "Tool Not Supported in This Mode",
       "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
       "summary": "A tool or capability appears unavailable in the current mode, environment, product surface, or runtime context.",
       "related_issues": [
         "tool-call-contract-mismatch",
@@ -626,6 +642,8 @@
       "code": "PAT-0110",
       "title": "Asymmetric Structure",
       "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
       "summary": "A structural condition where comparable regions receive unequal rule, constraint, or authority application without a declared differentiation rule.",
       "lenses": {
         "primary": [
@@ -649,6 +667,8 @@
       "code": "PAT-0100",
       "title": "Authority Collision",
       "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
       "summary": "A structural condition where multiple authorities claim governance over the same region without a declared precedence or resolution rule.",
       "lenses": {
         "primary": [
@@ -673,6 +693,8 @@
       "code": "PAT-0220",
       "title": "Authority Merge Conflict",
       "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
       "summary": "A structural condition where multiple authority states are combined over a shared scope without a declared merge, precedence, or reconciliation rule.",
       "lenses": {
         "primary": [
@@ -696,6 +718,8 @@
       "code": "PAT-0230",
       "title": "Authority Shadowing",
       "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
       "summary": "A structural condition where a declared authority is functionally overridden by another authority without an explicit override rule.",
       "lenses": {
         "primary": [
@@ -719,6 +743,8 @@
       "code": "PAT-0240",
       "title": "Authority-State Mismatch",
       "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
       "summary": "A structural condition where observed system state no longer aligns with the declared authority state that is supposed to govern it.",
       "lenses": {
         "primary": [
@@ -744,6 +770,8 @@
       "code": "PAT-0140",
       "title": "Boundary Leakage",
       "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
       "summary": "A structural condition where effects, permissions, state, data, or authority cross a declared boundary without an authorized exception.",
       "lenses": {
         "primary": [
@@ -767,6 +795,8 @@
       "code": "PAT-0250",
       "title": "Circular Dependency",
       "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
       "summary": "A structural condition where two or more elements depend on each other in a closed loop without an independent base condition or declared resolution mechanism.",
       "lenses": {
         "primary": [
@@ -790,6 +820,8 @@
       "code": "PAT-0180",
       "title": "Compatibility Violation",
       "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
       "summary": "A structural condition where a graph, object, behavior, or runtime state exceeds a declared compatibility envelope without an authorized exception.",
       "lenses": {
         "primary": [
@@ -814,6 +846,8 @@
       "code": "PAT-0170",
       "title": "Constraints Underspecified",
       "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
       "summary": "A structural condition where declared constraints are insufficient to eliminate ambiguity or multiple admissible states.",
       "lenses": {
         "primary": [
@@ -840,6 +874,8 @@
       "code": "PAT-0190",
       "title": "Contract Drift",
       "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
       "summary": "A structural condition where a declared contract changes but connected structures, implementations, consumers, or expectations do not update in sync.",
       "lenses": {
         "primary": [
@@ -865,6 +901,8 @@
       "code": "PAT-0320",
       "title": "Convergence Failure",
       "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
       "summary": "A structural condition where sequential or parallel states fail to resolve into an equivalent or coherent structure under shared authority and constraints.",
       "lenses": {
         "primary": [
@@ -890,6 +928,8 @@
       "code": "PAT-0260",
       "title": "Cross-Layer Escalation",
       "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
       "summary": "A structural condition where escalation originating in one layer propagates into another authority, boundary, or control layer without explicit authorization.",
       "lenses": {
         "primary": [
@@ -913,6 +953,8 @@
       "code": "PAT-0270",
       "title": "Density Spike",
       "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
       "summary": "A structural condition where nodes, edges, dependencies, decisions, or effects concentrate sharply within a localized region beyond declared thresholds.",
       "lenses": {
         "primary": [
@@ -936,6 +978,8 @@
       "code": "PAT-0280",
       "title": "Density Vacuum",
       "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
       "summary": "A structural condition where a region expected to contain sufficient nodes, edges, coverage, or relationships falls below declared density thresholds.",
       "lenses": {
         "primary": [
@@ -959,6 +1003,8 @@
       "code": "PAT-0290",
       "title": "Divergent Outputs",
       "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
       "summary": "A structural condition where parallel evaluations under comparable scope and shared authority produce non-equivalent outputs.",
       "lenses": {
         "primary": [
@@ -983,6 +1029,8 @@
       "code": "PAT-0300",
       "title": "Escalation Growth",
       "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
       "summary": "A structural condition where impact, authority, scope, or consequence increases across sequential states without a declared limiting mechanism.",
       "lenses": {
         "primary": [
@@ -1006,6 +1054,8 @@
       "code": "PAT-0130",
       "title": "Incomplete Declaration",
       "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
       "summary": "A structural condition where an element is declared but required attributes, dependencies, or linked definitions are missing.",
       "lenses": {
         "primary": [
@@ -1029,6 +1079,8 @@
       "code": "PAT-0150",
       "title": "Interface Mismatch",
       "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
       "summary": "A structural condition where observed interface behavior, shape, or exchange differs from the declared interface contract.",
       "lenses": {
         "primary": [
@@ -1055,6 +1107,8 @@
       "code": "PAT-0330",
       "title": "Invariant Breakage",
       "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
       "summary": "A structural condition where an observed state violates a declared invariant that is supposed to remain true.",
       "lenses": {
         "primary": [
@@ -1078,6 +1132,8 @@
       "code": "PAT-0120",
       "title": "Missing Authority",
       "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
       "summary": "A structural condition where a region, action, state, or decision path exists without a declared governing authority.",
       "lenses": {
         "primary": [
@@ -1104,6 +1160,8 @@
       "code": "PAT-0210",
       "title": "Non-Deterministic Execution",
       "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
       "summary": "A structural condition where equivalent inputs and declared constraints produce divergent outputs across executions.",
       "lenses": {
         "primary": [
@@ -1128,6 +1186,8 @@
       "code": "PAT-0310",
       "title": "Orphaned Structure",
       "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
       "summary": "A structural condition where a node, region, object, state, or declaration exists without linkage to the governing graph or integration pathway.",
       "lenses": {
         "primary": [
@@ -1150,6 +1210,8 @@
       "code": "PAT-0340",
       "title": "Overreach",
       "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
       "summary": "A structural condition where actions, effects, authority, or modifications extend beyond declared scope without authorization.",
       "lenses": {
         "primary": [
@@ -1176,6 +1238,8 @@
       "code": "PAT-0350",
       "title": "Persistence Instability",
       "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
       "summary": "A structural condition where persisted state cannot be stored and restored into an equivalent structure without alteration.",
       "lenses": {
         "primary": [
@@ -1200,6 +1264,8 @@
       "code": "PAT-0360",
       "title": "Propagation Amplification",
       "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
       "summary": "A structural condition where an effect, declaration, authority, constraint, or state increases in scope or intensity as it propagates beyond declared bounds.",
       "lenses": {
         "primary": [
@@ -1223,6 +1289,8 @@
       "code": "PAT-0370",
       "title": "Redundant Declaration",
       "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
       "summary": "A structural condition where multiple declarations produce equivalent structural effect without semantic differentiation.",
       "lenses": {
         "primary": [
@@ -1246,6 +1314,8 @@
       "code": "PAT-0200",
       "title": "Reference Instability",
       "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
       "summary": "A structural condition where references, identifiers, links, or anchors change across equivalent evaluations without a declared cause.",
       "lenses": {
         "primary": [
@@ -1268,6 +1338,8 @@
       "code": "PAT-0160",
       "title": "Schema Breakage",
       "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
       "summary": "A structural condition where an instance, graph, payload, or object violates the type, shape, or rule requirements of a declared schema.",
       "lenses": {
         "primary": [
@@ -1295,6 +1367,8 @@
       "code": "PAT-0380",
       "title": "Silent Mutation",
       "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
       "summary": "A structural condition where a change occurs without a corresponding declared update, authority update, or version change.",
       "lenses": {
         "primary": [
@@ -1318,6 +1392,8 @@
       "code": "PAT-0390",
       "title": "Threshold Breach",
       "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
       "summary": "A structural condition where an observed metric, value, state, or condition exceeds a declared quantitative or qualitative threshold.",
       "lenses": {
         "primary": [
@@ -1340,6 +1416,8 @@
       "code": "PAT-0400",
       "title": "Unbounded Scope",
       "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
       "summary": "A structural condition where an operation, authority, rule, or expansion has no declared upper bound, boundary, or termination condition.",
       "lenses": {
         "primary": [
@@ -1363,6 +1441,8 @@
       "code": "PAT-0410",
       "title": "Unconstrained Expansion",
       "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
       "summary": "A structural condition where a region, process, authority, or effect expands without governing constraints limiting growth.",
       "lenses": {
         "primary": [
@@ -1388,6 +1468,8 @@
       "code": "PAT-0420",
       "title": "Undeclared Side Effect",
       "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
       "summary": "A structural condition where an operation modifies regions outside its declared target scope without a declared propagation or side-effect rule.",
       "lenses": {
         "primary": [
@@ -1413,6 +1495,8 @@
       "code": "LEN-0100",
       "title": "Absence Lens",
       "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
       "summary": "Detects structurally required elements that are missing from the observed structure.",
       "patterns": {
         "primary": [
@@ -1435,6 +1519,8 @@
       "code": "LEN-0110",
       "title": "Authority Overlay Lens",
       "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
       "summary": "Maps declared authority hierarchies onto observed structure to detect absence, override, or conflict.",
       "patterns": {
         "primary": [
@@ -1458,6 +1544,8 @@
       "code": "LEN-0120",
       "title": "Boundary Compliance Lens",
       "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
       "summary": "Evaluates observed structure against declared boundary posture, including allow, block, and exception rules.",
       "patterns": {
         "primary": [
@@ -1483,6 +1571,8 @@
       "code": "LEN-0130",
       "title": "Compatibility Envelope Lens",
       "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
       "summary": "Determines whether structure fits within declared runtime, platform, version, or support constraints.",
       "patterns": {
         "primary": [
@@ -1502,6 +1592,8 @@
       "code": "LEN-0140",
       "title": "Compression Lens",
       "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
       "summary": "Reduces structural graphs into stable minimal representations for comparison, redundancy detection, and diffing.",
       "patterns": {
         "primary": [
@@ -1527,6 +1619,8 @@
       "code": "LEN-0150",
       "title": "Conflict Lens",
       "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
       "summary": "Detects mutually incompatible constraints, claims, states, or declarations that cannot be simultaneously satisfied.",
       "patterns": {
         "primary": [
@@ -1556,6 +1650,8 @@
       "code": "LEN-0160",
       "title": "Constraint Sufficiency Lens",
       "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
       "summary": "Evaluates whether declared constraints are sufficient to eliminate structural degrees of freedom.",
       "patterns": {
         "primary": [
@@ -1580,6 +1676,8 @@
       "code": "LEN-0170",
       "title": "Convergence Lens",
       "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
       "summary": "Compares parallel structural systems to determine whether they align under shared authority.",
       "patterns": {
         "primary": [
@@ -1607,6 +1705,8 @@
       "code": "LEN-0180",
       "title": "Determinism Lens",
       "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
       "summary": "Evaluates whether identical structural inputs produce equivalent structural outputs across repeated executions.",
       "patterns": {
         "primary": [
@@ -1634,6 +1734,8 @@
       "code": "LEN-0190",
       "title": "Escalation Gradient Lens",
       "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
       "summary": "Measures structural growth or intensification across sequential executions, states, or transitions.",
       "patterns": {
         "primary": [
@@ -1659,6 +1761,8 @@
       "code": "LEN-0200",
       "title": "Interface Contract Lens",
       "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
       "summary": "Compares declared interface structure to observed runtime structure to detect contract deviations.",
       "patterns": {
         "primary": [
@@ -1683,6 +1787,8 @@
       "code": "LEN-0210",
       "title": "Invariant Lens",
       "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
       "summary": "Verifies that declared invariants are structurally enforceable and not contradicted by observed structure.",
       "patterns": {
         "primary": [
@@ -1707,6 +1813,8 @@
       "code": "LEN-0220",
       "title": "Isolation Boundary Lens",
       "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
       "summary": "Evaluates whether structural constraints, effects, and regions remain contained within declared boundaries.",
       "patterns": {
         "primary": [
@@ -1728,6 +1836,8 @@
       "code": "LEN-0230",
       "title": "Normalization Lens",
       "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
       "summary": "Transforms structurally equivalent variants into a canonical form to prevent false divergence.",
       "patterns": {
         "primary": [
@@ -1751,6 +1861,8 @@
       "code": "LEN-0240",
       "title": "Overreach Lens",
       "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
       "summary": "Detects structure that exceeds declared scope or authority reach.",
       "patterns": {
         "primary": [
@@ -1772,6 +1884,8 @@
       "code": "LEN-0250",
       "title": "Propagation Lens",
       "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
       "summary": "Traces how structural declarations, effects, or state changes propagate across boundaries or stages.",
       "patterns": {
         "primary": [
@@ -1800,6 +1914,8 @@
       "code": "LEN-0260",
       "title": "Provenance Trace Lens",
       "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
       "summary": "Attaches stable lineage to structural regions by mapping origin, reference history, and transformation path.",
       "patterns": {
         "primary": [],
@@ -1817,6 +1933,8 @@
       "code": "LEN-0270",
       "title": "Reconciliation Lens",
       "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
       "summary": "Evaluates whether structural changes align with declared authority updates, version changes, or reconciliation rules.",
       "patterns": {
         "primary": [
@@ -1845,6 +1963,8 @@
       "code": "LEN-0280",
       "title": "Reference Stability Lens",
       "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
       "summary": "Evaluates whether structural references, identifiers, nodes, and edges remain consistent across execution cycles or comparable states.",
       "patterns": {
         "primary": [
@@ -1870,6 +1990,8 @@
       "code": "LEN-0290",
       "title": "Variance / Entropy Lens",
       "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
       "summary": "Measures structural variability across repeated or comparable evaluations and identifies divergence beyond expected bounds.",
       "patterns": {
         "primary": [
@@ -1902,6 +2024,8 @@
       "code": "CAT-0030",
       "title": "Agents",
       "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
       "summary": "Problems where agent behavior expands, acts outside intent, fails to finish, modifies state, or chooses actions without enough stable control.",
       "issues": [
         "agent-keeps-expanding-the-task"
@@ -1914,6 +2038,8 @@
       "code": "CAT-0080",
       "title": "Changes & Versions",
       "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
       "summary": "Problems where model behavior, prompts, contracts, schemas, outputs, references, rubrics, or expectations change without the surrounding workflow updating correctly.",
       "issues": [],
       "url": "/workbench/categories/changes-and-versions/"
@@ -1924,6 +2050,8 @@
       "code": "CAT-0120",
       "title": "Coverage & Guidance",
       "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
       "summary": "Problems where prompts, rubrics, diagnostics, fallback rules, examples, requirements, or relationship maps are incomplete, underspecified, or missing needed guidance.",
       "issues": [],
       "url": "/workbench/categories/coverage-and-guidance/"
@@ -1934,6 +2062,8 @@
       "code": "CAT-0140",
       "title": "Duplication & Overload",
       "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
       "summary": "Problems where fields, sections, rules, checks, prompts, workflow steps, or review queues become duplicated, overloaded, bottlenecked, or carry too many meanings.",
       "issues": [],
       "url": "/workbench/categories/duplication-and-overload/"
@@ -1944,6 +2074,8 @@
       "code": "CAT-0090",
       "title": "Inconsistent Behavior",
       "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
       "summary": "Problems where similar inputs, repeated attempts, validations, prompts, routes, or cases produce different results without a clear reason.",
       "issues": [],
       "url": "/workbench/categories/inconsistent-behavior/"
@@ -1954,6 +2086,8 @@
       "code": "CAT-0130",
       "title": "Loops & Resolution",
       "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
       "summary": "Problems where agents, workflows, reviews, approvals, policies, schemas, or routing paths loop, wait on themselves, fail to settle, or cannot identify a final state.",
       "issues": [],
       "url": "/workbench/categories/loops-and-resolution/"
@@ -1964,6 +2098,8 @@
       "code": "CAT-0040",
       "title": "MCP, Tools & Integrations",
       "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
       "summary": "Problems involving tool calls, MCP surfaces, integration contracts, required tool inputs, tool results, parser consumers, or downstream systems that depend on AI output.",
       "issues": [
         "tool-call-contract-mismatch"
@@ -1976,6 +2112,8 @@
       "code": "CAT-0020",
       "title": "Memory & Context",
       "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
       "summary": "Problems where task state, prior instructions, saved memory, restored context, stale information, or cross-task context affects behavior incorrectly.",
       "issues": [
         "ai-forgets-earlier-constraints"
@@ -1988,6 +2126,8 @@
       "code": "CAT-0010",
       "title": "Output",
       "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
       "summary": "Problems where generated content, citations, fields, formats, parser-facing output, or structured responses are missing, malformed, unsupported, or unusable.",
       "issues": [
         "invalid-json-output"
@@ -2000,6 +2140,8 @@
       "code": "CAT-0050",
       "title": "Permissions & Approvals",
       "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
       "summary": "Problems where ownership, approval, authority, permission state, responsible control, or action rights are missing, stale, bypassed, conflicting, or unclear.",
       "issues": [
         "no-owner-for-agent-action"
@@ -2012,6 +2154,8 @@
       "code": "CAT-0060",
       "title": "Rules & Policies",
       "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
       "summary": "Problems where prompts, policies, rules, roles, constraints, or declared behavior conflict, drift, duplicate each other, or fail to match actual behavior.",
       "issues": [],
       "url": "/workbench/categories/rules-and-policies/"
@@ -2022,6 +2166,8 @@
       "code": "CAT-0100",
       "title": "Scope & Boundaries",
       "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
       "summary": "Problems where tasks, files, context, retrieval, permissions, actions, or outputs cross limits, use outside information, or lack clear operating boundaries.",
       "issues": [],
       "url": "/workbench/categories/scope-and-boundaries/"
@@ -2032,6 +2178,8 @@
       "code": "CAT-0110",
       "title": "Spread & Escalation",
       "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
       "summary": "Problems where small errors, local exceptions, risk signals, retries, permissions, or outputs spread downstream, grow in consequence, or trigger broader actions.",
       "issues": [],
       "url": "/workbench/categories/spread-and-escalation/"
@@ -2042,6 +2190,8 @@
       "code": "CAT-0070",
       "title": "Workflow & Handoffs",
       "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
       "summary": "Problems where review steps, handoffs, task progress, workflow ownership, downstream steps, or process coordination break, loop, disagree, or lose resolution.",
       "issues": [],
       "url": "/workbench/categories/workflow-and-handoffs/"
