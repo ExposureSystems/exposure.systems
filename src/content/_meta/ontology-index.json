@@ -753,6 +753,54 @@
       "markdown_url": "/workbench/issues/ai-forgets-earlier-constraints.md"
     },
     {
+      "slug": "ai-memory-has-no-governance",
+      "ontology_slug": "ai-memory-has-no-governance",
+      "code": "ISS-0109",
+      "title": "AI Memory Has No Governance",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "Saved or persistent AI memory affects output without clear rules for ownership, scope, review, update, expiry, or removal.",
+      "category": "memory-and-context",
+      "category_title": "Memory & Context",
+      "primary_cat_code": "CAT-0020",
+      "secondary_cat_codes": [
+        "CAT-0050"
+      ],
+      "primary_pattern": "missing-authority",
+      "patterns": [
+        "missing-authority",
+        "persistence-instability",
+        "boundary-leakage"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "absence-lens",
+          "authority-overlay-lens",
+          "isolation-boundary-lens",
+          "propagation-lens",
+          "reference-stability-lens"
+        ],
+        "secondary": [
+          "boundary-compliance-lens",
+          "conflict-lens",
+          "determinism-lens",
+          "reconciliation-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "AI memory has no governance",
+        "ChatGPT memory no governance",
+        "AI memory not controlled",
+        "saved memory lacks approval",
+        "AI memory scope unclear",
+        "persistent memory affects output without rules"
+      ],
+      "url": "/workbench/issues/ai-memory-has-no-governance/",
+      "markdown_url": "/workbench/issues/ai-memory-has-no-governance.md"
+    },
+    {
       "slug": "ai-output-breaks-parser",
       "ontology_slug": "ai-output-breaks-parser",
       "code": "ISS-0026",
@@ -1019,6 +1067,54 @@
       ],
       "url": "/workbench/issues/approval-depends-on-output-that-needs-approval/",
       "markdown_url": "/workbench/issues/approval-depends-on-output-that-needs-approval.md"
+    },
+    {
+      "slug": "automation-skips-required-approval",
+      "ontology_slug": "automation-skips-required-approval",
+      "code": "ISS-0111",
+      "title": "Automation Skips Required Approval",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "An automated AI or workflow step proceeds past an approval gate that should have been required before action.",
+      "category": "permissions-and-approvals",
+      "category_title": "Permissions & Approvals",
+      "primary_cat_code": "CAT-0050",
+      "secondary_cat_codes": [
+        "CAT-0070"
+      ],
+      "primary_pattern": "missing-authority",
+      "patterns": [
+        "missing-authority",
+        "undeclared-side-effect",
+        "compatibility-violation"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "absence-lens",
+          "authority-overlay-lens",
+          "compatibility-envelope-lens",
+          "overreach-lens",
+          "propagation-lens"
+        ],
+        "secondary": [
+          "boundary-compliance-lens",
+          "conflict-lens",
+          "isolation-boundary-lens",
+          "reconciliation-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "automation skips required approval",
+        "AI automation bypassed approval",
+        "workflow skipped approval gate",
+        "agent acted without required approval",
+        "approval gate bypassed",
+        "automated action skipped review"
+      ],
+      "url": "/workbench/issues/automation-skips-required-approval/",
+      "markdown_url": "/workbench/issues/automation-skips-required-approval.md"
     },
     {
       "slug": "behavior-does-not-match-declared-role",
@@ -3522,6 +3618,52 @@
       "markdown_url": "/workbench/issues/review-outcome-changes-unrelated-environment.md"
     },
     {
+      "slug": "review-queue-becomes-bottleneck",
+      "ontology_slug": "review-queue-becomes-bottleneck",
+      "code": "ISS-0105",
+      "title": "Review Queue Becomes Bottleneck",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "A review queue, approval path, or validation stage accumulates too much work and begins blocking the workflow.",
+      "category": "duplication-and-overload",
+      "category_title": "Duplication & Overload",
+      "primary_cat_code": "CAT-0140",
+      "secondary_cat_codes": [
+        "CAT-0070"
+      ],
+      "primary_pattern": "density-spike",
+      "patterns": [
+        "density-spike",
+        "orphaned-structure",
+        "convergence-failure"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "absence-lens",
+          "compression-lens",
+          "convergence-lens",
+          "variance-entropy-lens"
+        ],
+        "secondary": [
+          "escalation-gradient-lens",
+          "propagation-lens",
+          "reconciliation-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "review queue becomes bottleneck",
+        "AI review queue bottleneck",
+        "workflow stuck in review queue",
+        "review backlog blocks AI workflow",
+        "approval queue overloaded",
+        "too many items waiting for review"
+      ],
+      "url": "/workbench/issues/review-queue-becomes-bottleneck/",
+      "markdown_url": "/workbench/issues/review-queue-becomes-bottleneck.md"
+    },
+    {
       "slug": "review-rubric-missing-required-criteria",
       "ontology_slug": "review-rubric-missing-required-criteria",
       "code": "ISS-0075",
@@ -3704,6 +3846,52 @@
       ],
       "url": "/workbench/issues/risk-signal-escalates-beyond-evidence/",
       "markdown_url": "/workbench/issues/risk-signal-escalates-beyond-evidence.md"
+    },
+    {
+      "slug": "routing-overrides-task-intent",
+      "ontology_slug": "routing-overrides-task-intent",
+      "code": "ISS-0112",
+      "title": "Routing Overrides Task Intent",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "Routing, mode selection, agent behavior, or workflow classification sends the task down a path that overrides what the user was trying to accomplish.",
+      "category": "agents",
+      "category_title": "Agents",
+      "primary_cat_code": "CAT-0030",
+      "secondary_cat_codes": [
+        "CAT-0070"
+      ],
+      "primary_pattern": "overreach",
+      "patterns": [
+        "overreach",
+        "authority-state-mismatch",
+        "boundary-leakage"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "boundary-compliance-lens",
+          "isolation-boundary-lens",
+          "overreach-lens",
+          "propagation-lens",
+          "reconciliation-lens"
+        ],
+        "secondary": [
+          "convergence-lens",
+          "reference-stability-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "routing overrides task intent",
+        "AI routed task wrong",
+        "agent routing ignored user intent",
+        "workflow classification overrode request",
+        "AI mode selection changed task",
+        "task intent overridden by routing"
+      ],
+      "url": "/workbench/issues/routing-overrides-task-intent/",
+      "markdown_url": "/workbench/issues/routing-overrides-task-intent.md"
     },
     {
       "slug": "routing-path-cycles-back-to-start",
@@ -4247,6 +4435,52 @@
       "markdown_url": "/workbench/issues/similar-cases-route-to-different-outcomes.md"
     },
     {
+      "slug": "single-field-carries-too-many-obligations",
+      "ontology_slug": "single-field-carries-too-many-obligations",
+      "code": "ISS-0107",
+      "title": "Single Field Carries Too Many Obligations",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "One field, label, score, status, or structured value is expected to carry too many meanings, decisions, or workflow obligations.",
+      "category": "duplication-and-overload",
+      "category_title": "Duplication & Overload",
+      "primary_cat_code": "CAT-0140",
+      "secondary_cat_codes": [
+        "CAT-0010"
+      ],
+      "primary_pattern": "density-spike",
+      "patterns": [
+        "density-spike",
+        "redundant-declaration",
+        "schema-breakage"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "compression-lens",
+          "conflict-lens",
+          "interface-contract-lens",
+          "invariant-lens",
+          "normalization-lens",
+          "variance-entropy-lens"
+        ],
+        "secondary": [
+          "escalation-gradient-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "single field carries too many obligations",
+        "AI field overloaded",
+        "one field has too many meanings",
+        "structured output field carries too much",
+        "status field overloaded",
+        "AI output field used for too many decisions"
+      ],
+      "url": "/workbench/issues/single-field-carries-too-many-obligations/",
+      "markdown_url": "/workbench/issues/single-field-carries-too-many-obligations.md"
+    },
+    {
       "slug": "single-step-carries-too-many-decisions",
       "ontology_slug": "single-step-carries-too-many-decisions",
       "code": "ISS-0103",
@@ -4293,6 +4527,53 @@
       ],
       "url": "/workbench/issues/single-step-carries-too-many-decisions/",
       "markdown_url": "/workbench/issues/single-step-carries-too-many-decisions.md"
+    },
+    {
+      "slug": "small-change-produces-large-downstream-effects",
+      "ontology_slug": "small-change-produces-large-downstream-effects",
+      "code": "ISS-0106",
+      "title": "Small Change Produces Large Downstream Effects",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "A small prompt, schema, policy, output, or workflow change creates unexpectedly large effects in downstream steps.",
+      "category": "spread-and-escalation",
+      "category_title": "Spread & Escalation",
+      "primary_cat_code": "CAT-0110",
+      "secondary_cat_codes": [
+        "CAT-0080"
+      ],
+      "primary_pattern": "propagation-amplification",
+      "patterns": [
+        "propagation-amplification",
+        "contract-drift",
+        "compatibility-violation"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "compatibility-envelope-lens",
+          "convergence-lens",
+          "escalation-gradient-lens",
+          "propagation-lens",
+          "reconciliation-lens"
+        ],
+        "secondary": [
+          "boundary-compliance-lens",
+          "determinism-lens",
+          "variance-entropy-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "small change produces large downstream effects",
+        "small AI change caused big workflow impact",
+        "prompt change had large downstream effect",
+        "minor schema change broke workflow",
+        "small update caused major AI behavior change",
+        "downstream effects from small change"
+      ],
+      "url": "/workbench/issues/small-change-produces-large-downstream-effects/",
+      "markdown_url": "/workbench/issues/small-change-produces-large-downstream-effects.md"
     },
     {
       "slug": "small-error-spreads-into-large-failure",
@@ -4611,6 +4892,54 @@
       "markdown_url": "/workbench/issues/tool-call-contract-mismatch.md"
     },
     {
+      "slug": "tool-can-act-without-responsible-authority",
+      "ontology_slug": "tool-can-act-without-responsible-authority",
+      "code": "ISS-0108",
+      "title": "Tool Can Act Without Responsible Authority",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "A tool, connector, function, or integration can perform an action without a declared responsible authority for that action.",
+      "category": "permissions-and-approvals",
+      "category_title": "Permissions & Approvals",
+      "primary_cat_code": "CAT-0050",
+      "secondary_cat_codes": [
+        "CAT-0040"
+      ],
+      "primary_pattern": "missing-authority",
+      "patterns": [
+        "missing-authority",
+        "undeclared-side-effect",
+        "interface-mismatch"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "absence-lens",
+          "authority-overlay-lens",
+          "interface-contract-lens",
+          "overreach-lens",
+          "propagation-lens"
+        ],
+        "secondary": [
+          "conflict-lens",
+          "isolation-boundary-lens",
+          "normalization-lens",
+          "reconciliation-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "tool can act without responsible authority",
+        "AI tool has no responsible authority",
+        "tool action lacks owner",
+        "MCP tool can act without approval",
+        "connector action has no authority",
+        "tool permission without responsibility"
+      ],
+      "url": "/workbench/issues/tool-can-act-without-responsible-authority/",
+      "markdown_url": "/workbench/issues/tool-can-act-without-responsible-authority.md"
+    },
+    {
       "slug": "tool-exists-but-required-inputs-are-missing",
       "ontology_slug": "tool-exists-but-required-inputs-are-missing",
       "code": "ISS-0020",
@@ -4701,6 +5030,51 @@
       ],
       "url": "/workbench/issues/tool-result-not-integrated-correctly/",
       "markdown_url": "/workbench/issues/tool-result-not-integrated-correctly.md"
+    },
+    {
+      "slug": "tool-rules-and-prompt-rules-conflict",
+      "ontology_slug": "tool-rules-and-prompt-rules-conflict",
+      "code": "ISS-0110",
+      "title": "Tool Rules and Prompt Rules Conflict",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "Tool, connector, function, or MCP rules conflict with prompt instructions, causing the AI or agent to face incompatible requirements.",
+      "category": "rules-and-policies",
+      "category_title": "Rules & Policies",
+      "primary_cat_code": "CAT-0060",
+      "secondary_cat_codes": [
+        "CAT-0040"
+      ],
+      "primary_pattern": "authority-collision",
+      "patterns": [
+        "authority-collision",
+        "interface-mismatch",
+        "authority-shadowing"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "authority-overlay-lens",
+          "conflict-lens",
+          "interface-contract-lens"
+        ],
+        "secondary": [
+          "invariant-lens",
+          "normalization-lens",
+          "reconciliation-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "tool rules and prompt rules conflict",
+        "MCP tool rules conflict with prompt",
+        "tool schema conflicts with instruction",
+        "AI prompt conflicts with tool requirement",
+        "function rules contradict prompt",
+        "agent tool instructions conflict"
+      ],
+      "url": "/workbench/issues/tool-rules-and-prompt-rules-conflict/",
+      "markdown_url": "/workbench/issues/tool-rules-and-prompt-rules-conflict.md"
     },
     {
       "slug": "validation-result-changes-on-retry",
@@ -5182,7 +5556,8 @@
           "conflicting-instructions-from-different-authorities",
           "human-review-and-automation-disagree",
           "permissions-conflict-after-being-combined",
-          "same-case-has-conflicting-policies"
+          "same-case-has-conflicting-policies",
+          "tool-rules-and-prompt-rules-conflict"
         ],
         "supporting": [
           "approval-depends-on-output-that-needs-approval",
@@ -5251,7 +5626,8 @@
           "behavior-does-not-match-declared-role",
           "conflicting-instructions-from-different-authorities",
           "permissions-conflict-after-being-combined",
-          "same-case-has-conflicting-policies"
+          "same-case-has-conflicting-policies",
+          "tool-rules-and-prompt-rules-conflict"
         ]
       },
       "url": "/workbench/patterns/authority-shadowing/",
@@ -5289,6 +5665,7 @@
           "human-review-and-automation-disagree",
           "local-exception-grows-into-policy",
           "no-owner-for-agent-action",
+          "routing-overrides-task-intent",
           "rubric-changed-but-results-did-not",
           "similar-cases-route-to-different-outcomes"
         ]
@@ -5324,12 +5701,14 @@
         ],
         "supporting": [
           "action-changed-something-else-too",
+          "ai-memory-has-no-governance",
           "ai-touches-unrelated-scope",
           "hidden-rule-overrides-visible-instruction",
           "local-exception-grows-into-policy",
           "local-rule-spreads-to-broader-cases",
           "policy-exception-spreads-too-far",
-          "prompt-does-not-say-what-to-exclude"
+          "prompt-does-not-say-what-to-exclude",
+          "routing-overrides-task-intent"
         ]
       },
       "url": "/workbench/patterns/boundary-leakage/",
@@ -5396,12 +5775,14 @@
         ],
         "supporting": [
           "ai-output-breaks-parser",
+          "automation-skips-required-approval",
           "citation-points-to-wrong-source",
           "declared-owner-cannot-control-outcome",
           "model-and-workflow-disagree-on-next-step",
           "output-changed-without-declared-change",
           "prompt-changed-but-workflow-did-not",
           "saved-reference-no-longer-works",
+          "small-change-produces-large-downstream-effects",
           "tool-call-contract-mismatch",
           "version-change-breaks-existing-prompt",
           "wrong-field-types"
@@ -5495,6 +5876,7 @@
           "revoked-approval-still-treated-as-active",
           "same-rule-declared-in-multiple-places",
           "saved-reference-no-longer-works",
+          "small-change-produces-large-downstream-effects",
           "tool-result-not-integrated-correctly"
         ]
       },
@@ -5529,6 +5911,7 @@
           "agent-keeps-expanding-the-task",
           "human-review-and-automation-disagree",
           "review-escalates-without-stop-condition",
+          "review-queue-becomes-bottleneck",
           "routing-path-cycles-back-to-start",
           "same-workflow-check-happens-twice",
           "task-progress-is-lost-midway",
@@ -5586,6 +5969,8 @@
         "primary": [
           "answer-has-too-many-paths",
           "one-prompt-carries-too-many-meanings",
+          "review-queue-becomes-bottleneck",
+          "single-field-carries-too-many-obligations",
           "single-step-carries-too-many-decisions"
         ],
         "supporting": [
@@ -5792,8 +6177,10 @@
           "output-breaks-the-next-step",
           "prompt-changed-but-workflow-did-not",
           "same-contract-name-has-different-meanings",
+          "tool-can-act-without-responsible-authority",
           "tool-exists-but-required-inputs-are-missing",
           "tool-result-not-integrated-correctly",
+          "tool-rules-and-prompt-rules-conflict",
           "wrong-field-types"
         ]
       },
@@ -5848,8 +6235,11 @@
       },
       "issues": {
         "primary": [
+          "ai-memory-has-no-governance",
+          "automation-skips-required-approval",
           "fallback-authority-is-missing",
           "no-owner-for-agent-action",
+          "tool-can-act-without-responsible-authority",
           "workflow-step-has-no-decision-owner"
         ],
         "supporting": [
@@ -5927,6 +6317,7 @@
         "supporting": [
           "merge-step-leaves-unresolved-differences",
           "relationship-map-has-missing-links",
+          "review-queue-becomes-bottleneck",
           "task-progress-is-lost-midway",
           "workflow-stage-has-too-few-checks",
           "workflow-step-has-no-decision-owner",
@@ -5959,7 +6350,8 @@
         "primary": [
           "ai-adds-work-not-requested",
           "ai-touches-unrelated-scope",
-          "hallucinated-fields"
+          "hallucinated-fields",
+          "routing-overrides-task-intent"
         ],
         "supporting": [
           "agent-keeps-expanding-the-task",
@@ -6000,6 +6392,7 @@
           "task-progress-is-lost-midway"
         ],
         "supporting": [
+          "ai-memory-has-no-governance",
           "context-changes-after-restore",
           "context-leaks-between-tasks",
           "old-output-expectations-survive-migration",
@@ -6038,6 +6431,7 @@
           "local-rule-spreads-to-broader-cases",
           "policy-exception-spreads-too-far",
           "repair-step-created-new-breakage",
+          "small-change-produces-large-downstream-effects",
           "small-error-spreads-into-large-failure"
         ],
         "supporting": [
@@ -6079,7 +6473,8 @@
           "same-workflow-check-happens-twice"
         ],
         "supporting": [
-          "old-output-expectations-survive-migration"
+          "old-output-expectations-survive-migration",
+          "single-field-carries-too-many-obligations"
         ]
       },
       "url": "/workbench/patterns/redundant-declaration/",
@@ -6157,6 +6552,7 @@
           "missing-required-fields",
           "output-breaks-the-next-step",
           "schema-reference-loops-without-base-case",
+          "single-field-carries-too-many-obligations",
           "tool-call-contract-mismatch",
           "validation-result-changes-on-retry"
         ]
@@ -6319,10 +6715,12 @@
         "supporting": [
           "ai-adds-work-not-requested",
           "ai-uses-external-information-when-forbidden",
+          "automation-skips-required-approval",
           "no-owner-for-agent-action",
           "repair-step-created-new-breakage",
           "review-outcome-changes-unrelated-environment",
-          "small-error-spreads-into-large-failure"
+          "small-error-spreads-into-large-failure",
+          "tool-can-act-without-responsible-authority"
         ]
       },
       "url": "/workbench/patterns/undeclared-side-effect/",
@@ -6352,8 +6750,10 @@
         "action-triggered-by-confidence-score",
         "agent-cannot-choose-tool-without-tool-result",
         "agent-permission-expands-over-steps",
+        "ai-memory-has-no-governance",
         "answer-has-no-traceable-source-link",
         "approval-depends-on-output-that-needs-approval",
+        "automation-skips-required-approval",
         "cannot-identify-authoritative-state",
         "declared-owner-cannot-control-outcome",
         "diagnostic-area-has-no-coverage",
@@ -6368,6 +6768,7 @@
         "policy-area-has-no-examples",
         "policy-decision-depends-on-itself",
         "relationship-map-has-missing-links",
+        "review-queue-becomes-bottleneck",
         "review-rubric-missing-required-criteria",
         "risk-score-triggers-wrong-escalation",
         "risk-signal-escalates-beyond-evidence",
@@ -6376,6 +6777,7 @@
         "single-step-carries-too-many-decisions",
         "task-has-no-clear-limit",
         "task-progress-is-lost-midway",
+        "tool-can-act-without-responsible-authority",
         "tool-exists-but-required-inputs-are-missing",
         "tool-result-not-integrated-correctly",
         "workflow-stage-has-too-few-checks",
@@ -6409,7 +6811,9 @@
         "action-triggered-by-confidence-score",
         "agent-cannot-choose-tool-without-tool-result",
         "agent-permission-expands-over-steps",
+        "ai-memory-has-no-governance",
         "approval-depends-on-output-that-needs-approval",
+        "automation-skips-required-approval",
         "behavior-does-not-match-declared-role",
         "cannot-identify-authoritative-state",
         "conflicting-instructions-from-different-authorities",
@@ -6430,6 +6834,8 @@
         "same-case-has-conflicting-policies",
         "severity-increases-without-new-evidence",
         "single-step-carries-too-many-decisions",
+        "tool-can-act-without-responsible-authority",
+        "tool-rules-and-prompt-rules-conflict",
         "workflow-step-has-no-decision-owner"
       ],
       "url": "/workbench/lenses/authority-overlay-lens/",
@@ -6460,9 +6866,11 @@
         "agent-keeps-expanding-the-task",
         "agent-permission-expands-over-steps",
         "ai-adds-work-not-requested",
+        "ai-memory-has-no-governance",
         "ai-output-breaks-parser",
         "ai-touches-unrelated-scope",
         "ai-uses-external-information-when-forbidden",
+        "automation-skips-required-approval",
         "behavior-does-not-match-declared-role",
         "citation-points-to-wrong-source",
         "context-leaks-between-tasks",
@@ -6484,8 +6892,10 @@
         "review-outcome-changes-unrelated-environment",
         "risk-score-triggers-wrong-escalation",
         "risk-signal-escalates-beyond-evidence",
+        "routing-overrides-task-intent",
         "saved-reference-no-longer-works",
         "severity-increases-without-new-evidence",
+        "small-change-produces-large-downstream-effects",
         "small-issue-keeps-escalating",
         "too-many-tool-calls",
         "tool-call-contract-mismatch",
@@ -6512,6 +6922,7 @@
       },
       "issues": [
         "ai-output-breaks-parser",
+        "automation-skips-required-approval",
         "citation-points-to-wrong-source",
         "declared-owner-cannot-control-outcome",
         "model-and-workflow-disagree-on-next-step",
@@ -6520,6 +6931,7 @@
         "output-changed-without-declared-change",
         "prompt-changed-but-workflow-did-not",
         "saved-reference-no-longer-works",
+        "small-change-produces-large-downstream-effects",
         "tool-call-contract-mismatch",
         "version-change-breaks-existing-prompt",
         "wrong-field-types"
@@ -6571,11 +6983,13 @@
         "repeated-constraints-create-confusion",
         "results-vary-too-much",
         "retrieval-exceeds-evidence-limit",
+        "review-queue-becomes-bottleneck",
         "review-rubric-missing-required-criteria",
         "same-instructions-allow-different-outputs",
         "same-rule-declared-in-multiple-places",
         "same-workflow-check-happens-twice",
         "similar-cases-route-to-different-outcomes",
+        "single-field-carries-too-many-obligations",
         "single-step-carries-too-many-decisions",
         "validation-result-changes-on-retry",
         "workflow-stage-has-too-few-checks"
@@ -6611,8 +7025,10 @@
         "agent-cannot-choose-tool-without-tool-result",
         "agent-never-settles-on-final-answer",
         "agent-permission-expands-over-steps",
+        "ai-memory-has-no-governance",
         "ai-output-breaks-parser",
         "approval-depends-on-output-that-needs-approval",
+        "automation-skips-required-approval",
         "behavior-does-not-match-declared-role",
         "cannot-identify-authoritative-state",
         "conflicting-instructions-from-different-authorities",
@@ -6648,8 +7064,11 @@
         "same-workflow-check-happens-twice",
         "schema-reference-loops-without-base-case",
         "severity-increases-without-new-evidence",
+        "single-field-carries-too-many-obligations",
         "single-step-carries-too-many-decisions",
         "tool-call-contract-mismatch",
+        "tool-can-act-without-responsible-authority",
+        "tool-rules-and-prompt-rules-conflict",
         "validation-result-changes-on-retry",
         "workflow-loops-through-review-without-resolution",
         "workflow-step-has-no-decision-owner",
@@ -6764,7 +7183,9 @@
         "prompt-only-works-after-retry",
         "results-vary-too-much",
         "review-escalates-without-stop-condition",
+        "review-queue-becomes-bottleneck",
         "revoked-approval-still-treated-as-active",
+        "routing-overrides-task-intent",
         "routing-path-cycles-back-to-start",
         "rubric-changed-but-results-did-not",
         "same-contract-name-has-different-meanings",
@@ -6773,6 +7194,7 @@
         "same-workflow-check-happens-twice",
         "saved-reference-no-longer-works",
         "similar-cases-route-to-different-outcomes",
+        "small-change-produces-large-downstream-effects",
         "stale-context-affects-output",
         "task-progress-is-lost-midway",
         "tool-result-not-integrated-correctly",
@@ -6809,6 +7231,7 @@
       "issues": [
         "actual-policy-differs-from-declared-policy",
         "ai-forgets-earlier-constraints",
+        "ai-memory-has-no-governance",
         "answer-has-no-traceable-source-link",
         "answer-has-too-many-paths",
         "cannot-identify-authoritative-state",
@@ -6849,6 +7272,7 @@
         "saved-reference-no-longer-works",
         "schema-reference-loops-without-base-case",
         "similar-cases-route-to-different-outcomes",
+        "small-change-produces-large-downstream-effects",
         "stale-context-affects-output",
         "task-has-no-clear-limit",
         "task-progress-is-lost-midway",
@@ -6912,13 +7336,16 @@
         "retry-makes-the-problem-worse",
         "review-escalates-without-stop-condition",
         "review-outcome-changes-unrelated-environment",
+        "review-queue-becomes-bottleneck",
         "risk-score-triggers-wrong-escalation",
         "risk-signal-escalates-beyond-evidence",
         "routing-path-cycles-back-to-start",
         "same-rule-declared-in-multiple-places",
         "same-workflow-check-happens-twice",
         "severity-increases-without-new-evidence",
+        "single-field-carries-too-many-obligations",
         "single-step-carries-too-many-decisions",
+        "small-change-produces-large-downstream-effects",
         "small-error-spreads-into-large-failure",
         "small-issue-keeps-escalating",
         "task-has-no-clear-limit",
@@ -6974,10 +7401,13 @@
         "same-contract-name-has-different-meanings",
         "saved-memory-not-used",
         "schema-reference-loops-without-base-case",
+        "single-field-carries-too-many-obligations",
         "task-has-no-clear-limit",
         "tool-call-contract-mismatch",
+        "tool-can-act-without-responsible-authority",
         "tool-exists-but-required-inputs-are-missing",
         "tool-result-not-integrated-correctly",
+        "tool-rules-and-prompt-rules-conflict",
         "validation-result-changes-on-retry",
         "workflow-stage-has-too-few-checks",
         "workflow-step-has-no-decision-owner",
@@ -7031,8 +7461,10 @@
         "same-case-has-conflicting-policies",
         "schema-reference-loops-without-base-case",
         "severity-increases-without-new-evidence",
+        "single-field-carries-too-many-obligations",
         "small-issue-keeps-escalating",
         "tool-call-contract-mismatch",
+        "tool-rules-and-prompt-rules-conflict",
         "validation-result-changes-on-retry",
         "wrong-field-types"
       ],
@@ -7061,9 +7493,11 @@
       "issues": [
         "action-changed-something-else-too",
         "ai-adds-work-not-requested",
+        "ai-memory-has-no-governance",
         "ai-touches-unrelated-scope",
         "ai-uses-external-information-when-forbidden",
         "answer-has-too-many-paths",
+        "automation-skips-required-approval",
         "context-leaks-between-tasks",
         "file-bounded-task-uses-outside-content",
         "hallucinated-fields",
@@ -7077,10 +7511,12 @@
         "repair-step-created-new-breakage",
         "retrieval-exceeds-evidence-limit",
         "review-outcome-changes-unrelated-environment",
+        "routing-overrides-task-intent",
         "single-step-carries-too-many-decisions",
         "small-error-spreads-into-large-failure",
         "task-has-no-clear-limit",
-        "too-many-tool-calls"
+        "too-many-tool-calls",
+        "tool-can-act-without-responsible-authority"
       ],
       "url": "/workbench/lenses/isolation-boundary-lens/",
       "markdown_url": "/workbench/lenses/isolation-boundary-lens.md"
@@ -7127,9 +7563,12 @@
         "same-rule-declared-in-multiple-places",
         "same-workflow-check-happens-twice",
         "schema-reference-loops-without-base-case",
+        "single-field-carries-too-many-obligations",
         "tool-call-contract-mismatch",
+        "tool-can-act-without-responsible-authority",
         "tool-exists-but-required-inputs-are-missing",
         "tool-result-not-integrated-correctly",
+        "tool-rules-and-prompt-rules-conflict",
         "workflow-loops-through-review-without-resolution",
         "workflow-waits-on-step-that-waits-back",
         "wrong-field-types"
@@ -7160,6 +7599,7 @@
         "ai-adds-work-not-requested",
         "ai-touches-unrelated-scope",
         "ai-uses-external-information-when-forbidden",
+        "automation-skips-required-approval",
         "behavior-does-not-match-declared-role",
         "file-bounded-task-uses-outside-content",
         "hallucinated-fields",
@@ -7170,8 +7610,10 @@
         "repair-step-created-new-breakage",
         "retrieval-exceeds-evidence-limit",
         "review-outcome-changes-unrelated-environment",
+        "routing-overrides-task-intent",
         "small-error-spreads-into-large-failure",
-        "too-many-tool-calls"
+        "too-many-tool-calls",
+        "tool-can-act-without-responsible-authority"
       ],
       "url": "/workbench/lenses/overreach-lens/",
       "markdown_url": "/workbench/lenses/overreach-lens.md"
@@ -7207,9 +7649,11 @@
         "agent-never-settles-on-final-answer",
         "agent-permission-expands-over-steps",
         "ai-adds-work-not-requested",
+        "ai-memory-has-no-governance",
         "ai-touches-unrelated-scope",
         "ai-uses-external-information-when-forbidden",
         "approval-depends-on-output-that-needs-approval",
+        "automation-skips-required-approval",
         "behavior-does-not-match-declared-role",
         "context-leaks-between-tasks",
         "downstream-steps-magnify-hallucinated-claim",
@@ -7232,15 +7676,19 @@
         "retry-makes-the-problem-worse",
         "review-escalates-without-stop-condition",
         "review-outcome-changes-unrelated-environment",
+        "review-queue-becomes-bottleneck",
         "risk-score-triggers-wrong-escalation",
         "risk-signal-escalates-beyond-evidence",
+        "routing-overrides-task-intent",
         "routing-path-cycles-back-to-start",
         "schema-reference-loops-without-base-case",
         "severity-increases-without-new-evidence",
+        "small-change-produces-large-downstream-effects",
         "small-error-spreads-into-large-failure",
         "small-issue-keeps-escalating",
         "task-progress-is-lost-midway",
         "too-many-tool-calls",
+        "tool-can-act-without-responsible-authority",
         "tool-result-not-integrated-correctly",
         "workflow-loops-through-review-without-resolution",
         "workflow-stage-has-too-few-checks",
@@ -7307,7 +7755,9 @@
         "agent-never-settles-on-final-answer",
         "agent-permission-expands-over-steps",
         "ai-forgets-earlier-constraints",
+        "ai-memory-has-no-governance",
         "approval-depends-on-output-that-needs-approval",
+        "automation-skips-required-approval",
         "behavior-does-not-match-declared-role",
         "cannot-identify-authoritative-state",
         "conflicting-instructions-from-different-authorities",
@@ -7334,9 +7784,11 @@
         "prompt-behavior-changed-without-version-change",
         "prompt-changed-but-workflow-did-not",
         "review-escalates-without-stop-condition",
+        "review-queue-becomes-bottleneck",
         "revoked-approval-still-treated-as-active",
         "risk-score-triggers-wrong-escalation",
         "risk-signal-escalates-beyond-evidence",
+        "routing-overrides-task-intent",
         "routing-path-cycles-back-to-start",
         "rubric-changed-but-results-did-not",
         "same-case-has-conflicting-policies",
@@ -7347,9 +7799,12 @@
         "severity-increases-without-new-evidence",
         "similar-cases-route-to-different-outcomes",
         "single-step-carries-too-many-decisions",
+        "small-change-produces-large-downstream-effects",
         "stale-context-affects-output",
         "task-progress-is-lost-midway",
+        "tool-can-act-without-responsible-authority",
         "tool-result-not-integrated-correctly",
+        "tool-rules-and-prompt-rules-conflict",
         "version-change-breaks-existing-prompt",
         "workflow-loops-through-review-without-resolution",
         "workflow-step-has-no-decision-owner",
@@ -7381,6 +7836,7 @@
       "issues": [
         "actual-policy-differs-from-declared-policy",
         "ai-forgets-earlier-constraints",
+        "ai-memory-has-no-governance",
         "answer-has-no-traceable-source-link",
         "behavior-does-not-match-declared-role",
         "cannot-identify-authoritative-state",
@@ -7404,6 +7860,7 @@
         "results-vary-too-much",
         "retry-makes-the-problem-worse",
         "revoked-approval-still-treated-as-active",
+        "routing-overrides-task-intent",
         "rubric-changed-but-results-did-not",
         "same-contract-name-has-different-meanings",
         "same-instructions-allow-different-outputs",
@@ -7483,6 +7940,7 @@
         "retry-makes-the-problem-worse",
         "review-escalates-without-stop-condition",
         "review-outcome-changes-unrelated-environment",
+        "review-queue-becomes-bottleneck",
         "review-rubric-missing-required-criteria",
         "risk-score-triggers-wrong-escalation",
         "risk-signal-escalates-beyond-evidence",
@@ -7492,7 +7950,9 @@
         "same-workflow-check-happens-twice",
         "severity-increases-without-new-evidence",
         "similar-cases-route-to-different-outcomes",
+        "single-field-carries-too-many-obligations",
         "single-step-carries-too-many-decisions",
+        "small-change-produces-large-downstream-effects",
         "small-error-spreads-into-large-failure",
         "small-issue-keeps-escalating",
         "task-has-no-clear-limit",
@@ -7520,11 +7980,13 @@
       "summary": "Problems where agent behavior expands, acts outside intent, fails to finish, modifies state, or chooses actions without enough stable control.",
       "issues": [
         "agent-keeps-expanding-the-task",
-        "ai-adds-work-not-requested"
+        "ai-adds-work-not-requested",
+        "routing-overrides-task-intent"
       ],
       "primary_issues": [
         "agent-keeps-expanding-the-task",
-        "ai-adds-work-not-requested"
+        "ai-adds-work-not-requested",
+        "routing-overrides-task-intent"
       ],
       "secondary_issues": [
         "agent-never-settles-on-final-answer",
@@ -7569,6 +8031,7 @@
         "context-changes-after-restore",
         "policy-update-not-reflected-in-output",
         "revoked-approval-still-treated-as-active",
+        "small-change-produces-large-downstream-effects",
         "stale-context-affects-output"
       ],
       "url": "/workbench/categories/changes-and-versions/"
@@ -7632,8 +8095,10 @@
         "multiple-policies-say-the-same-thing",
         "one-prompt-carries-too-many-meanings",
         "repeated-constraints-create-confusion",
+        "review-queue-becomes-bottleneck",
         "same-rule-declared-in-multiple-places",
         "same-workflow-check-happens-twice",
+        "single-field-carries-too-many-obligations",
         "single-step-carries-too-many-decisions"
       ],
       "primary_issues": [
@@ -7642,8 +8107,10 @@
         "multiple-policies-say-the-same-thing",
         "one-prompt-carries-too-many-meanings",
         "repeated-constraints-create-confusion",
+        "review-queue-becomes-bottleneck",
         "same-rule-declared-in-multiple-places",
         "same-workflow-check-happens-twice",
+        "single-field-carries-too-many-obligations",
         "single-step-carries-too-many-decisions"
       ],
       "secondary_issues": [],
@@ -7742,7 +8209,9 @@
       ],
       "secondary_issues": [
         "agent-cannot-choose-tool-without-tool-result",
-        "ai-output-breaks-parser"
+        "ai-output-breaks-parser",
+        "tool-can-act-without-responsible-authority",
+        "tool-rules-and-prompt-rules-conflict"
       ],
       "url": "/workbench/categories/mcp-tools-and-integrations/"
     },
@@ -7757,6 +8226,7 @@
       "summary": "Problems where task state, prior instructions, saved memory, restored context, stale information, or cross-task context affects behavior incorrectly.",
       "issues": [
         "ai-forgets-earlier-constraints",
+        "ai-memory-has-no-governance",
         "context-changes-after-restore",
         "context-leaks-between-tasks",
         "saved-memory-not-used",
@@ -7765,6 +8235,7 @@
       ],
       "primary_issues": [
         "ai-forgets-earlier-constraints",
+        "ai-memory-has-no-governance",
         "context-changes-after-restore",
         "context-leaks-between-tasks",
         "saved-memory-not-used",
@@ -7820,6 +8291,7 @@
         "retrieval-exceeds-evidence-limit",
         "saved-reference-no-longer-works",
         "schema-reference-loops-without-base-case",
+        "single-field-carries-too-many-obligations",
         "small-error-spreads-into-large-failure",
         "tool-call-contract-mismatch",
         "tool-result-not-integrated-correctly",
@@ -7839,26 +8311,31 @@
       "summary": "Problems where ownership, approval, authority, permission state, responsible control, or action rights are missing, stale, bypassed, conflicting, or unclear.",
       "issues": [
         "action-triggered-by-confidence-score",
+        "automation-skips-required-approval",
         "behavior-does-not-match-declared-role",
         "declared-owner-cannot-control-outcome",
         "fallback-authority-is-missing",
         "model-output-triggers-unapproved-action",
         "no-owner-for-agent-action",
         "permissions-conflict-after-being-combined",
-        "revoked-approval-still-treated-as-active"
+        "revoked-approval-still-treated-as-active",
+        "tool-can-act-without-responsible-authority"
       ],
       "primary_issues": [
         "action-triggered-by-confidence-score",
+        "automation-skips-required-approval",
         "behavior-does-not-match-declared-role",
         "declared-owner-cannot-control-outcome",
         "fallback-authority-is-missing",
         "model-output-triggers-unapproved-action",
         "no-owner-for-agent-action",
         "permissions-conflict-after-being-combined",
-        "revoked-approval-still-treated-as-active"
+        "revoked-approval-still-treated-as-active",
+        "tool-can-act-without-responsible-authority"
       ],
       "secondary_issues": [
         "agent-permission-expands-over-steps",
+        "ai-memory-has-no-governance",
         "approval-depends-on-output-that-needs-approval",
         "cannot-identify-authoritative-state",
         "conflicting-instructions-from-different-authorities",
@@ -7887,14 +8364,16 @@
         "conflicting-instructions-from-different-authorities",
         "hidden-rule-overrides-visible-instruction",
         "policy-update-not-reflected-in-output",
-        "same-case-has-conflicting-policies"
+        "same-case-has-conflicting-policies",
+        "tool-rules-and-prompt-rules-conflict"
       ],
       "primary_issues": [
         "actual-policy-differs-from-declared-policy",
         "conflicting-instructions-from-different-authorities",
         "hidden-rule-overrides-visible-instruction",
         "policy-update-not-reflected-in-output",
-        "same-case-has-conflicting-policies"
+        "same-case-has-conflicting-policies",
+        "tool-rules-and-prompt-rules-conflict"
       ],
       "secondary_issues": [
         "ai-uses-external-information-when-forbidden",
@@ -7972,6 +8451,7 @@
         "risk-score-triggers-wrong-escalation",
         "risk-signal-escalates-beyond-evidence",
         "severity-increases-without-new-evidence",
+        "small-change-produces-large-downstream-effects",
         "small-error-spreads-into-large-failure",
         "small-issue-keeps-escalating"
       ],
@@ -7989,6 +8469,7 @@
         "risk-score-triggers-wrong-escalation",
         "risk-signal-escalates-beyond-evidence",
         "severity-increases-without-new-evidence",
+        "small-change-produces-large-downstream-effects",
         "small-error-spreads-into-large-failure",
         "small-issue-keeps-escalating"
       ],
@@ -8025,6 +8506,7 @@
         "workflow-step-lacks-required-conditions"
       ],
       "secondary_issues": [
+        "automation-skips-required-approval",
         "early-model-output-gets-overweighted-downstream",
         "evaluation-rubric-has-coverage-gap",
         "fallback-authority-is-missing",
@@ -8034,7 +8516,9 @@
         "relationship-map-has-missing-links",
         "repair-step-created-new-breakage",
         "review-escalates-without-stop-condition",
+        "review-queue-becomes-bottleneck",
         "review-rubric-missing-required-criteria",
+        "routing-overrides-task-intent",
         "routing-path-cycles-back-to-start",
         "rubric-changed-but-results-did-not",
         "same-workflow-check-happens-twice",

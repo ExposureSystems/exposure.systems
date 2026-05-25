@@ -404,6 +404,52 @@
     },
     {
       "type": "issue",
+      "slug": "ai-memory-has-no-governance",
+      "ontology_slug": "ai-memory-has-no-governance",
+      "code": "ISS-0109",
+      "title": "AI Memory Has No Governance",
+      "summary": "Saved or persistent AI memory affects output without clear rules for ownership, scope, review, update, expiry, or removal.",
+      "url": "/workbench/issues/ai-memory-has-no-governance/",
+      "category": "memory-and-context",
+      "category_title": "Memory & Context",
+      "primary_cat_code": "CAT-0020",
+      "secondary_cat_codes": [
+        "CAT-0050"
+      ],
+      "primary_pattern": "missing-authority",
+      "patterns": [
+        "missing-authority",
+        "persistence-instability",
+        "boundary-leakage"
+      ],
+      "lenses": {
+        "primary": [
+          "absence-lens",
+          "authority-overlay-lens",
+          "isolation-boundary-lens",
+          "propagation-lens",
+          "reference-stability-lens"
+        ],
+        "secondary": [
+          "boundary-compliance-lens",
+          "conflict-lens",
+          "determinism-lens",
+          "reconciliation-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "AI memory has no governance",
+        "ChatGPT memory no governance",
+        "AI memory not controlled",
+        "saved memory lacks approval",
+        "AI memory scope unclear",
+        "persistent memory affects output without rules"
+      ],
+      "text": "AI Memory Has No Governance AI memory has no governance AI memory not controlled AI memory scope unclear CAT-0020 CAT-0050 ChatGPT memory no governance ISS-0109 Memory & Context Saved or persistent AI memory affects output without clear rules for ownership, scope, review, update, expiry, or removal. absence-lens authority-overlay-lens boundary-compliance-lens boundary-leakage conflict-lens determinism-lens isolation-boundary-lens memory-and-context missing-authority persistence-instability persistent memory affects output without rules propagation-lens reconciliation-lens reference-stability-lens saved memory lacks approval"
+    },
+    {
+      "type": "issue",
       "slug": "ai-output-breaks-parser",
       "ontology_slug": "ai-output-breaks-parser",
       "code": "ISS-0026",
@@ -657,6 +703,52 @@
         "workflow approval depends on itself"
       ],
       "text": "A required approval depends on an AI output or workflow result that itself cannot be produced or trusted until approval is granted. AI approval circular dependency Approval Depends on Output That Needs Approval CAT-0050 CAT-0130 ISS-0088 Loops & Resolution absence-lens approval depends on output that needs approval approval loop AI workflow authority-collision authority-overlay-lens cannot approve because output not approved circular-dependency conflict-lens invariant-lens loops-and-resolution missing-authority normalization-lens output needs approval before approval can happen propagation-lens reconciliation-lens workflow approval depends on itself"
+    },
+    {
+      "type": "issue",
+      "slug": "automation-skips-required-approval",
+      "ontology_slug": "automation-skips-required-approval",
+      "code": "ISS-0111",
+      "title": "Automation Skips Required Approval",
+      "summary": "An automated AI or workflow step proceeds past an approval gate that should have been required before action.",
+      "url": "/workbench/issues/automation-skips-required-approval/",
+      "category": "permissions-and-approvals",
+      "category_title": "Permissions & Approvals",
+      "primary_cat_code": "CAT-0050",
+      "secondary_cat_codes": [
+        "CAT-0070"
+      ],
+      "primary_pattern": "missing-authority",
+      "patterns": [
+        "missing-authority",
+        "undeclared-side-effect",
+        "compatibility-violation"
+      ],
+      "lenses": {
+        "primary": [
+          "absence-lens",
+          "authority-overlay-lens",
+          "compatibility-envelope-lens",
+          "overreach-lens",
+          "propagation-lens"
+        ],
+        "secondary": [
+          "boundary-compliance-lens",
+          "conflict-lens",
+          "isolation-boundary-lens",
+          "reconciliation-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "automation skips required approval",
+        "AI automation bypassed approval",
+        "workflow skipped approval gate",
+        "agent acted without required approval",
+        "approval gate bypassed",
+        "automated action skipped review"
+      ],
+      "text": "AI automation bypassed approval An automated AI or workflow step proceeds past an approval gate that should have been required before action. Automation Skips Required Approval CAT-0050 CAT-0070 ISS-0111 Permissions & Approvals absence-lens agent acted without required approval approval gate bypassed authority-overlay-lens automated action skipped review automation skips required approval boundary-compliance-lens compatibility-envelope-lens compatibility-violation conflict-lens isolation-boundary-lens missing-authority overreach-lens permissions-and-approvals propagation-lens reconciliation-lens undeclared-side-effect workflow skipped approval gate"
     },
     {
       "type": "issue",
@@ -3051,6 +3143,50 @@
     },
     {
       "type": "issue",
+      "slug": "review-queue-becomes-bottleneck",
+      "ontology_slug": "review-queue-becomes-bottleneck",
+      "code": "ISS-0105",
+      "title": "Review Queue Becomes Bottleneck",
+      "summary": "A review queue, approval path, or validation stage accumulates too much work and begins blocking the workflow.",
+      "url": "/workbench/issues/review-queue-becomes-bottleneck/",
+      "category": "duplication-and-overload",
+      "category_title": "Duplication & Overload",
+      "primary_cat_code": "CAT-0140",
+      "secondary_cat_codes": [
+        "CAT-0070"
+      ],
+      "primary_pattern": "density-spike",
+      "patterns": [
+        "density-spike",
+        "orphaned-structure",
+        "convergence-failure"
+      ],
+      "lenses": {
+        "primary": [
+          "absence-lens",
+          "compression-lens",
+          "convergence-lens",
+          "variance-entropy-lens"
+        ],
+        "secondary": [
+          "escalation-gradient-lens",
+          "propagation-lens",
+          "reconciliation-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "review queue becomes bottleneck",
+        "AI review queue bottleneck",
+        "workflow stuck in review queue",
+        "review backlog blocks AI workflow",
+        "approval queue overloaded",
+        "too many items waiting for review"
+      ],
+      "text": "A review queue, approval path, or validation stage accumulates too much work and begins blocking the workflow. AI review queue bottleneck CAT-0070 CAT-0140 Duplication & Overload ISS-0105 Review Queue Becomes Bottleneck absence-lens approval queue overloaded compression-lens convergence-failure convergence-lens density-spike duplication-and-overload escalation-gradient-lens orphaned-structure propagation-lens reconciliation-lens review backlog blocks AI workflow review queue becomes bottleneck too many items waiting for review variance-entropy-lens workflow stuck in review queue"
+    },
+    {
+      "type": "issue",
       "slug": "review-rubric-missing-required-criteria",
       "ontology_slug": "review-rubric-missing-required-criteria",
       "code": "ISS-0075",
@@ -3224,6 +3360,50 @@
         "risk signal over-escalation"
       ],
       "text": "A risk signal, warning, score, or concern escalates farther than the available evidence supports. AI concern escalated too much AI risk warning went too far CAT-0050 CAT-0110 ISS-0095 Risk Signal Escalates Beyond Evidence Spread & Escalation absence-lens authority-overlay-lens boundary-compliance-lens conflict-lens escalation beyond evidence escalation-gradient-lens escalation-growth invariant-lens missing-authority propagation-lens reconciliation-lens risk score escalated without evidence risk signal escalates beyond evidence risk signal over-escalation spread-and-escalation threshold-breach variance-entropy-lens"
+    },
+    {
+      "type": "issue",
+      "slug": "routing-overrides-task-intent",
+      "ontology_slug": "routing-overrides-task-intent",
+      "code": "ISS-0112",
+      "title": "Routing Overrides Task Intent",
+      "summary": "Routing, mode selection, agent behavior, or workflow classification sends the task down a path that overrides what the user was trying to accomplish.",
+      "url": "/workbench/issues/routing-overrides-task-intent/",
+      "category": "agents",
+      "category_title": "Agents",
+      "primary_cat_code": "CAT-0030",
+      "secondary_cat_codes": [
+        "CAT-0070"
+      ],
+      "primary_pattern": "overreach",
+      "patterns": [
+        "overreach",
+        "authority-state-mismatch",
+        "boundary-leakage"
+      ],
+      "lenses": {
+        "primary": [
+          "boundary-compliance-lens",
+          "isolation-boundary-lens",
+          "overreach-lens",
+          "propagation-lens",
+          "reconciliation-lens"
+        ],
+        "secondary": [
+          "convergence-lens",
+          "reference-stability-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "routing overrides task intent",
+        "AI routed task wrong",
+        "agent routing ignored user intent",
+        "workflow classification overrode request",
+        "AI mode selection changed task",
+        "task intent overridden by routing"
+      ],
+      "text": "AI mode selection changed task AI routed task wrong Agents CAT-0030 CAT-0070 ISS-0112 Routing Overrides Task Intent Routing, mode selection, agent behavior, or workflow classification sends the task down a path that overrides what the user was trying to accomplish. agent routing ignored user intent agents authority-state-mismatch boundary-compliance-lens boundary-leakage convergence-lens isolation-boundary-lens overreach overreach-lens propagation-lens reconciliation-lens reference-stability-lens routing overrides task intent task intent overridden by routing workflow classification overrode request"
     },
     {
       "type": "issue",
@@ -3744,6 +3924,50 @@
     },
     {
       "type": "issue",
+      "slug": "single-field-carries-too-many-obligations",
+      "ontology_slug": "single-field-carries-too-many-obligations",
+      "code": "ISS-0107",
+      "title": "Single Field Carries Too Many Obligations",
+      "summary": "One field, label, score, status, or structured value is expected to carry too many meanings, decisions, or workflow obligations.",
+      "url": "/workbench/issues/single-field-carries-too-many-obligations/",
+      "category": "duplication-and-overload",
+      "category_title": "Duplication & Overload",
+      "primary_cat_code": "CAT-0140",
+      "secondary_cat_codes": [
+        "CAT-0010"
+      ],
+      "primary_pattern": "density-spike",
+      "patterns": [
+        "density-spike",
+        "redundant-declaration",
+        "schema-breakage"
+      ],
+      "lenses": {
+        "primary": [
+          "compression-lens",
+          "conflict-lens",
+          "interface-contract-lens",
+          "invariant-lens",
+          "normalization-lens",
+          "variance-entropy-lens"
+        ],
+        "secondary": [
+          "escalation-gradient-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "single field carries too many obligations",
+        "AI field overloaded",
+        "one field has too many meanings",
+        "structured output field carries too much",
+        "status field overloaded",
+        "AI output field used for too many decisions"
+      ],
+      "text": "AI field overloaded AI output field used for too many decisions CAT-0010 CAT-0140 Duplication & Overload ISS-0107 One field, label, score, status, or structured value is expected to carry too many meanings, decisions, or workflow obligations. Single Field Carries Too Many Obligations compression-lens conflict-lens density-spike duplication-and-overload escalation-gradient-lens interface-contract-lens invariant-lens normalization-lens one field has too many meanings redundant-declaration schema-breakage single field carries too many obligations status field overloaded structured output field carries too much variance-entropy-lens"
+    },
+    {
+      "type": "issue",
       "slug": "single-step-carries-too-many-decisions",
       "ontology_slug": "single-step-carries-too-many-decisions",
       "code": "ISS-0103",
@@ -3787,6 +4011,51 @@
         "AI step carries too much responsibility"
       ],
       "text": "AI step carries too much responsibility AI workflow step overloaded CAT-0070 CAT-0140 Duplication & Overload ISS-0103 One prompt, workflow step, review stage, or agent action carries too many decisions for the system or user to evaluate cleanly. Single Step Carries Too Many Decisions absence-lens authority-overlay-lens compression-lens conflict-lens constraint-sufficiency-lens density-spike duplication-and-overload escalation-gradient-lens isolation-boundary-lens missing-authority one step has too many decisions prompt asks for too many decisions reconciliation-lens review step overloaded single step carries too many decisions unbounded-scope variance-entropy-lens"
+    },
+    {
+      "type": "issue",
+      "slug": "small-change-produces-large-downstream-effects",
+      "ontology_slug": "small-change-produces-large-downstream-effects",
+      "code": "ISS-0106",
+      "title": "Small Change Produces Large Downstream Effects",
+      "summary": "A small prompt, schema, policy, output, or workflow change creates unexpectedly large effects in downstream steps.",
+      "url": "/workbench/issues/small-change-produces-large-downstream-effects/",
+      "category": "spread-and-escalation",
+      "category_title": "Spread & Escalation",
+      "primary_cat_code": "CAT-0110",
+      "secondary_cat_codes": [
+        "CAT-0080"
+      ],
+      "primary_pattern": "propagation-amplification",
+      "patterns": [
+        "propagation-amplification",
+        "contract-drift",
+        "compatibility-violation"
+      ],
+      "lenses": {
+        "primary": [
+          "compatibility-envelope-lens",
+          "convergence-lens",
+          "escalation-gradient-lens",
+          "propagation-lens",
+          "reconciliation-lens"
+        ],
+        "secondary": [
+          "boundary-compliance-lens",
+          "determinism-lens",
+          "variance-entropy-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "small change produces large downstream effects",
+        "small AI change caused big workflow impact",
+        "prompt change had large downstream effect",
+        "minor schema change broke workflow",
+        "small update caused major AI behavior change",
+        "downstream effects from small change"
+      ],
+      "text": "A small prompt, schema, policy, output, or workflow change creates unexpectedly large effects in downstream steps. CAT-0080 CAT-0110 ISS-0106 Small Change Produces Large Downstream Effects Spread & Escalation boundary-compliance-lens compatibility-envelope-lens compatibility-violation contract-drift convergence-lens determinism-lens downstream effects from small change escalation-gradient-lens minor schema change broke workflow prompt change had large downstream effect propagation-amplification propagation-lens reconciliation-lens small AI change caused big workflow impact small change produces large downstream effects small update caused major AI behavior change spread-and-escalation variance-entropy-lens"
     },
     {
       "type": "issue",
@@ -4092,6 +4361,52 @@
     },
     {
       "type": "issue",
+      "slug": "tool-can-act-without-responsible-authority",
+      "ontology_slug": "tool-can-act-without-responsible-authority",
+      "code": "ISS-0108",
+      "title": "Tool Can Act Without Responsible Authority",
+      "summary": "A tool, connector, function, or integration can perform an action without a declared responsible authority for that action.",
+      "url": "/workbench/issues/tool-can-act-without-responsible-authority/",
+      "category": "permissions-and-approvals",
+      "category_title": "Permissions & Approvals",
+      "primary_cat_code": "CAT-0050",
+      "secondary_cat_codes": [
+        "CAT-0040"
+      ],
+      "primary_pattern": "missing-authority",
+      "patterns": [
+        "missing-authority",
+        "undeclared-side-effect",
+        "interface-mismatch"
+      ],
+      "lenses": {
+        "primary": [
+          "absence-lens",
+          "authority-overlay-lens",
+          "interface-contract-lens",
+          "overreach-lens",
+          "propagation-lens"
+        ],
+        "secondary": [
+          "conflict-lens",
+          "isolation-boundary-lens",
+          "normalization-lens",
+          "reconciliation-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "tool can act without responsible authority",
+        "AI tool has no responsible authority",
+        "tool action lacks owner",
+        "MCP tool can act without approval",
+        "connector action has no authority",
+        "tool permission without responsibility"
+      ],
+      "text": "A tool, connector, function, or integration can perform an action without a declared responsible authority for that action. AI tool has no responsible authority CAT-0040 CAT-0050 ISS-0108 MCP tool can act without approval Permissions & Approvals Tool Can Act Without Responsible Authority absence-lens authority-overlay-lens conflict-lens connector action has no authority interface-contract-lens interface-mismatch isolation-boundary-lens missing-authority normalization-lens overreach-lens permissions-and-approvals propagation-lens reconciliation-lens tool action lacks owner tool can act without responsible authority tool permission without responsibility undeclared-side-effect"
+    },
+    {
+      "type": "issue",
       "slug": "tool-exists-but-required-inputs-are-missing",
       "ontology_slug": "tool-exists-but-required-inputs-are-missing",
       "code": "ISS-0020",
@@ -4177,6 +4492,49 @@
         "tool output not reflected in answer"
       ],
       "text": "AI ignored tool result AI overwrote tool response CAT-0010 CAT-0040 CAT-0070 ISS-0019 MCP, Tools & Integrations The AI receives a tool result but misreads, ignores, overwrites, misplaces, or fails to incorporate it correctly into the final output or workflow state. Tool Result Not Integrated Correctly absence-lens agent misread tool output contract-drift convergence-lens determinism-lens interface-contract-lens interface-mismatch mcp-tools-and-integrations normalization-lens orphaned-structure propagation-lens reconciliation-lens tool output not reflected in answer tool result missing from final answer tool result not integrated correctly"
+    },
+    {
+      "type": "issue",
+      "slug": "tool-rules-and-prompt-rules-conflict",
+      "ontology_slug": "tool-rules-and-prompt-rules-conflict",
+      "code": "ISS-0110",
+      "title": "Tool Rules and Prompt Rules Conflict",
+      "summary": "Tool, connector, function, or MCP rules conflict with prompt instructions, causing the AI or agent to face incompatible requirements.",
+      "url": "/workbench/issues/tool-rules-and-prompt-rules-conflict/",
+      "category": "rules-and-policies",
+      "category_title": "Rules & Policies",
+      "primary_cat_code": "CAT-0060",
+      "secondary_cat_codes": [
+        "CAT-0040"
+      ],
+      "primary_pattern": "authority-collision",
+      "patterns": [
+        "authority-collision",
+        "interface-mismatch",
+        "authority-shadowing"
+      ],
+      "lenses": {
+        "primary": [
+          "authority-overlay-lens",
+          "conflict-lens",
+          "interface-contract-lens"
+        ],
+        "secondary": [
+          "invariant-lens",
+          "normalization-lens",
+          "reconciliation-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "tool rules and prompt rules conflict",
+        "MCP tool rules conflict with prompt",
+        "tool schema conflicts with instruction",
+        "AI prompt conflicts with tool requirement",
+        "function rules contradict prompt",
+        "agent tool instructions conflict"
+      ],
+      "text": "AI prompt conflicts with tool requirement CAT-0040 CAT-0060 ISS-0110 MCP tool rules conflict with prompt Rules & Policies Tool Rules and Prompt Rules Conflict Tool, connector, function, or MCP rules conflict with prompt instructions, causing the AI or agent to face incompatible requirements. agent tool instructions conflict authority-collision authority-overlay-lens authority-shadowing conflict-lens function rules contradict prompt interface-contract-lens interface-mismatch invariant-lens normalization-lens reconciliation-lens rules-and-policies tool rules and prompt rules conflict tool schema conflicts with instruction"
     },
     {
       "type": "issue",
@@ -4591,8 +4949,8 @@
         "ontology_slug": "agents",
         "code": "CAT-0030",
         "title": "Agents",
-        "count": 5,
-        "primary_count": 2,
+        "count": 6,
+        "primary_count": 3,
         "secondary_count": 3
       },
       {
@@ -4600,9 +4958,9 @@
         "ontology_slug": "changes-and-versions",
         "code": "CAT-0080",
         "title": "Changes & Versions",
-        "count": 14,
+        "count": 15,
         "primary_count": 9,
-        "secondary_count": 5
+        "secondary_count": 6
       },
       {
         "slug": "coverage-and-guidance",
@@ -4618,8 +4976,8 @@
         "ontology_slug": "duplication-and-overload",
         "code": "CAT-0140",
         "title": "Duplication & Overload",
-        "count": 8,
-        "primary_count": 8,
+        "count": 10,
+        "primary_count": 10,
         "secondary_count": 0
       },
       {
@@ -4645,17 +5003,17 @@
         "ontology_slug": "mcp-tools-and-integrations",
         "code": "CAT-0040",
         "title": "MCP, Tools & Integrations",
-        "count": 7,
+        "count": 9,
         "primary_count": 5,
-        "secondary_count": 2
+        "secondary_count": 4
       },
       {
         "slug": "memory-and-context",
         "ontology_slug": "memory-and-context",
         "code": "CAT-0020",
         "title": "Memory & Context",
-        "count": 6,
-        "primary_count": 6,
+        "count": 7,
+        "primary_count": 7,
         "secondary_count": 0
       },
       {
@@ -4663,26 +5021,26 @@
         "ontology_slug": "output",
         "code": "CAT-0010",
         "title": "Output",
-        "count": 27,
+        "count": 28,
         "primary_count": 10,
-        "secondary_count": 17
+        "secondary_count": 18
       },
       {
         "slug": "permissions-and-approvals",
         "ontology_slug": "permissions-and-approvals",
         "code": "CAT-0050",
         "title": "Permissions & Approvals",
-        "count": 20,
-        "primary_count": 8,
-        "secondary_count": 12
+        "count": 23,
+        "primary_count": 10,
+        "secondary_count": 13
       },
       {
         "slug": "rules-and-policies",
         "ontology_slug": "rules-and-policies",
         "code": "CAT-0060",
         "title": "Rules & Policies",
-        "count": 19,
-        "primary_count": 5,
+        "count": 20,
+        "primary_count": 6,
         "secondary_count": 14
       },
       {
@@ -4699,8 +5057,8 @@
         "ontology_slug": "spread-and-escalation",
         "code": "CAT-0110",
         "title": "Spread & Escalation",
-        "count": 18,
-        "primary_count": 15,
+        "count": 19,
+        "primary_count": 16,
         "secondary_count": 3
       },
       {
@@ -4708,9 +5066,9 @@
         "ontology_slug": "workflow-and-handoffs",
         "code": "CAT-0070",
         "title": "Workflow & Handoffs",
-        "count": 25,
+        "count": 28,
         "primary_count": 6,
-        "secondary_count": 19
+        "secondary_count": 22
       }
     ],
     "patterns": [
@@ -4726,7 +5084,7 @@
         "ontology_slug": "authority-collision",
         "code": "PAT-0100",
         "title": "Authority Collision",
-        "count": 8
+        "count": 9
       },
       {
         "slug": "authority-merge-conflict",
@@ -4740,21 +5098,21 @@
         "ontology_slug": "authority-shadowing",
         "code": "PAT-0230",
         "title": "Authority Shadowing",
-        "count": 5
+        "count": 6
       },
       {
         "slug": "authority-state-mismatch",
         "ontology_slug": "authority-state-mismatch",
         "code": "PAT-0240",
         "title": "Authority-State Mismatch",
-        "count": 12
+        "count": 13
       },
       {
         "slug": "boundary-leakage",
         "ontology_slug": "boundary-leakage",
         "code": "PAT-0140",
         "title": "Boundary Leakage",
-        "count": 12
+        "count": 14
       },
       {
         "slug": "circular-dependency",
@@ -4768,7 +5126,7 @@
         "ontology_slug": "compatibility-violation",
         "code": "PAT-0180",
         "title": "Compatibility Violation",
-        "count": 12
+        "count": 14
       },
       {
         "slug": "constraints-underspecified",
@@ -4782,14 +5140,14 @@
         "ontology_slug": "contract-drift",
         "code": "PAT-0190",
         "title": "Contract Drift",
-        "count": 18
+        "count": 19
       },
       {
         "slug": "convergence-failure",
         "ontology_slug": "convergence-failure",
         "code": "PAT-0320",
         "title": "Convergence Failure",
-        "count": 11
+        "count": 12
       },
       {
         "slug": "cross-layer-escalation",
@@ -4803,7 +5161,7 @@
         "ontology_slug": "density-spike",
         "code": "PAT-0270",
         "title": "Density Spike",
-        "count": 12
+        "count": 14
       },
       {
         "slug": "density-vacuum",
@@ -4838,7 +5196,7 @@
         "ontology_slug": "interface-mismatch",
         "code": "PAT-0150",
         "title": "Interface Mismatch",
-        "count": 13
+        "count": 15
       },
       {
         "slug": "invariant-breakage",
@@ -4852,7 +5210,7 @@
         "ontology_slug": "missing-authority",
         "code": "PAT-0120",
         "title": "Missing Authority",
-        "count": 15
+        "count": 18
       },
       {
         "slug": "non-deterministic-execution",
@@ -4866,35 +5224,35 @@
         "ontology_slug": "orphaned-structure",
         "code": "PAT-0310",
         "title": "Orphaned Structure",
-        "count": 8
+        "count": 9
       },
       {
         "slug": "overreach",
         "ontology_slug": "overreach",
         "code": "PAT-0340",
         "title": "Overreach",
-        "count": 12
+        "count": 13
       },
       {
         "slug": "persistence-instability",
         "ontology_slug": "persistence-instability",
         "code": "PAT-0350",
         "title": "Persistence Instability",
-        "count": 10
+        "count": 11
       },
       {
         "slug": "propagation-amplification",
         "ontology_slug": "propagation-amplification",
         "code": "PAT-0360",
         "title": "Propagation Amplification",
-        "count": 12
+        "count": 13
       },
       {
         "slug": "redundant-declaration",
         "ontology_slug": "redundant-declaration",
         "code": "PAT-0370",
         "title": "Redundant Declaration",
-        "count": 7
+        "count": 8
       },
       {
         "slug": "reference-instability",
@@ -4908,7 +5266,7 @@
         "ontology_slug": "schema-breakage",
         "code": "PAT-0160",
         "title": "Schema Breakage",
-        "count": 14
+        "count": 15
       },
       {
         "slug": "silent-mutation",
@@ -4943,7 +5301,7 @@
         "ontology_slug": "undeclared-side-effect",
         "code": "PAT-0420",
         "title": "Undeclared Side Effect",
-        "count": 8
+        "count": 10
       }
     ],
     "lenses": [
@@ -4952,42 +5310,42 @@
         "ontology_slug": "absence-lens",
         "code": "LEN-0100",
         "title": "Absence Lens",
-        "count": 33
+        "count": 37
       },
       {
         "slug": "authority-overlay-lens",
         "ontology_slug": "authority-overlay-lens",
         "code": "LEN-0110",
         "title": "Authority Overlay Lens",
-        "count": 25
+        "count": 29
       },
       {
         "slug": "boundary-compliance-lens",
         "ontology_slug": "boundary-compliance-lens",
         "code": "LEN-0120",
         "title": "Boundary Compliance Lens",
-        "count": 36
+        "count": 40
       },
       {
         "slug": "compatibility-envelope-lens",
         "ontology_slug": "compatibility-envelope-lens",
         "code": "LEN-0130",
         "title": "Compatibility Envelope Lens",
-        "count": 12
+        "count": 14
       },
       {
         "slug": "compression-lens",
         "ontology_slug": "compression-lens",
         "code": "LEN-0140",
         "title": "Compression Lens",
-        "count": 30
+        "count": 32
       },
       {
         "slug": "conflict-lens",
         "ontology_slug": "conflict-lens",
         "code": "LEN-0150",
         "title": "Conflict Lens",
-        "count": 48
+        "count": 53
       },
       {
         "slug": "constraint-sufficiency-lens",
@@ -5001,63 +5359,63 @@
         "ontology_slug": "convergence-lens",
         "code": "LEN-0170",
         "title": "Convergence Lens",
-        "count": 42
+        "count": 45
       },
       {
         "slug": "determinism-lens",
         "ontology_slug": "determinism-lens",
         "code": "LEN-0180",
         "title": "Determinism Lens",
-        "count": 50
+        "count": 52
       },
       {
         "slug": "escalation-gradient-lens",
         "ontology_slug": "escalation-gradient-lens",
         "code": "LEN-0190",
         "title": "Escalation Gradient Lens",
-        "count": 41
+        "count": 44
       },
       {
         "slug": "interface-contract-lens",
         "ontology_slug": "interface-contract-lens",
         "code": "LEN-0200",
         "title": "Interface Contract Lens",
-        "count": 35
+        "count": 38
       },
       {
         "slug": "invariant-lens",
         "ontology_slug": "invariant-lens",
         "code": "LEN-0210",
         "title": "Invariant Lens",
-        "count": 28
+        "count": 30
       },
       {
         "slug": "isolation-boundary-lens",
         "ontology_slug": "isolation-boundary-lens",
         "code": "LEN-0220",
         "title": "Isolation Boundary Lens",
-        "count": 22
+        "count": 26
       },
       {
         "slug": "normalization-lens",
         "ontology_slug": "normalization-lens",
         "code": "LEN-0230",
         "title": "Normalization Lens",
-        "count": 29
+        "count": 32
       },
       {
         "slug": "overreach-lens",
         "ontology_slug": "overreach-lens",
         "code": "LEN-0240",
         "title": "Overreach Lens",
-        "count": 18
+        "count": 21
       },
       {
         "slug": "propagation-lens",
         "ontology_slug": "propagation-lens",
         "code": "LEN-0250",
         "title": "Propagation Lens",
-        "count": 47
+        "count": 53
       },
       {
         "slug": "provenance-trace-lens",
@@ -5071,21 +5429,21 @@
         "ontology_slug": "reconciliation-lens",
         "code": "LEN-0270",
         "title": "Reconciliation Lens",
-        "count": 54
+        "count": 61
       },
       {
         "slug": "reference-stability-lens",
         "ontology_slug": "reference-stability-lens",
         "code": "LEN-0280",
         "title": "Reference Stability Lens",
-        "count": 36
+        "count": 38
       },
       {
         "slug": "variance-entropy-lens",
         "ontology_slug": "variance-entropy-lens",
         "code": "LEN-0290",
         "title": "Variance / Entropy Lens",
-        "count": 59
+        "count": 62
       }
     ]
   }
