@@ -1,4 +1,4 @@
 /llms.txt        /workbench/llms.txt      301
 /wb              /workbench/              301
 /wb/             /workbench/              301
-/wb/*            /workbench/:splat        30
+/wb/*            /workbench/:splat        301
