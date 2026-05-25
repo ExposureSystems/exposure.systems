@@ -125,6 +125,7 @@
       },
       "related_ai_adj_issues": [
         "documented-field-not-available-at-runtime",
+        "permission-change-not-applied",
         "runtime-behavior-does-not-match-docs"
       ],
       "search_intents": [
@@ -135,7 +136,7 @@
         "declared policy not followed",
         "runtime policy differs from docs"
       ],
-      "text": "AI behavior does not match policy Actual Policy Differs From Declared Policy CAT-0060 CAT-0080 ISS-0040 Rules & Policies The policy the AI or workflow actually follows differs from the policy that is documented, declared, displayed, or expected. actual policy differs from declared policy authority-state-mismatch contract-drift convergence-lens declared policy not followed determinism-lens documented policy differs from actual behavior documented-field-not-available-at-runtime policy says one thing AI does another provenance-trace-lens reconciliation-lens reference-stability-lens rules-and-policies runtime policy differs from docs runtime-behavior-does-not-match-docs silent-mutation"
+      "text": "AI behavior does not match policy Actual Policy Differs From Declared Policy CAT-0060 CAT-0080 ISS-0040 Rules & Policies The policy the AI or workflow actually follows differs from the policy that is documented, declared, displayed, or expected. actual policy differs from declared policy authority-state-mismatch contract-drift convergence-lens declared policy not followed determinism-lens documented policy differs from actual behavior documented-field-not-available-at-runtime permission-change-not-applied policy says one thing AI does another provenance-trace-lens reconciliation-lens reference-stability-lens rules-and-policies runtime policy differs from docs runtime-behavior-does-not-match-docs silent-mutation"
     },
     {
       "type": "issue",
@@ -260,7 +261,9 @@
           "variance-entropy-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "agent-keeps-adding-tool-dependencies"
+      ],
       "search_intents": [
         "agent keeps expanding the task",
         "AI keeps adding more steps",
@@ -269,7 +272,7 @@
         "agent expands task on each pass",
         "diagnosis keeps expanding"
       ],
-      "text": "AI keeps adding follow up work AI keeps adding more steps Agent Keeps Expanding the Task Agents CAT-0030 CAT-0100 ISS-0008 The agent repeatedly expands the task, plan, scope, or next-step list instead of completing the declared work. agent expands task on each pass agent keeps expanding the task agent keeps making the plan bigger agents boundary-compliance-lens compression-lens convergence-failure convergence-lens diagnosis keeps expanding escalation-gradient-lens overreach overreach-lens propagation-lens reconciliation-lens unconstrained-expansion variance-entropy-lens"
+      "text": "AI keeps adding follow up work AI keeps adding more steps Agent Keeps Expanding the Task Agents CAT-0030 CAT-0100 ISS-0008 The agent repeatedly expands the task, plan, scope, or next-step list instead of completing the declared work. agent expands task on each pass agent keeps expanding the task agent keeps making the plan bigger agent-keeps-adding-tool-dependencies agents boundary-compliance-lens compression-lens convergence-failure convergence-lens diagnosis keeps expanding escalation-gradient-lens overreach overreach-lens propagation-lens reconciliation-lens unconstrained-expansion variance-entropy-lens"
     },
     {
       "type": "issue",
@@ -300,7 +303,9 @@
         ],
         "secondary": []
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "one-workspace-affects-another"
+      ],
       "search_intents": [
         "agent modified unrelated state",
         "AI agent changed unrelated state",
@@ -309,7 +314,7 @@
         "agent side effect changed state",
         "AI action affected unrelated workflow"
       ],
-      "text": "AI action affected unrelated workflow AI agent changed unrelated state AI modified unrelated file Agent Modified Unrelated State An agent changes state outside the requested task, target, file, record, workflow, or authorized scope. CAT-0030 CAT-0100 ISS-0113 Scope & Boundaries agent changed something outside task agent modified unrelated state agent side effect changed state boundary-compliance-lens boundary-leakage isolation-boundary-lens overreach overreach-lens propagation-lens scope-and-boundaries undeclared-side-effect"
+      "text": "AI action affected unrelated workflow AI agent changed unrelated state AI modified unrelated file Agent Modified Unrelated State An agent changes state outside the requested task, target, file, record, workflow, or authorized scope. CAT-0030 CAT-0100 ISS-0113 Scope & Boundaries agent changed something outside task agent modified unrelated state agent side effect changed state boundary-compliance-lens boundary-leakage isolation-boundary-lens one-workspace-affects-another overreach overreach-lens propagation-lens scope-and-boundaries undeclared-side-effect"
     },
     {
       "type": "issue",
@@ -345,7 +350,9 @@
           "variance-entropy-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "agent-keeps-adding-tool-dependencies"
+      ],
       "search_intents": [
         "agent never settles on final answer",
         "AI agent will not finish",
@@ -354,7 +361,7 @@
         "agent cannot finalize response",
         "agent loops without final answer"
       ],
-      "text": "AI agent will not finish AI keeps checking and never completes Agent Never Settles on Final Answer CAT-0030 CAT-0130 ISS-0082 Loops & Resolution The agent keeps revising, rechecking, planning, or branching instead of converging on a final answer or completed result. agent cannot finalize response agent keeps revising instead of answering agent loops without final answer agent never settles on final answer circular-dependency compression-lens conflict-lens convergence-failure convergence-lens escalation-gradient-lens loops-and-resolution normalization-lens propagation-lens reconciliation-lens unconstrained-expansion variance-entropy-lens"
+      "text": "AI agent will not finish AI keeps checking and never completes Agent Never Settles on Final Answer CAT-0030 CAT-0130 ISS-0082 Loops & Resolution The agent keeps revising, rechecking, planning, or branching instead of converging on a final answer or completed result. agent cannot finalize response agent keeps revising instead of answering agent loops without final answer agent never settles on final answer agent-keeps-adding-tool-dependencies circular-dependency compression-lens conflict-lens convergence-failure convergence-lens escalation-gradient-lens loops-and-resolution normalization-lens propagation-lens reconciliation-lens unconstrained-expansion variance-entropy-lens"
     },
     {
       "type": "issue",
@@ -653,7 +660,9 @@
           "escalation-gradient-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "one-workspace-affects-another"
+      ],
       "search_intents": [
         "AI touches unrelated scope",
         "AI changed unrelated content",
@@ -662,7 +671,7 @@
         "AI included unrelated scope",
         "agent went outside requested area"
       ],
-      "text": "AI Touches Unrelated Scope AI affected something outside task AI changed unrelated content AI included unrelated scope AI touches unrelated scope CAT-0030 CAT-0100 ISS-0045 Scope & Boundaries The AI affects, edits, analyzes, changes, or reasons over material outside the scope of the requested task. agent edited files not requested agent went outside requested area boundary-compliance-lens boundary-leakage constraint-sufficiency-lens escalation-gradient-lens isolation-boundary-lens overreach overreach-lens propagation-lens scope-and-boundaries unbounded-scope"
+      "text": "AI Touches Unrelated Scope AI affected something outside task AI changed unrelated content AI included unrelated scope AI touches unrelated scope CAT-0030 CAT-0100 ISS-0045 Scope & Boundaries The AI affects, edits, analyzes, changes, or reasons over material outside the scope of the requested task. agent edited files not requested agent went outside requested area boundary-compliance-lens boundary-leakage constraint-sufficiency-lens escalation-gradient-lens isolation-boundary-lens one-workspace-affects-another overreach overreach-lens propagation-lens scope-and-boundaries unbounded-scope"
     },
     {
       "type": "issue",
@@ -914,7 +923,9 @@
           "reference-stability-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "permission-change-not-applied"
+      ],
       "search_intents": [
         "behavior does not match declared role",
         "AI does not act like assigned role",
@@ -923,7 +934,7 @@
         "declared role not followed",
         "agent exceeds declared role"
       ],
-      "text": "AI does not act like assigned role AI role says one thing behavior another Behavior Does Not Match Declared Role CAT-0050 CAT-0060 ISS-0043 Permissions & Approvals The AI or agent behaves outside, below, or differently from the role, authority, responsibility, or permission posture declared for it. agent exceeds declared role agent role mismatch authority-overlay-lens authority-shadowing authority-state-mismatch behavior does not match declared role boundary-compliance-lens conflict-lens convergence-lens declared role not followed overreach overreach-lens permissions-and-approvals propagation-lens reconciliation-lens reference-stability-lens"
+      "text": "AI does not act like assigned role AI role says one thing behavior another Behavior Does Not Match Declared Role CAT-0050 CAT-0060 ISS-0043 Permissions & Approvals The AI or agent behaves outside, below, or differently from the role, authority, responsibility, or permission posture declared for it. agent exceeds declared role agent role mismatch authority-overlay-lens authority-shadowing authority-state-mismatch behavior does not match declared role boundary-compliance-lens conflict-lens convergence-lens declared role not followed overreach overreach-lens permission-change-not-applied permissions-and-approvals propagation-lens reconciliation-lens reference-stability-lens"
     },
     {
       "type": "issue",
@@ -1130,7 +1141,9 @@
           "variance-entropy-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "one-workspace-affects-another"
+      ],
       "search_intents": [
         "context leaks between tasks",
         "AI uses context from another task",
@@ -1139,7 +1152,7 @@
         "AI mixes separate tasks",
         "context bleed between conversations"
       ],
-      "text": "AI mixes separate tasks AI uses context from another task CAT-0020 CAT-0100 ChatGPT carries over wrong context Context Leaks Between Tasks Context, assumptions, constraints, examples, files, or decisions from one task affect another task where they should not apply. ISS-0032 Memory & Context boundary-compliance-lens boundary-leakage context bleed between conversations context leaks between tasks determinism-lens escalation-gradient-lens isolation-boundary-lens memory-and-context persistence-instability previous task affects new task propagation-amplification propagation-lens reference-stability-lens variance-entropy-lens"
+      "text": "AI mixes separate tasks AI uses context from another task CAT-0020 CAT-0100 ChatGPT carries over wrong context Context Leaks Between Tasks Context, assumptions, constraints, examples, files, or decisions from one task affect another task where they should not apply. ISS-0032 Memory & Context boundary-compliance-lens boundary-leakage context bleed between conversations context leaks between tasks determinism-lens escalation-gradient-lens isolation-boundary-lens memory-and-context one-workspace-affects-another persistence-instability previous task affects new task propagation-amplification propagation-lens reference-stability-lens variance-entropy-lens"
     },
     {
       "type": "issue",
@@ -1175,7 +1188,9 @@
           "reference-stability-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "permission-change-not-applied"
+      ],
       "search_intents": [
         "declared owner cannot control outcome",
         "owner is responsible but cannot change result",
@@ -1184,7 +1199,7 @@
         "accountable person cannot govern outcome",
         "declared owner has no real authority"
       ],
-      "text": "A person, role, system, or policy is declared responsible for an outcome but does not have the actual authority or control needed to govern it. AI assigns responsibility without authority CAT-0050 CAT-0060 Declared Owner Cannot Control Outcome ISS-0015 Permissions & Approvals absence-lens accountable person cannot govern outcome approval owner lacks control authority-overlay-lens authority-state-mismatch boundary-compliance-lens compatibility-envelope-lens compatibility-violation conflict-lens convergence-lens declared owner cannot control outcome declared owner has no real authority missing-authority owner is responsible but cannot change result permissions-and-approvals reconciliation-lens reference-stability-lens"
+      "text": "A person, role, system, or policy is declared responsible for an outcome but does not have the actual authority or control needed to govern it. AI assigns responsibility without authority CAT-0050 CAT-0060 Declared Owner Cannot Control Outcome ISS-0015 Permissions & Approvals absence-lens accountable person cannot govern outcome approval owner lacks control authority-overlay-lens authority-state-mismatch boundary-compliance-lens compatibility-envelope-lens compatibility-violation conflict-lens convergence-lens declared owner cannot control outcome declared owner has no real authority missing-authority owner is responsible but cannot change result permission-change-not-applied permissions-and-approvals reconciliation-lens reference-stability-lens"
     },
     {
       "type": "issue",
@@ -1216,7 +1231,9 @@
           "variance-entropy-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "category-has-too-few-issues-to-be-useful"
+      ],
       "search_intents": [
         "diagnostic area has no coverage",
         "missing diagnostic coverage",
@@ -1225,7 +1242,7 @@
         "review has coverage gap",
         "AI diagnosis missing area"
       ],
-      "text": "A known diagnostic area, failure mode, requirement, or review dimension has no Issue, check, rubric item, or workflow coverage. AI diagnosis missing area CAT-0120 Coverage & Guidance Diagnostic Area Has No Coverage ISS-0077 absence-lens compression-lens constraint-sufficiency-lens constraints-underspecified coverage-and-guidance density-vacuum determinism-lens diagnostic area has no coverage incomplete-declaration interface-contract-lens missing diagnostic coverage no check for this AI issue review has coverage gap variance-entropy-lens workflow does not cover failure mode"
+      "text": "A known diagnostic area, failure mode, requirement, or review dimension has no Issue, check, rubric item, or workflow coverage. AI diagnosis missing area CAT-0120 Coverage & Guidance Diagnostic Area Has No Coverage ISS-0077 absence-lens category-has-too-few-issues-to-be-useful compression-lens constraint-sufficiency-lens constraints-underspecified coverage-and-guidance density-vacuum determinism-lens diagnostic area has no coverage incomplete-declaration interface-contract-lens missing diagnostic coverage no check for this AI issue review has coverage gap variance-entropy-lens workflow does not cover failure mode"
     },
     {
       "type": "issue",
@@ -1434,7 +1451,9 @@
           "variance-entropy-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "category-has-too-few-issues-to-be-useful"
+      ],
       "search_intents": [
         "evaluation rubric has coverage gap",
         "AI evaluation rubric missing coverage",
@@ -1443,7 +1462,7 @@
         "evaluation misses required area",
         "AI review criteria coverage gap"
       ],
-      "text": "AI evaluation rubric missing coverage AI review criteria coverage gap An evaluation rubric, grading standard, or review checklist leaves part of the required evaluation space uncovered. CAT-0070 CAT-0120 Coverage & Guidance Evaluation Rubric Has Coverage Gap ISS-0081 absence-lens compression-lens constraint-sufficiency-lens constraints-underspecified coverage-and-guidance density-vacuum determinism-lens evaluation misses required area evaluation rubric has coverage gap grading checklist incomplete incomplete-declaration interface-contract-lens review rubric has gap variance-entropy-lens"
+      "text": "AI evaluation rubric missing coverage AI review criteria coverage gap An evaluation rubric, grading standard, or review checklist leaves part of the required evaluation space uncovered. CAT-0070 CAT-0120 Coverage & Guidance Evaluation Rubric Has Coverage Gap ISS-0081 absence-lens category-has-too-few-issues-to-be-useful compression-lens constraint-sufficiency-lens constraints-underspecified coverage-and-guidance density-vacuum determinism-lens evaluation misses required area evaluation rubric has coverage gap grading checklist incomplete incomplete-declaration interface-contract-lens review rubric has gap variance-entropy-lens"
     },
     {
       "type": "issue",
@@ -1830,7 +1849,9 @@
           "variance-entropy-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "one-workspace-affects-another"
+      ],
       "search_intents": [
         "local rule spreads to broader cases",
         "AI applies local rule too broadly",
@@ -1839,7 +1860,7 @@
         "AI overgeneralized local rule",
         "local policy spread too far"
       ],
-      "text": "A rule intended for one local case, file, context, user, workflow, or exception begins affecting broader cases. AI applies local rule too broadly AI overgeneralized local rule CAT-0060 CAT-0110 ISS-0096 Local Rule Spreads to Broader Cases Spread & Escalation boundary-compliance-lens boundary-leakage escalation-gradient-lens isolation-boundary-lens local instruction became global local policy spread too far local rule spreads to broader cases overreach overreach-lens propagation-amplification propagation-lens rule from one case affects others spread-and-escalation variance-entropy-lens"
+      "text": "A rule intended for one local case, file, context, user, workflow, or exception begins affecting broader cases. AI applies local rule too broadly AI overgeneralized local rule CAT-0060 CAT-0110 ISS-0096 Local Rule Spreads to Broader Cases Spread & Escalation boundary-compliance-lens boundary-leakage escalation-gradient-lens isolation-boundary-lens local instruction became global local policy spread too far local rule spreads to broader cases one-workspace-affects-another overreach overreach-lens propagation-amplification propagation-lens rule from one case affects others spread-and-escalation variance-entropy-lens"
     },
     {
       "type": "issue",
@@ -2360,7 +2381,8 @@
         ]
       },
       "related_ai_adj_issues": [
-        "agent-uses-old-tool-schema"
+        "agent-uses-old-tool-schema",
+        "too-many-workflows-depend-on-one-tool"
       ],
       "search_intents": [
         "output breaks the next step",
@@ -2370,7 +2392,7 @@
         "output looks right but next step fails",
         "downstream parser rejects AI output"
       ],
-      "text": "AI output breaks workflow AI output fails downstream CAT-0010 CAT-0040 ISS-0018 MCP, Tools & Integrations Output Breaks the Next Step The AI output looks acceptable by itself but cannot be used by the next tool, workflow step, parser, reviewer, or downstream consumer. agent-uses-old-tool-schema boundary-compliance-lens compatibility-envelope-lens compatibility-violation conflict-lens downstream parser rejects AI output interface-contract-lens interface-mismatch invariant-lens mcp-tools-and-integrations normalization-lens output breaks the next step output looks right but next step fails response cannot be used by next tool schema-breakage"
+      "text": "AI output breaks workflow AI output fails downstream CAT-0010 CAT-0040 ISS-0018 MCP, Tools & Integrations Output Breaks the Next Step The AI output looks acceptable by itself but cannot be used by the next tool, workflow step, parser, reviewer, or downstream consumer. agent-uses-old-tool-schema boundary-compliance-lens compatibility-envelope-lens compatibility-violation conflict-lens downstream parser rejects AI output interface-contract-lens interface-mismatch invariant-lens mcp-tools-and-integrations normalization-lens output breaks the next step output looks right but next step fails response cannot be used by next tool schema-breakage too-many-workflows-depend-on-one-tool"
     },
     {
       "type": "issue",
@@ -2708,7 +2730,9 @@
           "determinism-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "permission-change-not-applied"
+      ],
       "search_intents": [
         "policy update not reflected in output",
         "AI used old policy",
@@ -2717,7 +2741,7 @@
         "AI follows outdated policy",
         "new policy not reflected in response"
       ],
-      "text": "A policy, rule, standard, or instruction has been updated, but the AI output still follows the older version. AI follows outdated policy AI used old policy CAT-0060 CAT-0080 ISS-0042 Policy Update Not Reflected in Output Rules & Policies contract-drift convergence-lens determinism-lens new policy not reflected in response persistence-instability policy changed but AI output did not policy update not reflected in output reconciliation-lens reference-instability reference-stability-lens rules-and-policies updated rule not applied"
+      "text": "A policy, rule, standard, or instruction has been updated, but the AI output still follows the older version. AI follows outdated policy AI used old policy CAT-0060 CAT-0080 ISS-0042 Policy Update Not Reflected in Output Rules & Policies contract-drift convergence-lens determinism-lens new policy not reflected in response permission-change-not-applied persistence-instability policy changed but AI output did not policy update not reflected in output reconciliation-lens reference-instability reference-stability-lens rules-and-policies updated rule not applied"
     },
     {
       "type": "issue",
@@ -2972,7 +2996,9 @@
           "propagation-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "category-has-too-few-issues-to-be-useful"
+      ],
       "search_intents": [
         "relationship map has missing links",
         "missing links in issue map",
@@ -2981,7 +3007,7 @@
         "workflow map missing relationships",
         "ontology links missing"
       ],
-      "text": "A map of related Issues, rules, patterns, cases, fields, tools, or workflow steps is missing links needed to navigate or reason over the structure. AI relationship map incomplete CAT-0070 CAT-0120 Coverage & Guidance ISS-0080 Relationship Map Has Missing Links absence-lens constraint-sufficiency-lens coverage-and-guidance determinism-lens incomplete-declaration interface-contract-lens missing links in issue map ontology links missing orphaned-structure propagation-lens reference-instability reference-stability-lens related items not connected relationship map has missing links workflow map missing relationships"
+      "text": "A map of related Issues, rules, patterns, cases, fields, tools, or workflow steps is missing links needed to navigate or reason over the structure. AI relationship map incomplete CAT-0070 CAT-0120 Coverage & Guidance ISS-0080 Relationship Map Has Missing Links absence-lens category-has-too-few-issues-to-be-useful constraint-sufficiency-lens coverage-and-guidance determinism-lens incomplete-declaration interface-contract-lens missing links in issue map ontology links missing orphaned-structure propagation-lens reference-instability reference-stability-lens related items not connected relationship map has missing links workflow map missing relationships"
     },
     {
       "type": "issue",
@@ -3275,7 +3301,9 @@
           "variance-entropy-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "one-workspace-affects-another"
+      ],
       "search_intents": [
         "review outcome changes unrelated environment",
         "AI review affected other environment",
@@ -3284,7 +3312,7 @@
         "AI classification affected another case",
         "review outcome propagated too far"
       ],
-      "text": "A review result, approval, rejection, or classification changes state outside the environment, case, file, or workflow it was meant to govern. AI classification affected another case AI review affected other environment CAT-0070 CAT-0110 ISS-0051 Review Outcome Changes Unrelated Environment Workflow & Handoffs approval changed unrelated workflow boundary-compliance-lens boundary-leakage escalation-gradient-lens isolation-boundary-lens overreach-lens propagation-amplification propagation-lens review outcome changes unrelated environment review outcome propagated too far review result caused side effect undeclared-side-effect variance-entropy-lens workflow-and-handoffs"
+      "text": "A review result, approval, rejection, or classification changes state outside the environment, case, file, or workflow it was meant to govern. AI classification affected another case AI review affected other environment CAT-0070 CAT-0110 ISS-0051 Review Outcome Changes Unrelated Environment Workflow & Handoffs approval changed unrelated workflow boundary-compliance-lens boundary-leakage escalation-gradient-lens isolation-boundary-lens one-workspace-affects-another overreach-lens propagation-amplification propagation-lens review outcome changes unrelated environment review outcome propagated too far review result caused side effect undeclared-side-effect variance-entropy-lens workflow-and-handoffs"
     },
     {
       "type": "issue",
@@ -3319,7 +3347,9 @@
           "reconciliation-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "too-many-workflows-depend-on-one-tool"
+      ],
       "search_intents": [
         "review queue becomes bottleneck",
         "AI review queue bottleneck",
@@ -3328,7 +3358,7 @@
         "approval queue overloaded",
         "too many items waiting for review"
       ],
-      "text": "A review queue, approval path, or validation stage accumulates too much work and begins blocking the workflow. AI review queue bottleneck CAT-0070 CAT-0140 Duplication & Overload ISS-0105 Review Queue Becomes Bottleneck absence-lens approval queue overloaded compression-lens convergence-failure convergence-lens density-spike duplication-and-overload escalation-gradient-lens orphaned-structure propagation-lens reconciliation-lens review backlog blocks AI workflow review queue becomes bottleneck too many items waiting for review variance-entropy-lens workflow stuck in review queue"
+      "text": "A review queue, approval path, or validation stage accumulates too much work and begins blocking the workflow. AI review queue bottleneck CAT-0070 CAT-0140 Duplication & Overload ISS-0105 Review Queue Becomes Bottleneck absence-lens approval queue overloaded compression-lens convergence-failure convergence-lens density-spike duplication-and-overload escalation-gradient-lens orphaned-structure propagation-lens reconciliation-lens review backlog blocks AI workflow review queue becomes bottleneck too many items waiting for review too-many-workflows-depend-on-one-tool variance-entropy-lens workflow stuck in review queue"
     },
     {
       "type": "issue",
@@ -3362,7 +3392,9 @@
           "variance-entropy-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "category-has-too-few-issues-to-be-useful"
+      ],
       "search_intents": [
         "review rubric missing required criteria",
         "AI rubric missing criteria",
@@ -3371,7 +3403,7 @@
         "evaluation rubric not complete",
         "AI review lacks required criteria"
       ],
-      "text": "A review rubric, grading rule, evaluation checklist, or classification standard lacks criteria required to make the review reliable. AI review lacks required criteria AI rubric missing criteria CAT-0070 CAT-0120 Coverage & Guidance ISS-0075 Review Rubric Missing Required Criteria absence-lens compression-lens constraint-sufficiency-lens constraints-underspecified coverage-and-guidance density-vacuum determinism-lens evaluation rubric not complete grading criteria missing incomplete-declaration interface-contract-lens review checklist incomplete review rubric missing required criteria variance-entropy-lens"
+      "text": "A review rubric, grading rule, evaluation checklist, or classification standard lacks criteria required to make the review reliable. AI review lacks required criteria AI rubric missing criteria CAT-0070 CAT-0120 Coverage & Guidance ISS-0075 Review Rubric Missing Required Criteria absence-lens category-has-too-few-issues-to-be-useful compression-lens constraint-sufficiency-lens constraints-underspecified coverage-and-guidance density-vacuum determinism-lens evaluation rubric not complete grading criteria missing incomplete-declaration interface-contract-lens review checklist incomplete review rubric missing required criteria variance-entropy-lens"
     },
     {
       "type": "issue",
@@ -3403,7 +3435,9 @@
           "determinism-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "permission-change-not-applied"
+      ],
       "search_intents": [
         "revoked approval still treated as active",
         "AI still uses revoked approval",
@@ -3412,7 +3446,7 @@
         "approval removed but workflow still uses it",
         "AI treats expired approval as valid"
       ],
-      "text": "AI still uses revoked approval AI treats expired approval as valid An approval, permission, exception, or authorization that was revoked continues to affect AI behavior or workflow decisions as if it were still active. CAT-0050 CAT-0080 ISS-0041 Permissions & Approvals Revoked Approval Still Treated as Active approval removed but workflow still uses it authority-state-mismatch contract-drift convergence-lens determinism-lens old permission still active permissions-and-approvals persistence-instability reconciliation-lens reference-stability-lens revoked approval still treated as active revoked authorization ignored"
+      "text": "AI still uses revoked approval AI treats expired approval as valid An approval, permission, exception, or authorization that was revoked continues to affect AI behavior or workflow decisions as if it were still active. CAT-0050 CAT-0080 ISS-0041 Permissions & Approvals Revoked Approval Still Treated as Active approval removed but workflow still uses it authority-state-mismatch contract-drift convergence-lens determinism-lens old permission still active permission-change-not-applied permissions-and-approvals persistence-instability reconciliation-lens reference-stability-lens revoked approval still treated as active revoked authorization ignored"
     },
     {
       "type": "issue",
@@ -4195,7 +4229,9 @@
           "variance-entropy-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "too-many-workflows-depend-on-one-tool"
+      ],
       "search_intents": [
         "small change produces large downstream effects",
         "small AI change caused big workflow impact",
@@ -4204,7 +4240,7 @@
         "small update caused major AI behavior change",
         "downstream effects from small change"
       ],
-      "text": "A small prompt, schema, policy, output, or workflow change creates unexpectedly large effects in downstream steps. CAT-0080 CAT-0110 ISS-0106 Small Change Produces Large Downstream Effects Spread & Escalation boundary-compliance-lens compatibility-envelope-lens compatibility-violation contract-drift convergence-lens determinism-lens downstream effects from small change escalation-gradient-lens minor schema change broke workflow prompt change had large downstream effect propagation-amplification propagation-lens reconciliation-lens small AI change caused big workflow impact small change produces large downstream effects small update caused major AI behavior change spread-and-escalation variance-entropy-lens"
+      "text": "A small prompt, schema, policy, output, or workflow change creates unexpectedly large effects in downstream steps. CAT-0080 CAT-0110 ISS-0106 Small Change Produces Large Downstream Effects Spread & Escalation boundary-compliance-lens compatibility-envelope-lens compatibility-violation contract-drift convergence-lens determinism-lens downstream effects from small change escalation-gradient-lens minor schema change broke workflow prompt change had large downstream effect propagation-amplification propagation-lens reconciliation-lens small AI change caused big workflow impact small change produces large downstream effects small update caused major AI behavior change spread-and-escalation too-many-workflows-depend-on-one-tool variance-entropy-lens"
     },
     {
       "type": "issue",
@@ -4363,7 +4399,9 @@
           "variance-entropy-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "agent-keeps-adding-tool-dependencies"
+      ],
       "search_intents": [
         "task has no clear limit",
         "AI does not know where to stop",
@@ -4372,7 +4410,7 @@
         "AI keeps going because limits are unclear",
         "no done condition in prompt"
       ],
-      "text": "AI does not know where to stop AI keeps going because limits are unclear CAT-0100 ISS-0011 Scope & Boundaries Task Has No Clear Limit The task does not declare where the AI should stop, what is out of scope, or what counts as enough work. absence-lens constraint-sufficiency-lens constraints-underspecified determinism-lens escalation-gradient-lens incomplete-declaration interface-contract-lens isolation-boundary-lens no done condition in prompt prompt has no stopping point scope-and-boundaries task has no clear limit task scope is too open unbounded-scope variance-entropy-lens"
+      "text": "AI does not know where to stop AI keeps going because limits are unclear CAT-0100 ISS-0011 Scope & Boundaries Task Has No Clear Limit The task does not declare where the AI should stop, what is out of scope, or what counts as enough work. absence-lens agent-keeps-adding-tool-dependencies constraint-sufficiency-lens constraints-underspecified determinism-lens escalation-gradient-lens incomplete-declaration interface-contract-lens isolation-boundary-lens no done condition in prompt prompt has no stopping point scope-and-boundaries task has no clear limit task scope is too open unbounded-scope variance-entropy-lens"
     },
     {
       "type": "issue",
@@ -4451,7 +4489,9 @@
           "propagation-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "agent-keeps-adding-tool-dependencies"
+      ],
       "search_intents": [
         "too many tool calls",
         "AI called tools too many times",
@@ -4460,7 +4500,7 @@
         "AI overuses search tools",
         "tool loop too many calls"
       ],
-      "text": "AI called tools too many times AI overuses search tools CAT-0040 CAT-0100 ISS-0061 MCP, Tools & Integrations The AI or agent makes more tool calls, searches, retrievals, API calls, or integration actions than the task requires or permits. Too Many Tool Calls agent keeps calling tools boundary-compliance-lens constraint-sufficiency-lens escalation-gradient-lens escalation-growth excessive MCP tool calls isolation-boundary-lens mcp-tools-and-integrations overreach overreach-lens propagation-lens too many tool calls tool loop too many calls unbounded-scope variance-entropy-lens"
+      "text": "AI called tools too many times AI overuses search tools CAT-0040 CAT-0100 ISS-0061 MCP, Tools & Integrations The AI or agent makes more tool calls, searches, retrievals, API calls, or integration actions than the task requires or permits. Too Many Tool Calls agent keeps calling tools agent-keeps-adding-tool-dependencies boundary-compliance-lens constraint-sufficiency-lens escalation-gradient-lens escalation-growth excessive MCP tool calls isolation-boundary-lens mcp-tools-and-integrations overreach overreach-lens propagation-lens too many tool calls tool loop too many calls unbounded-scope variance-entropy-lens"
     },
     {
       "type": "issue",
@@ -4545,7 +4585,9 @@
           "reconciliation-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "too-many-workflows-depend-on-one-tool"
+      ],
       "search_intents": [
         "tool can act without responsible authority",
         "AI tool has no responsible authority",
@@ -4554,7 +4596,7 @@
         "connector action has no authority",
         "tool permission without responsibility"
       ],
-      "text": "A tool, connector, function, or integration can perform an action without a declared responsible authority for that action. AI tool has no responsible authority CAT-0040 CAT-0050 ISS-0108 MCP tool can act without approval Permissions & Approvals Tool Can Act Without Responsible Authority absence-lens authority-overlay-lens conflict-lens connector action has no authority interface-contract-lens interface-mismatch isolation-boundary-lens missing-authority normalization-lens overreach-lens permissions-and-approvals propagation-lens reconciliation-lens tool action lacks owner tool can act without responsible authority tool permission without responsibility undeclared-side-effect"
+      "text": "A tool, connector, function, or integration can perform an action without a declared responsible authority for that action. AI tool has no responsible authority CAT-0040 CAT-0050 ISS-0108 MCP tool can act without approval Permissions & Approvals Tool Can Act Without Responsible Authority absence-lens authority-overlay-lens conflict-lens connector action has no authority interface-contract-lens interface-mismatch isolation-boundary-lens missing-authority normalization-lens overreach-lens permissions-and-approvals propagation-lens reconciliation-lens too-many-workflows-depend-on-one-tool tool action lacks owner tool can act without responsible authority tool permission without responsibility undeclared-side-effect"
     },
     {
       "type": "issue",
@@ -4589,6 +4631,7 @@
         ]
       },
       "related_ai_adj_issues": [
+        "agent-keeps-adding-tool-dependencies",
         "tool-not-supported-in-this-mode"
       ],
       "search_intents": [
@@ -4599,7 +4642,7 @@
         "missing inputs for MCP tool",
         "AI tool call lacks required parameters"
       ],
-      "text": "A usable tool or integration exists, but the AI or agent does not have the required inputs, permissions, fields, identifiers, or context needed to call it correctly. AI cannot call tool missing inputs AI tool call lacks required parameters CAT-0040 CAT-0120 ISS-0020 MCP, Tools & Integrations Tool Exists but Required Inputs Are Missing absence-lens agent needs required tool fields constraint-sufficiency-lens constraints-underspecified determinism-lens incomplete-declaration interface-contract-lens interface-mismatch mcp-tools-and-integrations missing inputs for MCP tool normalization-lens tool available but not enough information tool exists but required inputs are missing tool-not-supported-in-this-mode variance-entropy-lens"
+      "text": "A usable tool or integration exists, but the AI or agent does not have the required inputs, permissions, fields, identifiers, or context needed to call it correctly. AI cannot call tool missing inputs AI tool call lacks required parameters CAT-0040 CAT-0120 ISS-0020 MCP, Tools & Integrations Tool Exists but Required Inputs Are Missing absence-lens agent needs required tool fields agent-keeps-adding-tool-dependencies constraint-sufficiency-lens constraints-underspecified determinism-lens incomplete-declaration interface-contract-lens interface-mismatch mcp-tools-and-integrations missing inputs for MCP tool normalization-lens tool available but not enough information tool exists but required inputs are missing tool-not-supported-in-this-mode variance-entropy-lens"
     },
     {
       "type": "issue",
@@ -4942,7 +4985,9 @@
           "variance-entropy-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "too-many-workflows-depend-on-one-tool"
+      ],
       "search_intents": [
         "workflow step lacks required conditions",
         "AI workflow missing required conditions",
@@ -4951,7 +4996,7 @@
         "AI workflow skipped required condition",
         "required conditions not declared"
       ],
-      "text": "A workflow step can run, route, approve, reject, or continue without the required conditions being declared or checked. AI workflow missing required conditions AI workflow skipped required condition CAT-0070 CAT-0120 ISS-0073 Workflow & Handoffs Workflow Step Lacks Required Conditions absence-lens constraint-sufficiency-lens constraints-underspecified determinism-lens incomplete-declaration interface-contract-lens orphaned-structure propagation-lens required conditions not declared step runs without checks variance-entropy-lens workflow condition missing workflow step lacks required conditions workflow-and-handoffs"
+      "text": "A workflow step can run, route, approve, reject, or continue without the required conditions being declared or checked. AI workflow missing required conditions AI workflow skipped required condition CAT-0070 CAT-0120 ISS-0073 Workflow & Handoffs Workflow Step Lacks Required Conditions absence-lens constraint-sufficiency-lens constraints-underspecified determinism-lens incomplete-declaration interface-contract-lens orphaned-structure propagation-lens required conditions not declared step runs without checks too-many-workflows-depend-on-one-tool variance-entropy-lens workflow condition missing workflow step lacks required conditions workflow-and-handoffs"
     },
     {
       "type": "issue",
@@ -5040,6 +5085,31 @@
     },
     {
       "type": "ai_adj_issue",
+      "slug": "agent-keeps-adding-tool-dependencies",
+      "ontology_slug": "agent-keeps-adding-tool-dependencies",
+      "code": "ADJ-0006",
+      "title": "Agent Keeps Adding Tool Dependencies",
+      "summary": "An agent keeps adding required tools, connectors, searches, files, APIs, or integrations instead of completing the task with the available surface.",
+      "url": "/workbench/ai-adj-issues/agent-keeps-adding-tool-dependencies/",
+      "related_issues": [
+        "agent-keeps-expanding-the-task",
+        "too-many-tool-calls",
+        "task-has-no-clear-limit",
+        "tool-exists-but-required-inputs-are-missing",
+        "agent-never-settles-on-final-answer"
+      ],
+      "search_intents": [
+        "agent keeps adding tool dependencies",
+        "AI agent says it needs more tools",
+        "agent keeps asking for integrations",
+        "AI task keeps requiring more tools",
+        "agent will not finish without another tool",
+        "tool dependency keeps growing"
+      ],
+      "text": "ADJ-0006 AI agent says it needs more tools AI task keeps requiring more tools Agent Keeps Adding Tool Dependencies An agent keeps adding required tools, connectors, searches, files, APIs, or integrations instead of completing the task with the available surface. agent keeps adding tool dependencies agent keeps asking for integrations agent will not finish without another tool agent-keeps-expanding-the-task agent-never-settles-on-final-answer task-has-no-clear-limit too-many-tool-calls tool dependency keeps growing tool-exists-but-required-inputs-are-missing"
+    },
+    {
+      "type": "ai_adj_issue",
       "slug": "agent-uses-old-tool-schema",
       "ontology_slug": "agent-uses-old-tool-schema",
       "code": "ADJ-0004",
@@ -5090,6 +5160,30 @@
     },
     {
       "type": "ai_adj_issue",
+      "slug": "category-has-too-few-issues-to-be-useful",
+      "ontology_slug": "category-has-too-few-issues-to-be-useful",
+      "code": "ADJ-0009",
+      "title": "Category Has Too Few Issues to Be Useful",
+      "summary": "A category, diagnostic area, or intake bucket has too few Issues, examples, or checks to support useful diagnosis or routing.",
+      "url": "/workbench/ai-adj-issues/category-has-too-few-issues-to-be-useful/",
+      "related_issues": [
+        "diagnostic-area-has-no-coverage",
+        "evaluation-rubric-has-coverage-gap",
+        "relationship-map-has-missing-links",
+        "review-rubric-missing-required-criteria"
+      ],
+      "search_intents": [
+        "category has too few issues to be useful",
+        "AI issue category has no coverage",
+        "diagnostic category too thin",
+        "not enough issues in category",
+        "category needs more examples",
+        "ontology category coverage gap"
+      ],
+      "text": "A category, diagnostic area, or intake bucket has too few Issues, examples, or checks to support useful diagnosis or routing. ADJ-0009 AI issue category has no coverage Category Has Too Few Issues to Be Useful category has too few issues to be useful category needs more examples diagnostic category too thin diagnostic-area-has-no-coverage evaluation-rubric-has-coverage-gap not enough issues in category ontology category coverage gap relationship-map-has-missing-links review-rubric-missing-required-criteria"
+    },
+    {
+      "type": "ai_adj_issue",
       "slug": "documented-field-not-available-at-runtime",
       "ontology_slug": "documented-field-not-available-at-runtime",
       "code": "ADJ-0003",
@@ -5111,6 +5205,56 @@
         "runtime missing documented parameter"
       ],
       "text": "A documented field, option, parameter, property, or capability is expected by the user or agent but is not available in the actual runtime. ADJ-0003 API field not available Documented Field Not Available at Runtime actual-policy-differs-from-declared-policy documented field not available at runtime documented option not supported field in docs missing at runtime missing-required-fields runtime missing documented parameter same-contract-name-has-different-meanings tool schema field missing tool-call-contract-mismatch"
+    },
+    {
+      "type": "ai_adj_issue",
+      "slug": "one-workspace-affects-another",
+      "ontology_slug": "one-workspace-affects-another",
+      "code": "ADJ-0008",
+      "title": "One Workspace Affects Another",
+      "summary": "State, memory, files, permissions, settings, tools, or workflow effects from one workspace affect another workspace where they should not apply.",
+      "url": "/workbench/ai-adj-issues/one-workspace-affects-another/",
+      "related_issues": [
+        "context-leaks-between-tasks",
+        "local-rule-spreads-to-broader-cases",
+        "review-outcome-changes-unrelated-environment",
+        "ai-touches-unrelated-scope",
+        "agent-modified-unrelated-state"
+      ],
+      "search_intents": [
+        "one workspace affects another",
+        "AI workspace context leaks",
+        "ChatGPT workspace affects another workspace",
+        "agent changed another workspace",
+        "memory from one workspace affects another",
+        "workspace isolation problem AI"
+      ],
+      "text": "ADJ-0008 AI workspace context leaks ChatGPT workspace affects another workspace One Workspace Affects Another State, memory, files, permissions, settings, tools, or workflow effects from one workspace affect another workspace where they should not apply. agent changed another workspace agent-modified-unrelated-state ai-touches-unrelated-scope context-leaks-between-tasks local-rule-spreads-to-broader-cases memory from one workspace affects another one workspace affects another review-outcome-changes-unrelated-environment workspace isolation problem AI"
+    },
+    {
+      "type": "ai_adj_issue",
+      "slug": "permission-change-not-applied",
+      "ontology_slug": "permission-change-not-applied",
+      "code": "ADJ-0010",
+      "title": "Permission Change Not Applied",
+      "summary": "A permission, approval, role, policy, or access change is made but the AI, agent, tool, or workflow continues behaving as if the old permission state still applies.",
+      "url": "/workbench/ai-adj-issues/permission-change-not-applied/",
+      "related_issues": [
+        "revoked-approval-still-treated-as-active",
+        "policy-update-not-reflected-in-output",
+        "actual-policy-differs-from-declared-policy",
+        "behavior-does-not-match-declared-role",
+        "declared-owner-cannot-control-outcome"
+      ],
+      "search_intents": [
+        "permission change not applied",
+        "AI still uses old permission",
+        "permission update not reflected",
+        "role change not applied to agent",
+        "approval change not active",
+        "access change not reflected in AI workflow"
+      ],
+      "text": "A permission, approval, role, policy, or access change is made but the AI, agent, tool, or workflow continues behaving as if the old permission state still applies. ADJ-0010 AI still uses old permission Permission Change Not Applied access change not reflected in AI workflow actual-policy-differs-from-declared-policy approval change not active behavior-does-not-match-declared-role declared-owner-cannot-control-outcome permission change not applied permission update not reflected policy-update-not-reflected-in-output revoked-approval-still-treated-as-active role change not applied to agent"
     },
     {
       "type": "ai_adj_issue",
@@ -5136,6 +5280,31 @@
         "product docs do not match AI behavior"
       ],
       "text": "ADJ-0005 AI behavior does not match documentation API docs wrong at runtime Documented behavior, fields, tool schemas, permissions, or runtime capabilities do not match what actually happens during use. Runtime Behavior Does Not Match Docs actual-policy-differs-from-declared-policy documented behavior differs from actual behavior output-changed-without-declared-change product docs do not match AI behavior prompt-behavior-changed-without-version-change runtime behavior does not match docs same-contract-name-has-different-meanings tool docs do not match runtime tool-call-contract-mismatch"
+    },
+    {
+      "type": "ai_adj_issue",
+      "slug": "too-many-workflows-depend-on-one-tool",
+      "ontology_slug": "too-many-workflows-depend-on-one-tool",
+      "code": "ADJ-0007",
+      "title": "Too Many Workflows Depend on One Tool",
+      "summary": "Many workflows, agents, checks, or downstream paths depend on one tool, connector, API, or integration, creating a shared point of failure.",
+      "url": "/workbench/ai-adj-issues/too-many-workflows-depend-on-one-tool/",
+      "related_issues": [
+        "review-queue-becomes-bottleneck",
+        "tool-can-act-without-responsible-authority",
+        "workflow-step-lacks-required-conditions",
+        "output-breaks-the-next-step",
+        "small-change-produces-large-downstream-effects"
+      ],
+      "search_intents": [
+        "too many workflows depend on one tool",
+        "AI workflows depend on same tool",
+        "one connector blocks many workflows",
+        "shared AI tool became bottleneck",
+        "tool outage breaks multiple agents",
+        "too many agents depend on one integration"
+      ],
+      "text": "ADJ-0007 AI workflows depend on same tool Many workflows, agents, checks, or downstream paths depend on one tool, connector, API, or integration, creating a shared point of failure. Too Many Workflows Depend on One Tool one connector blocks many workflows output-breaks-the-next-step review-queue-becomes-bottleneck shared AI tool became bottleneck small-change-produces-large-downstream-effects too many agents depend on one integration too many workflows depend on one tool tool outage breaks multiple agents tool-can-act-without-responsible-authority workflow-step-lacks-required-conditions"
     },
     {
       "type": "ai_adj_issue",

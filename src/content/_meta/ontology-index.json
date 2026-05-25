@@ -462,6 +462,7 @@
       },
       "related_ai_adj_issues": [
         "documented-field-not-available-at-runtime",
+        "permission-change-not-applied",
         "runtime-behavior-does-not-match-docs"
       ],
       "search_intents": [
@@ -603,7 +604,9 @@
           "variance-entropy-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "agent-keeps-adding-tool-dependencies"
+      ],
       "search_intents": [
         "agent keeps expanding the task",
         "AI keeps adding more steps",
@@ -645,7 +648,9 @@
         ],
         "secondary": []
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "one-workspace-affects-another"
+      ],
       "search_intents": [
         "agent modified unrelated state",
         "AI agent changed unrelated state",
@@ -692,7 +697,9 @@
           "variance-entropy-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "agent-keeps-adding-tool-dependencies"
+      ],
       "search_intents": [
         "agent never settles on final answer",
         "AI agent will not finish",
@@ -1014,7 +1021,9 @@
           "escalation-gradient-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "one-workspace-affects-another"
+      ],
       "search_intents": [
         "AI touches unrelated scope",
         "AI changed unrelated content",
@@ -1287,7 +1296,9 @@
           "reference-stability-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "permission-change-not-applied"
+      ],
       "search_intents": [
         "behavior does not match declared role",
         "AI does not act like assigned role",
@@ -1513,7 +1524,9 @@
           "variance-entropy-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "one-workspace-affects-another"
+      ],
       "search_intents": [
         "context leaks between tasks",
         "AI uses context from another task",
@@ -1560,7 +1573,9 @@
           "reference-stability-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "permission-change-not-applied"
+      ],
       "search_intents": [
         "declared owner cannot control outcome",
         "owner is responsible but cannot change result",
@@ -1603,7 +1618,9 @@
           "variance-entropy-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "category-has-too-few-issues-to-be-useful"
+      ],
       "search_intents": [
         "diagnostic area has no coverage",
         "missing diagnostic coverage",
@@ -1831,7 +1848,9 @@
           "variance-entropy-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "category-has-too-few-issues-to-be-useful"
+      ],
       "search_intents": [
         "evaluation rubric has coverage gap",
         "AI evaluation rubric missing coverage",
@@ -2245,7 +2264,9 @@
           "variance-entropy-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "one-workspace-affects-another"
+      ],
       "search_intents": [
         "local rule spreads to broader cases",
         "AI applies local rule too broadly",
@@ -2799,7 +2820,8 @@
         ]
       },
       "related_ai_adj_issues": [
-        "agent-uses-old-tool-schema"
+        "agent-uses-old-tool-schema",
+        "too-many-workflows-depend-on-one-tool"
       ],
       "search_intents": [
         "output breaks the next step",
@@ -3163,7 +3185,9 @@
           "determinism-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "permission-change-not-applied"
+      ],
       "search_intents": [
         "policy update not reflected in output",
         "AI used old policy",
@@ -3439,7 +3463,9 @@
           "propagation-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "category-has-too-few-issues-to-be-useful"
+      ],
       "search_intents": [
         "relationship map has missing links",
         "missing links in issue map",
@@ -3756,7 +3782,9 @@
           "variance-entropy-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "one-workspace-affects-another"
+      ],
       "search_intents": [
         "review outcome changes unrelated environment",
         "AI review affected other environment",
@@ -3802,7 +3830,9 @@
           "reconciliation-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "too-many-workflows-depend-on-one-tool"
+      ],
       "search_intents": [
         "review queue becomes bottleneck",
         "AI review queue bottleneck",
@@ -3847,7 +3877,9 @@
           "variance-entropy-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "category-has-too-few-issues-to-be-useful"
+      ],
       "search_intents": [
         "review rubric missing required criteria",
         "AI rubric missing criteria",
@@ -3890,7 +3922,9 @@
           "determinism-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "permission-change-not-applied"
+      ],
       "search_intents": [
         "revoked approval still treated as active",
         "AI still uses revoked approval",
@@ -4718,7 +4752,9 @@
           "variance-entropy-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "too-many-workflows-depend-on-one-tool"
+      ],
       "search_intents": [
         "small change produces large downstream effects",
         "small AI change caused big workflow impact",
@@ -4894,7 +4930,9 @@
           "variance-entropy-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "agent-keeps-adding-tool-dependencies"
+      ],
       "search_intents": [
         "task has no clear limit",
         "AI does not know where to stop",
@@ -4986,7 +5024,9 @@
           "propagation-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "agent-keeps-adding-tool-dependencies"
+      ],
       "search_intents": [
         "too many tool calls",
         "AI called tools too many times",
@@ -5084,7 +5124,9 @@
           "reconciliation-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "too-many-workflows-depend-on-one-tool"
+      ],
       "search_intents": [
         "tool can act without responsible authority",
         "AI tool has no responsible authority",
@@ -5130,6 +5172,7 @@
         ]
       },
       "related_ai_adj_issues": [
+        "agent-keeps-adding-tool-dependencies",
         "tool-not-supported-in-this-mode"
       ],
       "search_intents": [
@@ -5499,7 +5542,9 @@
           "variance-entropy-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "too-many-workflows-depend-on-one-tool"
+      ],
       "search_intents": [
         "workflow step lacks required conditions",
         "AI workflow missing required conditions",
@@ -5603,6 +5648,33 @@
   ],
   "ai_adj_issues": [
     {
+      "slug": "agent-keeps-adding-tool-dependencies",
+      "ontology_slug": "agent-keeps-adding-tool-dependencies",
+      "code": "ADJ-0006",
+      "title": "Agent Keeps Adding Tool Dependencies",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "An agent keeps adding required tools, connectors, searches, files, APIs, or integrations instead of completing the task with the available surface.",
+      "related_issues": [
+        "agent-keeps-expanding-the-task",
+        "too-many-tool-calls",
+        "task-has-no-clear-limit",
+        "tool-exists-but-required-inputs-are-missing",
+        "agent-never-settles-on-final-answer"
+      ],
+      "search_intents": [
+        "agent keeps adding tool dependencies",
+        "AI agent says it needs more tools",
+        "agent keeps asking for integrations",
+        "AI task keeps requiring more tools",
+        "agent will not finish without another tool",
+        "tool dependency keeps growing"
+      ],
+      "url": "/workbench/ai-adj-issues/agent-keeps-adding-tool-dependencies/",
+      "markdown_url": "/workbench/ai-adj-issues/agent-keeps-adding-tool-dependencies.md"
+    },
+    {
       "slug": "agent-uses-old-tool-schema",
       "ontology_slug": "agent-uses-old-tool-schema",
       "code": "ADJ-0004",
@@ -5657,6 +5729,32 @@
       "markdown_url": "/workbench/ai-adj-issues/ai-works-in-one-environment-not-another.md"
     },
     {
+      "slug": "category-has-too-few-issues-to-be-useful",
+      "ontology_slug": "category-has-too-few-issues-to-be-useful",
+      "code": "ADJ-0009",
+      "title": "Category Has Too Few Issues to Be Useful",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "A category, diagnostic area, or intake bucket has too few Issues, examples, or checks to support useful diagnosis or routing.",
+      "related_issues": [
+        "diagnostic-area-has-no-coverage",
+        "evaluation-rubric-has-coverage-gap",
+        "relationship-map-has-missing-links",
+        "review-rubric-missing-required-criteria"
+      ],
+      "search_intents": [
+        "category has too few issues to be useful",
+        "AI issue category has no coverage",
+        "diagnostic category too thin",
+        "not enough issues in category",
+        "category needs more examples",
+        "ontology category coverage gap"
+      ],
+      "url": "/workbench/ai-adj-issues/category-has-too-few-issues-to-be-useful/",
+      "markdown_url": "/workbench/ai-adj-issues/category-has-too-few-issues-to-be-useful.md"
+    },
+    {
       "slug": "documented-field-not-available-at-runtime",
       "ontology_slug": "documented-field-not-available-at-runtime",
       "code": "ADJ-0003",
@@ -5681,6 +5779,60 @@
       ],
       "url": "/workbench/ai-adj-issues/documented-field-not-available-at-runtime/",
       "markdown_url": "/workbench/ai-adj-issues/documented-field-not-available-at-runtime.md"
+    },
+    {
+      "slug": "one-workspace-affects-another",
+      "ontology_slug": "one-workspace-affects-another",
+      "code": "ADJ-0008",
+      "title": "One Workspace Affects Another",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "State, memory, files, permissions, settings, tools, or workflow effects from one workspace affect another workspace where they should not apply.",
+      "related_issues": [
+        "context-leaks-between-tasks",
+        "local-rule-spreads-to-broader-cases",
+        "review-outcome-changes-unrelated-environment",
+        "ai-touches-unrelated-scope",
+        "agent-modified-unrelated-state"
+      ],
+      "search_intents": [
+        "one workspace affects another",
+        "AI workspace context leaks",
+        "ChatGPT workspace affects another workspace",
+        "agent changed another workspace",
+        "memory from one workspace affects another",
+        "workspace isolation problem AI"
+      ],
+      "url": "/workbench/ai-adj-issues/one-workspace-affects-another/",
+      "markdown_url": "/workbench/ai-adj-issues/one-workspace-affects-another.md"
+    },
+    {
+      "slug": "permission-change-not-applied",
+      "ontology_slug": "permission-change-not-applied",
+      "code": "ADJ-0010",
+      "title": "Permission Change Not Applied",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "A permission, approval, role, policy, or access change is made but the AI, agent, tool, or workflow continues behaving as if the old permission state still applies.",
+      "related_issues": [
+        "revoked-approval-still-treated-as-active",
+        "policy-update-not-reflected-in-output",
+        "actual-policy-differs-from-declared-policy",
+        "behavior-does-not-match-declared-role",
+        "declared-owner-cannot-control-outcome"
+      ],
+      "search_intents": [
+        "permission change not applied",
+        "AI still uses old permission",
+        "permission update not reflected",
+        "role change not applied to agent",
+        "approval change not active",
+        "access change not reflected in AI workflow"
+      ],
+      "url": "/workbench/ai-adj-issues/permission-change-not-applied/",
+      "markdown_url": "/workbench/ai-adj-issues/permission-change-not-applied.md"
     },
     {
       "slug": "runtime-behavior-does-not-match-docs",
@@ -5708,6 +5860,33 @@
       ],
       "url": "/workbench/ai-adj-issues/runtime-behavior-does-not-match-docs/",
       "markdown_url": "/workbench/ai-adj-issues/runtime-behavior-does-not-match-docs.md"
+    },
+    {
+      "slug": "too-many-workflows-depend-on-one-tool",
+      "ontology_slug": "too-many-workflows-depend-on-one-tool",
+      "code": "ADJ-0007",
+      "title": "Too Many Workflows Depend on One Tool",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "Many workflows, agents, checks, or downstream paths depend on one tool, connector, API, or integration, creating a shared point of failure.",
+      "related_issues": [
+        "review-queue-becomes-bottleneck",
+        "tool-can-act-without-responsible-authority",
+        "workflow-step-lacks-required-conditions",
+        "output-breaks-the-next-step",
+        "small-change-produces-large-downstream-effects"
+      ],
+      "search_intents": [
+        "too many workflows depend on one tool",
+        "AI workflows depend on same tool",
+        "one connector blocks many workflows",
+        "shared AI tool became bottleneck",
+        "tool outage breaks multiple agents",
+        "too many agents depend on one integration"
+      ],
+      "url": "/workbench/ai-adj-issues/too-many-workflows-depend-on-one-tool/",
+      "markdown_url": "/workbench/ai-adj-issues/too-many-workflows-depend-on-one-tool.md"
     },
     {
       "slug": "tool-not-supported-in-this-mode",
