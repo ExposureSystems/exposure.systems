@@ -18,13 +18,24 @@ export function getStaticPaths() {
 
 const { category } = Astro.props;
 
+const sortByCode = (a, b) => a.code.localeCompare(b.code);
+
 const primaryIssues = (category.primary_issues ?? category.issues ?? [])
   .map((slug) => ontologyIndex.issues.find((issue) => issue.slug === slug))
-  .filter(Boolean);
+  .filter(Boolean)
+  .sort(sortByCode);
 
 const secondaryIssues = (category.secondary_issues ?? [])
   .map((slug) => ontologyIndex.issues.find((issue) => issue.slug === slug))
-  .filter(Boolean);
+  .filter(Boolean)
+  .sort(sortByCode);
+
+const relatedIssueDisplayLimit = 8;
+const displayedSecondaryIssues = secondaryIssues.slice(0, relatedIssueDisplayLimit);
+const hiddenSecondaryIssueCount = Math.max(
+  secondaryIssues.length - displayedSecondaryIssues.length,
+  0,
+);
 
 const history = getObjectHistory(changelog, category);
 ---
@@ -68,14 +79,22 @@ const history = getObjectHistory(changelog, category);
         <h2 id="also-related-issues">Also Related Issues</h2>
 
         {secondaryIssues.length > 0 ? (
-          <ul>
-            {secondaryIssues.map((issue) => (
-              <li>
-                <a href={issue.url}>{issue.title}</a>
-                <p>{issue.summary}</p>
-              </li>
-            ))}
-          </ul>
+          <>
+            {hiddenSecondaryIssueCount > 0 ? (
+              <p>
+                Showing {displayedSecondaryIssues.length} of {secondaryIssues.length} cross-listed issues.
+              </p>
+            ) : null}
+
+            <ul>
+              {displayedSecondaryIssues.map((issue) => (
+                <li>
+                  <a href={issue.url}>{issue.title}</a>
+                  <p>{issue.summary}</p>
+                </li>
+              ))}
+            </ul>
+          </>
         ) : (
           <p>No cross-listed issues in this category.</p>
         )}
