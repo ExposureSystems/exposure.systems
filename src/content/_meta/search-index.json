@@ -5,6 +5,49 @@
   "items": [
     {
       "type": "issue",
+      "slug": "action-changed-something-else-too",
+      "ontology_slug": "action-changed-something-else-too",
+      "code": "ISS-0046",
+      "title": "Action Changed Something Else Too",
+      "summary": "An AI or agent action makes the requested change but also changes another object, field, file, state, rule, or workflow element that was not supposed to change.",
+      "url": "/workbench/issues/action-changed-something-else-too/",
+      "category": "spread-and-escalation",
+      "category_title": "Spread & Escalation",
+      "primary_cat_code": "CAT-0110",
+      "secondary_cat_codes": [
+        "CAT-0100"
+      ],
+      "primary_pattern": "undeclared-side-effect",
+      "patterns": [
+        "undeclared-side-effect",
+        "propagation-amplification",
+        "boundary-leakage"
+      ],
+      "lenses": {
+        "primary": [
+          "escalation-gradient-lens",
+          "isolation-boundary-lens",
+          "overreach-lens",
+          "propagation-lens"
+        ],
+        "secondary": [
+          "boundary-compliance-lens",
+          "variance-entropy-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "action changed something else too",
+        "AI changed unrelated thing too",
+        "agent side effect",
+        "fix changed other file",
+        "AI action had unintended side effect",
+        "requested change affected something else"
+      ],
+      "text": "AI action had unintended side effect AI changed unrelated thing too Action Changed Something Else Too An AI or agent action makes the requested change but also changes another object, field, file, state, rule, or workflow element that was not supposed to change. CAT-0100 CAT-0110 ISS-0046 Spread & Escalation action changed something else too agent side effect boundary-compliance-lens boundary-leakage escalation-gradient-lens fix changed other file isolation-boundary-lens overreach-lens propagation-amplification propagation-lens requested change affected something else spread-and-escalation undeclared-side-effect variance-entropy-lens"
+    },
+    {
+      "type": "issue",
       "slug": "actual-policy-differs-from-declared-policy",
       "ontology_slug": "actual-policy-differs-from-declared-policy",
       "code": "ISS-0040",
@@ -223,6 +266,89 @@
     },
     {
       "type": "issue",
+      "slug": "ai-touches-unrelated-scope",
+      "ontology_slug": "ai-touches-unrelated-scope",
+      "code": "ISS-0045",
+      "title": "AI Touches Unrelated Scope",
+      "summary": "The AI affects, edits, analyzes, changes, or reasons over material outside the scope of the requested task.",
+      "url": "/workbench/issues/ai-touches-unrelated-scope/",
+      "category": "scope-and-boundaries",
+      "category_title": "Scope & Boundaries",
+      "primary_cat_code": "CAT-0100",
+      "secondary_cat_codes": [
+        "CAT-0030"
+      ],
+      "primary_pattern": "overreach",
+      "patterns": [
+        "overreach",
+        "boundary-leakage",
+        "unbounded-scope"
+      ],
+      "lenses": {
+        "primary": [
+          "boundary-compliance-lens",
+          "constraint-sufficiency-lens",
+          "isolation-boundary-lens",
+          "overreach-lens",
+          "propagation-lens"
+        ],
+        "secondary": [
+          "escalation-gradient-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "AI touches unrelated scope",
+        "AI changed unrelated content",
+        "agent edited files not requested",
+        "AI affected something outside task",
+        "AI included unrelated scope",
+        "agent went outside requested area"
+      ],
+      "text": "AI Touches Unrelated Scope AI affected something outside task AI changed unrelated content AI included unrelated scope AI touches unrelated scope CAT-0030 CAT-0100 ISS-0045 Scope & Boundaries The AI affects, edits, analyzes, changes, or reasons over material outside the scope of the requested task. agent edited files not requested agent went outside requested area boundary-compliance-lens boundary-leakage constraint-sufficiency-lens escalation-gradient-lens isolation-boundary-lens overreach overreach-lens propagation-lens scope-and-boundaries unbounded-scope"
+    },
+    {
+      "type": "issue",
+      "slug": "ai-uses-external-information-when-forbidden",
+      "ontology_slug": "ai-uses-external-information-when-forbidden",
+      "code": "ISS-0044",
+      "title": "AI Uses External Information When Forbidden",
+      "summary": "The AI uses outside knowledge, sources, tools, memory, or assumptions after the task forbids external information or limits the allowed source set.",
+      "url": "/workbench/issues/ai-uses-external-information-when-forbidden/",
+      "category": "scope-and-boundaries",
+      "category_title": "Scope & Boundaries",
+      "primary_cat_code": "CAT-0100",
+      "secondary_cat_codes": [
+        "CAT-0060"
+      ],
+      "primary_pattern": "boundary-leakage",
+      "patterns": [
+        "boundary-leakage",
+        "overreach",
+        "undeclared-side-effect"
+      ],
+      "lenses": {
+        "primary": [
+          "boundary-compliance-lens",
+          "isolation-boundary-lens",
+          "overreach-lens",
+          "propagation-lens"
+        ],
+        "secondary": []
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "AI uses external information when forbidden",
+        "AI used outside sources",
+        "ChatGPT used outside knowledge when told not to",
+        "AI ignored source boundary",
+        "answer uses information not in provided file",
+        "AI used external context"
+      ],
+      "text": "AI Uses External Information When Forbidden AI ignored source boundary AI used external context AI used outside sources AI uses external information when forbidden CAT-0060 CAT-0100 ChatGPT used outside knowledge when told not to ISS-0044 Scope & Boundaries The AI uses outside knowledge, sources, tools, memory, or assumptions after the task forbids external information or limits the allowed source set. answer uses information not in provided file boundary-compliance-lens boundary-leakage isolation-boundary-lens overreach overreach-lens propagation-lens scope-and-boundaries undeclared-side-effect"
+    },
+    {
+      "type": "issue",
       "slug": "answer-has-no-traceable-source-link",
       "ontology_slug": "answer-has-no-traceable-source-link",
       "code": "ISS-0002",
@@ -306,6 +432,51 @@
         "answer does not choose a path"
       ],
       "text": "AI answer is overwhelming AI gave too many options AI response has too many directions Answer Has Too Many Paths CAT-0010 CAT-0100 ISS-0010 Output The answer presents too many possible paths, interpretations, options, or next steps without enough structure to choose among them. answer does not choose a path answer has too many paths compression-lens constraint-sufficiency-lens constraints-underspecified density-spike determinism-lens escalation-gradient-lens isolation-boundary-lens output too many next steps from AI unbounded-scope variance-entropy-lens"
+    },
+    {
+      "type": "issue",
+      "slug": "behavior-does-not-match-declared-role",
+      "ontology_slug": "behavior-does-not-match-declared-role",
+      "code": "ISS-0043",
+      "title": "Behavior Does Not Match Declared Role",
+      "summary": "The AI or agent behaves outside, below, or differently from the role, authority, responsibility, or permission posture declared for it.",
+      "url": "/workbench/issues/behavior-does-not-match-declared-role/",
+      "category": "permissions-and-approvals",
+      "category_title": "Permissions & Approvals",
+      "primary_cat_code": "CAT-0050",
+      "secondary_cat_codes": [
+        "CAT-0060"
+      ],
+      "primary_pattern": "authority-state-mismatch",
+      "patterns": [
+        "authority-state-mismatch",
+        "overreach",
+        "authority-shadowing"
+      ],
+      "lenses": {
+        "primary": [
+          "authority-overlay-lens",
+          "boundary-compliance-lens",
+          "overreach-lens",
+          "reconciliation-lens"
+        ],
+        "secondary": [
+          "conflict-lens",
+          "convergence-lens",
+          "propagation-lens",
+          "reference-stability-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "behavior does not match declared role",
+        "AI does not act like assigned role",
+        "agent role mismatch",
+        "AI role says one thing behavior another",
+        "declared role not followed",
+        "agent exceeds declared role"
+      ],
+      "text": "AI does not act like assigned role AI role says one thing behavior another Behavior Does Not Match Declared Role CAT-0050 CAT-0060 ISS-0043 Permissions & Approvals The AI or agent behaves outside, below, or differently from the role, authority, responsibility, or permission posture declared for it. agent exceeds declared role agent role mismatch authority-overlay-lens authority-shadowing authority-state-mismatch behavior does not match declared role boundary-compliance-lens conflict-lens convergence-lens declared role not followed overreach overreach-lens permissions-and-approvals propagation-lens reconciliation-lens reference-stability-lens"
     },
     {
       "type": "issue",
@@ -610,6 +781,49 @@
         "workflow has no fallback authority"
       ],
       "text": "AI does not know who decides if primary fails CAT-0050 CAT-0070 Fallback Authority Is Missing ISS-0014 Permissions & Approvals The system does not declare who or what has authority when the primary owner, rule, tool, source, or decision path is unavailable or inconclusive. absence-lens authority-overlay-lens circular-dependency conflict-lens constraint-sufficiency-lens fallback authority is missing incomplete-declaration interface-contract-lens missing escalation authority missing-authority no backup decision owner no fallback approver normalization-lens permissions-and-approvals propagation-lens reconciliation-lens workflow has no fallback authority"
+    },
+    {
+      "type": "issue",
+      "slug": "file-bounded-task-uses-outside-content",
+      "ontology_slug": "file-bounded-task-uses-outside-content",
+      "code": "ISS-0048",
+      "title": "File-Bounded Task Uses Outside Content",
+      "summary": "The AI is asked to work only from a specific file or document but uses content, assumptions, or sources outside that file.",
+      "url": "/workbench/issues/file-bounded-task-uses-outside-content/",
+      "category": "scope-and-boundaries",
+      "category_title": "Scope & Boundaries",
+      "primary_cat_code": "CAT-0100",
+      "secondary_cat_codes": [
+        "CAT-0010"
+      ],
+      "primary_pattern": "boundary-leakage",
+      "patterns": [
+        "boundary-leakage",
+        "reference-instability",
+        "overreach"
+      ],
+      "lenses": {
+        "primary": [
+          "boundary-compliance-lens",
+          "isolation-boundary-lens",
+          "overreach-lens",
+          "propagation-lens",
+          "reference-stability-lens"
+        ],
+        "secondary": [
+          "determinism-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "file bounded task uses outside content",
+        "AI used content outside file",
+        "summarize only this file but AI used other info",
+        "AI answer not limited to document",
+        "AI used outside context in file task",
+        "document bounded task violated"
+      ],
+      "text": "AI answer not limited to document AI used content outside file AI used outside context in file task CAT-0010 CAT-0100 File-Bounded Task Uses Outside Content ISS-0048 Scope & Boundaries The AI is asked to work only from a specific file or document but uses content, assumptions, or sources outside that file. boundary-compliance-lens boundary-leakage determinism-lens document bounded task violated file bounded task uses outside content isolation-boundary-lens overreach overreach-lens propagation-lens reference-instability reference-stability-lens scope-and-boundaries summarize only this file but AI used other info"
     },
     {
       "type": "issue",
@@ -1091,6 +1305,47 @@
     },
     {
       "type": "issue",
+      "slug": "policy-update-not-reflected-in-output",
+      "ontology_slug": "policy-update-not-reflected-in-output",
+      "code": "ISS-0042",
+      "title": "Policy Update Not Reflected in Output",
+      "summary": "A policy, rule, standard, or instruction has been updated, but the AI output still follows the older version.",
+      "url": "/workbench/issues/policy-update-not-reflected-in-output/",
+      "category": "rules-and-policies",
+      "category_title": "Rules & Policies",
+      "primary_cat_code": "CAT-0060",
+      "secondary_cat_codes": [
+        "CAT-0080"
+      ],
+      "primary_pattern": "contract-drift",
+      "patterns": [
+        "contract-drift",
+        "reference-instability",
+        "persistence-instability"
+      ],
+      "lenses": {
+        "primary": [
+          "convergence-lens",
+          "reconciliation-lens",
+          "reference-stability-lens"
+        ],
+        "secondary": [
+          "determinism-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "policy update not reflected in output",
+        "AI used old policy",
+        "policy changed but AI output did not",
+        "updated rule not applied",
+        "AI follows outdated policy",
+        "new policy not reflected in response"
+      ],
+      "text": "A policy, rule, standard, or instruction has been updated, but the AI output still follows the older version. AI follows outdated policy AI used old policy CAT-0060 CAT-0080 ISS-0042 Policy Update Not Reflected in Output Rules & Policies contract-drift convergence-lens determinism-lens new policy not reflected in response persistence-instability policy changed but AI output did not policy update not reflected in output reconciliation-lens reference-instability reference-stability-lens rules-and-policies updated rule not applied"
+    },
+    {
+      "type": "issue",
       "slug": "prompt-only-works-after-retry",
       "ontology_slug": "prompt-only-works-after-retry",
       "code": "ISS-0005",
@@ -1129,6 +1384,48 @@
         "AI response changes after retry"
       ],
       "text": "AI only works when I try again AI response changes after retry CAT-0090 ISS-0005 Inconsistent Behavior Prompt Only Works After Retry The prompt fails, misroutes, or produces an unusable response on one attempt but works after retry without a meaningful change to the input. compression-lens constraint-sufficiency-lens constraints-underspecified convergence-lens determinism-lens divergent-outputs inconsistent-behavior non-deterministic-execution prompt fails randomly prompt only works after retry reference-stability-lens retry fixes AI answer same prompt works on second try variance-entropy-lens"
+    },
+    {
+      "type": "issue",
+      "slug": "repair-step-created-new-breakage",
+      "ontology_slug": "repair-step-created-new-breakage",
+      "code": "ISS-0047",
+      "title": "Repair Step Created New Breakage",
+      "summary": "A repair, correction, retry, or fix step addresses one problem but introduces a new failure elsewhere.",
+      "url": "/workbench/issues/repair-step-created-new-breakage/",
+      "category": "spread-and-escalation",
+      "category_title": "Spread & Escalation",
+      "primary_cat_code": "CAT-0110",
+      "secondary_cat_codes": [
+        "CAT-0070"
+      ],
+      "primary_pattern": "propagation-amplification",
+      "patterns": [
+        "propagation-amplification",
+        "escalation-growth",
+        "undeclared-side-effect"
+      ],
+      "lenses": {
+        "primary": [
+          "escalation-gradient-lens",
+          "overreach-lens",
+          "propagation-lens",
+          "variance-entropy-lens"
+        ],
+        "secondary": [
+          "isolation-boundary-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "repair step created new breakage",
+        "AI fix broke something else",
+        "repair introduced new error",
+        "correction caused new failure",
+        "fix made another part wrong",
+        "AI patch created new problem"
+      ],
+      "text": "A repair, correction, retry, or fix step addresses one problem but introduces a new failure elsewhere. AI fix broke something else AI patch created new problem CAT-0070 CAT-0110 ISS-0047 Repair Step Created New Breakage Spread & Escalation correction caused new failure escalation-gradient-lens escalation-growth fix made another part wrong isolation-boundary-lens overreach-lens propagation-amplification propagation-lens repair introduced new error repair step created new breakage spread-and-escalation undeclared-side-effect variance-entropy-lens"
     },
     {
       "type": "issue",
@@ -1172,6 +1469,47 @@
         "AI repair made new mistakes"
       ],
       "text": "A retry, repair attempt, regeneration, or follow-up instruction increases the error, expands the failure, or creates additional breakage instead of narrowing the problem. AI gets worse after retry AI repair made new mistakes CAT-0090 CAT-0110 ISS-0007 Retry Makes the Problem Worse Spread & Escalation determinism-lens escalation-gradient-lens escalation-growth fix attempt broke more things propagation-amplification propagation-lens provenance-trace-lens reference-stability-lens regeneration created more errors retry expanded the problem retry makes the problem worse silent-mutation spread-and-escalation variance-entropy-lens"
+    },
+    {
+      "type": "issue",
+      "slug": "revoked-approval-still-treated-as-active",
+      "ontology_slug": "revoked-approval-still-treated-as-active",
+      "code": "ISS-0041",
+      "title": "Revoked Approval Still Treated as Active",
+      "summary": "An approval, permission, exception, or authorization that was revoked continues to affect AI behavior or workflow decisions as if it were still active.",
+      "url": "/workbench/issues/revoked-approval-still-treated-as-active/",
+      "category": "permissions-and-approvals",
+      "category_title": "Permissions & Approvals",
+      "primary_cat_code": "CAT-0050",
+      "secondary_cat_codes": [
+        "CAT-0080"
+      ],
+      "primary_pattern": "authority-state-mismatch",
+      "patterns": [
+        "authority-state-mismatch",
+        "contract-drift",
+        "persistence-instability"
+      ],
+      "lenses": {
+        "primary": [
+          "convergence-lens",
+          "reconciliation-lens",
+          "reference-stability-lens"
+        ],
+        "secondary": [
+          "determinism-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "revoked approval still treated as active",
+        "AI still uses revoked approval",
+        "old permission still active",
+        "revoked authorization ignored",
+        "approval removed but workflow still uses it",
+        "AI treats expired approval as valid"
+      ],
+      "text": "AI still uses revoked approval AI treats expired approval as valid An approval, permission, exception, or authorization that was revoked continues to affect AI behavior or workflow decisions as if it were still active. CAT-0050 CAT-0080 ISS-0041 Permissions & Approvals Revoked Approval Still Treated as Active approval removed but workflow still uses it authority-state-mismatch contract-drift convergence-lens determinism-lens old permission still active permissions-and-approvals persistence-instability reconciliation-lens reference-stability-lens revoked approval still treated as active revoked authorization ignored"
     },
     {
       "type": "issue",
@@ -1799,18 +2137,18 @@
         "ontology_slug": "agents",
         "code": "CAT-0030",
         "title": "Agents",
-        "count": 3,
+        "count": 4,
         "primary_count": 2,
-        "secondary_count": 1
+        "secondary_count": 2
       },
       {
         "slug": "changes-and-versions",
         "ontology_slug": "changes-and-versions",
         "code": "CAT-0080",
         "title": "Changes & Versions",
-        "count": 4,
+        "count": 6,
         "primary_count": 1,
-        "secondary_count": 3
+        "secondary_count": 5
       },
       {
         "slug": "coverage-and-guidance",
@@ -1871,17 +2209,17 @@
         "ontology_slug": "output",
         "code": "CAT-0010",
         "title": "Output",
-        "count": 16,
+        "count": 17,
         "primary_count": 9,
-        "secondary_count": 7
+        "secondary_count": 8
       },
       {
         "slug": "permissions-and-approvals",
         "ontology_slug": "permissions-and-approvals",
         "code": "CAT-0050",
         "title": "Permissions & Approvals",
-        "count": 9,
-        "primary_count": 4,
+        "count": 11,
+        "primary_count": 6,
         "secondary_count": 5
       },
       {
@@ -1889,26 +2227,26 @@
         "ontology_slug": "rules-and-policies",
         "code": "CAT-0060",
         "title": "Rules & Policies",
-        "count": 7,
-        "primary_count": 4,
-        "secondary_count": 3
+        "count": 10,
+        "primary_count": 5,
+        "secondary_count": 5
       },
       {
         "slug": "scope-and-boundaries",
         "ontology_slug": "scope-and-boundaries",
         "code": "CAT-0100",
         "title": "Scope & Boundaries",
-        "count": 6,
-        "primary_count": 1,
-        "secondary_count": 5
+        "count": 10,
+        "primary_count": 4,
+        "secondary_count": 6
       },
       {
         "slug": "spread-and-escalation",
         "ontology_slug": "spread-and-escalation",
         "code": "CAT-0110",
         "title": "Spread & Escalation",
-        "count": 1,
-        "primary_count": 1,
+        "count": 3,
+        "primary_count": 3,
         "secondary_count": 0
       },
       {
@@ -1916,9 +2254,9 @@
         "ontology_slug": "workflow-and-handoffs",
         "code": "CAT-0070",
         "title": "Workflow & Handoffs",
-        "count": 6,
+        "count": 7,
         "primary_count": 3,
-        "secondary_count": 3
+        "secondary_count": 4
       }
     ],
     "patterns": [
@@ -1948,21 +2286,21 @@
         "ontology_slug": "authority-shadowing",
         "code": "PAT-0230",
         "title": "Authority Shadowing",
-        "count": 4
+        "count": 5
       },
       {
         "slug": "authority-state-mismatch",
         "ontology_slug": "authority-state-mismatch",
         "code": "PAT-0240",
         "title": "Authority-State Mismatch",
-        "count": 6
+        "count": 8
       },
       {
         "slug": "boundary-leakage",
         "ontology_slug": "boundary-leakage",
         "code": "PAT-0140",
         "title": "Boundary Leakage",
-        "count": 2
+        "count": 6
       },
       {
         "slug": "circular-dependency",
@@ -1990,7 +2328,7 @@
         "ontology_slug": "contract-drift",
         "code": "PAT-0190",
         "title": "Contract Drift",
-        "count": 6
+        "count": 8
       },
       {
         "slug": "convergence-failure",
@@ -2032,7 +2370,7 @@
         "ontology_slug": "escalation-growth",
         "code": "PAT-0300",
         "title": "Escalation Growth",
-        "count": 1
+        "count": 2
       },
       {
         "slug": "incomplete-declaration",
@@ -2081,21 +2419,21 @@
         "ontology_slug": "overreach",
         "code": "PAT-0340",
         "title": "Overreach",
-        "count": 3
+        "count": 7
       },
       {
         "slug": "persistence-instability",
         "ontology_slug": "persistence-instability",
         "code": "PAT-0350",
         "title": "Persistence Instability",
-        "count": 6
+        "count": 8
       },
       {
         "slug": "propagation-amplification",
         "ontology_slug": "propagation-amplification",
         "code": "PAT-0360",
         "title": "Propagation Amplification",
-        "count": 2
+        "count": 4
       },
       {
         "slug": "redundant-declaration",
@@ -2109,7 +2447,7 @@
         "ontology_slug": "reference-instability",
         "code": "PAT-0200",
         "title": "Reference Instability",
-        "count": 4
+        "count": 6
       },
       {
         "slug": "schema-breakage",
@@ -2137,7 +2475,7 @@
         "ontology_slug": "unbounded-scope",
         "code": "PAT-0400",
         "title": "Unbounded Scope",
-        "count": 4
+        "count": 5
       },
       {
         "slug": "unconstrained-expansion",
@@ -2151,7 +2489,7 @@
         "ontology_slug": "undeclared-side-effect",
         "code": "PAT-0420",
         "title": "Undeclared Side Effect",
-        "count": 2
+        "count": 5
       }
     ],
     "lenses": [
@@ -2167,14 +2505,14 @@
         "ontology_slug": "authority-overlay-lens",
         "code": "LEN-0110",
         "title": "Authority Overlay Lens",
-        "count": 9
+        "count": 10
       },
       {
         "slug": "boundary-compliance-lens",
         "ontology_slug": "boundary-compliance-lens",
         "code": "LEN-0120",
         "title": "Boundary Compliance Lens",
-        "count": 13
+        "count": 18
       },
       {
         "slug": "compatibility-envelope-lens",
@@ -2195,35 +2533,35 @@
         "ontology_slug": "conflict-lens",
         "code": "LEN-0150",
         "title": "Conflict Lens",
-        "count": 20
+        "count": 21
       },
       {
         "slug": "constraint-sufficiency-lens",
         "ontology_slug": "constraint-sufficiency-lens",
         "code": "LEN-0160",
         "title": "Constraint Sufficiency Lens",
-        "count": 14
+        "count": 15
       },
       {
         "slug": "convergence-lens",
         "ontology_slug": "convergence-lens",
         "code": "LEN-0170",
         "title": "Convergence Lens",
-        "count": 15
+        "count": 18
       },
       {
         "slug": "determinism-lens",
         "ontology_slug": "determinism-lens",
         "code": "LEN-0180",
         "title": "Determinism Lens",
-        "count": 20
+        "count": 23
       },
       {
         "slug": "escalation-gradient-lens",
         "ontology_slug": "escalation-gradient-lens",
         "code": "LEN-0190",
         "title": "Escalation Gradient Lens",
-        "count": 8
+        "count": 11
       },
       {
         "slug": "interface-contract-lens",
@@ -2244,7 +2582,7 @@
         "ontology_slug": "isolation-boundary-lens",
         "code": "LEN-0220",
         "title": "Isolation Boundary Lens",
-        "count": 7
+        "count": 12
       },
       {
         "slug": "normalization-lens",
@@ -2258,14 +2596,14 @@
         "ontology_slug": "overreach-lens",
         "code": "LEN-0240",
         "title": "Overreach Lens",
-        "count": 4
+        "count": 10
       },
       {
         "slug": "propagation-lens",
         "ontology_slug": "propagation-lens",
         "code": "LEN-0250",
         "title": "Propagation Lens",
-        "count": 11
+        "count": 17
       },
       {
         "slug": "provenance-trace-lens",
@@ -2279,21 +2617,21 @@
         "ontology_slug": "reconciliation-lens",
         "code": "LEN-0270",
         "title": "Reconciliation Lens",
-        "count": 19
+        "count": 22
       },
       {
         "slug": "reference-stability-lens",
         "ontology_slug": "reference-stability-lens",
         "code": "LEN-0280",
         "title": "Reference Stability Lens",
-        "count": 18
+        "count": 22
       },
       {
         "slug": "variance-entropy-lens",
         "ontology_slug": "variance-entropy-lens",
         "code": "LEN-0290",
         "title": "Variance / Entropy Lens",
-        "count": 15
+        "count": 17
       }
     ]
   }

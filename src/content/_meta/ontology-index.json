@@ -336,6 +336,51 @@
   },
   "issues": [
     {
+      "slug": "action-changed-something-else-too",
+      "ontology_slug": "action-changed-something-else-too",
+      "code": "ISS-0046",
+      "title": "Action Changed Something Else Too",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "An AI or agent action makes the requested change but also changes another object, field, file, state, rule, or workflow element that was not supposed to change.",
+      "category": "spread-and-escalation",
+      "category_title": "Spread & Escalation",
+      "primary_cat_code": "CAT-0110",
+      "secondary_cat_codes": [
+        "CAT-0100"
+      ],
+      "primary_pattern": "undeclared-side-effect",
+      "patterns": [
+        "undeclared-side-effect",
+        "propagation-amplification",
+        "boundary-leakage"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "escalation-gradient-lens",
+          "isolation-boundary-lens",
+          "overreach-lens",
+          "propagation-lens"
+        ],
+        "secondary": [
+          "boundary-compliance-lens",
+          "variance-entropy-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "action changed something else too",
+        "AI changed unrelated thing too",
+        "agent side effect",
+        "fix changed other file",
+        "AI action had unintended side effect",
+        "requested change affected something else"
+      ],
+      "url": "/workbench/issues/action-changed-something-else-too/",
+      "markdown_url": "/workbench/issues/action-changed-something-else-too.md"
+    },
+    {
       "slug": "actual-policy-differs-from-declared-policy",
       "ontology_slug": "actual-policy-differs-from-declared-policy",
       "code": "ISS-0040",
@@ -564,6 +609,93 @@
       "markdown_url": "/workbench/issues/ai-output-breaks-parser.md"
     },
     {
+      "slug": "ai-touches-unrelated-scope",
+      "ontology_slug": "ai-touches-unrelated-scope",
+      "code": "ISS-0045",
+      "title": "AI Touches Unrelated Scope",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "The AI affects, edits, analyzes, changes, or reasons over material outside the scope of the requested task.",
+      "category": "scope-and-boundaries",
+      "category_title": "Scope & Boundaries",
+      "primary_cat_code": "CAT-0100",
+      "secondary_cat_codes": [
+        "CAT-0030"
+      ],
+      "primary_pattern": "overreach",
+      "patterns": [
+        "overreach",
+        "boundary-leakage",
+        "unbounded-scope"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "boundary-compliance-lens",
+          "constraint-sufficiency-lens",
+          "isolation-boundary-lens",
+          "overreach-lens",
+          "propagation-lens"
+        ],
+        "secondary": [
+          "escalation-gradient-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "AI touches unrelated scope",
+        "AI changed unrelated content",
+        "agent edited files not requested",
+        "AI affected something outside task",
+        "AI included unrelated scope",
+        "agent went outside requested area"
+      ],
+      "url": "/workbench/issues/ai-touches-unrelated-scope/",
+      "markdown_url": "/workbench/issues/ai-touches-unrelated-scope.md"
+    },
+    {
+      "slug": "ai-uses-external-information-when-forbidden",
+      "ontology_slug": "ai-uses-external-information-when-forbidden",
+      "code": "ISS-0044",
+      "title": "AI Uses External Information When Forbidden",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "The AI uses outside knowledge, sources, tools, memory, or assumptions after the task forbids external information or limits the allowed source set.",
+      "category": "scope-and-boundaries",
+      "category_title": "Scope & Boundaries",
+      "primary_cat_code": "CAT-0100",
+      "secondary_cat_codes": [
+        "CAT-0060"
+      ],
+      "primary_pattern": "boundary-leakage",
+      "patterns": [
+        "boundary-leakage",
+        "overreach",
+        "undeclared-side-effect"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "boundary-compliance-lens",
+          "isolation-boundary-lens",
+          "overreach-lens",
+          "propagation-lens"
+        ],
+        "secondary": []
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "AI uses external information when forbidden",
+        "AI used outside sources",
+        "ChatGPT used outside knowledge when told not to",
+        "AI ignored source boundary",
+        "answer uses information not in provided file",
+        "AI used external context"
+      ],
+      "url": "/workbench/issues/ai-uses-external-information-when-forbidden/",
+      "markdown_url": "/workbench/issues/ai-uses-external-information-when-forbidden.md"
+    },
+    {
       "slug": "answer-has-no-traceable-source-link",
       "ontology_slug": "answer-has-no-traceable-source-link",
       "code": "ISS-0002",
@@ -652,6 +784,53 @@
       ],
       "url": "/workbench/issues/answer-has-too-many-paths/",
       "markdown_url": "/workbench/issues/answer-has-too-many-paths.md"
+    },
+    {
+      "slug": "behavior-does-not-match-declared-role",
+      "ontology_slug": "behavior-does-not-match-declared-role",
+      "code": "ISS-0043",
+      "title": "Behavior Does Not Match Declared Role",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "The AI or agent behaves outside, below, or differently from the role, authority, responsibility, or permission posture declared for it.",
+      "category": "permissions-and-approvals",
+      "category_title": "Permissions & Approvals",
+      "primary_cat_code": "CAT-0050",
+      "secondary_cat_codes": [
+        "CAT-0060"
+      ],
+      "primary_pattern": "authority-state-mismatch",
+      "patterns": [
+        "authority-state-mismatch",
+        "overreach",
+        "authority-shadowing"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "authority-overlay-lens",
+          "boundary-compliance-lens",
+          "overreach-lens",
+          "reconciliation-lens"
+        ],
+        "secondary": [
+          "conflict-lens",
+          "convergence-lens",
+          "propagation-lens",
+          "reference-stability-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "behavior does not match declared role",
+        "AI does not act like assigned role",
+        "agent role mismatch",
+        "AI role says one thing behavior another",
+        "declared role not followed",
+        "agent exceeds declared role"
+      ],
+      "url": "/workbench/issues/behavior-does-not-match-declared-role/",
+      "markdown_url": "/workbench/issues/behavior-does-not-match-declared-role.md"
     },
     {
       "slug": "citation-points-to-wrong-source",
@@ -970,6 +1149,51 @@
       ],
       "url": "/workbench/issues/fallback-authority-is-missing/",
       "markdown_url": "/workbench/issues/fallback-authority-is-missing.md"
+    },
+    {
+      "slug": "file-bounded-task-uses-outside-content",
+      "ontology_slug": "file-bounded-task-uses-outside-content",
+      "code": "ISS-0048",
+      "title": "File-Bounded Task Uses Outside Content",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "The AI is asked to work only from a specific file or document but uses content, assumptions, or sources outside that file.",
+      "category": "scope-and-boundaries",
+      "category_title": "Scope & Boundaries",
+      "primary_cat_code": "CAT-0100",
+      "secondary_cat_codes": [
+        "CAT-0010"
+      ],
+      "primary_pattern": "boundary-leakage",
+      "patterns": [
+        "boundary-leakage",
+        "reference-instability",
+        "overreach"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "boundary-compliance-lens",
+          "isolation-boundary-lens",
+          "overreach-lens",
+          "propagation-lens",
+          "reference-stability-lens"
+        ],
+        "secondary": [
+          "determinism-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "file bounded task uses outside content",
+        "AI used content outside file",
+        "summarize only this file but AI used other info",
+        "AI answer not limited to document",
+        "AI used outside context in file task",
+        "document bounded task violated"
+      ],
+      "url": "/workbench/issues/file-bounded-task-uses-outside-content/",
+      "markdown_url": "/workbench/issues/file-bounded-task-uses-outside-content.md"
     },
     {
       "slug": "format-rule-too-weak",
@@ -1472,6 +1696,49 @@
       "markdown_url": "/workbench/issues/permissions-conflict-after-being-combined.md"
     },
     {
+      "slug": "policy-update-not-reflected-in-output",
+      "ontology_slug": "policy-update-not-reflected-in-output",
+      "code": "ISS-0042",
+      "title": "Policy Update Not Reflected in Output",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "A policy, rule, standard, or instruction has been updated, but the AI output still follows the older version.",
+      "category": "rules-and-policies",
+      "category_title": "Rules & Policies",
+      "primary_cat_code": "CAT-0060",
+      "secondary_cat_codes": [
+        "CAT-0080"
+      ],
+      "primary_pattern": "contract-drift",
+      "patterns": [
+        "contract-drift",
+        "reference-instability",
+        "persistence-instability"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "convergence-lens",
+          "reconciliation-lens",
+          "reference-stability-lens"
+        ],
+        "secondary": [
+          "determinism-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "policy update not reflected in output",
+        "AI used old policy",
+        "policy changed but AI output did not",
+        "updated rule not applied",
+        "AI follows outdated policy",
+        "new policy not reflected in response"
+      ],
+      "url": "/workbench/issues/policy-update-not-reflected-in-output/",
+      "markdown_url": "/workbench/issues/policy-update-not-reflected-in-output.md"
+    },
+    {
       "slug": "prompt-only-works-after-retry",
       "ontology_slug": "prompt-only-works-after-retry",
       "code": "ISS-0005",
@@ -1513,6 +1780,50 @@
       ],
       "url": "/workbench/issues/prompt-only-works-after-retry/",
       "markdown_url": "/workbench/issues/prompt-only-works-after-retry.md"
+    },
+    {
+      "slug": "repair-step-created-new-breakage",
+      "ontology_slug": "repair-step-created-new-breakage",
+      "code": "ISS-0047",
+      "title": "Repair Step Created New Breakage",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "A repair, correction, retry, or fix step addresses one problem but introduces a new failure elsewhere.",
+      "category": "spread-and-escalation",
+      "category_title": "Spread & Escalation",
+      "primary_cat_code": "CAT-0110",
+      "secondary_cat_codes": [
+        "CAT-0070"
+      ],
+      "primary_pattern": "propagation-amplification",
+      "patterns": [
+        "propagation-amplification",
+        "escalation-growth",
+        "undeclared-side-effect"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "escalation-gradient-lens",
+          "overreach-lens",
+          "propagation-lens",
+          "variance-entropy-lens"
+        ],
+        "secondary": [
+          "isolation-boundary-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "repair step created new breakage",
+        "AI fix broke something else",
+        "repair introduced new error",
+        "correction caused new failure",
+        "fix made another part wrong",
+        "AI patch created new problem"
+      ],
+      "url": "/workbench/issues/repair-step-created-new-breakage/",
+      "markdown_url": "/workbench/issues/repair-step-created-new-breakage.md"
     },
     {
       "slug": "retry-makes-the-problem-worse",
@@ -1558,6 +1869,49 @@
       ],
       "url": "/workbench/issues/retry-makes-the-problem-worse/",
       "markdown_url": "/workbench/issues/retry-makes-the-problem-worse.md"
+    },
+    {
+      "slug": "revoked-approval-still-treated-as-active",
+      "ontology_slug": "revoked-approval-still-treated-as-active",
+      "code": "ISS-0041",
+      "title": "Revoked Approval Still Treated as Active",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "An approval, permission, exception, or authorization that was revoked continues to affect AI behavior or workflow decisions as if it were still active.",
+      "category": "permissions-and-approvals",
+      "category_title": "Permissions & Approvals",
+      "primary_cat_code": "CAT-0050",
+      "secondary_cat_codes": [
+        "CAT-0080"
+      ],
+      "primary_pattern": "authority-state-mismatch",
+      "patterns": [
+        "authority-state-mismatch",
+        "contract-drift",
+        "persistence-instability"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "convergence-lens",
+          "reconciliation-lens",
+          "reference-stability-lens"
+        ],
+        "secondary": [
+          "determinism-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "revoked approval still treated as active",
+        "AI still uses revoked approval",
+        "old permission still active",
+        "revoked authorization ignored",
+        "approval removed but workflow still uses it",
+        "AI treats expired approval as valid"
+      ],
+      "url": "/workbench/issues/revoked-approval-still-treated-as-active/",
+      "markdown_url": "/workbench/issues/revoked-approval-still-treated-as-active.md"
     },
     {
       "slug": "same-case-has-conflicting-policies",
@@ -2323,6 +2677,7 @@
           "hidden-rule-overrides-visible-instruction"
         ],
         "supporting": [
+          "behavior-does-not-match-declared-role",
           "conflicting-instructions-from-different-authorities",
           "permissions-conflict-after-being-combined",
           "same-case-has-conflicting-policies"
@@ -2351,8 +2706,10 @@
       },
       "issues": {
         "primary": [
+          "behavior-does-not-match-declared-role",
           "declared-owner-cannot-control-outcome",
-          "model-and-workflow-disagree-on-next-step"
+          "model-and-workflow-disagree-on-next-step",
+          "revoked-approval-still-treated-as-active"
         ],
         "supporting": [
           "actual-policy-differs-from-declared-policy",
@@ -2384,9 +2741,13 @@
       },
       "issues": {
         "primary": [
-          "context-leaks-between-tasks"
+          "ai-uses-external-information-when-forbidden",
+          "context-leaks-between-tasks",
+          "file-bounded-task-uses-outside-content"
         ],
         "supporting": [
+          "action-changed-something-else-too",
+          "ai-touches-unrelated-scope",
           "hidden-rule-overrides-visible-instruction"
         ]
       },
@@ -2510,10 +2871,12 @@
         "primary": [
           "actual-policy-differs-from-declared-policy",
           "context-changes-after-restore",
+          "policy-update-not-reflected-in-output",
           "stale-context-affects-output"
         ],
         "supporting": [
           "ai-forgets-earlier-constraints",
+          "revoked-approval-still-treated-as-active",
           "saved-reference-no-longer-works",
           "tool-result-not-integrated-correctly"
         ]
@@ -2684,7 +3047,9 @@
         "primary": [
           "retry-makes-the-problem-worse"
         ],
-        "supporting": []
+        "supporting": [
+          "repair-step-created-new-breakage"
+        ]
       },
       "url": "/workbench/patterns/escalation-growth/",
       "markdown_url": "/workbench/patterns/escalation-growth.md"
@@ -2899,10 +3264,14 @@
       "issues": {
         "primary": [
           "ai-adds-work-not-requested",
+          "ai-touches-unrelated-scope",
           "hallucinated-fields"
         ],
         "supporting": [
-          "agent-keeps-expanding-the-task"
+          "agent-keeps-expanding-the-task",
+          "ai-uses-external-information-when-forbidden",
+          "behavior-does-not-match-declared-role",
+          "file-bounded-task-uses-outside-content"
         ]
       },
       "url": "/workbench/patterns/overreach/",
@@ -2934,6 +3303,8 @@
         "supporting": [
           "context-changes-after-restore",
           "context-leaks-between-tasks",
+          "policy-update-not-reflected-in-output",
+          "revoked-approval-still-treated-as-active",
           "stale-context-affects-output"
         ]
       },
@@ -2959,8 +3330,11 @@
         ]
       },
       "issues": {
-        "primary": [],
+        "primary": [
+          "repair-step-created-new-breakage"
+        ],
         "supporting": [
+          "action-changed-something-else-too",
           "context-leaks-between-tasks",
           "retry-makes-the-problem-worse"
         ]
@@ -3019,6 +3393,8 @@
         ],
         "supporting": [
           "answer-has-no-traceable-source-link",
+          "file-bounded-task-uses-outside-content",
+          "policy-update-not-reflected-in-output",
           "saved-memory-not-used"
         ]
       },
@@ -3141,6 +3517,7 @@
         ],
         "supporting": [
           "ai-adds-work-not-requested",
+          "ai-touches-unrelated-scope",
           "answer-has-too-many-paths",
           "hallucinated-fields"
         ]
@@ -3194,10 +3571,14 @@
         ]
       },
       "issues": {
-        "primary": [],
+        "primary": [
+          "action-changed-something-else-too"
+        ],
         "supporting": [
           "ai-adds-work-not-requested",
-          "no-owner-for-agent-action"
+          "ai-uses-external-information-when-forbidden",
+          "no-owner-for-agent-action",
+          "repair-step-created-new-breakage"
         ]
       },
       "url": "/workbench/patterns/undeclared-side-effect/",
@@ -3260,6 +3641,7 @@
         ]
       },
       "issues": [
+        "behavior-does-not-match-declared-role",
         "conflicting-instructions-from-different-authorities",
         "declared-owner-cannot-control-outcome",
         "fallback-authority-is-missing",
@@ -3293,12 +3675,17 @@
         ]
       },
       "issues": [
+        "action-changed-something-else-too",
         "agent-keeps-expanding-the-task",
         "ai-adds-work-not-requested",
         "ai-output-breaks-parser",
+        "ai-touches-unrelated-scope",
+        "ai-uses-external-information-when-forbidden",
+        "behavior-does-not-match-declared-role",
         "citation-points-to-wrong-source",
         "context-leaks-between-tasks",
         "declared-owner-cannot-control-outcome",
+        "file-bounded-task-uses-outside-content",
         "hallucinated-fields",
         "hidden-rule-overrides-visible-instruction",
         "model-and-workflow-disagree-on-next-step",
@@ -3397,6 +3784,7 @@
       },
       "issues": [
         "ai-output-breaks-parser",
+        "behavior-does-not-match-declared-role",
         "conflicting-instructions-from-different-authorities",
         "declared-owner-cannot-control-outcome",
         "duplicate-fields-with-same-meaning",
@@ -3442,6 +3830,7 @@
       "issues": [
         "ai-adds-work-not-requested",
         "ai-forgets-earlier-constraints",
+        "ai-touches-unrelated-scope",
         "answer-has-no-traceable-source-link",
         "answer-has-too-many-paths",
         "fallback-authority-is-missing",
@@ -3483,12 +3872,15 @@
         "actual-policy-differs-from-declared-policy",
         "agent-keeps-expanding-the-task",
         "ai-forgets-earlier-constraints",
+        "behavior-does-not-match-declared-role",
         "context-changes-after-restore",
         "declared-owner-cannot-control-outcome",
         "human-review-and-automation-disagree",
         "model-and-workflow-disagree-on-next-step",
         "no-owner-for-agent-action",
+        "policy-update-not-reflected-in-output",
         "prompt-only-works-after-retry",
+        "revoked-approval-still-treated-as-active",
         "saved-reference-no-longer-works",
         "similar-cases-route-to-different-outcomes",
         "stale-context-affects-output",
@@ -3529,10 +3921,13 @@
         "citation-points-to-wrong-source",
         "context-changes-after-restore",
         "context-leaks-between-tasks",
+        "file-bounded-task-uses-outside-content",
         "format-rule-too-weak",
         "invalid-json-output",
+        "policy-update-not-reflected-in-output",
         "prompt-only-works-after-retry",
         "retry-makes-the-problem-worse",
+        "revoked-approval-still-treated-as-active",
         "saved-memory-not-used",
         "saved-reference-no-longer-works",
         "similar-cases-route-to-different-outcomes",
@@ -3568,12 +3963,15 @@
         ]
       },
       "issues": [
+        "action-changed-something-else-too",
         "agent-keeps-expanding-the-task",
         "ai-adds-work-not-requested",
+        "ai-touches-unrelated-scope",
         "answer-has-too-many-paths",
         "context-leaks-between-tasks",
         "duplicate-fields-with-same-meaning",
         "hallucinated-fields",
+        "repair-step-created-new-breakage",
         "retry-makes-the-problem-worse",
         "task-has-no-clear-limit"
       ],
@@ -3684,12 +4082,17 @@
         ]
       },
       "issues": [
+        "action-changed-something-else-too",
         "ai-adds-work-not-requested",
+        "ai-touches-unrelated-scope",
+        "ai-uses-external-information-when-forbidden",
         "answer-has-too-many-paths",
         "context-leaks-between-tasks",
+        "file-bounded-task-uses-outside-content",
         "hallucinated-fields",
         "hidden-rule-overrides-visible-instruction",
         "no-owner-for-agent-action",
+        "repair-step-created-new-breakage",
         "task-has-no-clear-limit"
       ],
       "url": "/workbench/lenses/isolation-boundary-lens/",
@@ -3747,10 +4150,16 @@
         "secondary": []
       },
       "issues": [
+        "action-changed-something-else-too",
         "agent-keeps-expanding-the-task",
         "ai-adds-work-not-requested",
+        "ai-touches-unrelated-scope",
+        "ai-uses-external-information-when-forbidden",
+        "behavior-does-not-match-declared-role",
+        "file-bounded-task-uses-outside-content",
         "hallucinated-fields",
-        "no-owner-for-agent-action"
+        "no-owner-for-agent-action",
+        "repair-step-created-new-breakage"
       ],
       "url": "/workbench/lenses/overreach-lens/",
       "markdown_url": "/workbench/lenses/overreach-lens.md"
@@ -3779,13 +4188,19 @@
         ]
       },
       "issues": [
+        "action-changed-something-else-too",
         "agent-keeps-expanding-the-task",
         "ai-adds-work-not-requested",
+        "ai-touches-unrelated-scope",
+        "ai-uses-external-information-when-forbidden",
+        "behavior-does-not-match-declared-role",
         "context-leaks-between-tasks",
         "fallback-authority-is-missing",
+        "file-bounded-task-uses-outside-content",
         "hallucinated-fields",
         "hidden-rule-overrides-visible-instruction",
         "no-owner-for-agent-action",
+        "repair-step-created-new-breakage",
         "retry-makes-the-problem-worse",
         "task-progress-is-lost-midway",
         "tool-result-not-integrated-correctly",
@@ -3844,6 +4259,7 @@
         "actual-policy-differs-from-declared-policy",
         "agent-keeps-expanding-the-task",
         "ai-forgets-earlier-constraints",
+        "behavior-does-not-match-declared-role",
         "conflicting-instructions-from-different-authorities",
         "context-changes-after-restore",
         "declared-owner-cannot-control-outcome",
@@ -3853,6 +4269,8 @@
         "model-and-workflow-disagree-on-next-step",
         "no-owner-for-agent-action",
         "permissions-conflict-after-being-combined",
+        "policy-update-not-reflected-in-output",
+        "revoked-approval-still-treated-as-active",
         "same-case-has-conflicting-policies",
         "saved-reference-no-longer-works",
         "similar-cases-route-to-different-outcomes",
@@ -3888,15 +4306,19 @@
         "actual-policy-differs-from-declared-policy",
         "ai-forgets-earlier-constraints",
         "answer-has-no-traceable-source-link",
+        "behavior-does-not-match-declared-role",
         "citation-points-to-wrong-source",
         "context-changes-after-restore",
         "context-leaks-between-tasks",
         "declared-owner-cannot-control-outcome",
+        "file-bounded-task-uses-outside-content",
         "human-review-and-automation-disagree",
         "model-and-workflow-disagree-on-next-step",
         "no-owner-for-agent-action",
+        "policy-update-not-reflected-in-output",
         "prompt-only-works-after-retry",
         "retry-makes-the-problem-worse",
+        "revoked-approval-still-treated-as-active",
         "saved-memory-not-used",
         "saved-reference-no-longer-works",
         "similar-cases-route-to-different-outcomes",
@@ -3932,6 +4354,7 @@
         ]
       },
       "issues": [
+        "action-changed-something-else-too",
         "agent-keeps-expanding-the-task",
         "ai-forgets-earlier-constraints",
         "answer-has-too-many-paths",
@@ -3941,6 +4364,7 @@
         "human-review-and-automation-disagree",
         "invalid-json-output",
         "prompt-only-works-after-retry",
+        "repair-step-created-new-breakage",
         "retry-makes-the-problem-worse",
         "similar-cases-route-to-different-outcomes",
         "task-has-no-clear-limit",
@@ -3971,6 +4395,7 @@
         "ai-adds-work-not-requested"
       ],
       "secondary_issues": [
+        "ai-touches-unrelated-scope",
         "no-owner-for-agent-action"
       ],
       "url": "/workbench/categories/agents/"
@@ -3993,6 +4418,8 @@
       "secondary_issues": [
         "actual-policy-differs-from-declared-policy",
         "context-changes-after-restore",
+        "policy-update-not-reflected-in-output",
+        "revoked-approval-still-treated-as-active",
         "stale-context-affects-output"
       ],
       "url": "/workbench/categories/changes-and-versions/"
@@ -4164,6 +4591,7 @@
       ],
       "secondary_issues": [
         "duplicate-fields-with-same-meaning",
+        "file-bounded-task-uses-outside-content",
         "format-rule-too-weak",
         "output-breaks-the-next-step",
         "saved-reference-no-longer-works",
@@ -4183,16 +4611,20 @@
       "updated_at": "2026-05-10T00:00:00Z",
       "summary": "Problems where ownership, approval, authority, permission state, responsible control, or action rights are missing, stale, bypassed, conflicting, or unclear.",
       "issues": [
+        "behavior-does-not-match-declared-role",
         "declared-owner-cannot-control-outcome",
         "fallback-authority-is-missing",
         "no-owner-for-agent-action",
-        "permissions-conflict-after-being-combined"
+        "permissions-conflict-after-being-combined",
+        "revoked-approval-still-treated-as-active"
       ],
       "primary_issues": [
+        "behavior-does-not-match-declared-role",
         "declared-owner-cannot-control-outcome",
         "fallback-authority-is-missing",
         "no-owner-for-agent-action",
-        "permissions-conflict-after-being-combined"
+        "permissions-conflict-after-being-combined",
+        "revoked-approval-still-treated-as-active"
       ],
       "secondary_issues": [
         "conflicting-instructions-from-different-authorities",
@@ -4216,15 +4648,19 @@
         "actual-policy-differs-from-declared-policy",
         "conflicting-instructions-from-different-authorities",
         "hidden-rule-overrides-visible-instruction",
+        "policy-update-not-reflected-in-output",
         "same-case-has-conflicting-policies"
       ],
       "primary_issues": [
         "actual-policy-differs-from-declared-policy",
         "conflicting-instructions-from-different-authorities",
         "hidden-rule-overrides-visible-instruction",
+        "policy-update-not-reflected-in-output",
         "same-case-has-conflicting-policies"
       ],
       "secondary_issues": [
+        "ai-uses-external-information-when-forbidden",
+        "behavior-does-not-match-declared-role",
         "declared-owner-cannot-control-outcome",
         "model-and-workflow-disagree-on-next-step",
         "permissions-conflict-after-being-combined"
@@ -4241,12 +4677,19 @@
       "updated_at": "2026-05-10T00:00:00Z",
       "summary": "Problems where tasks, files, context, retrieval, permissions, actions, or outputs cross limits, use outside information, or lack clear operating boundaries.",
       "issues": [
+        "ai-touches-unrelated-scope",
+        "ai-uses-external-information-when-forbidden",
+        "file-bounded-task-uses-outside-content",
         "task-has-no-clear-limit"
       ],
       "primary_issues": [
+        "ai-touches-unrelated-scope",
+        "ai-uses-external-information-when-forbidden",
+        "file-bounded-task-uses-outside-content",
         "task-has-no-clear-limit"
       ],
       "secondary_issues": [
+        "action-changed-something-else-too",
         "agent-keeps-expanding-the-task",
         "ai-adds-work-not-requested",
         "answer-has-too-many-paths",
@@ -4265,9 +4708,13 @@
       "updated_at": "2026-05-10T00:00:00Z",
       "summary": "Problems where small errors, local exceptions, risk signals, retries, permissions, or outputs spread downstream, grow in consequence, or trigger broader actions.",
       "issues": [
+        "action-changed-something-else-too",
+        "repair-step-created-new-breakage",
         "retry-makes-the-problem-worse"
       ],
       "primary_issues": [
+        "action-changed-something-else-too",
+        "repair-step-created-new-breakage",
         "retry-makes-the-problem-worse"
       ],
       "secondary_issues": [],
@@ -4294,6 +4741,7 @@
       ],
       "secondary_issues": [
         "fallback-authority-is-missing",
+        "repair-step-created-new-breakage",
         "task-progress-is-lost-midway",
         "tool-result-not-integrated-correctly"
       ],
