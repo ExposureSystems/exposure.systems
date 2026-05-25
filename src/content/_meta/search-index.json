@@ -272,6 +272,52 @@
     },
     {
       "type": "issue",
+      "slug": "agent-permission-expands-over-steps",
+      "ontology_slug": "agent-permission-expands-over-steps",
+      "code": "ISS-0099",
+      "title": "Agent Permission Expands Over Steps",
+      "summary": "An agent begins with limited permission but gains, assumes, or exercises broader authority as the workflow continues.",
+      "url": "/workbench/issues/agent-permission-expands-over-steps/",
+      "category": "spread-and-escalation",
+      "category_title": "Spread & Escalation",
+      "primary_cat_code": "CAT-0110",
+      "secondary_cat_codes": [
+        "CAT-0050"
+      ],
+      "primary_pattern": "escalation-growth",
+      "patterns": [
+        "escalation-growth",
+        "missing-authority",
+        "overreach"
+      ],
+      "lenses": {
+        "primary": [
+          "absence-lens",
+          "authority-overlay-lens",
+          "boundary-compliance-lens",
+          "escalation-gradient-lens",
+          "overreach-lens",
+          "variance-entropy-lens"
+        ],
+        "secondary": [
+          "conflict-lens",
+          "propagation-lens",
+          "reconciliation-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "agent permission expands over steps",
+        "AI agent permission grew over time",
+        "agent authority expanded during task",
+        "AI agent got more access across steps",
+        "agent permission creep",
+        "agent acts with broader permission later"
+      ],
+      "text": "AI agent got more access across steps AI agent permission grew over time Agent Permission Expands Over Steps An agent begins with limited permission but gains, assumes, or exercises broader authority as the workflow continues. CAT-0050 CAT-0110 ISS-0099 Spread & Escalation absence-lens agent acts with broader permission later agent authority expanded during task agent permission creep agent permission expands over steps authority-overlay-lens boundary-compliance-lens conflict-lens escalation-gradient-lens escalation-growth missing-authority overreach overreach-lens propagation-lens reconciliation-lens spread-and-escalation variance-entropy-lens"
+    },
+    {
+      "type": "issue",
       "slug": "ai-adds-work-not-requested",
       "ontology_slug": "ai-adds-work-not-requested",
       "code": "ISS-0009",
@@ -959,6 +1005,49 @@
     },
     {
       "type": "issue",
+      "slug": "downstream-steps-magnify-hallucinated-claim",
+      "ontology_slug": "downstream-steps-magnify-hallucinated-claim",
+      "code": "ISS-0097",
+      "title": "Downstream Steps Magnify Hallucinated Claim",
+      "summary": "A hallucinated or unsupported claim from an AI output is reused by later workflow steps until it becomes more influential than the evidence supports.",
+      "url": "/workbench/issues/downstream-steps-magnify-hallucinated-claim/",
+      "category": "spread-and-escalation",
+      "category_title": "Spread & Escalation",
+      "primary_cat_code": "CAT-0110",
+      "secondary_cat_codes": [
+        "CAT-0010"
+      ],
+      "primary_pattern": "propagation-amplification",
+      "patterns": [
+        "propagation-amplification",
+        "escalation-growth",
+        "schema-breakage"
+      ],
+      "lenses": {
+        "primary": [
+          "escalation-gradient-lens",
+          "interface-contract-lens",
+          "invariant-lens",
+          "propagation-lens",
+          "variance-entropy-lens"
+        ],
+        "secondary": [
+          "conflict-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "downstream steps magnify hallucinated claim",
+        "AI hallucination spread downstream",
+        "unsupported claim became bigger issue",
+        "hallucinated claim used by workflow",
+        "AI false claim propagated",
+        "downstream workflow amplified hallucination"
+      ],
+      "text": "A hallucinated or unsupported claim from an AI output is reused by later workflow steps until it becomes more influential than the evidence supports. AI false claim propagated AI hallucination spread downstream CAT-0010 CAT-0110 Downstream Steps Magnify Hallucinated Claim ISS-0097 Spread & Escalation conflict-lens downstream steps magnify hallucinated claim downstream workflow amplified hallucination escalation-gradient-lens escalation-growth hallucinated claim used by workflow interface-contract-lens invariant-lens propagation-amplification propagation-lens schema-breakage spread-and-escalation unsupported claim became bigger issue variance-entropy-lens"
+    },
+    {
+      "type": "issue",
       "slug": "duplicate-fields-with-same-meaning",
       "ontology_slug": "duplicate-fields-with-same-meaning",
       "code": "ISS-0027",
@@ -1444,6 +1533,51 @@
     },
     {
       "type": "issue",
+      "slug": "local-exception-grows-into-policy",
+      "ontology_slug": "local-exception-grows-into-policy",
+      "code": "ISS-0101",
+      "title": "Local Exception Grows Into Policy",
+      "summary": "A local exception, special case, or one-off allowance begins to function like a general policy.",
+      "url": "/workbench/issues/local-exception-grows-into-policy/",
+      "category": "spread-and-escalation",
+      "category_title": "Spread & Escalation",
+      "primary_cat_code": "CAT-0110",
+      "secondary_cat_codes": [
+        "CAT-0060"
+      ],
+      "primary_pattern": "propagation-amplification",
+      "patterns": [
+        "propagation-amplification",
+        "boundary-leakage",
+        "authority-state-mismatch"
+      ],
+      "lenses": {
+        "primary": [
+          "escalation-gradient-lens",
+          "isolation-boundary-lens",
+          "propagation-lens",
+          "reconciliation-lens"
+        ],
+        "secondary": [
+          "boundary-compliance-lens",
+          "convergence-lens",
+          "reference-stability-lens",
+          "variance-entropy-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "local exception grows into policy",
+        "exception became policy",
+        "AI treats special case as rule",
+        "local allowance became general policy",
+        "one off exception applied broadly",
+        "AI generalized exception into rule"
+      ],
+      "text": "A local exception, special case, or one-off allowance begins to function like a general policy. AI generalized exception into rule AI treats special case as rule CAT-0060 CAT-0110 ISS-0101 Local Exception Grows Into Policy Spread & Escalation authority-state-mismatch boundary-compliance-lens boundary-leakage convergence-lens escalation-gradient-lens exception became policy isolation-boundary-lens local allowance became general policy local exception grows into policy one off exception applied broadly propagation-amplification propagation-lens reconciliation-lens reference-stability-lens spread-and-escalation variance-entropy-lens"
+    },
+    {
+      "type": "issue",
       "slug": "local-rule-spreads-to-broader-cases",
       "ontology_slug": "local-rule-spreads-to-broader-cases",
       "code": "ISS-0096",
@@ -1879,6 +2013,49 @@
         "legacy output rules survived update"
       ],
       "text": "CAT-0010 CAT-0080 Changes & Versions Expectations from a prior model, prompt, schema, tool, or workflow survive a migration and continue shaping review or downstream handling after they should be replaced. ISS-0056 Old Output Expectations Survive Migration changes-and-versions compression-lens conflict-lens contract-drift convergence-lens determinism-lens legacy output rules survived update migration kept old output assumptions normalization-lens old AI output format still expected old output expectations survive migration old schema expectations remain after migration persistence-instability reconciliation-lens redundant-declaration reference-stability-lens workflow expects old model output"
+    },
+    {
+      "type": "issue",
+      "slug": "one-prompt-carries-too-many-meanings",
+      "ontology_slug": "one-prompt-carries-too-many-meanings",
+      "code": "ISS-0104",
+      "title": "One Prompt Carries Too Many Meanings",
+      "summary": "A single prompt carries too many meanings, goals, roles, constraints, or implied tasks for the AI to interpret consistently.",
+      "url": "/workbench/issues/one-prompt-carries-too-many-meanings/",
+      "category": "duplication-and-overload",
+      "category_title": "Duplication & Overload",
+      "primary_cat_code": "CAT-0140",
+      "secondary_cat_codes": [
+        "CAT-0120"
+      ],
+      "primary_pattern": "density-spike",
+      "patterns": [
+        "density-spike",
+        "constraints-underspecified",
+        "divergent-outputs"
+      ],
+      "lenses": {
+        "primary": [
+          "compression-lens",
+          "constraint-sufficiency-lens",
+          "convergence-lens",
+          "variance-entropy-lens"
+        ],
+        "secondary": [
+          "determinism-lens",
+          "escalation-gradient-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "one prompt carries too many meanings",
+        "AI prompt has too many meanings",
+        "prompt is overloaded",
+        "one prompt asks too much",
+        "prompt mixes too many goals",
+        "AI confused by overloaded prompt"
+      ],
+      "text": "A single prompt carries too many meanings, goals, roles, constraints, or implied tasks for the AI to interpret consistently. AI confused by overloaded prompt AI prompt has too many meanings CAT-0120 CAT-0140 Duplication & Overload ISS-0104 One Prompt Carries Too Many Meanings compression-lens constraint-sufficiency-lens constraints-underspecified convergence-lens density-spike determinism-lens divergent-outputs duplication-and-overload escalation-gradient-lens one prompt asks too much one prompt carries too many meanings prompt is overloaded prompt mixes too many goals variance-entropy-lens"
     },
     {
       "type": "issue",
@@ -2787,6 +2964,50 @@
     },
     {
       "type": "issue",
+      "slug": "review-escalates-without-stop-condition",
+      "ontology_slug": "review-escalates-without-stop-condition",
+      "code": "ISS-0100",
+      "title": "Review Escalates Without Stop Condition",
+      "summary": "A review process keeps escalating, re-reviewing, or adding scrutiny without a declared condition for stopping.",
+      "url": "/workbench/issues/review-escalates-without-stop-condition/",
+      "category": "spread-and-escalation",
+      "category_title": "Spread & Escalation",
+      "primary_cat_code": "CAT-0110",
+      "secondary_cat_codes": [
+        "CAT-0070"
+      ],
+      "primary_pattern": "escalation-growth",
+      "patterns": [
+        "escalation-growth",
+        "circular-dependency",
+        "convergence-failure"
+      ],
+      "lenses": {
+        "primary": [
+          "conflict-lens",
+          "convergence-lens",
+          "escalation-gradient-lens",
+          "propagation-lens",
+          "variance-entropy-lens"
+        ],
+        "secondary": [
+          "normalization-lens",
+          "reconciliation-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "review escalates without stop condition",
+        "AI review keeps escalating",
+        "review has no stop rule",
+        "escalation loop in review",
+        "workflow keeps adding review",
+        "AI review never stops escalating"
+      ],
+      "text": "A review process keeps escalating, re-reviewing, or adding scrutiny without a declared condition for stopping. AI review keeps escalating AI review never stops escalating CAT-0070 CAT-0110 ISS-0100 Review Escalates Without Stop Condition Spread & Escalation circular-dependency conflict-lens convergence-failure convergence-lens escalation loop in review escalation-gradient-lens escalation-growth normalization-lens propagation-lens reconciliation-lens review escalates without stop condition review has no stop rule spread-and-escalation variance-entropy-lens workflow keeps adding review"
+    },
+    {
+      "type": "issue",
       "slug": "review-outcome-changes-unrelated-environment",
       "ontology_slug": "review-outcome-changes-unrelated-environment",
       "code": "ISS-0051",
@@ -3436,6 +3657,52 @@
     },
     {
       "type": "issue",
+      "slug": "severity-increases-without-new-evidence",
+      "ontology_slug": "severity-increases-without-new-evidence",
+      "code": "ISS-0102",
+      "title": "Severity Increases Without New Evidence",
+      "summary": "The severity, risk, confidence, or escalation level increases even though no new evidence has been added.",
+      "url": "/workbench/issues/severity-increases-without-new-evidence/",
+      "category": "spread-and-escalation",
+      "category_title": "Spread & Escalation",
+      "primary_cat_code": "CAT-0110",
+      "secondary_cat_codes": [
+        "CAT-0050"
+      ],
+      "primary_pattern": "escalation-growth",
+      "patterns": [
+        "escalation-growth",
+        "threshold-breach",
+        "missing-authority"
+      ],
+      "lenses": {
+        "primary": [
+          "absence-lens",
+          "authority-overlay-lens",
+          "escalation-gradient-lens",
+          "invariant-lens",
+          "variance-entropy-lens"
+        ],
+        "secondary": [
+          "boundary-compliance-lens",
+          "conflict-lens",
+          "propagation-lens",
+          "reconciliation-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "severity increases without new evidence",
+        "AI severity went up without evidence",
+        "risk level increased without new information",
+        "escalation increased without evidence",
+        "AI made issue more severe",
+        "severity drift in AI review"
+      ],
+      "text": "AI made issue more severe AI severity went up without evidence CAT-0050 CAT-0110 ISS-0102 Severity Increases Without New Evidence Spread & Escalation The severity, risk, confidence, or escalation level increases even though no new evidence has been added. absence-lens authority-overlay-lens boundary-compliance-lens conflict-lens escalation increased without evidence escalation-gradient-lens escalation-growth invariant-lens missing-authority propagation-lens reconciliation-lens risk level increased without new information severity drift in AI review severity increases without new evidence spread-and-escalation threshold-breach variance-entropy-lens"
+    },
+    {
+      "type": "issue",
       "slug": "similar-cases-route-to-different-outcomes",
       "ontology_slug": "similar-cases-route-to-different-outcomes",
       "code": "ISS-0001",
@@ -3474,6 +3741,52 @@
         "AI decision path is inconsistent"
       ],
       "text": "AI decision path is inconsistent AI routes similar requests differently CAT-0090 ISS-0001 Inconsistent Behavior Similar Cases Route to Different Outcomes Similar inputs, cases, prompts, or workflow states are routed to different outcomes without a declared difference that explains the split. authority-state-mismatch compression-lens convergence-lens determinism-lens divergent-outputs inconsistent-behavior non-deterministic-execution reconciliation-lens reference-stability-lens same case gets different result same workflow state gets different outcome similar cases route to different outcomes similar prompts produce different decisions variance-entropy-lens"
+    },
+    {
+      "type": "issue",
+      "slug": "single-step-carries-too-many-decisions",
+      "ontology_slug": "single-step-carries-too-many-decisions",
+      "code": "ISS-0103",
+      "title": "Single Step Carries Too Many Decisions",
+      "summary": "One prompt, workflow step, review stage, or agent action carries too many decisions for the system or user to evaluate cleanly.",
+      "url": "/workbench/issues/single-step-carries-too-many-decisions/",
+      "category": "duplication-and-overload",
+      "category_title": "Duplication & Overload",
+      "primary_cat_code": "CAT-0140",
+      "secondary_cat_codes": [
+        "CAT-0070"
+      ],
+      "primary_pattern": "density-spike",
+      "patterns": [
+        "density-spike",
+        "unbounded-scope",
+        "missing-authority"
+      ],
+      "lenses": {
+        "primary": [
+          "absence-lens",
+          "authority-overlay-lens",
+          "compression-lens",
+          "constraint-sufficiency-lens",
+          "isolation-boundary-lens",
+          "variance-entropy-lens"
+        ],
+        "secondary": [
+          "conflict-lens",
+          "escalation-gradient-lens",
+          "reconciliation-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "single step carries too many decisions",
+        "AI workflow step overloaded",
+        "one step has too many decisions",
+        "prompt asks for too many decisions",
+        "review step overloaded",
+        "AI step carries too much responsibility"
+      ],
+      "text": "AI step carries too much responsibility AI workflow step overloaded CAT-0070 CAT-0140 Duplication & Overload ISS-0103 One prompt, workflow step, review stage, or agent action carries too many decisions for the system or user to evaluate cleanly. Single Step Carries Too Many Decisions absence-lens authority-overlay-lens compression-lens conflict-lens constraint-sufficiency-lens density-spike duplication-and-overload escalation-gradient-lens isolation-boundary-lens missing-authority one step has too many decisions prompt asks for too many decisions reconciliation-lens review step overloaded single step carries too many decisions unbounded-scope variance-entropy-lens"
     },
     {
       "type": "issue",
@@ -3516,6 +3829,48 @@
         "small issue escalated into bigger failure"
       ],
       "text": "A small AI, output, routing, or workflow error propagates through later steps until it becomes a larger failure. AI error spread through workflow AI small mistake became big problem CAT-0010 CAT-0110 ISS-0093 Small Error Spreads Into Large Failure Spread & Escalation escalation-gradient-lens escalation-growth isolation-boundary-lens minor mistake caused major failure overreach-lens propagation-amplification propagation-lens small error spreads into large failure small issue escalated into bigger failure small output error propagated downstream spread-and-escalation undeclared-side-effect variance-entropy-lens"
+    },
+    {
+      "type": "issue",
+      "slug": "small-issue-keeps-escalating",
+      "ontology_slug": "small-issue-keeps-escalating",
+      "code": "ISS-0098",
+      "title": "Small Issue Keeps Escalating",
+      "summary": "A small issue, warning, uncertainty, or correction keeps increasing in severity, scope, or workflow impact across later steps.",
+      "url": "/workbench/issues/small-issue-keeps-escalating/",
+      "category": "spread-and-escalation",
+      "category_title": "Spread & Escalation",
+      "primary_cat_code": "CAT-0110",
+      "secondary_cat_codes": [
+        "CAT-0070"
+      ],
+      "primary_pattern": "escalation-growth",
+      "patterns": [
+        "escalation-growth",
+        "propagation-amplification",
+        "threshold-breach"
+      ],
+      "lenses": {
+        "primary": [
+          "escalation-gradient-lens",
+          "invariant-lens",
+          "propagation-lens",
+          "variance-entropy-lens"
+        ],
+        "secondary": [
+          "boundary-compliance-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "small issue keeps escalating",
+        "AI issue keeps getting bigger",
+        "minor problem escalates repeatedly",
+        "small warning becomes major escalation",
+        "AI workflow over escalates issue",
+        "issue grows across workflow steps"
+      ],
+      "text": "A small issue, warning, uncertainty, or correction keeps increasing in severity, scope, or workflow impact across later steps. AI issue keeps getting bigger AI workflow over escalates issue CAT-0070 CAT-0110 ISS-0098 Small Issue Keeps Escalating Spread & Escalation boundary-compliance-lens escalation-gradient-lens escalation-growth invariant-lens issue grows across workflow steps minor problem escalates repeatedly propagation-amplification propagation-lens small issue keeps escalating small warning becomes major escalation spread-and-escalation threshold-breach variance-entropy-lens"
     },
     {
       "type": "issue",
@@ -4254,17 +4609,17 @@
         "ontology_slug": "coverage-and-guidance",
         "code": "CAT-0120",
         "title": "Coverage & Guidance",
-        "count": 17,
+        "count": 18,
         "primary_count": 9,
-        "secondary_count": 8
+        "secondary_count": 9
       },
       {
         "slug": "duplication-and-overload",
         "ontology_slug": "duplication-and-overload",
         "code": "CAT-0140",
         "title": "Duplication & Overload",
-        "count": 6,
-        "primary_count": 6,
+        "count": 8,
+        "primary_count": 8,
         "secondary_count": 0
       },
       {
@@ -4308,27 +4663,27 @@
         "ontology_slug": "output",
         "code": "CAT-0010",
         "title": "Output",
-        "count": 26,
+        "count": 27,
         "primary_count": 10,
-        "secondary_count": 16
+        "secondary_count": 17
       },
       {
         "slug": "permissions-and-approvals",
         "ontology_slug": "permissions-and-approvals",
         "code": "CAT-0050",
         "title": "Permissions & Approvals",
-        "count": 18,
+        "count": 20,
         "primary_count": 8,
-        "secondary_count": 10
+        "secondary_count": 12
       },
       {
         "slug": "rules-and-policies",
         "ontology_slug": "rules-and-policies",
         "code": "CAT-0060",
         "title": "Rules & Policies",
-        "count": 18,
+        "count": 19,
         "primary_count": 5,
-        "secondary_count": 13
+        "secondary_count": 14
       },
       {
         "slug": "scope-and-boundaries",
@@ -4344,8 +4699,8 @@
         "ontology_slug": "spread-and-escalation",
         "code": "CAT-0110",
         "title": "Spread & Escalation",
-        "count": 12,
-        "primary_count": 9,
+        "count": 18,
+        "primary_count": 15,
         "secondary_count": 3
       },
       {
@@ -4353,9 +4708,9 @@
         "ontology_slug": "workflow-and-handoffs",
         "code": "CAT-0070",
         "title": "Workflow & Handoffs",
-        "count": 22,
+        "count": 25,
         "primary_count": 6,
-        "secondary_count": 16
+        "secondary_count": 19
       }
     ],
     "patterns": [
@@ -4392,21 +4747,21 @@
         "ontology_slug": "authority-state-mismatch",
         "code": "PAT-0240",
         "title": "Authority-State Mismatch",
-        "count": 11
+        "count": 12
       },
       {
         "slug": "boundary-leakage",
         "ontology_slug": "boundary-leakage",
         "code": "PAT-0140",
         "title": "Boundary Leakage",
-        "count": 11
+        "count": 12
       },
       {
         "slug": "circular-dependency",
         "ontology_slug": "circular-dependency",
         "code": "PAT-0250",
         "title": "Circular Dependency",
-        "count": 9
+        "count": 10
       },
       {
         "slug": "compatibility-violation",
@@ -4420,7 +4775,7 @@
         "ontology_slug": "constraints-underspecified",
         "code": "PAT-0170",
         "title": "Constraints Underspecified",
-        "count": 18
+        "count": 19
       },
       {
         "slug": "contract-drift",
@@ -4434,7 +4789,7 @@
         "ontology_slug": "convergence-failure",
         "code": "PAT-0320",
         "title": "Convergence Failure",
-        "count": 10
+        "count": 11
       },
       {
         "slug": "cross-layer-escalation",
@@ -4448,7 +4803,7 @@
         "ontology_slug": "density-spike",
         "code": "PAT-0270",
         "title": "Density Spike",
-        "count": 10
+        "count": 12
       },
       {
         "slug": "density-vacuum",
@@ -4462,14 +4817,14 @@
         "ontology_slug": "divergent-outputs",
         "code": "PAT-0290",
         "title": "Divergent Outputs",
-        "count": 9
+        "count": 10
       },
       {
         "slug": "escalation-growth",
         "ontology_slug": "escalation-growth",
         "code": "PAT-0300",
         "title": "Escalation Growth",
-        "count": 10
+        "count": 15
       },
       {
         "slug": "incomplete-declaration",
@@ -4497,7 +4852,7 @@
         "ontology_slug": "missing-authority",
         "code": "PAT-0120",
         "title": "Missing Authority",
-        "count": 12
+        "count": 15
       },
       {
         "slug": "non-deterministic-execution",
@@ -4518,7 +4873,7 @@
         "ontology_slug": "overreach",
         "code": "PAT-0340",
         "title": "Overreach",
-        "count": 11
+        "count": 12
       },
       {
         "slug": "persistence-instability",
@@ -4532,7 +4887,7 @@
         "ontology_slug": "propagation-amplification",
         "code": "PAT-0360",
         "title": "Propagation Amplification",
-        "count": 9
+        "count": 12
       },
       {
         "slug": "redundant-declaration",
@@ -4553,7 +4908,7 @@
         "ontology_slug": "schema-breakage",
         "code": "PAT-0160",
         "title": "Schema Breakage",
-        "count": 13
+        "count": 14
       },
       {
         "slug": "silent-mutation",
@@ -4567,14 +4922,14 @@
         "ontology_slug": "threshold-breach",
         "code": "PAT-0390",
         "title": "Threshold Breach",
-        "count": 4
+        "count": 6
       },
       {
         "slug": "unbounded-scope",
         "ontology_slug": "unbounded-scope",
         "code": "PAT-0400",
         "title": "Unbounded Scope",
-        "count": 7
+        "count": 8
       },
       {
         "slug": "unconstrained-expansion",
@@ -4597,21 +4952,21 @@
         "ontology_slug": "absence-lens",
         "code": "LEN-0100",
         "title": "Absence Lens",
-        "count": 30
+        "count": 33
       },
       {
         "slug": "authority-overlay-lens",
         "ontology_slug": "authority-overlay-lens",
         "code": "LEN-0110",
         "title": "Authority Overlay Lens",
-        "count": 22
+        "count": 25
       },
       {
         "slug": "boundary-compliance-lens",
         "ontology_slug": "boundary-compliance-lens",
         "code": "LEN-0120",
         "title": "Boundary Compliance Lens",
-        "count": 32
+        "count": 36
       },
       {
         "slug": "compatibility-envelope-lens",
@@ -4625,84 +4980,84 @@
         "ontology_slug": "compression-lens",
         "code": "LEN-0140",
         "title": "Compression Lens",
-        "count": 28
+        "count": 30
       },
       {
         "slug": "conflict-lens",
         "ontology_slug": "conflict-lens",
         "code": "LEN-0150",
         "title": "Conflict Lens",
-        "count": 43
+        "count": 48
       },
       {
         "slug": "constraint-sufficiency-lens",
         "ontology_slug": "constraint-sufficiency-lens",
         "code": "LEN-0160",
         "title": "Constraint Sufficiency Lens",
-        "count": 31
+        "count": 33
       },
       {
         "slug": "convergence-lens",
         "ontology_slug": "convergence-lens",
         "code": "LEN-0170",
         "title": "Convergence Lens",
-        "count": 39
+        "count": 42
       },
       {
         "slug": "determinism-lens",
         "ontology_slug": "determinism-lens",
         "code": "LEN-0180",
         "title": "Determinism Lens",
-        "count": 49
+        "count": 50
       },
       {
         "slug": "escalation-gradient-lens",
         "ontology_slug": "escalation-gradient-lens",
         "code": "LEN-0190",
         "title": "Escalation Gradient Lens",
-        "count": 33
+        "count": 41
       },
       {
         "slug": "interface-contract-lens",
         "ontology_slug": "interface-contract-lens",
         "code": "LEN-0200",
         "title": "Interface Contract Lens",
-        "count": 34
+        "count": 35
       },
       {
         "slug": "invariant-lens",
         "ontology_slug": "invariant-lens",
         "code": "LEN-0210",
         "title": "Invariant Lens",
-        "count": 25
+        "count": 28
       },
       {
         "slug": "isolation-boundary-lens",
         "ontology_slug": "isolation-boundary-lens",
         "code": "LEN-0220",
         "title": "Isolation Boundary Lens",
-        "count": 20
+        "count": 22
       },
       {
         "slug": "normalization-lens",
         "ontology_slug": "normalization-lens",
         "code": "LEN-0230",
         "title": "Normalization Lens",
-        "count": 28
+        "count": 29
       },
       {
         "slug": "overreach-lens",
         "ontology_slug": "overreach-lens",
         "code": "LEN-0240",
         "title": "Overreach Lens",
-        "count": 17
+        "count": 18
       },
       {
         "slug": "propagation-lens",
         "ontology_slug": "propagation-lens",
         "code": "LEN-0250",
         "title": "Propagation Lens",
-        "count": 41
+        "count": 47
       },
       {
         "slug": "provenance-trace-lens",
@@ -4716,21 +5071,21 @@
         "ontology_slug": "reconciliation-lens",
         "code": "LEN-0270",
         "title": "Reconciliation Lens",
-        "count": 49
+        "count": 54
       },
       {
         "slug": "reference-stability-lens",
         "ontology_slug": "reference-stability-lens",
         "code": "LEN-0280",
         "title": "Reference Stability Lens",
-        "count": 35
+        "count": 36
       },
       {
         "slug": "variance-entropy-lens",
         "ontology_slug": "variance-entropy-lens",
         "code": "LEN-0290",
         "title": "Variance / Entropy Lens",
-        "count": 51
+        "count": 59
       }
     ]
   }

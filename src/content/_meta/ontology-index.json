@@ -615,6 +615,54 @@
       "markdown_url": "/workbench/issues/agent-never-settles-on-final-answer.md"
     },
     {
+      "slug": "agent-permission-expands-over-steps",
+      "ontology_slug": "agent-permission-expands-over-steps",
+      "code": "ISS-0099",
+      "title": "Agent Permission Expands Over Steps",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "An agent begins with limited permission but gains, assumes, or exercises broader authority as the workflow continues.",
+      "category": "spread-and-escalation",
+      "category_title": "Spread & Escalation",
+      "primary_cat_code": "CAT-0110",
+      "secondary_cat_codes": [
+        "CAT-0050"
+      ],
+      "primary_pattern": "escalation-growth",
+      "patterns": [
+        "escalation-growth",
+        "missing-authority",
+        "overreach"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "absence-lens",
+          "authority-overlay-lens",
+          "boundary-compliance-lens",
+          "escalation-gradient-lens",
+          "overreach-lens",
+          "variance-entropy-lens"
+        ],
+        "secondary": [
+          "conflict-lens",
+          "propagation-lens",
+          "reconciliation-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "agent permission expands over steps",
+        "AI agent permission grew over time",
+        "agent authority expanded during task",
+        "AI agent got more access across steps",
+        "agent permission creep",
+        "agent acts with broader permission later"
+      ],
+      "url": "/workbench/issues/agent-permission-expands-over-steps/",
+      "markdown_url": "/workbench/issues/agent-permission-expands-over-steps.md"
+    },
+    {
       "slug": "ai-adds-work-not-requested",
       "ontology_slug": "ai-adds-work-not-requested",
       "code": "ISS-0009",
@@ -1334,6 +1382,51 @@
       "markdown_url": "/workbench/issues/diagnostic-area-has-no-coverage.md"
     },
     {
+      "slug": "downstream-steps-magnify-hallucinated-claim",
+      "ontology_slug": "downstream-steps-magnify-hallucinated-claim",
+      "code": "ISS-0097",
+      "title": "Downstream Steps Magnify Hallucinated Claim",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "A hallucinated or unsupported claim from an AI output is reused by later workflow steps until it becomes more influential than the evidence supports.",
+      "category": "spread-and-escalation",
+      "category_title": "Spread & Escalation",
+      "primary_cat_code": "CAT-0110",
+      "secondary_cat_codes": [
+        "CAT-0010"
+      ],
+      "primary_pattern": "propagation-amplification",
+      "patterns": [
+        "propagation-amplification",
+        "escalation-growth",
+        "schema-breakage"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "escalation-gradient-lens",
+          "interface-contract-lens",
+          "invariant-lens",
+          "propagation-lens",
+          "variance-entropy-lens"
+        ],
+        "secondary": [
+          "conflict-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "downstream steps magnify hallucinated claim",
+        "AI hallucination spread downstream",
+        "unsupported claim became bigger issue",
+        "hallucinated claim used by workflow",
+        "AI false claim propagated",
+        "downstream workflow amplified hallucination"
+      ],
+      "url": "/workbench/issues/downstream-steps-magnify-hallucinated-claim/",
+      "markdown_url": "/workbench/issues/downstream-steps-magnify-hallucinated-claim.md"
+    },
+    {
       "slug": "duplicate-fields-with-same-meaning",
       "ontology_slug": "duplicate-fields-with-same-meaning",
       "code": "ISS-0027",
@@ -1841,6 +1934,53 @@
       "markdown_url": "/workbench/issues/invalid-json-output.md"
     },
     {
+      "slug": "local-exception-grows-into-policy",
+      "ontology_slug": "local-exception-grows-into-policy",
+      "code": "ISS-0101",
+      "title": "Local Exception Grows Into Policy",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "A local exception, special case, or one-off allowance begins to function like a general policy.",
+      "category": "spread-and-escalation",
+      "category_title": "Spread & Escalation",
+      "primary_cat_code": "CAT-0110",
+      "secondary_cat_codes": [
+        "CAT-0060"
+      ],
+      "primary_pattern": "propagation-amplification",
+      "patterns": [
+        "propagation-amplification",
+        "boundary-leakage",
+        "authority-state-mismatch"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "escalation-gradient-lens",
+          "isolation-boundary-lens",
+          "propagation-lens",
+          "reconciliation-lens"
+        ],
+        "secondary": [
+          "boundary-compliance-lens",
+          "convergence-lens",
+          "reference-stability-lens",
+          "variance-entropy-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "local exception grows into policy",
+        "exception became policy",
+        "AI treats special case as rule",
+        "local allowance became general policy",
+        "one off exception applied broadly",
+        "AI generalized exception into rule"
+      ],
+      "url": "/workbench/issues/local-exception-grows-into-policy/",
+      "markdown_url": "/workbench/issues/local-exception-grows-into-policy.md"
+    },
+    {
       "slug": "local-rule-spreads-to-broader-cases",
       "ontology_slug": "local-rule-spreads-to-broader-cases",
       "code": "ISS-0096",
@@ -2297,6 +2437,51 @@
       ],
       "url": "/workbench/issues/old-output-expectations-survive-migration/",
       "markdown_url": "/workbench/issues/old-output-expectations-survive-migration.md"
+    },
+    {
+      "slug": "one-prompt-carries-too-many-meanings",
+      "ontology_slug": "one-prompt-carries-too-many-meanings",
+      "code": "ISS-0104",
+      "title": "One Prompt Carries Too Many Meanings",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "A single prompt carries too many meanings, goals, roles, constraints, or implied tasks for the AI to interpret consistently.",
+      "category": "duplication-and-overload",
+      "category_title": "Duplication & Overload",
+      "primary_cat_code": "CAT-0140",
+      "secondary_cat_codes": [
+        "CAT-0120"
+      ],
+      "primary_pattern": "density-spike",
+      "patterns": [
+        "density-spike",
+        "constraints-underspecified",
+        "divergent-outputs"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "compression-lens",
+          "constraint-sufficiency-lens",
+          "convergence-lens",
+          "variance-entropy-lens"
+        ],
+        "secondary": [
+          "determinism-lens",
+          "escalation-gradient-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "one prompt carries too many meanings",
+        "AI prompt has too many meanings",
+        "prompt is overloaded",
+        "one prompt asks too much",
+        "prompt mixes too many goals",
+        "AI confused by overloaded prompt"
+      ],
+      "url": "/workbench/issues/one-prompt-carries-too-many-meanings/",
+      "markdown_url": "/workbench/issues/one-prompt-carries-too-many-meanings.md"
     },
     {
       "slug": "output-breaks-after-model-change",
@@ -3246,6 +3431,52 @@
       "markdown_url": "/workbench/issues/retry-makes-the-problem-worse.md"
     },
     {
+      "slug": "review-escalates-without-stop-condition",
+      "ontology_slug": "review-escalates-without-stop-condition",
+      "code": "ISS-0100",
+      "title": "Review Escalates Without Stop Condition",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "A review process keeps escalating, re-reviewing, or adding scrutiny without a declared condition for stopping.",
+      "category": "spread-and-escalation",
+      "category_title": "Spread & Escalation",
+      "primary_cat_code": "CAT-0110",
+      "secondary_cat_codes": [
+        "CAT-0070"
+      ],
+      "primary_pattern": "escalation-growth",
+      "patterns": [
+        "escalation-growth",
+        "circular-dependency",
+        "convergence-failure"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "conflict-lens",
+          "convergence-lens",
+          "escalation-gradient-lens",
+          "propagation-lens",
+          "variance-entropy-lens"
+        ],
+        "secondary": [
+          "normalization-lens",
+          "reconciliation-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "review escalates without stop condition",
+        "AI review keeps escalating",
+        "review has no stop rule",
+        "escalation loop in review",
+        "workflow keeps adding review",
+        "AI review never stops escalating"
+      ],
+      "url": "/workbench/issues/review-escalates-without-stop-condition/",
+      "markdown_url": "/workbench/issues/review-escalates-without-stop-condition.md"
+    },
+    {
       "slug": "review-outcome-changes-unrelated-environment",
       "ontology_slug": "review-outcome-changes-unrelated-environment",
       "code": "ISS-0051",
@@ -3925,6 +4156,54 @@
       "markdown_url": "/workbench/issues/schema-reference-loops-without-base-case.md"
     },
     {
+      "slug": "severity-increases-without-new-evidence",
+      "ontology_slug": "severity-increases-without-new-evidence",
+      "code": "ISS-0102",
+      "title": "Severity Increases Without New Evidence",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "The severity, risk, confidence, or escalation level increases even though no new evidence has been added.",
+      "category": "spread-and-escalation",
+      "category_title": "Spread & Escalation",
+      "primary_cat_code": "CAT-0110",
+      "secondary_cat_codes": [
+        "CAT-0050"
+      ],
+      "primary_pattern": "escalation-growth",
+      "patterns": [
+        "escalation-growth",
+        "threshold-breach",
+        "missing-authority"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "absence-lens",
+          "authority-overlay-lens",
+          "escalation-gradient-lens",
+          "invariant-lens",
+          "variance-entropy-lens"
+        ],
+        "secondary": [
+          "boundary-compliance-lens",
+          "conflict-lens",
+          "propagation-lens",
+          "reconciliation-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "severity increases without new evidence",
+        "AI severity went up without evidence",
+        "risk level increased without new information",
+        "escalation increased without evidence",
+        "AI made issue more severe",
+        "severity drift in AI review"
+      ],
+      "url": "/workbench/issues/severity-increases-without-new-evidence/",
+      "markdown_url": "/workbench/issues/severity-increases-without-new-evidence.md"
+    },
+    {
       "slug": "similar-cases-route-to-different-outcomes",
       "ontology_slug": "similar-cases-route-to-different-outcomes",
       "code": "ISS-0001",
@@ -3966,6 +4245,54 @@
       ],
       "url": "/workbench/issues/similar-cases-route-to-different-outcomes/",
       "markdown_url": "/workbench/issues/similar-cases-route-to-different-outcomes.md"
+    },
+    {
+      "slug": "single-step-carries-too-many-decisions",
+      "ontology_slug": "single-step-carries-too-many-decisions",
+      "code": "ISS-0103",
+      "title": "Single Step Carries Too Many Decisions",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "One prompt, workflow step, review stage, or agent action carries too many decisions for the system or user to evaluate cleanly.",
+      "category": "duplication-and-overload",
+      "category_title": "Duplication & Overload",
+      "primary_cat_code": "CAT-0140",
+      "secondary_cat_codes": [
+        "CAT-0070"
+      ],
+      "primary_pattern": "density-spike",
+      "patterns": [
+        "density-spike",
+        "unbounded-scope",
+        "missing-authority"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "absence-lens",
+          "authority-overlay-lens",
+          "compression-lens",
+          "constraint-sufficiency-lens",
+          "isolation-boundary-lens",
+          "variance-entropy-lens"
+        ],
+        "secondary": [
+          "conflict-lens",
+          "escalation-gradient-lens",
+          "reconciliation-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "single step carries too many decisions",
+        "AI workflow step overloaded",
+        "one step has too many decisions",
+        "prompt asks for too many decisions",
+        "review step overloaded",
+        "AI step carries too much responsibility"
+      ],
+      "url": "/workbench/issues/single-step-carries-too-many-decisions/",
+      "markdown_url": "/workbench/issues/single-step-carries-too-many-decisions.md"
     },
     {
       "slug": "small-error-spreads-into-large-failure",
@@ -4010,6 +4337,50 @@
       ],
       "url": "/workbench/issues/small-error-spreads-into-large-failure/",
       "markdown_url": "/workbench/issues/small-error-spreads-into-large-failure.md"
+    },
+    {
+      "slug": "small-issue-keeps-escalating",
+      "ontology_slug": "small-issue-keeps-escalating",
+      "code": "ISS-0098",
+      "title": "Small Issue Keeps Escalating",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "A small issue, warning, uncertainty, or correction keeps increasing in severity, scope, or workflow impact across later steps.",
+      "category": "spread-and-escalation",
+      "category_title": "Spread & Escalation",
+      "primary_cat_code": "CAT-0110",
+      "secondary_cat_codes": [
+        "CAT-0070"
+      ],
+      "primary_pattern": "escalation-growth",
+      "patterns": [
+        "escalation-growth",
+        "propagation-amplification",
+        "threshold-breach"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "escalation-gradient-lens",
+          "invariant-lens",
+          "propagation-lens",
+          "variance-entropy-lens"
+        ],
+        "secondary": [
+          "boundary-compliance-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "small issue keeps escalating",
+        "AI issue keeps getting bigger",
+        "minor problem escalates repeatedly",
+        "small warning becomes major escalation",
+        "AI workflow over escalates issue",
+        "issue grows across workflow steps"
+      ],
+      "url": "/workbench/issues/small-issue-keeps-escalating/",
+      "markdown_url": "/workbench/issues/small-issue-keeps-escalating.md"
     },
     {
       "slug": "stale-context-affects-output",
@@ -4916,6 +5287,7 @@
           "actual-policy-differs-from-declared-policy",
           "early-model-output-gets-overweighted-downstream",
           "human-review-and-automation-disagree",
+          "local-exception-grows-into-policy",
           "no-owner-for-agent-action",
           "rubric-changed-but-results-did-not",
           "similar-cases-route-to-different-outcomes"
@@ -4954,6 +5326,7 @@
           "action-changed-something-else-too",
           "ai-touches-unrelated-scope",
           "hidden-rule-overrides-visible-instruction",
+          "local-exception-grows-into-policy",
           "local-rule-spreads-to-broader-cases",
           "policy-exception-spreads-too-far",
           "prompt-does-not-say-what-to-exclude"
@@ -4992,7 +5365,8 @@
         ],
         "supporting": [
           "agent-never-settles-on-final-answer",
-          "fallback-authority-is-missing"
+          "fallback-authority-is-missing",
+          "review-escalates-without-stop-condition"
         ]
       },
       "url": "/workbench/patterns/circular-dependency/",
@@ -5067,6 +5441,7 @@
           "evaluation-rubric-has-coverage-gap",
           "invalid-json-output",
           "missing-fallback-for-unavailable-information",
+          "one-prompt-carries-too-many-meanings",
           "output-exceeds-length-limit",
           "prompt-only-works-after-retry",
           "repeated-constraints-create-confusion",
@@ -5153,6 +5528,7 @@
         "supporting": [
           "agent-keeps-expanding-the-task",
           "human-review-and-automation-disagree",
+          "review-escalates-without-stop-condition",
           "routing-path-cycles-back-to-start",
           "same-workflow-check-happens-twice",
           "task-progress-is-lost-midway",
@@ -5208,7 +5584,9 @@
       },
       "issues": {
         "primary": [
-          "answer-has-too-many-paths"
+          "answer-has-too-many-paths",
+          "one-prompt-carries-too-many-meanings",
+          "single-step-carries-too-many-decisions"
         ],
         "supporting": [
           "duplicate-fields-with-same-meaning",
@@ -5284,6 +5662,7 @@
           "same-instructions-allow-different-outputs"
         ],
         "supporting": [
+          "one-prompt-carries-too-many-meanings",
           "output-breaks-after-model-change",
           "parallel-reviews-never-agree",
           "prompt-behavior-changed-without-version-change",
@@ -5316,12 +5695,17 @@
       },
       "issues": {
         "primary": [
+          "agent-permission-expands-over-steps",
           "retry-makes-the-problem-worse",
+          "review-escalates-without-stop-condition",
           "risk-score-triggers-wrong-escalation",
-          "risk-signal-escalates-beyond-evidence"
+          "risk-signal-escalates-beyond-evidence",
+          "severity-increases-without-new-evidence",
+          "small-issue-keeps-escalating"
         ],
         "supporting": [
           "action-triggered-by-confidence-score",
+          "downstream-steps-magnify-hallucinated-claim",
           "model-output-triggers-unapproved-action",
           "repair-step-created-new-breakage",
           "routing-path-cycles-back-to-start",
@@ -5471,13 +5855,16 @@
         "supporting": [
           "action-triggered-by-confidence-score",
           "agent-cannot-choose-tool-without-tool-result",
+          "agent-permission-expands-over-steps",
           "approval-depends-on-output-that-needs-approval",
           "cannot-identify-authoritative-state",
           "declared-owner-cannot-control-outcome",
           "missing-fallback-for-unavailable-information",
           "model-output-triggers-unapproved-action",
           "risk-score-triggers-wrong-escalation",
-          "risk-signal-escalates-beyond-evidence"
+          "risk-signal-escalates-beyond-evidence",
+          "severity-increases-without-new-evidence",
+          "single-step-carries-too-many-decisions"
         ]
       },
       "url": "/workbench/patterns/missing-authority/",
@@ -5576,6 +5963,7 @@
         ],
         "supporting": [
           "agent-keeps-expanding-the-task",
+          "agent-permission-expands-over-steps",
           "ai-uses-external-information-when-forbidden",
           "behavior-does-not-match-declared-role",
           "file-bounded-task-uses-outside-content",
@@ -5644,7 +6032,9 @@
       },
       "issues": {
         "primary": [
+          "downstream-steps-magnify-hallucinated-claim",
           "early-model-output-gets-overweighted-downstream",
+          "local-exception-grows-into-policy",
           "local-rule-spreads-to-broader-cases",
           "policy-exception-spreads-too-far",
           "repair-step-created-new-breakage",
@@ -5654,7 +6044,8 @@
           "action-changed-something-else-too",
           "context-leaks-between-tasks",
           "retry-makes-the-problem-worse",
-          "review-outcome-changes-unrelated-environment"
+          "review-outcome-changes-unrelated-environment",
+          "small-issue-keeps-escalating"
         ]
       },
       "url": "/workbench/patterns/propagation-amplification/",
@@ -5758,6 +6149,7 @@
           "wrong-field-types"
         ],
         "supporting": [
+          "downstream-steps-magnify-hallucinated-claim",
           "duplicate-fields-with-same-meaning",
           "duplicate-output-sections",
           "format-rule-too-weak",
@@ -5829,7 +6221,9 @@
         ],
         "supporting": [
           "risk-score-triggers-wrong-escalation",
-          "risk-signal-escalates-beyond-evidence"
+          "risk-signal-escalates-beyond-evidence",
+          "severity-increases-without-new-evidence",
+          "small-issue-keeps-escalating"
         ]
       },
       "url": "/workbench/patterns/threshold-breach/",
@@ -5863,7 +6257,8 @@
           "ai-touches-unrelated-scope",
           "answer-has-too-many-paths",
           "hallucinated-fields",
-          "prompt-does-not-say-what-to-exclude"
+          "prompt-does-not-say-what-to-exclude",
+          "single-step-carries-too-many-decisions"
         ]
       },
       "url": "/workbench/patterns/unbounded-scope/",
@@ -5956,6 +6351,7 @@
       "issues": [
         "action-triggered-by-confidence-score",
         "agent-cannot-choose-tool-without-tool-result",
+        "agent-permission-expands-over-steps",
         "answer-has-no-traceable-source-link",
         "approval-depends-on-output-that-needs-approval",
         "cannot-identify-authoritative-state",
@@ -5976,6 +6372,8 @@
         "risk-score-triggers-wrong-escalation",
         "risk-signal-escalates-beyond-evidence",
         "saved-memory-not-used",
+        "severity-increases-without-new-evidence",
+        "single-step-carries-too-many-decisions",
         "task-has-no-clear-limit",
         "task-progress-is-lost-midway",
         "tool-exists-but-required-inputs-are-missing",
@@ -6010,6 +6408,7 @@
       "issues": [
         "action-triggered-by-confidence-score",
         "agent-cannot-choose-tool-without-tool-result",
+        "agent-permission-expands-over-steps",
         "approval-depends-on-output-that-needs-approval",
         "behavior-does-not-match-declared-role",
         "cannot-identify-authoritative-state",
@@ -6029,6 +6428,8 @@
         "risk-score-triggers-wrong-escalation",
         "risk-signal-escalates-beyond-evidence",
         "same-case-has-conflicting-policies",
+        "severity-increases-without-new-evidence",
+        "single-step-carries-too-many-decisions",
         "workflow-step-has-no-decision-owner"
       ],
       "url": "/workbench/lenses/authority-overlay-lens/",
@@ -6057,6 +6458,7 @@
         "action-changed-something-else-too",
         "action-triggered-by-confidence-score",
         "agent-keeps-expanding-the-task",
+        "agent-permission-expands-over-steps",
         "ai-adds-work-not-requested",
         "ai-output-breaks-parser",
         "ai-touches-unrelated-scope",
@@ -6068,6 +6470,7 @@
         "file-bounded-task-uses-outside-content",
         "hallucinated-fields",
         "hidden-rule-overrides-visible-instruction",
+        "local-exception-grows-into-policy",
         "local-rule-spreads-to-broader-cases",
         "model-and-workflow-disagree-on-next-step",
         "output-breaks-after-model-change",
@@ -6082,6 +6485,8 @@
         "risk-score-triggers-wrong-escalation",
         "risk-signal-escalates-beyond-evidence",
         "saved-reference-no-longer-works",
+        "severity-increases-without-new-evidence",
+        "small-issue-keeps-escalating",
         "too-many-tool-calls",
         "tool-call-contract-mismatch",
         "version-change-breaks-existing-prompt",
@@ -6155,6 +6560,7 @@
         "missing-required-fields",
         "multiple-policies-say-the-same-thing",
         "old-output-expectations-survive-migration",
+        "one-prompt-carries-too-many-meanings",
         "output-breaks-after-model-change",
         "output-exceeds-length-limit",
         "parallel-reviews-never-agree",
@@ -6170,6 +6576,7 @@
         "same-rule-declared-in-multiple-places",
         "same-workflow-check-happens-twice",
         "similar-cases-route-to-different-outcomes",
+        "single-step-carries-too-many-decisions",
         "validation-result-changes-on-retry",
         "workflow-stage-has-too-few-checks"
       ],
@@ -6203,12 +6610,14 @@
         "action-triggered-by-confidence-score",
         "agent-cannot-choose-tool-without-tool-result",
         "agent-never-settles-on-final-answer",
+        "agent-permission-expands-over-steps",
         "ai-output-breaks-parser",
         "approval-depends-on-output-that-needs-approval",
         "behavior-does-not-match-declared-role",
         "cannot-identify-authoritative-state",
         "conflicting-instructions-from-different-authorities",
         "declared-owner-cannot-control-outcome",
+        "downstream-steps-magnify-hallucinated-claim",
         "duplicate-fields-with-same-meaning",
         "duplicate-output-sections",
         "fallback-authority-is-missing",
@@ -6230,6 +6639,7 @@
         "permissions-conflict-after-being-combined",
         "policy-decision-depends-on-itself",
         "repeated-constraints-create-confusion",
+        "review-escalates-without-stop-condition",
         "risk-score-triggers-wrong-escalation",
         "risk-signal-escalates-beyond-evidence",
         "routing-path-cycles-back-to-start",
@@ -6237,6 +6647,8 @@
         "same-rule-declared-in-multiple-places",
         "same-workflow-check-happens-twice",
         "schema-reference-loops-without-base-case",
+        "severity-increases-without-new-evidence",
+        "single-step-carries-too-many-decisions",
         "tool-call-contract-mismatch",
         "validation-result-changes-on-retry",
         "workflow-loops-through-review-without-resolution",
@@ -6280,6 +6692,7 @@
         "invalid-json-output",
         "missing-fallback-for-unavailable-information",
         "missing-required-fields",
+        "one-prompt-carries-too-many-meanings",
         "output-exceeds-length-limit",
         "policy-area-has-no-examples",
         "policy-decision-depends-on-itself",
@@ -6292,6 +6705,7 @@
         "review-rubric-missing-required-criteria",
         "same-instructions-allow-different-outputs",
         "saved-memory-not-used",
+        "single-step-carries-too-many-decisions",
         "task-has-no-clear-limit",
         "too-many-tool-calls",
         "tool-exists-but-required-inputs-are-missing",
@@ -6334,10 +6748,12 @@
         "declared-owner-cannot-control-outcome",
         "early-model-output-gets-overweighted-downstream",
         "human-review-and-automation-disagree",
+        "local-exception-grows-into-policy",
         "merge-step-leaves-unresolved-differences",
         "model-and-workflow-disagree-on-next-step",
         "no-owner-for-agent-action",
         "old-output-expectations-survive-migration",
+        "one-prompt-carries-too-many-meanings",
         "output-breaks-after-model-change",
         "output-changed-without-declared-change",
         "parallel-reviews-never-agree",
@@ -6347,6 +6763,7 @@
         "prompt-has-too-many-valid-interpretations",
         "prompt-only-works-after-retry",
         "results-vary-too-much",
+        "review-escalates-without-stop-condition",
         "revoked-approval-still-treated-as-active",
         "routing-path-cycles-back-to-start",
         "rubric-changed-but-results-did-not",
@@ -6406,6 +6823,7 @@
         "invalid-json-output",
         "missing-fallback-for-unavailable-information",
         "old-output-expectations-survive-migration",
+        "one-prompt-carries-too-many-meanings",
         "output-breaks-after-model-change",
         "output-changed-without-declared-change",
         "output-exceeds-length-limit",
@@ -6469,17 +6887,21 @@
         "action-triggered-by-confidence-score",
         "agent-keeps-expanding-the-task",
         "agent-never-settles-on-final-answer",
+        "agent-permission-expands-over-steps",
         "ai-adds-work-not-requested",
         "ai-touches-unrelated-scope",
         "answer-has-too-many-paths",
         "context-leaks-between-tasks",
+        "downstream-steps-magnify-hallucinated-claim",
         "duplicate-fields-with-same-meaning",
         "duplicate-output-sections",
         "early-model-output-gets-overweighted-downstream",
         "hallucinated-fields",
+        "local-exception-grows-into-policy",
         "local-rule-spreads-to-broader-cases",
         "model-output-triggers-unapproved-action",
         "multiple-policies-say-the-same-thing",
+        "one-prompt-carries-too-many-meanings",
         "output-exceeds-length-limit",
         "policy-exception-spreads-too-far",
         "prompt-does-not-say-what-to-exclude",
@@ -6488,13 +6910,17 @@
         "repeated-constraints-create-confusion",
         "retrieval-exceeds-evidence-limit",
         "retry-makes-the-problem-worse",
+        "review-escalates-without-stop-condition",
         "review-outcome-changes-unrelated-environment",
         "risk-score-triggers-wrong-escalation",
         "risk-signal-escalates-beyond-evidence",
         "routing-path-cycles-back-to-start",
         "same-rule-declared-in-multiple-places",
         "same-workflow-check-happens-twice",
+        "severity-increases-without-new-evidence",
+        "single-step-carries-too-many-decisions",
         "small-error-spreads-into-large-failure",
+        "small-issue-keeps-escalating",
         "task-has-no-clear-limit",
         "too-many-tool-calls",
         "workflow-loops-through-review-without-resolution"
@@ -6527,6 +6953,7 @@
         "answer-has-no-traceable-source-link",
         "citation-points-to-wrong-source",
         "diagnostic-area-has-no-coverage",
+        "downstream-steps-magnify-hallucinated-claim",
         "duplicate-fields-with-same-meaning",
         "duplicate-output-sections",
         "evaluation-rubric-has-coverage-gap",
@@ -6584,6 +7011,7 @@
         "ai-output-breaks-parser",
         "approval-depends-on-output-that-needs-approval",
         "conflicting-instructions-from-different-authorities",
+        "downstream-steps-magnify-hallucinated-claim",
         "duplicate-fields-with-same-meaning",
         "duplicate-output-sections",
         "format-rule-too-weak",
@@ -6602,6 +7030,8 @@
         "risk-signal-escalates-beyond-evidence",
         "same-case-has-conflicting-policies",
         "schema-reference-loops-without-base-case",
+        "severity-increases-without-new-evidence",
+        "small-issue-keeps-escalating",
         "tool-call-contract-mismatch",
         "validation-result-changes-on-retry",
         "wrong-field-types"
@@ -6638,6 +7068,7 @@
         "file-bounded-task-uses-outside-content",
         "hallucinated-fields",
         "hidden-rule-overrides-visible-instruction",
+        "local-exception-grows-into-policy",
         "local-rule-spreads-to-broader-cases",
         "model-output-triggers-unapproved-action",
         "no-owner-for-agent-action",
@@ -6646,6 +7077,7 @@
         "repair-step-created-new-breakage",
         "retrieval-exceeds-evidence-limit",
         "review-outcome-changes-unrelated-environment",
+        "single-step-carries-too-many-decisions",
         "small-error-spreads-into-large-failure",
         "task-has-no-clear-limit",
         "too-many-tool-calls"
@@ -6689,6 +7121,7 @@
         "policy-decision-depends-on-itself",
         "prompt-changed-but-workflow-did-not",
         "repeated-constraints-create-confusion",
+        "review-escalates-without-stop-condition",
         "routing-path-cycles-back-to-start",
         "same-contract-name-has-different-meanings",
         "same-rule-declared-in-multiple-places",
@@ -6723,6 +7156,7 @@
       "issues": [
         "action-changed-something-else-too",
         "agent-keeps-expanding-the-task",
+        "agent-permission-expands-over-steps",
         "ai-adds-work-not-requested",
         "ai-touches-unrelated-scope",
         "ai-uses-external-information-when-forbidden",
@@ -6771,17 +7205,20 @@
         "agent-cannot-choose-tool-without-tool-result",
         "agent-keeps-expanding-the-task",
         "agent-never-settles-on-final-answer",
+        "agent-permission-expands-over-steps",
         "ai-adds-work-not-requested",
         "ai-touches-unrelated-scope",
         "ai-uses-external-information-when-forbidden",
         "approval-depends-on-output-that-needs-approval",
         "behavior-does-not-match-declared-role",
         "context-leaks-between-tasks",
+        "downstream-steps-magnify-hallucinated-claim",
         "early-model-output-gets-overweighted-downstream",
         "fallback-authority-is-missing",
         "file-bounded-task-uses-outside-content",
         "hallucinated-fields",
         "hidden-rule-overrides-visible-instruction",
+        "local-exception-grows-into-policy",
         "local-rule-spreads-to-broader-cases",
         "merge-step-leaves-unresolved-differences",
         "model-output-triggers-unapproved-action",
@@ -6793,12 +7230,15 @@
         "repair-step-created-new-breakage",
         "retrieval-exceeds-evidence-limit",
         "retry-makes-the-problem-worse",
+        "review-escalates-without-stop-condition",
         "review-outcome-changes-unrelated-environment",
         "risk-score-triggers-wrong-escalation",
         "risk-signal-escalates-beyond-evidence",
         "routing-path-cycles-back-to-start",
         "schema-reference-loops-without-base-case",
+        "severity-increases-without-new-evidence",
         "small-error-spreads-into-large-failure",
+        "small-issue-keeps-escalating",
         "task-progress-is-lost-midway",
         "too-many-tool-calls",
         "tool-result-not-integrated-correctly",
@@ -6865,6 +7305,7 @@
         "agent-cannot-choose-tool-without-tool-result",
         "agent-keeps-expanding-the-task",
         "agent-never-settles-on-final-answer",
+        "agent-permission-expands-over-steps",
         "ai-forgets-earlier-constraints",
         "approval-depends-on-output-that-needs-approval",
         "behavior-does-not-match-declared-role",
@@ -6876,6 +7317,7 @@
         "fallback-authority-is-missing",
         "hidden-rule-overrides-visible-instruction",
         "human-review-and-automation-disagree",
+        "local-exception-grows-into-policy",
         "merge-step-leaves-unresolved-differences",
         "missing-fallback-for-unavailable-information",
         "model-and-workflow-disagree-on-next-step",
@@ -6891,6 +7333,7 @@
         "policy-update-not-reflected-in-output",
         "prompt-behavior-changed-without-version-change",
         "prompt-changed-but-workflow-did-not",
+        "review-escalates-without-stop-condition",
         "revoked-approval-still-treated-as-active",
         "risk-score-triggers-wrong-escalation",
         "risk-signal-escalates-beyond-evidence",
@@ -6901,7 +7344,9 @@
         "same-rule-declared-in-multiple-places",
         "same-workflow-check-happens-twice",
         "saved-reference-no-longer-works",
+        "severity-increases-without-new-evidence",
         "similar-cases-route-to-different-outcomes",
+        "single-step-carries-too-many-decisions",
         "stale-context-affects-output",
         "task-progress-is-lost-midway",
         "tool-result-not-integrated-correctly",
@@ -6946,6 +7391,7 @@
         "early-model-output-gets-overweighted-downstream",
         "file-bounded-task-uses-outside-content",
         "human-review-and-automation-disagree",
+        "local-exception-grows-into-policy",
         "model-and-workflow-disagree-on-next-step",
         "no-owner-for-agent-action",
         "old-output-expectations-survive-migration",
@@ -7002,10 +7448,12 @@
         "action-triggered-by-confidence-score",
         "agent-keeps-expanding-the-task",
         "agent-never-settles-on-final-answer",
+        "agent-permission-expands-over-steps",
         "ai-forgets-earlier-constraints",
         "answer-has-too-many-paths",
         "context-leaks-between-tasks",
         "diagnostic-area-has-no-coverage",
+        "downstream-steps-magnify-hallucinated-claim",
         "duplicate-fields-with-same-meaning",
         "duplicate-output-sections",
         "early-model-output-gets-overweighted-downstream",
@@ -7013,11 +7461,13 @@
         "format-rule-too-weak",
         "human-review-and-automation-disagree",
         "invalid-json-output",
+        "local-exception-grows-into-policy",
         "local-rule-spreads-to-broader-cases",
         "merge-step-leaves-unresolved-differences",
         "missing-fallback-for-unavailable-information",
         "model-output-triggers-unapproved-action",
         "multiple-policies-say-the-same-thing",
+        "one-prompt-carries-too-many-meanings",
         "output-breaks-after-model-change",
         "output-exceeds-length-limit",
         "parallel-reviews-never-agree",
@@ -7031,6 +7481,7 @@
         "results-vary-too-much",
         "retrieval-exceeds-evidence-limit",
         "retry-makes-the-problem-worse",
+        "review-escalates-without-stop-condition",
         "review-outcome-changes-unrelated-environment",
         "review-rubric-missing-required-criteria",
         "risk-score-triggers-wrong-escalation",
@@ -7039,8 +7490,11 @@
         "same-instructions-allow-different-outputs",
         "same-rule-declared-in-multiple-places",
         "same-workflow-check-happens-twice",
+        "severity-increases-without-new-evidence",
         "similar-cases-route-to-different-outcomes",
+        "single-step-carries-too-many-decisions",
         "small-error-spreads-into-large-failure",
+        "small-issue-keeps-escalating",
         "task-has-no-clear-limit",
         "task-progress-is-lost-midway",
         "too-many-tool-calls",
@@ -7154,6 +7608,7 @@
         "answer-has-no-traceable-source-link",
         "citation-points-to-wrong-source",
         "missing-required-fields",
+        "one-prompt-carries-too-many-meanings",
         "same-instructions-allow-different-outputs",
         "saved-memory-not-used",
         "tool-exists-but-required-inputs-are-missing",
@@ -7175,17 +7630,21 @@
         "duplicate-fields-with-same-meaning",
         "duplicate-output-sections",
         "multiple-policies-say-the-same-thing",
+        "one-prompt-carries-too-many-meanings",
         "repeated-constraints-create-confusion",
         "same-rule-declared-in-multiple-places",
-        "same-workflow-check-happens-twice"
+        "same-workflow-check-happens-twice",
+        "single-step-carries-too-many-decisions"
       ],
       "primary_issues": [
         "duplicate-fields-with-same-meaning",
         "duplicate-output-sections",
         "multiple-policies-say-the-same-thing",
+        "one-prompt-carries-too-many-meanings",
         "repeated-constraints-create-confusion",
         "same-rule-declared-in-multiple-places",
-        "same-workflow-check-happens-twice"
+        "same-workflow-check-happens-twice",
+        "single-step-carries-too-many-decisions"
       ],
       "secondary_issues": [],
       "url": "/workbench/categories/duplication-and-overload/"
@@ -7349,6 +7808,7 @@
         "wrong-field-types"
       ],
       "secondary_issues": [
+        "downstream-steps-magnify-hallucinated-claim",
         "duplicate-fields-with-same-meaning",
         "duplicate-output-sections",
         "file-bounded-task-uses-outside-content",
@@ -7398,6 +7858,7 @@
         "revoked-approval-still-treated-as-active"
       ],
       "secondary_issues": [
+        "agent-permission-expands-over-steps",
         "approval-depends-on-output-that-needs-approval",
         "cannot-identify-authoritative-state",
         "conflicting-instructions-from-different-authorities",
@@ -7407,6 +7868,7 @@
         "risk-score-triggers-wrong-escalation",
         "risk-signal-escalates-beyond-evidence",
         "same-case-has-conflicting-policies",
+        "severity-increases-without-new-evidence",
         "workflow-step-has-no-decision-owner"
       ],
       "url": "/workbench/categories/permissions-and-approvals/"
@@ -7438,6 +7900,7 @@
         "ai-uses-external-information-when-forbidden",
         "behavior-does-not-match-declared-role",
         "declared-owner-cannot-control-outcome",
+        "local-exception-grows-into-policy",
         "local-rule-spreads-to-broader-cases",
         "model-and-workflow-disagree-on-next-step",
         "multiple-policies-say-the-same-thing",
@@ -7497,25 +7960,37 @@
       "summary": "Problems where small errors, local exceptions, risk signals, retries, permissions, or outputs spread downstream, grow in consequence, or trigger broader actions.",
       "issues": [
         "action-changed-something-else-too",
+        "agent-permission-expands-over-steps",
+        "downstream-steps-magnify-hallucinated-claim",
         "early-model-output-gets-overweighted-downstream",
+        "local-exception-grows-into-policy",
         "local-rule-spreads-to-broader-cases",
         "policy-exception-spreads-too-far",
         "repair-step-created-new-breakage",
         "retry-makes-the-problem-worse",
+        "review-escalates-without-stop-condition",
         "risk-score-triggers-wrong-escalation",
         "risk-signal-escalates-beyond-evidence",
-        "small-error-spreads-into-large-failure"
+        "severity-increases-without-new-evidence",
+        "small-error-spreads-into-large-failure",
+        "small-issue-keeps-escalating"
       ],
       "primary_issues": [
         "action-changed-something-else-too",
+        "agent-permission-expands-over-steps",
+        "downstream-steps-magnify-hallucinated-claim",
         "early-model-output-gets-overweighted-downstream",
+        "local-exception-grows-into-policy",
         "local-rule-spreads-to-broader-cases",
         "policy-exception-spreads-too-far",
         "repair-step-created-new-breakage",
         "retry-makes-the-problem-worse",
+        "review-escalates-without-stop-condition",
         "risk-score-triggers-wrong-escalation",
         "risk-signal-escalates-beyond-evidence",
-        "small-error-spreads-into-large-failure"
+        "severity-increases-without-new-evidence",
+        "small-error-spreads-into-large-failure",
+        "small-issue-keeps-escalating"
       ],
       "secondary_issues": [
         "action-triggered-by-confidence-score",
@@ -7558,10 +8033,13 @@
         "prompt-changed-but-workflow-did-not",
         "relationship-map-has-missing-links",
         "repair-step-created-new-breakage",
+        "review-escalates-without-stop-condition",
         "review-rubric-missing-required-criteria",
         "routing-path-cycles-back-to-start",
         "rubric-changed-but-results-did-not",
         "same-workflow-check-happens-twice",
+        "single-step-carries-too-many-decisions",
+        "small-issue-keeps-escalating",
         "task-progress-is-lost-midway",
         "tool-result-not-integrated-correctly",
         "workflow-loops-through-review-without-resolution",
