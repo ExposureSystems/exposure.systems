@@ -8,10 +8,8 @@ updated_at: "2026-05-10T00:00:00Z"
 summary: The same AI task appears to work in one app, mode, model, account, workspace, or runtime but fails or behaves differently in another.
 code: ADJ-0002
 related_issues:
-  - output-breaks-after-model-change
-  - version-change-breaks-existing-prompt
-  - prompt-behavior-changed-without-version-change
-  - results-vary-too-much
+  - ai-forgets-earlier-constraints
+  - agent-keeps-expanding-the-task
 search_intents:
   - AI works in one environment not another
   - same prompt works in one app but not another

@@ -8,10 +8,8 @@ updated_at: "2026-05-10T00:00:00Z"
 summary: Documented behavior, fields, tool schemas, permissions, or runtime capabilities do not match what actually happens during use.
 code: ADJ-0005
 related_issues:
-  - actual-policy-differs-from-declared-policy
-  - output-changed-without-declared-change
-  - prompt-behavior-changed-without-version-change
-  - same-contract-name-has-different-meanings
+  - tool-call-contract-mismatch
+  - invalid-json-output
 search_intents:
   - runtime behavior does not match docs
   - docs do not match runtime

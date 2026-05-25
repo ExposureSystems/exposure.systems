@@ -9,8 +9,6 @@ summary: A tool or capability appears unavailable in the current mode, environme
 code: ADJ-0001
 related_issues:
   - tool-call-contract-mismatch
-  - tool-exists-but-required-inputs-are-missing
-  - agent-cannot-choose-tool-without-tool-result
 search_intents:
   - tool not supported in this mode
   - AI tool not available

@@ -37,7 +37,9 @@
           "variance-entropy-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "ai-works-in-one-environment-not-another"
+      ],
       "search_intents": [
         "agent keeps expanding the task",
         "AI keeps adding more steps",
@@ -46,7 +48,7 @@
         "agent expands task on each pass",
         "diagnosis keeps expanding"
       ],
-      "text": "AI keeps adding follow up work AI keeps adding more steps Agent Keeps Expanding the Task Agents CAT-0030 CAT-0100 ISS-0008 The agent repeatedly expands the task, plan, scope, or next-step list instead of completing the declared work. agent expands task on each pass agent keeps expanding the task agent keeps making the plan bigger agents boundary-compliance-lens compression-lens convergence-failure convergence-lens diagnosis keeps expanding escalation-gradient-lens overreach overreach-lens propagation-lens reconciliation-lens unconstrained-expansion variance-entropy-lens"
+      "text": "AI keeps adding follow up work AI keeps adding more steps Agent Keeps Expanding the Task Agents CAT-0030 CAT-0100 ISS-0008 The agent repeatedly expands the task, plan, scope, or next-step list instead of completing the declared work. agent expands task on each pass agent keeps expanding the task agent keeps making the plan bigger agents ai-works-in-one-environment-not-another boundary-compliance-lens compression-lens convergence-failure convergence-lens diagnosis keeps expanding escalation-gradient-lens overreach overreach-lens propagation-lens reconciliation-lens unconstrained-expansion variance-entropy-lens"
     },
     {
       "type": "issue",
@@ -78,7 +80,9 @@
           "variance-entropy-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "ai-works-in-one-environment-not-another"
+      ],
       "search_intents": [
         "AI forgets earlier constraints",
         "ChatGPT forgot my instructions",
@@ -86,7 +90,7 @@
         "AI stopped following earlier constraint",
         "AI followed the rule at first then forgot"
       ],
-      "text": "A constraint, instruction, preference, or decision that should persist through the task stops affecting later output. AI Forgets Earlier Constraints AI followed the rule at first then forgot AI forgets earlier constraints AI stopped following earlier constraint CAT-0020 ChatGPT forgot my instructions ISS-0029 Memory & Context agent forgot the rule constraint-sufficiency-lens constraints-underspecified contract-drift convergence-lens determinism-lens memory-and-context persistence-instability reconciliation-lens reference-stability-lens variance-entropy-lens"
+      "text": "A constraint, instruction, preference, or decision that should persist through the task stops affecting later output. AI Forgets Earlier Constraints AI followed the rule at first then forgot AI forgets earlier constraints AI stopped following earlier constraint CAT-0020 ChatGPT forgot my instructions ISS-0029 Memory & Context agent forgot the rule ai-works-in-one-environment-not-another constraint-sufficiency-lens constraints-underspecified contract-drift convergence-lens determinism-lens memory-and-context persistence-instability reconciliation-lens reference-stability-lens variance-entropy-lens"
     },
     {
       "type": "issue",
@@ -119,7 +123,9 @@
           "variance-entropy-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "runtime-behavior-does-not-match-docs"
+      ],
       "search_intents": [
         "AI invalid JSON",
         "ChatGPT malformed JSON",
@@ -127,7 +133,7 @@
         "LLM output invalid JSON",
         "AI gave JSON that will not parse"
       ],
-      "text": "AI gave JSON that will not parse AI invalid JSON CAT-0010 ChatGPT malformed JSON ISS-0021 Invalid JSON Output JSON parse error AI output LLM output invalid JSON Output The AI returns malformed JSON or structured output that cannot be parsed. conflict-lens constraint-sufficiency-lens constraints-underspecified determinism-lens interface-contract-lens interface-mismatch invariant-lens normalization-lens output schema-breakage variance-entropy-lens"
+      "text": "AI gave JSON that will not parse AI invalid JSON CAT-0010 ChatGPT malformed JSON ISS-0021 Invalid JSON Output JSON parse error AI output LLM output invalid JSON Output The AI returns malformed JSON or structured output that cannot be parsed. conflict-lens constraint-sufficiency-lens constraints-underspecified determinism-lens interface-contract-lens interface-mismatch invariant-lens normalization-lens output runtime-behavior-does-not-match-docs schema-breakage variance-entropy-lens"
     },
     {
       "type": "issue",
@@ -207,6 +213,7 @@
         ]
       },
       "related_ai_adj_issues": [
+        "runtime-behavior-does-not-match-docs",
         "tool-not-supported-in-this-mode"
       ],
       "search_intents": [
@@ -217,7 +224,7 @@
         "agent used wrong tool parameters",
         "tool choice is underspecified"
       ],
-      "text": "AI called tool with wrong schema AI tool call wrong arguments CAT-0010 CAT-0040 ISS-0017 MCP, Tools & Integrations The AI or agent calls a tool with names, arguments, types, modes, or shapes that do not match the declared tool interface. Tool Call Contract Mismatch agent used wrong tool parameters boundary-compliance-lens compatibility-envelope-lens compatibility-violation conflict-lens function call invalid arguments interface-contract-lens interface-mismatch invariant-lens mcp-tools-and-integrations normalization-lens schema-breakage tool call contract mismatch tool choice is underspecified tool-not-supported-in-this-mode"
+      "text": "AI called tool with wrong schema AI tool call wrong arguments CAT-0010 CAT-0040 ISS-0017 MCP, Tools & Integrations The AI or agent calls a tool with names, arguments, types, modes, or shapes that do not match the declared tool interface. Tool Call Contract Mismatch agent used wrong tool parameters boundary-compliance-lens compatibility-envelope-lens compatibility-violation conflict-lens function call invalid arguments interface-contract-lens interface-mismatch invariant-lens mcp-tools-and-integrations normalization-lens runtime-behavior-does-not-match-docs schema-breakage tool call contract mismatch tool choice is underspecified tool-not-supported-in-this-mode"
     },
     {
       "type": "ai_adj_issue",
@@ -228,10 +235,8 @@
       "summary": "The same AI task appears to work in one app, mode, model, account, workspace, or runtime but fails or behaves differently in another.",
       "url": "/workbench/ai-adj-issues/ai-works-in-one-environment-not-another/",
       "related_issues": [
-        "output-breaks-after-model-change",
-        "version-change-breaks-existing-prompt",
-        "prompt-behavior-changed-without-version-change",
-        "results-vary-too-much"
+        "ai-forgets-earlier-constraints",
+        "agent-keeps-expanding-the-task"
       ],
       "search_intents": [
         "AI works in one environment not another",
@@ -239,7 +244,7 @@
         "AI works here but fails there",
         "model behaves differently in another environment"
       ],
-      "text": "ADJ-0002 AI Works in One Environment Not Another AI works here but fails there AI works in one environment not another The same AI task appears to work in one app, mode, model, account, workspace, or runtime but fails or behaves differently in another. model behaves differently in another environment output-breaks-after-model-change prompt-behavior-changed-without-version-change results-vary-too-much same prompt works in one app but not another version-change-breaks-existing-prompt"
+      "text": "ADJ-0002 AI Works in One Environment Not Another AI works here but fails there AI works in one environment not another The same AI task appears to work in one app, mode, model, account, workspace, or runtime but fails or behaves differently in another. agent-keeps-expanding-the-task ai-forgets-earlier-constraints model behaves differently in another environment same prompt works in one app but not another"
     },
     {
       "type": "ai_adj_issue",
@@ -250,10 +255,8 @@
       "summary": "Documented behavior, fields, tool schemas, permissions, or runtime capabilities do not match what actually happens during use.",
       "url": "/workbench/ai-adj-issues/runtime-behavior-does-not-match-docs/",
       "related_issues": [
-        "actual-policy-differs-from-declared-policy",
-        "output-changed-without-declared-change",
-        "prompt-behavior-changed-without-version-change",
-        "same-contract-name-has-different-meanings"
+        "tool-call-contract-mismatch",
+        "invalid-json-output"
       ],
       "search_intents": [
         "runtime behavior does not match docs",
@@ -261,7 +264,7 @@
         "documented behavior is wrong",
         "API docs say one thing but runtime does another"
       ],
-      "text": "ADJ-0005 API docs say one thing but runtime does another Documented behavior, fields, tool schemas, permissions, or runtime capabilities do not match what actually happens during use. Runtime Behavior Does Not Match Docs actual-policy-differs-from-declared-policy docs do not match runtime documented behavior is wrong output-changed-without-declared-change prompt-behavior-changed-without-version-change runtime behavior does not match docs same-contract-name-has-different-meanings"
+      "text": "ADJ-0005 API docs say one thing but runtime does another Documented behavior, fields, tool schemas, permissions, or runtime capabilities do not match what actually happens during use. Runtime Behavior Does Not Match Docs docs do not match runtime documented behavior is wrong invalid-json-output runtime behavior does not match docs tool-call-contract-mismatch"
     },
     {
       "type": "ai_adj_issue",
@@ -272,9 +275,7 @@
       "summary": "A tool or capability appears unavailable in the current mode, environment, product surface, or runtime context.",
       "url": "/workbench/ai-adj-issues/tool-not-supported-in-this-mode/",
       "related_issues": [
-        "tool-call-contract-mismatch",
-        "tool-exists-but-required-inputs-are-missing",
-        "agent-cannot-choose-tool-without-tool-result"
+        "tool-call-contract-mismatch"
       ],
       "search_intents": [
         "tool not supported in this mode",
@@ -282,7 +283,7 @@
         "agent cannot use tool",
         "MCP tool not showing up"
       ],
-      "text": "A tool or capability appears unavailable in the current mode, environment, product surface, or runtime context. ADJ-0001 AI tool not available MCP tool not showing up Tool Not Supported in This Mode agent cannot use tool agent-cannot-choose-tool-without-tool-result tool not supported in this mode tool-call-contract-mismatch tool-exists-but-required-inputs-are-missing"
+      "text": "A tool or capability appears unavailable in the current mode, environment, product surface, or runtime context. ADJ-0001 AI tool not available MCP tool not showing up Tool Not Supported in This Mode agent cannot use tool tool not supported in this mode tool-call-contract-mismatch"
     }
   ],
   "facets": {
