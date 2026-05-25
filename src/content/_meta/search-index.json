@@ -35,7 +35,11 @@
           "variance-entropy-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "generated-output-changed-hidden-metadata",
+        "tool-call-caused-hidden-downstream-change",
+        "tool-effect-crosses-target-boundary"
+      ],
       "search_intents": [
         "action changed something else too",
         "AI changed unrelated thing too",
@@ -44,7 +48,7 @@
         "AI action had unintended side effect",
         "requested change affected something else"
       ],
-      "text": "AI action had unintended side effect AI changed unrelated thing too Action Changed Something Else Too An AI or agent action makes the requested change but also changes another object, field, file, state, rule, or workflow element that was not supposed to change. CAT-0100 CAT-0110 ISS-0046 Spread & Escalation action changed something else too agent side effect boundary-compliance-lens boundary-leakage escalation-gradient-lens fix changed other file isolation-boundary-lens overreach-lens propagation-amplification propagation-lens requested change affected something else spread-and-escalation undeclared-side-effect variance-entropy-lens"
+      "text": "AI action had unintended side effect AI changed unrelated thing too Action Changed Something Else Too An AI or agent action makes the requested change but also changes another object, field, file, state, rule, or workflow element that was not supposed to change. CAT-0100 CAT-0110 ISS-0046 Spread & Escalation action changed something else too agent side effect boundary-compliance-lens boundary-leakage escalation-gradient-lens fix changed other file generated-output-changed-hidden-metadata isolation-boundary-lens overreach-lens propagation-amplification propagation-lens requested change affected something else spread-and-escalation tool-call-caused-hidden-downstream-change tool-effect-crosses-target-boundary undeclared-side-effect variance-entropy-lens"
     },
     {
       "type": "issue",
@@ -125,6 +129,8 @@
       },
       "related_ai_adj_issues": [
         "documented-field-not-available-at-runtime",
+        "guardrail-applies-to-one-model-path-only",
+        "low-level-configuration-overrides-workflow-policy",
         "permission-change-not-applied",
         "runtime-behavior-does-not-match-docs"
       ],
@@ -136,7 +142,7 @@
         "declared policy not followed",
         "runtime policy differs from docs"
       ],
-      "text": "AI behavior does not match policy Actual Policy Differs From Declared Policy CAT-0060 CAT-0080 ISS-0040 Rules & Policies The policy the AI or workflow actually follows differs from the policy that is documented, declared, displayed, or expected. actual policy differs from declared policy authority-state-mismatch contract-drift convergence-lens declared policy not followed determinism-lens documented policy differs from actual behavior documented-field-not-available-at-runtime permission-change-not-applied policy says one thing AI does another provenance-trace-lens reconciliation-lens reference-stability-lens rules-and-policies runtime policy differs from docs runtime-behavior-does-not-match-docs silent-mutation"
+      "text": "AI behavior does not match policy Actual Policy Differs From Declared Policy CAT-0060 CAT-0080 ISS-0040 Rules & Policies The policy the AI or workflow actually follows differs from the policy that is documented, declared, displayed, or expected. actual policy differs from declared policy authority-state-mismatch contract-drift convergence-lens declared policy not followed determinism-lens documented policy differs from actual behavior documented-field-not-available-at-runtime guardrail-applies-to-one-model-path-only low-level-configuration-overrides-workflow-policy permission-change-not-applied policy says one thing AI does another provenance-trace-lens reconciliation-lens reference-stability-lens rules-and-policies runtime policy differs from docs runtime-behavior-does-not-match-docs silent-mutation"
     },
     {
       "type": "issue",
@@ -304,7 +310,8 @@
         "secondary": []
       },
       "related_ai_adj_issues": [
-        "one-workspace-affects-another"
+        "one-workspace-affects-another",
+        "tool-effect-crosses-target-boundary"
       ],
       "search_intents": [
         "agent modified unrelated state",
@@ -314,7 +321,7 @@
         "agent side effect changed state",
         "AI action affected unrelated workflow"
       ],
-      "text": "AI action affected unrelated workflow AI agent changed unrelated state AI modified unrelated file Agent Modified Unrelated State An agent changes state outside the requested task, target, file, record, workflow, or authorized scope. CAT-0030 CAT-0100 ISS-0113 Scope & Boundaries agent changed something outside task agent modified unrelated state agent side effect changed state boundary-compliance-lens boundary-leakage isolation-boundary-lens one-workspace-affects-another overreach overreach-lens propagation-lens scope-and-boundaries undeclared-side-effect"
+      "text": "AI action affected unrelated workflow AI agent changed unrelated state AI modified unrelated file Agent Modified Unrelated State An agent changes state outside the requested task, target, file, record, workflow, or authorized scope. CAT-0030 CAT-0100 ISS-0113 Scope & Boundaries agent changed something outside task agent modified unrelated state agent side effect changed state boundary-compliance-lens boundary-leakage isolation-boundary-lens one-workspace-affects-another overreach overreach-lens propagation-lens scope-and-boundaries tool-effect-crosses-target-boundary undeclared-side-effect"
     },
     {
       "type": "issue",
@@ -661,7 +668,8 @@
         ]
       },
       "related_ai_adj_issues": [
-        "one-workspace-affects-another"
+        "one-workspace-affects-another",
+        "tool-effect-crosses-target-boundary"
       ],
       "search_intents": [
         "AI touches unrelated scope",
@@ -671,7 +679,7 @@
         "AI included unrelated scope",
         "agent went outside requested area"
       ],
-      "text": "AI Touches Unrelated Scope AI affected something outside task AI changed unrelated content AI included unrelated scope AI touches unrelated scope CAT-0030 CAT-0100 ISS-0045 Scope & Boundaries The AI affects, edits, analyzes, changes, or reasons over material outside the scope of the requested task. agent edited files not requested agent went outside requested area boundary-compliance-lens boundary-leakage constraint-sufficiency-lens escalation-gradient-lens isolation-boundary-lens one-workspace-affects-another overreach overreach-lens propagation-lens scope-and-boundaries unbounded-scope"
+      "text": "AI Touches Unrelated Scope AI affected something outside task AI changed unrelated content AI included unrelated scope AI touches unrelated scope CAT-0030 CAT-0100 ISS-0045 Scope & Boundaries The AI affects, edits, analyzes, changes, or reasons over material outside the scope of the requested task. agent edited files not requested agent went outside requested area boundary-compliance-lens boundary-leakage constraint-sufficiency-lens escalation-gradient-lens isolation-boundary-lens one-workspace-affects-another overreach overreach-lens propagation-lens scope-and-boundaries tool-effect-crosses-target-boundary unbounded-scope"
     },
     {
       "type": "issue",
@@ -924,6 +932,7 @@
         ]
       },
       "related_ai_adj_issues": [
+        "low-level-configuration-overrides-workflow-policy",
         "permission-change-not-applied"
       ],
       "search_intents": [
@@ -934,7 +943,7 @@
         "declared role not followed",
         "agent exceeds declared role"
       ],
-      "text": "AI does not act like assigned role AI role says one thing behavior another Behavior Does Not Match Declared Role CAT-0050 CAT-0060 ISS-0043 Permissions & Approvals The AI or agent behaves outside, below, or differently from the role, authority, responsibility, or permission posture declared for it. agent exceeds declared role agent role mismatch authority-overlay-lens authority-shadowing authority-state-mismatch behavior does not match declared role boundary-compliance-lens conflict-lens convergence-lens declared role not followed overreach overreach-lens permission-change-not-applied permissions-and-approvals propagation-lens reconciliation-lens reference-stability-lens"
+      "text": "AI does not act like assigned role AI role says one thing behavior another Behavior Does Not Match Declared Role CAT-0050 CAT-0060 ISS-0043 Permissions & Approvals The AI or agent behaves outside, below, or differently from the role, authority, responsibility, or permission posture declared for it. agent exceeds declared role agent role mismatch authority-overlay-lens authority-shadowing authority-state-mismatch behavior does not match declared role boundary-compliance-lens conflict-lens convergence-lens declared role not followed low-level-configuration-overrides-workflow-policy overreach overreach-lens permission-change-not-applied permissions-and-approvals propagation-lens reconciliation-lens reference-stability-lens"
     },
     {
       "type": "issue",
@@ -1276,7 +1285,9 @@
           "conflict-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "tool-call-caused-hidden-downstream-change"
+      ],
       "search_intents": [
         "downstream steps magnify hallucinated claim",
         "AI hallucination spread downstream",
@@ -1285,7 +1296,7 @@
         "AI false claim propagated",
         "downstream workflow amplified hallucination"
       ],
-      "text": "A hallucinated or unsupported claim from an AI output is reused by later workflow steps until it becomes more influential than the evidence supports. AI false claim propagated AI hallucination spread downstream CAT-0010 CAT-0110 Downstream Steps Magnify Hallucinated Claim ISS-0097 Spread & Escalation conflict-lens downstream steps magnify hallucinated claim downstream workflow amplified hallucination escalation-gradient-lens escalation-growth hallucinated claim used by workflow interface-contract-lens invariant-lens propagation-amplification propagation-lens schema-breakage spread-and-escalation unsupported claim became bigger issue variance-entropy-lens"
+      "text": "A hallucinated or unsupported claim from an AI output is reused by later workflow steps until it becomes more influential than the evidence supports. AI false claim propagated AI hallucination spread downstream CAT-0010 CAT-0110 Downstream Steps Magnify Hallucinated Claim ISS-0097 Spread & Escalation conflict-lens downstream steps magnify hallucinated claim downstream workflow amplified hallucination escalation-gradient-lens escalation-growth hallucinated claim used by workflow interface-contract-lens invariant-lens propagation-amplification propagation-lens schema-breakage spread-and-escalation tool-call-caused-hidden-downstream-change unsupported claim became bigger issue variance-entropy-lens"
     },
     {
       "type": "issue",
@@ -1541,7 +1552,9 @@
           "determinism-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "tool-effect-crosses-target-boundary"
+      ],
       "search_intents": [
         "file bounded task uses outside content",
         "AI used content outside file",
@@ -1550,7 +1563,7 @@
         "AI used outside context in file task",
         "document bounded task violated"
       ],
-      "text": "AI answer not limited to document AI used content outside file AI used outside context in file task CAT-0010 CAT-0100 File-Bounded Task Uses Outside Content ISS-0048 Scope & Boundaries The AI is asked to work only from a specific file or document but uses content, assumptions, or sources outside that file. boundary-compliance-lens boundary-leakage determinism-lens document bounded task violated file bounded task uses outside content isolation-boundary-lens overreach overreach-lens propagation-lens reference-instability reference-stability-lens scope-and-boundaries summarize only this file but AI used other info"
+      "text": "AI answer not limited to document AI used content outside file AI used outside context in file task CAT-0010 CAT-0100 File-Bounded Task Uses Outside Content ISS-0048 Scope & Boundaries The AI is asked to work only from a specific file or document but uses content, assumptions, or sources outside that file. boundary-compliance-lens boundary-leakage determinism-lens document bounded task violated file bounded task uses outside content isolation-boundary-lens overreach overreach-lens propagation-lens reference-instability reference-stability-lens scope-and-boundaries summarize only this file but AI used other info tool-effect-crosses-target-boundary"
     },
     {
       "type": "issue",
@@ -1675,7 +1688,9 @@
           "reconciliation-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "low-level-configuration-overrides-workflow-policy"
+      ],
       "search_intents": [
         "hidden rule overrides visible instruction",
         "AI ignored prompt because hidden rule",
@@ -1684,7 +1699,7 @@
         "hidden instruction affected output",
         "AI follows rule I cannot see"
       ],
-      "text": "A hidden, upstream, system, policy, tool, or product rule changes or overrides the visible instruction the user expects the AI to follow. AI follows rule I cannot see AI ignored prompt because hidden rule CAT-0050 CAT-0060 Hidden Rule Overrides Visible Instruction ISS-0039 Rules & Policies authority-collision authority-overlay-lens authority-shadowing boundary-compliance-lens boundary-leakage conflict-lens hidden instruction affected output hidden rule overrides visible instruction invariant-lens invisible policy changed AI behavior isolation-boundary-lens propagation-lens reconciliation-lens rules-and-policies system rule overrides user instruction"
+      "text": "A hidden, upstream, system, policy, tool, or product rule changes or overrides the visible instruction the user expects the AI to follow. AI follows rule I cannot see AI ignored prompt because hidden rule CAT-0050 CAT-0060 Hidden Rule Overrides Visible Instruction ISS-0039 Rules & Policies authority-collision authority-overlay-lens authority-shadowing boundary-compliance-lens boundary-leakage conflict-lens hidden instruction affected output hidden rule overrides visible instruction invariant-lens invisible policy changed AI behavior isolation-boundary-lens low-level-configuration-overrides-workflow-policy propagation-lens reconciliation-lens rules-and-policies system rule overrides user instruction"
     },
     {
       "type": "issue",
@@ -1719,7 +1734,9 @@
           "variance-entropy-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "tool-failure-escalates-into-policy-decision"
+      ],
       "search_intents": [
         "human review and automation disagree",
         "human and AI review disagree",
@@ -1728,7 +1745,7 @@
         "workflow review disagreement",
         "no rule for human AI disagreement"
       ],
-      "text": "A human review result and an automated AI or workflow result disagree without a declared rule for resolving the difference. AI says pass human says fail CAT-0050 CAT-0070 Human Review and Automation Disagree ISS-0036 Workflow & Handoffs authority-collision authority-overlay-lens authority-state-mismatch automated decision conflicts with reviewer conflict-lens convergence-failure convergence-lens human and AI review disagree human review and automation disagree invariant-lens no rule for human AI disagreement reconciliation-lens reference-stability-lens variance-entropy-lens workflow review disagreement workflow-and-handoffs"
+      "text": "A human review result and an automated AI or workflow result disagree without a declared rule for resolving the difference. AI says pass human says fail CAT-0050 CAT-0070 Human Review and Automation Disagree ISS-0036 Workflow & Handoffs authority-collision authority-overlay-lens authority-state-mismatch automated decision conflicts with reviewer conflict-lens convergence-failure convergence-lens human and AI review disagree human review and automation disagree invariant-lens no rule for human AI disagreement reconciliation-lens reference-stability-lens tool-failure-escalates-into-policy-decision variance-entropy-lens workflow review disagreement workflow-and-handoffs"
     },
     {
       "type": "issue",
@@ -2075,7 +2092,9 @@
           "reconciliation-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "tool-failure-escalates-into-policy-decision"
+      ],
       "search_intents": [
         "model output triggers unapproved action",
         "AI triggered action without approval",
@@ -2084,7 +2103,7 @@
         "unapproved action from AI output",
         "AI output bypassed approval"
       ],
-      "text": "AI output bypassed approval AI output causes, recommends, or triggers an action that has not passed the required approval, permission, or authority check. AI recommendation started workflow without permission AI triggered action without approval CAT-0050 CAT-0110 ISS-0050 Model Output Triggers Unapproved Action Permissions & Approvals absence-lens authority-overlay-lens conflict-lens escalation-gradient-lens escalation-growth isolation-boundary-lens missing-authority model output caused unauthorized action model output triggers unapproved action overreach-lens permissions-and-approvals propagation-lens reconciliation-lens unapproved action from AI output undeclared-side-effect variance-entropy-lens"
+      "text": "AI output bypassed approval AI output causes, recommends, or triggers an action that has not passed the required approval, permission, or authority check. AI recommendation started workflow without permission AI triggered action without approval CAT-0050 CAT-0110 ISS-0050 Model Output Triggers Unapproved Action Permissions & Approvals absence-lens authority-overlay-lens conflict-lens escalation-gradient-lens escalation-growth isolation-boundary-lens missing-authority model output caused unauthorized action model output triggers unapproved action overreach-lens permissions-and-approvals propagation-lens reconciliation-lens tool-failure-escalates-into-policy-decision unapproved action from AI output undeclared-side-effect variance-entropy-lens"
     },
     {
       "type": "issue",
@@ -2382,7 +2401,9 @@
       },
       "related_ai_adj_issues": [
         "agent-uses-old-tool-schema",
-        "too-many-workflows-depend-on-one-tool"
+        "generated-output-changed-hidden-metadata",
+        "too-many-workflows-depend-on-one-tool",
+        "tool-call-caused-hidden-downstream-change"
       ],
       "search_intents": [
         "output breaks the next step",
@@ -2392,7 +2413,7 @@
         "output looks right but next step fails",
         "downstream parser rejects AI output"
       ],
-      "text": "AI output breaks workflow AI output fails downstream CAT-0010 CAT-0040 ISS-0018 MCP, Tools & Integrations Output Breaks the Next Step The AI output looks acceptable by itself but cannot be used by the next tool, workflow step, parser, reviewer, or downstream consumer. agent-uses-old-tool-schema boundary-compliance-lens compatibility-envelope-lens compatibility-violation conflict-lens downstream parser rejects AI output interface-contract-lens interface-mismatch invariant-lens mcp-tools-and-integrations normalization-lens output breaks the next step output looks right but next step fails response cannot be used by next tool schema-breakage too-many-workflows-depend-on-one-tool"
+      "text": "AI output breaks workflow AI output fails downstream CAT-0010 CAT-0040 ISS-0018 MCP, Tools & Integrations Output Breaks the Next Step The AI output looks acceptable by itself but cannot be used by the next tool, workflow step, parser, reviewer, or downstream consumer. agent-uses-old-tool-schema boundary-compliance-lens compatibility-envelope-lens compatibility-violation conflict-lens downstream parser rejects AI output generated-output-changed-hidden-metadata interface-contract-lens interface-mismatch invariant-lens mcp-tools-and-integrations normalization-lens output breaks the next step output looks right but next step fails response cannot be used by next tool schema-breakage too-many-workflows-depend-on-one-tool tool-call-caused-hidden-downstream-change"
     },
     {
       "type": "issue",
@@ -2428,6 +2449,7 @@
         ]
       },
       "related_ai_adj_issues": [
+        "generated-output-changed-hidden-metadata",
         "runtime-behavior-does-not-match-docs"
       ],
       "search_intents": [
@@ -2438,7 +2460,7 @@
         "AI response changed unexpectedly",
         "output changed but prompt did not"
       ],
-      "text": "AI output changed without update AI response changed unexpectedly CAT-0010 CAT-0080 Changes & Versions ISS-0059 Output Changed Without Declared Change Output shape, content, format, fields, or behavior changes without a declared change to the prompt, schema, model, workflow, or governing rule. boundary-compliance-lens changes-and-versions compatibility-envelope-lens compatibility-violation contract-drift convergence-lens determinism-lens output changed but prompt did not output changed without declared change output format changed silently provenance-trace-lens reconciliation-lens reference-stability-lens runtime-behavior-does-not-match-docs silent-mutation structured output changed no version change"
+      "text": "AI output changed without update AI response changed unexpectedly CAT-0010 CAT-0080 Changes & Versions ISS-0059 Output Changed Without Declared Change Output shape, content, format, fields, or behavior changes without a declared change to the prompt, schema, model, workflow, or governing rule. boundary-compliance-lens changes-and-versions compatibility-envelope-lens compatibility-violation contract-drift convergence-lens determinism-lens generated-output-changed-hidden-metadata output changed but prompt did not output changed without declared change output format changed silently provenance-trace-lens reconciliation-lens reference-stability-lens runtime-behavior-does-not-match-docs silent-mutation structured output changed no version change"
     },
     {
       "type": "issue",
@@ -2557,7 +2579,9 @@
           "invariant-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "low-level-configuration-overrides-workflow-policy"
+      ],
       "search_intents": [
         "permissions conflict after being combined",
         "AI permissions conflict",
@@ -2566,7 +2590,7 @@
         "roles conflict after merge",
         "authority rules contradict each other"
       ],
-      "text": "AI permissions conflict CAT-0050 CAT-0060 ISS-0016 Permissions & Approvals Permissions Conflict After Being Combined Permissions, approvals, roles, policies, or authority rules that seem valid separately conflict when combined in the same workflow or AI action. approvals conflict in workflow authority rules contradict each other authority-collision authority-merge-conflict authority-overlay-lens authority-shadowing combined rules create permission problem conflict-lens invariant-lens permissions conflict after being combined permissions-and-approvals reconciliation-lens roles conflict after merge"
+      "text": "AI permissions conflict CAT-0050 CAT-0060 ISS-0016 Permissions & Approvals Permissions Conflict After Being Combined Permissions, approvals, roles, policies, or authority rules that seem valid separately conflict when combined in the same workflow or AI action. approvals conflict in workflow authority rules contradict each other authority-collision authority-merge-conflict authority-overlay-lens authority-shadowing combined rules create permission problem conflict-lens invariant-lens low-level-configuration-overrides-workflow-policy permissions conflict after being combined permissions-and-approvals reconciliation-lens roles conflict after merge"
     },
     {
       "type": "issue",
@@ -2778,6 +2802,7 @@
       },
       "related_ai_adj_issues": [
         "ai-works-in-one-environment-not-another",
+        "guardrail-applies-to-one-model-path-only",
         "runtime-behavior-does-not-match-docs"
       ],
       "search_intents": [
@@ -2788,7 +2813,7 @@
         "prompt drift without version change",
         "AI behavior changed silently"
       ],
-      "text": "A prompt begins producing different behavior even though no prompt version, model version, workflow version, or declared dependency change is recorded. AI behavior changed silently AI prompt started acting different CAT-0080 CAT-0090 Changes & Versions ISS-0058 Prompt Behavior Changed Without Version Change ai-works-in-one-environment-not-another changes-and-versions compression-lens contract-drift convergence-lens determinism-lens divergent-outputs prompt behavior changed without version change prompt changed behavior but version same prompt drift without version change provenance-trace-lens reconciliation-lens reference-stability-lens runtime-behavior-does-not-match-docs same prompt different behavior no update silent-mutation variance-entropy-lens"
+      "text": "A prompt begins producing different behavior even though no prompt version, model version, workflow version, or declared dependency change is recorded. AI behavior changed silently AI prompt started acting different CAT-0080 CAT-0090 Changes & Versions ISS-0058 Prompt Behavior Changed Without Version Change ai-works-in-one-environment-not-another changes-and-versions compression-lens contract-drift convergence-lens determinism-lens divergent-outputs guardrail-applies-to-one-model-path-only prompt behavior changed without version change prompt changed behavior but version same prompt drift without version change provenance-trace-lens reconciliation-lens reference-stability-lens runtime-behavior-does-not-match-docs same prompt different behavior no update silent-mutation variance-entropy-lens"
     },
     {
       "type": "issue",
@@ -3126,7 +3151,8 @@
         ]
       },
       "related_ai_adj_issues": [
-        "ai-works-in-one-environment-not-another"
+        "ai-works-in-one-environment-not-another",
+        "guardrail-applies-to-one-model-path-only"
       ],
       "search_intents": [
         "results vary too much",
@@ -3136,7 +3162,7 @@
         "AI answer changes too much",
         "model results are unstable"
       ],
-      "text": "AI answer changes too much AI results inconsistent CAT-0090 ISS-0063 Inconsistent Behavior Repeated or comparable runs produce outputs that vary more than the task, workflow, or user can tolerate. Results Vary Too Much ai-works-in-one-environment-not-another compression-lens constraint-sufficiency-lens constraints-underspecified convergence-lens determinism-lens divergent-outputs inconsistent-behavior model results are unstable non-deterministic-execution output varies too much reference-stability-lens results vary too much same prompt gives very different answers variance-entropy-lens"
+      "text": "AI answer changes too much AI results inconsistent CAT-0090 ISS-0063 Inconsistent Behavior Repeated or comparable runs produce outputs that vary more than the task, workflow, or user can tolerate. Results Vary Too Much ai-works-in-one-environment-not-another compression-lens constraint-sufficiency-lens constraints-underspecified convergence-lens determinism-lens divergent-outputs guardrail-applies-to-one-model-path-only inconsistent-behavior model results are unstable non-deterministic-execution output varies too much reference-stability-lens results vary too much same prompt gives very different answers variance-entropy-lens"
     },
     {
       "type": "issue",
@@ -3529,7 +3555,9 @@
           "reconciliation-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "tool-failure-escalates-into-policy-decision"
+      ],
       "search_intents": [
         "risk signal escalates beyond evidence",
         "AI risk warning went too far",
@@ -3538,7 +3566,7 @@
         "escalation beyond evidence",
         "risk signal over-escalation"
       ],
-      "text": "A risk signal, warning, score, or concern escalates farther than the available evidence supports. AI concern escalated too much AI risk warning went too far CAT-0050 CAT-0110 ISS-0095 Risk Signal Escalates Beyond Evidence Spread & Escalation absence-lens authority-overlay-lens boundary-compliance-lens conflict-lens escalation beyond evidence escalation-gradient-lens escalation-growth invariant-lens missing-authority propagation-lens reconciliation-lens risk score escalated without evidence risk signal escalates beyond evidence risk signal over-escalation spread-and-escalation threshold-breach variance-entropy-lens"
+      "text": "A risk signal, warning, score, or concern escalates farther than the available evidence supports. AI concern escalated too much AI risk warning went too far CAT-0050 CAT-0110 ISS-0095 Risk Signal Escalates Beyond Evidence Spread & Escalation absence-lens authority-overlay-lens boundary-compliance-lens conflict-lens escalation beyond evidence escalation-gradient-lens escalation-growth invariant-lens missing-authority propagation-lens reconciliation-lens risk score escalated without evidence risk signal escalates beyond evidence risk signal over-escalation spread-and-escalation threshold-breach tool-failure-escalates-into-policy-decision variance-entropy-lens"
     },
     {
       "type": "issue",
@@ -3699,7 +3727,9 @@
           "invariant-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "tool-failure-escalates-into-policy-decision"
+      ],
       "search_intents": [
         "same case has conflicting policies",
         "AI sees policy conflict",
@@ -3708,7 +3738,7 @@
         "conflicting rules apply to one case",
         "policy conflict in AI decision"
       ],
-      "text": "AI sees policy conflict CAT-0050 CAT-0060 ISS-0037 Rules & Policies Same Case Has Conflicting Policies The same case appears to be governed by multiple policies, rules, or standards that point to incompatible outcomes. authority-collision authority-merge-conflict authority-overlay-lens authority-shadowing conflict-lens conflicting rules apply to one case invariant-lens policies disagree for same case policy conflict in AI decision reconciliation-lens rules-and-policies same case allowed and blocked same case has conflicting policies"
+      "text": "AI sees policy conflict CAT-0050 CAT-0060 ISS-0037 Rules & Policies Same Case Has Conflicting Policies The same case appears to be governed by multiple policies, rules, or standards that point to incompatible outcomes. authority-collision authority-merge-conflict authority-overlay-lens authority-shadowing conflict-lens conflicting rules apply to one case invariant-lens policies disagree for same case policy conflict in AI decision reconciliation-lens rules-and-policies same case allowed and blocked same case has conflicting policies tool-failure-escalates-into-policy-decision"
     },
     {
       "type": "issue",
@@ -3745,6 +3775,7 @@
       "related_ai_adj_issues": [
         "agent-uses-old-tool-schema",
         "documented-field-not-available-at-runtime",
+        "generated-output-changed-hidden-metadata",
         "runtime-behavior-does-not-match-docs"
       ],
       "search_intents": [
@@ -3755,7 +3786,7 @@
         "AI workflow contract mismatch",
         "policy name reused with different meaning"
       ],
-      "text": "AI workflow contract mismatch CAT-0060 CAT-0080 Changes & Versions ISS-0057 Same Contract Name Has Different Meanings The same prompt, schema, field, policy, tool, or workflow contract name is used in different places with different meanings. agent-uses-old-tool-schema changes-and-versions contract-drift convergence-lens determinism-lens documented-field-not-available-at-runtime interface-contract-lens interface-mismatch normalization-lens policy name reused with different meaning prompt contract changed meaning reconciliation-lens reference-instability reference-stability-lens runtime-behavior-does-not-match-docs same contract name has different meanings same field name means different things same schema name different meaning"
+      "text": "AI workflow contract mismatch CAT-0060 CAT-0080 Changes & Versions ISS-0057 Same Contract Name Has Different Meanings The same prompt, schema, field, policy, tool, or workflow contract name is used in different places with different meanings. agent-uses-old-tool-schema changes-and-versions contract-drift convergence-lens determinism-lens documented-field-not-available-at-runtime generated-output-changed-hidden-metadata interface-contract-lens interface-mismatch normalization-lens policy name reused with different meaning prompt contract changed meaning reconciliation-lens reference-instability reference-stability-lens runtime-behavior-does-not-match-docs same contract name has different meanings same field name means different things same schema name different meaning"
     },
     {
       "type": "issue",
@@ -3963,7 +3994,9 @@
           "determinism-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "generated-output-changed-hidden-metadata"
+      ],
       "search_intents": [
         "saved reference no longer works",
         "old AI citation link broke",
@@ -3972,7 +4005,7 @@
         "reference worked before but not now",
         "saved prompt reference changed"
       ],
-      "text": "A saved source, citation, file reference, prompt reference, or workflow pointer previously worked but no longer resolves to the expected object or meaning. CAT-0010 CAT-0080 Changes & Versions ISS-0004 Saved Reference No Longer Works boundary-compliance-lens changes-and-versions compatibility-envelope-lens compatibility-violation contract-drift convergence-lens determinism-lens old AI citation link broke previous reference cannot be opened reconciliation-lens reference worked before but not now reference-instability reference-stability-lens saved prompt reference changed saved reference no longer works saved source link stopped working"
+      "text": "A saved source, citation, file reference, prompt reference, or workflow pointer previously worked but no longer resolves to the expected object or meaning. CAT-0010 CAT-0080 Changes & Versions ISS-0004 Saved Reference No Longer Works boundary-compliance-lens changes-and-versions compatibility-envelope-lens compatibility-violation contract-drift convergence-lens determinism-lens generated-output-changed-hidden-metadata old AI citation link broke previous reference cannot be opened reconciliation-lens reference worked before but not now reference-instability reference-stability-lens saved prompt reference changed saved reference no longer works saved source link stopped working"
     },
     {
       "type": "issue",
@@ -4094,7 +4127,9 @@
           "reference-stability-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "guardrail-applies-to-one-model-path-only"
+      ],
       "search_intents": [
         "similar cases route to different outcomes",
         "same case gets different result",
@@ -4103,7 +4138,7 @@
         "same workflow state gets different outcome",
         "AI decision path is inconsistent"
       ],
-      "text": "AI decision path is inconsistent AI routes similar requests differently CAT-0090 ISS-0001 Inconsistent Behavior Similar Cases Route to Different Outcomes Similar inputs, cases, prompts, or workflow states are routed to different outcomes without a declared difference that explains the split. authority-state-mismatch compression-lens convergence-lens determinism-lens divergent-outputs inconsistent-behavior non-deterministic-execution reconciliation-lens reference-stability-lens same case gets different result same workflow state gets different outcome similar cases route to different outcomes similar prompts produce different decisions variance-entropy-lens"
+      "text": "AI decision path is inconsistent AI routes similar requests differently CAT-0090 ISS-0001 Inconsistent Behavior Similar Cases Route to Different Outcomes Similar inputs, cases, prompts, or workflow states are routed to different outcomes without a declared difference that explains the split. authority-state-mismatch compression-lens convergence-lens determinism-lens divergent-outputs guardrail-applies-to-one-model-path-only inconsistent-behavior non-deterministic-execution reconciliation-lens reference-stability-lens same case gets different result same workflow state gets different outcome similar cases route to different outcomes similar prompts produce different decisions variance-entropy-lens"
     },
     {
       "type": "issue",
@@ -4230,7 +4265,8 @@
         ]
       },
       "related_ai_adj_issues": [
-        "too-many-workflows-depend-on-one-tool"
+        "too-many-workflows-depend-on-one-tool",
+        "tool-call-caused-hidden-downstream-change"
       ],
       "search_intents": [
         "small change produces large downstream effects",
@@ -4240,7 +4276,7 @@
         "small update caused major AI behavior change",
         "downstream effects from small change"
       ],
-      "text": "A small prompt, schema, policy, output, or workflow change creates unexpectedly large effects in downstream steps. CAT-0080 CAT-0110 ISS-0106 Small Change Produces Large Downstream Effects Spread & Escalation boundary-compliance-lens compatibility-envelope-lens compatibility-violation contract-drift convergence-lens determinism-lens downstream effects from small change escalation-gradient-lens minor schema change broke workflow prompt change had large downstream effect propagation-amplification propagation-lens reconciliation-lens small AI change caused big workflow impact small change produces large downstream effects small update caused major AI behavior change spread-and-escalation too-many-workflows-depend-on-one-tool variance-entropy-lens"
+      "text": "A small prompt, schema, policy, output, or workflow change creates unexpectedly large effects in downstream steps. CAT-0080 CAT-0110 ISS-0106 Small Change Produces Large Downstream Effects Spread & Escalation boundary-compliance-lens compatibility-envelope-lens compatibility-violation contract-drift convergence-lens determinism-lens downstream effects from small change escalation-gradient-lens minor schema change broke workflow prompt change had large downstream effect propagation-amplification propagation-lens reconciliation-lens small AI change caused big workflow impact small change produces large downstream effects small update caused major AI behavior change spread-and-escalation too-many-workflows-depend-on-one-tool tool-call-caused-hidden-downstream-change variance-entropy-lens"
     },
     {
       "type": "issue",
@@ -4315,7 +4351,9 @@
           "boundary-compliance-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "tool-failure-escalates-into-policy-decision"
+      ],
       "search_intents": [
         "small issue keeps escalating",
         "AI issue keeps getting bigger",
@@ -4324,7 +4362,7 @@
         "AI workflow over escalates issue",
         "issue grows across workflow steps"
       ],
-      "text": "A small issue, warning, uncertainty, or correction keeps increasing in severity, scope, or workflow impact across later steps. AI issue keeps getting bigger AI workflow over escalates issue CAT-0070 CAT-0110 ISS-0098 Small Issue Keeps Escalating Spread & Escalation boundary-compliance-lens escalation-gradient-lens escalation-growth invariant-lens issue grows across workflow steps minor problem escalates repeatedly propagation-amplification propagation-lens small issue keeps escalating small warning becomes major escalation spread-and-escalation threshold-breach variance-entropy-lens"
+      "text": "A small issue, warning, uncertainty, or correction keeps increasing in severity, scope, or workflow impact across later steps. AI issue keeps getting bigger AI workflow over escalates issue CAT-0070 CAT-0110 ISS-0098 Small Issue Keeps Escalating Spread & Escalation boundary-compliance-lens escalation-gradient-lens escalation-growth invariant-lens issue grows across workflow steps minor problem escalates repeatedly propagation-amplification propagation-lens small issue keeps escalating small warning becomes major escalation spread-and-escalation threshold-breach tool-failure-escalates-into-policy-decision variance-entropy-lens"
     },
     {
       "type": "issue",
@@ -4586,7 +4624,8 @@
         ]
       },
       "related_ai_adj_issues": [
-        "too-many-workflows-depend-on-one-tool"
+        "too-many-workflows-depend-on-one-tool",
+        "tool-effect-crosses-target-boundary"
       ],
       "search_intents": [
         "tool can act without responsible authority",
@@ -4596,7 +4635,7 @@
         "connector action has no authority",
         "tool permission without responsibility"
       ],
-      "text": "A tool, connector, function, or integration can perform an action without a declared responsible authority for that action. AI tool has no responsible authority CAT-0040 CAT-0050 ISS-0108 MCP tool can act without approval Permissions & Approvals Tool Can Act Without Responsible Authority absence-lens authority-overlay-lens conflict-lens connector action has no authority interface-contract-lens interface-mismatch isolation-boundary-lens missing-authority normalization-lens overreach-lens permissions-and-approvals propagation-lens reconciliation-lens too-many-workflows-depend-on-one-tool tool action lacks owner tool can act without responsible authority tool permission without responsibility undeclared-side-effect"
+      "text": "A tool, connector, function, or integration can perform an action without a declared responsible authority for that action. AI tool has no responsible authority CAT-0040 CAT-0050 ISS-0108 MCP tool can act without approval Permissions & Approvals Tool Can Act Without Responsible Authority absence-lens authority-overlay-lens conflict-lens connector action has no authority interface-contract-lens interface-mismatch isolation-boundary-lens missing-authority normalization-lens overreach-lens permissions-and-approvals propagation-lens reconciliation-lens too-many-workflows-depend-on-one-tool tool action lacks owner tool can act without responsible authority tool permission without responsibility tool-effect-crosses-target-boundary undeclared-side-effect"
     },
     {
       "type": "issue",
@@ -4678,7 +4717,9 @@
           "propagation-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "tool-call-caused-hidden-downstream-change"
+      ],
       "search_intents": [
         "tool result not integrated correctly",
         "AI ignored tool result",
@@ -4687,7 +4728,7 @@
         "AI overwrote tool response",
         "tool output not reflected in answer"
       ],
-      "text": "AI ignored tool result AI overwrote tool response CAT-0010 CAT-0040 CAT-0070 ISS-0019 MCP, Tools & Integrations The AI receives a tool result but misreads, ignores, overwrites, misplaces, or fails to incorporate it correctly into the final output or workflow state. Tool Result Not Integrated Correctly absence-lens agent misread tool output contract-drift convergence-lens determinism-lens interface-contract-lens interface-mismatch mcp-tools-and-integrations normalization-lens orphaned-structure propagation-lens reconciliation-lens tool output not reflected in answer tool result missing from final answer tool result not integrated correctly"
+      "text": "AI ignored tool result AI overwrote tool response CAT-0010 CAT-0040 CAT-0070 ISS-0019 MCP, Tools & Integrations The AI receives a tool result but misreads, ignores, overwrites, misplaces, or fails to incorporate it correctly into the final output or workflow state. Tool Result Not Integrated Correctly absence-lens agent misread tool output contract-drift convergence-lens determinism-lens interface-contract-lens interface-mismatch mcp-tools-and-integrations normalization-lens orphaned-structure propagation-lens reconciliation-lens tool output not reflected in answer tool result missing from final answer tool result not integrated correctly tool-call-caused-hidden-downstream-change"
     },
     {
       "type": "issue",
@@ -4721,7 +4762,9 @@
           "reconciliation-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "low-level-configuration-overrides-workflow-policy"
+      ],
       "search_intents": [
         "tool rules and prompt rules conflict",
         "MCP tool rules conflict with prompt",
@@ -4730,7 +4773,7 @@
         "function rules contradict prompt",
         "agent tool instructions conflict"
       ],
-      "text": "AI prompt conflicts with tool requirement CAT-0040 CAT-0060 ISS-0110 MCP tool rules conflict with prompt Rules & Policies Tool Rules and Prompt Rules Conflict Tool, connector, function, or MCP rules conflict with prompt instructions, causing the AI or agent to face incompatible requirements. agent tool instructions conflict authority-collision authority-overlay-lens authority-shadowing conflict-lens function rules contradict prompt interface-contract-lens interface-mismatch invariant-lens normalization-lens reconciliation-lens rules-and-policies tool rules and prompt rules conflict tool schema conflicts with instruction"
+      "text": "AI prompt conflicts with tool requirement CAT-0040 CAT-0060 ISS-0110 MCP tool rules conflict with prompt Rules & Policies Tool Rules and Prompt Rules Conflict Tool, connector, function, or MCP rules conflict with prompt instructions, causing the AI or agent to face incompatible requirements. agent tool instructions conflict authority-collision authority-overlay-lens authority-shadowing conflict-lens function rules contradict prompt interface-contract-lens interface-mismatch invariant-lens low-level-configuration-overrides-workflow-policy normalization-lens reconciliation-lens rules-and-policies tool rules and prompt rules conflict tool schema conflicts with instruction"
     },
     {
       "type": "issue",
@@ -5208,6 +5251,81 @@
     },
     {
       "type": "ai_adj_issue",
+      "slug": "generated-output-changed-hidden-metadata",
+      "ontology_slug": "generated-output-changed-hidden-metadata",
+      "code": "ADJ-0013",
+      "title": "Generated Output Changed Hidden Metadata",
+      "summary": "Generated output changes hidden metadata, identifiers, references, state, or system fields that affect later behavior but are not obvious in the visible output.",
+      "url": "/workbench/ai-adj-issues/generated-output-changed-hidden-metadata/",
+      "related_issues": [
+        "output-changed-without-declared-change",
+        "action-changed-something-else-too",
+        "output-breaks-the-next-step",
+        "saved-reference-no-longer-works",
+        "same-contract-name-has-different-meanings"
+      ],
+      "search_intents": [
+        "generated output changed hidden metadata",
+        "AI output changed metadata",
+        "generated file changed hidden fields",
+        "AI changed invisible state",
+        "output changed hidden identifiers",
+        "generated content affected metadata"
+      ],
+      "text": "ADJ-0013 AI changed invisible state AI output changed metadata Generated Output Changed Hidden Metadata Generated output changes hidden metadata, identifiers, references, state, or system fields that affect later behavior but are not obvious in the visible output. action-changed-something-else-too generated content affected metadata generated file changed hidden fields generated output changed hidden metadata output changed hidden identifiers output-breaks-the-next-step output-changed-without-declared-change same-contract-name-has-different-meanings saved-reference-no-longer-works"
+    },
+    {
+      "type": "ai_adj_issue",
+      "slug": "guardrail-applies-to-one-model-path-only",
+      "ontology_slug": "guardrail-applies-to-one-model-path-only",
+      "code": "ADJ-0016",
+      "title": "Guardrail Applies to One Model Path Only",
+      "summary": "A guardrail, policy, validation rule, safety check, or workflow constraint applies to one model path, mode, runtime, or route but not another.",
+      "url": "/workbench/ai-adj-issues/guardrail-applies-to-one-model-path-only/",
+      "related_issues": [
+        "ai-works-in-one-environment-not-another",
+        "actual-policy-differs-from-declared-policy",
+        "prompt-behavior-changed-without-version-change",
+        "similar-cases-route-to-different-outcomes",
+        "results-vary-too-much"
+      ],
+      "search_intents": [
+        "guardrail applies to one model path only",
+        "AI guardrail works in one path not another",
+        "policy applies to one model but not another",
+        "safety check missing in one route",
+        "model path bypasses guardrail",
+        "workflow guardrail inconsistent across modes"
+      ],
+      "text": "A guardrail, policy, validation rule, safety check, or workflow constraint applies to one model path, mode, runtime, or route but not another. ADJ-0016 AI guardrail works in one path not another Guardrail Applies to One Model Path Only actual-policy-differs-from-declared-policy ai-works-in-one-environment-not-another guardrail applies to one model path only model path bypasses guardrail policy applies to one model but not another prompt-behavior-changed-without-version-change results-vary-too-much safety check missing in one route similar-cases-route-to-different-outcomes workflow guardrail inconsistent across modes"
+    },
+    {
+      "type": "ai_adj_issue",
+      "slug": "low-level-configuration-overrides-workflow-policy",
+      "ontology_slug": "low-level-configuration-overrides-workflow-policy",
+      "code": "ADJ-0015",
+      "title": "Low-Level Configuration Overrides Workflow Policy",
+      "summary": "A low-level configuration, product setting, connector rule, runtime option, or environment flag overrides the workflow policy the user expects to govern the task.",
+      "url": "/workbench/ai-adj-issues/low-level-configuration-overrides-workflow-policy/",
+      "related_issues": [
+        "hidden-rule-overrides-visible-instruction",
+        "actual-policy-differs-from-declared-policy",
+        "tool-rules-and-prompt-rules-conflict",
+        "behavior-does-not-match-declared-role",
+        "permissions-conflict-after-being-combined"
+      ],
+      "search_intents": [
+        "low level configuration overrides workflow policy",
+        "configuration overrides AI policy",
+        "product setting overrides workflow rule",
+        "connector setting overrides prompt",
+        "runtime config changes AI behavior",
+        "hidden configuration overrides visible policy"
+      ],
+      "text": "A low-level configuration, product setting, connector rule, runtime option, or environment flag overrides the workflow policy the user expects to govern the task. ADJ-0015 Low-Level Configuration Overrides Workflow Policy actual-policy-differs-from-declared-policy behavior-does-not-match-declared-role configuration overrides AI policy connector setting overrides prompt hidden configuration overrides visible policy hidden-rule-overrides-visible-instruction low level configuration overrides workflow policy permissions-conflict-after-being-combined product setting overrides workflow rule runtime config changes AI behavior tool-rules-and-prompt-rules-conflict"
+    },
+    {
+      "type": "ai_adj_issue",
       "slug": "one-workspace-affects-another",
       "ontology_slug": "one-workspace-affects-another",
       "code": "ADJ-0008",
@@ -5305,6 +5423,81 @@
         "too many agents depend on one integration"
       ],
       "text": "ADJ-0007 AI workflows depend on same tool Many workflows, agents, checks, or downstream paths depend on one tool, connector, API, or integration, creating a shared point of failure. Too Many Workflows Depend on One Tool one connector blocks many workflows output-breaks-the-next-step review-queue-becomes-bottleneck shared AI tool became bottleneck small-change-produces-large-downstream-effects too many agents depend on one integration too many workflows depend on one tool tool outage breaks multiple agents tool-can-act-without-responsible-authority workflow-step-lacks-required-conditions"
+    },
+    {
+      "type": "ai_adj_issue",
+      "slug": "tool-call-caused-hidden-downstream-change",
+      "ontology_slug": "tool-call-caused-hidden-downstream-change",
+      "code": "ADJ-0012",
+      "title": "Tool Call Caused Hidden Downstream Change",
+      "summary": "A tool call causes a downstream state, workflow, metadata, record, or integration change that is not visible at the point of action.",
+      "url": "/workbench/ai-adj-issues/tool-call-caused-hidden-downstream-change/",
+      "related_issues": [
+        "action-changed-something-else-too",
+        "small-change-produces-large-downstream-effects",
+        "output-breaks-the-next-step",
+        "tool-result-not-integrated-correctly",
+        "downstream-steps-magnify-hallucinated-claim"
+      ],
+      "search_intents": [
+        "tool call caused hidden downstream change",
+        "AI tool call changed downstream state",
+        "connector caused hidden side effect",
+        "tool call changed metadata",
+        "integration action affected later workflow",
+        "hidden downstream change from AI tool"
+      ],
+      "text": "A tool call causes a downstream state, workflow, metadata, record, or integration change that is not visible at the point of action. ADJ-0012 AI tool call changed downstream state Tool Call Caused Hidden Downstream Change action-changed-something-else-too connector caused hidden side effect downstream-steps-magnify-hallucinated-claim hidden downstream change from AI tool integration action affected later workflow output-breaks-the-next-step small-change-produces-large-downstream-effects tool call caused hidden downstream change tool call changed metadata tool-result-not-integrated-correctly"
+    },
+    {
+      "type": "ai_adj_issue",
+      "slug": "tool-effect-crosses-target-boundary",
+      "ontology_slug": "tool-effect-crosses-target-boundary",
+      "code": "ADJ-0011",
+      "title": "Tool Effect Crosses Target Boundary",
+      "summary": "A tool, connector, function, or integration affects an object, file, record, workspace, or state surface beyond the intended target.",
+      "url": "/workbench/ai-adj-issues/tool-effect-crosses-target-boundary/",
+      "related_issues": [
+        "action-changed-something-else-too",
+        "ai-touches-unrelated-scope",
+        "agent-modified-unrelated-state",
+        "tool-can-act-without-responsible-authority",
+        "file-bounded-task-uses-outside-content"
+      ],
+      "search_intents": [
+        "tool effect crosses target boundary",
+        "AI tool changed wrong target",
+        "connector affected unrelated record",
+        "tool action crossed scope boundary",
+        "agent tool modified another file",
+        "integration side effect outside target"
+      ],
+      "text": "A tool, connector, function, or integration affects an object, file, record, workspace, or state surface beyond the intended target. ADJ-0011 AI tool changed wrong target Tool Effect Crosses Target Boundary action-changed-something-else-too agent tool modified another file agent-modified-unrelated-state ai-touches-unrelated-scope connector affected unrelated record file-bounded-task-uses-outside-content integration side effect outside target tool action crossed scope boundary tool effect crosses target boundary tool-can-act-without-responsible-authority"
+    },
+    {
+      "type": "ai_adj_issue",
+      "slug": "tool-failure-escalates-into-policy-decision",
+      "ontology_slug": "tool-failure-escalates-into-policy-decision",
+      "code": "ADJ-0014",
+      "title": "Tool Failure Escalates Into Policy Decision",
+      "summary": "A tool, connector, API, or integration failure is treated as a policy, safety, approval, or governance decision instead of a runtime failure.",
+      "url": "/workbench/ai-adj-issues/tool-failure-escalates-into-policy-decision/",
+      "related_issues": [
+        "risk-signal-escalates-beyond-evidence",
+        "small-issue-keeps-escalating",
+        "model-output-triggers-unapproved-action",
+        "human-review-and-automation-disagree",
+        "same-case-has-conflicting-policies"
+      ],
+      "search_intents": [
+        "tool failure escalates into policy decision",
+        "AI tool error became policy refusal",
+        "connector failure treated as safety issue",
+        "API failure escalated to governance decision",
+        "tool outage caused policy block",
+        "runtime failure became approval issue"
+      ],
+      "text": "A tool, connector, API, or integration failure is treated as a policy, safety, approval, or governance decision instead of a runtime failure. ADJ-0014 AI tool error became policy refusal API failure escalated to governance decision Tool Failure Escalates Into Policy Decision connector failure treated as safety issue human-review-and-automation-disagree model-output-triggers-unapproved-action risk-signal-escalates-beyond-evidence runtime failure became approval issue same-case-has-conflicting-policies small-issue-keeps-escalating tool failure escalates into policy decision tool outage caused policy block"
     },
     {
       "type": "ai_adj_issue",

@@ -368,7 +368,11 @@
           "variance-entropy-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "generated-output-changed-hidden-metadata",
+        "tool-call-caused-hidden-downstream-change",
+        "tool-effect-crosses-target-boundary"
+      ],
       "search_intents": [
         "action changed something else too",
         "AI changed unrelated thing too",
@@ -462,6 +466,8 @@
       },
       "related_ai_adj_issues": [
         "documented-field-not-available-at-runtime",
+        "guardrail-applies-to-one-model-path-only",
+        "low-level-configuration-overrides-workflow-policy",
         "permission-change-not-applied",
         "runtime-behavior-does-not-match-docs"
       ],
@@ -649,7 +655,8 @@
         "secondary": []
       },
       "related_ai_adj_issues": [
-        "one-workspace-affects-another"
+        "one-workspace-affects-another",
+        "tool-effect-crosses-target-boundary"
       ],
       "search_intents": [
         "agent modified unrelated state",
@@ -1022,7 +1029,8 @@
         ]
       },
       "related_ai_adj_issues": [
-        "one-workspace-affects-another"
+        "one-workspace-affects-another",
+        "tool-effect-crosses-target-boundary"
       ],
       "search_intents": [
         "AI touches unrelated scope",
@@ -1297,6 +1305,7 @@
         ]
       },
       "related_ai_adj_issues": [
+        "low-level-configuration-overrides-workflow-policy",
         "permission-change-not-applied"
       ],
       "search_intents": [
@@ -1665,7 +1674,9 @@
           "conflict-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "tool-call-caused-hidden-downstream-change"
+      ],
       "search_intents": [
         "downstream steps magnify hallucinated claim",
         "AI hallucination spread downstream",
@@ -1942,7 +1953,9 @@
           "determinism-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "tool-effect-crosses-target-boundary"
+      ],
       "search_intents": [
         "file bounded task uses outside content",
         "AI used content outside file",
@@ -2082,7 +2095,9 @@
           "reconciliation-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "low-level-configuration-overrides-workflow-policy"
+      ],
       "search_intents": [
         "hidden rule overrides visible instruction",
         "AI ignored prompt because hidden rule",
@@ -2128,7 +2143,9 @@
           "variance-entropy-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "tool-failure-escalates-into-policy-decision"
+      ],
       "search_intents": [
         "human review and automation disagree",
         "human and AI review disagree",
@@ -2500,7 +2517,9 @@
           "reconciliation-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "tool-failure-escalates-into-policy-decision"
+      ],
       "search_intents": [
         "model output triggers unapproved action",
         "AI triggered action without approval",
@@ -2821,7 +2840,9 @@
       },
       "related_ai_adj_issues": [
         "agent-uses-old-tool-schema",
-        "too-many-workflows-depend-on-one-tool"
+        "generated-output-changed-hidden-metadata",
+        "too-many-workflows-depend-on-one-tool",
+        "tool-call-caused-hidden-downstream-change"
       ],
       "search_intents": [
         "output breaks the next step",
@@ -2869,6 +2890,7 @@
         ]
       },
       "related_ai_adj_issues": [
+        "generated-output-changed-hidden-metadata",
         "runtime-behavior-does-not-match-docs"
       ],
       "search_intents": [
@@ -3004,7 +3026,9 @@
           "invariant-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "low-level-configuration-overrides-workflow-policy"
+      ],
       "search_intents": [
         "permissions conflict after being combined",
         "AI permissions conflict",
@@ -3235,6 +3259,7 @@
       },
       "related_ai_adj_issues": [
         "ai-works-in-one-environment-not-another",
+        "guardrail-applies-to-one-model-path-only",
         "runtime-behavior-does-not-match-docs"
       ],
       "search_intents": [
@@ -3599,7 +3624,8 @@
         ]
       },
       "related_ai_adj_issues": [
-        "ai-works-in-one-environment-not-another"
+        "ai-works-in-one-environment-not-another",
+        "guardrail-applies-to-one-model-path-only"
       ],
       "search_intents": [
         "results vary too much",
@@ -4020,7 +4046,9 @@
           "reconciliation-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "tool-failure-escalates-into-policy-decision"
+      ],
       "search_intents": [
         "risk signal escalates beyond evidence",
         "AI risk warning went too far",
@@ -4198,7 +4226,9 @@
           "invariant-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "tool-failure-escalates-into-policy-decision"
+      ],
       "search_intents": [
         "same case has conflicting policies",
         "AI sees policy conflict",
@@ -4246,6 +4276,7 @@
       "related_ai_adj_issues": [
         "agent-uses-old-tool-schema",
         "documented-field-not-available-at-runtime",
+        "generated-output-changed-hidden-metadata",
         "runtime-behavior-does-not-match-docs"
       ],
       "search_intents": [
@@ -4474,7 +4505,9 @@
           "determinism-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "generated-output-changed-hidden-metadata"
+      ],
       "search_intents": [
         "saved reference no longer works",
         "old AI citation link broke",
@@ -4611,7 +4644,9 @@
           "reference-stability-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "guardrail-applies-to-one-model-path-only"
+      ],
       "search_intents": [
         "similar cases route to different outcomes",
         "same case gets different result",
@@ -4753,7 +4788,8 @@
         ]
       },
       "related_ai_adj_issues": [
-        "too-many-workflows-depend-on-one-tool"
+        "too-many-workflows-depend-on-one-tool",
+        "tool-call-caused-hidden-downstream-change"
       ],
       "search_intents": [
         "small change produces large downstream effects",
@@ -4842,7 +4878,9 @@
           "boundary-compliance-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "tool-failure-escalates-into-policy-decision"
+      ],
       "search_intents": [
         "small issue keeps escalating",
         "AI issue keeps getting bigger",
@@ -5125,7 +5163,8 @@
         ]
       },
       "related_ai_adj_issues": [
-        "too-many-workflows-depend-on-one-tool"
+        "too-many-workflows-depend-on-one-tool",
+        "tool-effect-crosses-target-boundary"
       ],
       "search_intents": [
         "tool can act without responsible authority",
@@ -5221,7 +5260,9 @@
           "propagation-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "tool-call-caused-hidden-downstream-change"
+      ],
       "search_intents": [
         "tool result not integrated correctly",
         "AI ignored tool result",
@@ -5266,7 +5307,9 @@
           "reconciliation-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "low-level-configuration-overrides-workflow-policy"
+      ],
       "search_intents": [
         "tool rules and prompt rules conflict",
         "MCP tool rules conflict with prompt",
@@ -5781,6 +5824,87 @@
       "markdown_url": "/workbench/ai-adj-issues/documented-field-not-available-at-runtime.md"
     },
     {
+      "slug": "generated-output-changed-hidden-metadata",
+      "ontology_slug": "generated-output-changed-hidden-metadata",
+      "code": "ADJ-0013",
+      "title": "Generated Output Changed Hidden Metadata",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "Generated output changes hidden metadata, identifiers, references, state, or system fields that affect later behavior but are not obvious in the visible output.",
+      "related_issues": [
+        "output-changed-without-declared-change",
+        "action-changed-something-else-too",
+        "output-breaks-the-next-step",
+        "saved-reference-no-longer-works",
+        "same-contract-name-has-different-meanings"
+      ],
+      "search_intents": [
+        "generated output changed hidden metadata",
+        "AI output changed metadata",
+        "generated file changed hidden fields",
+        "AI changed invisible state",
+        "output changed hidden identifiers",
+        "generated content affected metadata"
+      ],
+      "url": "/workbench/ai-adj-issues/generated-output-changed-hidden-metadata/",
+      "markdown_url": "/workbench/ai-adj-issues/generated-output-changed-hidden-metadata.md"
+    },
+    {
+      "slug": "guardrail-applies-to-one-model-path-only",
+      "ontology_slug": "guardrail-applies-to-one-model-path-only",
+      "code": "ADJ-0016",
+      "title": "Guardrail Applies to One Model Path Only",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "A guardrail, policy, validation rule, safety check, or workflow constraint applies to one model path, mode, runtime, or route but not another.",
+      "related_issues": [
+        "ai-works-in-one-environment-not-another",
+        "actual-policy-differs-from-declared-policy",
+        "prompt-behavior-changed-without-version-change",
+        "similar-cases-route-to-different-outcomes",
+        "results-vary-too-much"
+      ],
+      "search_intents": [
+        "guardrail applies to one model path only",
+        "AI guardrail works in one path not another",
+        "policy applies to one model but not another",
+        "safety check missing in one route",
+        "model path bypasses guardrail",
+        "workflow guardrail inconsistent across modes"
+      ],
+      "url": "/workbench/ai-adj-issues/guardrail-applies-to-one-model-path-only/",
+      "markdown_url": "/workbench/ai-adj-issues/guardrail-applies-to-one-model-path-only.md"
+    },
+    {
+      "slug": "low-level-configuration-overrides-workflow-policy",
+      "ontology_slug": "low-level-configuration-overrides-workflow-policy",
+      "code": "ADJ-0015",
+      "title": "Low-Level Configuration Overrides Workflow Policy",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "A low-level configuration, product setting, connector rule, runtime option, or environment flag overrides the workflow policy the user expects to govern the task.",
+      "related_issues": [
+        "hidden-rule-overrides-visible-instruction",
+        "actual-policy-differs-from-declared-policy",
+        "tool-rules-and-prompt-rules-conflict",
+        "behavior-does-not-match-declared-role",
+        "permissions-conflict-after-being-combined"
+      ],
+      "search_intents": [
+        "low level configuration overrides workflow policy",
+        "configuration overrides AI policy",
+        "product setting overrides workflow rule",
+        "connector setting overrides prompt",
+        "runtime config changes AI behavior",
+        "hidden configuration overrides visible policy"
+      ],
+      "url": "/workbench/ai-adj-issues/low-level-configuration-overrides-workflow-policy/",
+      "markdown_url": "/workbench/ai-adj-issues/low-level-configuration-overrides-workflow-policy.md"
+    },
+    {
       "slug": "one-workspace-affects-another",
       "ontology_slug": "one-workspace-affects-another",
       "code": "ADJ-0008",
@@ -5887,6 +6011,87 @@
       ],
       "url": "/workbench/ai-adj-issues/too-many-workflows-depend-on-one-tool/",
       "markdown_url": "/workbench/ai-adj-issues/too-many-workflows-depend-on-one-tool.md"
+    },
+    {
+      "slug": "tool-call-caused-hidden-downstream-change",
+      "ontology_slug": "tool-call-caused-hidden-downstream-change",
+      "code": "ADJ-0012",
+      "title": "Tool Call Caused Hidden Downstream Change",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "A tool call causes a downstream state, workflow, metadata, record, or integration change that is not visible at the point of action.",
+      "related_issues": [
+        "action-changed-something-else-too",
+        "small-change-produces-large-downstream-effects",
+        "output-breaks-the-next-step",
+        "tool-result-not-integrated-correctly",
+        "downstream-steps-magnify-hallucinated-claim"
+      ],
+      "search_intents": [
+        "tool call caused hidden downstream change",
+        "AI tool call changed downstream state",
+        "connector caused hidden side effect",
+        "tool call changed metadata",
+        "integration action affected later workflow",
+        "hidden downstream change from AI tool"
+      ],
+      "url": "/workbench/ai-adj-issues/tool-call-caused-hidden-downstream-change/",
+      "markdown_url": "/workbench/ai-adj-issues/tool-call-caused-hidden-downstream-change.md"
+    },
+    {
+      "slug": "tool-effect-crosses-target-boundary",
+      "ontology_slug": "tool-effect-crosses-target-boundary",
+      "code": "ADJ-0011",
+      "title": "Tool Effect Crosses Target Boundary",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "A tool, connector, function, or integration affects an object, file, record, workspace, or state surface beyond the intended target.",
+      "related_issues": [
+        "action-changed-something-else-too",
+        "ai-touches-unrelated-scope",
+        "agent-modified-unrelated-state",
+        "tool-can-act-without-responsible-authority",
+        "file-bounded-task-uses-outside-content"
+      ],
+      "search_intents": [
+        "tool effect crosses target boundary",
+        "AI tool changed wrong target",
+        "connector affected unrelated record",
+        "tool action crossed scope boundary",
+        "agent tool modified another file",
+        "integration side effect outside target"
+      ],
+      "url": "/workbench/ai-adj-issues/tool-effect-crosses-target-boundary/",
+      "markdown_url": "/workbench/ai-adj-issues/tool-effect-crosses-target-boundary.md"
+    },
+    {
+      "slug": "tool-failure-escalates-into-policy-decision",
+      "ontology_slug": "tool-failure-escalates-into-policy-decision",
+      "code": "ADJ-0014",
+      "title": "Tool Failure Escalates Into Policy Decision",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "A tool, connector, API, or integration failure is treated as a policy, safety, approval, or governance decision instead of a runtime failure.",
+      "related_issues": [
+        "risk-signal-escalates-beyond-evidence",
+        "small-issue-keeps-escalating",
+        "model-output-triggers-unapproved-action",
+        "human-review-and-automation-disagree",
+        "same-case-has-conflicting-policies"
+      ],
+      "search_intents": [
+        "tool failure escalates into policy decision",
+        "AI tool error became policy refusal",
+        "connector failure treated as safety issue",
+        "API failure escalated to governance decision",
+        "tool outage caused policy block",
+        "runtime failure became approval issue"
+      ],
+      "url": "/workbench/ai-adj-issues/tool-failure-escalates-into-policy-decision/",
+      "markdown_url": "/workbench/ai-adj-issues/tool-failure-escalates-into-policy-decision.md"
     },
     {
       "slug": "tool-not-supported-in-this-mode",
