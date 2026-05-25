@@ -2,7 +2,7 @@ import ontologyIndex from "../../content/_meta/ontology-index.json";
 
 export function GET() {
   const lines = [
-    "# Pengo AI Structural Workbench",
+    "# Pengo Workbench",
     "",
     "Stop waiting for AI to magically get better.",
     "",
@@ -17,6 +17,7 @@ export function GET() {
     "- /workbench/gap-explorer/",
     "- /workbench/search/",
     "- /workbench/issues/",
+    "- /workbench/ai-adj-issues/",
     "- /workbench/patterns/",
     "- /workbench/lenses/",
     "- /workbench/categories/",
@@ -40,6 +41,12 @@ export function GET() {
     "",
     ...ontologyIndex.issues.map((issue) => `- ${issue.title}: ${issue.markdown_url}`),
     "",
+    "### AI-Adjacent Issues",
+      "",
+      ...(ontologyIndex.ai_adj_issues ?? []).map(
+        (entry) => `- ${entry.code} - ${entry.title}: ${entry.markdown_url}`
+      ),
+      "",
     "### Patterns",
     "",
     ...ontologyIndex.patterns.map(

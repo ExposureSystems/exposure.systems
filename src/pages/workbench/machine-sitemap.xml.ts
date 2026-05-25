@@ -17,6 +17,7 @@ export function GET() {
     ...ontologyIndex.issues.map((issue) => issue.markdown_url),
     ...ontologyIndex.patterns.map((pattern) => pattern.markdown_url),
     ...ontologyIndex.lenses.map((lens) => lens.markdown_url),
+    ...(ontologyIndex.ai_adj_issues ?? []).map((entry) => `/workbench/ai-adj-issues/${entry.ontology_slug}.md`),
   ];
 
   const body = `<?xml version="1.0" encoding="UTF-8"?>
