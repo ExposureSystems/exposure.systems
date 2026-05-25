@@ -8,7 +8,7 @@ updated_at: "2026-05-10T00:00:00Z"
 summary: A guardrail, policy, validation rule, safety check, or workflow constraint applies to one model path, mode, runtime, or route but not another.
 code: ADJ-0016
 related_issues:
-  - ai-works-in-one-environment-not-another
+  - output-breaks-after-model-change
   - actual-policy-differs-from-declared-policy
   - prompt-behavior-changed-without-version-change
   - similar-cases-route-to-different-outcomes

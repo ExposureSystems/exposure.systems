@@ -2355,7 +2355,8 @@
         ]
       },
       "related_ai_adj_issues": [
-        "ai-works-in-one-environment-not-another"
+        "ai-works-in-one-environment-not-another",
+        "guardrail-applies-to-one-model-path-only"
       ],
       "search_intents": [
         "output breaks after model change",
@@ -2365,7 +2366,7 @@
         "output no longer works after upgrade",
         "model version changed output"
       ],
-      "text": "AI output changed after model update CAT-0010 CAT-0080 Changes & Versions ISS-0052 Output Breaks After Model Change Output that previously worked begins failing after a model, mode, runtime, or product behavior changes. ai-works-in-one-environment-not-another boundary-compliance-lens changes-and-versions compatibility-envelope-lens compatibility-violation compression-lens contract-drift convergence-lens determinism-lens divergent-outputs model change broke output format model version changed output output breaks after model change output no longer works after upgrade prompt worked before model update reconciliation-lens variance-entropy-lens"
+      "text": "AI output changed after model update CAT-0010 CAT-0080 Changes & Versions ISS-0052 Output Breaks After Model Change Output that previously worked begins failing after a model, mode, runtime, or product behavior changes. ai-works-in-one-environment-not-another boundary-compliance-lens changes-and-versions compatibility-envelope-lens compatibility-violation compression-lens contract-drift convergence-lens determinism-lens divergent-outputs guardrail-applies-to-one-model-path-only model change broke output format model version changed output output breaks after model change output no longer works after upgrade prompt worked before model update reconciliation-lens variance-entropy-lens"
     },
     {
       "type": "issue",
@@ -5283,7 +5284,7 @@
       "summary": "A guardrail, policy, validation rule, safety check, or workflow constraint applies to one model path, mode, runtime, or route but not another.",
       "url": "/workbench/ai-adj-issues/guardrail-applies-to-one-model-path-only/",
       "related_issues": [
-        "ai-works-in-one-environment-not-another",
+        "output-breaks-after-model-change",
         "actual-policy-differs-from-declared-policy",
         "prompt-behavior-changed-without-version-change",
         "similar-cases-route-to-different-outcomes",
@@ -5297,7 +5298,7 @@
         "model path bypasses guardrail",
         "workflow guardrail inconsistent across modes"
       ],
-      "text": "A guardrail, policy, validation rule, safety check, or workflow constraint applies to one model path, mode, runtime, or route but not another. ADJ-0016 AI guardrail works in one path not another Guardrail Applies to One Model Path Only actual-policy-differs-from-declared-policy ai-works-in-one-environment-not-another guardrail applies to one model path only model path bypasses guardrail policy applies to one model but not another prompt-behavior-changed-without-version-change results-vary-too-much safety check missing in one route similar-cases-route-to-different-outcomes workflow guardrail inconsistent across modes"
+      "text": "A guardrail, policy, validation rule, safety check, or workflow constraint applies to one model path, mode, runtime, or route but not another. ADJ-0016 AI guardrail works in one path not another Guardrail Applies to One Model Path Only actual-policy-differs-from-declared-policy guardrail applies to one model path only model path bypasses guardrail output-breaks-after-model-change policy applies to one model but not another prompt-behavior-changed-without-version-change results-vary-too-much safety check missing in one route similar-cases-route-to-different-outcomes workflow guardrail inconsistent across modes"
     },
     {
       "type": "ai_adj_issue",
