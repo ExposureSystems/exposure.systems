@@ -136,6 +136,50 @@
     },
     {
       "type": "issue",
+      "slug": "agent-cannot-choose-tool-without-tool-result",
+      "ontology_slug": "agent-cannot-choose-tool-without-tool-result",
+      "code": "ISS-0087",
+      "title": "Agent Cannot Choose Tool Without Tool Result",
+      "summary": "The agent needs a tool result to choose the right tool, but cannot obtain that result without choosing a tool first.",
+      "url": "/workbench/issues/agent-cannot-choose-tool-without-tool-result/",
+      "category": "loops-and-resolution",
+      "category_title": "Loops & Resolution",
+      "primary_cat_code": "CAT-0130",
+      "secondary_cat_codes": [
+        "CAT-0040"
+      ],
+      "primary_pattern": "circular-dependency",
+      "patterns": [
+        "circular-dependency",
+        "missing-authority",
+        "interface-mismatch"
+      ],
+      "lenses": {
+        "primary": [
+          "absence-lens",
+          "authority-overlay-lens",
+          "conflict-lens",
+          "interface-contract-lens",
+          "propagation-lens"
+        ],
+        "secondary": [
+          "normalization-lens",
+          "reconciliation-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "agent cannot choose tool without tool result",
+        "AI needs tool result to pick tool",
+        "tool choice circular dependency",
+        "agent stuck choosing tool",
+        "AI cannot decide tool without data",
+        "MCP tool selection loop"
+      ],
+      "text": "AI cannot decide tool without data AI needs tool result to pick tool Agent Cannot Choose Tool Without Tool Result CAT-0040 CAT-0130 ISS-0087 Loops & Resolution MCP tool selection loop The agent needs a tool result to choose the right tool, but cannot obtain that result without choosing a tool first. absence-lens agent cannot choose tool without tool result agent stuck choosing tool authority-overlay-lens circular-dependency conflict-lens interface-contract-lens interface-mismatch loops-and-resolution missing-authority normalization-lens propagation-lens reconciliation-lens tool choice circular dependency"
+    },
+    {
+      "type": "issue",
       "slug": "agent-keeps-expanding-the-task",
       "ontology_slug": "agent-keeps-expanding-the-task",
       "code": "ISS-0008",
@@ -180,6 +224,51 @@
         "diagnosis keeps expanding"
       ],
       "text": "AI keeps adding follow up work AI keeps adding more steps Agent Keeps Expanding the Task Agents CAT-0030 CAT-0100 ISS-0008 The agent repeatedly expands the task, plan, scope, or next-step list instead of completing the declared work. agent expands task on each pass agent keeps expanding the task agent keeps making the plan bigger agents ai-works-in-one-environment-not-another boundary-compliance-lens compression-lens convergence-failure convergence-lens diagnosis keeps expanding escalation-gradient-lens overreach overreach-lens propagation-lens reconciliation-lens unconstrained-expansion variance-entropy-lens"
+    },
+    {
+      "type": "issue",
+      "slug": "agent-never-settles-on-final-answer",
+      "ontology_slug": "agent-never-settles-on-final-answer",
+      "code": "ISS-0082",
+      "title": "Agent Never Settles on Final Answer",
+      "summary": "The agent keeps revising, rechecking, planning, or branching instead of converging on a final answer or completed result.",
+      "url": "/workbench/issues/agent-never-settles-on-final-answer/",
+      "category": "loops-and-resolution",
+      "category_title": "Loops & Resolution",
+      "primary_cat_code": "CAT-0130",
+      "secondary_cat_codes": [
+        "CAT-0030"
+      ],
+      "primary_pattern": "convergence-failure",
+      "patterns": [
+        "convergence-failure",
+        "circular-dependency",
+        "unconstrained-expansion"
+      ],
+      "lenses": {
+        "primary": [
+          "compression-lens",
+          "conflict-lens",
+          "convergence-lens",
+          "escalation-gradient-lens",
+          "propagation-lens"
+        ],
+        "secondary": [
+          "normalization-lens",
+          "reconciliation-lens",
+          "variance-entropy-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "agent never settles on final answer",
+        "AI agent will not finish",
+        "agent keeps revising instead of answering",
+        "AI keeps checking and never completes",
+        "agent cannot finalize response",
+        "agent loops without final answer"
+      ],
+      "text": "AI agent will not finish AI keeps checking and never completes Agent Never Settles on Final Answer CAT-0030 CAT-0130 ISS-0082 Loops & Resolution The agent keeps revising, rechecking, planning, or branching instead of converging on a final answer or completed result. agent cannot finalize response agent keeps revising instead of answering agent loops without final answer agent never settles on final answer circular-dependency compression-lens conflict-lens convergence-failure convergence-lens escalation-gradient-lens loops-and-resolution normalization-lens propagation-lens reconciliation-lens unconstrained-expansion variance-entropy-lens"
     },
     {
       "type": "issue",
@@ -481,6 +570,50 @@
     },
     {
       "type": "issue",
+      "slug": "approval-depends-on-output-that-needs-approval",
+      "ontology_slug": "approval-depends-on-output-that-needs-approval",
+      "code": "ISS-0088",
+      "title": "Approval Depends on Output That Needs Approval",
+      "summary": "A required approval depends on an AI output or workflow result that itself cannot be produced or trusted until approval is granted.",
+      "url": "/workbench/issues/approval-depends-on-output-that-needs-approval/",
+      "category": "loops-and-resolution",
+      "category_title": "Loops & Resolution",
+      "primary_cat_code": "CAT-0130",
+      "secondary_cat_codes": [
+        "CAT-0050"
+      ],
+      "primary_pattern": "circular-dependency",
+      "patterns": [
+        "circular-dependency",
+        "missing-authority",
+        "authority-collision"
+      ],
+      "lenses": {
+        "primary": [
+          "absence-lens",
+          "authority-overlay-lens",
+          "conflict-lens",
+          "propagation-lens"
+        ],
+        "secondary": [
+          "invariant-lens",
+          "normalization-lens",
+          "reconciliation-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "approval depends on output that needs approval",
+        "AI approval circular dependency",
+        "output needs approval before approval can happen",
+        "approval loop AI workflow",
+        "cannot approve because output not approved",
+        "workflow approval depends on itself"
+      ],
+      "text": "A required approval depends on an AI output or workflow result that itself cannot be produced or trusted until approval is granted. AI approval circular dependency Approval Depends on Output That Needs Approval CAT-0050 CAT-0130 ISS-0088 Loops & Resolution absence-lens approval depends on output that needs approval approval loop AI workflow authority-collision authority-overlay-lens cannot approve because output not approved circular-dependency conflict-lens invariant-lens loops-and-resolution missing-authority normalization-lens output needs approval before approval can happen propagation-lens reconciliation-lens workflow approval depends on itself"
+    },
+    {
+      "type": "issue",
       "slug": "behavior-does-not-match-declared-role",
       "ontology_slug": "behavior-does-not-match-declared-role",
       "code": "ISS-0043",
@@ -523,6 +656,50 @@
         "agent exceeds declared role"
       ],
       "text": "AI does not act like assigned role AI role says one thing behavior another Behavior Does Not Match Declared Role CAT-0050 CAT-0060 ISS-0043 Permissions & Approvals The AI or agent behaves outside, below, or differently from the role, authority, responsibility, or permission posture declared for it. agent exceeds declared role agent role mismatch authority-overlay-lens authority-shadowing authority-state-mismatch behavior does not match declared role boundary-compliance-lens conflict-lens convergence-lens declared role not followed overreach overreach-lens permissions-and-approvals propagation-lens reconciliation-lens reference-stability-lens"
+    },
+    {
+      "type": "issue",
+      "slug": "cannot-identify-authoritative-state",
+      "ontology_slug": "cannot-identify-authoritative-state",
+      "code": "ISS-0085",
+      "title": "Cannot Identify Authoritative State",
+      "summary": "The user or workflow cannot tell which state, version, review result, decision, source, or output is currently authoritative.",
+      "url": "/workbench/issues/cannot-identify-authoritative-state/",
+      "category": "loops-and-resolution",
+      "category_title": "Loops & Resolution",
+      "primary_cat_code": "CAT-0130",
+      "secondary_cat_codes": [
+        "CAT-0050"
+      ],
+      "primary_pattern": "authority-state-mismatch",
+      "patterns": [
+        "authority-state-mismatch",
+        "missing-authority",
+        "reference-instability"
+      ],
+      "lenses": {
+        "primary": [
+          "absence-lens",
+          "authority-overlay-lens",
+          "reconciliation-lens",
+          "reference-stability-lens"
+        ],
+        "secondary": [
+          "conflict-lens",
+          "convergence-lens",
+          "determinism-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "cannot identify authoritative state",
+        "AI cannot tell which version is final",
+        "authoritative output unclear",
+        "which decision is current",
+        "workflow state not authoritative",
+        "AI review state unclear"
+      ],
+      "text": "AI cannot tell which version is final AI review state unclear CAT-0050 CAT-0130 Cannot Identify Authoritative State ISS-0085 Loops & Resolution The user or workflow cannot tell which state, version, review result, decision, source, or output is currently authoritative. absence-lens authoritative output unclear authority-overlay-lens authority-state-mismatch cannot identify authoritative state conflict-lens convergence-lens determinism-lens loops-and-resolution missing-authority reconciliation-lens reference-instability reference-stability-lens which decision is current workflow state not authoritative"
     },
     {
       "type": "issue",
@@ -870,6 +1047,49 @@
     },
     {
       "type": "issue",
+      "slug": "evaluation-rubric-has-coverage-gap",
+      "ontology_slug": "evaluation-rubric-has-coverage-gap",
+      "code": "ISS-0081",
+      "title": "Evaluation Rubric Has Coverage Gap",
+      "summary": "An evaluation rubric, grading standard, or review checklist leaves part of the required evaluation space uncovered.",
+      "url": "/workbench/issues/evaluation-rubric-has-coverage-gap/",
+      "category": "coverage-and-guidance",
+      "category_title": "Coverage & Guidance",
+      "primary_cat_code": "CAT-0120",
+      "secondary_cat_codes": [
+        "CAT-0070"
+      ],
+      "primary_pattern": "density-vacuum",
+      "patterns": [
+        "density-vacuum",
+        "incomplete-declaration",
+        "constraints-underspecified"
+      ],
+      "lenses": {
+        "primary": [
+          "absence-lens",
+          "compression-lens",
+          "constraint-sufficiency-lens"
+        ],
+        "secondary": [
+          "determinism-lens",
+          "interface-contract-lens",
+          "variance-entropy-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "evaluation rubric has coverage gap",
+        "AI evaluation rubric missing coverage",
+        "review rubric has gap",
+        "grading checklist incomplete",
+        "evaluation misses required area",
+        "AI review criteria coverage gap"
+      ],
+      "text": "AI evaluation rubric missing coverage AI review criteria coverage gap An evaluation rubric, grading standard, or review checklist leaves part of the required evaluation space uncovered. CAT-0070 CAT-0120 Coverage & Guidance Evaluation Rubric Has Coverage Gap ISS-0081 absence-lens compression-lens constraint-sufficiency-lens constraints-underspecified coverage-and-guidance density-vacuum determinism-lens evaluation misses required area evaluation rubric has coverage gap grading checklist incomplete incomplete-declaration interface-contract-lens review rubric has gap variance-entropy-lens"
+    },
+    {
+      "type": "issue",
       "slug": "fallback-authority-is-missing",
       "ontology_slug": "fallback-authority-is-missing",
       "code": "ISS-0014",
@@ -1177,6 +1397,50 @@
         "malformed structured output"
       ],
       "text": "AI gave JSON that will not parse AI invalid JSON CAT-0010 ChatGPT malformed JSON ISS-0021 Invalid JSON Output JSON parse error AI output LLM output invalid JSON Output The AI returns malformed JSON or structured output that cannot be parsed. conflict-lens constraint-sufficiency-lens constraints-underspecified determinism-lens interface-contract-lens interface-mismatch invariant-lens malformed structured output normalization-lens output runtime-behavior-does-not-match-docs schema-breakage variance-entropy-lens"
+    },
+    {
+      "type": "issue",
+      "slug": "merge-step-leaves-unresolved-differences",
+      "ontology_slug": "merge-step-leaves-unresolved-differences",
+      "code": "ISS-0084",
+      "title": "Merge Step Leaves Unresolved Differences",
+      "summary": "A merge, reconciliation, or consolidation step combines outputs or reviews but leaves important differences unresolved.",
+      "url": "/workbench/issues/merge-step-leaves-unresolved-differences/",
+      "category": "loops-and-resolution",
+      "category_title": "Loops & Resolution",
+      "primary_cat_code": "CAT-0130",
+      "secondary_cat_codes": [
+        "CAT-0070"
+      ],
+      "primary_pattern": "convergence-failure",
+      "patterns": [
+        "convergence-failure",
+        "authority-merge-conflict",
+        "orphaned-structure"
+      ],
+      "lenses": {
+        "primary": [
+          "absence-lens",
+          "conflict-lens",
+          "convergence-lens",
+          "reconciliation-lens"
+        ],
+        "secondary": [
+          "authority-overlay-lens",
+          "propagation-lens",
+          "variance-entropy-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "merge step leaves unresolved differences",
+        "AI merge did not resolve differences",
+        "review merge left conflicts",
+        "consolidated answer still has contradictions",
+        "merge step failed to reconcile",
+        "unresolved differences after merge"
+      ],
+      "text": "A merge, reconciliation, or consolidation step combines outputs or reviews but leaves important differences unresolved. AI merge did not resolve differences CAT-0070 CAT-0130 ISS-0084 Loops & Resolution Merge Step Leaves Unresolved Differences absence-lens authority-merge-conflict authority-overlay-lens conflict-lens consolidated answer still has contradictions convergence-failure convergence-lens loops-and-resolution merge step failed to reconcile merge step leaves unresolved differences orphaned-structure propagation-lens reconciliation-lens review merge left conflicts unresolved differences after merge variance-entropy-lens"
     },
     {
       "type": "issue",
@@ -1701,6 +1965,51 @@
         "answer longer than requested"
       ],
       "text": "AI exceeded token budget AI response too long CAT-0010 ChatGPT ignored word limit ISS-0060 Output Output Exceeds Length Limit The AI output exceeds a declared length, token, word, character, section, field, or size limit. answer longer than requested boundary-compliance-lens compression-lens constraint-sufficiency-lens constraints-underspecified density-spike determinism-lens escalation-gradient-lens invariant-lens output output exceeds length limit output over character limit threshold-breach variance-entropy-lens"
+    },
+    {
+      "type": "issue",
+      "slug": "parallel-reviews-never-agree",
+      "ontology_slug": "parallel-reviews-never-agree",
+      "code": "ISS-0083",
+      "title": "Parallel Reviews Never Agree",
+      "summary": "Parallel AI, human, workflow, or tool reviews keep producing different results without resolving into a shared decision state.",
+      "url": "/workbench/issues/parallel-reviews-never-agree/",
+      "category": "loops-and-resolution",
+      "category_title": "Loops & Resolution",
+      "primary_cat_code": "CAT-0130",
+      "secondary_cat_codes": [
+        "CAT-0070"
+      ],
+      "primary_pattern": "convergence-failure",
+      "patterns": [
+        "convergence-failure",
+        "divergent-outputs",
+        "authority-collision"
+      ],
+      "lenses": {
+        "primary": [
+          "authority-overlay-lens",
+          "conflict-lens",
+          "convergence-lens",
+          "variance-entropy-lens"
+        ],
+        "secondary": [
+          "compression-lens",
+          "determinism-lens",
+          "invariant-lens",
+          "reconciliation-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "parallel reviews never agree",
+        "AI reviews do not converge",
+        "reviewers keep disagreeing",
+        "parallel review results conflict",
+        "multiple reviews never resolve",
+        "AI review loop disagreement"
+      ],
+      "text": "AI review loop disagreement AI reviews do not converge CAT-0070 CAT-0130 ISS-0083 Loops & Resolution Parallel AI, human, workflow, or tool reviews keep producing different results without resolving into a shared decision state. Parallel Reviews Never Agree authority-collision authority-overlay-lens compression-lens conflict-lens convergence-failure convergence-lens determinism-lens divergent-outputs invariant-lens loops-and-resolution multiple reviews never resolve parallel review results conflict parallel reviews never agree reconciliation-lens reviewers keep disagreeing variance-entropy-lens"
     },
     {
       "type": "issue",
@@ -3295,6 +3604,50 @@
     },
     {
       "type": "issue",
+      "slug": "workflow-loops-through-review-without-resolution",
+      "ontology_slug": "workflow-loops-through-review-without-resolution",
+      "code": "ISS-0086",
+      "title": "Workflow Loops Through Review Without Resolution",
+      "summary": "A workflow repeatedly sends work through review, repair, or escalation without reaching an approved, rejected, or otherwise resolved state.",
+      "url": "/workbench/issues/workflow-loops-through-review-without-resolution/",
+      "category": "loops-and-resolution",
+      "category_title": "Loops & Resolution",
+      "primary_cat_code": "CAT-0130",
+      "secondary_cat_codes": [
+        "CAT-0070"
+      ],
+      "primary_pattern": "circular-dependency",
+      "patterns": [
+        "circular-dependency",
+        "convergence-failure",
+        "escalation-growth"
+      ],
+      "lenses": {
+        "primary": [
+          "conflict-lens",
+          "convergence-lens",
+          "escalation-gradient-lens",
+          "propagation-lens",
+          "variance-entropy-lens"
+        ],
+        "secondary": [
+          "normalization-lens",
+          "reconciliation-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "workflow loops through review without resolution",
+        "AI review loop never ends",
+        "workflow keeps sending back for review",
+        "review repair loop",
+        "approval loop no resolution",
+        "AI workflow stuck in review"
+      ],
+      "text": "A workflow repeatedly sends work through review, repair, or escalation without reaching an approved, rejected, or otherwise resolved state. AI review loop never ends AI workflow stuck in review CAT-0070 CAT-0130 ISS-0086 Loops & Resolution Workflow Loops Through Review Without Resolution approval loop no resolution circular-dependency conflict-lens convergence-failure convergence-lens escalation-gradient-lens escalation-growth loops-and-resolution normalization-lens propagation-lens reconciliation-lens review repair loop variance-entropy-lens workflow keeps sending back for review workflow loops through review without resolution"
+    },
+    {
+      "type": "issue",
       "slug": "workflow-stage-has-too-few-checks",
       "ontology_slug": "workflow-stage-has-too-few-checks",
       "code": "ISS-0078",
@@ -3530,9 +3883,9 @@
         "ontology_slug": "agents",
         "code": "CAT-0030",
         "title": "Agents",
-        "count": 4,
+        "count": 5,
         "primary_count": 2,
-        "secondary_count": 2
+        "secondary_count": 3
       },
       {
         "slug": "changes-and-versions",
@@ -3548,8 +3901,8 @@
         "ontology_slug": "coverage-and-guidance",
         "code": "CAT-0120",
         "title": "Coverage & Guidance",
-        "count": 16,
-        "primary_count": 8,
+        "count": 17,
+        "primary_count": 9,
         "secondary_count": 8
       },
       {
@@ -3575,8 +3928,8 @@
         "ontology_slug": "loops-and-resolution",
         "code": "CAT-0130",
         "title": "Loops & Resolution",
-        "count": 0,
-        "primary_count": 0,
+        "count": 7,
+        "primary_count": 7,
         "secondary_count": 0
       },
       {
@@ -3584,9 +3937,9 @@
         "ontology_slug": "mcp-tools-and-integrations",
         "code": "CAT-0040",
         "title": "MCP, Tools & Integrations",
-        "count": 6,
+        "count": 7,
         "primary_count": 5,
-        "secondary_count": 1
+        "secondary_count": 2
       },
       {
         "slug": "memory-and-context",
@@ -3611,9 +3964,9 @@
         "ontology_slug": "permissions-and-approvals",
         "code": "CAT-0050",
         "title": "Permissions & Approvals",
-        "count": 15,
+        "count": 17,
         "primary_count": 8,
-        "secondary_count": 7
+        "secondary_count": 9
       },
       {
         "slug": "rules-and-policies",
@@ -3647,9 +4000,9 @@
         "ontology_slug": "workflow-and-handoffs",
         "code": "CAT-0070",
         "title": "Workflow & Handoffs",
-        "count": 15,
+        "count": 19,
         "primary_count": 6,
-        "secondary_count": 9
+        "secondary_count": 13
       }
     ],
     "patterns": [
@@ -3665,14 +4018,14 @@
         "ontology_slug": "authority-collision",
         "code": "PAT-0100",
         "title": "Authority Collision",
-        "count": 5
+        "count": 7
       },
       {
         "slug": "authority-merge-conflict",
         "ontology_slug": "authority-merge-conflict",
         "code": "PAT-0220",
         "title": "Authority Merge Conflict",
-        "count": 4
+        "count": 5
       },
       {
         "slug": "authority-shadowing",
@@ -3686,7 +4039,7 @@
         "ontology_slug": "authority-state-mismatch",
         "code": "PAT-0240",
         "title": "Authority-State Mismatch",
-        "count": 9
+        "count": 10
       },
       {
         "slug": "boundary-leakage",
@@ -3700,7 +4053,7 @@
         "ontology_slug": "circular-dependency",
         "code": "PAT-0250",
         "title": "Circular Dependency",
-        "count": 1
+        "count": 5
       },
       {
         "slug": "compatibility-violation",
@@ -3714,7 +4067,7 @@
         "ontology_slug": "constraints-underspecified",
         "code": "PAT-0170",
         "title": "Constraints Underspecified",
-        "count": 17
+        "count": 18
       },
       {
         "slug": "contract-drift",
@@ -3728,7 +4081,7 @@
         "ontology_slug": "convergence-failure",
         "code": "PAT-0320",
         "title": "Convergence Failure",
-        "count": 4
+        "count": 8
       },
       {
         "slug": "cross-layer-escalation",
@@ -3749,35 +4102,35 @@
         "ontology_slug": "density-vacuum",
         "code": "PAT-0280",
         "title": "Density Vacuum",
-        "count": 6
+        "count": 7
       },
       {
         "slug": "divergent-outputs",
         "ontology_slug": "divergent-outputs",
         "code": "PAT-0290",
         "title": "Divergent Outputs",
-        "count": 8
+        "count": 9
       },
       {
         "slug": "escalation-growth",
         "ontology_slug": "escalation-growth",
         "code": "PAT-0300",
         "title": "Escalation Growth",
-        "count": 6
+        "count": 7
       },
       {
         "slug": "incomplete-declaration",
         "ontology_slug": "incomplete-declaration",
         "code": "PAT-0130",
         "title": "Incomplete Declaration",
-        "count": 15
+        "count": 16
       },
       {
         "slug": "interface-mismatch",
         "ontology_slug": "interface-mismatch",
         "code": "PAT-0150",
         "title": "Interface Mismatch",
-        "count": 12
+        "count": 13
       },
       {
         "slug": "invariant-breakage",
@@ -3791,7 +4144,7 @@
         "ontology_slug": "missing-authority",
         "code": "PAT-0120",
         "title": "Missing Authority",
-        "count": 8
+        "count": 11
       },
       {
         "slug": "non-deterministic-execution",
@@ -3805,7 +4158,7 @@
         "ontology_slug": "orphaned-structure",
         "code": "PAT-0310",
         "title": "Orphaned Structure",
-        "count": 6
+        "count": 7
       },
       {
         "slug": "overreach",
@@ -3840,7 +4193,7 @@
         "ontology_slug": "reference-instability",
         "code": "PAT-0200",
         "title": "Reference Instability",
-        "count": 10
+        "count": 11
       },
       {
         "slug": "schema-breakage",
@@ -3875,7 +4228,7 @@
         "ontology_slug": "unconstrained-expansion",
         "code": "PAT-0410",
         "title": "Unconstrained Expansion",
-        "count": 1
+        "count": 2
       },
       {
         "slug": "undeclared-side-effect",
@@ -3891,14 +4244,14 @@
         "ontology_slug": "absence-lens",
         "code": "LEN-0100",
         "title": "Absence Lens",
-        "count": 22
+        "count": 27
       },
       {
         "slug": "authority-overlay-lens",
         "ontology_slug": "authority-overlay-lens",
         "code": "LEN-0110",
         "title": "Authority Overlay Lens",
-        "count": 15
+        "count": 20
       },
       {
         "slug": "boundary-compliance-lens",
@@ -3919,56 +4272,56 @@
         "ontology_slug": "compression-lens",
         "code": "LEN-0140",
         "title": "Compression Lens",
-        "count": 25
+        "count": 28
       },
       {
         "slug": "conflict-lens",
         "ontology_slug": "conflict-lens",
         "code": "LEN-0150",
         "title": "Conflict Lens",
-        "count": 31
+        "count": 38
       },
       {
         "slug": "constraint-sufficiency-lens",
         "ontology_slug": "constraint-sufficiency-lens",
         "code": "LEN-0160",
         "title": "Constraint Sufficiency Lens",
-        "count": 29
+        "count": 30
       },
       {
         "slug": "convergence-lens",
         "ontology_slug": "convergence-lens",
         "code": "LEN-0170",
         "title": "Convergence Lens",
-        "count": 31
+        "count": 36
       },
       {
         "slug": "determinism-lens",
         "ontology_slug": "determinism-lens",
         "code": "LEN-0180",
         "title": "Determinism Lens",
-        "count": 44
+        "count": 47
       },
       {
         "slug": "escalation-gradient-lens",
         "ontology_slug": "escalation-gradient-lens",
         "code": "LEN-0190",
         "title": "Escalation Gradient Lens",
-        "count": 26
+        "count": 28
       },
       {
         "slug": "interface-contract-lens",
         "ontology_slug": "interface-contract-lens",
         "code": "LEN-0200",
         "title": "Interface Contract Lens",
-        "count": 30
+        "count": 32
       },
       {
         "slug": "invariant-lens",
         "ontology_slug": "invariant-lens",
         "code": "LEN-0210",
         "title": "Invariant Lens",
-        "count": 20
+        "count": 22
       },
       {
         "slug": "isolation-boundary-lens",
@@ -3982,7 +4335,7 @@
         "ontology_slug": "normalization-lens",
         "code": "LEN-0230",
         "title": "Normalization Lens",
-        "count": 20
+        "count": 24
       },
       {
         "slug": "overreach-lens",
@@ -3996,7 +4349,7 @@
         "ontology_slug": "propagation-lens",
         "code": "LEN-0250",
         "title": "Propagation Lens",
-        "count": 28
+        "count": 33
       },
       {
         "slug": "provenance-trace-lens",
@@ -4010,21 +4363,21 @@
         "ontology_slug": "reconciliation-lens",
         "code": "LEN-0270",
         "title": "Reconciliation Lens",
-        "count": 37
+        "count": 44
       },
       {
         "slug": "reference-stability-lens",
         "ontology_slug": "reference-stability-lens",
         "code": "LEN-0280",
         "title": "Reference Stability Lens",
-        "count": 32
+        "count": 33
       },
       {
         "slug": "variance-entropy-lens",
         "ontology_slug": "variance-entropy-lens",
         "code": "LEN-0290",
         "title": "Variance / Entropy Lens",
-        "count": 40
+        "count": 45
       }
     ]
   }

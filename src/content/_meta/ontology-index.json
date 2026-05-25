@@ -473,6 +473,52 @@
       "markdown_url": "/workbench/issues/actual-policy-differs-from-declared-policy.md"
     },
     {
+      "slug": "agent-cannot-choose-tool-without-tool-result",
+      "ontology_slug": "agent-cannot-choose-tool-without-tool-result",
+      "code": "ISS-0087",
+      "title": "Agent Cannot Choose Tool Without Tool Result",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "The agent needs a tool result to choose the right tool, but cannot obtain that result without choosing a tool first.",
+      "category": "loops-and-resolution",
+      "category_title": "Loops & Resolution",
+      "primary_cat_code": "CAT-0130",
+      "secondary_cat_codes": [
+        "CAT-0040"
+      ],
+      "primary_pattern": "circular-dependency",
+      "patterns": [
+        "circular-dependency",
+        "missing-authority",
+        "interface-mismatch"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "absence-lens",
+          "authority-overlay-lens",
+          "conflict-lens",
+          "interface-contract-lens",
+          "propagation-lens"
+        ],
+        "secondary": [
+          "normalization-lens",
+          "reconciliation-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "agent cannot choose tool without tool result",
+        "AI needs tool result to pick tool",
+        "tool choice circular dependency",
+        "agent stuck choosing tool",
+        "AI cannot decide tool without data",
+        "MCP tool selection loop"
+      ],
+      "url": "/workbench/issues/agent-cannot-choose-tool-without-tool-result/",
+      "markdown_url": "/workbench/issues/agent-cannot-choose-tool-without-tool-result.md"
+    },
+    {
       "slug": "agent-keeps-expanding-the-task",
       "ontology_slug": "agent-keeps-expanding-the-task",
       "code": "ISS-0008",
@@ -520,6 +566,53 @@
       ],
       "url": "/workbench/issues/agent-keeps-expanding-the-task/",
       "markdown_url": "/workbench/issues/agent-keeps-expanding-the-task.md"
+    },
+    {
+      "slug": "agent-never-settles-on-final-answer",
+      "ontology_slug": "agent-never-settles-on-final-answer",
+      "code": "ISS-0082",
+      "title": "Agent Never Settles on Final Answer",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "The agent keeps revising, rechecking, planning, or branching instead of converging on a final answer or completed result.",
+      "category": "loops-and-resolution",
+      "category_title": "Loops & Resolution",
+      "primary_cat_code": "CAT-0130",
+      "secondary_cat_codes": [
+        "CAT-0030"
+      ],
+      "primary_pattern": "convergence-failure",
+      "patterns": [
+        "convergence-failure",
+        "circular-dependency",
+        "unconstrained-expansion"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "compression-lens",
+          "conflict-lens",
+          "convergence-lens",
+          "escalation-gradient-lens",
+          "propagation-lens"
+        ],
+        "secondary": [
+          "normalization-lens",
+          "reconciliation-lens",
+          "variance-entropy-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "agent never settles on final answer",
+        "AI agent will not finish",
+        "agent keeps revising instead of answering",
+        "AI keeps checking and never completes",
+        "agent cannot finalize response",
+        "agent loops without final answer"
+      ],
+      "url": "/workbench/issues/agent-never-settles-on-final-answer/",
+      "markdown_url": "/workbench/issues/agent-never-settles-on-final-answer.md"
     },
     {
       "slug": "ai-adds-work-not-requested",
@@ -834,6 +927,52 @@
       "markdown_url": "/workbench/issues/answer-has-too-many-paths.md"
     },
     {
+      "slug": "approval-depends-on-output-that-needs-approval",
+      "ontology_slug": "approval-depends-on-output-that-needs-approval",
+      "code": "ISS-0088",
+      "title": "Approval Depends on Output That Needs Approval",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "A required approval depends on an AI output or workflow result that itself cannot be produced or trusted until approval is granted.",
+      "category": "loops-and-resolution",
+      "category_title": "Loops & Resolution",
+      "primary_cat_code": "CAT-0130",
+      "secondary_cat_codes": [
+        "CAT-0050"
+      ],
+      "primary_pattern": "circular-dependency",
+      "patterns": [
+        "circular-dependency",
+        "missing-authority",
+        "authority-collision"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "absence-lens",
+          "authority-overlay-lens",
+          "conflict-lens",
+          "propagation-lens"
+        ],
+        "secondary": [
+          "invariant-lens",
+          "normalization-lens",
+          "reconciliation-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "approval depends on output that needs approval",
+        "AI approval circular dependency",
+        "output needs approval before approval can happen",
+        "approval loop AI workflow",
+        "cannot approve because output not approved",
+        "workflow approval depends on itself"
+      ],
+      "url": "/workbench/issues/approval-depends-on-output-that-needs-approval/",
+      "markdown_url": "/workbench/issues/approval-depends-on-output-that-needs-approval.md"
+    },
+    {
       "slug": "behavior-does-not-match-declared-role",
       "ontology_slug": "behavior-does-not-match-declared-role",
       "code": "ISS-0043",
@@ -879,6 +1018,52 @@
       ],
       "url": "/workbench/issues/behavior-does-not-match-declared-role/",
       "markdown_url": "/workbench/issues/behavior-does-not-match-declared-role.md"
+    },
+    {
+      "slug": "cannot-identify-authoritative-state",
+      "ontology_slug": "cannot-identify-authoritative-state",
+      "code": "ISS-0085",
+      "title": "Cannot Identify Authoritative State",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "The user or workflow cannot tell which state, version, review result, decision, source, or output is currently authoritative.",
+      "category": "loops-and-resolution",
+      "category_title": "Loops & Resolution",
+      "primary_cat_code": "CAT-0130",
+      "secondary_cat_codes": [
+        "CAT-0050"
+      ],
+      "primary_pattern": "authority-state-mismatch",
+      "patterns": [
+        "authority-state-mismatch",
+        "missing-authority",
+        "reference-instability"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "absence-lens",
+          "authority-overlay-lens",
+          "reconciliation-lens",
+          "reference-stability-lens"
+        ],
+        "secondary": [
+          "conflict-lens",
+          "convergence-lens",
+          "determinism-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "cannot identify authoritative state",
+        "AI cannot tell which version is final",
+        "authoritative output unclear",
+        "which decision is current",
+        "workflow state not authoritative",
+        "AI review state unclear"
+      ],
+      "url": "/workbench/issues/cannot-identify-authoritative-state/",
+      "markdown_url": "/workbench/issues/cannot-identify-authoritative-state.md"
     },
     {
       "slug": "citation-points-to-wrong-source",
@@ -1241,6 +1426,51 @@
       "markdown_url": "/workbench/issues/duplicate-output-sections.md"
     },
     {
+      "slug": "evaluation-rubric-has-coverage-gap",
+      "ontology_slug": "evaluation-rubric-has-coverage-gap",
+      "code": "ISS-0081",
+      "title": "Evaluation Rubric Has Coverage Gap",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "An evaluation rubric, grading standard, or review checklist leaves part of the required evaluation space uncovered.",
+      "category": "coverage-and-guidance",
+      "category_title": "Coverage & Guidance",
+      "primary_cat_code": "CAT-0120",
+      "secondary_cat_codes": [
+        "CAT-0070"
+      ],
+      "primary_pattern": "density-vacuum",
+      "patterns": [
+        "density-vacuum",
+        "incomplete-declaration",
+        "constraints-underspecified"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "absence-lens",
+          "compression-lens",
+          "constraint-sufficiency-lens"
+        ],
+        "secondary": [
+          "determinism-lens",
+          "interface-contract-lens",
+          "variance-entropy-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "evaluation rubric has coverage gap",
+        "AI evaluation rubric missing coverage",
+        "review rubric has gap",
+        "grading checklist incomplete",
+        "evaluation misses required area",
+        "AI review criteria coverage gap"
+      ],
+      "url": "/workbench/issues/evaluation-rubric-has-coverage-gap/",
+      "markdown_url": "/workbench/issues/evaluation-rubric-has-coverage-gap.md"
+    },
+    {
       "slug": "fallback-authority-is-missing",
       "ontology_slug": "fallback-authority-is-missing",
       "code": "ISS-0014",
@@ -1563,6 +1793,52 @@
       ],
       "url": "/workbench/issues/invalid-json-output/",
       "markdown_url": "/workbench/issues/invalid-json-output.md"
+    },
+    {
+      "slug": "merge-step-leaves-unresolved-differences",
+      "ontology_slug": "merge-step-leaves-unresolved-differences",
+      "code": "ISS-0084",
+      "title": "Merge Step Leaves Unresolved Differences",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "A merge, reconciliation, or consolidation step combines outputs or reviews but leaves important differences unresolved.",
+      "category": "loops-and-resolution",
+      "category_title": "Loops & Resolution",
+      "primary_cat_code": "CAT-0130",
+      "secondary_cat_codes": [
+        "CAT-0070"
+      ],
+      "primary_pattern": "convergence-failure",
+      "patterns": [
+        "convergence-failure",
+        "authority-merge-conflict",
+        "orphaned-structure"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "absence-lens",
+          "conflict-lens",
+          "convergence-lens",
+          "reconciliation-lens"
+        ],
+        "secondary": [
+          "authority-overlay-lens",
+          "propagation-lens",
+          "variance-entropy-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "merge step leaves unresolved differences",
+        "AI merge did not resolve differences",
+        "review merge left conflicts",
+        "consolidated answer still has contradictions",
+        "merge step failed to reconcile",
+        "unresolved differences after merge"
+      ],
+      "url": "/workbench/issues/merge-step-leaves-unresolved-differences/",
+      "markdown_url": "/workbench/issues/merge-step-leaves-unresolved-differences.md"
     },
     {
       "slug": "missing-fallback-for-unavailable-information",
@@ -2111,6 +2387,53 @@
       ],
       "url": "/workbench/issues/output-exceeds-length-limit/",
       "markdown_url": "/workbench/issues/output-exceeds-length-limit.md"
+    },
+    {
+      "slug": "parallel-reviews-never-agree",
+      "ontology_slug": "parallel-reviews-never-agree",
+      "code": "ISS-0083",
+      "title": "Parallel Reviews Never Agree",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "Parallel AI, human, workflow, or tool reviews keep producing different results without resolving into a shared decision state.",
+      "category": "loops-and-resolution",
+      "category_title": "Loops & Resolution",
+      "primary_cat_code": "CAT-0130",
+      "secondary_cat_codes": [
+        "CAT-0070"
+      ],
+      "primary_pattern": "convergence-failure",
+      "patterns": [
+        "convergence-failure",
+        "divergent-outputs",
+        "authority-collision"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "authority-overlay-lens",
+          "conflict-lens",
+          "convergence-lens",
+          "variance-entropy-lens"
+        ],
+        "secondary": [
+          "compression-lens",
+          "determinism-lens",
+          "invariant-lens",
+          "reconciliation-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "parallel reviews never agree",
+        "AI reviews do not converge",
+        "reviewers keep disagreeing",
+        "parallel review results conflict",
+        "multiple reviews never resolve",
+        "AI review loop disagreement"
+      ],
+      "url": "/workbench/issues/parallel-reviews-never-agree/",
+      "markdown_url": "/workbench/issues/parallel-reviews-never-agree.md"
     },
     {
       "slug": "permissions-conflict-after-being-combined",
@@ -3778,6 +4101,52 @@
       "markdown_url": "/workbench/issues/version-change-breaks-existing-prompt.md"
     },
     {
+      "slug": "workflow-loops-through-review-without-resolution",
+      "ontology_slug": "workflow-loops-through-review-without-resolution",
+      "code": "ISS-0086",
+      "title": "Workflow Loops Through Review Without Resolution",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "A workflow repeatedly sends work through review, repair, or escalation without reaching an approved, rejected, or otherwise resolved state.",
+      "category": "loops-and-resolution",
+      "category_title": "Loops & Resolution",
+      "primary_cat_code": "CAT-0130",
+      "secondary_cat_codes": [
+        "CAT-0070"
+      ],
+      "primary_pattern": "circular-dependency",
+      "patterns": [
+        "circular-dependency",
+        "convergence-failure",
+        "escalation-growth"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "conflict-lens",
+          "convergence-lens",
+          "escalation-gradient-lens",
+          "propagation-lens",
+          "variance-entropy-lens"
+        ],
+        "secondary": [
+          "normalization-lens",
+          "reconciliation-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "workflow loops through review without resolution",
+        "AI review loop never ends",
+        "workflow keeps sending back for review",
+        "review repair loop",
+        "approval loop no resolution",
+        "AI workflow stuck in review"
+      ],
+      "url": "/workbench/issues/workflow-loops-through-review-without-resolution/",
+      "markdown_url": "/workbench/issues/workflow-loops-through-review-without-resolution.md"
+    },
+    {
       "slug": "workflow-stage-has-too-few-checks",
       "ontology_slug": "workflow-stage-has-too-few-checks",
       "code": "ISS-0078",
@@ -4076,7 +4445,9 @@
           "same-case-has-conflicting-policies"
         ],
         "supporting": [
-          "hidden-rule-overrides-visible-instruction"
+          "approval-depends-on-output-that-needs-approval",
+          "hidden-rule-overrides-visible-instruction",
+          "parallel-reviews-never-agree"
         ]
       },
       "url": "/workbench/patterns/authority-collision/",
@@ -4104,6 +4475,7 @@
         "primary": [],
         "supporting": [
           "conflicting-instructions-from-different-authorities",
+          "merge-step-leaves-unresolved-differences",
           "multiple-policies-say-the-same-thing",
           "permissions-conflict-after-being-combined",
           "same-case-has-conflicting-policies"
@@ -4165,6 +4537,7 @@
       "issues": {
         "primary": [
           "behavior-does-not-match-declared-role",
+          "cannot-identify-authoritative-state",
           "declared-owner-cannot-control-outcome",
           "model-and-workflow-disagree-on-next-step",
           "revoked-approval-still-treated-as-active"
@@ -4236,8 +4609,13 @@
         ]
       },
       "issues": {
-        "primary": [],
+        "primary": [
+          "agent-cannot-choose-tool-without-tool-result",
+          "approval-depends-on-output-that-needs-approval",
+          "workflow-loops-through-review-without-resolution"
+        ],
         "supporting": [
+          "agent-never-settles-on-final-answer",
           "fallback-authority-is-missing"
         ]
       },
@@ -4310,6 +4688,7 @@
           "ai-forgets-earlier-constraints",
           "answer-has-too-many-paths",
           "diagnostic-area-has-no-coverage",
+          "evaluation-rubric-has-coverage-gap",
           "invalid-json-output",
           "missing-fallback-for-unavailable-information",
           "output-exceeds-length-limit",
@@ -4389,12 +4768,17 @@
         ]
       },
       "issues": {
-        "primary": [],
+        "primary": [
+          "agent-never-settles-on-final-answer",
+          "merge-step-leaves-unresolved-differences",
+          "parallel-reviews-never-agree"
+        ],
         "supporting": [
           "agent-keeps-expanding-the-task",
           "human-review-and-automation-disagree",
           "same-workflow-check-happens-twice",
-          "task-progress-is-lost-midway"
+          "task-progress-is-lost-midway",
+          "workflow-loops-through-review-without-resolution"
         ]
       },
       "url": "/workbench/patterns/convergence-failure/",
@@ -4483,6 +4867,7 @@
       "issues": {
         "primary": [
           "diagnostic-area-has-no-coverage",
+          "evaluation-rubric-has-coverage-gap",
           "policy-area-has-no-examples",
           "workflow-stage-has-too-few-checks"
         ],
@@ -4521,6 +4906,7 @@
         ],
         "supporting": [
           "output-breaks-after-model-change",
+          "parallel-reviews-never-agree",
           "prompt-behavior-changed-without-version-change",
           "prompt-has-too-many-valid-interpretations",
           "prompt-only-works-after-retry",
@@ -4558,7 +4944,8 @@
           "action-triggered-by-confidence-score",
           "model-output-triggers-unapproved-action",
           "repair-step-created-new-breakage",
-          "too-many-tool-calls"
+          "too-many-tool-calls",
+          "workflow-loops-through-review-without-resolution"
         ]
       },
       "url": "/workbench/patterns/escalation-growth/",
@@ -4594,6 +4981,7 @@
         ],
         "supporting": [
           "diagnostic-area-has-no-coverage",
+          "evaluation-rubric-has-coverage-gap",
           "fallback-authority-is-missing",
           "format-rule-too-weak",
           "policy-area-has-no-examples",
@@ -4628,6 +5016,7 @@
           "tool-call-contract-mismatch"
         ],
         "supporting": [
+          "agent-cannot-choose-tool-without-tool-result",
           "ai-output-breaks-parser",
           "citation-points-to-wrong-source",
           "invalid-json-output",
@@ -4698,6 +5087,9 @@
         ],
         "supporting": [
           "action-triggered-by-confidence-score",
+          "agent-cannot-choose-tool-without-tool-result",
+          "approval-depends-on-output-that-needs-approval",
+          "cannot-identify-authoritative-state",
           "declared-owner-cannot-control-outcome",
           "missing-fallback-for-unavailable-information",
           "model-output-triggers-unapproved-action",
@@ -4762,6 +5154,7 @@
           "tool-result-not-integrated-correctly"
         ],
         "supporting": [
+          "merge-step-leaves-unresolved-differences",
           "relationship-map-has-missing-links",
           "task-progress-is-lost-midway",
           "workflow-stage-has-too-few-checks",
@@ -4936,6 +5329,7 @@
         ],
         "supporting": [
           "answer-has-no-traceable-source-link",
+          "cannot-identify-authoritative-state",
           "file-bounded-task-uses-outside-content",
           "policy-area-has-no-examples",
           "policy-update-not-reflected-in-output",
@@ -5105,7 +5499,9 @@
         "primary": [
           "agent-keeps-expanding-the-task"
         ],
-        "supporting": []
+        "supporting": [
+          "agent-never-settles-on-final-answer"
+        ]
       },
       "url": "/workbench/patterns/unconstrained-expansion/",
       "markdown_url": "/workbench/patterns/unconstrained-expansion.md"
@@ -5166,11 +5562,16 @@
       },
       "issues": [
         "action-triggered-by-confidence-score",
+        "agent-cannot-choose-tool-without-tool-result",
         "answer-has-no-traceable-source-link",
+        "approval-depends-on-output-that-needs-approval",
+        "cannot-identify-authoritative-state",
         "declared-owner-cannot-control-outcome",
         "diagnostic-area-has-no-coverage",
+        "evaluation-rubric-has-coverage-gap",
         "fallback-authority-is-missing",
         "format-rule-too-weak",
+        "merge-step-leaves-unresolved-differences",
         "missing-fallback-for-unavailable-information",
         "missing-required-fields",
         "model-output-triggers-unapproved-action",
@@ -5212,16 +5613,21 @@
       },
       "issues": [
         "action-triggered-by-confidence-score",
+        "agent-cannot-choose-tool-without-tool-result",
+        "approval-depends-on-output-that-needs-approval",
         "behavior-does-not-match-declared-role",
+        "cannot-identify-authoritative-state",
         "conflicting-instructions-from-different-authorities",
         "declared-owner-cannot-control-outcome",
         "fallback-authority-is-missing",
         "hidden-rule-overrides-visible-instruction",
         "human-review-and-automation-disagree",
+        "merge-step-leaves-unresolved-differences",
         "missing-fallback-for-unavailable-information",
         "model-output-triggers-unapproved-action",
         "multiple-policies-say-the-same-thing",
         "no-owner-for-agent-action",
+        "parallel-reviews-never-agree",
         "permissions-conflict-after-being-combined",
         "risk-score-triggers-wrong-escalation",
         "same-case-has-conflicting-policies",
@@ -5339,16 +5745,19 @@
       },
       "issues": [
         "agent-keeps-expanding-the-task",
+        "agent-never-settles-on-final-answer",
         "answer-has-no-traceable-source-link",
         "answer-has-too-many-paths",
         "diagnostic-area-has-no-coverage",
         "duplicate-fields-with-same-meaning",
         "duplicate-output-sections",
+        "evaluation-rubric-has-coverage-gap",
         "missing-required-fields",
         "multiple-policies-say-the-same-thing",
         "old-output-expectations-survive-migration",
         "output-breaks-after-model-change",
         "output-exceeds-length-limit",
+        "parallel-reviews-never-agree",
         "policy-area-has-no-examples",
         "prompt-behavior-changed-without-version-change",
         "prompt-has-too-many-valid-interpretations",
@@ -5392,8 +5801,12 @@
       },
       "issues": [
         "action-triggered-by-confidence-score",
+        "agent-cannot-choose-tool-without-tool-result",
+        "agent-never-settles-on-final-answer",
         "ai-output-breaks-parser",
+        "approval-depends-on-output-that-needs-approval",
         "behavior-does-not-match-declared-role",
+        "cannot-identify-authoritative-state",
         "conflicting-instructions-from-different-authorities",
         "declared-owner-cannot-control-outcome",
         "duplicate-fields-with-same-meaning",
@@ -5404,6 +5817,7 @@
         "hidden-rule-overrides-visible-instruction",
         "human-review-and-automation-disagree",
         "invalid-json-output",
+        "merge-step-leaves-unresolved-differences",
         "missing-fallback-for-unavailable-information",
         "missing-required-fields",
         "model-output-triggers-unapproved-action",
@@ -5412,6 +5826,7 @@
         "no-owner-for-agent-action",
         "old-output-expectations-survive-migration",
         "output-breaks-the-next-step",
+        "parallel-reviews-never-agree",
         "permissions-conflict-after-being-combined",
         "repeated-constraints-create-confusion",
         "risk-score-triggers-wrong-escalation",
@@ -5420,6 +5835,7 @@
         "same-workflow-check-happens-twice",
         "tool-call-contract-mismatch",
         "validation-result-changes-on-retry",
+        "workflow-loops-through-review-without-resolution",
         "workflow-step-has-no-decision-owner",
         "wrong-field-types"
       ],
@@ -5452,6 +5868,7 @@
         "answer-has-no-traceable-source-link",
         "answer-has-too-many-paths",
         "diagnostic-area-has-no-coverage",
+        "evaluation-rubric-has-coverage-gap",
         "fallback-authority-is-missing",
         "format-rule-too-weak",
         "hallucinated-fields",
@@ -5503,16 +5920,20 @@
       "issues": [
         "actual-policy-differs-from-declared-policy",
         "agent-keeps-expanding-the-task",
+        "agent-never-settles-on-final-answer",
         "ai-forgets-earlier-constraints",
         "behavior-does-not-match-declared-role",
+        "cannot-identify-authoritative-state",
         "context-changes-after-restore",
         "declared-owner-cannot-control-outcome",
         "human-review-and-automation-disagree",
+        "merge-step-leaves-unresolved-differences",
         "model-and-workflow-disagree-on-next-step",
         "no-owner-for-agent-action",
         "old-output-expectations-survive-migration",
         "output-breaks-after-model-change",
         "output-changed-without-declared-change",
+        "parallel-reviews-never-agree",
         "policy-update-not-reflected-in-output",
         "prompt-behavior-changed-without-version-change",
         "prompt-changed-but-workflow-did-not",
@@ -5531,7 +5952,8 @@
         "task-progress-is-lost-midway",
         "tool-result-not-integrated-correctly",
         "validation-result-changes-on-retry",
-        "version-change-breaks-existing-prompt"
+        "version-change-breaks-existing-prompt",
+        "workflow-loops-through-review-without-resolution"
       ],
       "url": "/workbench/lenses/convergence-lens/",
       "markdown_url": "/workbench/lenses/convergence-lens.md"
@@ -5563,10 +5985,12 @@
         "ai-forgets-earlier-constraints",
         "answer-has-no-traceable-source-link",
         "answer-has-too-many-paths",
+        "cannot-identify-authoritative-state",
         "citation-points-to-wrong-source",
         "context-changes-after-restore",
         "context-leaks-between-tasks",
         "diagnostic-area-has-no-coverage",
+        "evaluation-rubric-has-coverage-gap",
         "file-bounded-task-uses-outside-content",
         "format-rule-too-weak",
         "invalid-json-output",
@@ -5575,6 +5999,7 @@
         "output-breaks-after-model-change",
         "output-changed-without-declared-change",
         "output-exceeds-length-limit",
+        "parallel-reviews-never-agree",
         "policy-area-has-no-examples",
         "policy-update-not-reflected-in-output",
         "prompt-behavior-changed-without-version-change",
@@ -5632,6 +6057,7 @@
         "action-changed-something-else-too",
         "action-triggered-by-confidence-score",
         "agent-keeps-expanding-the-task",
+        "agent-never-settles-on-final-answer",
         "ai-adds-work-not-requested",
         "ai-touches-unrelated-scope",
         "answer-has-too-many-paths",
@@ -5654,7 +6080,8 @@
         "same-rule-declared-in-multiple-places",
         "same-workflow-check-happens-twice",
         "task-has-no-clear-limit",
-        "too-many-tool-calls"
+        "too-many-tool-calls",
+        "workflow-loops-through-review-without-resolution"
       ],
       "url": "/workbench/lenses/escalation-gradient-lens/",
       "markdown_url": "/workbench/lenses/escalation-gradient-lens.md"
@@ -5679,12 +6106,14 @@
         ]
       },
       "issues": [
+        "agent-cannot-choose-tool-without-tool-result",
         "ai-output-breaks-parser",
         "answer-has-no-traceable-source-link",
         "citation-points-to-wrong-source",
         "diagnostic-area-has-no-coverage",
         "duplicate-fields-with-same-meaning",
         "duplicate-output-sections",
+        "evaluation-rubric-has-coverage-gap",
         "fallback-authority-is-missing",
         "format-rule-too-weak",
         "hallucinated-fields",
@@ -5735,6 +6164,7 @@
       "issues": [
         "action-triggered-by-confidence-score",
         "ai-output-breaks-parser",
+        "approval-depends-on-output-that-needs-approval",
         "conflicting-instructions-from-different-authorities",
         "duplicate-fields-with-same-meaning",
         "duplicate-output-sections",
@@ -5747,6 +6177,7 @@
         "nested-fields-do-not-match",
         "output-breaks-the-next-step",
         "output-exceeds-length-limit",
+        "parallel-reviews-never-agree",
         "permissions-conflict-after-being-combined",
         "risk-score-triggers-wrong-escalation",
         "same-case-has-conflicting-policies",
@@ -5818,7 +6249,10 @@
         ]
       },
       "issues": [
+        "agent-cannot-choose-tool-without-tool-result",
+        "agent-never-settles-on-final-answer",
         "ai-output-breaks-parser",
+        "approval-depends-on-output-that-needs-approval",
         "citation-points-to-wrong-source",
         "duplicate-fields-with-same-meaning",
         "duplicate-output-sections",
@@ -5837,6 +6271,7 @@
         "tool-call-contract-mismatch",
         "tool-exists-but-required-inputs-are-missing",
         "tool-result-not-integrated-correctly",
+        "workflow-loops-through-review-without-resolution",
         "wrong-field-types"
       ],
       "url": "/workbench/lenses/normalization-lens/",
@@ -5904,16 +6339,20 @@
       "issues": [
         "action-changed-something-else-too",
         "action-triggered-by-confidence-score",
+        "agent-cannot-choose-tool-without-tool-result",
         "agent-keeps-expanding-the-task",
+        "agent-never-settles-on-final-answer",
         "ai-adds-work-not-requested",
         "ai-touches-unrelated-scope",
         "ai-uses-external-information-when-forbidden",
+        "approval-depends-on-output-that-needs-approval",
         "behavior-does-not-match-declared-role",
         "context-leaks-between-tasks",
         "fallback-authority-is-missing",
         "file-bounded-task-uses-outside-content",
         "hallucinated-fields",
         "hidden-rule-overrides-visible-instruction",
+        "merge-step-leaves-unresolved-differences",
         "model-output-triggers-unapproved-action",
         "no-owner-for-agent-action",
         "policy-exception-spreads-too-far",
@@ -5927,6 +6366,7 @@
         "task-progress-is-lost-midway",
         "too-many-tool-calls",
         "tool-result-not-integrated-correctly",
+        "workflow-loops-through-review-without-resolution",
         "workflow-stage-has-too-few-checks",
         "workflow-step-has-no-decision-owner",
         "workflow-step-lacks-required-conditions"
@@ -5985,15 +6425,20 @@
       "issues": [
         "action-triggered-by-confidence-score",
         "actual-policy-differs-from-declared-policy",
+        "agent-cannot-choose-tool-without-tool-result",
         "agent-keeps-expanding-the-task",
+        "agent-never-settles-on-final-answer",
         "ai-forgets-earlier-constraints",
+        "approval-depends-on-output-that-needs-approval",
         "behavior-does-not-match-declared-role",
+        "cannot-identify-authoritative-state",
         "conflicting-instructions-from-different-authorities",
         "context-changes-after-restore",
         "declared-owner-cannot-control-outcome",
         "fallback-authority-is-missing",
         "hidden-rule-overrides-visible-instruction",
         "human-review-and-automation-disagree",
+        "merge-step-leaves-unresolved-differences",
         "missing-fallback-for-unavailable-information",
         "model-and-workflow-disagree-on-next-step",
         "model-output-triggers-unapproved-action",
@@ -6002,6 +6447,7 @@
         "old-output-expectations-survive-migration",
         "output-breaks-after-model-change",
         "output-changed-without-declared-change",
+        "parallel-reviews-never-agree",
         "permissions-conflict-after-being-combined",
         "policy-update-not-reflected-in-output",
         "prompt-behavior-changed-without-version-change",
@@ -6019,6 +6465,7 @@
         "task-progress-is-lost-midway",
         "tool-result-not-integrated-correctly",
         "version-change-breaks-existing-prompt",
+        "workflow-loops-through-review-without-resolution",
         "workflow-step-has-no-decision-owner"
       ],
       "url": "/workbench/lenses/reconciliation-lens/",
@@ -6049,6 +6496,7 @@
         "ai-forgets-earlier-constraints",
         "answer-has-no-traceable-source-link",
         "behavior-does-not-match-declared-role",
+        "cannot-identify-authoritative-state",
         "citation-points-to-wrong-source",
         "context-changes-after-restore",
         "context-leaks-between-tasks",
@@ -6109,20 +6557,24 @@
         "action-changed-something-else-too",
         "action-triggered-by-confidence-score",
         "agent-keeps-expanding-the-task",
+        "agent-never-settles-on-final-answer",
         "ai-forgets-earlier-constraints",
         "answer-has-too-many-paths",
         "context-leaks-between-tasks",
         "diagnostic-area-has-no-coverage",
         "duplicate-fields-with-same-meaning",
         "duplicate-output-sections",
+        "evaluation-rubric-has-coverage-gap",
         "format-rule-too-weak",
         "human-review-and-automation-disagree",
         "invalid-json-output",
+        "merge-step-leaves-unresolved-differences",
         "missing-fallback-for-unavailable-information",
         "model-output-triggers-unapproved-action",
         "multiple-policies-say-the-same-thing",
         "output-breaks-after-model-change",
         "output-exceeds-length-limit",
+        "parallel-reviews-never-agree",
         "policy-exception-spreads-too-far",
         "prompt-behavior-changed-without-version-change",
         "prompt-does-not-say-what-to-exclude",
@@ -6145,6 +6597,7 @@
         "too-many-tool-calls",
         "tool-exists-but-required-inputs-are-missing",
         "validation-result-changes-on-retry",
+        "workflow-loops-through-review-without-resolution",
         "workflow-step-lacks-required-conditions"
       ],
       "url": "/workbench/lenses/variance-entropy-lens/",
@@ -6170,6 +6623,7 @@
         "ai-adds-work-not-requested"
       ],
       "secondary_issues": [
+        "agent-never-settles-on-final-answer",
         "ai-touches-unrelated-scope",
         "no-owner-for-agent-action"
       ],
@@ -6226,6 +6680,7 @@
       "summary": "Problems where prompts, rubrics, diagnostics, fallback rules, examples, requirements, or relationship maps are incomplete, underspecified, or missing needed guidance.",
       "issues": [
         "diagnostic-area-has-no-coverage",
+        "evaluation-rubric-has-coverage-gap",
         "format-rule-too-weak",
         "missing-fallback-for-unavailable-information",
         "policy-area-has-no-examples",
@@ -6236,6 +6691,7 @@
       ],
       "primary_issues": [
         "diagnostic-area-has-no-coverage",
+        "evaluation-rubric-has-coverage-gap",
         "format-rule-too-weak",
         "missing-fallback-for-unavailable-information",
         "policy-area-has-no-examples",
@@ -6323,8 +6779,24 @@
       "entry_version": "0.1.0",
       "updated_at": "2026-05-10T00:00:00Z",
       "summary": "Problems where agents, workflows, reviews, approvals, policies, schemas, or routing paths loop, wait on themselves, fail to settle, or cannot identify a final state.",
-      "issues": [],
-      "primary_issues": [],
+      "issues": [
+        "agent-cannot-choose-tool-without-tool-result",
+        "agent-never-settles-on-final-answer",
+        "approval-depends-on-output-that-needs-approval",
+        "cannot-identify-authoritative-state",
+        "merge-step-leaves-unresolved-differences",
+        "parallel-reviews-never-agree",
+        "workflow-loops-through-review-without-resolution"
+      ],
+      "primary_issues": [
+        "agent-cannot-choose-tool-without-tool-result",
+        "agent-never-settles-on-final-answer",
+        "approval-depends-on-output-that-needs-approval",
+        "cannot-identify-authoritative-state",
+        "merge-step-leaves-unresolved-differences",
+        "parallel-reviews-never-agree",
+        "workflow-loops-through-review-without-resolution"
+      ],
       "secondary_issues": [],
       "url": "/workbench/categories/loops-and-resolution/"
     },
@@ -6352,6 +6824,7 @@
         "tool-result-not-integrated-correctly"
       ],
       "secondary_issues": [
+        "agent-cannot-choose-tool-without-tool-result",
         "ai-output-breaks-parser"
       ],
       "url": "/workbench/categories/mcp-tools-and-integrations/"
@@ -6465,6 +6938,8 @@
         "revoked-approval-still-treated-as-active"
       ],
       "secondary_issues": [
+        "approval-depends-on-output-that-needs-approval",
+        "cannot-identify-authoritative-state",
         "conflicting-instructions-from-different-authorities",
         "hidden-rule-overrides-visible-instruction",
         "human-review-and-automation-disagree",
@@ -6604,7 +7079,10 @@
         "workflow-step-lacks-required-conditions"
       ],
       "secondary_issues": [
+        "evaluation-rubric-has-coverage-gap",
         "fallback-authority-is-missing",
+        "merge-step-leaves-unresolved-differences",
+        "parallel-reviews-never-agree",
         "prompt-changed-but-workflow-did-not",
         "relationship-map-has-missing-links",
         "repair-step-created-new-breakage",
@@ -6612,7 +7090,8 @@
         "rubric-changed-but-results-did-not",
         "same-workflow-check-happens-twice",
         "task-progress-is-lost-midway",
-        "tool-result-not-integrated-correctly"
+        "tool-result-not-integrated-correctly",
+        "workflow-loops-through-review-without-resolution"
       ],
       "url": "/workbench/categories/workflow-and-handoffs/"
     }
