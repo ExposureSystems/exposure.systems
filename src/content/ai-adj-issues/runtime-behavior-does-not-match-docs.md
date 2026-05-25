@@ -8,29 +8,37 @@ updated_at: "2026-05-10T00:00:00Z"
 summary: Documented behavior, fields, tool schemas, permissions, or runtime capabilities do not match what actually happens during use.
 code: ADJ-0005
 related_issues:
+  - actual-policy-differs-from-declared-policy
+  - output-changed-without-declared-change
+  - prompt-behavior-changed-without-version-change
+  - same-contract-name-has-different-meanings
   - tool-call-contract-mismatch
-  - invalid-json-output
 search_intents:
   - runtime behavior does not match docs
-  - docs do not match runtime
-  - documented behavior is wrong
-  - API docs say one thing but runtime does another
+  - AI behavior does not match documentation
+  - tool docs do not match runtime
+  - documented behavior differs from actual behavior
+  - API docs wrong at runtime
+  - product docs do not match AI behavior
 ---
-
-# Runtime Behavior Does Not Match Docs
 
 ## What This Looks Like
 
-A documented field, behavior, schema, permission, tool capability, or runtime rule does not match what actually happens in use.
+The documentation says a model, tool, connector, API, mode, field, permission, or product surface should behave one way, but the actual runtime behaves differently. A feature may be missing, a field may differ, a tool may reject documented inputs, or the runtime may produce behavior the docs do not describe.
 
 ## Why Users Blame AI
 
-The mismatch often appears while using an AI feature, agent, tool, or integration. Users may assume the AI is wrong, when the immediate cause may be documentation drift, version mismatch, runtime behavior, or product implementation.
+The mismatch often appears inside an AI task, so the user may experience it as the AI ignoring instructions, making unsupported calls, or inventing behavior. The underlying problem may be documentation drift, rollout differences, feature flags, product-version mismatch, hidden limitations, or runtime behavior that changed before the docs did.
 
 ## What to Check First
 
-- Whether the documentation applies to the current version
-- Whether the runtime or product surface has changed
-- Whether the tool schema differs from the documented schema
-- Whether the behavior is gated by permissions, mode, or environment
-- Whether the workflow still assumes an older contract
+- Whether the docs match the exact version, product, API, mode, and account being used
+- Whether the behavior depends on plan, workspace, region, feature flag, or rollout state
+- Whether the runtime exposes a different schema than the docs show
+- Whether examples are illustrative instead of contract-level
+- Whether the docs describe expected behavior but not current product behavior
+- Whether a hidden policy, permission, or tool constraint changes runtime behavior
+
+## Boundary
+
+Use this AI-Adjacent Issue when documented behavior and observed runtime behavior disagree. If the mismatch creates a structural Workbench failure, use the related Issues for policy drift, output change, prompt behavior change, contract-name drift, or tool call contract mismatch.

@@ -123,7 +123,10 @@
           "provenance-trace-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "documented-field-not-available-at-runtime",
+        "runtime-behavior-does-not-match-docs"
+      ],
       "search_intents": [
         "actual policy differs from declared policy",
         "AI behavior does not match policy",
@@ -132,7 +135,7 @@
         "declared policy not followed",
         "runtime policy differs from docs"
       ],
-      "text": "AI behavior does not match policy Actual Policy Differs From Declared Policy CAT-0060 CAT-0080 ISS-0040 Rules & Policies The policy the AI or workflow actually follows differs from the policy that is documented, declared, displayed, or expected. actual policy differs from declared policy authority-state-mismatch contract-drift convergence-lens declared policy not followed determinism-lens documented policy differs from actual behavior policy says one thing AI does another provenance-trace-lens reconciliation-lens reference-stability-lens rules-and-policies runtime policy differs from docs silent-mutation"
+      "text": "AI behavior does not match policy Actual Policy Differs From Declared Policy CAT-0060 CAT-0080 ISS-0040 Rules & Policies The policy the AI or workflow actually follows differs from the policy that is documented, declared, displayed, or expected. actual policy differs from declared policy authority-state-mismatch contract-drift convergence-lens declared policy not followed determinism-lens documented policy differs from actual behavior documented-field-not-available-at-runtime policy says one thing AI does another provenance-trace-lens reconciliation-lens reference-stability-lens rules-and-policies runtime policy differs from docs runtime-behavior-does-not-match-docs silent-mutation"
     },
     {
       "type": "issue",
@@ -167,7 +170,9 @@
           "reconciliation-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "tool-not-supported-in-this-mode"
+      ],
       "search_intents": [
         "agent cannot choose tool without tool result",
         "AI needs tool result to pick tool",
@@ -176,7 +181,7 @@
         "AI cannot decide tool without data",
         "MCP tool selection loop"
       ],
-      "text": "AI cannot decide tool without data AI needs tool result to pick tool Agent Cannot Choose Tool Without Tool Result CAT-0040 CAT-0130 ISS-0087 Loops & Resolution MCP tool selection loop The agent needs a tool result to choose the right tool, but cannot obtain that result without choosing a tool first. absence-lens agent cannot choose tool without tool result agent stuck choosing tool authority-overlay-lens circular-dependency conflict-lens interface-contract-lens interface-mismatch loops-and-resolution missing-authority normalization-lens propagation-lens reconciliation-lens tool choice circular dependency"
+      "text": "AI cannot decide tool without data AI needs tool result to pick tool Agent Cannot Choose Tool Without Tool Result CAT-0040 CAT-0130 ISS-0087 Loops & Resolution MCP tool selection loop The agent needs a tool result to choose the right tool, but cannot obtain that result without choosing a tool first. absence-lens agent cannot choose tool without tool result agent stuck choosing tool authority-overlay-lens circular-dependency conflict-lens interface-contract-lens interface-mismatch loops-and-resolution missing-authority normalization-lens propagation-lens reconciliation-lens tool choice circular dependency tool-not-supported-in-this-mode"
     },
     {
       "type": "issue",
@@ -255,9 +260,7 @@
           "variance-entropy-lens"
         ]
       },
-      "related_ai_adj_issues": [
-        "ai-works-in-one-environment-not-another"
-      ],
+      "related_ai_adj_issues": [],
       "search_intents": [
         "agent keeps expanding the task",
         "AI keeps adding more steps",
@@ -266,7 +269,7 @@
         "agent expands task on each pass",
         "diagnosis keeps expanding"
       ],
-      "text": "AI keeps adding follow up work AI keeps adding more steps Agent Keeps Expanding the Task Agents CAT-0030 CAT-0100 ISS-0008 The agent repeatedly expands the task, plan, scope, or next-step list instead of completing the declared work. agent expands task on each pass agent keeps expanding the task agent keeps making the plan bigger agents ai-works-in-one-environment-not-another boundary-compliance-lens compression-lens convergence-failure convergence-lens diagnosis keeps expanding escalation-gradient-lens overreach overreach-lens propagation-lens reconciliation-lens unconstrained-expansion variance-entropy-lens"
+      "text": "AI keeps adding follow up work AI keeps adding more steps Agent Keeps Expanding the Task Agents CAT-0030 CAT-0100 ISS-0008 The agent repeatedly expands the task, plan, scope, or next-step list instead of completing the declared work. agent expands task on each pass agent keeps expanding the task agent keeps making the plan bigger agents boundary-compliance-lens compression-lens convergence-failure convergence-lens diagnosis keeps expanding escalation-gradient-lens overreach overreach-lens propagation-lens reconciliation-lens unconstrained-expansion variance-entropy-lens"
     },
     {
       "type": "issue",
@@ -472,9 +475,7 @@
           "variance-entropy-lens"
         ]
       },
-      "related_ai_adj_issues": [
-        "ai-works-in-one-environment-not-another"
-      ],
+      "related_ai_adj_issues": [],
       "search_intents": [
         "AI forgets earlier constraints",
         "ChatGPT forgot instructions",
@@ -483,7 +484,7 @@
         "instruction stopped applying later",
         "AI lost context rule"
       ],
-      "text": "A constraint, instruction, preference, or decision that should persist through the task stops affecting later output. AI Forgets Earlier Constraints AI forgets earlier constraints AI ignored earlier requirement AI lost context rule CAT-0020 ChatGPT forgot instructions ISS-0029 Memory & Context ai-works-in-one-environment-not-another constraint-sufficiency-lens constraints-underspecified contract-drift convergence-lens determinism-lens instruction stopped applying later memory-and-context model forgot previous constraint persistence-instability reconciliation-lens reference-stability-lens variance-entropy-lens"
+      "text": "A constraint, instruction, preference, or decision that should persist through the task stops affecting later output. AI Forgets Earlier Constraints AI forgets earlier constraints AI ignored earlier requirement AI lost context rule CAT-0020 ChatGPT forgot instructions ISS-0029 Memory & Context constraint-sufficiency-lens constraints-underspecified contract-drift convergence-lens determinism-lens instruction stopped applying later memory-and-context model forgot previous constraint persistence-instability reconciliation-lens reference-stability-lens variance-entropy-lens"
     },
     {
       "type": "issue",
@@ -1083,7 +1084,9 @@
           "provenance-trace-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "ai-works-in-one-environment-not-another"
+      ],
       "search_intents": [
         "context changes after restore",
         "restored chat has different context",
@@ -1092,7 +1095,7 @@
         "restored task lost context",
         "AI uses different context after reopening"
       ],
-      "text": "AI context changed after reload AI uses different context after reopening CAT-0020 CAT-0080 Context Changes After Restore ISS-0031 Memory & Context Restoring, reopening, resuming, or reloading a task changes the context that the AI uses to continue the work. context changes after restore contract-drift convergence-lens determinism-lens memory-and-context persistence-instability provenance-trace-lens reconciliation-lens reference-stability-lens restored chat has different context restored task lost context resume changed AI behavior silent-mutation"
+      "text": "AI context changed after reload AI uses different context after reopening CAT-0020 CAT-0080 Context Changes After Restore ISS-0031 Memory & Context Restoring, reopening, resuming, or reloading a task changes the context that the AI uses to continue the work. ai-works-in-one-environment-not-another context changes after restore contract-drift convergence-lens determinism-lens memory-and-context persistence-instability provenance-trace-lens reconciliation-lens reference-stability-lens restored chat has different context restored task lost context resume changed AI behavior silent-mutation"
     },
     {
       "type": "issue",
@@ -1739,9 +1742,7 @@
           "variance-entropy-lens"
         ]
       },
-      "related_ai_adj_issues": [
-        "runtime-behavior-does-not-match-docs"
-      ],
+      "related_ai_adj_issues": [],
       "search_intents": [
         "AI invalid JSON",
         "ChatGPT malformed JSON",
@@ -1750,7 +1751,7 @@
         "AI gave JSON that will not parse",
         "malformed structured output"
       ],
-      "text": "AI gave JSON that will not parse AI invalid JSON CAT-0010 ChatGPT malformed JSON ISS-0021 Invalid JSON Output JSON parse error AI output LLM output invalid JSON Output The AI returns malformed JSON or structured output that cannot be parsed. conflict-lens constraint-sufficiency-lens constraints-underspecified determinism-lens interface-contract-lens interface-mismatch invariant-lens malformed structured output normalization-lens output runtime-behavior-does-not-match-docs schema-breakage variance-entropy-lens"
+      "text": "AI gave JSON that will not parse AI invalid JSON CAT-0010 ChatGPT malformed JSON ISS-0021 Invalid JSON Output JSON parse error AI output LLM output invalid JSON Output The AI returns malformed JSON or structured output that cannot be parsed. conflict-lens constraint-sufficiency-lens constraints-underspecified determinism-lens interface-contract-lens interface-mismatch invariant-lens malformed structured output normalization-lens output schema-breakage variance-entropy-lens"
     },
     {
       "type": "issue",
@@ -1961,7 +1962,9 @@
           "conflict-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "documented-field-not-available-at-runtime"
+      ],
       "search_intents": [
         "missing required fields",
         "AI output missing fields",
@@ -1970,7 +1973,7 @@
         "AI skipped required fields",
         "schema validation missing fields"
       ],
-      "text": "AI output missing fields AI skipped required fields CAT-0010 CAT-0120 ISS-0022 JSON missing required keys Missing Required Fields Output The AI returns structured output that omits fields required by the schema, workflow, parser, form, or downstream consumer. absence-lens compression-lens conflict-lens constraint-sufficiency-lens density-vacuum incomplete-declaration interface-contract-lens invariant-lens missing required fields output schema validation missing fields schema-breakage structured output missing required field"
+      "text": "AI output missing fields AI skipped required fields CAT-0010 CAT-0120 ISS-0022 JSON missing required keys Missing Required Fields Output The AI returns structured output that omits fields required by the schema, workflow, parser, form, or downstream consumer. absence-lens compression-lens conflict-lens constraint-sufficiency-lens density-vacuum documented-field-not-available-at-runtime incomplete-declaration interface-contract-lens invariant-lens missing required fields output schema validation missing fields schema-breakage structured output missing required field"
     },
     {
       "type": "issue",
@@ -2311,7 +2314,9 @@
           "determinism-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "ai-works-in-one-environment-not-another"
+      ],
       "search_intents": [
         "output breaks after model change",
         "AI output changed after model update",
@@ -2320,7 +2325,7 @@
         "output no longer works after upgrade",
         "model version changed output"
       ],
-      "text": "AI output changed after model update CAT-0010 CAT-0080 Changes & Versions ISS-0052 Output Breaks After Model Change Output that previously worked begins failing after a model, mode, runtime, or product behavior changes. boundary-compliance-lens changes-and-versions compatibility-envelope-lens compatibility-violation compression-lens contract-drift convergence-lens determinism-lens divergent-outputs model change broke output format model version changed output output breaks after model change output no longer works after upgrade prompt worked before model update reconciliation-lens variance-entropy-lens"
+      "text": "AI output changed after model update CAT-0010 CAT-0080 Changes & Versions ISS-0052 Output Breaks After Model Change Output that previously worked begins failing after a model, mode, runtime, or product behavior changes. ai-works-in-one-environment-not-another boundary-compliance-lens changes-and-versions compatibility-envelope-lens compatibility-violation compression-lens contract-drift convergence-lens determinism-lens divergent-outputs model change broke output format model version changed output output breaks after model change output no longer works after upgrade prompt worked before model update reconciliation-lens variance-entropy-lens"
     },
     {
       "type": "issue",
@@ -2354,7 +2359,9 @@
           "normalization-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "agent-uses-old-tool-schema"
+      ],
       "search_intents": [
         "output breaks the next step",
         "AI output fails downstream",
@@ -2363,7 +2370,7 @@
         "output looks right but next step fails",
         "downstream parser rejects AI output"
       ],
-      "text": "AI output breaks workflow AI output fails downstream CAT-0010 CAT-0040 ISS-0018 MCP, Tools & Integrations Output Breaks the Next Step The AI output looks acceptable by itself but cannot be used by the next tool, workflow step, parser, reviewer, or downstream consumer. boundary-compliance-lens compatibility-envelope-lens compatibility-violation conflict-lens downstream parser rejects AI output interface-contract-lens interface-mismatch invariant-lens mcp-tools-and-integrations normalization-lens output breaks the next step output looks right but next step fails response cannot be used by next tool schema-breakage"
+      "text": "AI output breaks workflow AI output fails downstream CAT-0010 CAT-0040 ISS-0018 MCP, Tools & Integrations Output Breaks the Next Step The AI output looks acceptable by itself but cannot be used by the next tool, workflow step, parser, reviewer, or downstream consumer. agent-uses-old-tool-schema boundary-compliance-lens compatibility-envelope-lens compatibility-violation conflict-lens downstream parser rejects AI output interface-contract-lens interface-mismatch invariant-lens mcp-tools-and-integrations normalization-lens output breaks the next step output looks right but next step fails response cannot be used by next tool schema-breakage"
     },
     {
       "type": "issue",
@@ -2398,7 +2405,9 @@
           "provenance-trace-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "runtime-behavior-does-not-match-docs"
+      ],
       "search_intents": [
         "output changed without declared change",
         "AI output changed without update",
@@ -2407,7 +2416,7 @@
         "AI response changed unexpectedly",
         "output changed but prompt did not"
       ],
-      "text": "AI output changed without update AI response changed unexpectedly CAT-0010 CAT-0080 Changes & Versions ISS-0059 Output Changed Without Declared Change Output shape, content, format, fields, or behavior changes without a declared change to the prompt, schema, model, workflow, or governing rule. boundary-compliance-lens changes-and-versions compatibility-envelope-lens compatibility-violation contract-drift convergence-lens determinism-lens output changed but prompt did not output changed without declared change output format changed silently provenance-trace-lens reconciliation-lens reference-stability-lens silent-mutation structured output changed no version change"
+      "text": "AI output changed without update AI response changed unexpectedly CAT-0010 CAT-0080 Changes & Versions ISS-0059 Output Changed Without Declared Change Output shape, content, format, fields, or behavior changes without a declared change to the prompt, schema, model, workflow, or governing rule. boundary-compliance-lens changes-and-versions compatibility-envelope-lens compatibility-violation contract-drift convergence-lens determinism-lens output changed but prompt did not output changed without declared change output format changed silently provenance-trace-lens reconciliation-lens reference-stability-lens runtime-behavior-does-not-match-docs silent-mutation structured output changed no version change"
     },
     {
       "type": "issue",
@@ -2743,7 +2752,10 @@
           "provenance-trace-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "ai-works-in-one-environment-not-another",
+        "runtime-behavior-does-not-match-docs"
+      ],
       "search_intents": [
         "prompt behavior changed without version change",
         "prompt changed behavior but version same",
@@ -2752,7 +2764,7 @@
         "prompt drift without version change",
         "AI behavior changed silently"
       ],
-      "text": "A prompt begins producing different behavior even though no prompt version, model version, workflow version, or declared dependency change is recorded. AI behavior changed silently AI prompt started acting different CAT-0080 CAT-0090 Changes & Versions ISS-0058 Prompt Behavior Changed Without Version Change changes-and-versions compression-lens contract-drift convergence-lens determinism-lens divergent-outputs prompt behavior changed without version change prompt changed behavior but version same prompt drift without version change provenance-trace-lens reconciliation-lens reference-stability-lens same prompt different behavior no update silent-mutation variance-entropy-lens"
+      "text": "A prompt begins producing different behavior even though no prompt version, model version, workflow version, or declared dependency change is recorded. AI behavior changed silently AI prompt started acting different CAT-0080 CAT-0090 Changes & Versions ISS-0058 Prompt Behavior Changed Without Version Change ai-works-in-one-environment-not-another changes-and-versions compression-lens contract-drift convergence-lens determinism-lens divergent-outputs prompt behavior changed without version change prompt changed behavior but version same prompt drift without version change provenance-trace-lens reconciliation-lens reference-stability-lens runtime-behavior-does-not-match-docs same prompt different behavior no update silent-mutation variance-entropy-lens"
     },
     {
       "type": "issue",
@@ -2787,7 +2799,9 @@
           "normalization-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "agent-uses-old-tool-schema"
+      ],
       "search_intents": [
         "prompt changed but workflow did not",
         "prompt update broke workflow",
@@ -2796,7 +2810,7 @@
         "updated prompt incompatible with workflow",
         "prompt changed parser still old"
       ],
-      "text": "A prompt changes but the workflow, parser, review step, routing rule, or downstream expectation still assumes the old prompt behavior. AI prompt changed downstream did not CAT-0070 CAT-0080 Changes & Versions ISS-0054 Prompt Changed but Workflow Did Not boundary-compliance-lens changes-and-versions compatibility-envelope-lens compatibility-violation contract-drift convergence-lens determinism-lens interface-contract-lens interface-mismatch normalization-lens prompt changed but workflow did not prompt changed parser still old prompt update broke workflow reconciliation-lens updated prompt incompatible with workflow workflow still expects old prompt"
+      "text": "A prompt changes but the workflow, parser, review step, routing rule, or downstream expectation still assumes the old prompt behavior. AI prompt changed downstream did not CAT-0070 CAT-0080 Changes & Versions ISS-0054 Prompt Changed but Workflow Did Not agent-uses-old-tool-schema boundary-compliance-lens changes-and-versions compatibility-envelope-lens compatibility-violation contract-drift convergence-lens determinism-lens interface-contract-lens interface-mismatch normalization-lens prompt changed but workflow did not prompt changed parser still old prompt update broke workflow reconciliation-lens updated prompt incompatible with workflow workflow still expects old prompt"
     },
     {
       "type": "issue",
@@ -3085,7 +3099,9 @@
           "reference-stability-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "ai-works-in-one-environment-not-another"
+      ],
       "search_intents": [
         "results vary too much",
         "AI results inconsistent",
@@ -3094,7 +3110,7 @@
         "AI answer changes too much",
         "model results are unstable"
       ],
-      "text": "AI answer changes too much AI results inconsistent CAT-0090 ISS-0063 Inconsistent Behavior Repeated or comparable runs produce outputs that vary more than the task, workflow, or user can tolerate. Results Vary Too Much compression-lens constraint-sufficiency-lens constraints-underspecified convergence-lens determinism-lens divergent-outputs inconsistent-behavior model results are unstable non-deterministic-execution output varies too much reference-stability-lens results vary too much same prompt gives very different answers variance-entropy-lens"
+      "text": "AI answer changes too much AI results inconsistent CAT-0090 ISS-0063 Inconsistent Behavior Repeated or comparable runs produce outputs that vary more than the task, workflow, or user can tolerate. Results Vary Too Much ai-works-in-one-environment-not-another compression-lens constraint-sufficiency-lens constraints-underspecified convergence-lens determinism-lens divergent-outputs inconsistent-behavior model results are unstable non-deterministic-execution output varies too much reference-stability-lens results vary too much same prompt gives very different answers variance-entropy-lens"
     },
     {
       "type": "issue",
@@ -3692,7 +3708,11 @@
           "normalization-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "agent-uses-old-tool-schema",
+        "documented-field-not-available-at-runtime",
+        "runtime-behavior-does-not-match-docs"
+      ],
       "search_intents": [
         "same contract name has different meanings",
         "same schema name different meaning",
@@ -3701,7 +3721,7 @@
         "AI workflow contract mismatch",
         "policy name reused with different meaning"
       ],
-      "text": "AI workflow contract mismatch CAT-0060 CAT-0080 Changes & Versions ISS-0057 Same Contract Name Has Different Meanings The same prompt, schema, field, policy, tool, or workflow contract name is used in different places with different meanings. changes-and-versions contract-drift convergence-lens determinism-lens interface-contract-lens interface-mismatch normalization-lens policy name reused with different meaning prompt contract changed meaning reconciliation-lens reference-instability reference-stability-lens same contract name has different meanings same field name means different things same schema name different meaning"
+      "text": "AI workflow contract mismatch CAT-0060 CAT-0080 Changes & Versions ISS-0057 Same Contract Name Has Different Meanings The same prompt, schema, field, policy, tool, or workflow contract name is used in different places with different meanings. agent-uses-old-tool-schema changes-and-versions contract-drift convergence-lens determinism-lens documented-field-not-available-at-runtime interface-contract-lens interface-mismatch normalization-lens policy name reused with different meaning prompt contract changed meaning reconciliation-lens reference-instability reference-stability-lens runtime-behavior-does-not-match-docs same contract name has different meanings same field name means different things same schema name different meaning"
     },
     {
       "type": "issue",
@@ -4475,6 +4495,8 @@
         ]
       },
       "related_ai_adj_issues": [
+        "agent-uses-old-tool-schema",
+        "documented-field-not-available-at-runtime",
         "runtime-behavior-does-not-match-docs",
         "tool-not-supported-in-this-mode"
       ],
@@ -4486,7 +4508,7 @@
         "agent used wrong tool parameters",
         "tool choice is underspecified"
       ],
-      "text": "AI called tool with wrong schema AI tool call wrong arguments CAT-0010 CAT-0040 ISS-0017 MCP, Tools & Integrations The AI or agent calls a tool with names, arguments, types, modes, or shapes that do not match the declared tool interface. Tool Call Contract Mismatch agent used wrong tool parameters boundary-compliance-lens compatibility-envelope-lens compatibility-violation conflict-lens function call invalid arguments interface-contract-lens interface-mismatch invariant-lens mcp-tools-and-integrations normalization-lens runtime-behavior-does-not-match-docs schema-breakage tool call contract mismatch tool choice is underspecified tool-not-supported-in-this-mode"
+      "text": "AI called tool with wrong schema AI tool call wrong arguments CAT-0010 CAT-0040 ISS-0017 MCP, Tools & Integrations The AI or agent calls a tool with names, arguments, types, modes, or shapes that do not match the declared tool interface. Tool Call Contract Mismatch agent used wrong tool parameters agent-uses-old-tool-schema boundary-compliance-lens compatibility-envelope-lens compatibility-violation conflict-lens documented-field-not-available-at-runtime function call invalid arguments interface-contract-lens interface-mismatch invariant-lens mcp-tools-and-integrations normalization-lens runtime-behavior-does-not-match-docs schema-breakage tool call contract mismatch tool choice is underspecified tool-not-supported-in-this-mode"
     },
     {
       "type": "issue",
@@ -4566,7 +4588,9 @@
           "variance-entropy-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "tool-not-supported-in-this-mode"
+      ],
       "search_intents": [
         "tool exists but required inputs are missing",
         "AI cannot call tool missing inputs",
@@ -4575,7 +4599,7 @@
         "missing inputs for MCP tool",
         "AI tool call lacks required parameters"
       ],
-      "text": "A usable tool or integration exists, but the AI or agent does not have the required inputs, permissions, fields, identifiers, or context needed to call it correctly. AI cannot call tool missing inputs AI tool call lacks required parameters CAT-0040 CAT-0120 ISS-0020 MCP, Tools & Integrations Tool Exists but Required Inputs Are Missing absence-lens agent needs required tool fields constraint-sufficiency-lens constraints-underspecified determinism-lens incomplete-declaration interface-contract-lens interface-mismatch mcp-tools-and-integrations missing inputs for MCP tool normalization-lens tool available but not enough information tool exists but required inputs are missing variance-entropy-lens"
+      "text": "A usable tool or integration exists, but the AI or agent does not have the required inputs, permissions, fields, identifiers, or context needed to call it correctly. AI cannot call tool missing inputs AI tool call lacks required parameters CAT-0040 CAT-0120 ISS-0020 MCP, Tools & Integrations Tool Exists but Required Inputs Are Missing absence-lens agent needs required tool fields constraint-sufficiency-lens constraints-underspecified determinism-lens incomplete-declaration interface-contract-lens interface-mismatch mcp-tools-and-integrations missing inputs for MCP tool normalization-lens tool available but not enough information tool exists but required inputs are missing tool-not-supported-in-this-mode variance-entropy-lens"
     },
     {
       "type": "issue",
@@ -4742,7 +4766,10 @@
           "determinism-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "agent-uses-old-tool-schema",
+        "ai-works-in-one-environment-not-another"
+      ],
       "search_intents": [
         "version change breaks existing prompt",
         "prompt broke after version change",
@@ -4751,7 +4778,7 @@
         "version update changed prompt behavior",
         "prompt incompatible with new version"
       ],
-      "text": "A prompt that previously produced usable results stops working after a version change in the model, tool, policy, schema, product surface, or workflow. AI prompt no longer works after update CAT-0010 CAT-0080 Changes & Versions ISS-0053 Version Change Breaks Existing Prompt boundary-compliance-lens changes-and-versions compatibility-envelope-lens compatibility-violation contract-drift convergence-lens determinism-lens old prompt stopped working prompt broke after version change prompt incompatible with new version reconciliation-lens reference-instability reference-stability-lens version change breaks existing prompt version update changed prompt behavior"
+      "text": "A prompt that previously produced usable results stops working after a version change in the model, tool, policy, schema, product surface, or workflow. AI prompt no longer works after update CAT-0010 CAT-0080 Changes & Versions ISS-0053 Version Change Breaks Existing Prompt agent-uses-old-tool-schema ai-works-in-one-environment-not-another boundary-compliance-lens changes-and-versions compatibility-envelope-lens compatibility-violation contract-drift convergence-lens determinism-lens old prompt stopped working prompt broke after version change prompt incompatible with new version reconciliation-lens reference-instability reference-stability-lens version change breaks existing prompt version update changed prompt behavior"
     },
     {
       "type": "issue",
@@ -5013,6 +5040,31 @@
     },
     {
       "type": "ai_adj_issue",
+      "slug": "agent-uses-old-tool-schema",
+      "ontology_slug": "agent-uses-old-tool-schema",
+      "code": "ADJ-0004",
+      "title": "Agent Uses Old Tool Schema",
+      "summary": "An agent, prompt, workflow, or integration continues using an older tool schema after the tool contract has changed.",
+      "url": "/workbench/ai-adj-issues/agent-uses-old-tool-schema/",
+      "related_issues": [
+        "tool-call-contract-mismatch",
+        "version-change-breaks-existing-prompt",
+        "prompt-changed-but-workflow-did-not",
+        "same-contract-name-has-different-meanings",
+        "output-breaks-the-next-step"
+      ],
+      "search_intents": [
+        "agent uses old tool schema",
+        "AI agent using outdated tool schema",
+        "MCP schema changed agent still old",
+        "tool schema version mismatch",
+        "agent calls deprecated tool fields",
+        "old function schema still used"
+      ],
+      "text": "ADJ-0004 AI agent using outdated tool schema Agent Uses Old Tool Schema An agent, prompt, workflow, or integration continues using an older tool schema after the tool contract has changed. MCP schema changed agent still old agent calls deprecated tool fields agent uses old tool schema old function schema still used output-breaks-the-next-step prompt-changed-but-workflow-did-not same-contract-name-has-different-meanings tool schema version mismatch tool-call-contract-mismatch version-change-breaks-existing-prompt"
+    },
+    {
+      "type": "ai_adj_issue",
       "slug": "ai-works-in-one-environment-not-another",
       "ontology_slug": "ai-works-in-one-environment-not-another",
       "code": "ADJ-0002",
@@ -5020,16 +5072,45 @@
       "summary": "The same AI task appears to work in one app, mode, model, account, workspace, or runtime but fails or behaves differently in another.",
       "url": "/workbench/ai-adj-issues/ai-works-in-one-environment-not-another/",
       "related_issues": [
-        "ai-forgets-earlier-constraints",
-        "agent-keeps-expanding-the-task"
+        "output-breaks-after-model-change",
+        "version-change-breaks-existing-prompt",
+        "prompt-behavior-changed-without-version-change",
+        "results-vary-too-much",
+        "context-changes-after-restore"
       ],
       "search_intents": [
         "AI works in one environment not another",
         "same prompt works in one app but not another",
-        "AI works here but fails there",
-        "model behaves differently in another environment"
+        "AI works on one account but not another",
+        "agent works locally but not in production",
+        "ChatGPT behaves differently in another workspace",
+        "same AI task fails in different mode"
       ],
-      "text": "ADJ-0002 AI Works in One Environment Not Another AI works here but fails there AI works in one environment not another The same AI task appears to work in one app, mode, model, account, workspace, or runtime but fails or behaves differently in another. agent-keeps-expanding-the-task ai-forgets-earlier-constraints model behaves differently in another environment same prompt works in one app but not another"
+      "text": "ADJ-0002 AI Works in One Environment Not Another AI works in one environment not another AI works on one account but not another ChatGPT behaves differently in another workspace The same AI task appears to work in one app, mode, model, account, workspace, or runtime but fails or behaves differently in another. agent works locally but not in production context-changes-after-restore output-breaks-after-model-change prompt-behavior-changed-without-version-change results-vary-too-much same AI task fails in different mode same prompt works in one app but not another version-change-breaks-existing-prompt"
+    },
+    {
+      "type": "ai_adj_issue",
+      "slug": "documented-field-not-available-at-runtime",
+      "ontology_slug": "documented-field-not-available-at-runtime",
+      "code": "ADJ-0003",
+      "title": "Documented Field Not Available at Runtime",
+      "summary": "A documented field, option, parameter, property, or capability is expected by the user or agent but is not available in the actual runtime.",
+      "url": "/workbench/ai-adj-issues/documented-field-not-available-at-runtime/",
+      "related_issues": [
+        "missing-required-fields",
+        "tool-call-contract-mismatch",
+        "actual-policy-differs-from-declared-policy",
+        "same-contract-name-has-different-meanings"
+      ],
+      "search_intents": [
+        "documented field not available at runtime",
+        "field in docs missing at runtime",
+        "API field not available",
+        "tool schema field missing",
+        "documented option not supported",
+        "runtime missing documented parameter"
+      ],
+      "text": "A documented field, option, parameter, property, or capability is expected by the user or agent but is not available in the actual runtime. ADJ-0003 API field not available Documented Field Not Available at Runtime actual-policy-differs-from-declared-policy documented field not available at runtime documented option not supported field in docs missing at runtime missing-required-fields runtime missing documented parameter same-contract-name-has-different-meanings tool schema field missing tool-call-contract-mismatch"
     },
     {
       "type": "ai_adj_issue",
@@ -5040,16 +5121,21 @@
       "summary": "Documented behavior, fields, tool schemas, permissions, or runtime capabilities do not match what actually happens during use.",
       "url": "/workbench/ai-adj-issues/runtime-behavior-does-not-match-docs/",
       "related_issues": [
-        "tool-call-contract-mismatch",
-        "invalid-json-output"
+        "actual-policy-differs-from-declared-policy",
+        "output-changed-without-declared-change",
+        "prompt-behavior-changed-without-version-change",
+        "same-contract-name-has-different-meanings",
+        "tool-call-contract-mismatch"
       ],
       "search_intents": [
         "runtime behavior does not match docs",
-        "docs do not match runtime",
-        "documented behavior is wrong",
-        "API docs say one thing but runtime does another"
+        "AI behavior does not match documentation",
+        "tool docs do not match runtime",
+        "documented behavior differs from actual behavior",
+        "API docs wrong at runtime",
+        "product docs do not match AI behavior"
       ],
-      "text": "ADJ-0005 API docs say one thing but runtime does another Documented behavior, fields, tool schemas, permissions, or runtime capabilities do not match what actually happens during use. Runtime Behavior Does Not Match Docs docs do not match runtime documented behavior is wrong invalid-json-output runtime behavior does not match docs tool-call-contract-mismatch"
+      "text": "ADJ-0005 AI behavior does not match documentation API docs wrong at runtime Documented behavior, fields, tool schemas, permissions, or runtime capabilities do not match what actually happens during use. Runtime Behavior Does Not Match Docs actual-policy-differs-from-declared-policy documented behavior differs from actual behavior output-changed-without-declared-change product docs do not match AI behavior prompt-behavior-changed-without-version-change runtime behavior does not match docs same-contract-name-has-different-meanings tool docs do not match runtime tool-call-contract-mismatch"
     },
     {
       "type": "ai_adj_issue",
@@ -5060,15 +5146,19 @@
       "summary": "A tool or capability appears unavailable in the current mode, environment, product surface, or runtime context.",
       "url": "/workbench/ai-adj-issues/tool-not-supported-in-this-mode/",
       "related_issues": [
-        "tool-call-contract-mismatch"
+        "tool-call-contract-mismatch",
+        "tool-exists-but-required-inputs-are-missing",
+        "agent-cannot-choose-tool-without-tool-result"
       ],
       "search_intents": [
         "tool not supported in this mode",
         "AI tool not available",
         "agent cannot use tool",
-        "MCP tool not showing up"
+        "MCP tool not showing up",
+        "connector not available in this mode",
+        "ChatGPT cannot use tool here"
       ],
-      "text": "A tool or capability appears unavailable in the current mode, environment, product surface, or runtime context. ADJ-0001 AI tool not available MCP tool not showing up Tool Not Supported in This Mode agent cannot use tool tool not supported in this mode tool-call-contract-mismatch"
+      "text": "A tool or capability appears unavailable in the current mode, environment, product surface, or runtime context. ADJ-0001 AI tool not available ChatGPT cannot use tool here MCP tool not showing up Tool Not Supported in This Mode agent cannot use tool agent-cannot-choose-tool-without-tool-result connector not available in this mode tool not supported in this mode tool-call-contract-mismatch tool-exists-but-required-inputs-are-missing"
     }
   ],
   "facets": {

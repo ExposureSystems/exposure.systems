@@ -460,7 +460,10 @@
           "provenance-trace-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "documented-field-not-available-at-runtime",
+        "runtime-behavior-does-not-match-docs"
+      ],
       "search_intents": [
         "actual policy differs from declared policy",
         "AI behavior does not match policy",
@@ -506,7 +509,9 @@
           "reconciliation-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "tool-not-supported-in-this-mode"
+      ],
       "search_intents": [
         "agent cannot choose tool without tool result",
         "AI needs tool result to pick tool",
@@ -598,9 +603,7 @@
           "variance-entropy-lens"
         ]
       },
-      "related_ai_adj_issues": [
-        "ai-works-in-one-environment-not-another"
-      ],
+      "related_ai_adj_issues": [],
       "search_intents": [
         "agent keeps expanding the task",
         "AI keeps adding more steps",
@@ -825,9 +828,7 @@
           "variance-entropy-lens"
         ]
       },
-      "related_ai_adj_issues": [
-        "ai-works-in-one-environment-not-another"
-      ],
+      "related_ai_adj_issues": [],
       "search_intents": [
         "AI forgets earlier constraints",
         "ChatGPT forgot instructions",
@@ -1464,7 +1465,9 @@
           "provenance-trace-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "ai-works-in-one-environment-not-another"
+      ],
       "search_intents": [
         "context changes after restore",
         "restored chat has different context",
@@ -2150,9 +2153,7 @@
           "variance-entropy-lens"
         ]
       },
-      "related_ai_adj_issues": [
-        "runtime-behavior-does-not-match-docs"
-      ],
+      "related_ai_adj_issues": [],
       "search_intents": [
         "AI invalid JSON",
         "ChatGPT malformed JSON",
@@ -2382,7 +2383,9 @@
           "conflict-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "documented-field-not-available-at-runtime"
+      ],
       "search_intents": [
         "missing required fields",
         "AI output missing fields",
@@ -2748,7 +2751,9 @@
           "determinism-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "ai-works-in-one-environment-not-another"
+      ],
       "search_intents": [
         "output breaks after model change",
         "AI output changed after model update",
@@ -2793,7 +2798,9 @@
           "normalization-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "agent-uses-old-tool-schema"
+      ],
       "search_intents": [
         "output breaks the next step",
         "AI output fails downstream",
@@ -2839,7 +2846,9 @@
           "provenance-trace-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "runtime-behavior-does-not-match-docs"
+      ],
       "search_intents": [
         "output changed without declared change",
         "AI output changed without update",
@@ -3200,7 +3209,10 @@
           "provenance-trace-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "ai-works-in-one-environment-not-another",
+        "runtime-behavior-does-not-match-docs"
+      ],
       "search_intents": [
         "prompt behavior changed without version change",
         "prompt changed behavior but version same",
@@ -3246,7 +3258,9 @@
           "normalization-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "agent-uses-old-tool-schema"
+      ],
       "search_intents": [
         "prompt changed but workflow did not",
         "prompt update broke workflow",
@@ -3558,7 +3572,9 @@
           "reference-stability-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "ai-works-in-one-environment-not-another"
+      ],
       "search_intents": [
         "results vary too much",
         "AI results inconsistent",
@@ -4193,7 +4209,11 @@
           "normalization-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "agent-uses-old-tool-schema",
+        "documented-field-not-available-at-runtime",
+        "runtime-behavior-does-not-match-docs"
+      ],
       "search_intents": [
         "same contract name has different meanings",
         "same schema name different meaning",
@@ -5012,6 +5032,8 @@
         ]
       },
       "related_ai_adj_issues": [
+        "agent-uses-old-tool-schema",
+        "documented-field-not-available-at-runtime",
         "runtime-behavior-does-not-match-docs",
         "tool-not-supported-in-this-mode"
       ],
@@ -5107,7 +5129,9 @@
           "variance-entropy-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "tool-not-supported-in-this-mode"
+      ],
       "search_intents": [
         "tool exists but required inputs are missing",
         "AI cannot call tool missing inputs",
@@ -5291,7 +5315,10 @@
           "determinism-lens"
         ]
       },
-      "related_ai_adj_issues": [],
+      "related_ai_adj_issues": [
+        "agent-uses-old-tool-schema",
+        "ai-works-in-one-environment-not-another"
+      ],
       "search_intents": [
         "version change breaks existing prompt",
         "prompt broke after version change",
@@ -5576,6 +5603,33 @@
   ],
   "ai_adj_issues": [
     {
+      "slug": "agent-uses-old-tool-schema",
+      "ontology_slug": "agent-uses-old-tool-schema",
+      "code": "ADJ-0004",
+      "title": "Agent Uses Old Tool Schema",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "An agent, prompt, workflow, or integration continues using an older tool schema after the tool contract has changed.",
+      "related_issues": [
+        "tool-call-contract-mismatch",
+        "version-change-breaks-existing-prompt",
+        "prompt-changed-but-workflow-did-not",
+        "same-contract-name-has-different-meanings",
+        "output-breaks-the-next-step"
+      ],
+      "search_intents": [
+        "agent uses old tool schema",
+        "AI agent using outdated tool schema",
+        "MCP schema changed agent still old",
+        "tool schema version mismatch",
+        "agent calls deprecated tool fields",
+        "old function schema still used"
+      ],
+      "url": "/workbench/ai-adj-issues/agent-uses-old-tool-schema/",
+      "markdown_url": "/workbench/ai-adj-issues/agent-uses-old-tool-schema.md"
+    },
+    {
       "slug": "ai-works-in-one-environment-not-another",
       "ontology_slug": "ai-works-in-one-environment-not-another",
       "code": "ADJ-0002",
@@ -5585,17 +5639,48 @@
       "updated_at": "2026-05-10T00:00:00Z",
       "summary": "The same AI task appears to work in one app, mode, model, account, workspace, or runtime but fails or behaves differently in another.",
       "related_issues": [
-        "ai-forgets-earlier-constraints",
-        "agent-keeps-expanding-the-task"
+        "output-breaks-after-model-change",
+        "version-change-breaks-existing-prompt",
+        "prompt-behavior-changed-without-version-change",
+        "results-vary-too-much",
+        "context-changes-after-restore"
       ],
       "search_intents": [
         "AI works in one environment not another",
         "same prompt works in one app but not another",
-        "AI works here but fails there",
-        "model behaves differently in another environment"
+        "AI works on one account but not another",
+        "agent works locally but not in production",
+        "ChatGPT behaves differently in another workspace",
+        "same AI task fails in different mode"
       ],
       "url": "/workbench/ai-adj-issues/ai-works-in-one-environment-not-another/",
       "markdown_url": "/workbench/ai-adj-issues/ai-works-in-one-environment-not-another.md"
+    },
+    {
+      "slug": "documented-field-not-available-at-runtime",
+      "ontology_slug": "documented-field-not-available-at-runtime",
+      "code": "ADJ-0003",
+      "title": "Documented Field Not Available at Runtime",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "A documented field, option, parameter, property, or capability is expected by the user or agent but is not available in the actual runtime.",
+      "related_issues": [
+        "missing-required-fields",
+        "tool-call-contract-mismatch",
+        "actual-policy-differs-from-declared-policy",
+        "same-contract-name-has-different-meanings"
+      ],
+      "search_intents": [
+        "documented field not available at runtime",
+        "field in docs missing at runtime",
+        "API field not available",
+        "tool schema field missing",
+        "documented option not supported",
+        "runtime missing documented parameter"
+      ],
+      "url": "/workbench/ai-adj-issues/documented-field-not-available-at-runtime/",
+      "markdown_url": "/workbench/ai-adj-issues/documented-field-not-available-at-runtime.md"
     },
     {
       "slug": "runtime-behavior-does-not-match-docs",
@@ -5607,14 +5692,19 @@
       "updated_at": "2026-05-10T00:00:00Z",
       "summary": "Documented behavior, fields, tool schemas, permissions, or runtime capabilities do not match what actually happens during use.",
       "related_issues": [
-        "tool-call-contract-mismatch",
-        "invalid-json-output"
+        "actual-policy-differs-from-declared-policy",
+        "output-changed-without-declared-change",
+        "prompt-behavior-changed-without-version-change",
+        "same-contract-name-has-different-meanings",
+        "tool-call-contract-mismatch"
       ],
       "search_intents": [
         "runtime behavior does not match docs",
-        "docs do not match runtime",
-        "documented behavior is wrong",
-        "API docs say one thing but runtime does another"
+        "AI behavior does not match documentation",
+        "tool docs do not match runtime",
+        "documented behavior differs from actual behavior",
+        "API docs wrong at runtime",
+        "product docs do not match AI behavior"
       ],
       "url": "/workbench/ai-adj-issues/runtime-behavior-does-not-match-docs/",
       "markdown_url": "/workbench/ai-adj-issues/runtime-behavior-does-not-match-docs.md"
@@ -5629,13 +5719,17 @@
       "updated_at": "2026-05-10T00:00:00Z",
       "summary": "A tool or capability appears unavailable in the current mode, environment, product surface, or runtime context.",
       "related_issues": [
-        "tool-call-contract-mismatch"
+        "tool-call-contract-mismatch",
+        "tool-exists-but-required-inputs-are-missing",
+        "agent-cannot-choose-tool-without-tool-result"
       ],
       "search_intents": [
         "tool not supported in this mode",
         "AI tool not available",
         "agent cannot use tool",
-        "MCP tool not showing up"
+        "MCP tool not showing up",
+        "connector not available in this mode",
+        "ChatGPT cannot use tool here"
       ],
       "url": "/workbench/ai-adj-issues/tool-not-supported-in-this-mode/",
       "markdown_url": "/workbench/ai-adj-issues/tool-not-supported-in-this-mode.md"
