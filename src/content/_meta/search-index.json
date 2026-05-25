@@ -128,12 +128,56 @@
       ],
       "search_intents": [
         "AI forgets earlier constraints",
-        "ChatGPT forgot my instructions",
-        "agent forgot the rule",
-        "AI stopped following earlier constraint",
-        "AI followed the rule at first then forgot"
+        "ChatGPT forgot instructions",
+        "AI ignored earlier requirement",
+        "model forgot previous constraint",
+        "instruction stopped applying later",
+        "AI lost context rule"
       ],
-      "text": "A constraint, instruction, preference, or decision that should persist through the task stops affecting later output. AI Forgets Earlier Constraints AI followed the rule at first then forgot AI forgets earlier constraints AI stopped following earlier constraint CAT-0020 ChatGPT forgot my instructions ISS-0029 Memory & Context agent forgot the rule ai-works-in-one-environment-not-another constraint-sufficiency-lens constraints-underspecified contract-drift convergence-lens determinism-lens memory-and-context persistence-instability reconciliation-lens reference-stability-lens variance-entropy-lens"
+      "text": "A constraint, instruction, preference, or decision that should persist through the task stops affecting later output. AI Forgets Earlier Constraints AI forgets earlier constraints AI ignored earlier requirement AI lost context rule CAT-0020 ChatGPT forgot instructions ISS-0029 Memory & Context ai-works-in-one-environment-not-another constraint-sufficiency-lens constraints-underspecified contract-drift convergence-lens determinism-lens instruction stopped applying later memory-and-context model forgot previous constraint persistence-instability reconciliation-lens reference-stability-lens variance-entropy-lens"
+    },
+    {
+      "type": "issue",
+      "slug": "ai-output-breaks-parser",
+      "ontology_slug": "ai-output-breaks-parser",
+      "code": "ISS-0026",
+      "title": "AI Output Breaks Parser",
+      "summary": "The AI output causes a parser, validator, importer, or structured-output consumer to fail.",
+      "url": "/workbench/issues/ai-output-breaks-parser/",
+      "category": "output",
+      "category_title": "Output",
+      "primary_cat_code": "CAT-0010",
+      "secondary_cat_codes": [
+        "CAT-0040"
+      ],
+      "primary_pattern": "schema-breakage",
+      "patterns": [
+        "schema-breakage",
+        "interface-mismatch",
+        "compatibility-violation"
+      ],
+      "lenses": {
+        "primary": [
+          "compatibility-envelope-lens",
+          "interface-contract-lens",
+          "invariant-lens"
+        ],
+        "secondary": [
+          "boundary-compliance-lens",
+          "conflict-lens",
+          "normalization-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "AI output breaks parser",
+        "parser fails on AI output",
+        "AI response cannot be parsed",
+        "structured output parser error",
+        "AI output breaks importer",
+        "parser rejects LLM output"
+      ],
+      "text": "AI Output Breaks Parser AI output breaks importer AI output breaks parser AI response cannot be parsed CAT-0010 CAT-0040 ISS-0026 Output The AI output causes a parser, validator, importer, or structured-output consumer to fail. boundary-compliance-lens compatibility-envelope-lens compatibility-violation conflict-lens interface-contract-lens interface-mismatch invariant-lens normalization-lens output parser fails on AI output parser rejects LLM output schema-breakage structured output parser error"
     },
     {
       "type": "issue",
@@ -266,6 +310,92 @@
     },
     {
       "type": "issue",
+      "slug": "context-changes-after-restore",
+      "ontology_slug": "context-changes-after-restore",
+      "code": "ISS-0031",
+      "title": "Context Changes After Restore",
+      "summary": "Restoring, reopening, resuming, or reloading a task changes the context that the AI uses to continue the work.",
+      "url": "/workbench/issues/context-changes-after-restore/",
+      "category": "memory-and-context",
+      "category_title": "Memory & Context",
+      "primary_cat_code": "CAT-0020",
+      "secondary_cat_codes": [
+        "CAT-0080"
+      ],
+      "primary_pattern": "contract-drift",
+      "patterns": [
+        "contract-drift",
+        "persistence-instability",
+        "silent-mutation"
+      ],
+      "lenses": {
+        "primary": [
+          "convergence-lens",
+          "determinism-lens",
+          "reconciliation-lens",
+          "reference-stability-lens"
+        ],
+        "secondary": [
+          "provenance-trace-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "context changes after restore",
+        "restored chat has different context",
+        "AI context changed after reload",
+        "resume changed AI behavior",
+        "restored task lost context",
+        "AI uses different context after reopening"
+      ],
+      "text": "AI context changed after reload AI uses different context after reopening CAT-0020 CAT-0080 Context Changes After Restore ISS-0031 Memory & Context Restoring, reopening, resuming, or reloading a task changes the context that the AI uses to continue the work. context changes after restore contract-drift convergence-lens determinism-lens memory-and-context persistence-instability provenance-trace-lens reconciliation-lens reference-stability-lens restored chat has different context restored task lost context resume changed AI behavior silent-mutation"
+    },
+    {
+      "type": "issue",
+      "slug": "context-leaks-between-tasks",
+      "ontology_slug": "context-leaks-between-tasks",
+      "code": "ISS-0032",
+      "title": "Context Leaks Between Tasks",
+      "summary": "Context, assumptions, constraints, examples, files, or decisions from one task affect another task where they should not apply.",
+      "url": "/workbench/issues/context-leaks-between-tasks/",
+      "category": "memory-and-context",
+      "category_title": "Memory & Context",
+      "primary_cat_code": "CAT-0020",
+      "secondary_cat_codes": [
+        "CAT-0100"
+      ],
+      "primary_pattern": "boundary-leakage",
+      "patterns": [
+        "boundary-leakage",
+        "propagation-amplification",
+        "persistence-instability"
+      ],
+      "lenses": {
+        "primary": [
+          "escalation-gradient-lens",
+          "isolation-boundary-lens",
+          "propagation-lens",
+          "reference-stability-lens"
+        ],
+        "secondary": [
+          "boundary-compliance-lens",
+          "determinism-lens",
+          "variance-entropy-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "context leaks between tasks",
+        "AI uses context from another task",
+        "ChatGPT carries over wrong context",
+        "previous task affects new task",
+        "AI mixes separate tasks",
+        "context bleed between conversations"
+      ],
+      "text": "AI mixes separate tasks AI uses context from another task CAT-0020 CAT-0100 ChatGPT carries over wrong context Context Leaks Between Tasks Context, assumptions, constraints, examples, files, or decisions from one task affect another task where they should not apply. ISS-0032 Memory & Context boundary-compliance-lens boundary-leakage context bleed between conversations context leaks between tasks determinism-lens escalation-gradient-lens isolation-boundary-lens memory-and-context persistence-instability previous task affects new task propagation-amplification propagation-lens reference-stability-lens variance-entropy-lens"
+    },
+    {
+      "type": "issue",
       "slug": "declared-owner-cannot-control-outcome",
       "ontology_slug": "declared-owner-cannot-control-outcome",
       "code": "ISS-0015",
@@ -311,6 +441,50 @@
     },
     {
       "type": "issue",
+      "slug": "duplicate-fields-with-same-meaning",
+      "ontology_slug": "duplicate-fields-with-same-meaning",
+      "code": "ISS-0027",
+      "title": "Duplicate Fields With Same Meaning",
+      "summary": "The AI returns multiple fields, labels, sections, or structured elements that carry the same meaning and create ambiguity about which one should be used.",
+      "url": "/workbench/issues/duplicate-fields-with-same-meaning/",
+      "category": "duplication-and-overload",
+      "category_title": "Duplication & Overload",
+      "primary_cat_code": "CAT-0140",
+      "secondary_cat_codes": [
+        "CAT-0010"
+      ],
+      "primary_pattern": "redundant-declaration",
+      "patterns": [
+        "redundant-declaration",
+        "density-spike",
+        "schema-breakage"
+      ],
+      "lenses": {
+        "primary": [
+          "compression-lens",
+          "conflict-lens",
+          "interface-contract-lens",
+          "invariant-lens",
+          "normalization-lens",
+          "variance-entropy-lens"
+        ],
+        "secondary": [
+          "escalation-gradient-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "duplicate fields with same meaning",
+        "AI output has duplicate fields",
+        "same meaning in multiple JSON keys",
+        "duplicate structured output fields",
+        "AI returned redundant fields",
+        "output has overlapping fields"
+      ],
+      "text": "AI output has duplicate fields AI returned redundant fields CAT-0010 CAT-0140 Duplicate Fields With Same Meaning Duplication & Overload ISS-0027 The AI returns multiple fields, labels, sections, or structured elements that carry the same meaning and create ambiguity about which one should be used. compression-lens conflict-lens density-spike duplicate fields with same meaning duplicate structured output fields duplication-and-overload escalation-gradient-lens interface-contract-lens invariant-lens normalization-lens output has overlapping fields redundant-declaration same meaning in multiple JSON keys schema-breakage variance-entropy-lens"
+    },
+    {
+      "type": "issue",
       "slug": "fallback-authority-is-missing",
       "ontology_slug": "fallback-authority-is-missing",
       "code": "ISS-0014",
@@ -353,6 +527,50 @@
         "workflow has no fallback authority"
       ],
       "text": "AI does not know who decides if primary fails CAT-0050 CAT-0070 Fallback Authority Is Missing ISS-0014 Permissions & Approvals The system does not declare who or what has authority when the primary owner, rule, tool, source, or decision path is unavailable or inconclusive. absence-lens authority-overlay-lens circular-dependency conflict-lens constraint-sufficiency-lens fallback authority is missing incomplete-declaration interface-contract-lens missing escalation authority missing-authority no backup decision owner no fallback approver normalization-lens permissions-and-approvals propagation-lens reconciliation-lens workflow has no fallback authority"
+    },
+    {
+      "type": "issue",
+      "slug": "format-rule-too-weak",
+      "ontology_slug": "format-rule-too-weak",
+      "code": "ISS-0028",
+      "title": "Format Rule Too Weak",
+      "summary": "The format instruction is too vague, incomplete, or optional to reliably produce output that satisfies the expected structure.",
+      "url": "/workbench/issues/format-rule-too-weak/",
+      "category": "coverage-and-guidance",
+      "category_title": "Coverage & Guidance",
+      "primary_cat_code": "CAT-0120",
+      "secondary_cat_codes": [
+        "CAT-0010"
+      ],
+      "primary_pattern": "constraints-underspecified",
+      "patterns": [
+        "constraints-underspecified",
+        "incomplete-declaration",
+        "schema-breakage"
+      ],
+      "lenses": {
+        "primary": [
+          "absence-lens",
+          "constraint-sufficiency-lens",
+          "interface-contract-lens",
+          "invariant-lens"
+        ],
+        "secondary": [
+          "conflict-lens",
+          "determinism-lens",
+          "variance-entropy-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "format rule too weak",
+        "AI did not follow output format",
+        "prompt format instructions too vague",
+        "output format not strict enough",
+        "AI ignores format rule",
+        "structured output rule incomplete"
+      ],
+      "text": "AI did not follow output format AI ignores format rule CAT-0010 CAT-0120 Coverage & Guidance Format Rule Too Weak ISS-0028 The format instruction is too vague, incomplete, or optional to reliably produce output that satisfies the expected structure. absence-lens conflict-lens constraint-sufficiency-lens constraints-underspecified coverage-and-guidance determinism-lens format rule too weak incomplete-declaration interface-contract-lens invariant-lens output format not strict enough prompt format instructions too vague schema-breakage structured output rule incomplete variance-entropy-lens"
     },
     {
       "type": "issue",
@@ -486,6 +704,45 @@
         "schema validation missing fields"
       ],
       "text": "AI output missing fields AI skipped required fields CAT-0010 CAT-0120 ISS-0022 JSON missing required keys Missing Required Fields Output The AI returns structured output that omits fields required by the schema, workflow, parser, form, or downstream consumer. absence-lens compression-lens conflict-lens constraint-sufficiency-lens density-vacuum incomplete-declaration interface-contract-lens invariant-lens missing required fields output schema validation missing fields schema-breakage structured output missing required field"
+    },
+    {
+      "type": "issue",
+      "slug": "nested-fields-do-not-match",
+      "ontology_slug": "nested-fields-do-not-match",
+      "code": "ISS-0025",
+      "title": "Nested Fields Do Not Match",
+      "summary": "The AI returns nested structured fields whose internal shape, hierarchy, parent-child relationship, or contained values do not match the expected structure.",
+      "url": "/workbench/issues/nested-fields-do-not-match/",
+      "category": "output",
+      "category_title": "Output",
+      "primary_cat_code": "CAT-0010",
+      "secondary_cat_codes": [],
+      "primary_pattern": "schema-breakage",
+      "patterns": [
+        "schema-breakage",
+        "interface-mismatch",
+        "invariant-breakage"
+      ],
+      "lenses": {
+        "primary": [
+          "conflict-lens",
+          "interface-contract-lens",
+          "invariant-lens"
+        ],
+        "secondary": [
+          "normalization-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "nested fields do not match",
+        "AI output nested fields wrong",
+        "JSON nested object wrong shape",
+        "nested schema mismatch",
+        "AI returned wrong nested structure",
+        "child fields do not match parent field"
+      ],
+      "text": "AI output nested fields wrong AI returned wrong nested structure CAT-0010 ISS-0025 JSON nested object wrong shape Nested Fields Do Not Match Output The AI returns nested structured fields whose internal shape, hierarchy, parent-child relationship, or contained values do not match the expected structure. child fields do not match parent field conflict-lens interface-contract-lens interface-mismatch invariant-breakage invariant-lens nested fields do not match nested schema mismatch normalization-lens output schema-breakage"
     },
     {
       "type": "issue",
@@ -829,6 +1086,50 @@
     },
     {
       "type": "issue",
+      "slug": "task-progress-is-lost-midway",
+      "ontology_slug": "task-progress-is-lost-midway",
+      "code": "ISS-0030",
+      "title": "Task Progress Is Lost Midway",
+      "summary": "The AI loses track of completed work, prior decisions, current position, or remaining steps before the task is finished.",
+      "url": "/workbench/issues/task-progress-is-lost-midway/",
+      "category": "memory-and-context",
+      "category_title": "Memory & Context",
+      "primary_cat_code": "CAT-0020",
+      "secondary_cat_codes": [
+        "CAT-0070"
+      ],
+      "primary_pattern": "persistence-instability",
+      "patterns": [
+        "persistence-instability",
+        "orphaned-structure",
+        "convergence-failure"
+      ],
+      "lenses": {
+        "primary": [
+          "absence-lens",
+          "convergence-lens",
+          "reference-stability-lens"
+        ],
+        "secondary": [
+          "determinism-lens",
+          "propagation-lens",
+          "reconciliation-lens",
+          "variance-entropy-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "task progress is lost midway",
+        "AI lost track of progress",
+        "ChatGPT forgot where we were",
+        "AI restarted task midway",
+        "progress lost during AI workflow",
+        "AI forgot completed steps"
+      ],
+      "text": "AI forgot completed steps AI lost track of progress AI restarted task midway CAT-0020 CAT-0070 ChatGPT forgot where we were ISS-0030 Memory & Context Task Progress Is Lost Midway The AI loses track of completed work, prior decisions, current position, or remaining steps before the task is finished. absence-lens convergence-failure convergence-lens determinism-lens memory-and-context orphaned-structure persistence-instability progress lost during AI workflow propagation-lens reconciliation-lens reference-stability-lens task progress is lost midway variance-entropy-lens"
+    },
+    {
+      "type": "issue",
       "slug": "tool-call-contract-mismatch",
       "ontology_slug": "tool-call-contract-mismatch",
       "code": "ISS-0017",
@@ -1167,17 +1468,17 @@
         "ontology_slug": "changes-and-versions",
         "code": "CAT-0080",
         "title": "Changes & Versions",
-        "count": 1,
+        "count": 2,
         "primary_count": 1,
-        "secondary_count": 0
+        "secondary_count": 1
       },
       {
         "slug": "coverage-and-guidance",
         "ontology_slug": "coverage-and-guidance",
         "code": "CAT-0120",
         "title": "Coverage & Guidance",
-        "count": 4,
-        "primary_count": 0,
+        "count": 5,
+        "primary_count": 1,
         "secondary_count": 4
       },
       {
@@ -1185,8 +1486,8 @@
         "ontology_slug": "duplication-and-overload",
         "code": "CAT-0140",
         "title": "Duplication & Overload",
-        "count": 0,
-        "primary_count": 0,
+        "count": 1,
+        "primary_count": 1,
         "secondary_count": 0
       },
       {
@@ -1212,17 +1513,17 @@
         "ontology_slug": "mcp-tools-and-integrations",
         "code": "CAT-0040",
         "title": "MCP, Tools & Integrations",
-        "count": 4,
+        "count": 5,
         "primary_count": 4,
-        "secondary_count": 0
+        "secondary_count": 1
       },
       {
         "slug": "memory-and-context",
         "ontology_slug": "memory-and-context",
         "code": "CAT-0020",
         "title": "Memory & Context",
-        "count": 1,
-        "primary_count": 1,
+        "count": 4,
+        "primary_count": 4,
         "secondary_count": 0
       },
       {
@@ -1230,9 +1531,9 @@
         "ontology_slug": "output",
         "code": "CAT-0010",
         "title": "Output",
-        "count": 12,
-        "primary_count": 7,
-        "secondary_count": 5
+        "count": 16,
+        "primary_count": 9,
+        "secondary_count": 7
       },
       {
         "slug": "permissions-and-approvals",
@@ -1257,9 +1558,9 @@
         "ontology_slug": "scope-and-boundaries",
         "code": "CAT-0100",
         "title": "Scope & Boundaries",
-        "count": 5,
+        "count": 6,
         "primary_count": 1,
-        "secondary_count": 4
+        "secondary_count": 5
       },
       {
         "slug": "spread-and-escalation",
@@ -1275,9 +1576,9 @@
         "ontology_slug": "workflow-and-handoffs",
         "code": "CAT-0070",
         "title": "Workflow & Handoffs",
-        "count": 3,
+        "count": 4,
         "primary_count": 1,
-        "secondary_count": 2
+        "secondary_count": 3
       }
     ],
     "patterns": [
@@ -1321,7 +1622,7 @@
         "ontology_slug": "boundary-leakage",
         "code": "PAT-0140",
         "title": "Boundary Leakage",
-        "count": 0
+        "count": 1
       },
       {
         "slug": "circular-dependency",
@@ -1335,28 +1636,28 @@
         "ontology_slug": "compatibility-violation",
         "code": "PAT-0180",
         "title": "Compatibility Violation",
-        "count": 6
+        "count": 7
       },
       {
         "slug": "constraints-underspecified",
         "ontology_slug": "constraints-underspecified",
         "code": "PAT-0170",
         "title": "Constraints Underspecified",
-        "count": 6
+        "count": 7
       },
       {
         "slug": "contract-drift",
         "ontology_slug": "contract-drift",
         "code": "PAT-0190",
         "title": "Contract Drift",
-        "count": 3
+        "count": 4
       },
       {
         "slug": "convergence-failure",
         "ontology_slug": "convergence-failure",
         "code": "PAT-0320",
         "title": "Convergence Failure",
-        "count": 1
+        "count": 2
       },
       {
         "slug": "cross-layer-escalation",
@@ -1370,7 +1671,7 @@
         "ontology_slug": "density-spike",
         "code": "PAT-0270",
         "title": "Density Spike",
-        "count": 1
+        "count": 2
       },
       {
         "slug": "density-vacuum",
@@ -1398,21 +1699,21 @@
         "ontology_slug": "incomplete-declaration",
         "code": "PAT-0130",
         "title": "Incomplete Declaration",
-        "count": 6
+        "count": 7
       },
       {
         "slug": "interface-mismatch",
         "ontology_slug": "interface-mismatch",
         "code": "PAT-0150",
         "title": "Interface Mismatch",
-        "count": 7
+        "count": 9
       },
       {
         "slug": "invariant-breakage",
         "ontology_slug": "invariant-breakage",
         "code": "PAT-0330",
         "title": "Invariant Breakage",
-        "count": 0
+        "count": 1
       },
       {
         "slug": "missing-authority",
@@ -1433,7 +1734,7 @@
         "ontology_slug": "orphaned-structure",
         "code": "PAT-0310",
         "title": "Orphaned Structure",
-        "count": 2
+        "count": 3
       },
       {
         "slug": "overreach",
@@ -1447,21 +1748,21 @@
         "ontology_slug": "persistence-instability",
         "code": "PAT-0350",
         "title": "Persistence Instability",
-        "count": 1
+        "count": 4
       },
       {
         "slug": "propagation-amplification",
         "ontology_slug": "propagation-amplification",
         "code": "PAT-0360",
         "title": "Propagation Amplification",
-        "count": 1
+        "count": 2
       },
       {
         "slug": "redundant-declaration",
         "ontology_slug": "redundant-declaration",
         "code": "PAT-0370",
         "title": "Redundant Declaration",
-        "count": 0
+        "count": 1
       },
       {
         "slug": "reference-instability",
@@ -1475,14 +1776,14 @@
         "ontology_slug": "schema-breakage",
         "code": "PAT-0160",
         "title": "Schema Breakage",
-        "count": 7
+        "count": 11
       },
       {
         "slug": "silent-mutation",
         "ontology_slug": "silent-mutation",
         "code": "PAT-0380",
         "title": "Silent Mutation",
-        "count": 1
+        "count": 2
       },
       {
         "slug": "threshold-breach",
@@ -1519,7 +1820,7 @@
         "ontology_slug": "absence-lens",
         "code": "LEN-0100",
         "title": "Absence Lens",
-        "count": 9
+        "count": 11
       },
       {
         "slug": "authority-overlay-lens",
@@ -1533,84 +1834,84 @@
         "ontology_slug": "boundary-compliance-lens",
         "code": "LEN-0120",
         "title": "Boundary Compliance Lens",
-        "count": 9
+        "count": 11
       },
       {
         "slug": "compatibility-envelope-lens",
         "ontology_slug": "compatibility-envelope-lens",
         "code": "LEN-0130",
         "title": "Compatibility Envelope Lens",
-        "count": 6
+        "count": 7
       },
       {
         "slug": "compression-lens",
         "ontology_slug": "compression-lens",
         "code": "LEN-0140",
         "title": "Compression Lens",
-        "count": 7
+        "count": 8
       },
       {
         "slug": "conflict-lens",
         "ontology_slug": "conflict-lens",
         "code": "LEN-0150",
         "title": "Conflict Lens",
-        "count": 12
+        "count": 16
       },
       {
         "slug": "constraint-sufficiency-lens",
         "ontology_slug": "constraint-sufficiency-lens",
         "code": "LEN-0160",
         "title": "Constraint Sufficiency Lens",
-        "count": 12
+        "count": 13
       },
       {
         "slug": "convergence-lens",
         "ontology_slug": "convergence-lens",
         "code": "LEN-0170",
         "title": "Convergence Lens",
-        "count": 9
+        "count": 11
       },
       {
         "slug": "determinism-lens",
         "ontology_slug": "determinism-lens",
         "code": "LEN-0180",
         "title": "Determinism Lens",
-        "count": 13
+        "count": 17
       },
       {
         "slug": "escalation-gradient-lens",
         "ontology_slug": "escalation-gradient-lens",
         "code": "LEN-0190",
         "title": "Escalation Gradient Lens",
-        "count": 6
+        "count": 8
       },
       {
         "slug": "interface-contract-lens",
         "ontology_slug": "interface-contract-lens",
         "code": "LEN-0200",
         "title": "Interface Contract Lens",
-        "count": 14
+        "count": 18
       },
       {
         "slug": "invariant-lens",
         "ontology_slug": "invariant-lens",
         "code": "LEN-0210",
         "title": "Invariant Lens",
-        "count": 8
+        "count": 12
       },
       {
         "slug": "isolation-boundary-lens",
         "ontology_slug": "isolation-boundary-lens",
         "code": "LEN-0220",
         "title": "Isolation Boundary Lens",
-        "count": 5
+        "count": 6
       },
       {
         "slug": "normalization-lens",
         "ontology_slug": "normalization-lens",
         "code": "LEN-0230",
         "title": "Normalization Lens",
-        "count": 8
+        "count": 11
       },
       {
         "slug": "overreach-lens",
@@ -1624,35 +1925,35 @@
         "ontology_slug": "propagation-lens",
         "code": "LEN-0250",
         "title": "Propagation Lens",
-        "count": 8
+        "count": 10
       },
       {
         "slug": "provenance-trace-lens",
         "ontology_slug": "provenance-trace-lens",
         "code": "LEN-0260",
         "title": "Provenance Trace Lens",
-        "count": 1
+        "count": 2
       },
       {
         "slug": "reconciliation-lens",
         "ontology_slug": "reconciliation-lens",
         "code": "LEN-0270",
         "title": "Reconciliation Lens",
-        "count": 10
+        "count": 12
       },
       {
         "slug": "reference-stability-lens",
         "ontology_slug": "reference-stability-lens",
         "code": "LEN-0280",
         "title": "Reference Stability Lens",
-        "count": 10
+        "count": 13
       },
       {
         "slug": "variance-entropy-lens",
         "ontology_slug": "variance-entropy-lens",
         "code": "LEN-0290",
         "title": "Variance / Entropy Lens",
-        "count": 10
+        "count": 14
       }
     ]
   }

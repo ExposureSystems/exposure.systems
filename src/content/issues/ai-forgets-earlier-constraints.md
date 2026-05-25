@@ -17,38 +17,38 @@ patterns:
   - contract-drift
 search_intents:
   - AI forgets earlier constraints
-  - ChatGPT forgot my instructions
-  - agent forgot the rule
-  - AI stopped following earlier constraint
-  - AI followed the rule at first then forgot
+  - ChatGPT forgot instructions
+  - AI ignored earlier requirement
+  - model forgot previous constraint
+  - instruction stopped applying later
+  - AI lost context rule
 ---
-
-# AI Forgets Earlier Constraints
 
 ## What This Looks Like
 
-The AI follows a rule, preference, instruction, or constraint early in the task, then later behaves as if that constraint is no longer active. The user may have to repeat the same rule or correct the same drift multiple times.
+The user gives a constraint, instruction, preference, format rule, exclusion, or decision that should continue to govern the task, but later output stops following it. The AI may initially comply and then drift, ignore an earlier limit, reintroduce excluded content, or behave as if a prior decision was never made.
 
 ## Why It Matters
 
-Many AI workflows depend on task state carrying forward. When constraints disappear mid-task, later outputs can violate scope, format, tone, policy, evidence limits, or prior decisions without making it obvious that the active context has changed.
+Many AI workflows depend on constraints persisting across multiple turns, steps, files, or generated artifacts. When earlier constraints stop applying, users have to repeat themselves, audit prior decisions, and check whether later output is still governed by the task contract.
 
 ## Structural Signal
 
-A constraint was introduced earlier and should still govern later output, but it stops affecting behavior. The continuity between prior instruction and current output has become unstable.
+A constraint was declared earlier and should remain active, but it loses governing effect in a later state. The issue is not simply that the AI made one mistake; it is that an active constraint failed to persist across the task.
 
 ## Common Triggers
 
-- Long-running conversations or multi-step tasks
-- Context summarization or compaction
-- Several constraints competing for attention
-- Weakly declared persistence rules
-- Workflow steps that fail to carry forward task state
+- Long conversations push earlier constraints out of the active working context
+- Later instructions partially override earlier ones without saying so
+- The prompt does not distinguish durable constraints from temporary preferences
+- The model optimizes for the latest request and drops prior requirements
+- The task spans multiple artifacts or steps without restating the governing rules
+- Constraints are embedded in prose instead of maintained as an explicit checklist
 
 ## When to Use This Issue
 
-Use this Issue when the user experience is: “I already told it this, and it stopped following it.”
+Use this Issue when a prior constraint should still govern the work but stops affecting later output, behavior, formatting, or decisions.
 
 ## When Not to Use This Issue
 
-Do not use this Issue when the problem is saved product memory, account-level memory settings, or an app-specific memory feature failing. Those may be AI-Adjacent Issues unless the structural signal is also present.
+Do not use this Issue when the user changed the instruction, intentionally relaxed the constraint, or never clearly declared the requirement. Do not use it for ordinary context loss unless a specific earlier constraint stopped applying.

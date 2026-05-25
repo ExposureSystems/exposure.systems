@@ -465,13 +465,59 @@
       ],
       "search_intents": [
         "AI forgets earlier constraints",
-        "ChatGPT forgot my instructions",
-        "agent forgot the rule",
-        "AI stopped following earlier constraint",
-        "AI followed the rule at first then forgot"
+        "ChatGPT forgot instructions",
+        "AI ignored earlier requirement",
+        "model forgot previous constraint",
+        "instruction stopped applying later",
+        "AI lost context rule"
       ],
       "url": "/workbench/issues/ai-forgets-earlier-constraints/",
       "markdown_url": "/workbench/issues/ai-forgets-earlier-constraints.md"
+    },
+    {
+      "slug": "ai-output-breaks-parser",
+      "ontology_slug": "ai-output-breaks-parser",
+      "code": "ISS-0026",
+      "title": "AI Output Breaks Parser",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "The AI output causes a parser, validator, importer, or structured-output consumer to fail.",
+      "category": "output",
+      "category_title": "Output",
+      "primary_cat_code": "CAT-0010",
+      "secondary_cat_codes": [
+        "CAT-0040"
+      ],
+      "primary_pattern": "schema-breakage",
+      "patterns": [
+        "schema-breakage",
+        "interface-mismatch",
+        "compatibility-violation"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "compatibility-envelope-lens",
+          "interface-contract-lens",
+          "invariant-lens"
+        ],
+        "secondary": [
+          "boundary-compliance-lens",
+          "conflict-lens",
+          "normalization-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "AI output breaks parser",
+        "parser fails on AI output",
+        "AI response cannot be parsed",
+        "structured output parser error",
+        "AI output breaks importer",
+        "parser rejects LLM output"
+      ],
+      "url": "/workbench/issues/ai-output-breaks-parser/",
+      "markdown_url": "/workbench/issues/ai-output-breaks-parser.md"
     },
     {
       "slug": "answer-has-no-traceable-source-link",
@@ -609,6 +655,96 @@
       "markdown_url": "/workbench/issues/citation-points-to-wrong-source.md"
     },
     {
+      "slug": "context-changes-after-restore",
+      "ontology_slug": "context-changes-after-restore",
+      "code": "ISS-0031",
+      "title": "Context Changes After Restore",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "Restoring, reopening, resuming, or reloading a task changes the context that the AI uses to continue the work.",
+      "category": "memory-and-context",
+      "category_title": "Memory & Context",
+      "primary_cat_code": "CAT-0020",
+      "secondary_cat_codes": [
+        "CAT-0080"
+      ],
+      "primary_pattern": "contract-drift",
+      "patterns": [
+        "contract-drift",
+        "persistence-instability",
+        "silent-mutation"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "convergence-lens",
+          "determinism-lens",
+          "reconciliation-lens",
+          "reference-stability-lens"
+        ],
+        "secondary": [
+          "provenance-trace-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "context changes after restore",
+        "restored chat has different context",
+        "AI context changed after reload",
+        "resume changed AI behavior",
+        "restored task lost context",
+        "AI uses different context after reopening"
+      ],
+      "url": "/workbench/issues/context-changes-after-restore/",
+      "markdown_url": "/workbench/issues/context-changes-after-restore.md"
+    },
+    {
+      "slug": "context-leaks-between-tasks",
+      "ontology_slug": "context-leaks-between-tasks",
+      "code": "ISS-0032",
+      "title": "Context Leaks Between Tasks",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "Context, assumptions, constraints, examples, files, or decisions from one task affect another task where they should not apply.",
+      "category": "memory-and-context",
+      "category_title": "Memory & Context",
+      "primary_cat_code": "CAT-0020",
+      "secondary_cat_codes": [
+        "CAT-0100"
+      ],
+      "primary_pattern": "boundary-leakage",
+      "patterns": [
+        "boundary-leakage",
+        "propagation-amplification",
+        "persistence-instability"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "escalation-gradient-lens",
+          "isolation-boundary-lens",
+          "propagation-lens",
+          "reference-stability-lens"
+        ],
+        "secondary": [
+          "boundary-compliance-lens",
+          "determinism-lens",
+          "variance-entropy-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "context leaks between tasks",
+        "AI uses context from another task",
+        "ChatGPT carries over wrong context",
+        "previous task affects new task",
+        "AI mixes separate tasks",
+        "context bleed between conversations"
+      ],
+      "url": "/workbench/issues/context-leaks-between-tasks/",
+      "markdown_url": "/workbench/issues/context-leaks-between-tasks.md"
+    },
+    {
       "slug": "declared-owner-cannot-control-outcome",
       "ontology_slug": "declared-owner-cannot-control-outcome",
       "code": "ISS-0015",
@@ -656,6 +792,52 @@
       "markdown_url": "/workbench/issues/declared-owner-cannot-control-outcome.md"
     },
     {
+      "slug": "duplicate-fields-with-same-meaning",
+      "ontology_slug": "duplicate-fields-with-same-meaning",
+      "code": "ISS-0027",
+      "title": "Duplicate Fields With Same Meaning",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "The AI returns multiple fields, labels, sections, or structured elements that carry the same meaning and create ambiguity about which one should be used.",
+      "category": "duplication-and-overload",
+      "category_title": "Duplication & Overload",
+      "primary_cat_code": "CAT-0140",
+      "secondary_cat_codes": [
+        "CAT-0010"
+      ],
+      "primary_pattern": "redundant-declaration",
+      "patterns": [
+        "redundant-declaration",
+        "density-spike",
+        "schema-breakage"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "compression-lens",
+          "conflict-lens",
+          "interface-contract-lens",
+          "invariant-lens",
+          "normalization-lens",
+          "variance-entropy-lens"
+        ],
+        "secondary": [
+          "escalation-gradient-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "duplicate fields with same meaning",
+        "AI output has duplicate fields",
+        "same meaning in multiple JSON keys",
+        "duplicate structured output fields",
+        "AI returned redundant fields",
+        "output has overlapping fields"
+      ],
+      "url": "/workbench/issues/duplicate-fields-with-same-meaning/",
+      "markdown_url": "/workbench/issues/duplicate-fields-with-same-meaning.md"
+    },
+    {
       "slug": "fallback-authority-is-missing",
       "ontology_slug": "fallback-authority-is-missing",
       "code": "ISS-0014",
@@ -701,6 +883,52 @@
       ],
       "url": "/workbench/issues/fallback-authority-is-missing/",
       "markdown_url": "/workbench/issues/fallback-authority-is-missing.md"
+    },
+    {
+      "slug": "format-rule-too-weak",
+      "ontology_slug": "format-rule-too-weak",
+      "code": "ISS-0028",
+      "title": "Format Rule Too Weak",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "The format instruction is too vague, incomplete, or optional to reliably produce output that satisfies the expected structure.",
+      "category": "coverage-and-guidance",
+      "category_title": "Coverage & Guidance",
+      "primary_cat_code": "CAT-0120",
+      "secondary_cat_codes": [
+        "CAT-0010"
+      ],
+      "primary_pattern": "constraints-underspecified",
+      "patterns": [
+        "constraints-underspecified",
+        "incomplete-declaration",
+        "schema-breakage"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "absence-lens",
+          "constraint-sufficiency-lens",
+          "interface-contract-lens",
+          "invariant-lens"
+        ],
+        "secondary": [
+          "conflict-lens",
+          "determinism-lens",
+          "variance-entropy-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "format rule too weak",
+        "AI did not follow output format",
+        "prompt format instructions too vague",
+        "output format not strict enough",
+        "AI ignores format rule",
+        "structured output rule incomplete"
+      ],
+      "url": "/workbench/issues/format-rule-too-weak/",
+      "markdown_url": "/workbench/issues/format-rule-too-weak.md"
     },
     {
       "slug": "hallucinated-fields",
@@ -840,6 +1068,47 @@
       ],
       "url": "/workbench/issues/missing-required-fields/",
       "markdown_url": "/workbench/issues/missing-required-fields.md"
+    },
+    {
+      "slug": "nested-fields-do-not-match",
+      "ontology_slug": "nested-fields-do-not-match",
+      "code": "ISS-0025",
+      "title": "Nested Fields Do Not Match",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "The AI returns nested structured fields whose internal shape, hierarchy, parent-child relationship, or contained values do not match the expected structure.",
+      "category": "output",
+      "category_title": "Output",
+      "primary_cat_code": "CAT-0010",
+      "secondary_cat_codes": [],
+      "primary_pattern": "schema-breakage",
+      "patterns": [
+        "schema-breakage",
+        "interface-mismatch",
+        "invariant-breakage"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "conflict-lens",
+          "interface-contract-lens",
+          "invariant-lens"
+        ],
+        "secondary": [
+          "normalization-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "nested fields do not match",
+        "AI output nested fields wrong",
+        "JSON nested object wrong shape",
+        "nested schema mismatch",
+        "AI returned wrong nested structure",
+        "child fields do not match parent field"
+      ],
+      "url": "/workbench/issues/nested-fields-do-not-match/",
+      "markdown_url": "/workbench/issues/nested-fields-do-not-match.md"
     },
     {
       "slug": "no-owner-for-agent-action",
@@ -1196,6 +1465,52 @@
       ],
       "url": "/workbench/issues/task-has-no-clear-limit/",
       "markdown_url": "/workbench/issues/task-has-no-clear-limit.md"
+    },
+    {
+      "slug": "task-progress-is-lost-midway",
+      "ontology_slug": "task-progress-is-lost-midway",
+      "code": "ISS-0030",
+      "title": "Task Progress Is Lost Midway",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "The AI loses track of completed work, prior decisions, current position, or remaining steps before the task is finished.",
+      "category": "memory-and-context",
+      "category_title": "Memory & Context",
+      "primary_cat_code": "CAT-0020",
+      "secondary_cat_codes": [
+        "CAT-0070"
+      ],
+      "primary_pattern": "persistence-instability",
+      "patterns": [
+        "persistence-instability",
+        "orphaned-structure",
+        "convergence-failure"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "absence-lens",
+          "convergence-lens",
+          "reference-stability-lens"
+        ],
+        "secondary": [
+          "determinism-lens",
+          "propagation-lens",
+          "reconciliation-lens",
+          "variance-entropy-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "task progress is lost midway",
+        "AI lost track of progress",
+        "ChatGPT forgot where we were",
+        "AI restarted task midway",
+        "progress lost during AI workflow",
+        "AI forgot completed steps"
+      ],
+      "url": "/workbench/issues/task-progress-is-lost-midway/",
+      "markdown_url": "/workbench/issues/task-progress-is-lost-midway.md"
     },
     {
       "slug": "tool-call-contract-mismatch",
@@ -1698,7 +2013,9 @@
         ]
       },
       "issues": {
-        "primary": [],
+        "primary": [
+          "context-leaks-between-tasks"
+        ],
         "supporting": []
       },
       "url": "/workbench/patterns/boundary-leakage/",
@@ -1753,6 +2070,7 @@
           "output-breaks-the-next-step"
         ],
         "supporting": [
+          "ai-output-breaks-parser",
           "citation-points-to-wrong-source",
           "declared-owner-cannot-control-outcome",
           "saved-reference-no-longer-works",
@@ -1782,7 +2100,9 @@
         ]
       },
       "issues": {
-        "primary": [],
+        "primary": [
+          "format-rule-too-weak"
+        ],
         "supporting": [
           "ai-forgets-earlier-constraints",
           "answer-has-too-many-paths",
@@ -1814,7 +2134,9 @@
         ]
       },
       "issues": {
-        "primary": [],
+        "primary": [
+          "context-changes-after-restore"
+        ],
         "supporting": [
           "ai-forgets-earlier-constraints",
           "saved-reference-no-longer-works",
@@ -1845,7 +2167,8 @@
       "issues": {
         "primary": [],
         "supporting": [
-          "agent-keeps-expanding-the-task"
+          "agent-keeps-expanding-the-task",
+          "task-progress-is-lost-midway"
         ]
       },
       "url": "/workbench/patterns/convergence-failure/",
@@ -1898,7 +2221,9 @@
         "primary": [
           "answer-has-too-many-paths"
         ],
-        "supporting": []
+        "supporting": [
+          "duplicate-fields-with-same-meaning"
+        ]
       },
       "url": "/workbench/patterns/density-spike/",
       "markdown_url": "/workbench/patterns/density-spike.md"
@@ -2014,6 +2339,7 @@
         ],
         "supporting": [
           "fallback-authority-is-missing",
+          "format-rule-too-weak",
           "task-has-no-clear-limit",
           "workflow-step-has-no-decision-owner"
         ]
@@ -2043,8 +2369,10 @@
           "tool-call-contract-mismatch"
         ],
         "supporting": [
+          "ai-output-breaks-parser",
           "citation-points-to-wrong-source",
           "invalid-json-output",
+          "nested-fields-do-not-match",
           "output-breaks-the-next-step",
           "tool-exists-but-required-inputs-are-missing",
           "tool-result-not-integrated-correctly",
@@ -2074,7 +2402,9 @@
       },
       "issues": {
         "primary": [],
-        "supporting": []
+        "supporting": [
+          "nested-fields-do-not-match"
+        ]
       },
       "url": "/workbench/patterns/invariant-breakage/",
       "markdown_url": "/workbench/patterns/invariant-breakage.md"
@@ -2163,6 +2493,7 @@
           "tool-result-not-integrated-correctly"
         ],
         "supporting": [
+          "task-progress-is-lost-midway",
           "workflow-step-has-no-decision-owner"
         ]
       },
@@ -2218,9 +2549,13 @@
       },
       "issues": {
         "primary": [
-          "ai-forgets-earlier-constraints"
+          "ai-forgets-earlier-constraints",
+          "task-progress-is-lost-midway"
         ],
-        "supporting": []
+        "supporting": [
+          "context-changes-after-restore",
+          "context-leaks-between-tasks"
+        ]
       },
       "url": "/workbench/patterns/persistence-instability/",
       "markdown_url": "/workbench/patterns/persistence-instability.md"
@@ -2246,6 +2581,7 @@
       "issues": {
         "primary": [],
         "supporting": [
+          "context-leaks-between-tasks",
           "retry-makes-the-problem-worse"
         ]
       },
@@ -2271,7 +2607,9 @@
         ]
       },
       "issues": {
-        "primary": [],
+        "primary": [
+          "duplicate-fields-with-same-meaning"
+        ],
         "supporting": []
       },
       "url": "/workbench/patterns/redundant-declaration/",
@@ -2326,10 +2664,14 @@
       },
       "issues": {
         "primary": [
+          "ai-output-breaks-parser",
           "invalid-json-output",
+          "nested-fields-do-not-match",
           "wrong-field-types"
         ],
         "supporting": [
+          "duplicate-fields-with-same-meaning",
+          "format-rule-too-weak",
           "hallucinated-fields",
           "missing-required-fields",
           "output-breaks-the-next-step",
@@ -2361,6 +2703,7 @@
       "issues": {
         "primary": [],
         "supporting": [
+          "context-changes-after-restore",
           "retry-makes-the-problem-worse"
         ]
       },
@@ -2501,9 +2844,11 @@
         "answer-has-no-traceable-source-link",
         "declared-owner-cannot-control-outcome",
         "fallback-authority-is-missing",
+        "format-rule-too-weak",
         "missing-required-fields",
         "no-owner-for-agent-action",
         "task-has-no-clear-limit",
+        "task-progress-is-lost-midway",
         "tool-exists-but-required-inputs-are-missing",
         "tool-result-not-integrated-correctly",
         "workflow-step-has-no-decision-owner"
@@ -2562,7 +2907,9 @@
       "issues": [
         "agent-keeps-expanding-the-task",
         "ai-adds-work-not-requested",
+        "ai-output-breaks-parser",
         "citation-points-to-wrong-source",
+        "context-leaks-between-tasks",
         "declared-owner-cannot-control-outcome",
         "hallucinated-fields",
         "output-breaks-the-next-step",
@@ -2589,6 +2936,7 @@
         "secondary": []
       },
       "issues": [
+        "ai-output-breaks-parser",
         "citation-points-to-wrong-source",
         "declared-owner-cannot-control-outcome",
         "output-breaks-the-next-step",
@@ -2624,6 +2972,7 @@
         "agent-keeps-expanding-the-task",
         "answer-has-no-traceable-source-link",
         "answer-has-too-many-paths",
+        "duplicate-fields-with-same-meaning",
         "missing-required-fields",
         "prompt-only-works-after-retry",
         "similar-cases-route-to-different-outcomes",
@@ -2656,11 +3005,15 @@
         ]
       },
       "issues": [
+        "ai-output-breaks-parser",
         "declared-owner-cannot-control-outcome",
+        "duplicate-fields-with-same-meaning",
         "fallback-authority-is-missing",
+        "format-rule-too-weak",
         "hallucinated-fields",
         "invalid-json-output",
         "missing-required-fields",
+        "nested-fields-do-not-match",
         "no-owner-for-agent-action",
         "output-breaks-the-next-step",
         "permissions-conflict-after-being-combined",
@@ -2697,6 +3050,7 @@
         "answer-has-no-traceable-source-link",
         "answer-has-too-many-paths",
         "fallback-authority-is-missing",
+        "format-rule-too-weak",
         "hallucinated-fields",
         "invalid-json-output",
         "missing-required-fields",
@@ -2732,11 +3086,13 @@
       "issues": [
         "agent-keeps-expanding-the-task",
         "ai-forgets-earlier-constraints",
+        "context-changes-after-restore",
         "declared-owner-cannot-control-outcome",
         "no-owner-for-agent-action",
         "prompt-only-works-after-retry",
         "saved-reference-no-longer-works",
         "similar-cases-route-to-different-outcomes",
+        "task-progress-is-lost-midway",
         "tool-result-not-integrated-correctly",
         "validation-result-changes-on-retry"
       ],
@@ -2770,12 +3126,16 @@
         "answer-has-no-traceable-source-link",
         "answer-has-too-many-paths",
         "citation-points-to-wrong-source",
+        "context-changes-after-restore",
+        "context-leaks-between-tasks",
+        "format-rule-too-weak",
         "invalid-json-output",
         "prompt-only-works-after-retry",
         "retry-makes-the-problem-worse",
         "saved-reference-no-longer-works",
         "similar-cases-route-to-different-outcomes",
         "task-has-no-clear-limit",
+        "task-progress-is-lost-midway",
         "tool-exists-but-required-inputs-are-missing",
         "tool-result-not-integrated-correctly",
         "validation-result-changes-on-retry"
@@ -2808,6 +3168,8 @@
         "agent-keeps-expanding-the-task",
         "ai-adds-work-not-requested",
         "answer-has-too-many-paths",
+        "context-leaks-between-tasks",
+        "duplicate-fields-with-same-meaning",
         "hallucinated-fields",
         "retry-makes-the-problem-worse",
         "task-has-no-clear-limit"
@@ -2835,12 +3197,16 @@
         ]
       },
       "issues": [
+        "ai-output-breaks-parser",
         "answer-has-no-traceable-source-link",
         "citation-points-to-wrong-source",
+        "duplicate-fields-with-same-meaning",
         "fallback-authority-is-missing",
+        "format-rule-too-weak",
         "hallucinated-fields",
         "invalid-json-output",
         "missing-required-fields",
+        "nested-fields-do-not-match",
         "output-breaks-the-next-step",
         "task-has-no-clear-limit",
         "tool-call-contract-mismatch",
@@ -2873,9 +3239,13 @@
         ]
       },
       "issues": [
+        "ai-output-breaks-parser",
+        "duplicate-fields-with-same-meaning",
+        "format-rule-too-weak",
         "hallucinated-fields",
         "invalid-json-output",
         "missing-required-fields",
+        "nested-fields-do-not-match",
         "output-breaks-the-next-step",
         "permissions-conflict-after-being-combined",
         "tool-call-contract-mismatch",
@@ -2907,6 +3277,7 @@
       "issues": [
         "ai-adds-work-not-requested",
         "answer-has-too-many-paths",
+        "context-leaks-between-tasks",
         "hallucinated-fields",
         "no-owner-for-agent-action",
         "task-has-no-clear-limit"
@@ -2933,9 +3304,12 @@
         ]
       },
       "issues": [
+        "ai-output-breaks-parser",
         "citation-points-to-wrong-source",
+        "duplicate-fields-with-same-meaning",
         "fallback-authority-is-missing",
         "invalid-json-output",
+        "nested-fields-do-not-match",
         "output-breaks-the-next-step",
         "tool-call-contract-mismatch",
         "tool-exists-but-required-inputs-are-missing",
@@ -2996,10 +3370,12 @@
       "issues": [
         "agent-keeps-expanding-the-task",
         "ai-adds-work-not-requested",
+        "context-leaks-between-tasks",
         "fallback-authority-is-missing",
         "hallucinated-fields",
         "no-owner-for-agent-action",
         "retry-makes-the-problem-worse",
+        "task-progress-is-lost-midway",
         "tool-result-not-integrated-correctly",
         "workflow-step-has-no-decision-owner"
       ],
@@ -3022,6 +3398,7 @@
         ]
       },
       "issues": [
+        "context-changes-after-restore",
         "retry-makes-the-problem-worse"
       ],
       "url": "/workbench/lenses/provenance-trace-lens/",
@@ -3052,12 +3429,14 @@
       "issues": [
         "agent-keeps-expanding-the-task",
         "ai-forgets-earlier-constraints",
+        "context-changes-after-restore",
         "declared-owner-cannot-control-outcome",
         "fallback-authority-is-missing",
         "no-owner-for-agent-action",
         "permissions-conflict-after-being-combined",
         "saved-reference-no-longer-works",
         "similar-cases-route-to-different-outcomes",
+        "task-progress-is-lost-midway",
         "tool-result-not-integrated-correctly",
         "workflow-step-has-no-decision-owner"
       ],
@@ -3088,12 +3467,15 @@
         "ai-forgets-earlier-constraints",
         "answer-has-no-traceable-source-link",
         "citation-points-to-wrong-source",
+        "context-changes-after-restore",
+        "context-leaks-between-tasks",
         "declared-owner-cannot-control-outcome",
         "no-owner-for-agent-action",
         "prompt-only-works-after-retry",
         "retry-makes-the-problem-worse",
         "saved-reference-no-longer-works",
         "similar-cases-route-to-different-outcomes",
+        "task-progress-is-lost-midway",
         "validation-result-changes-on-retry"
       ],
       "url": "/workbench/lenses/reference-stability-lens/",
@@ -3127,11 +3509,15 @@
         "agent-keeps-expanding-the-task",
         "ai-forgets-earlier-constraints",
         "answer-has-too-many-paths",
+        "context-leaks-between-tasks",
+        "duplicate-fields-with-same-meaning",
+        "format-rule-too-weak",
         "invalid-json-output",
         "prompt-only-works-after-retry",
         "retry-makes-the-problem-worse",
         "similar-cases-route-to-different-outcomes",
         "task-has-no-clear-limit",
+        "task-progress-is-lost-midway",
         "tool-exists-but-required-inputs-are-missing",
         "validation-result-changes-on-retry"
       ],
@@ -3177,7 +3563,9 @@
       "primary_issues": [
         "saved-reference-no-longer-works"
       ],
-      "secondary_issues": [],
+      "secondary_issues": [
+        "context-changes-after-restore"
+      ],
       "url": "/workbench/categories/changes-and-versions/"
     },
     {
@@ -3189,8 +3577,12 @@
       "entry_version": "0.1.0",
       "updated_at": "2026-05-10T00:00:00Z",
       "summary": "Problems where prompts, rubrics, diagnostics, fallback rules, examples, requirements, or relationship maps are incomplete, underspecified, or missing needed guidance.",
-      "issues": [],
-      "primary_issues": [],
+      "issues": [
+        "format-rule-too-weak"
+      ],
+      "primary_issues": [
+        "format-rule-too-weak"
+      ],
       "secondary_issues": [
         "answer-has-no-traceable-source-link",
         "citation-points-to-wrong-source",
@@ -3208,8 +3600,12 @@
       "entry_version": "0.1.0",
       "updated_at": "2026-05-10T00:00:00Z",
       "summary": "Problems where fields, sections, rules, checks, prompts, workflow steps, or review queues become duplicated, overloaded, bottlenecked, or carry too many meanings.",
-      "issues": [],
-      "primary_issues": [],
+      "issues": [
+        "duplicate-fields-with-same-meaning"
+      ],
+      "primary_issues": [
+        "duplicate-fields-with-same-meaning"
+      ],
       "secondary_issues": [],
       "url": "/workbench/categories/duplication-and-overload/"
     },
@@ -3272,7 +3668,9 @@
         "tool-exists-but-required-inputs-are-missing",
         "tool-result-not-integrated-correctly"
       ],
-      "secondary_issues": [],
+      "secondary_issues": [
+        "ai-output-breaks-parser"
+      ],
       "url": "/workbench/categories/mcp-tools-and-integrations/"
     },
     {
@@ -3285,10 +3683,16 @@
       "updated_at": "2026-05-10T00:00:00Z",
       "summary": "Problems where task state, prior instructions, saved memory, restored context, stale information, or cross-task context affects behavior incorrectly.",
       "issues": [
-        "ai-forgets-earlier-constraints"
+        "ai-forgets-earlier-constraints",
+        "context-changes-after-restore",
+        "context-leaks-between-tasks",
+        "task-progress-is-lost-midway"
       ],
       "primary_issues": [
-        "ai-forgets-earlier-constraints"
+        "ai-forgets-earlier-constraints",
+        "context-changes-after-restore",
+        "context-leaks-between-tasks",
+        "task-progress-is-lost-midway"
       ],
       "secondary_issues": [],
       "url": "/workbench/categories/memory-and-context/"
@@ -3303,24 +3707,30 @@
       "updated_at": "2026-05-10T00:00:00Z",
       "summary": "Problems where generated content, citations, fields, formats, parser-facing output, or structured responses are missing, malformed, unsupported, or unusable.",
       "issues": [
+        "ai-output-breaks-parser",
         "answer-has-no-traceable-source-link",
         "answer-has-too-many-paths",
         "citation-points-to-wrong-source",
         "hallucinated-fields",
         "invalid-json-output",
         "missing-required-fields",
+        "nested-fields-do-not-match",
         "wrong-field-types"
       ],
       "primary_issues": [
+        "ai-output-breaks-parser",
         "answer-has-no-traceable-source-link",
         "answer-has-too-many-paths",
         "citation-points-to-wrong-source",
         "hallucinated-fields",
         "invalid-json-output",
         "missing-required-fields",
+        "nested-fields-do-not-match",
         "wrong-field-types"
       ],
       "secondary_issues": [
+        "duplicate-fields-with-same-meaning",
+        "format-rule-too-weak",
         "output-breaks-the-next-step",
         "saved-reference-no-longer-works",
         "tool-call-contract-mismatch",
@@ -3391,6 +3801,7 @@
         "agent-keeps-expanding-the-task",
         "ai-adds-work-not-requested",
         "answer-has-too-many-paths",
+        "context-leaks-between-tasks",
         "hallucinated-fields"
       ],
       "url": "/workbench/categories/scope-and-boundaries/"
@@ -3430,6 +3841,7 @@
       ],
       "secondary_issues": [
         "fallback-authority-is-missing",
+        "task-progress-is-lost-midway",
         "tool-result-not-integrated-correctly"
       ],
       "url": "/workbench/categories/workflow-and-handoffs/"
