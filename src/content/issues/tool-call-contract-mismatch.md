@@ -25,32 +25,31 @@ search_intents:
   - tool choice is underspecified
 ---
 
-# Tool Call Contract Mismatch
-
 ## What This Looks Like
 
-The AI or agent attempts to call a tool, function, or integration with arguments, names, types, modes, or shapes that the tool does not accept. The visible result may be a failed call, rejected parameters, or a tool error.
+The AI or agent tries to call a tool, function, MCP endpoint, connector, or integration with a name, argument, mode, type, or payload shape that does not match the declared interface. The tool may reject the call, run with missing data, return an error, or behave differently than the user expected.
 
 ## Why It Matters
 
-Tools create a contract between the AI and the outside system. If the call does not match that contract, the tool may fail, produce unreliable results, or block the workflow even when the user’s request is otherwise clear.
+Tool calls are boundary crossings. When the call does not match the tool contract, the failure can block execution, corrupt downstream state, hide the real cause behind a generic error, or make the agent appear less capable than it is. The problem may sit between the AI output and the tool interface, not inside either one alone.
 
 ## Structural Signal
 
-A declared tool interface exists, but the agent’s call does not align with it. The failure sits at the boundary between generated tool use and the tool’s required contract.
+A declared tool interface exists, but the observed call does not conform to that interface. The issue is not simply that the tool failed; it is that the AI-generated call and the tool’s declared contract do not line up.
 
 ## Common Triggers
 
-- Tool schema not visible or not understood
-- Old tool schema used after an update
-- Ambiguous tool-selection instructions
-- Arguments inferred from natural language instead of the contract
-- Mode or runtime differences not reflected in the prompt
+- Tool names, argument names, or enum values are similar but not identical
+- Required arguments are omitted or placed in the wrong structure
+- The model uses a tool schema from a different version, mode, or runtime
+- Prompt instructions describe the tool differently than the actual interface
+- The agent chooses a tool before it has enough input to call it correctly
+- The tool accepts structured input but the AI returns a human-readable approximation
 
 ## When to Use This Issue
 
-Use this Issue when the central failure is the tool call itself: what was called, how it was called, or whether it matched the declared interface.
+Use this Issue when the central failure is a mismatch between the tool call produced by the AI or agent and the declared tool, function, connector, or MCP interface.
 
 ## When Not to Use This Issue
 
-Do not use this Issue when the tool call succeeds but the result is ignored, misread, or poorly integrated. Use `tool-result-not-integrated-correctly` for that surface.
+Do not use this Issue when the tool contract is correct but the tool itself is unavailable, disabled, or unsupported in the current environment. Do not use it when the output is invalid JSON but no tool interface is involved.

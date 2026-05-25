@@ -356,6 +356,52 @@
     },
     {
       "type": "issue",
+      "slug": "hallucinated-fields",
+      "ontology_slug": "hallucinated-fields",
+      "code": "ISS-0023",
+      "title": "Hallucinated Fields",
+      "summary": "The AI adds fields, keys, attributes, columns, or structured elements that were not declared, requested, or allowed by the expected schema.",
+      "url": "/workbench/issues/hallucinated-fields/",
+      "category": "output",
+      "category_title": "Output",
+      "primary_cat_code": "CAT-0010",
+      "secondary_cat_codes": [
+        "CAT-0100"
+      ],
+      "primary_pattern": "overreach",
+      "patterns": [
+        "overreach",
+        "schema-breakage",
+        "unbounded-scope"
+      ],
+      "lenses": {
+        "primary": [
+          "boundary-compliance-lens",
+          "constraint-sufficiency-lens",
+          "interface-contract-lens",
+          "invariant-lens",
+          "isolation-boundary-lens",
+          "overreach-lens"
+        ],
+        "secondary": [
+          "conflict-lens",
+          "escalation-gradient-lens",
+          "propagation-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "hallucinated fields",
+        "AI added extra JSON fields",
+        "structured output has extra keys",
+        "AI invented fields",
+        "schema has unexpected fields",
+        "output includes fields not requested"
+      ],
+      "text": "AI added extra JSON fields AI invented fields CAT-0010 CAT-0100 Hallucinated Fields ISS-0023 Output The AI adds fields, keys, attributes, columns, or structured elements that were not declared, requested, or allowed by the expected schema. boundary-compliance-lens conflict-lens constraint-sufficiency-lens escalation-gradient-lens hallucinated fields interface-contract-lens invariant-lens isolation-boundary-lens output output includes fields not requested overreach overreach-lens propagation-lens schema has unexpected fields schema-breakage structured output has extra keys unbounded-scope"
+    },
+    {
+      "type": "issue",
       "slug": "invalid-json-output",
       "ontology_slug": "invalid-json-output",
       "code": "ISS-0021",
@@ -393,9 +439,53 @@
         "ChatGPT malformed JSON",
         "JSON parse error AI output",
         "LLM output invalid JSON",
-        "AI gave JSON that will not parse"
+        "AI gave JSON that will not parse",
+        "malformed structured output"
       ],
-      "text": "AI gave JSON that will not parse AI invalid JSON CAT-0010 ChatGPT malformed JSON ISS-0021 Invalid JSON Output JSON parse error AI output LLM output invalid JSON Output The AI returns malformed JSON or structured output that cannot be parsed. conflict-lens constraint-sufficiency-lens constraints-underspecified determinism-lens interface-contract-lens interface-mismatch invariant-lens normalization-lens output runtime-behavior-does-not-match-docs schema-breakage variance-entropy-lens"
+      "text": "AI gave JSON that will not parse AI invalid JSON CAT-0010 ChatGPT malformed JSON ISS-0021 Invalid JSON Output JSON parse error AI output LLM output invalid JSON Output The AI returns malformed JSON or structured output that cannot be parsed. conflict-lens constraint-sufficiency-lens constraints-underspecified determinism-lens interface-contract-lens interface-mismatch invariant-lens malformed structured output normalization-lens output runtime-behavior-does-not-match-docs schema-breakage variance-entropy-lens"
+    },
+    {
+      "type": "issue",
+      "slug": "missing-required-fields",
+      "ontology_slug": "missing-required-fields",
+      "code": "ISS-0022",
+      "title": "Missing Required Fields",
+      "summary": "The AI returns structured output that omits fields required by the schema, workflow, parser, form, or downstream consumer.",
+      "url": "/workbench/issues/missing-required-fields/",
+      "category": "output",
+      "category_title": "Output",
+      "primary_cat_code": "CAT-0010",
+      "secondary_cat_codes": [
+        "CAT-0120"
+      ],
+      "primary_pattern": "incomplete-declaration",
+      "patterns": [
+        "incomplete-declaration",
+        "schema-breakage",
+        "density-vacuum"
+      ],
+      "lenses": {
+        "primary": [
+          "absence-lens",
+          "compression-lens",
+          "constraint-sufficiency-lens",
+          "interface-contract-lens",
+          "invariant-lens"
+        ],
+        "secondary": [
+          "conflict-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "missing required fields",
+        "AI output missing fields",
+        "structured output missing required field",
+        "JSON missing required keys",
+        "AI skipped required fields",
+        "schema validation missing fields"
+      ],
+      "text": "AI output missing fields AI skipped required fields CAT-0010 CAT-0120 ISS-0022 JSON missing required keys Missing Required Fields Output The AI returns structured output that omits fields required by the schema, workflow, parser, form, or downstream consumer. absence-lens compression-lens conflict-lens constraint-sufficiency-lens density-vacuum incomplete-declaration interface-contract-lens invariant-lens missing required fields output schema validation missing fields schema-breakage structured output missing required field"
     },
     {
       "type": "issue",
@@ -442,6 +532,49 @@
         "AI action has no decision owner"
       ],
       "text": "AI action has no decision owner AI agent acted without owner An agent action can affect the system without a declared responsible owner, authority, or accountable decision path. CAT-0030 CAT-0050 ISS-0012 No Owner for Agent Action Permissions & Approvals absence-lens agent action has no accountable person agent changed something without responsibility authority-overlay-lens authority-state-mismatch conflict-lens convergence-lens isolation-boundary-lens missing-authority no owner for agent action overreach-lens permissions-and-approvals propagation-lens reconciliation-lens reference-stability-lens undeclared-side-effect who approved the agent action"
+    },
+    {
+      "type": "issue",
+      "slug": "output-breaks-the-next-step",
+      "ontology_slug": "output-breaks-the-next-step",
+      "code": "ISS-0018",
+      "title": "Output Breaks the Next Step",
+      "summary": "The AI output looks acceptable by itself but cannot be used by the next tool, workflow step, parser, reviewer, or downstream consumer.",
+      "url": "/workbench/issues/output-breaks-the-next-step/",
+      "category": "mcp-tools-and-integrations",
+      "category_title": "MCP, Tools & Integrations",
+      "primary_cat_code": "CAT-0040",
+      "secondary_cat_codes": [
+        "CAT-0010"
+      ],
+      "primary_pattern": "compatibility-violation",
+      "patterns": [
+        "compatibility-violation",
+        "interface-mismatch",
+        "schema-breakage"
+      ],
+      "lenses": {
+        "primary": [
+          "compatibility-envelope-lens",
+          "interface-contract-lens",
+          "invariant-lens"
+        ],
+        "secondary": [
+          "boundary-compliance-lens",
+          "conflict-lens",
+          "normalization-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "output breaks the next step",
+        "AI output fails downstream",
+        "response cannot be used by next tool",
+        "AI output breaks workflow",
+        "output looks right but next step fails",
+        "downstream parser rejects AI output"
+      ],
+      "text": "AI output breaks workflow AI output fails downstream CAT-0010 CAT-0040 ISS-0018 MCP, Tools & Integrations Output Breaks the Next Step The AI output looks acceptable by itself but cannot be used by the next tool, workflow step, parser, reviewer, or downstream consumer. boundary-compliance-lens compatibility-envelope-lens compatibility-violation conflict-lens downstream parser rejects AI output interface-contract-lens interface-mismatch invariant-lens mcp-tools-and-integrations normalization-lens output breaks the next step output looks right but next step fails response cannot be used by next tool schema-breakage"
     },
     {
       "type": "issue",
@@ -742,6 +875,94 @@
     },
     {
       "type": "issue",
+      "slug": "tool-exists-but-required-inputs-are-missing",
+      "ontology_slug": "tool-exists-but-required-inputs-are-missing",
+      "code": "ISS-0020",
+      "title": "Tool Exists but Required Inputs Are Missing",
+      "summary": "A usable tool or integration exists, but the AI or agent does not have the required inputs, permissions, fields, identifiers, or context needed to call it correctly.",
+      "url": "/workbench/issues/tool-exists-but-required-inputs-are-missing/",
+      "category": "mcp-tools-and-integrations",
+      "category_title": "MCP, Tools & Integrations",
+      "primary_cat_code": "CAT-0040",
+      "secondary_cat_codes": [
+        "CAT-0120"
+      ],
+      "primary_pattern": "incomplete-declaration",
+      "patterns": [
+        "incomplete-declaration",
+        "constraints-underspecified",
+        "interface-mismatch"
+      ],
+      "lenses": {
+        "primary": [
+          "absence-lens",
+          "constraint-sufficiency-lens",
+          "interface-contract-lens"
+        ],
+        "secondary": [
+          "determinism-lens",
+          "normalization-lens",
+          "variance-entropy-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "tool exists but required inputs are missing",
+        "AI cannot call tool missing inputs",
+        "agent needs required tool fields",
+        "tool available but not enough information",
+        "missing inputs for MCP tool",
+        "AI tool call lacks required parameters"
+      ],
+      "text": "A usable tool or integration exists, but the AI or agent does not have the required inputs, permissions, fields, identifiers, or context needed to call it correctly. AI cannot call tool missing inputs AI tool call lacks required parameters CAT-0040 CAT-0120 ISS-0020 MCP, Tools & Integrations Tool Exists but Required Inputs Are Missing absence-lens agent needs required tool fields constraint-sufficiency-lens constraints-underspecified determinism-lens incomplete-declaration interface-contract-lens interface-mismatch mcp-tools-and-integrations missing inputs for MCP tool normalization-lens tool available but not enough information tool exists but required inputs are missing variance-entropy-lens"
+    },
+    {
+      "type": "issue",
+      "slug": "tool-result-not-integrated-correctly",
+      "ontology_slug": "tool-result-not-integrated-correctly",
+      "code": "ISS-0019",
+      "title": "Tool Result Not Integrated Correctly",
+      "summary": "The AI receives a tool result but misreads, ignores, overwrites, misplaces, or fails to incorporate it correctly into the final output or workflow state.",
+      "url": "/workbench/issues/tool-result-not-integrated-correctly/",
+      "category": "mcp-tools-and-integrations",
+      "category_title": "MCP, Tools & Integrations",
+      "primary_cat_code": "CAT-0040",
+      "secondary_cat_codes": [
+        "CAT-0070",
+        "CAT-0010"
+      ],
+      "primary_pattern": "orphaned-structure",
+      "patterns": [
+        "orphaned-structure",
+        "interface-mismatch",
+        "contract-drift"
+      ],
+      "lenses": {
+        "primary": [
+          "absence-lens",
+          "convergence-lens",
+          "interface-contract-lens",
+          "reconciliation-lens"
+        ],
+        "secondary": [
+          "determinism-lens",
+          "normalization-lens",
+          "propagation-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "tool result not integrated correctly",
+        "AI ignored tool result",
+        "agent misread tool output",
+        "tool result missing from final answer",
+        "AI overwrote tool response",
+        "tool output not reflected in answer"
+      ],
+      "text": "AI ignored tool result AI overwrote tool response CAT-0010 CAT-0040 CAT-0070 ISS-0019 MCP, Tools & Integrations The AI receives a tool result but misreads, ignores, overwrites, misplaces, or fails to incorporate it correctly into the final output or workflow state. Tool Result Not Integrated Correctly absence-lens agent misread tool output contract-drift convergence-lens determinism-lens interface-contract-lens interface-mismatch mcp-tools-and-integrations normalization-lens orphaned-structure propagation-lens reconciliation-lens tool output not reflected in answer tool result missing from final answer tool result not integrated correctly"
+    },
+    {
+      "type": "issue",
       "slug": "validation-result-changes-on-retry",
       "ontology_slug": "validation-result-changes-on-retry",
       "code": "ISS-0006",
@@ -830,6 +1051,47 @@
       "text": "A workflow step requires a decision, approval, judgment, or routing choice, but no owner is declared for making it. AI workflow has no approver CAT-0050 CAT-0070 ISS-0013 Workflow & Handoffs Workflow Step Has No Decision Owner absence-lens authority-overlay-lens conflict-lens constraint-sufficiency-lens handoff has no decision owner incomplete-declaration interface-contract-lens missing-authority no one owns the workflow decision orphaned-structure propagation-lens reconciliation-lens unclear who decides next step workflow step has no decision owner workflow step needs approval but owner missing workflow-and-handoffs"
     },
     {
+      "type": "issue",
+      "slug": "wrong-field-types",
+      "ontology_slug": "wrong-field-types",
+      "code": "ISS-0024",
+      "title": "Wrong Field Types",
+      "summary": "The AI returns fields with values whose types do not match the expected schema, such as strings where numbers, booleans, arrays, objects, or enums are required.",
+      "url": "/workbench/issues/wrong-field-types/",
+      "category": "output",
+      "category_title": "Output",
+      "primary_cat_code": "CAT-0010",
+      "secondary_cat_codes": [],
+      "primary_pattern": "schema-breakage",
+      "patterns": [
+        "schema-breakage",
+        "interface-mismatch",
+        "compatibility-violation"
+      ],
+      "lenses": {
+        "primary": [
+          "compatibility-envelope-lens",
+          "interface-contract-lens",
+          "invariant-lens"
+        ],
+        "secondary": [
+          "boundary-compliance-lens",
+          "conflict-lens",
+          "normalization-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "wrong field types",
+        "AI output wrong JSON types",
+        "schema expected number got string",
+        "field type mismatch",
+        "structured output type error",
+        "AI returned wrong data type"
+      ],
+      "text": "AI output wrong JSON types AI returned wrong data type CAT-0010 ISS-0024 Output The AI returns fields with values whose types do not match the expected schema, such as strings where numbers, booleans, arrays, objects, or enums are required. Wrong Field Types boundary-compliance-lens compatibility-envelope-lens compatibility-violation conflict-lens field type mismatch interface-contract-lens interface-mismatch invariant-lens normalization-lens output schema expected number got string schema-breakage structured output type error wrong field types"
+    },
+    {
       "type": "ai_adj_issue",
       "slug": "ai-works-in-one-environment-not-another",
       "ontology_slug": "ai-works-in-one-environment-not-another",
@@ -914,9 +1176,9 @@
         "ontology_slug": "coverage-and-guidance",
         "code": "CAT-0120",
         "title": "Coverage & Guidance",
-        "count": 2,
+        "count": 4,
         "primary_count": 0,
-        "secondary_count": 2
+        "secondary_count": 4
       },
       {
         "slug": "duplication-and-overload",
@@ -950,8 +1212,8 @@
         "ontology_slug": "mcp-tools-and-integrations",
         "code": "CAT-0040",
         "title": "MCP, Tools & Integrations",
-        "count": 1,
-        "primary_count": 1,
+        "count": 4,
+        "primary_count": 4,
         "secondary_count": 0
       },
       {
@@ -968,9 +1230,9 @@
         "ontology_slug": "output",
         "code": "CAT-0010",
         "title": "Output",
-        "count": 7,
-        "primary_count": 4,
-        "secondary_count": 3
+        "count": 12,
+        "primary_count": 7,
+        "secondary_count": 5
       },
       {
         "slug": "permissions-and-approvals",
@@ -995,9 +1257,9 @@
         "ontology_slug": "scope-and-boundaries",
         "code": "CAT-0100",
         "title": "Scope & Boundaries",
-        "count": 4,
+        "count": 5,
         "primary_count": 1,
-        "secondary_count": 3
+        "secondary_count": 4
       },
       {
         "slug": "spread-and-escalation",
@@ -1013,9 +1275,9 @@
         "ontology_slug": "workflow-and-handoffs",
         "code": "CAT-0070",
         "title": "Workflow & Handoffs",
-        "count": 2,
+        "count": 3,
         "primary_count": 1,
-        "secondary_count": 1
+        "secondary_count": 2
       }
     ],
     "patterns": [
@@ -1073,21 +1335,21 @@
         "ontology_slug": "compatibility-violation",
         "code": "PAT-0180",
         "title": "Compatibility Violation",
-        "count": 4
+        "count": 6
       },
       {
         "slug": "constraints-underspecified",
         "ontology_slug": "constraints-underspecified",
         "code": "PAT-0170",
         "title": "Constraints Underspecified",
-        "count": 5
+        "count": 6
       },
       {
         "slug": "contract-drift",
         "ontology_slug": "contract-drift",
         "code": "PAT-0190",
         "title": "Contract Drift",
-        "count": 2
+        "count": 3
       },
       {
         "slug": "convergence-failure",
@@ -1115,7 +1377,7 @@
         "ontology_slug": "density-vacuum",
         "code": "PAT-0280",
         "title": "Density Vacuum",
-        "count": 1
+        "count": 2
       },
       {
         "slug": "divergent-outputs",
@@ -1136,14 +1398,14 @@
         "ontology_slug": "incomplete-declaration",
         "code": "PAT-0130",
         "title": "Incomplete Declaration",
-        "count": 4
+        "count": 6
       },
       {
         "slug": "interface-mismatch",
         "ontology_slug": "interface-mismatch",
         "code": "PAT-0150",
         "title": "Interface Mismatch",
-        "count": 3
+        "count": 7
       },
       {
         "slug": "invariant-breakage",
@@ -1171,14 +1433,14 @@
         "ontology_slug": "orphaned-structure",
         "code": "PAT-0310",
         "title": "Orphaned Structure",
-        "count": 1
+        "count": 2
       },
       {
         "slug": "overreach",
         "ontology_slug": "overreach",
         "code": "PAT-0340",
         "title": "Overreach",
-        "count": 2
+        "count": 3
       },
       {
         "slug": "persistence-instability",
@@ -1213,7 +1475,7 @@
         "ontology_slug": "schema-breakage",
         "code": "PAT-0160",
         "title": "Schema Breakage",
-        "count": 3
+        "count": 7
       },
       {
         "slug": "silent-mutation",
@@ -1234,7 +1496,7 @@
         "ontology_slug": "unbounded-scope",
         "code": "PAT-0400",
         "title": "Unbounded Scope",
-        "count": 3
+        "count": 4
       },
       {
         "slug": "unconstrained-expansion",
@@ -1257,7 +1519,7 @@
         "ontology_slug": "absence-lens",
         "code": "LEN-0100",
         "title": "Absence Lens",
-        "count": 6
+        "count": 9
       },
       {
         "slug": "authority-overlay-lens",
@@ -1271,98 +1533,98 @@
         "ontology_slug": "boundary-compliance-lens",
         "code": "LEN-0120",
         "title": "Boundary Compliance Lens",
-        "count": 6
+        "count": 9
       },
       {
         "slug": "compatibility-envelope-lens",
         "ontology_slug": "compatibility-envelope-lens",
         "code": "LEN-0130",
         "title": "Compatibility Envelope Lens",
-        "count": 4
+        "count": 6
       },
       {
         "slug": "compression-lens",
         "ontology_slug": "compression-lens",
         "code": "LEN-0140",
         "title": "Compression Lens",
-        "count": 6
+        "count": 7
       },
       {
         "slug": "conflict-lens",
         "ontology_slug": "conflict-lens",
         "code": "LEN-0150",
         "title": "Conflict Lens",
-        "count": 8
+        "count": 12
       },
       {
         "slug": "constraint-sufficiency-lens",
         "ontology_slug": "constraint-sufficiency-lens",
         "code": "LEN-0160",
         "title": "Constraint Sufficiency Lens",
-        "count": 9
+        "count": 12
       },
       {
         "slug": "convergence-lens",
         "ontology_slug": "convergence-lens",
         "code": "LEN-0170",
         "title": "Convergence Lens",
-        "count": 8
+        "count": 9
       },
       {
         "slug": "determinism-lens",
         "ontology_slug": "determinism-lens",
         "code": "LEN-0180",
         "title": "Determinism Lens",
-        "count": 11
+        "count": 13
       },
       {
         "slug": "escalation-gradient-lens",
         "ontology_slug": "escalation-gradient-lens",
         "code": "LEN-0190",
         "title": "Escalation Gradient Lens",
-        "count": 5
+        "count": 6
       },
       {
         "slug": "interface-contract-lens",
         "ontology_slug": "interface-contract-lens",
         "code": "LEN-0200",
         "title": "Interface Contract Lens",
-        "count": 8
+        "count": 14
       },
       {
         "slug": "invariant-lens",
         "ontology_slug": "invariant-lens",
         "code": "LEN-0210",
         "title": "Invariant Lens",
-        "count": 4
+        "count": 8
       },
       {
         "slug": "isolation-boundary-lens",
         "ontology_slug": "isolation-boundary-lens",
         "code": "LEN-0220",
         "title": "Isolation Boundary Lens",
-        "count": 4
+        "count": 5
       },
       {
         "slug": "normalization-lens",
         "ontology_slug": "normalization-lens",
         "code": "LEN-0230",
         "title": "Normalization Lens",
-        "count": 4
+        "count": 8
       },
       {
         "slug": "overreach-lens",
         "ontology_slug": "overreach-lens",
         "code": "LEN-0240",
         "title": "Overreach Lens",
-        "count": 3
+        "count": 4
       },
       {
         "slug": "propagation-lens",
         "ontology_slug": "propagation-lens",
         "code": "LEN-0250",
         "title": "Propagation Lens",
-        "count": 6
+        "count": 8
       },
       {
         "slug": "provenance-trace-lens",
@@ -1376,7 +1638,7 @@
         "ontology_slug": "reconciliation-lens",
         "code": "LEN-0270",
         "title": "Reconciliation Lens",
-        "count": 9
+        "count": 10
       },
       {
         "slug": "reference-stability-lens",
@@ -1390,7 +1652,7 @@
         "ontology_slug": "variance-entropy-lens",
         "code": "LEN-0290",
         "title": "Variance / Entropy Lens",
-        "count": 9
+        "count": 10
       }
     ]
   }

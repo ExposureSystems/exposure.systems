@@ -703,6 +703,54 @@
       "markdown_url": "/workbench/issues/fallback-authority-is-missing.md"
     },
     {
+      "slug": "hallucinated-fields",
+      "ontology_slug": "hallucinated-fields",
+      "code": "ISS-0023",
+      "title": "Hallucinated Fields",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "The AI adds fields, keys, attributes, columns, or structured elements that were not declared, requested, or allowed by the expected schema.",
+      "category": "output",
+      "category_title": "Output",
+      "primary_cat_code": "CAT-0010",
+      "secondary_cat_codes": [
+        "CAT-0100"
+      ],
+      "primary_pattern": "overreach",
+      "patterns": [
+        "overreach",
+        "schema-breakage",
+        "unbounded-scope"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "boundary-compliance-lens",
+          "constraint-sufficiency-lens",
+          "interface-contract-lens",
+          "invariant-lens",
+          "isolation-boundary-lens",
+          "overreach-lens"
+        ],
+        "secondary": [
+          "conflict-lens",
+          "escalation-gradient-lens",
+          "propagation-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "hallucinated fields",
+        "AI added extra JSON fields",
+        "structured output has extra keys",
+        "AI invented fields",
+        "schema has unexpected fields",
+        "output includes fields not requested"
+      ],
+      "url": "/workbench/issues/hallucinated-fields/",
+      "markdown_url": "/workbench/issues/hallucinated-fields.md"
+    },
+    {
       "slug": "invalid-json-output",
       "ontology_slug": "invalid-json-output",
       "code": "ISS-0021",
@@ -742,10 +790,56 @@
         "ChatGPT malformed JSON",
         "JSON parse error AI output",
         "LLM output invalid JSON",
-        "AI gave JSON that will not parse"
+        "AI gave JSON that will not parse",
+        "malformed structured output"
       ],
       "url": "/workbench/issues/invalid-json-output/",
       "markdown_url": "/workbench/issues/invalid-json-output.md"
+    },
+    {
+      "slug": "missing-required-fields",
+      "ontology_slug": "missing-required-fields",
+      "code": "ISS-0022",
+      "title": "Missing Required Fields",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "The AI returns structured output that omits fields required by the schema, workflow, parser, form, or downstream consumer.",
+      "category": "output",
+      "category_title": "Output",
+      "primary_cat_code": "CAT-0010",
+      "secondary_cat_codes": [
+        "CAT-0120"
+      ],
+      "primary_pattern": "incomplete-declaration",
+      "patterns": [
+        "incomplete-declaration",
+        "schema-breakage",
+        "density-vacuum"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "absence-lens",
+          "compression-lens",
+          "constraint-sufficiency-lens",
+          "interface-contract-lens",
+          "invariant-lens"
+        ],
+        "secondary": [
+          "conflict-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "missing required fields",
+        "AI output missing fields",
+        "structured output missing required field",
+        "JSON missing required keys",
+        "AI skipped required fields",
+        "schema validation missing fields"
+      ],
+      "url": "/workbench/issues/missing-required-fields/",
+      "markdown_url": "/workbench/issues/missing-required-fields.md"
     },
     {
       "slug": "no-owner-for-agent-action",
@@ -794,6 +888,51 @@
       ],
       "url": "/workbench/issues/no-owner-for-agent-action/",
       "markdown_url": "/workbench/issues/no-owner-for-agent-action.md"
+    },
+    {
+      "slug": "output-breaks-the-next-step",
+      "ontology_slug": "output-breaks-the-next-step",
+      "code": "ISS-0018",
+      "title": "Output Breaks the Next Step",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "The AI output looks acceptable by itself but cannot be used by the next tool, workflow step, parser, reviewer, or downstream consumer.",
+      "category": "mcp-tools-and-integrations",
+      "category_title": "MCP, Tools & Integrations",
+      "primary_cat_code": "CAT-0040",
+      "secondary_cat_codes": [
+        "CAT-0010"
+      ],
+      "primary_pattern": "compatibility-violation",
+      "patterns": [
+        "compatibility-violation",
+        "interface-mismatch",
+        "schema-breakage"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "compatibility-envelope-lens",
+          "interface-contract-lens",
+          "invariant-lens"
+        ],
+        "secondary": [
+          "boundary-compliance-lens",
+          "conflict-lens",
+          "normalization-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "output breaks the next step",
+        "AI output fails downstream",
+        "response cannot be used by next tool",
+        "AI output breaks workflow",
+        "output looks right but next step fails",
+        "downstream parser rejects AI output"
+      ],
+      "url": "/workbench/issues/output-breaks-the-next-step/",
+      "markdown_url": "/workbench/issues/output-breaks-the-next-step.md"
     },
     {
       "slug": "permissions-conflict-after-being-combined",
@@ -1107,6 +1246,98 @@
       "markdown_url": "/workbench/issues/tool-call-contract-mismatch.md"
     },
     {
+      "slug": "tool-exists-but-required-inputs-are-missing",
+      "ontology_slug": "tool-exists-but-required-inputs-are-missing",
+      "code": "ISS-0020",
+      "title": "Tool Exists but Required Inputs Are Missing",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "A usable tool or integration exists, but the AI or agent does not have the required inputs, permissions, fields, identifiers, or context needed to call it correctly.",
+      "category": "mcp-tools-and-integrations",
+      "category_title": "MCP, Tools & Integrations",
+      "primary_cat_code": "CAT-0040",
+      "secondary_cat_codes": [
+        "CAT-0120"
+      ],
+      "primary_pattern": "incomplete-declaration",
+      "patterns": [
+        "incomplete-declaration",
+        "constraints-underspecified",
+        "interface-mismatch"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "absence-lens",
+          "constraint-sufficiency-lens",
+          "interface-contract-lens"
+        ],
+        "secondary": [
+          "determinism-lens",
+          "normalization-lens",
+          "variance-entropy-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "tool exists but required inputs are missing",
+        "AI cannot call tool missing inputs",
+        "agent needs required tool fields",
+        "tool available but not enough information",
+        "missing inputs for MCP tool",
+        "AI tool call lacks required parameters"
+      ],
+      "url": "/workbench/issues/tool-exists-but-required-inputs-are-missing/",
+      "markdown_url": "/workbench/issues/tool-exists-but-required-inputs-are-missing.md"
+    },
+    {
+      "slug": "tool-result-not-integrated-correctly",
+      "ontology_slug": "tool-result-not-integrated-correctly",
+      "code": "ISS-0019",
+      "title": "Tool Result Not Integrated Correctly",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "The AI receives a tool result but misreads, ignores, overwrites, misplaces, or fails to incorporate it correctly into the final output or workflow state.",
+      "category": "mcp-tools-and-integrations",
+      "category_title": "MCP, Tools & Integrations",
+      "primary_cat_code": "CAT-0040",
+      "secondary_cat_codes": [
+        "CAT-0070",
+        "CAT-0010"
+      ],
+      "primary_pattern": "orphaned-structure",
+      "patterns": [
+        "orphaned-structure",
+        "interface-mismatch",
+        "contract-drift"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "absence-lens",
+          "convergence-lens",
+          "interface-contract-lens",
+          "reconciliation-lens"
+        ],
+        "secondary": [
+          "determinism-lens",
+          "normalization-lens",
+          "propagation-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "tool result not integrated correctly",
+        "AI ignored tool result",
+        "agent misread tool output",
+        "tool result missing from final answer",
+        "AI overwrote tool response",
+        "tool output not reflected in answer"
+      ],
+      "url": "/workbench/issues/tool-result-not-integrated-correctly/",
+      "markdown_url": "/workbench/issues/tool-result-not-integrated-correctly.md"
+    },
+    {
       "slug": "validation-result-changes-on-retry",
       "ontology_slug": "validation-result-changes-on-retry",
       "code": "ISS-0006",
@@ -1198,6 +1429,49 @@
       ],
       "url": "/workbench/issues/workflow-step-has-no-decision-owner/",
       "markdown_url": "/workbench/issues/workflow-step-has-no-decision-owner.md"
+    },
+    {
+      "slug": "wrong-field-types",
+      "ontology_slug": "wrong-field-types",
+      "code": "ISS-0024",
+      "title": "Wrong Field Types",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "The AI returns fields with values whose types do not match the expected schema, such as strings where numbers, booleans, arrays, objects, or enums are required.",
+      "category": "output",
+      "category_title": "Output",
+      "primary_cat_code": "CAT-0010",
+      "secondary_cat_codes": [],
+      "primary_pattern": "schema-breakage",
+      "patterns": [
+        "schema-breakage",
+        "interface-mismatch",
+        "compatibility-violation"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "compatibility-envelope-lens",
+          "interface-contract-lens",
+          "invariant-lens"
+        ],
+        "secondary": [
+          "boundary-compliance-lens",
+          "conflict-lens",
+          "normalization-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "wrong field types",
+        "AI output wrong JSON types",
+        "schema expected number got string",
+        "field type mismatch",
+        "structured output type error",
+        "AI returned wrong data type"
+      ],
+      "url": "/workbench/issues/wrong-field-types/",
+      "markdown_url": "/workbench/issues/wrong-field-types.md"
     }
   ],
   "ai_adj_issues": [
@@ -1475,12 +1749,15 @@
         ]
       },
       "issues": {
-        "primary": [],
+        "primary": [
+          "output-breaks-the-next-step"
+        ],
         "supporting": [
           "citation-points-to-wrong-source",
           "declared-owner-cannot-control-outcome",
           "saved-reference-no-longer-works",
-          "tool-call-contract-mismatch"
+          "tool-call-contract-mismatch",
+          "wrong-field-types"
         ]
       },
       "url": "/workbench/patterns/compatibility-violation/",
@@ -1511,7 +1788,8 @@
           "answer-has-too-many-paths",
           "invalid-json-output",
           "prompt-only-works-after-retry",
-          "task-has-no-clear-limit"
+          "task-has-no-clear-limit",
+          "tool-exists-but-required-inputs-are-missing"
         ]
       },
       "url": "/workbench/patterns/constraints-underspecified/",
@@ -1539,7 +1817,8 @@
         "primary": [],
         "supporting": [
           "ai-forgets-earlier-constraints",
-          "saved-reference-no-longer-works"
+          "saved-reference-no-longer-works",
+          "tool-result-not-integrated-correctly"
         ]
       },
       "url": "/workbench/patterns/contract-drift/",
@@ -1645,7 +1924,8 @@
       "issues": {
         "primary": [],
         "supporting": [
-          "answer-has-no-traceable-source-link"
+          "answer-has-no-traceable-source-link",
+          "missing-required-fields"
         ]
       },
       "url": "/workbench/patterns/density-vacuum/",
@@ -1728,7 +2008,9 @@
       },
       "issues": {
         "primary": [
-          "answer-has-no-traceable-source-link"
+          "answer-has-no-traceable-source-link",
+          "missing-required-fields",
+          "tool-exists-but-required-inputs-are-missing"
         ],
         "supporting": [
           "fallback-authority-is-missing",
@@ -1762,7 +2044,11 @@
         ],
         "supporting": [
           "citation-points-to-wrong-source",
-          "invalid-json-output"
+          "invalid-json-output",
+          "output-breaks-the-next-step",
+          "tool-exists-but-required-inputs-are-missing",
+          "tool-result-not-integrated-correctly",
+          "wrong-field-types"
         ]
       },
       "url": "/workbench/patterns/interface-mismatch/",
@@ -1873,7 +2159,9 @@
         ]
       },
       "issues": {
-        "primary": [],
+        "primary": [
+          "tool-result-not-integrated-correctly"
+        ],
         "supporting": [
           "workflow-step-has-no-decision-owner"
         ]
@@ -1901,7 +2189,8 @@
       },
       "issues": {
         "primary": [
-          "ai-adds-work-not-requested"
+          "ai-adds-work-not-requested",
+          "hallucinated-fields"
         ],
         "supporting": [
           "agent-keeps-expanding-the-task"
@@ -2037,9 +2326,13 @@
       },
       "issues": {
         "primary": [
-          "invalid-json-output"
+          "invalid-json-output",
+          "wrong-field-types"
         ],
         "supporting": [
+          "hallucinated-fields",
+          "missing-required-fields",
+          "output-breaks-the-next-step",
           "tool-call-contract-mismatch",
           "validation-result-changes-on-retry"
         ]
@@ -2122,7 +2415,8 @@
         ],
         "supporting": [
           "ai-adds-work-not-requested",
-          "answer-has-too-many-paths"
+          "answer-has-too-many-paths",
+          "hallucinated-fields"
         ]
       },
       "url": "/workbench/patterns/unbounded-scope/",
@@ -2207,8 +2501,11 @@
         "answer-has-no-traceable-source-link",
         "declared-owner-cannot-control-outcome",
         "fallback-authority-is-missing",
+        "missing-required-fields",
         "no-owner-for-agent-action",
         "task-has-no-clear-limit",
+        "tool-exists-but-required-inputs-are-missing",
+        "tool-result-not-integrated-correctly",
         "workflow-step-has-no-decision-owner"
       ],
       "url": "/workbench/lenses/absence-lens/",
@@ -2267,8 +2564,11 @@
         "ai-adds-work-not-requested",
         "citation-points-to-wrong-source",
         "declared-owner-cannot-control-outcome",
+        "hallucinated-fields",
+        "output-breaks-the-next-step",
         "saved-reference-no-longer-works",
-        "tool-call-contract-mismatch"
+        "tool-call-contract-mismatch",
+        "wrong-field-types"
       ],
       "url": "/workbench/lenses/boundary-compliance-lens/",
       "markdown_url": "/workbench/lenses/boundary-compliance-lens.md"
@@ -2291,8 +2591,10 @@
       "issues": [
         "citation-points-to-wrong-source",
         "declared-owner-cannot-control-outcome",
+        "output-breaks-the-next-step",
         "saved-reference-no-longer-works",
-        "tool-call-contract-mismatch"
+        "tool-call-contract-mismatch",
+        "wrong-field-types"
       ],
       "url": "/workbench/lenses/compatibility-envelope-lens/",
       "markdown_url": "/workbench/lenses/compatibility-envelope-lens.md"
@@ -2322,6 +2624,7 @@
         "agent-keeps-expanding-the-task",
         "answer-has-no-traceable-source-link",
         "answer-has-too-many-paths",
+        "missing-required-fields",
         "prompt-only-works-after-retry",
         "similar-cases-route-to-different-outcomes",
         "validation-result-changes-on-retry"
@@ -2355,12 +2658,16 @@
       "issues": [
         "declared-owner-cannot-control-outcome",
         "fallback-authority-is-missing",
+        "hallucinated-fields",
         "invalid-json-output",
+        "missing-required-fields",
         "no-owner-for-agent-action",
+        "output-breaks-the-next-step",
         "permissions-conflict-after-being-combined",
         "tool-call-contract-mismatch",
         "validation-result-changes-on-retry",
-        "workflow-step-has-no-decision-owner"
+        "workflow-step-has-no-decision-owner",
+        "wrong-field-types"
       ],
       "url": "/workbench/lenses/conflict-lens/",
       "markdown_url": "/workbench/lenses/conflict-lens.md"
@@ -2390,9 +2697,12 @@
         "answer-has-no-traceable-source-link",
         "answer-has-too-many-paths",
         "fallback-authority-is-missing",
+        "hallucinated-fields",
         "invalid-json-output",
+        "missing-required-fields",
         "prompt-only-works-after-retry",
         "task-has-no-clear-limit",
+        "tool-exists-but-required-inputs-are-missing",
         "workflow-step-has-no-decision-owner"
       ],
       "url": "/workbench/lenses/constraint-sufficiency-lens/",
@@ -2427,6 +2737,7 @@
         "prompt-only-works-after-retry",
         "saved-reference-no-longer-works",
         "similar-cases-route-to-different-outcomes",
+        "tool-result-not-integrated-correctly",
         "validation-result-changes-on-retry"
       ],
       "url": "/workbench/lenses/convergence-lens/",
@@ -2465,6 +2776,8 @@
         "saved-reference-no-longer-works",
         "similar-cases-route-to-different-outcomes",
         "task-has-no-clear-limit",
+        "tool-exists-but-required-inputs-are-missing",
+        "tool-result-not-integrated-correctly",
         "validation-result-changes-on-retry"
       ],
       "url": "/workbench/lenses/determinism-lens/",
@@ -2495,6 +2808,7 @@
         "agent-keeps-expanding-the-task",
         "ai-adds-work-not-requested",
         "answer-has-too-many-paths",
+        "hallucinated-fields",
         "retry-makes-the-problem-worse",
         "task-has-no-clear-limit"
       ],
@@ -2524,11 +2838,17 @@
         "answer-has-no-traceable-source-link",
         "citation-points-to-wrong-source",
         "fallback-authority-is-missing",
+        "hallucinated-fields",
         "invalid-json-output",
+        "missing-required-fields",
+        "output-breaks-the-next-step",
         "task-has-no-clear-limit",
         "tool-call-contract-mismatch",
+        "tool-exists-but-required-inputs-are-missing",
+        "tool-result-not-integrated-correctly",
         "validation-result-changes-on-retry",
-        "workflow-step-has-no-decision-owner"
+        "workflow-step-has-no-decision-owner",
+        "wrong-field-types"
       ],
       "url": "/workbench/lenses/interface-contract-lens/",
       "markdown_url": "/workbench/lenses/interface-contract-lens.md"
@@ -2553,10 +2873,14 @@
         ]
       },
       "issues": [
+        "hallucinated-fields",
         "invalid-json-output",
+        "missing-required-fields",
+        "output-breaks-the-next-step",
         "permissions-conflict-after-being-combined",
         "tool-call-contract-mismatch",
-        "validation-result-changes-on-retry"
+        "validation-result-changes-on-retry",
+        "wrong-field-types"
       ],
       "url": "/workbench/lenses/invariant-lens/",
       "markdown_url": "/workbench/lenses/invariant-lens.md"
@@ -2583,6 +2907,7 @@
       "issues": [
         "ai-adds-work-not-requested",
         "answer-has-too-many-paths",
+        "hallucinated-fields",
         "no-owner-for-agent-action",
         "task-has-no-clear-limit"
       ],
@@ -2611,7 +2936,11 @@
         "citation-points-to-wrong-source",
         "fallback-authority-is-missing",
         "invalid-json-output",
-        "tool-call-contract-mismatch"
+        "output-breaks-the-next-step",
+        "tool-call-contract-mismatch",
+        "tool-exists-but-required-inputs-are-missing",
+        "tool-result-not-integrated-correctly",
+        "wrong-field-types"
       ],
       "url": "/workbench/lenses/normalization-lens/",
       "markdown_url": "/workbench/lenses/normalization-lens.md"
@@ -2635,6 +2964,7 @@
       "issues": [
         "agent-keeps-expanding-the-task",
         "ai-adds-work-not-requested",
+        "hallucinated-fields",
         "no-owner-for-agent-action"
       ],
       "url": "/workbench/lenses/overreach-lens/",
@@ -2667,8 +2997,10 @@
         "agent-keeps-expanding-the-task",
         "ai-adds-work-not-requested",
         "fallback-authority-is-missing",
+        "hallucinated-fields",
         "no-owner-for-agent-action",
         "retry-makes-the-problem-worse",
+        "tool-result-not-integrated-correctly",
         "workflow-step-has-no-decision-owner"
       ],
       "url": "/workbench/lenses/propagation-lens/",
@@ -2726,6 +3058,7 @@
         "permissions-conflict-after-being-combined",
         "saved-reference-no-longer-works",
         "similar-cases-route-to-different-outcomes",
+        "tool-result-not-integrated-correctly",
         "workflow-step-has-no-decision-owner"
       ],
       "url": "/workbench/lenses/reconciliation-lens/",
@@ -2799,6 +3132,7 @@
         "retry-makes-the-problem-worse",
         "similar-cases-route-to-different-outcomes",
         "task-has-no-clear-limit",
+        "tool-exists-but-required-inputs-are-missing",
         "validation-result-changes-on-retry"
       ],
       "url": "/workbench/lenses/variance-entropy-lens/",
@@ -2859,7 +3193,9 @@
       "primary_issues": [],
       "secondary_issues": [
         "answer-has-no-traceable-source-link",
-        "citation-points-to-wrong-source"
+        "citation-points-to-wrong-source",
+        "missing-required-fields",
+        "tool-exists-but-required-inputs-are-missing"
       ],
       "url": "/workbench/categories/coverage-and-guidance/"
     },
@@ -2925,10 +3261,16 @@
       "updated_at": "2026-05-10T00:00:00Z",
       "summary": "Problems involving tool calls, MCP surfaces, integration contracts, required tool inputs, tool results, parser consumers, or downstream systems that depend on AI output.",
       "issues": [
-        "tool-call-contract-mismatch"
+        "output-breaks-the-next-step",
+        "tool-call-contract-mismatch",
+        "tool-exists-but-required-inputs-are-missing",
+        "tool-result-not-integrated-correctly"
       ],
       "primary_issues": [
-        "tool-call-contract-mismatch"
+        "output-breaks-the-next-step",
+        "tool-call-contract-mismatch",
+        "tool-exists-but-required-inputs-are-missing",
+        "tool-result-not-integrated-correctly"
       ],
       "secondary_issues": [],
       "url": "/workbench/categories/mcp-tools-and-integrations/"
@@ -2964,17 +3306,25 @@
         "answer-has-no-traceable-source-link",
         "answer-has-too-many-paths",
         "citation-points-to-wrong-source",
-        "invalid-json-output"
+        "hallucinated-fields",
+        "invalid-json-output",
+        "missing-required-fields",
+        "wrong-field-types"
       ],
       "primary_issues": [
         "answer-has-no-traceable-source-link",
         "answer-has-too-many-paths",
         "citation-points-to-wrong-source",
-        "invalid-json-output"
+        "hallucinated-fields",
+        "invalid-json-output",
+        "missing-required-fields",
+        "wrong-field-types"
       ],
       "secondary_issues": [
+        "output-breaks-the-next-step",
         "saved-reference-no-longer-works",
         "tool-call-contract-mismatch",
+        "tool-result-not-integrated-correctly",
         "validation-result-changes-on-retry"
       ],
       "url": "/workbench/categories/output/"
@@ -3040,7 +3390,8 @@
       "secondary_issues": [
         "agent-keeps-expanding-the-task",
         "ai-adds-work-not-requested",
-        "answer-has-too-many-paths"
+        "answer-has-too-many-paths",
+        "hallucinated-fields"
       ],
       "url": "/workbench/categories/scope-and-boundaries/"
     },
@@ -3078,7 +3429,8 @@
         "workflow-step-has-no-decision-owner"
       ],
       "secondary_issues": [
-        "fallback-authority-is-missing"
+        "fallback-authority-is-missing",
+        "tool-result-not-integrated-correctly"
       ],
       "url": "/workbench/categories/workflow-and-handoffs/"
     }

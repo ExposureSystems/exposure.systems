@@ -21,17 +21,16 @@ search_intents:
   - JSON parse error AI output
   - LLM output invalid JSON
   - AI gave JSON that will not parse
+  - malformed structured output
 ---
-
-# Invalid JSON Output
 
 ## What This Looks Like
 
-The AI returns something that looks like JSON or structured output, but the result will not parse. The user may see broken braces, unescaped quotes, trailing commas, mixed prose inside the JSON, or an output block that a parser rejects even though a human can understand the intent.
+The AI returns something that looks like JSON or structured output, but the result will not parse. The user may see broken braces, unescaped quotes, trailing commas, mixed prose inside the JSON, comments inside the object, or an output block that a parser rejects even though a human can understand the intent.
 
 ## Why It Matters
 
-Structured output often sits between the AI and another system. If the JSON is invalid, downstream parsing, validation, importing, automation, or tool execution can fail immediately. This turns a seemingly small formatting error into a workflow blocker.
+Structured output often sits between the AI and another system. If the JSON is invalid, downstream parsing, validation, importing, automation, or tool execution can fail immediately. This turns a small-looking formatting failure into a workflow blocker.
 
 ## Structural Signal
 
@@ -44,6 +43,7 @@ A structured output contract exists, but the generated response violates the par
 - The output mixes prose and structured data
 - The model optimizes for readability instead of parseability
 - Required schema rules are implied but not enforced
+- The response includes markdown, comments, or surrounding text where raw JSON was required
 
 ## When to Use This Issue
 
