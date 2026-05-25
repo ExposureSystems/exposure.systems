@@ -1426,6 +1426,52 @@
       "markdown_url": "/workbench/issues/duplicate-output-sections.md"
     },
     {
+      "slug": "early-model-output-gets-overweighted-downstream",
+      "ontology_slug": "early-model-output-gets-overweighted-downstream",
+      "code": "ISS-0094",
+      "title": "Early Model Output Gets Overweighted Downstream",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "An early AI output receives too much authority in later workflow steps, decisions, reviews, or generated artifacts.",
+      "category": "spread-and-escalation",
+      "category_title": "Spread & Escalation",
+      "primary_cat_code": "CAT-0110",
+      "secondary_cat_codes": [
+        "CAT-0070"
+      ],
+      "primary_pattern": "propagation-amplification",
+      "patterns": [
+        "propagation-amplification",
+        "authority-state-mismatch",
+        "contract-drift"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "convergence-lens",
+          "escalation-gradient-lens",
+          "propagation-lens",
+          "reconciliation-lens"
+        ],
+        "secondary": [
+          "determinism-lens",
+          "reference-stability-lens",
+          "variance-entropy-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "early model output gets overweighted downstream",
+        "AI first answer influences too much",
+        "early model output overtrusted",
+        "downstream workflow overweights AI output",
+        "initial AI result affects later decisions",
+        "early AI classification becomes authority"
+      ],
+      "url": "/workbench/issues/early-model-output-gets-overweighted-downstream/",
+      "markdown_url": "/workbench/issues/early-model-output-gets-overweighted-downstream.md"
+    },
+    {
       "slug": "evaluation-rubric-has-coverage-gap",
       "ontology_slug": "evaluation-rubric-has-coverage-gap",
       "code": "ISS-0081",
@@ -1793,6 +1839,51 @@
       ],
       "url": "/workbench/issues/invalid-json-output/",
       "markdown_url": "/workbench/issues/invalid-json-output.md"
+    },
+    {
+      "slug": "local-rule-spreads-to-broader-cases",
+      "ontology_slug": "local-rule-spreads-to-broader-cases",
+      "code": "ISS-0096",
+      "title": "Local Rule Spreads to Broader Cases",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "A rule intended for one local case, file, context, user, workflow, or exception begins affecting broader cases.",
+      "category": "spread-and-escalation",
+      "category_title": "Spread & Escalation",
+      "primary_cat_code": "CAT-0110",
+      "secondary_cat_codes": [
+        "CAT-0060"
+      ],
+      "primary_pattern": "propagation-amplification",
+      "patterns": [
+        "propagation-amplification",
+        "boundary-leakage",
+        "overreach"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "boundary-compliance-lens",
+          "escalation-gradient-lens",
+          "isolation-boundary-lens",
+          "overreach-lens",
+          "propagation-lens"
+        ],
+        "secondary": [
+          "variance-entropy-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "local rule spreads to broader cases",
+        "AI applies local rule too broadly",
+        "local instruction became global",
+        "rule from one case affects others",
+        "AI overgeneralized local rule",
+        "local policy spread too far"
+      ],
+      "url": "/workbench/issues/local-rule-spreads-to-broader-cases/",
+      "markdown_url": "/workbench/issues/local-rule-spreads-to-broader-cases.md"
     },
     {
       "slug": "merge-step-leaves-unresolved-differences",
@@ -2522,6 +2613,54 @@
       ],
       "url": "/workbench/issues/policy-area-has-no-examples/",
       "markdown_url": "/workbench/issues/policy-area-has-no-examples.md"
+    },
+    {
+      "slug": "policy-decision-depends-on-itself",
+      "ontology_slug": "policy-decision-depends-on-itself",
+      "code": "ISS-0090",
+      "title": "Policy Decision Depends on Itself",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "A policy decision requires the outcome of the same policy decision before it can be made.",
+      "category": "loops-and-resolution",
+      "category_title": "Loops & Resolution",
+      "primary_cat_code": "CAT-0130",
+      "secondary_cat_codes": [
+        "CAT-0060"
+      ],
+      "primary_pattern": "circular-dependency",
+      "patterns": [
+        "circular-dependency",
+        "authority-collision",
+        "incomplete-declaration"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "absence-lens",
+          "authority-overlay-lens",
+          "conflict-lens",
+          "constraint-sufficiency-lens",
+          "propagation-lens"
+        ],
+        "secondary": [
+          "interface-contract-lens",
+          "invariant-lens",
+          "normalization-lens",
+          "reconciliation-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "policy decision depends on itself",
+        "AI policy circular dependency",
+        "policy needs its own decision",
+        "policy rule loops back on itself",
+        "AI cannot decide policy because decision depends on decision",
+        "circular policy decision"
+      ],
+      "url": "/workbench/issues/policy-decision-depends-on-itself/",
+      "markdown_url": "/workbench/issues/policy-decision-depends-on-itself.md"
     },
     {
       "slug": "policy-exception-spreads-too-far",
@@ -3288,6 +3427,100 @@
       "markdown_url": "/workbench/issues/risk-score-triggers-wrong-escalation.md"
     },
     {
+      "slug": "risk-signal-escalates-beyond-evidence",
+      "ontology_slug": "risk-signal-escalates-beyond-evidence",
+      "code": "ISS-0095",
+      "title": "Risk Signal Escalates Beyond Evidence",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "A risk signal, warning, score, or concern escalates farther than the available evidence supports.",
+      "category": "spread-and-escalation",
+      "category_title": "Spread & Escalation",
+      "primary_cat_code": "CAT-0110",
+      "secondary_cat_codes": [
+        "CAT-0050"
+      ],
+      "primary_pattern": "escalation-growth",
+      "patterns": [
+        "escalation-growth",
+        "threshold-breach",
+        "missing-authority"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "absence-lens",
+          "authority-overlay-lens",
+          "escalation-gradient-lens",
+          "invariant-lens",
+          "variance-entropy-lens"
+        ],
+        "secondary": [
+          "boundary-compliance-lens",
+          "conflict-lens",
+          "propagation-lens",
+          "reconciliation-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "risk signal escalates beyond evidence",
+        "AI risk warning went too far",
+        "risk score escalated without evidence",
+        "AI concern escalated too much",
+        "escalation beyond evidence",
+        "risk signal over-escalation"
+      ],
+      "url": "/workbench/issues/risk-signal-escalates-beyond-evidence/",
+      "markdown_url": "/workbench/issues/risk-signal-escalates-beyond-evidence.md"
+    },
+    {
+      "slug": "routing-path-cycles-back-to-start",
+      "ontology_slug": "routing-path-cycles-back-to-start",
+      "code": "ISS-0092",
+      "title": "Routing Path Cycles Back to Start",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "A routing path sends the case back to the starting point or an earlier step without resolving the condition that caused the route.",
+      "category": "loops-and-resolution",
+      "category_title": "Loops & Resolution",
+      "primary_cat_code": "CAT-0130",
+      "secondary_cat_codes": [
+        "CAT-0070"
+      ],
+      "primary_pattern": "circular-dependency",
+      "patterns": [
+        "circular-dependency",
+        "convergence-failure",
+        "escalation-growth"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "conflict-lens",
+          "convergence-lens",
+          "escalation-gradient-lens",
+          "propagation-lens",
+          "variance-entropy-lens"
+        ],
+        "secondary": [
+          "normalization-lens",
+          "reconciliation-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "routing path cycles back to start",
+        "AI routing loop",
+        "workflow routes back to beginning",
+        "case cycles through same route",
+        "routing path never resolves",
+        "AI workflow sends case back to start"
+      ],
+      "url": "/workbench/issues/routing-path-cycles-back-to-start/",
+      "markdown_url": "/workbench/issues/routing-path-cycles-back-to-start.md"
+    },
+    {
       "slug": "rubric-changed-but-results-did-not",
       "ontology_slug": "rubric-changed-but-results-did-not",
       "code": "ISS-0055",
@@ -3646,6 +3879,52 @@
       "markdown_url": "/workbench/issues/saved-reference-no-longer-works.md"
     },
     {
+      "slug": "schema-reference-loops-without-base-case",
+      "ontology_slug": "schema-reference-loops-without-base-case",
+      "code": "ISS-0091",
+      "title": "Schema Reference Loops Without Base Case",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "A schema, field, type, object, or structured reference points through a loop without a base case that allows validation or interpretation to resolve.",
+      "category": "loops-and-resolution",
+      "category_title": "Loops & Resolution",
+      "primary_cat_code": "CAT-0130",
+      "secondary_cat_codes": [
+        "CAT-0010"
+      ],
+      "primary_pattern": "circular-dependency",
+      "patterns": [
+        "circular-dependency",
+        "schema-breakage",
+        "reference-instability"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "conflict-lens",
+          "interface-contract-lens",
+          "invariant-lens",
+          "propagation-lens",
+          "reference-stability-lens"
+        ],
+        "secondary": [
+          "determinism-lens",
+          "normalization-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "schema reference loops without base case",
+        "recursive schema no base case",
+        "AI schema reference loop",
+        "structured output schema loops",
+        "JSON schema circular reference",
+        "schema cannot resolve reference"
+      ],
+      "url": "/workbench/issues/schema-reference-loops-without-base-case/",
+      "markdown_url": "/workbench/issues/schema-reference-loops-without-base-case.md"
+    },
+    {
       "slug": "similar-cases-route-to-different-outcomes",
       "ontology_slug": "similar-cases-route-to-different-outcomes",
       "code": "ISS-0001",
@@ -3687,6 +3966,50 @@
       ],
       "url": "/workbench/issues/similar-cases-route-to-different-outcomes/",
       "markdown_url": "/workbench/issues/similar-cases-route-to-different-outcomes.md"
+    },
+    {
+      "slug": "small-error-spreads-into-large-failure",
+      "ontology_slug": "small-error-spreads-into-large-failure",
+      "code": "ISS-0093",
+      "title": "Small Error Spreads Into Large Failure",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "A small AI, output, routing, or workflow error propagates through later steps until it becomes a larger failure.",
+      "category": "spread-and-escalation",
+      "category_title": "Spread & Escalation",
+      "primary_cat_code": "CAT-0110",
+      "secondary_cat_codes": [
+        "CAT-0010"
+      ],
+      "primary_pattern": "propagation-amplification",
+      "patterns": [
+        "propagation-amplification",
+        "escalation-growth",
+        "undeclared-side-effect"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "escalation-gradient-lens",
+          "overreach-lens",
+          "propagation-lens",
+          "variance-entropy-lens"
+        ],
+        "secondary": [
+          "isolation-boundary-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "small error spreads into large failure",
+        "AI small mistake became big problem",
+        "small output error propagated downstream",
+        "AI error spread through workflow",
+        "minor mistake caused major failure",
+        "small issue escalated into bigger failure"
+      ],
+      "url": "/workbench/issues/small-error-spreads-into-large-failure/",
+      "markdown_url": "/workbench/issues/small-error-spreads-into-large-failure.md"
     },
     {
       "slug": "stale-context-affects-output",
@@ -4282,6 +4605,52 @@
       "markdown_url": "/workbench/issues/workflow-step-lacks-required-conditions.md"
     },
     {
+      "slug": "workflow-waits-on-step-that-waits-back",
+      "ontology_slug": "workflow-waits-on-step-that-waits-back",
+      "code": "ISS-0089",
+      "title": "Workflow Waits on Step That Waits Back",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "A workflow step waits for another step that also waits on the first step, creating a blocking loop.",
+      "category": "loops-and-resolution",
+      "category_title": "Loops & Resolution",
+      "primary_cat_code": "CAT-0130",
+      "secondary_cat_codes": [
+        "CAT-0070"
+      ],
+      "primary_pattern": "circular-dependency",
+      "patterns": [
+        "circular-dependency",
+        "convergence-failure",
+        "orphaned-structure"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "absence-lens",
+          "conflict-lens",
+          "convergence-lens",
+          "propagation-lens"
+        ],
+        "secondary": [
+          "normalization-lens",
+          "reconciliation-lens",
+          "variance-entropy-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "workflow waits on step that waits back",
+        "AI workflow circular wait",
+        "workflow steps wait on each other",
+        "handoff blocked by previous step",
+        "AI process stuck waiting",
+        "workflow dependency loop"
+      ],
+      "url": "/workbench/issues/workflow-waits-on-step-that-waits-back/",
+      "markdown_url": "/workbench/issues/workflow-waits-on-step-that-waits-back.md"
+    },
+    {
       "slug": "wrong-field-types",
       "ontology_slug": "wrong-field-types",
       "code": "ISS-0024",
@@ -4447,7 +4816,8 @@
         "supporting": [
           "approval-depends-on-output-that-needs-approval",
           "hidden-rule-overrides-visible-instruction",
-          "parallel-reviews-never-agree"
+          "parallel-reviews-never-agree",
+          "policy-decision-depends-on-itself"
         ]
       },
       "url": "/workbench/patterns/authority-collision/",
@@ -4544,6 +4914,7 @@
         ],
         "supporting": [
           "actual-policy-differs-from-declared-policy",
+          "early-model-output-gets-overweighted-downstream",
           "human-review-and-automation-disagree",
           "no-owner-for-agent-action",
           "rubric-changed-but-results-did-not",
@@ -4583,6 +4954,7 @@
           "action-changed-something-else-too",
           "ai-touches-unrelated-scope",
           "hidden-rule-overrides-visible-instruction",
+          "local-rule-spreads-to-broader-cases",
           "policy-exception-spreads-too-far",
           "prompt-does-not-say-what-to-exclude"
         ]
@@ -4612,7 +4984,11 @@
         "primary": [
           "agent-cannot-choose-tool-without-tool-result",
           "approval-depends-on-output-that-needs-approval",
-          "workflow-loops-through-review-without-resolution"
+          "policy-decision-depends-on-itself",
+          "routing-path-cycles-back-to-start",
+          "schema-reference-loops-without-base-case",
+          "workflow-loops-through-review-without-resolution",
+          "workflow-waits-on-step-that-waits-back"
         ],
         "supporting": [
           "agent-never-settles-on-final-answer",
@@ -4737,6 +5113,7 @@
         ],
         "supporting": [
           "ai-forgets-earlier-constraints",
+          "early-model-output-gets-overweighted-downstream",
           "output-breaks-after-model-change",
           "output-changed-without-declared-change",
           "prompt-behavior-changed-without-version-change",
@@ -4776,9 +5153,11 @@
         "supporting": [
           "agent-keeps-expanding-the-task",
           "human-review-and-automation-disagree",
+          "routing-path-cycles-back-to-start",
           "same-workflow-check-happens-twice",
           "task-progress-is-lost-midway",
-          "workflow-loops-through-review-without-resolution"
+          "workflow-loops-through-review-without-resolution",
+          "workflow-waits-on-step-that-waits-back"
         ]
       },
       "url": "/workbench/patterns/convergence-failure/",
@@ -4938,12 +5317,15 @@
       "issues": {
         "primary": [
           "retry-makes-the-problem-worse",
-          "risk-score-triggers-wrong-escalation"
+          "risk-score-triggers-wrong-escalation",
+          "risk-signal-escalates-beyond-evidence"
         ],
         "supporting": [
           "action-triggered-by-confidence-score",
           "model-output-triggers-unapproved-action",
           "repair-step-created-new-breakage",
+          "routing-path-cycles-back-to-start",
+          "small-error-spreads-into-large-failure",
           "too-many-tool-calls",
           "workflow-loops-through-review-without-resolution"
         ]
@@ -4985,6 +5367,7 @@
           "fallback-authority-is-missing",
           "format-rule-too-weak",
           "policy-area-has-no-examples",
+          "policy-decision-depends-on-itself",
           "saved-memory-not-used",
           "task-has-no-clear-limit",
           "workflow-stage-has-too-few-checks",
@@ -5093,7 +5476,8 @@
           "declared-owner-cannot-control-outcome",
           "missing-fallback-for-unavailable-information",
           "model-output-triggers-unapproved-action",
-          "risk-score-triggers-wrong-escalation"
+          "risk-score-triggers-wrong-escalation",
+          "risk-signal-escalates-beyond-evidence"
         ]
       },
       "url": "/workbench/patterns/missing-authority/",
@@ -5159,7 +5543,8 @@
           "task-progress-is-lost-midway",
           "workflow-stage-has-too-few-checks",
           "workflow-step-has-no-decision-owner",
-          "workflow-step-lacks-required-conditions"
+          "workflow-step-lacks-required-conditions",
+          "workflow-waits-on-step-that-waits-back"
         ]
       },
       "url": "/workbench/patterns/orphaned-structure/",
@@ -5194,6 +5579,7 @@
           "ai-uses-external-information-when-forbidden",
           "behavior-does-not-match-declared-role",
           "file-bounded-task-uses-outside-content",
+          "local-rule-spreads-to-broader-cases",
           "policy-exception-spreads-too-far",
           "retrieval-exceeds-evidence-limit",
           "too-many-tool-calls"
@@ -5258,8 +5644,11 @@
       },
       "issues": {
         "primary": [
+          "early-model-output-gets-overweighted-downstream",
+          "local-rule-spreads-to-broader-cases",
           "policy-exception-spreads-too-far",
-          "repair-step-created-new-breakage"
+          "repair-step-created-new-breakage",
+          "small-error-spreads-into-large-failure"
         ],
         "supporting": [
           "action-changed-something-else-too",
@@ -5336,6 +5725,7 @@
           "relationship-map-has-missing-links",
           "same-contract-name-has-different-meanings",
           "saved-memory-not-used",
+          "schema-reference-loops-without-base-case",
           "version-change-breaks-existing-prompt"
         ]
       },
@@ -5374,6 +5764,7 @@
           "hallucinated-fields",
           "missing-required-fields",
           "output-breaks-the-next-step",
+          "schema-reference-loops-without-base-case",
           "tool-call-contract-mismatch",
           "validation-result-changes-on-retry"
         ]
@@ -5437,7 +5828,8 @@
           "output-exceeds-length-limit"
         ],
         "supporting": [
-          "risk-score-triggers-wrong-escalation"
+          "risk-score-triggers-wrong-escalation",
+          "risk-signal-escalates-beyond-evidence"
         ]
       },
       "url": "/workbench/patterns/threshold-breach/",
@@ -5534,7 +5926,8 @@
           "ai-uses-external-information-when-forbidden",
           "no-owner-for-agent-action",
           "repair-step-created-new-breakage",
-          "review-outcome-changes-unrelated-environment"
+          "review-outcome-changes-unrelated-environment",
+          "small-error-spreads-into-large-failure"
         ]
       },
       "url": "/workbench/patterns/undeclared-side-effect/",
@@ -5577,9 +5970,11 @@
         "model-output-triggers-unapproved-action",
         "no-owner-for-agent-action",
         "policy-area-has-no-examples",
+        "policy-decision-depends-on-itself",
         "relationship-map-has-missing-links",
         "review-rubric-missing-required-criteria",
         "risk-score-triggers-wrong-escalation",
+        "risk-signal-escalates-beyond-evidence",
         "saved-memory-not-used",
         "task-has-no-clear-limit",
         "task-progress-is-lost-midway",
@@ -5587,7 +5982,8 @@
         "tool-result-not-integrated-correctly",
         "workflow-stage-has-too-few-checks",
         "workflow-step-has-no-decision-owner",
-        "workflow-step-lacks-required-conditions"
+        "workflow-step-lacks-required-conditions",
+        "workflow-waits-on-step-that-waits-back"
       ],
       "url": "/workbench/lenses/absence-lens/",
       "markdown_url": "/workbench/lenses/absence-lens.md"
@@ -5629,7 +6025,9 @@
         "no-owner-for-agent-action",
         "parallel-reviews-never-agree",
         "permissions-conflict-after-being-combined",
+        "policy-decision-depends-on-itself",
         "risk-score-triggers-wrong-escalation",
+        "risk-signal-escalates-beyond-evidence",
         "same-case-has-conflicting-policies",
         "workflow-step-has-no-decision-owner"
       ],
@@ -5670,6 +6068,7 @@
         "file-bounded-task-uses-outside-content",
         "hallucinated-fields",
         "hidden-rule-overrides-visible-instruction",
+        "local-rule-spreads-to-broader-cases",
         "model-and-workflow-disagree-on-next-step",
         "output-breaks-after-model-change",
         "output-breaks-the-next-step",
@@ -5681,6 +6080,7 @@
         "retrieval-exceeds-evidence-limit",
         "review-outcome-changes-unrelated-environment",
         "risk-score-triggers-wrong-escalation",
+        "risk-signal-escalates-beyond-evidence",
         "saved-reference-no-longer-works",
         "too-many-tool-calls",
         "tool-call-contract-mismatch",
@@ -5828,15 +6228,20 @@
         "output-breaks-the-next-step",
         "parallel-reviews-never-agree",
         "permissions-conflict-after-being-combined",
+        "policy-decision-depends-on-itself",
         "repeated-constraints-create-confusion",
         "risk-score-triggers-wrong-escalation",
+        "risk-signal-escalates-beyond-evidence",
+        "routing-path-cycles-back-to-start",
         "same-case-has-conflicting-policies",
         "same-rule-declared-in-multiple-places",
         "same-workflow-check-happens-twice",
+        "schema-reference-loops-without-base-case",
         "tool-call-contract-mismatch",
         "validation-result-changes-on-retry",
         "workflow-loops-through-review-without-resolution",
         "workflow-step-has-no-decision-owner",
+        "workflow-waits-on-step-that-waits-back",
         "wrong-field-types"
       ],
       "url": "/workbench/lenses/conflict-lens/",
@@ -5877,6 +6282,7 @@
         "missing-required-fields",
         "output-exceeds-length-limit",
         "policy-area-has-no-examples",
+        "policy-decision-depends-on-itself",
         "prompt-does-not-say-what-to-exclude",
         "prompt-has-too-many-valid-interpretations",
         "prompt-only-works-after-retry",
@@ -5926,6 +6332,7 @@
         "cannot-identify-authoritative-state",
         "context-changes-after-restore",
         "declared-owner-cannot-control-outcome",
+        "early-model-output-gets-overweighted-downstream",
         "human-review-and-automation-disagree",
         "merge-step-leaves-unresolved-differences",
         "model-and-workflow-disagree-on-next-step",
@@ -5941,6 +6348,7 @@
         "prompt-only-works-after-retry",
         "results-vary-too-much",
         "revoked-approval-still-treated-as-active",
+        "routing-path-cycles-back-to-start",
         "rubric-changed-but-results-did-not",
         "same-contract-name-has-different-meanings",
         "same-instructions-allow-different-outputs",
@@ -5953,7 +6361,8 @@
         "tool-result-not-integrated-correctly",
         "validation-result-changes-on-retry",
         "version-change-breaks-existing-prompt",
-        "workflow-loops-through-review-without-resolution"
+        "workflow-loops-through-review-without-resolution",
+        "workflow-waits-on-step-that-waits-back"
       ],
       "url": "/workbench/lenses/convergence-lens/",
       "markdown_url": "/workbench/lenses/convergence-lens.md"
@@ -5990,6 +6399,7 @@
         "context-changes-after-restore",
         "context-leaks-between-tasks",
         "diagnostic-area-has-no-coverage",
+        "early-model-output-gets-overweighted-downstream",
         "evaluation-rubric-has-coverage-gap",
         "file-bounded-task-uses-outside-content",
         "format-rule-too-weak",
@@ -6019,6 +6429,7 @@
         "same-rule-declared-in-multiple-places",
         "saved-memory-not-used",
         "saved-reference-no-longer-works",
+        "schema-reference-loops-without-base-case",
         "similar-cases-route-to-different-outcomes",
         "stale-context-affects-output",
         "task-has-no-clear-limit",
@@ -6064,7 +6475,9 @@
         "context-leaks-between-tasks",
         "duplicate-fields-with-same-meaning",
         "duplicate-output-sections",
+        "early-model-output-gets-overweighted-downstream",
         "hallucinated-fields",
+        "local-rule-spreads-to-broader-cases",
         "model-output-triggers-unapproved-action",
         "multiple-policies-say-the-same-thing",
         "output-exceeds-length-limit",
@@ -6077,8 +6490,11 @@
         "retry-makes-the-problem-worse",
         "review-outcome-changes-unrelated-environment",
         "risk-score-triggers-wrong-escalation",
+        "risk-signal-escalates-beyond-evidence",
+        "routing-path-cycles-back-to-start",
         "same-rule-declared-in-multiple-places",
         "same-workflow-check-happens-twice",
+        "small-error-spreads-into-large-failure",
         "task-has-no-clear-limit",
         "too-many-tool-calls",
         "workflow-loops-through-review-without-resolution"
@@ -6124,11 +6540,13 @@
         "nested-fields-do-not-match",
         "output-breaks-the-next-step",
         "policy-area-has-no-examples",
+        "policy-decision-depends-on-itself",
         "prompt-changed-but-workflow-did-not",
         "relationship-map-has-missing-links",
         "review-rubric-missing-required-criteria",
         "same-contract-name-has-different-meanings",
         "saved-memory-not-used",
+        "schema-reference-loops-without-base-case",
         "task-has-no-clear-limit",
         "tool-call-contract-mismatch",
         "tool-exists-but-required-inputs-are-missing",
@@ -6179,8 +6597,11 @@
         "output-exceeds-length-limit",
         "parallel-reviews-never-agree",
         "permissions-conflict-after-being-combined",
+        "policy-decision-depends-on-itself",
         "risk-score-triggers-wrong-escalation",
+        "risk-signal-escalates-beyond-evidence",
         "same-case-has-conflicting-policies",
+        "schema-reference-loops-without-base-case",
         "tool-call-contract-mismatch",
         "validation-result-changes-on-retry",
         "wrong-field-types"
@@ -6217,6 +6638,7 @@
         "file-bounded-task-uses-outside-content",
         "hallucinated-fields",
         "hidden-rule-overrides-visible-instruction",
+        "local-rule-spreads-to-broader-cases",
         "model-output-triggers-unapproved-action",
         "no-owner-for-agent-action",
         "policy-exception-spreads-too-far",
@@ -6224,6 +6646,7 @@
         "repair-step-created-new-breakage",
         "retrieval-exceeds-evidence-limit",
         "review-outcome-changes-unrelated-environment",
+        "small-error-spreads-into-large-failure",
         "task-has-no-clear-limit",
         "too-many-tool-calls"
       ],
@@ -6263,15 +6686,19 @@
         "nested-fields-do-not-match",
         "old-output-expectations-survive-migration",
         "output-breaks-the-next-step",
+        "policy-decision-depends-on-itself",
         "prompt-changed-but-workflow-did-not",
         "repeated-constraints-create-confusion",
+        "routing-path-cycles-back-to-start",
         "same-contract-name-has-different-meanings",
         "same-rule-declared-in-multiple-places",
         "same-workflow-check-happens-twice",
+        "schema-reference-loops-without-base-case",
         "tool-call-contract-mismatch",
         "tool-exists-but-required-inputs-are-missing",
         "tool-result-not-integrated-correctly",
         "workflow-loops-through-review-without-resolution",
+        "workflow-waits-on-step-that-waits-back",
         "wrong-field-types"
       ],
       "url": "/workbench/lenses/normalization-lens/",
@@ -6302,12 +6729,14 @@
         "behavior-does-not-match-declared-role",
         "file-bounded-task-uses-outside-content",
         "hallucinated-fields",
+        "local-rule-spreads-to-broader-cases",
         "model-output-triggers-unapproved-action",
         "no-owner-for-agent-action",
         "policy-exception-spreads-too-far",
         "repair-step-created-new-breakage",
         "retrieval-exceeds-evidence-limit",
         "review-outcome-changes-unrelated-environment",
+        "small-error-spreads-into-large-failure",
         "too-many-tool-calls"
       ],
       "url": "/workbench/lenses/overreach-lens/",
@@ -6348,13 +6777,16 @@
         "approval-depends-on-output-that-needs-approval",
         "behavior-does-not-match-declared-role",
         "context-leaks-between-tasks",
+        "early-model-output-gets-overweighted-downstream",
         "fallback-authority-is-missing",
         "file-bounded-task-uses-outside-content",
         "hallucinated-fields",
         "hidden-rule-overrides-visible-instruction",
+        "local-rule-spreads-to-broader-cases",
         "merge-step-leaves-unresolved-differences",
         "model-output-triggers-unapproved-action",
         "no-owner-for-agent-action",
+        "policy-decision-depends-on-itself",
         "policy-exception-spreads-too-far",
         "prompt-does-not-say-what-to-exclude",
         "relationship-map-has-missing-links",
@@ -6363,13 +6795,18 @@
         "retry-makes-the-problem-worse",
         "review-outcome-changes-unrelated-environment",
         "risk-score-triggers-wrong-escalation",
+        "risk-signal-escalates-beyond-evidence",
+        "routing-path-cycles-back-to-start",
+        "schema-reference-loops-without-base-case",
+        "small-error-spreads-into-large-failure",
         "task-progress-is-lost-midway",
         "too-many-tool-calls",
         "tool-result-not-integrated-correctly",
         "workflow-loops-through-review-without-resolution",
         "workflow-stage-has-too-few-checks",
         "workflow-step-has-no-decision-owner",
-        "workflow-step-lacks-required-conditions"
+        "workflow-step-lacks-required-conditions",
+        "workflow-waits-on-step-that-waits-back"
       ],
       "url": "/workbench/lenses/propagation-lens/",
       "markdown_url": "/workbench/lenses/propagation-lens.md"
@@ -6435,6 +6872,7 @@
         "conflicting-instructions-from-different-authorities",
         "context-changes-after-restore",
         "declared-owner-cannot-control-outcome",
+        "early-model-output-gets-overweighted-downstream",
         "fallback-authority-is-missing",
         "hidden-rule-overrides-visible-instruction",
         "human-review-and-automation-disagree",
@@ -6449,11 +6887,14 @@
         "output-changed-without-declared-change",
         "parallel-reviews-never-agree",
         "permissions-conflict-after-being-combined",
+        "policy-decision-depends-on-itself",
         "policy-update-not-reflected-in-output",
         "prompt-behavior-changed-without-version-change",
         "prompt-changed-but-workflow-did-not",
         "revoked-approval-still-treated-as-active",
         "risk-score-triggers-wrong-escalation",
+        "risk-signal-escalates-beyond-evidence",
+        "routing-path-cycles-back-to-start",
         "rubric-changed-but-results-did-not",
         "same-case-has-conflicting-policies",
         "same-contract-name-has-different-meanings",
@@ -6466,7 +6907,8 @@
         "tool-result-not-integrated-correctly",
         "version-change-breaks-existing-prompt",
         "workflow-loops-through-review-without-resolution",
-        "workflow-step-has-no-decision-owner"
+        "workflow-step-has-no-decision-owner",
+        "workflow-waits-on-step-that-waits-back"
       ],
       "url": "/workbench/lenses/reconciliation-lens/",
       "markdown_url": "/workbench/lenses/reconciliation-lens.md"
@@ -6501,6 +6943,7 @@
         "context-changes-after-restore",
         "context-leaks-between-tasks",
         "declared-owner-cannot-control-outcome",
+        "early-model-output-gets-overweighted-downstream",
         "file-bounded-task-uses-outside-content",
         "human-review-and-automation-disagree",
         "model-and-workflow-disagree-on-next-step",
@@ -6520,6 +6963,7 @@
         "same-instructions-allow-different-outputs",
         "saved-memory-not-used",
         "saved-reference-no-longer-works",
+        "schema-reference-loops-without-base-case",
         "similar-cases-route-to-different-outcomes",
         "stale-context-affects-output",
         "task-progress-is-lost-midway",
@@ -6564,10 +7008,12 @@
         "diagnostic-area-has-no-coverage",
         "duplicate-fields-with-same-meaning",
         "duplicate-output-sections",
+        "early-model-output-gets-overweighted-downstream",
         "evaluation-rubric-has-coverage-gap",
         "format-rule-too-weak",
         "human-review-and-automation-disagree",
         "invalid-json-output",
+        "local-rule-spreads-to-broader-cases",
         "merge-step-leaves-unresolved-differences",
         "missing-fallback-for-unavailable-information",
         "model-output-triggers-unapproved-action",
@@ -6588,17 +7034,21 @@
         "review-outcome-changes-unrelated-environment",
         "review-rubric-missing-required-criteria",
         "risk-score-triggers-wrong-escalation",
+        "risk-signal-escalates-beyond-evidence",
+        "routing-path-cycles-back-to-start",
         "same-instructions-allow-different-outputs",
         "same-rule-declared-in-multiple-places",
         "same-workflow-check-happens-twice",
         "similar-cases-route-to-different-outcomes",
+        "small-error-spreads-into-large-failure",
         "task-has-no-clear-limit",
         "task-progress-is-lost-midway",
         "too-many-tool-calls",
         "tool-exists-but-required-inputs-are-missing",
         "validation-result-changes-on-retry",
         "workflow-loops-through-review-without-resolution",
-        "workflow-step-lacks-required-conditions"
+        "workflow-step-lacks-required-conditions",
+        "workflow-waits-on-step-that-waits-back"
       ],
       "url": "/workbench/lenses/variance-entropy-lens/",
       "markdown_url": "/workbench/lenses/variance-entropy-lens.md"
@@ -6786,7 +7236,11 @@
         "cannot-identify-authoritative-state",
         "merge-step-leaves-unresolved-differences",
         "parallel-reviews-never-agree",
-        "workflow-loops-through-review-without-resolution"
+        "policy-decision-depends-on-itself",
+        "routing-path-cycles-back-to-start",
+        "schema-reference-loops-without-base-case",
+        "workflow-loops-through-review-without-resolution",
+        "workflow-waits-on-step-that-waits-back"
       ],
       "primary_issues": [
         "agent-cannot-choose-tool-without-tool-result",
@@ -6795,7 +7249,11 @@
         "cannot-identify-authoritative-state",
         "merge-step-leaves-unresolved-differences",
         "parallel-reviews-never-agree",
-        "workflow-loops-through-review-without-resolution"
+        "policy-decision-depends-on-itself",
+        "routing-path-cycles-back-to-start",
+        "schema-reference-loops-without-base-case",
+        "workflow-loops-through-review-without-resolution",
+        "workflow-waits-on-step-that-waits-back"
       ],
       "secondary_issues": [],
       "url": "/workbench/categories/loops-and-resolution/"
@@ -6901,6 +7359,8 @@
         "output-changed-without-declared-change",
         "retrieval-exceeds-evidence-limit",
         "saved-reference-no-longer-works",
+        "schema-reference-loops-without-base-case",
+        "small-error-spreads-into-large-failure",
         "tool-call-contract-mismatch",
         "tool-result-not-integrated-correctly",
         "validation-result-changes-on-retry",
@@ -6945,6 +7405,7 @@
         "human-review-and-automation-disagree",
         "missing-fallback-for-unavailable-information",
         "risk-score-triggers-wrong-escalation",
+        "risk-signal-escalates-beyond-evidence",
         "same-case-has-conflicting-policies",
         "workflow-step-has-no-decision-owner"
       ],
@@ -6977,10 +7438,12 @@
         "ai-uses-external-information-when-forbidden",
         "behavior-does-not-match-declared-role",
         "declared-owner-cannot-control-outcome",
+        "local-rule-spreads-to-broader-cases",
         "model-and-workflow-disagree-on-next-step",
         "multiple-policies-say-the-same-thing",
         "permissions-conflict-after-being-combined",
         "policy-area-has-no-examples",
+        "policy-decision-depends-on-itself",
         "policy-exception-spreads-too-far",
         "repeated-constraints-create-confusion",
         "same-contract-name-has-different-meanings",
@@ -7034,17 +7497,25 @@
       "summary": "Problems where small errors, local exceptions, risk signals, retries, permissions, or outputs spread downstream, grow in consequence, or trigger broader actions.",
       "issues": [
         "action-changed-something-else-too",
+        "early-model-output-gets-overweighted-downstream",
+        "local-rule-spreads-to-broader-cases",
         "policy-exception-spreads-too-far",
         "repair-step-created-new-breakage",
         "retry-makes-the-problem-worse",
-        "risk-score-triggers-wrong-escalation"
+        "risk-score-triggers-wrong-escalation",
+        "risk-signal-escalates-beyond-evidence",
+        "small-error-spreads-into-large-failure"
       ],
       "primary_issues": [
         "action-changed-something-else-too",
+        "early-model-output-gets-overweighted-downstream",
+        "local-rule-spreads-to-broader-cases",
         "policy-exception-spreads-too-far",
         "repair-step-created-new-breakage",
         "retry-makes-the-problem-worse",
-        "risk-score-triggers-wrong-escalation"
+        "risk-score-triggers-wrong-escalation",
+        "risk-signal-escalates-beyond-evidence",
+        "small-error-spreads-into-large-failure"
       ],
       "secondary_issues": [
         "action-triggered-by-confidence-score",
@@ -7079,6 +7550,7 @@
         "workflow-step-lacks-required-conditions"
       ],
       "secondary_issues": [
+        "early-model-output-gets-overweighted-downstream",
         "evaluation-rubric-has-coverage-gap",
         "fallback-authority-is-missing",
         "merge-step-leaves-unresolved-differences",
@@ -7087,11 +7559,13 @@
         "relationship-map-has-missing-links",
         "repair-step-created-new-breakage",
         "review-rubric-missing-required-criteria",
+        "routing-path-cycles-back-to-start",
         "rubric-changed-but-results-did-not",
         "same-workflow-check-happens-twice",
         "task-progress-is-lost-midway",
         "tool-result-not-integrated-correctly",
-        "workflow-loops-through-review-without-resolution"
+        "workflow-loops-through-review-without-resolution",
+        "workflow-waits-on-step-that-waits-back"
       ],
       "url": "/workbench/categories/workflow-and-handoffs/"
     }

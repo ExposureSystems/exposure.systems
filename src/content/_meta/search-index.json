@@ -1047,6 +1047,50 @@
     },
     {
       "type": "issue",
+      "slug": "early-model-output-gets-overweighted-downstream",
+      "ontology_slug": "early-model-output-gets-overweighted-downstream",
+      "code": "ISS-0094",
+      "title": "Early Model Output Gets Overweighted Downstream",
+      "summary": "An early AI output receives too much authority in later workflow steps, decisions, reviews, or generated artifacts.",
+      "url": "/workbench/issues/early-model-output-gets-overweighted-downstream/",
+      "category": "spread-and-escalation",
+      "category_title": "Spread & Escalation",
+      "primary_cat_code": "CAT-0110",
+      "secondary_cat_codes": [
+        "CAT-0070"
+      ],
+      "primary_pattern": "propagation-amplification",
+      "patterns": [
+        "propagation-amplification",
+        "authority-state-mismatch",
+        "contract-drift"
+      ],
+      "lenses": {
+        "primary": [
+          "convergence-lens",
+          "escalation-gradient-lens",
+          "propagation-lens",
+          "reconciliation-lens"
+        ],
+        "secondary": [
+          "determinism-lens",
+          "reference-stability-lens",
+          "variance-entropy-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "early model output gets overweighted downstream",
+        "AI first answer influences too much",
+        "early model output overtrusted",
+        "downstream workflow overweights AI output",
+        "initial AI result affects later decisions",
+        "early AI classification becomes authority"
+      ],
+      "text": "AI first answer influences too much An early AI output receives too much authority in later workflow steps, decisions, reviews, or generated artifacts. CAT-0070 CAT-0110 Early Model Output Gets Overweighted Downstream ISS-0094 Spread & Escalation authority-state-mismatch contract-drift convergence-lens determinism-lens downstream workflow overweights AI output early AI classification becomes authority early model output gets overweighted downstream early model output overtrusted escalation-gradient-lens initial AI result affects later decisions propagation-amplification propagation-lens reconciliation-lens reference-stability-lens spread-and-escalation variance-entropy-lens"
+    },
+    {
+      "type": "issue",
       "slug": "evaluation-rubric-has-coverage-gap",
       "ontology_slug": "evaluation-rubric-has-coverage-gap",
       "code": "ISS-0081",
@@ -1397,6 +1441,49 @@
         "malformed structured output"
       ],
       "text": "AI gave JSON that will not parse AI invalid JSON CAT-0010 ChatGPT malformed JSON ISS-0021 Invalid JSON Output JSON parse error AI output LLM output invalid JSON Output The AI returns malformed JSON or structured output that cannot be parsed. conflict-lens constraint-sufficiency-lens constraints-underspecified determinism-lens interface-contract-lens interface-mismatch invariant-lens malformed structured output normalization-lens output runtime-behavior-does-not-match-docs schema-breakage variance-entropy-lens"
+    },
+    {
+      "type": "issue",
+      "slug": "local-rule-spreads-to-broader-cases",
+      "ontology_slug": "local-rule-spreads-to-broader-cases",
+      "code": "ISS-0096",
+      "title": "Local Rule Spreads to Broader Cases",
+      "summary": "A rule intended for one local case, file, context, user, workflow, or exception begins affecting broader cases.",
+      "url": "/workbench/issues/local-rule-spreads-to-broader-cases/",
+      "category": "spread-and-escalation",
+      "category_title": "Spread & Escalation",
+      "primary_cat_code": "CAT-0110",
+      "secondary_cat_codes": [
+        "CAT-0060"
+      ],
+      "primary_pattern": "propagation-amplification",
+      "patterns": [
+        "propagation-amplification",
+        "boundary-leakage",
+        "overreach"
+      ],
+      "lenses": {
+        "primary": [
+          "boundary-compliance-lens",
+          "escalation-gradient-lens",
+          "isolation-boundary-lens",
+          "overreach-lens",
+          "propagation-lens"
+        ],
+        "secondary": [
+          "variance-entropy-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "local rule spreads to broader cases",
+        "AI applies local rule too broadly",
+        "local instruction became global",
+        "rule from one case affects others",
+        "AI overgeneralized local rule",
+        "local policy spread too far"
+      ],
+      "text": "A rule intended for one local case, file, context, user, workflow, or exception begins affecting broader cases. AI applies local rule too broadly AI overgeneralized local rule CAT-0060 CAT-0110 ISS-0096 Local Rule Spreads to Broader Cases Spread & Escalation boundary-compliance-lens boundary-leakage escalation-gradient-lens isolation-boundary-lens local instruction became global local policy spread too far local rule spreads to broader cases overreach overreach-lens propagation-amplification propagation-lens rule from one case affects others spread-and-escalation variance-entropy-lens"
     },
     {
       "type": "issue",
@@ -2094,6 +2181,52 @@
         "policy hard to apply without examples"
       ],
       "text": "A policy, rule, standard, or guidance area has no examples showing how it should apply to real cases. AI policy lacks examples CAT-0060 CAT-0120 Coverage & Guidance ISS-0079 Policy Area Has No Examples absence-lens compression-lens constraint-sufficiency-lens coverage-and-guidance density-vacuum determinism-lens incomplete-declaration interface-contract-lens missing examples for AI review no examples for policy rule policy area has no examples policy guidance has no cases policy hard to apply without examples reference-instability reference-stability-lens"
+    },
+    {
+      "type": "issue",
+      "slug": "policy-decision-depends-on-itself",
+      "ontology_slug": "policy-decision-depends-on-itself",
+      "code": "ISS-0090",
+      "title": "Policy Decision Depends on Itself",
+      "summary": "A policy decision requires the outcome of the same policy decision before it can be made.",
+      "url": "/workbench/issues/policy-decision-depends-on-itself/",
+      "category": "loops-and-resolution",
+      "category_title": "Loops & Resolution",
+      "primary_cat_code": "CAT-0130",
+      "secondary_cat_codes": [
+        "CAT-0060"
+      ],
+      "primary_pattern": "circular-dependency",
+      "patterns": [
+        "circular-dependency",
+        "authority-collision",
+        "incomplete-declaration"
+      ],
+      "lenses": {
+        "primary": [
+          "absence-lens",
+          "authority-overlay-lens",
+          "conflict-lens",
+          "constraint-sufficiency-lens",
+          "propagation-lens"
+        ],
+        "secondary": [
+          "interface-contract-lens",
+          "invariant-lens",
+          "normalization-lens",
+          "reconciliation-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "policy decision depends on itself",
+        "AI policy circular dependency",
+        "policy needs its own decision",
+        "policy rule loops back on itself",
+        "AI cannot decide policy because decision depends on decision",
+        "circular policy decision"
+      ],
+      "text": "A policy decision requires the outcome of the same policy decision before it can be made. AI cannot decide policy because decision depends on decision AI policy circular dependency CAT-0060 CAT-0130 ISS-0090 Loops & Resolution Policy Decision Depends on Itself absence-lens authority-collision authority-overlay-lens circular policy decision circular-dependency conflict-lens constraint-sufficiency-lens incomplete-declaration interface-contract-lens invariant-lens loops-and-resolution normalization-lens policy decision depends on itself policy needs its own decision policy rule loops back on itself propagation-lens reconciliation-lens"
     },
     {
       "type": "issue",
@@ -2827,6 +2960,96 @@
     },
     {
       "type": "issue",
+      "slug": "risk-signal-escalates-beyond-evidence",
+      "ontology_slug": "risk-signal-escalates-beyond-evidence",
+      "code": "ISS-0095",
+      "title": "Risk Signal Escalates Beyond Evidence",
+      "summary": "A risk signal, warning, score, or concern escalates farther than the available evidence supports.",
+      "url": "/workbench/issues/risk-signal-escalates-beyond-evidence/",
+      "category": "spread-and-escalation",
+      "category_title": "Spread & Escalation",
+      "primary_cat_code": "CAT-0110",
+      "secondary_cat_codes": [
+        "CAT-0050"
+      ],
+      "primary_pattern": "escalation-growth",
+      "patterns": [
+        "escalation-growth",
+        "threshold-breach",
+        "missing-authority"
+      ],
+      "lenses": {
+        "primary": [
+          "absence-lens",
+          "authority-overlay-lens",
+          "escalation-gradient-lens",
+          "invariant-lens",
+          "variance-entropy-lens"
+        ],
+        "secondary": [
+          "boundary-compliance-lens",
+          "conflict-lens",
+          "propagation-lens",
+          "reconciliation-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "risk signal escalates beyond evidence",
+        "AI risk warning went too far",
+        "risk score escalated without evidence",
+        "AI concern escalated too much",
+        "escalation beyond evidence",
+        "risk signal over-escalation"
+      ],
+      "text": "A risk signal, warning, score, or concern escalates farther than the available evidence supports. AI concern escalated too much AI risk warning went too far CAT-0050 CAT-0110 ISS-0095 Risk Signal Escalates Beyond Evidence Spread & Escalation absence-lens authority-overlay-lens boundary-compliance-lens conflict-lens escalation beyond evidence escalation-gradient-lens escalation-growth invariant-lens missing-authority propagation-lens reconciliation-lens risk score escalated without evidence risk signal escalates beyond evidence risk signal over-escalation spread-and-escalation threshold-breach variance-entropy-lens"
+    },
+    {
+      "type": "issue",
+      "slug": "routing-path-cycles-back-to-start",
+      "ontology_slug": "routing-path-cycles-back-to-start",
+      "code": "ISS-0092",
+      "title": "Routing Path Cycles Back to Start",
+      "summary": "A routing path sends the case back to the starting point or an earlier step without resolving the condition that caused the route.",
+      "url": "/workbench/issues/routing-path-cycles-back-to-start/",
+      "category": "loops-and-resolution",
+      "category_title": "Loops & Resolution",
+      "primary_cat_code": "CAT-0130",
+      "secondary_cat_codes": [
+        "CAT-0070"
+      ],
+      "primary_pattern": "circular-dependency",
+      "patterns": [
+        "circular-dependency",
+        "convergence-failure",
+        "escalation-growth"
+      ],
+      "lenses": {
+        "primary": [
+          "conflict-lens",
+          "convergence-lens",
+          "escalation-gradient-lens",
+          "propagation-lens",
+          "variance-entropy-lens"
+        ],
+        "secondary": [
+          "normalization-lens",
+          "reconciliation-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "routing path cycles back to start",
+        "AI routing loop",
+        "workflow routes back to beginning",
+        "case cycles through same route",
+        "routing path never resolves",
+        "AI workflow sends case back to start"
+      ],
+      "text": "A routing path sends the case back to the starting point or an earlier step without resolving the condition that caused the route. AI routing loop AI workflow sends case back to start CAT-0070 CAT-0130 ISS-0092 Loops & Resolution Routing Path Cycles Back to Start case cycles through same route circular-dependency conflict-lens convergence-failure convergence-lens escalation-gradient-lens escalation-growth loops-and-resolution normalization-lens propagation-lens reconciliation-lens routing path cycles back to start routing path never resolves variance-entropy-lens workflow routes back to beginning"
+    },
+    {
+      "type": "issue",
       "slug": "rubric-changed-but-results-did-not",
       "ontology_slug": "rubric-changed-but-results-did-not",
       "code": "ISS-0055",
@@ -3169,6 +3392,50 @@
     },
     {
       "type": "issue",
+      "slug": "schema-reference-loops-without-base-case",
+      "ontology_slug": "schema-reference-loops-without-base-case",
+      "code": "ISS-0091",
+      "title": "Schema Reference Loops Without Base Case",
+      "summary": "A schema, field, type, object, or structured reference points through a loop without a base case that allows validation or interpretation to resolve.",
+      "url": "/workbench/issues/schema-reference-loops-without-base-case/",
+      "category": "loops-and-resolution",
+      "category_title": "Loops & Resolution",
+      "primary_cat_code": "CAT-0130",
+      "secondary_cat_codes": [
+        "CAT-0010"
+      ],
+      "primary_pattern": "circular-dependency",
+      "patterns": [
+        "circular-dependency",
+        "schema-breakage",
+        "reference-instability"
+      ],
+      "lenses": {
+        "primary": [
+          "conflict-lens",
+          "interface-contract-lens",
+          "invariant-lens",
+          "propagation-lens",
+          "reference-stability-lens"
+        ],
+        "secondary": [
+          "determinism-lens",
+          "normalization-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "schema reference loops without base case",
+        "recursive schema no base case",
+        "AI schema reference loop",
+        "structured output schema loops",
+        "JSON schema circular reference",
+        "schema cannot resolve reference"
+      ],
+      "text": "A schema, field, type, object, or structured reference points through a loop without a base case that allows validation or interpretation to resolve. AI schema reference loop CAT-0010 CAT-0130 ISS-0091 JSON schema circular reference Loops & Resolution Schema Reference Loops Without Base Case circular-dependency conflict-lens determinism-lens interface-contract-lens invariant-lens loops-and-resolution normalization-lens propagation-lens recursive schema no base case reference-instability reference-stability-lens schema cannot resolve reference schema reference loops without base case schema-breakage structured output schema loops"
+    },
+    {
+      "type": "issue",
       "slug": "similar-cases-route-to-different-outcomes",
       "ontology_slug": "similar-cases-route-to-different-outcomes",
       "code": "ISS-0001",
@@ -3207,6 +3474,48 @@
         "AI decision path is inconsistent"
       ],
       "text": "AI decision path is inconsistent AI routes similar requests differently CAT-0090 ISS-0001 Inconsistent Behavior Similar Cases Route to Different Outcomes Similar inputs, cases, prompts, or workflow states are routed to different outcomes without a declared difference that explains the split. authority-state-mismatch compression-lens convergence-lens determinism-lens divergent-outputs inconsistent-behavior non-deterministic-execution reconciliation-lens reference-stability-lens same case gets different result same workflow state gets different outcome similar cases route to different outcomes similar prompts produce different decisions variance-entropy-lens"
+    },
+    {
+      "type": "issue",
+      "slug": "small-error-spreads-into-large-failure",
+      "ontology_slug": "small-error-spreads-into-large-failure",
+      "code": "ISS-0093",
+      "title": "Small Error Spreads Into Large Failure",
+      "summary": "A small AI, output, routing, or workflow error propagates through later steps until it becomes a larger failure.",
+      "url": "/workbench/issues/small-error-spreads-into-large-failure/",
+      "category": "spread-and-escalation",
+      "category_title": "Spread & Escalation",
+      "primary_cat_code": "CAT-0110",
+      "secondary_cat_codes": [
+        "CAT-0010"
+      ],
+      "primary_pattern": "propagation-amplification",
+      "patterns": [
+        "propagation-amplification",
+        "escalation-growth",
+        "undeclared-side-effect"
+      ],
+      "lenses": {
+        "primary": [
+          "escalation-gradient-lens",
+          "overreach-lens",
+          "propagation-lens",
+          "variance-entropy-lens"
+        ],
+        "secondary": [
+          "isolation-boundary-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "small error spreads into large failure",
+        "AI small mistake became big problem",
+        "small output error propagated downstream",
+        "AI error spread through workflow",
+        "minor mistake caused major failure",
+        "small issue escalated into bigger failure"
+      ],
+      "text": "A small AI, output, routing, or workflow error propagates through later steps until it becomes a larger failure. AI error spread through workflow AI small mistake became big problem CAT-0010 CAT-0110 ISS-0093 Small Error Spreads Into Large Failure Spread & Escalation escalation-gradient-lens escalation-growth isolation-boundary-lens minor mistake caused major failure overreach-lens propagation-amplification propagation-lens small error spreads into large failure small issue escalated into bigger failure small output error propagated downstream spread-and-escalation undeclared-side-effect variance-entropy-lens"
     },
     {
       "type": "issue",
@@ -3777,6 +4086,50 @@
     },
     {
       "type": "issue",
+      "slug": "workflow-waits-on-step-that-waits-back",
+      "ontology_slug": "workflow-waits-on-step-that-waits-back",
+      "code": "ISS-0089",
+      "title": "Workflow Waits on Step That Waits Back",
+      "summary": "A workflow step waits for another step that also waits on the first step, creating a blocking loop.",
+      "url": "/workbench/issues/workflow-waits-on-step-that-waits-back/",
+      "category": "loops-and-resolution",
+      "category_title": "Loops & Resolution",
+      "primary_cat_code": "CAT-0130",
+      "secondary_cat_codes": [
+        "CAT-0070"
+      ],
+      "primary_pattern": "circular-dependency",
+      "patterns": [
+        "circular-dependency",
+        "convergence-failure",
+        "orphaned-structure"
+      ],
+      "lenses": {
+        "primary": [
+          "absence-lens",
+          "conflict-lens",
+          "convergence-lens",
+          "propagation-lens"
+        ],
+        "secondary": [
+          "normalization-lens",
+          "reconciliation-lens",
+          "variance-entropy-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "workflow waits on step that waits back",
+        "AI workflow circular wait",
+        "workflow steps wait on each other",
+        "handoff blocked by previous step",
+        "AI process stuck waiting",
+        "workflow dependency loop"
+      ],
+      "text": "A workflow step waits for another step that also waits on the first step, creating a blocking loop. AI process stuck waiting AI workflow circular wait CAT-0070 CAT-0130 ISS-0089 Loops & Resolution Workflow Waits on Step That Waits Back absence-lens circular-dependency conflict-lens convergence-failure convergence-lens handoff blocked by previous step loops-and-resolution normalization-lens orphaned-structure propagation-lens reconciliation-lens variance-entropy-lens workflow dependency loop workflow steps wait on each other workflow waits on step that waits back"
+    },
+    {
+      "type": "issue",
       "slug": "wrong-field-types",
       "ontology_slug": "wrong-field-types",
       "code": "ISS-0024",
@@ -3928,8 +4281,8 @@
         "ontology_slug": "loops-and-resolution",
         "code": "CAT-0130",
         "title": "Loops & Resolution",
-        "count": 7,
-        "primary_count": 7,
+        "count": 11,
+        "primary_count": 11,
         "secondary_count": 0
       },
       {
@@ -3955,27 +4308,27 @@
         "ontology_slug": "output",
         "code": "CAT-0010",
         "title": "Output",
-        "count": 24,
+        "count": 26,
         "primary_count": 10,
-        "secondary_count": 14
+        "secondary_count": 16
       },
       {
         "slug": "permissions-and-approvals",
         "ontology_slug": "permissions-and-approvals",
         "code": "CAT-0050",
         "title": "Permissions & Approvals",
-        "count": 17,
+        "count": 18,
         "primary_count": 8,
-        "secondary_count": 9
+        "secondary_count": 10
       },
       {
         "slug": "rules-and-policies",
         "ontology_slug": "rules-and-policies",
         "code": "CAT-0060",
         "title": "Rules & Policies",
-        "count": 16,
+        "count": 18,
         "primary_count": 5,
-        "secondary_count": 11
+        "secondary_count": 13
       },
       {
         "slug": "scope-and-boundaries",
@@ -3991,8 +4344,8 @@
         "ontology_slug": "spread-and-escalation",
         "code": "CAT-0110",
         "title": "Spread & Escalation",
-        "count": 8,
-        "primary_count": 5,
+        "count": 12,
+        "primary_count": 9,
         "secondary_count": 3
       },
       {
@@ -4000,9 +4353,9 @@
         "ontology_slug": "workflow-and-handoffs",
         "code": "CAT-0070",
         "title": "Workflow & Handoffs",
-        "count": 19,
+        "count": 22,
         "primary_count": 6,
-        "secondary_count": 13
+        "secondary_count": 16
       }
     ],
     "patterns": [
@@ -4018,7 +4371,7 @@
         "ontology_slug": "authority-collision",
         "code": "PAT-0100",
         "title": "Authority Collision",
-        "count": 7
+        "count": 8
       },
       {
         "slug": "authority-merge-conflict",
@@ -4039,21 +4392,21 @@
         "ontology_slug": "authority-state-mismatch",
         "code": "PAT-0240",
         "title": "Authority-State Mismatch",
-        "count": 10
+        "count": 11
       },
       {
         "slug": "boundary-leakage",
         "ontology_slug": "boundary-leakage",
         "code": "PAT-0140",
         "title": "Boundary Leakage",
-        "count": 10
+        "count": 11
       },
       {
         "slug": "circular-dependency",
         "ontology_slug": "circular-dependency",
         "code": "PAT-0250",
         "title": "Circular Dependency",
-        "count": 5
+        "count": 9
       },
       {
         "slug": "compatibility-violation",
@@ -4074,14 +4427,14 @@
         "ontology_slug": "contract-drift",
         "code": "PAT-0190",
         "title": "Contract Drift",
-        "count": 17
+        "count": 18
       },
       {
         "slug": "convergence-failure",
         "ontology_slug": "convergence-failure",
         "code": "PAT-0320",
         "title": "Convergence Failure",
-        "count": 8
+        "count": 10
       },
       {
         "slug": "cross-layer-escalation",
@@ -4116,14 +4469,14 @@
         "ontology_slug": "escalation-growth",
         "code": "PAT-0300",
         "title": "Escalation Growth",
-        "count": 7
+        "count": 10
       },
       {
         "slug": "incomplete-declaration",
         "ontology_slug": "incomplete-declaration",
         "code": "PAT-0130",
         "title": "Incomplete Declaration",
-        "count": 16
+        "count": 17
       },
       {
         "slug": "interface-mismatch",
@@ -4144,7 +4497,7 @@
         "ontology_slug": "missing-authority",
         "code": "PAT-0120",
         "title": "Missing Authority",
-        "count": 11
+        "count": 12
       },
       {
         "slug": "non-deterministic-execution",
@@ -4158,14 +4511,14 @@
         "ontology_slug": "orphaned-structure",
         "code": "PAT-0310",
         "title": "Orphaned Structure",
-        "count": 7
+        "count": 8
       },
       {
         "slug": "overreach",
         "ontology_slug": "overreach",
         "code": "PAT-0340",
         "title": "Overreach",
-        "count": 10
+        "count": 11
       },
       {
         "slug": "persistence-instability",
@@ -4179,7 +4532,7 @@
         "ontology_slug": "propagation-amplification",
         "code": "PAT-0360",
         "title": "Propagation Amplification",
-        "count": 6
+        "count": 9
       },
       {
         "slug": "redundant-declaration",
@@ -4193,14 +4546,14 @@
         "ontology_slug": "reference-instability",
         "code": "PAT-0200",
         "title": "Reference Instability",
-        "count": 11
+        "count": 12
       },
       {
         "slug": "schema-breakage",
         "ontology_slug": "schema-breakage",
         "code": "PAT-0160",
         "title": "Schema Breakage",
-        "count": 12
+        "count": 13
       },
       {
         "slug": "silent-mutation",
@@ -4214,7 +4567,7 @@
         "ontology_slug": "threshold-breach",
         "code": "PAT-0390",
         "title": "Threshold Breach",
-        "count": 3
+        "count": 4
       },
       {
         "slug": "unbounded-scope",
@@ -4235,7 +4588,7 @@
         "ontology_slug": "undeclared-side-effect",
         "code": "PAT-0420",
         "title": "Undeclared Side Effect",
-        "count": 7
+        "count": 8
       }
     ],
     "lenses": [
@@ -4244,21 +4597,21 @@
         "ontology_slug": "absence-lens",
         "code": "LEN-0100",
         "title": "Absence Lens",
-        "count": 27
+        "count": 30
       },
       {
         "slug": "authority-overlay-lens",
         "ontology_slug": "authority-overlay-lens",
         "code": "LEN-0110",
         "title": "Authority Overlay Lens",
-        "count": 20
+        "count": 22
       },
       {
         "slug": "boundary-compliance-lens",
         "ontology_slug": "boundary-compliance-lens",
         "code": "LEN-0120",
         "title": "Boundary Compliance Lens",
-        "count": 30
+        "count": 32
       },
       {
         "slug": "compatibility-envelope-lens",
@@ -4279,77 +4632,77 @@
         "ontology_slug": "conflict-lens",
         "code": "LEN-0150",
         "title": "Conflict Lens",
-        "count": 38
+        "count": 43
       },
       {
         "slug": "constraint-sufficiency-lens",
         "ontology_slug": "constraint-sufficiency-lens",
         "code": "LEN-0160",
         "title": "Constraint Sufficiency Lens",
-        "count": 30
+        "count": 31
       },
       {
         "slug": "convergence-lens",
         "ontology_slug": "convergence-lens",
         "code": "LEN-0170",
         "title": "Convergence Lens",
-        "count": 36
+        "count": 39
       },
       {
         "slug": "determinism-lens",
         "ontology_slug": "determinism-lens",
         "code": "LEN-0180",
         "title": "Determinism Lens",
-        "count": 47
+        "count": 49
       },
       {
         "slug": "escalation-gradient-lens",
         "ontology_slug": "escalation-gradient-lens",
         "code": "LEN-0190",
         "title": "Escalation Gradient Lens",
-        "count": 28
+        "count": 33
       },
       {
         "slug": "interface-contract-lens",
         "ontology_slug": "interface-contract-lens",
         "code": "LEN-0200",
         "title": "Interface Contract Lens",
-        "count": 32
+        "count": 34
       },
       {
         "slug": "invariant-lens",
         "ontology_slug": "invariant-lens",
         "code": "LEN-0210",
         "title": "Invariant Lens",
-        "count": 22
+        "count": 25
       },
       {
         "slug": "isolation-boundary-lens",
         "ontology_slug": "isolation-boundary-lens",
         "code": "LEN-0220",
         "title": "Isolation Boundary Lens",
-        "count": 18
+        "count": 20
       },
       {
         "slug": "normalization-lens",
         "ontology_slug": "normalization-lens",
         "code": "LEN-0230",
         "title": "Normalization Lens",
-        "count": 24
+        "count": 28
       },
       {
         "slug": "overreach-lens",
         "ontology_slug": "overreach-lens",
         "code": "LEN-0240",
         "title": "Overreach Lens",
-        "count": 15
+        "count": 17
       },
       {
         "slug": "propagation-lens",
         "ontology_slug": "propagation-lens",
         "code": "LEN-0250",
         "title": "Propagation Lens",
-        "count": 33
+        "count": 41
       },
       {
         "slug": "provenance-trace-lens",
@@ -4363,21 +4716,21 @@
         "ontology_slug": "reconciliation-lens",
         "code": "LEN-0270",
         "title": "Reconciliation Lens",
-        "count": 44
+        "count": 49
       },
       {
         "slug": "reference-stability-lens",
         "ontology_slug": "reference-stability-lens",
         "code": "LEN-0280",
         "title": "Reference Stability Lens",
-        "count": 33
+        "count": 35
       },
       {
         "slug": "variance-entropy-lens",
         "ontology_slug": "variance-entropy-lens",
         "code": "LEN-0290",
         "title": "Variance / Entropy Lens",
-        "count": 45
+        "count": 51
       }
     ]
   }
