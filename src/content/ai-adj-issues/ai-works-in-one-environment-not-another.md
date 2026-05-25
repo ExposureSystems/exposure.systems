@@ -36,7 +36,3 @@ The user sees the AI as the common actor, but the difference may come from model
 - Whether permissions and settings match
 - Whether prompt or workflow contracts changed
 - Whether one environment has stale context or cached behavior
-
-## Related Workbench Issues
-
-Related Workbench Issues are derived from `related_issues`.

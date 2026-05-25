@@ -36,7 +36,3 @@ The mismatch often appears while using an AI feature, agent, tool, or integratio
 - Whether the tool schema differs from the documented schema
 - Whether the behavior is gated by permissions, mode, or environment
 - Whether the workflow still assumes an older contract
-
-## Related Workbench Issues
-
-Related Workbench Issues are derived from `related_issues`.

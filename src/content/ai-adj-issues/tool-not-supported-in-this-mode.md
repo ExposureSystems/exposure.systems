@@ -35,7 +35,3 @@ The failure often appears during an AI workflow, so users may experience it as â
 - Whether the runtime supports the requested tool call
 - Whether required inputs or permissions are missing
 - Whether the user is in a product surface that exposes tools
-
-## Related Workbench Issues
-
-Related Workbench Issues are derived from `related_issues`.
