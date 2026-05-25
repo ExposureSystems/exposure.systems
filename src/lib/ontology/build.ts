@@ -1,4 +1,4 @@
-﻿import fs from "node:fs";
+import fs from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
 
@@ -26,9 +26,12 @@ type EntryData = {
   status: string;
   summary: string;
   category?: string;
+  primary_cat_code?: string;
+  secondary_cat_codes?: string[];
   primary_pattern?: string;
   patterns?: string[];
   search_intents?: string[];
+  related_issues?: string[];
 };
 
 const matrixPath = "src/ontology/pattern-lens-matrix.json";
@@ -38,10 +41,12 @@ const issuesDir = "src/content/issues";
 const patternsDir = "src/content/patterns";
 const lensesDir = "src/content/lenses";
 const categoriesDir = "src/content/categories";
+const aiAdjIssuesDir = "src/content/ai-adj-issues";
 
 const ontologyOutputPath = "src/content/_meta/ontology-index.json";
 const searchOutputPath = "src/content/_meta/search-index.json";
 const checkInputOutputPath = "src/content/_meta/check-input-index.json";
+
 
 const routes = {
   root: "/workbench/",
@@ -52,6 +57,7 @@ const routes = {
   patterns: "/workbench/patterns/",
   lenses: "/workbench/lenses/",
   categories: "/workbench/categories/",
+  ai_adj_issues: "/workbench/ai-adj-issues/",
   examples: "/workbench/examples/",
   field_notes: "/workbench/field-notes/",
   articles: "/workbench/articles/",
@@ -103,8 +109,24 @@ function main() {
   const patterns = readCollection(patternsDir);
   const lenses = readCollection(lensesDir);
   const categories = readCollection(categoriesDir);
+  const aiAdjIssues = readCollection(aiAdjIssuesDir);
 
   const categoriesBySlug = new Map(categories.map((category) => [category.slug, category]));
+
+  const derivedAiAdjIssues = aiAdjIssues.map((entry) => ({
+    // Keep slug for Astro route/template compatibility. ontology_slug is the Workbench identity.
+    slug: entry.slug,
+    ontology_slug: entry.slug,
+    code: entry.code,
+    title: entry.title,
+    status: entry.status,
+    summary: entry.summary,
+    related_issues: entry.related_issues ?? [],
+    search_intents: entry.search_intents ?? [],
+    url: `/workbench/ai-adj-issues/${entry.slug}/`,
+    markdown_url: `/workbench/ai-adj-issues/${entry.slug}.md`,
+  }));
+
 
   const derivedIssues = issues.map((issue) => {
     const issuePatterns = issue.patterns ?? [];
@@ -118,18 +140,27 @@ function main() {
     ).filter((lensSlug) => !primaryLensSlugs.includes(lensSlug));
 
     return {
+      // Keep slug for Astro route/template compatibility. ontology_slug is the Workbench identity.
       slug: issue.slug,
+      ontology_slug: issue.slug,
+      code: issue.code,
       title: issue.title,
       status: issue.status,
       summary: issue.summary,
       category: issue.category,
       category_title: issue.category ? categoriesBySlug.get(issue.category)?.title ?? null : null,
+      primary_cat_code: issue.primary_cat_code,
+      secondary_cat_codes: issue.secondary_cat_codes ?? [],
       primary_pattern: issue.primary_pattern,
       patterns: issuePatterns,
       derived_lenses: {
         primary: primaryLensSlugs,
         secondary: secondaryLensSlugs,
       },
+      related_ai_adj_issues: derivedAiAdjIssues
+        .filter((adj) => adj.related_issues.includes(issue.slug))
+        .map((adj) => adj.slug)
+        .sort(),
       search_intents: issue.search_intents ?? [],
       url: `/workbench/issues/${issue.slug}/`,
       markdown_url: `/workbench/issues/${issue.slug}.md`,
@@ -151,6 +182,7 @@ function main() {
 
     return {
       slug: pattern.slug,
+      ontology_slug: pattern.slug,
       code: pattern.code,
       title: pattern.title,
       status: pattern.status,
@@ -193,6 +225,7 @@ function main() {
 
     return {
       slug: lens.slug,
+      ontology_slug: lens.slug,
       code: lens.code,
       title: lens.title,
       status: lens.status,
@@ -215,6 +248,8 @@ function main() {
 
     return {
       slug: category.slug,
+      ontology_slug: category.slug,
+      code: category.code,
       title: category.title,
       status: category.status,
       summary: category.summary,
@@ -287,6 +322,7 @@ function main() {
     }),
   };
 
+
   const ontologyIndex = {
     version: 1,
     translation_policy: {
@@ -306,6 +342,7 @@ function main() {
     },
     matrix,
     issues: derivedIssues,
+    ai_adj_issues: derivedAiAdjIssues,
     patterns: derivedPatterns,
     lenses: derivedLenses,
     categories: derivedCategories,
@@ -319,51 +356,87 @@ function main() {
     },
   };
 
+  const issueSearchItems = derivedIssues.map((issue) => ({
+    type: "issue",
+    // Keep slug for Astro/search UI compatibility. ontology_slug is the Workbench identity.
+    slug: issue.slug,
+    ontology_slug: issue.ontology_slug,
+    code: issue.code,
+    title: issue.title,
+    summary: issue.summary,
+    url: issue.url,
+    category: issue.category,
+    category_title: issue.category_title,
+    primary_cat_code: issue.primary_cat_code,
+    secondary_cat_codes: issue.secondary_cat_codes,
+    primary_pattern: issue.primary_pattern,
+    patterns: issue.patterns,
+    lenses: {
+      primary: issue.derived_lenses.primary,
+      secondary: issue.derived_lenses.secondary,
+    },
+    related_ai_adj_issues: issue.related_ai_adj_issues,
+    search_intents: issue.search_intents,
+    text: uniqueSorted([
+      issue.title,
+      issue.summary,
+      issue.code ?? "",
+      issue.category ?? "",
+      issue.category_title ?? "",
+      issue.primary_cat_code ?? "",
+      ...issue.secondary_cat_codes,
+      issue.primary_pattern ?? "",
+      ...issue.patterns,
+      ...issue.derived_lenses.primary,
+      ...issue.derived_lenses.secondary,
+      ...issue.related_ai_adj_issues,
+      ...issue.search_intents,
+    ].filter(Boolean)).join(" "),
+  }));
+
+  const aiAdjIssueSearchItems = derivedAiAdjIssues.map((entry) => ({
+    type: "ai_adj_issue",
+    // Keep slug for Astro/search UI compatibility. ontology_slug is the Workbench identity.
+    slug: entry.slug,
+    ontology_slug: entry.ontology_slug,
+    code: entry.code,
+    title: entry.title,
+    summary: entry.summary,
+    url: entry.url,
+    related_issues: entry.related_issues,
+    search_intents: entry.search_intents,
+    text: uniqueSorted([
+      entry.title,
+      entry.summary,
+      entry.code ?? "",
+      ...entry.related_issues,
+      ...entry.search_intents,
+    ].filter(Boolean)).join(" "),
+  }));
+
   const searchIndex = {
     version: 1,
-    scope: "issues",
-    note: "Search returns Issues. Patterns, Lenses, and Categories are facets derived from the ontology.",
-    items: derivedIssues.map((issue) => ({
-      type: "issue",
-      slug: issue.slug,
-      title: issue.title,
-      summary: issue.summary,
-      url: issue.url,
-      category: issue.category,
-      category_title: issue.category_title,
-      primary_pattern: issue.primary_pattern,
-      patterns: issue.patterns,
-      lenses: {
-        primary: issue.derived_lenses.primary,
-        secondary: issue.derived_lenses.secondary,
-      },
-      search_intents: issue.search_intents,
-      text: uniqueSorted([
-        issue.title,
-        issue.summary,
-        issue.category ?? "",
-        issue.category_title ?? "",
-        issue.primary_pattern ?? "",
-        ...issue.patterns,
-        ...issue.derived_lenses.primary,
-        ...issue.derived_lenses.secondary,
-        ...issue.search_intents,
-      ].filter(Boolean)).join(" "),
-    })),
+    scope: "workbench",
+    note: "Search returns Workbench Issues and AI-Adjacent Issues. Patterns, Lenses, and Categories are facets derived from the ontology.",
+    items: [...issueSearchItems, ...aiAdjIssueSearchItems],
     facets: {
       categories: derivedCategories.map((category) => ({
         slug: category.slug,
+        ontology_slug: category.ontology_slug,
+        code: category.code,
         title: category.title,
         count: category.issues.length,
       })),
       patterns: derivedPatterns.map((pattern) => ({
         slug: pattern.slug,
+        ontology_slug: pattern.ontology_slug,
         code: pattern.code,
         title: pattern.title,
         count: pattern.issues.primary.length + pattern.issues.supporting.length,
       })),
       lenses: derivedLenses.map((lens) => ({
         slug: lens.slug,
+        ontology_slug: lens.ontology_slug,
         code: lens.code,
         title: lens.title,
         count: lens.issues.length,

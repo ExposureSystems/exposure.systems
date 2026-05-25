@@ -2,6 +2,9 @@
 import searchIndex from "../../../content/_meta/search-index.json";
 
 const items = searchIndex.items;
+const issueItems = items.filter((item) => item.type === "issue");
+const aiAdjIssueItems = items.filter((item) => item.type === "ai_adj_issue");
+
 const categories = searchIndex.facets.categories;
 const patterns = searchIndex.facets.patterns;
 const lenses = searchIndex.facets.lenses;
@@ -10,10 +13,10 @@ const lenses = searchIndex.facets.lenses;
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Search | Pengo AI Structural Workbench</title>
+    <title>Search | Pengo Workbench</title>
     <meta
       name="description"
-      content="Search the Pengo AI Structural Workbench by issue surfaces, gap terms, Patterns, Lenses, names, or codes."
+      content="Search Pengo Workbench Issues, AI-Adjacent Issues, Patterns, Lenses, Categories, gap terms, names, and codes."
     />
   </head>
   <body>
@@ -25,8 +28,8 @@ const lenses = searchIndex.facets.lenses;
       <p><strong>Find the structure behind the visible failure surface.</strong></p>
 
       <p>
-        Search is issue-scoped. It returns visible Issue surfaces and uses
-        Categories, Patterns, and Lenses as derived facets for exploration.
+        Search returns Workbench Issues and AI-Adjacent Issues. Categories, Patterns,
+        and Lenses are derived facets for canonical Issue exploration.
       </p>
 
       <p>
@@ -34,36 +37,58 @@ const lenses = searchIndex.facets.lenses;
       </p>
 
       <section aria-labelledby="results">
-        <h2 id="results">Issue Results</h2>
+  <h2 id="results">Issue Results</h2>
 
-        {items.length > 0 ? (
-          <ul>
-            {items.map((item) => (
-              <li>
-                <h3>
-                  <a href={item.url}>{item.title}</a>
-                </h3>
+  {issueItems.length > 0 ? (
+    <ul>
+      {issueItems.map((item) => (
+        <li>
+          <h3>
+            <a href={item.url}>{item.title}</a>
+          </h3>
 
-                <p>{item.summary}</p>
+          <p>{item.summary}</p>
 
-                <p>
-                  Category: {item.category_title}
-                  {" | "}
-                  Primary Pattern: {item.primary_pattern}
-                  {" | "}
-                  Patterns: {item.patterns.length}
-                  {" | "}
-                  Primary Lenses: {item.lenses.primary.length}
-                  {" | "}
-                  Secondary Lenses: {item.lenses.secondary.length}
-                </p>
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <p>No Issue results.</p>
-        )}
-      </section>
+          <p>
+            Category: {item.category_title}
+            {" | "}
+            Primary Pattern: {item.primary_pattern}
+            {" | "}
+            Patterns: {item.patterns.length}
+            {" | "}
+            Primary Lenses: {item.lenses.primary.length}
+            {" | "}
+            Secondary Lenses: {item.lenses.secondary.length}
+          </p>
+        </li>
+      ))}
+    </ul>
+  ) : (
+    <p>No Issue results.</p>
+  )}
+</section>
+
+<section aria-labelledby="ai-adj-results">
+  <h2 id="ai-adj-results">AI-Adjacent Issues</h2>
+
+  {aiAdjIssueItems.length > 0 ? (
+    <ul>
+      {aiAdjIssueItems.map((item) => (
+        <li>
+          <h3>
+            <a href={item.url}>{item.title}</a>
+          </h3>
+
+          <p>{item.summary}</p>
+
+          <p>Related Workbench Issues: {item.related_issues.length}</p>
+        </li>
+      ))}
+    </ul>
+  ) : (
+    <p>No AI-Adjacent Issues.</p>
+  )}
+</section>
 
       <section aria-labelledby="facets">
         <h2 id="facets">Derived Facets</h2>

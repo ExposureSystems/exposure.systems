@@ -12,6 +12,7 @@ const issues = defineCollection({
   schema: z
     .object({
       layer: z.literal("issue"),
+      ontology_slug: z.string(),
       ...baseEntry,
       code: z.string().regex(/^ISS-\d{4}$/),
       category: z.string(),
@@ -56,9 +57,25 @@ const categories = defineCollection({
   schema: z
     .object({
       layer: z.literal("category"),
+      ontology_slug: z.string(),
       ...baseEntry,
       summary: z.string(),
       code: z.string().regex(/^CAT-\d{4}$/),
+    })
+    .strict(),
+});
+
+const aiAdjIssues = defineCollection({
+  type: "content",
+  schema: z
+    .object({
+      layer: z.literal("ai_adj_issue"),
+      ontology_slug: z.string(),
+      ...baseEntry,
+      summary: z.string(),
+      code: z.string().regex(/^ADJ-\d{4}$/),
+      related_issues: z.array(z.string()).min(1),
+      search_intents: z.array(z.string()).default([]),
     })
     .strict(),
 });
@@ -68,5 +85,6 @@ export const collections = {
   patterns,
   lenses,
   categories,
+  "ai-adj-issues": aiAdjIssues,
 };
 

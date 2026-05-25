@@ -1,10 +1,7 @@
 ﻿import fs from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
-import {
-  getCategoryKind,
-  getParentCategoryCode,
-  isCategoryCode,
+import { isCategoryCode
 } from "./category-codes";
 import { validatePublicChangelog } from "./changelog-public";
 
@@ -467,20 +464,20 @@ function validateCategoryFrontmatter() {
     const filenameSlug = path.basename(categoryFile, ".md");
     const data = readFrontmatter(categoryFile);
 
-    const slug = data.slug;
+    const ontologySlug = data.ontology_slug;
     const code = data.code;
 
     validateVersionFields(errors, "Category", filenameSlug, data);
 
-    if (typeof slug !== "string" || slug.length === 0) {
-      errors.push(`Category "${filenameSlug}" must declare slug.`);
+    if (typeof ontologySlug !== "string" || ontologySlug.length === 0) {
+      errors.push(`Category "${filenameSlug}" must declare ontology_slug.`);
     } else {
-      if (!isKebabCase(slug)) {
-        errors.push(`Category "${filenameSlug}" slug "${slug}" must be kebab-case.`);
+      if (!isKebabCase(ontologySlug)) {
+        errors.push(`Category "${filenameSlug}" ontology_slug "${ontologySlug}" must be kebab-case.`);
       }
 
-      if (slug !== filenameSlug) {
-        errors.push(`Category "${filenameSlug}" frontmatter slug must match filename.`);
+      if (ontologySlug !== filenameSlug) {
+        errors.push(`Category "${filenameSlug}" ontology_slug must match filename.`);
       }
     }
 
@@ -496,18 +493,6 @@ function validateCategoryFrontmatter() {
         errors.push(`Category code "${code}" is duplicated by "${previous}" and "${filenameSlug}".`);
       } else {
         seenCodes.set(code, filenameSlug);
-      }
-    }
-  }
-
-  for (const [code, filenameSlug] of seenCodes.entries()) {
-    if (getCategoryKind(code) === "subcategory") {
-      const parentCode = getParentCategoryCode(code);
-
-      if (!seenCodes.has(parentCode)) {
-        errors.push(
-          `Category "${filenameSlug}" code "${code}" is a subcategory, but parent category "${parentCode}" is missing.`
-        );
       }
     }
   }
@@ -563,7 +548,7 @@ function validateIssues(matrix: PatternLensMatrix) {
       }
     }
 
-    const slug = data.slug;
+    const ontologySlug = data.ontology_slug;
     const code = data.code;
     const category = data.category;
 
@@ -574,15 +559,15 @@ function validateIssues(matrix: PatternLensMatrix) {
     const primaryPattern = data.primary_pattern;
     const patterns = data.patterns;
 
-    if (typeof slug !== "string" || slug.length === 0) {
-      errors.push(`Issue "${filenameSlug}" must declare slug.`);
+    if (typeof ontologySlug !== "string" || ontologySlug.length === 0) {
+      errors.push(`Issue "${filenameSlug}" must declare ontology_slug.`);
     } else {
-      if (!isKebabCase(slug)) {
-        errors.push(`Issue "${filenameSlug}" slug "${slug}" must be kebab-case.`);
+      if (!isKebabCase(ontologySlug)) {
+        errors.push(`Issue "${filenameSlug}" ontology_slug "${ontologySlug}" must be kebab-case.`);
       }
 
-      if (slug !== filenameSlug) {
-        errors.push(`Issue "${filenameSlug}" frontmatter slug must match filename.`);
+      if (ontologySlug !== filenameSlug) {
+        errors.push(`Issue "${filenameSlug}" ontology_slug must match filename.`);
       }
     }
 

@@ -1,0 +1,97 @@
+---
+import { getCollection } from "astro:content";
+import ontologyIndex from "../../../content/_meta/ontology-index.json";
+
+export async function getStaticPaths() {
+  const entries = await getCollection("ai-adj-issues");
+
+  return entries.map((entry) => ({
+    params: { slug: entry.data.ontology_slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+
+const indexEntry = ontologyIndex.ai_adj_issues.find(
+  (item) => item.ontology_slug === entry.data.ontology_slug
+);
+
+const relatedIssues = (indexEntry?.related_issues ?? [])
+  .map((ontologySlug) =>
+    ontologyIndex.issues.find((issue) => issue.ontology_slug === ontologySlug)
+  )
+  .filter(Boolean);
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{entry.data.title} | AI-Adjacent Issue</title>
+    <meta name="description" content={entry.data.summary} />
+  </head>
+  <body>
+    <main>
+      <p>
+        <a href="/workbench/">Workbench</a>
+        {" / "}
+        <a href="/workbench/ai-adj-issues/">AI-Adjacent Issues</a>
+      </p>
+
+      <article>
+        <Content />
+      </article>
+
+      <section aria-labelledby="related-issues">
+        <h2 id="related-issues">Related Workbench Issues</h2>
+
+        {relatedIssues.length > 0 ? (
+          <ul>
+            {relatedIssues.map((issue) => (
+              <li>
+                <h3>
+                  <a href={issue.url}>{issue.title}</a>
+                </h3>
+                <p>{issue.summary}</p>
+                <p><code>{issue.code}</code></p>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p>No related Workbench Issues are currently mapped.</p>
+        )}
+      </section>
+
+      {entry.data.search_intents.length > 0 && (
+        <section aria-labelledby="common-ways">
+          <h2 id="common-ways">Common Ways People Describe This</h2>
+
+          <ul>
+            {entry.data.search_intents.map((phrase) => (
+              <li>{phrase}</li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      <section aria-labelledby="metadata">
+        <h2 id="metadata">Metadata</h2>
+
+        <dl>
+          <dt>Code</dt>
+          <dd><code>{entry.data.code}</code></dd>
+
+          <dt>Layer</dt>
+          <dd><code>{entry.data.layer}</code></dd>
+
+          <dt>Version</dt>
+          <dd><code>{entry.data.entry_version}</code></dd>
+
+          <dt>Updated</dt>
+          <dd>{entry.data.updated_at}</dd>
+        </dl>
+      </section>
+    </main>
+  </body>
+</html>

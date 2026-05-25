@@ -1,0 +1,58 @@
+---
+import ontologyIndex from "../../../content/_meta/ontology-index.json";
+
+const aiAdjIssues = ontologyIndex.ai_adj_issues ?? [];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>AI-Adjacent Issues | Workbench</title>
+    <meta
+      name="description"
+      content="Browse AI-Adjacent Issues: problems users may experience as AI failures, but which may involve tools, apps, permissions, runtime behavior, configuration, or integrations."
+    />
+  </head>
+  <body>
+    <main>
+      <p><a href="/workbench/">Workbench</a></p>
+
+      <h1>AI-Adjacent Issues</h1>
+
+      <p>
+        AI-Adjacent Issues are problems users may experience as AI failures, but
+        which may involve tools, apps, permissions, runtime behavior,
+        configuration, product surfaces, or integrations.
+      </p>
+
+      <p>
+        These pages are separate from Workbench Issues. They point to related
+        Workbench Issues when a structural diagnosis may apply.
+      </p>
+
+      <section aria-labelledby="ai-adj-issues">
+        <h2 id="ai-adj-issues">Current AI-Adjacent Issues</h2>
+
+        {aiAdjIssues.length > 0 ? (
+          <ul>
+            {aiAdjIssues.map((entry) => (
+              <li>
+                <h3>
+                  <a href={entry.url}>{entry.title}</a>
+                </h3>
+                <p>{entry.summary}</p>
+                <p>
+                  <code>{entry.code}</code>
+                  {" | "}
+                  Related Workbench Issues: {entry.related_issues.length}
+                </p>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p>No AI-Adjacent Issues are currently published.</p>
+        )}
+      </section>
+    </main>
+  </body>
+</html>
