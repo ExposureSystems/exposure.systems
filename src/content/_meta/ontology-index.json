@@ -385,6 +385,51 @@
       "markdown_url": "/workbench/issues/agent-keeps-expanding-the-task.md"
     },
     {
+      "slug": "ai-adds-work-not-requested",
+      "ontology_slug": "ai-adds-work-not-requested",
+      "code": "ISS-0009",
+      "title": "AI Adds Work Not Requested",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "The AI adds tasks, steps, analysis, checks, changes, or follow-up work that the user did not ask for.",
+      "category": "agents",
+      "category_title": "Agents",
+      "primary_cat_code": "CAT-0030",
+      "secondary_cat_codes": [
+        "CAT-0100"
+      ],
+      "primary_pattern": "overreach",
+      "patterns": [
+        "overreach",
+        "unbounded-scope",
+        "undeclared-side-effect"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "boundary-compliance-lens",
+          "constraint-sufficiency-lens",
+          "isolation-boundary-lens",
+          "overreach-lens",
+          "propagation-lens"
+        ],
+        "secondary": [
+          "escalation-gradient-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "AI adds work not requested",
+        "AI did extra work I did not ask for",
+        "agent added unnecessary tasks",
+        "AI changed more than requested",
+        "AI keeps adding follow up work",
+        "agent expanded beyond the request"
+      ],
+      "url": "/workbench/issues/ai-adds-work-not-requested/",
+      "markdown_url": "/workbench/issues/ai-adds-work-not-requested.md"
+    },
+    {
       "slug": "ai-forgets-earlier-constraints",
       "ontology_slug": "ai-forgets-earlier-constraints",
       "code": "ISS-0029",
@@ -474,6 +519,51 @@
       "markdown_url": "/workbench/issues/answer-has-no-traceable-source-link.md"
     },
     {
+      "slug": "answer-has-too-many-paths",
+      "ontology_slug": "answer-has-too-many-paths",
+      "code": "ISS-0010",
+      "title": "Answer Has Too Many Paths",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "The answer presents too many possible paths, interpretations, options, or next steps without enough structure to choose among them.",
+      "category": "output",
+      "category_title": "Output",
+      "primary_cat_code": "CAT-0010",
+      "secondary_cat_codes": [
+        "CAT-0100"
+      ],
+      "primary_pattern": "density-spike",
+      "patterns": [
+        "density-spike",
+        "unbounded-scope",
+        "constraints-underspecified"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "compression-lens",
+          "constraint-sufficiency-lens",
+          "isolation-boundary-lens",
+          "variance-entropy-lens"
+        ],
+        "secondary": [
+          "determinism-lens",
+          "escalation-gradient-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "answer has too many paths",
+        "AI gave too many options",
+        "AI answer is overwhelming",
+        "too many next steps from AI",
+        "AI response has too many directions",
+        "answer does not choose a path"
+      ],
+      "url": "/workbench/issues/answer-has-too-many-paths/",
+      "markdown_url": "/workbench/issues/answer-has-too-many-paths.md"
+    },
+    {
       "slug": "citation-points-to-wrong-source",
       "ontology_slug": "citation-points-to-wrong-source",
       "code": "ISS-0003",
@@ -517,6 +607,100 @@
       ],
       "url": "/workbench/issues/citation-points-to-wrong-source/",
       "markdown_url": "/workbench/issues/citation-points-to-wrong-source.md"
+    },
+    {
+      "slug": "declared-owner-cannot-control-outcome",
+      "ontology_slug": "declared-owner-cannot-control-outcome",
+      "code": "ISS-0015",
+      "title": "Declared Owner Cannot Control Outcome",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "A person, role, system, or policy is declared responsible for an outcome but does not have the actual authority or control needed to govern it.",
+      "category": "permissions-and-approvals",
+      "category_title": "Permissions & Approvals",
+      "primary_cat_code": "CAT-0050",
+      "secondary_cat_codes": [
+        "CAT-0060"
+      ],
+      "primary_pattern": "authority-state-mismatch",
+      "patterns": [
+        "authority-state-mismatch",
+        "missing-authority",
+        "compatibility-violation"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "absence-lens",
+          "authority-overlay-lens",
+          "compatibility-envelope-lens",
+          "reconciliation-lens"
+        ],
+        "secondary": [
+          "boundary-compliance-lens",
+          "conflict-lens",
+          "convergence-lens",
+          "reference-stability-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "declared owner cannot control outcome",
+        "owner is responsible but cannot change result",
+        "AI assigns responsibility without authority",
+        "approval owner lacks control",
+        "accountable person cannot govern outcome",
+        "declared owner has no real authority"
+      ],
+      "url": "/workbench/issues/declared-owner-cannot-control-outcome/",
+      "markdown_url": "/workbench/issues/declared-owner-cannot-control-outcome.md"
+    },
+    {
+      "slug": "fallback-authority-is-missing",
+      "ontology_slug": "fallback-authority-is-missing",
+      "code": "ISS-0014",
+      "title": "Fallback Authority Is Missing",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "The system does not declare who or what has authority when the primary owner, rule, tool, source, or decision path is unavailable or inconclusive.",
+      "category": "permissions-and-approvals",
+      "category_title": "Permissions & Approvals",
+      "primary_cat_code": "CAT-0050",
+      "secondary_cat_codes": [
+        "CAT-0070"
+      ],
+      "primary_pattern": "missing-authority",
+      "patterns": [
+        "missing-authority",
+        "incomplete-declaration",
+        "circular-dependency"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "absence-lens",
+          "authority-overlay-lens",
+          "conflict-lens",
+          "constraint-sufficiency-lens",
+          "propagation-lens"
+        ],
+        "secondary": [
+          "interface-contract-lens",
+          "normalization-lens",
+          "reconciliation-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "fallback authority is missing",
+        "no fallback approver",
+        "AI does not know who decides if primary fails",
+        "missing escalation authority",
+        "no backup decision owner",
+        "workflow has no fallback authority"
+      ],
+      "url": "/workbench/issues/fallback-authority-is-missing/",
+      "markdown_url": "/workbench/issues/fallback-authority-is-missing.md"
     },
     {
       "slug": "invalid-json-output",
@@ -581,34 +765,78 @@
       "primary_pattern": "missing-authority",
       "patterns": [
         "missing-authority",
-        "overreach",
+        "undeclared-side-effect",
         "authority-state-mismatch"
       ],
       "derived_lenses": {
         "primary": [
           "absence-lens",
           "authority-overlay-lens",
-          "boundary-compliance-lens",
           "overreach-lens",
+          "propagation-lens",
           "reconciliation-lens"
         ],
         "secondary": [
           "conflict-lens",
           "convergence-lens",
-          "propagation-lens",
+          "isolation-boundary-lens",
           "reference-stability-lens"
         ]
       },
       "related_ai_adj_issues": [],
       "search_intents": [
         "no owner for agent action",
-        "who owns this AI action",
-        "agent acted but nobody is responsible",
-        "AI action has no responsible owner",
-        "unowned agent action"
+        "AI agent acted without owner",
+        "agent action has no accountable person",
+        "who approved the agent action",
+        "agent changed something without responsibility",
+        "AI action has no decision owner"
       ],
       "url": "/workbench/issues/no-owner-for-agent-action/",
       "markdown_url": "/workbench/issues/no-owner-for-agent-action.md"
+    },
+    {
+      "slug": "permissions-conflict-after-being-combined",
+      "ontology_slug": "permissions-conflict-after-being-combined",
+      "code": "ISS-0016",
+      "title": "Permissions Conflict After Being Combined",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "Permissions, approvals, roles, policies, or authority rules that seem valid separately conflict when combined in the same workflow or AI action.",
+      "category": "permissions-and-approvals",
+      "category_title": "Permissions & Approvals",
+      "primary_cat_code": "CAT-0050",
+      "secondary_cat_codes": [
+        "CAT-0060"
+      ],
+      "primary_pattern": "authority-collision",
+      "patterns": [
+        "authority-collision",
+        "authority-merge-conflict",
+        "authority-shadowing"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "authority-overlay-lens",
+          "conflict-lens",
+          "reconciliation-lens"
+        ],
+        "secondary": [
+          "invariant-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "permissions conflict after being combined",
+        "AI permissions conflict",
+        "approvals conflict in workflow",
+        "combined rules create permission problem",
+        "roles conflict after merge",
+        "authority rules contradict each other"
+      ],
+      "url": "/workbench/issues/permissions-conflict-after-being-combined/",
+      "markdown_url": "/workbench/issues/permissions-conflict-after-being-combined.md"
     },
     {
       "slug": "prompt-only-works-after-retry",
@@ -787,6 +1015,50 @@
       "markdown_url": "/workbench/issues/similar-cases-route-to-different-outcomes.md"
     },
     {
+      "slug": "task-has-no-clear-limit",
+      "ontology_slug": "task-has-no-clear-limit",
+      "code": "ISS-0011",
+      "title": "Task Has No Clear Limit",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "The task does not declare where the AI should stop, what is out of scope, or what counts as enough work.",
+      "category": "scope-and-boundaries",
+      "category_title": "Scope & Boundaries",
+      "primary_cat_code": "CAT-0100",
+      "secondary_cat_codes": [],
+      "primary_pattern": "unbounded-scope",
+      "patterns": [
+        "unbounded-scope",
+        "constraints-underspecified",
+        "incomplete-declaration"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "absence-lens",
+          "constraint-sufficiency-lens",
+          "isolation-boundary-lens"
+        ],
+        "secondary": [
+          "determinism-lens",
+          "escalation-gradient-lens",
+          "interface-contract-lens",
+          "variance-entropy-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "task has no clear limit",
+        "AI does not know where to stop",
+        "prompt has no stopping point",
+        "task scope is too open",
+        "AI keeps going because limits are unclear",
+        "no done condition in prompt"
+      ],
+      "url": "/workbench/issues/task-has-no-clear-limit/",
+      "markdown_url": "/workbench/issues/task-has-no-clear-limit.md"
+    },
+    {
       "slug": "tool-call-contract-mismatch",
       "ontology_slug": "tool-call-contract-mismatch",
       "code": "ISS-0017",
@@ -880,6 +1152,52 @@
       ],
       "url": "/workbench/issues/validation-result-changes-on-retry/",
       "markdown_url": "/workbench/issues/validation-result-changes-on-retry.md"
+    },
+    {
+      "slug": "workflow-step-has-no-decision-owner",
+      "ontology_slug": "workflow-step-has-no-decision-owner",
+      "code": "ISS-0013",
+      "title": "Workflow Step Has No Decision Owner",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "A workflow step requires a decision, approval, judgment, or routing choice, but no owner is declared for making it.",
+      "category": "workflow-and-handoffs",
+      "category_title": "Workflow & Handoffs",
+      "primary_cat_code": "CAT-0070",
+      "secondary_cat_codes": [
+        "CAT-0050"
+      ],
+      "primary_pattern": "missing-authority",
+      "patterns": [
+        "missing-authority",
+        "orphaned-structure",
+        "incomplete-declaration"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "absence-lens",
+          "authority-overlay-lens",
+          "constraint-sufficiency-lens"
+        ],
+        "secondary": [
+          "conflict-lens",
+          "interface-contract-lens",
+          "propagation-lens",
+          "reconciliation-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "workflow step has no decision owner",
+        "no one owns the workflow decision",
+        "AI workflow has no approver",
+        "handoff has no decision owner",
+        "workflow step needs approval but owner missing",
+        "unclear who decides next step"
+      ],
+      "url": "/workbench/issues/workflow-step-has-no-decision-owner/",
+      "markdown_url": "/workbench/issues/workflow-step-has-no-decision-owner.md"
     }
   ],
   "ai_adj_issues": [
@@ -995,7 +1313,9 @@
         ]
       },
       "issues": {
-        "primary": [],
+        "primary": [
+          "permissions-conflict-after-being-combined"
+        ],
         "supporting": []
       },
       "url": "/workbench/patterns/authority-collision/",
@@ -1021,7 +1341,9 @@
       },
       "issues": {
         "primary": [],
-        "supporting": []
+        "supporting": [
+          "permissions-conflict-after-being-combined"
+        ]
       },
       "url": "/workbench/patterns/authority-merge-conflict/",
       "markdown_url": "/workbench/patterns/authority-merge-conflict.md"
@@ -1046,7 +1368,9 @@
       },
       "issues": {
         "primary": [],
-        "supporting": []
+        "supporting": [
+          "permissions-conflict-after-being-combined"
+        ]
       },
       "url": "/workbench/patterns/authority-shadowing/",
       "markdown_url": "/workbench/patterns/authority-shadowing.md"
@@ -1070,7 +1394,9 @@
         ]
       },
       "issues": {
-        "primary": [],
+        "primary": [
+          "declared-owner-cannot-control-outcome"
+        ],
         "supporting": [
           "no-owner-for-agent-action",
           "similar-cases-route-to-different-outcomes"
@@ -1124,7 +1450,9 @@
       },
       "issues": {
         "primary": [],
-        "supporting": []
+        "supporting": [
+          "fallback-authority-is-missing"
+        ]
       },
       "url": "/workbench/patterns/circular-dependency/",
       "markdown_url": "/workbench/patterns/circular-dependency.md"
@@ -1150,6 +1478,7 @@
         "primary": [],
         "supporting": [
           "citation-points-to-wrong-source",
+          "declared-owner-cannot-control-outcome",
           "saved-reference-no-longer-works",
           "tool-call-contract-mismatch"
         ]
@@ -1179,8 +1508,10 @@
         "primary": [],
         "supporting": [
           "ai-forgets-earlier-constraints",
+          "answer-has-too-many-paths",
           "invalid-json-output",
-          "prompt-only-works-after-retry"
+          "prompt-only-works-after-retry",
+          "task-has-no-clear-limit"
         ]
       },
       "url": "/workbench/patterns/constraints-underspecified/",
@@ -1285,7 +1616,9 @@
         ]
       },
       "issues": {
-        "primary": [],
+        "primary": [
+          "answer-has-too-many-paths"
+        ],
         "supporting": []
       },
       "url": "/workbench/patterns/density-spike/",
@@ -1397,7 +1730,11 @@
         "primary": [
           "answer-has-no-traceable-source-link"
         ],
-        "supporting": []
+        "supporting": [
+          "fallback-authority-is-missing",
+          "task-has-no-clear-limit",
+          "workflow-step-has-no-decision-owner"
+        ]
       },
       "url": "/workbench/patterns/incomplete-declaration/",
       "markdown_url": "/workbench/patterns/incomplete-declaration.md"
@@ -1477,9 +1814,13 @@
       },
       "issues": {
         "primary": [
-          "no-owner-for-agent-action"
+          "fallback-authority-is-missing",
+          "no-owner-for-agent-action",
+          "workflow-step-has-no-decision-owner"
         ],
-        "supporting": []
+        "supporting": [
+          "declared-owner-cannot-control-outcome"
+        ]
       },
       "url": "/workbench/patterns/missing-authority/",
       "markdown_url": "/workbench/patterns/missing-authority.md"
@@ -1533,7 +1874,9 @@
       },
       "issues": {
         "primary": [],
-        "supporting": []
+        "supporting": [
+          "workflow-step-has-no-decision-owner"
+        ]
       },
       "url": "/workbench/patterns/orphaned-structure/",
       "markdown_url": "/workbench/patterns/orphaned-structure.md"
@@ -1557,10 +1900,11 @@
         ]
       },
       "issues": {
-        "primary": [],
+        "primary": [
+          "ai-adds-work-not-requested"
+        ],
         "supporting": [
-          "agent-keeps-expanding-the-task",
-          "no-owner-for-agent-action"
+          "agent-keeps-expanding-the-task"
         ]
       },
       "url": "/workbench/patterns/overreach/",
@@ -1773,8 +2117,13 @@
         ]
       },
       "issues": {
-        "primary": [],
-        "supporting": []
+        "primary": [
+          "task-has-no-clear-limit"
+        ],
+        "supporting": [
+          "ai-adds-work-not-requested",
+          "answer-has-too-many-paths"
+        ]
       },
       "url": "/workbench/patterns/unbounded-scope/",
       "markdown_url": "/workbench/patterns/unbounded-scope.md"
@@ -1826,7 +2175,10 @@
       },
       "issues": {
         "primary": [],
-        "supporting": []
+        "supporting": [
+          "ai-adds-work-not-requested",
+          "no-owner-for-agent-action"
+        ]
       },
       "url": "/workbench/patterns/undeclared-side-effect/",
       "markdown_url": "/workbench/patterns/undeclared-side-effect.md"
@@ -1853,7 +2205,11 @@
       },
       "issues": [
         "answer-has-no-traceable-source-link",
-        "no-owner-for-agent-action"
+        "declared-owner-cannot-control-outcome",
+        "fallback-authority-is-missing",
+        "no-owner-for-agent-action",
+        "task-has-no-clear-limit",
+        "workflow-step-has-no-decision-owner"
       ],
       "url": "/workbench/lenses/absence-lens/",
       "markdown_url": "/workbench/lenses/absence-lens.md"
@@ -1878,7 +2234,11 @@
         ]
       },
       "issues": [
-        "no-owner-for-agent-action"
+        "declared-owner-cannot-control-outcome",
+        "fallback-authority-is-missing",
+        "no-owner-for-agent-action",
+        "permissions-conflict-after-being-combined",
+        "workflow-step-has-no-decision-owner"
       ],
       "url": "/workbench/lenses/authority-overlay-lens/",
       "markdown_url": "/workbench/lenses/authority-overlay-lens.md"
@@ -1904,8 +2264,9 @@
       },
       "issues": [
         "agent-keeps-expanding-the-task",
+        "ai-adds-work-not-requested",
         "citation-points-to-wrong-source",
-        "no-owner-for-agent-action",
+        "declared-owner-cannot-control-outcome",
         "saved-reference-no-longer-works",
         "tool-call-contract-mismatch"
       ],
@@ -1929,6 +2290,7 @@
       },
       "issues": [
         "citation-points-to-wrong-source",
+        "declared-owner-cannot-control-outcome",
         "saved-reference-no-longer-works",
         "tool-call-contract-mismatch"
       ],
@@ -1959,6 +2321,7 @@
       "issues": [
         "agent-keeps-expanding-the-task",
         "answer-has-no-traceable-source-link",
+        "answer-has-too-many-paths",
         "prompt-only-works-after-retry",
         "similar-cases-route-to-different-outcomes",
         "validation-result-changes-on-retry"
@@ -1990,10 +2353,14 @@
         ]
       },
       "issues": [
+        "declared-owner-cannot-control-outcome",
+        "fallback-authority-is-missing",
         "invalid-json-output",
         "no-owner-for-agent-action",
+        "permissions-conflict-after-being-combined",
         "tool-call-contract-mismatch",
-        "validation-result-changes-on-retry"
+        "validation-result-changes-on-retry",
+        "workflow-step-has-no-decision-owner"
       ],
       "url": "/workbench/lenses/conflict-lens/",
       "markdown_url": "/workbench/lenses/conflict-lens.md"
@@ -2018,10 +2385,15 @@
         ]
       },
       "issues": [
+        "ai-adds-work-not-requested",
         "ai-forgets-earlier-constraints",
         "answer-has-no-traceable-source-link",
+        "answer-has-too-many-paths",
+        "fallback-authority-is-missing",
         "invalid-json-output",
-        "prompt-only-works-after-retry"
+        "prompt-only-works-after-retry",
+        "task-has-no-clear-limit",
+        "workflow-step-has-no-decision-owner"
       ],
       "url": "/workbench/lenses/constraint-sufficiency-lens/",
       "markdown_url": "/workbench/lenses/constraint-sufficiency-lens.md"
@@ -2050,6 +2422,7 @@
       "issues": [
         "agent-keeps-expanding-the-task",
         "ai-forgets-earlier-constraints",
+        "declared-owner-cannot-control-outcome",
         "no-owner-for-agent-action",
         "prompt-only-works-after-retry",
         "saved-reference-no-longer-works",
@@ -2084,12 +2457,14 @@
       "issues": [
         "ai-forgets-earlier-constraints",
         "answer-has-no-traceable-source-link",
+        "answer-has-too-many-paths",
         "citation-points-to-wrong-source",
         "invalid-json-output",
         "prompt-only-works-after-retry",
         "retry-makes-the-problem-worse",
         "saved-reference-no-longer-works",
         "similar-cases-route-to-different-outcomes",
+        "task-has-no-clear-limit",
         "validation-result-changes-on-retry"
       ],
       "url": "/workbench/lenses/determinism-lens/",
@@ -2118,7 +2493,10 @@
       },
       "issues": [
         "agent-keeps-expanding-the-task",
-        "retry-makes-the-problem-worse"
+        "ai-adds-work-not-requested",
+        "answer-has-too-many-paths",
+        "retry-makes-the-problem-worse",
+        "task-has-no-clear-limit"
       ],
       "url": "/workbench/lenses/escalation-gradient-lens/",
       "markdown_url": "/workbench/lenses/escalation-gradient-lens.md"
@@ -2145,9 +2523,12 @@
       "issues": [
         "answer-has-no-traceable-source-link",
         "citation-points-to-wrong-source",
+        "fallback-authority-is-missing",
         "invalid-json-output",
+        "task-has-no-clear-limit",
         "tool-call-contract-mismatch",
-        "validation-result-changes-on-retry"
+        "validation-result-changes-on-retry",
+        "workflow-step-has-no-decision-owner"
       ],
       "url": "/workbench/lenses/interface-contract-lens/",
       "markdown_url": "/workbench/lenses/interface-contract-lens.md"
@@ -2173,6 +2554,7 @@
       },
       "issues": [
         "invalid-json-output",
+        "permissions-conflict-after-being-combined",
         "tool-call-contract-mismatch",
         "validation-result-changes-on-retry"
       ],
@@ -2198,7 +2580,12 @@
           "undeclared-side-effect"
         ]
       },
-      "issues": [],
+      "issues": [
+        "ai-adds-work-not-requested",
+        "answer-has-too-many-paths",
+        "no-owner-for-agent-action",
+        "task-has-no-clear-limit"
+      ],
       "url": "/workbench/lenses/isolation-boundary-lens/",
       "markdown_url": "/workbench/lenses/isolation-boundary-lens.md"
     },
@@ -2222,6 +2609,7 @@
       },
       "issues": [
         "citation-points-to-wrong-source",
+        "fallback-authority-is-missing",
         "invalid-json-output",
         "tool-call-contract-mismatch"
       ],
@@ -2246,6 +2634,7 @@
       },
       "issues": [
         "agent-keeps-expanding-the-task",
+        "ai-adds-work-not-requested",
         "no-owner-for-agent-action"
       ],
       "url": "/workbench/lenses/overreach-lens/",
@@ -2276,8 +2665,11 @@
       },
       "issues": [
         "agent-keeps-expanding-the-task",
+        "ai-adds-work-not-requested",
+        "fallback-authority-is-missing",
         "no-owner-for-agent-action",
-        "retry-makes-the-problem-worse"
+        "retry-makes-the-problem-worse",
+        "workflow-step-has-no-decision-owner"
       ],
       "url": "/workbench/lenses/propagation-lens/",
       "markdown_url": "/workbench/lenses/propagation-lens.md"
@@ -2328,9 +2720,13 @@
       "issues": [
         "agent-keeps-expanding-the-task",
         "ai-forgets-earlier-constraints",
+        "declared-owner-cannot-control-outcome",
+        "fallback-authority-is-missing",
         "no-owner-for-agent-action",
+        "permissions-conflict-after-being-combined",
         "saved-reference-no-longer-works",
-        "similar-cases-route-to-different-outcomes"
+        "similar-cases-route-to-different-outcomes",
+        "workflow-step-has-no-decision-owner"
       ],
       "url": "/workbench/lenses/reconciliation-lens/",
       "markdown_url": "/workbench/lenses/reconciliation-lens.md"
@@ -2359,6 +2755,7 @@
         "ai-forgets-earlier-constraints",
         "answer-has-no-traceable-source-link",
         "citation-points-to-wrong-source",
+        "declared-owner-cannot-control-outcome",
         "no-owner-for-agent-action",
         "prompt-only-works-after-retry",
         "retry-makes-the-problem-worse",
@@ -2396,10 +2793,12 @@
       "issues": [
         "agent-keeps-expanding-the-task",
         "ai-forgets-earlier-constraints",
+        "answer-has-too-many-paths",
         "invalid-json-output",
         "prompt-only-works-after-retry",
         "retry-makes-the-problem-worse",
         "similar-cases-route-to-different-outcomes",
+        "task-has-no-clear-limit",
         "validation-result-changes-on-retry"
       ],
       "url": "/workbench/lenses/variance-entropy-lens/",
@@ -2417,10 +2816,12 @@
       "updated_at": "2026-05-10T00:00:00Z",
       "summary": "Problems where agent behavior expands, acts outside intent, fails to finish, modifies state, or chooses actions without enough stable control.",
       "issues": [
-        "agent-keeps-expanding-the-task"
+        "agent-keeps-expanding-the-task",
+        "ai-adds-work-not-requested"
       ],
       "primary_issues": [
-        "agent-keeps-expanding-the-task"
+        "agent-keeps-expanding-the-task",
+        "ai-adds-work-not-requested"
       ],
       "secondary_issues": [
         "no-owner-for-agent-action"
@@ -2561,11 +2962,13 @@
       "summary": "Problems where generated content, citations, fields, formats, parser-facing output, or structured responses are missing, malformed, unsupported, or unusable.",
       "issues": [
         "answer-has-no-traceable-source-link",
+        "answer-has-too-many-paths",
         "citation-points-to-wrong-source",
         "invalid-json-output"
       ],
       "primary_issues": [
         "answer-has-no-traceable-source-link",
+        "answer-has-too-many-paths",
         "citation-points-to-wrong-source",
         "invalid-json-output"
       ],
@@ -2586,12 +2989,20 @@
       "updated_at": "2026-05-10T00:00:00Z",
       "summary": "Problems where ownership, approval, authority, permission state, responsible control, or action rights are missing, stale, bypassed, conflicting, or unclear.",
       "issues": [
-        "no-owner-for-agent-action"
+        "declared-owner-cannot-control-outcome",
+        "fallback-authority-is-missing",
+        "no-owner-for-agent-action",
+        "permissions-conflict-after-being-combined"
       ],
       "primary_issues": [
-        "no-owner-for-agent-action"
+        "declared-owner-cannot-control-outcome",
+        "fallback-authority-is-missing",
+        "no-owner-for-agent-action",
+        "permissions-conflict-after-being-combined"
       ],
-      "secondary_issues": [],
+      "secondary_issues": [
+        "workflow-step-has-no-decision-owner"
+      ],
       "url": "/workbench/categories/permissions-and-approvals/"
     },
     {
@@ -2605,7 +3016,10 @@
       "summary": "Problems where prompts, policies, rules, roles, constraints, or declared behavior conflict, drift, duplicate each other, or fail to match actual behavior.",
       "issues": [],
       "primary_issues": [],
-      "secondary_issues": [],
+      "secondary_issues": [
+        "declared-owner-cannot-control-outcome",
+        "permissions-conflict-after-being-combined"
+      ],
       "url": "/workbench/categories/rules-and-policies/"
     },
     {
@@ -2617,10 +3031,16 @@
       "entry_version": "0.1.0",
       "updated_at": "2026-05-10T00:00:00Z",
       "summary": "Problems where tasks, files, context, retrieval, permissions, actions, or outputs cross limits, use outside information, or lack clear operating boundaries.",
-      "issues": [],
-      "primary_issues": [],
+      "issues": [
+        "task-has-no-clear-limit"
+      ],
+      "primary_issues": [
+        "task-has-no-clear-limit"
+      ],
       "secondary_issues": [
-        "agent-keeps-expanding-the-task"
+        "agent-keeps-expanding-the-task",
+        "ai-adds-work-not-requested",
+        "answer-has-too-many-paths"
       ],
       "url": "/workbench/categories/scope-and-boundaries/"
     },
@@ -2651,9 +3071,15 @@
       "entry_version": "0.1.0",
       "updated_at": "2026-05-10T00:00:00Z",
       "summary": "Problems where review steps, handoffs, task progress, workflow ownership, downstream steps, or process coordination break, loop, disagree, or lose resolution.",
-      "issues": [],
-      "primary_issues": [],
-      "secondary_issues": [],
+      "issues": [
+        "workflow-step-has-no-decision-owner"
+      ],
+      "primary_issues": [
+        "workflow-step-has-no-decision-owner"
+      ],
+      "secondary_issues": [
+        "fallback-authority-is-missing"
+      ],
       "url": "/workbench/categories/workflow-and-handoffs/"
     }
   ],

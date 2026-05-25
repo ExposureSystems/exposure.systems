@@ -14,42 +14,42 @@ secondary_cat_codes:
 primary_pattern: missing-authority
 patterns:
   - missing-authority
-  - overreach
+  - undeclared-side-effect
   - authority-state-mismatch
 search_intents:
   - no owner for agent action
-  - who owns this AI action
-  - agent acted but nobody is responsible
-  - AI action has no responsible owner
-  - unowned agent action
+  - AI agent acted without owner
+  - agent action has no accountable person
+  - who approved the agent action
+  - agent changed something without responsibility
+  - AI action has no decision owner
 ---
-
-# No Owner for Agent Action
 
 ## What This Looks Like
 
-An agent can perform or trigger an action, but the user cannot tell who approved it, who owns it, or who is responsible for reviewing what happened.
+An agent takes or prepares an action that affects a file, tool, workflow, system state, customer record, task, or downstream step, but there is no clear owner responsible for that action. The user may not know who approved it, who can reverse it, who is accountable for the outcome, or whose authority the agent was acting under.
 
 ## Why It Matters
 
-Agent actions can affect files, tools, workflows, records, permissions, outputs, or downstream systems. Without an owner, it becomes difficult to review, approve, reverse, audit, or assign responsibility for the action.
+Agent actions need accountability. When no owner is declared, an action can happen without a stable decision path, review point, or recovery route. This becomes especially risky when the action modifies state, triggers tools, affects other people, or becomes part of an automated workflow.
 
 ## Structural Signal
 
-An agent action affects a system, workflow, record, or decision, but no responsible owner or authority path is declared. Accountability is unclear after the action happens.
+The system permits or proposes an action, but the authority behind that action is missing or not connected to a responsible owner. The issue is not only that the action may be wrong; it is that the action lacks an accountable authority structure.
 
 ## Common Triggers
 
-- Agent permissions granted without ownership rules
-- Tool actions exposed without review responsibility
-- Workflow steps missing decision owners
-- Automation allowed to act before authority is resolved
-- Handoff gaps between human and agent control
+- The agent is allowed to act without a declared human or system owner
+- Tool permissions are granted without assigning responsibility for use
+- A workflow step can modify state without an approval path
+- The agent inherits authority from context that is not visible to the user
+- Review responsibility is assumed but not encoded
+- The system separates action execution from accountability
 
 ## When to Use This Issue
 
-Use this Issue when the core question is: “Who owns this agent action?”
+Use this Issue when an agent action can affect a system, workflow, or record without a declared owner, approval authority, or accountable decision path.
 
 ## When Not to Use This Issue
 
-Do not use this Issue to decide whether the action itself was correct. This Issue identifies the missing ownership or authority structure around the action.
+Do not use this Issue when the owner is clear but made a bad decision, or when the problem is only that the tool call failed. This Issue applies when responsibility for the action itself is missing, unclear, or structurally disconnected.

@@ -52,6 +52,49 @@
     },
     {
       "type": "issue",
+      "slug": "ai-adds-work-not-requested",
+      "ontology_slug": "ai-adds-work-not-requested",
+      "code": "ISS-0009",
+      "title": "AI Adds Work Not Requested",
+      "summary": "The AI adds tasks, steps, analysis, checks, changes, or follow-up work that the user did not ask for.",
+      "url": "/workbench/issues/ai-adds-work-not-requested/",
+      "category": "agents",
+      "category_title": "Agents",
+      "primary_cat_code": "CAT-0030",
+      "secondary_cat_codes": [
+        "CAT-0100"
+      ],
+      "primary_pattern": "overreach",
+      "patterns": [
+        "overreach",
+        "unbounded-scope",
+        "undeclared-side-effect"
+      ],
+      "lenses": {
+        "primary": [
+          "boundary-compliance-lens",
+          "constraint-sufficiency-lens",
+          "isolation-boundary-lens",
+          "overreach-lens",
+          "propagation-lens"
+        ],
+        "secondary": [
+          "escalation-gradient-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "AI adds work not requested",
+        "AI did extra work I did not ask for",
+        "agent added unnecessary tasks",
+        "AI changed more than requested",
+        "AI keeps adding follow up work",
+        "agent expanded beyond the request"
+      ],
+      "text": "AI Adds Work Not Requested AI adds work not requested AI changed more than requested AI did extra work I did not ask for AI keeps adding follow up work Agents CAT-0030 CAT-0100 ISS-0009 The AI adds tasks, steps, analysis, checks, changes, or follow-up work that the user did not ask for. agent added unnecessary tasks agent expanded beyond the request agents boundary-compliance-lens constraint-sufficiency-lens escalation-gradient-lens isolation-boundary-lens overreach overreach-lens propagation-lens unbounded-scope undeclared-side-effect"
+    },
+    {
+      "type": "issue",
       "slug": "ai-forgets-earlier-constraints",
       "ontology_slug": "ai-forgets-earlier-constraints",
       "code": "ISS-0029",
@@ -137,6 +180,49 @@
     },
     {
       "type": "issue",
+      "slug": "answer-has-too-many-paths",
+      "ontology_slug": "answer-has-too-many-paths",
+      "code": "ISS-0010",
+      "title": "Answer Has Too Many Paths",
+      "summary": "The answer presents too many possible paths, interpretations, options, or next steps without enough structure to choose among them.",
+      "url": "/workbench/issues/answer-has-too-many-paths/",
+      "category": "output",
+      "category_title": "Output",
+      "primary_cat_code": "CAT-0010",
+      "secondary_cat_codes": [
+        "CAT-0100"
+      ],
+      "primary_pattern": "density-spike",
+      "patterns": [
+        "density-spike",
+        "unbounded-scope",
+        "constraints-underspecified"
+      ],
+      "lenses": {
+        "primary": [
+          "compression-lens",
+          "constraint-sufficiency-lens",
+          "isolation-boundary-lens",
+          "variance-entropy-lens"
+        ],
+        "secondary": [
+          "determinism-lens",
+          "escalation-gradient-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "answer has too many paths",
+        "AI gave too many options",
+        "AI answer is overwhelming",
+        "too many next steps from AI",
+        "AI response has too many directions",
+        "answer does not choose a path"
+      ],
+      "text": "AI answer is overwhelming AI gave too many options AI response has too many directions Answer Has Too Many Paths CAT-0010 CAT-0100 ISS-0010 Output The answer presents too many possible paths, interpretations, options, or next steps without enough structure to choose among them. answer does not choose a path answer has too many paths compression-lens constraint-sufficiency-lens constraints-underspecified density-spike determinism-lens escalation-gradient-lens isolation-boundary-lens output too many next steps from AI unbounded-scope variance-entropy-lens"
+    },
+    {
+      "type": "issue",
       "slug": "citation-points-to-wrong-source",
       "ontology_slug": "citation-points-to-wrong-source",
       "code": "ISS-0003",
@@ -177,6 +263,96 @@
         "reference points to unrelated source"
       ],
       "text": "A citation, reference, link, or source pointer is present, but it points to the wrong source, wrong passage, wrong document, or unsupported evidence. AI citation is wrong AI cited the wrong passage CAT-0010 CAT-0120 Citation Points to Wrong Source ISS-0003 Output boundary-compliance-lens citation link goes to wrong document citation points to wrong source compatibility-envelope-lens compatibility-violation determinism-lens interface-contract-lens interface-mismatch normalization-lens output reference points to unrelated source reference-instability reference-stability-lens source does not support the answer"
+    },
+    {
+      "type": "issue",
+      "slug": "declared-owner-cannot-control-outcome",
+      "ontology_slug": "declared-owner-cannot-control-outcome",
+      "code": "ISS-0015",
+      "title": "Declared Owner Cannot Control Outcome",
+      "summary": "A person, role, system, or policy is declared responsible for an outcome but does not have the actual authority or control needed to govern it.",
+      "url": "/workbench/issues/declared-owner-cannot-control-outcome/",
+      "category": "permissions-and-approvals",
+      "category_title": "Permissions & Approvals",
+      "primary_cat_code": "CAT-0050",
+      "secondary_cat_codes": [
+        "CAT-0060"
+      ],
+      "primary_pattern": "authority-state-mismatch",
+      "patterns": [
+        "authority-state-mismatch",
+        "missing-authority",
+        "compatibility-violation"
+      ],
+      "lenses": {
+        "primary": [
+          "absence-lens",
+          "authority-overlay-lens",
+          "compatibility-envelope-lens",
+          "reconciliation-lens"
+        ],
+        "secondary": [
+          "boundary-compliance-lens",
+          "conflict-lens",
+          "convergence-lens",
+          "reference-stability-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "declared owner cannot control outcome",
+        "owner is responsible but cannot change result",
+        "AI assigns responsibility without authority",
+        "approval owner lacks control",
+        "accountable person cannot govern outcome",
+        "declared owner has no real authority"
+      ],
+      "text": "A person, role, system, or policy is declared responsible for an outcome but does not have the actual authority or control needed to govern it. AI assigns responsibility without authority CAT-0050 CAT-0060 Declared Owner Cannot Control Outcome ISS-0015 Permissions & Approvals absence-lens accountable person cannot govern outcome approval owner lacks control authority-overlay-lens authority-state-mismatch boundary-compliance-lens compatibility-envelope-lens compatibility-violation conflict-lens convergence-lens declared owner cannot control outcome declared owner has no real authority missing-authority owner is responsible but cannot change result permissions-and-approvals reconciliation-lens reference-stability-lens"
+    },
+    {
+      "type": "issue",
+      "slug": "fallback-authority-is-missing",
+      "ontology_slug": "fallback-authority-is-missing",
+      "code": "ISS-0014",
+      "title": "Fallback Authority Is Missing",
+      "summary": "The system does not declare who or what has authority when the primary owner, rule, tool, source, or decision path is unavailable or inconclusive.",
+      "url": "/workbench/issues/fallback-authority-is-missing/",
+      "category": "permissions-and-approvals",
+      "category_title": "Permissions & Approvals",
+      "primary_cat_code": "CAT-0050",
+      "secondary_cat_codes": [
+        "CAT-0070"
+      ],
+      "primary_pattern": "missing-authority",
+      "patterns": [
+        "missing-authority",
+        "incomplete-declaration",
+        "circular-dependency"
+      ],
+      "lenses": {
+        "primary": [
+          "absence-lens",
+          "authority-overlay-lens",
+          "conflict-lens",
+          "constraint-sufficiency-lens",
+          "propagation-lens"
+        ],
+        "secondary": [
+          "interface-contract-lens",
+          "normalization-lens",
+          "reconciliation-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "fallback authority is missing",
+        "no fallback approver",
+        "AI does not know who decides if primary fails",
+        "missing escalation authority",
+        "no backup decision owner",
+        "workflow has no fallback authority"
+      ],
+      "text": "AI does not know who decides if primary fails CAT-0050 CAT-0070 Fallback Authority Is Missing ISS-0014 Permissions & Approvals The system does not declare who or what has authority when the primary owner, rule, tool, source, or decision path is unavailable or inconclusive. absence-lens authority-overlay-lens circular-dependency conflict-lens constraint-sufficiency-lens fallback authority is missing incomplete-declaration interface-contract-lens missing escalation authority missing-authority no backup decision owner no fallback approver normalization-lens permissions-and-approvals propagation-lens reconciliation-lens workflow has no fallback authority"
     },
     {
       "type": "issue",
@@ -238,33 +414,75 @@
       "primary_pattern": "missing-authority",
       "patterns": [
         "missing-authority",
-        "overreach",
+        "undeclared-side-effect",
         "authority-state-mismatch"
       ],
       "lenses": {
         "primary": [
           "absence-lens",
           "authority-overlay-lens",
-          "boundary-compliance-lens",
           "overreach-lens",
+          "propagation-lens",
           "reconciliation-lens"
         ],
         "secondary": [
           "conflict-lens",
           "convergence-lens",
-          "propagation-lens",
+          "isolation-boundary-lens",
           "reference-stability-lens"
         ]
       },
       "related_ai_adj_issues": [],
       "search_intents": [
         "no owner for agent action",
-        "who owns this AI action",
-        "agent acted but nobody is responsible",
-        "AI action has no responsible owner",
-        "unowned agent action"
+        "AI agent acted without owner",
+        "agent action has no accountable person",
+        "who approved the agent action",
+        "agent changed something without responsibility",
+        "AI action has no decision owner"
       ],
-      "text": "AI action has no responsible owner An agent action can affect the system without a declared responsible owner, authority, or accountable decision path. CAT-0030 CAT-0050 ISS-0012 No Owner for Agent Action Permissions & Approvals absence-lens agent acted but nobody is responsible authority-overlay-lens authority-state-mismatch boundary-compliance-lens conflict-lens convergence-lens missing-authority no owner for agent action overreach overreach-lens permissions-and-approvals propagation-lens reconciliation-lens reference-stability-lens unowned agent action who owns this AI action"
+      "text": "AI action has no decision owner AI agent acted without owner An agent action can affect the system without a declared responsible owner, authority, or accountable decision path. CAT-0030 CAT-0050 ISS-0012 No Owner for Agent Action Permissions & Approvals absence-lens agent action has no accountable person agent changed something without responsibility authority-overlay-lens authority-state-mismatch conflict-lens convergence-lens isolation-boundary-lens missing-authority no owner for agent action overreach-lens permissions-and-approvals propagation-lens reconciliation-lens reference-stability-lens undeclared-side-effect who approved the agent action"
+    },
+    {
+      "type": "issue",
+      "slug": "permissions-conflict-after-being-combined",
+      "ontology_slug": "permissions-conflict-after-being-combined",
+      "code": "ISS-0016",
+      "title": "Permissions Conflict After Being Combined",
+      "summary": "Permissions, approvals, roles, policies, or authority rules that seem valid separately conflict when combined in the same workflow or AI action.",
+      "url": "/workbench/issues/permissions-conflict-after-being-combined/",
+      "category": "permissions-and-approvals",
+      "category_title": "Permissions & Approvals",
+      "primary_cat_code": "CAT-0050",
+      "secondary_cat_codes": [
+        "CAT-0060"
+      ],
+      "primary_pattern": "authority-collision",
+      "patterns": [
+        "authority-collision",
+        "authority-merge-conflict",
+        "authority-shadowing"
+      ],
+      "lenses": {
+        "primary": [
+          "authority-overlay-lens",
+          "conflict-lens",
+          "reconciliation-lens"
+        ],
+        "secondary": [
+          "invariant-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "permissions conflict after being combined",
+        "AI permissions conflict",
+        "approvals conflict in workflow",
+        "combined rules create permission problem",
+        "roles conflict after merge",
+        "authority rules contradict each other"
+      ],
+      "text": "AI permissions conflict CAT-0050 CAT-0060 ISS-0016 Permissions & Approvals Permissions Conflict After Being Combined Permissions, approvals, roles, policies, or authority rules that seem valid separately conflict when combined in the same workflow or AI action. approvals conflict in workflow authority rules contradict each other authority-collision authority-merge-conflict authority-overlay-lens authority-shadowing combined rules create permission problem conflict-lens invariant-lens permissions conflict after being combined permissions-and-approvals reconciliation-lens roles conflict after merge"
     },
     {
       "type": "issue",
@@ -436,6 +654,48 @@
     },
     {
       "type": "issue",
+      "slug": "task-has-no-clear-limit",
+      "ontology_slug": "task-has-no-clear-limit",
+      "code": "ISS-0011",
+      "title": "Task Has No Clear Limit",
+      "summary": "The task does not declare where the AI should stop, what is out of scope, or what counts as enough work.",
+      "url": "/workbench/issues/task-has-no-clear-limit/",
+      "category": "scope-and-boundaries",
+      "category_title": "Scope & Boundaries",
+      "primary_cat_code": "CAT-0100",
+      "secondary_cat_codes": [],
+      "primary_pattern": "unbounded-scope",
+      "patterns": [
+        "unbounded-scope",
+        "constraints-underspecified",
+        "incomplete-declaration"
+      ],
+      "lenses": {
+        "primary": [
+          "absence-lens",
+          "constraint-sufficiency-lens",
+          "isolation-boundary-lens"
+        ],
+        "secondary": [
+          "determinism-lens",
+          "escalation-gradient-lens",
+          "interface-contract-lens",
+          "variance-entropy-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "task has no clear limit",
+        "AI does not know where to stop",
+        "prompt has no stopping point",
+        "task scope is too open",
+        "AI keeps going because limits are unclear",
+        "no done condition in prompt"
+      ],
+      "text": "AI does not know where to stop AI keeps going because limits are unclear CAT-0100 ISS-0011 Scope & Boundaries Task Has No Clear Limit The task does not declare where the AI should stop, what is out of scope, or what counts as enough work. absence-lens constraint-sufficiency-lens constraints-underspecified determinism-lens escalation-gradient-lens incomplete-declaration interface-contract-lens isolation-boundary-lens no done condition in prompt prompt has no stopping point scope-and-boundaries task has no clear limit task scope is too open unbounded-scope variance-entropy-lens"
+    },
+    {
+      "type": "issue",
       "slug": "tool-call-contract-mismatch",
       "ontology_slug": "tool-call-contract-mismatch",
       "code": "ISS-0017",
@@ -526,6 +786,50 @@
       "text": "A validation, grading, review, classification, or pass/fail result changes after retry even though the input and declared validation rules did not change. AI grader changes after retry AI validation changes each time CAT-0010 CAT-0090 ISS-0006 Inconsistent Behavior Validation Result Changes on Retry compression-lens conflict-lens convergence-lens determinism-lens divergent-outputs inconsistent-behavior interface-contract-lens invariant-lens non-deterministic-execution reference-stability-lens review result is inconsistent same input gets different pass fail result schema-breakage validation output is not stable validation result changes on retry variance-entropy-lens"
     },
     {
+      "type": "issue",
+      "slug": "workflow-step-has-no-decision-owner",
+      "ontology_slug": "workflow-step-has-no-decision-owner",
+      "code": "ISS-0013",
+      "title": "Workflow Step Has No Decision Owner",
+      "summary": "A workflow step requires a decision, approval, judgment, or routing choice, but no owner is declared for making it.",
+      "url": "/workbench/issues/workflow-step-has-no-decision-owner/",
+      "category": "workflow-and-handoffs",
+      "category_title": "Workflow & Handoffs",
+      "primary_cat_code": "CAT-0070",
+      "secondary_cat_codes": [
+        "CAT-0050"
+      ],
+      "primary_pattern": "missing-authority",
+      "patterns": [
+        "missing-authority",
+        "orphaned-structure",
+        "incomplete-declaration"
+      ],
+      "lenses": {
+        "primary": [
+          "absence-lens",
+          "authority-overlay-lens",
+          "constraint-sufficiency-lens"
+        ],
+        "secondary": [
+          "conflict-lens",
+          "interface-contract-lens",
+          "propagation-lens",
+          "reconciliation-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "workflow step has no decision owner",
+        "no one owns the workflow decision",
+        "AI workflow has no approver",
+        "handoff has no decision owner",
+        "workflow step needs approval but owner missing",
+        "unclear who decides next step"
+      ],
+      "text": "A workflow step requires a decision, approval, judgment, or routing choice, but no owner is declared for making it. AI workflow has no approver CAT-0050 CAT-0070 ISS-0013 Workflow & Handoffs Workflow Step Has No Decision Owner absence-lens authority-overlay-lens conflict-lens constraint-sufficiency-lens handoff has no decision owner incomplete-declaration interface-contract-lens missing-authority no one owns the workflow decision orphaned-structure propagation-lens reconciliation-lens unclear who decides next step workflow step has no decision owner workflow step needs approval but owner missing workflow-and-handoffs"
+    },
+    {
       "type": "ai_adj_issue",
       "slug": "ai-works-in-one-environment-not-another",
       "ontology_slug": "ai-works-in-one-environment-not-another",
@@ -592,8 +896,8 @@
         "ontology_slug": "agents",
         "code": "CAT-0030",
         "title": "Agents",
-        "count": 2,
-        "primary_count": 1,
+        "count": 3,
+        "primary_count": 2,
         "secondary_count": 1
       },
       {
@@ -664,8 +968,8 @@
         "ontology_slug": "output",
         "code": "CAT-0010",
         "title": "Output",
-        "count": 6,
-        "primary_count": 3,
+        "count": 7,
+        "primary_count": 4,
         "secondary_count": 3
       },
       {
@@ -673,27 +977,27 @@
         "ontology_slug": "permissions-and-approvals",
         "code": "CAT-0050",
         "title": "Permissions & Approvals",
-        "count": 1,
-        "primary_count": 1,
-        "secondary_count": 0
+        "count": 5,
+        "primary_count": 4,
+        "secondary_count": 1
       },
       {
         "slug": "rules-and-policies",
         "ontology_slug": "rules-and-policies",
         "code": "CAT-0060",
         "title": "Rules & Policies",
-        "count": 0,
+        "count": 2,
         "primary_count": 0,
-        "secondary_count": 0
+        "secondary_count": 2
       },
       {
         "slug": "scope-and-boundaries",
         "ontology_slug": "scope-and-boundaries",
         "code": "CAT-0100",
         "title": "Scope & Boundaries",
-        "count": 1,
-        "primary_count": 0,
-        "secondary_count": 1
+        "count": 4,
+        "primary_count": 1,
+        "secondary_count": 3
       },
       {
         "slug": "spread-and-escalation",
@@ -709,9 +1013,9 @@
         "ontology_slug": "workflow-and-handoffs",
         "code": "CAT-0070",
         "title": "Workflow & Handoffs",
-        "count": 0,
-        "primary_count": 0,
-        "secondary_count": 0
+        "count": 2,
+        "primary_count": 1,
+        "secondary_count": 1
       }
     ],
     "patterns": [
@@ -727,28 +1031,28 @@
         "ontology_slug": "authority-collision",
         "code": "PAT-0100",
         "title": "Authority Collision",
-        "count": 0
+        "count": 1
       },
       {
         "slug": "authority-merge-conflict",
         "ontology_slug": "authority-merge-conflict",
         "code": "PAT-0220",
         "title": "Authority Merge Conflict",
-        "count": 0
+        "count": 1
       },
       {
         "slug": "authority-shadowing",
         "ontology_slug": "authority-shadowing",
         "code": "PAT-0230",
         "title": "Authority Shadowing",
-        "count": 0
+        "count": 1
       },
       {
         "slug": "authority-state-mismatch",
         "ontology_slug": "authority-state-mismatch",
         "code": "PAT-0240",
         "title": "Authority-State Mismatch",
-        "count": 2
+        "count": 3
       },
       {
         "slug": "boundary-leakage",
@@ -762,21 +1066,21 @@
         "ontology_slug": "circular-dependency",
         "code": "PAT-0250",
         "title": "Circular Dependency",
-        "count": 0
+        "count": 1
       },
       {
         "slug": "compatibility-violation",
         "ontology_slug": "compatibility-violation",
         "code": "PAT-0180",
         "title": "Compatibility Violation",
-        "count": 3
+        "count": 4
       },
       {
         "slug": "constraints-underspecified",
         "ontology_slug": "constraints-underspecified",
         "code": "PAT-0170",
         "title": "Constraints Underspecified",
-        "count": 3
+        "count": 5
       },
       {
         "slug": "contract-drift",
@@ -804,7 +1108,7 @@
         "ontology_slug": "density-spike",
         "code": "PAT-0270",
         "title": "Density Spike",
-        "count": 0
+        "count": 1
       },
       {
         "slug": "density-vacuum",
@@ -832,7 +1136,7 @@
         "ontology_slug": "incomplete-declaration",
         "code": "PAT-0130",
         "title": "Incomplete Declaration",
-        "count": 1
+        "count": 4
       },
       {
         "slug": "interface-mismatch",
@@ -853,7 +1157,7 @@
         "ontology_slug": "missing-authority",
         "code": "PAT-0120",
         "title": "Missing Authority",
-        "count": 1
+        "count": 4
       },
       {
         "slug": "non-deterministic-execution",
@@ -867,7 +1171,7 @@
         "ontology_slug": "orphaned-structure",
         "code": "PAT-0310",
         "title": "Orphaned Structure",
-        "count": 0
+        "count": 1
       },
       {
         "slug": "overreach",
@@ -930,7 +1234,7 @@
         "ontology_slug": "unbounded-scope",
         "code": "PAT-0400",
         "title": "Unbounded Scope",
-        "count": 0
+        "count": 3
       },
       {
         "slug": "unconstrained-expansion",
@@ -944,7 +1248,7 @@
         "ontology_slug": "undeclared-side-effect",
         "code": "PAT-0420",
         "title": "Undeclared Side Effect",
-        "count": 0
+        "count": 2
       }
     ],
     "lenses": [
@@ -953,112 +1257,112 @@
         "ontology_slug": "absence-lens",
         "code": "LEN-0100",
         "title": "Absence Lens",
-        "count": 2
+        "count": 6
       },
       {
         "slug": "authority-overlay-lens",
         "ontology_slug": "authority-overlay-lens",
         "code": "LEN-0110",
         "title": "Authority Overlay Lens",
-        "count": 1
+        "count": 5
       },
       {
         "slug": "boundary-compliance-lens",
         "ontology_slug": "boundary-compliance-lens",
         "code": "LEN-0120",
         "title": "Boundary Compliance Lens",
-        "count": 5
+        "count": 6
       },
       {
         "slug": "compatibility-envelope-lens",
         "ontology_slug": "compatibility-envelope-lens",
         "code": "LEN-0130",
         "title": "Compatibility Envelope Lens",
-        "count": 3
+        "count": 4
       },
       {
         "slug": "compression-lens",
         "ontology_slug": "compression-lens",
         "code": "LEN-0140",
         "title": "Compression Lens",
-        "count": 5
+        "count": 6
       },
       {
         "slug": "conflict-lens",
         "ontology_slug": "conflict-lens",
         "code": "LEN-0150",
         "title": "Conflict Lens",
-        "count": 4
+        "count": 8
       },
       {
         "slug": "constraint-sufficiency-lens",
         "ontology_slug": "constraint-sufficiency-lens",
         "code": "LEN-0160",
         "title": "Constraint Sufficiency Lens",
-        "count": 4
+        "count": 9
       },
       {
         "slug": "convergence-lens",
         "ontology_slug": "convergence-lens",
         "code": "LEN-0170",
         "title": "Convergence Lens",
-        "count": 7
+        "count": 8
       },
       {
         "slug": "determinism-lens",
         "ontology_slug": "determinism-lens",
         "code": "LEN-0180",
         "title": "Determinism Lens",
-        "count": 9
+        "count": 11
       },
       {
         "slug": "escalation-gradient-lens",
         "ontology_slug": "escalation-gradient-lens",
         "code": "LEN-0190",
         "title": "Escalation Gradient Lens",
-        "count": 2
+        "count": 5
       },
       {
         "slug": "interface-contract-lens",
         "ontology_slug": "interface-contract-lens",
         "code": "LEN-0200",
         "title": "Interface Contract Lens",
-        "count": 5
+        "count": 8
       },
       {
         "slug": "invariant-lens",
         "ontology_slug": "invariant-lens",
         "code": "LEN-0210",
         "title": "Invariant Lens",
-        "count": 3
+        "count": 4
       },
       {
         "slug": "isolation-boundary-lens",
         "ontology_slug": "isolation-boundary-lens",
         "code": "LEN-0220",
         "title": "Isolation Boundary Lens",
-        "count": 0
+        "count": 4
       },
       {
         "slug": "normalization-lens",
         "ontology_slug": "normalization-lens",
         "code": "LEN-0230",
         "title": "Normalization Lens",
-        "count": 3
+        "count": 4
       },
       {
         "slug": "overreach-lens",
         "ontology_slug": "overreach-lens",
         "code": "LEN-0240",
         "title": "Overreach Lens",
-        "count": 2
+        "count": 3
       },
       {
         "slug": "propagation-lens",
         "ontology_slug": "propagation-lens",
         "code": "LEN-0250",
         "title": "Propagation Lens",
-        "count": 3
+        "count": 6
       },
       {
         "slug": "provenance-trace-lens",
@@ -1072,21 +1376,21 @@
         "ontology_slug": "reconciliation-lens",
         "code": "LEN-0270",
         "title": "Reconciliation Lens",
-        "count": 5
+        "count": 9
       },
       {
         "slug": "reference-stability-lens",
         "ontology_slug": "reference-stability-lens",
         "code": "LEN-0280",
         "title": "Reference Stability Lens",
-        "count": 9
+        "count": 10
       },
       {
         "slug": "variance-entropy-lens",
         "ontology_slug": "variance-entropy-lens",
         "code": "LEN-0290",
         "title": "Variance / Entropy Lens",
-        "count": 7
+        "count": 9
       }
     ]
   }
