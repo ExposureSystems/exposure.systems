@@ -94,6 +94,92 @@
     },
     {
       "type": "issue",
+      "slug": "answer-has-no-traceable-source-link",
+      "ontology_slug": "answer-has-no-traceable-source-link",
+      "code": "ISS-0002",
+      "title": "Answer Has No Traceable Source Link",
+      "summary": "The answer makes a claim, recommendation, citation, or factual statement without a source link or trace path that allows the user to verify where it came from.",
+      "url": "/workbench/issues/answer-has-no-traceable-source-link/",
+      "category": "output",
+      "category_title": "Output",
+      "primary_cat_code": "CAT-0010",
+      "secondary_cat_codes": [
+        "CAT-0120"
+      ],
+      "primary_pattern": "incomplete-declaration",
+      "patterns": [
+        "incomplete-declaration",
+        "reference-instability",
+        "density-vacuum"
+      ],
+      "lenses": {
+        "primary": [
+          "absence-lens",
+          "compression-lens",
+          "constraint-sufficiency-lens",
+          "reference-stability-lens"
+        ],
+        "secondary": [
+          "determinism-lens",
+          "interface-contract-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "answer has no traceable source link",
+        "AI answer has no source",
+        "AI gave claim without citation",
+        "cannot verify where answer came from",
+        "missing source link in AI response",
+        "answer has no evidence trail"
+      ],
+      "text": "AI answer has no source AI gave claim without citation Answer Has No Traceable Source Link CAT-0010 CAT-0120 ISS-0002 Output The answer makes a claim, recommendation, citation, or factual statement without a source link or trace path that allows the user to verify where it came from. absence-lens answer has no evidence trail answer has no traceable source link cannot verify where answer came from compression-lens constraint-sufficiency-lens density-vacuum determinism-lens incomplete-declaration interface-contract-lens missing source link in AI response output reference-instability reference-stability-lens"
+    },
+    {
+      "type": "issue",
+      "slug": "citation-points-to-wrong-source",
+      "ontology_slug": "citation-points-to-wrong-source",
+      "code": "ISS-0003",
+      "title": "Citation Points to Wrong Source",
+      "summary": "A citation, reference, link, or source pointer is present, but it points to the wrong source, wrong passage, wrong document, or unsupported evidence.",
+      "url": "/workbench/issues/citation-points-to-wrong-source/",
+      "category": "output",
+      "category_title": "Output",
+      "primary_cat_code": "CAT-0010",
+      "secondary_cat_codes": [
+        "CAT-0120"
+      ],
+      "primary_pattern": "reference-instability",
+      "patterns": [
+        "reference-instability",
+        "interface-mismatch",
+        "compatibility-violation"
+      ],
+      "lenses": {
+        "primary": [
+          "compatibility-envelope-lens",
+          "interface-contract-lens",
+          "reference-stability-lens"
+        ],
+        "secondary": [
+          "boundary-compliance-lens",
+          "determinism-lens",
+          "normalization-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "citation points to wrong source",
+        "AI citation is wrong",
+        "source does not support the answer",
+        "citation link goes to wrong document",
+        "AI cited the wrong passage",
+        "reference points to unrelated source"
+      ],
+      "text": "A citation, reference, link, or source pointer is present, but it points to the wrong source, wrong passage, wrong document, or unsupported evidence. AI citation is wrong AI cited the wrong passage CAT-0010 CAT-0120 Citation Points to Wrong Source ISS-0003 Output boundary-compliance-lens citation link goes to wrong document citation points to wrong source compatibility-envelope-lens compatibility-violation determinism-lens interface-contract-lens interface-mismatch normalization-lens output reference points to unrelated source reference-instability reference-stability-lens source does not support the answer"
+    },
+    {
+      "type": "issue",
       "slug": "invalid-json-output",
       "ontology_slug": "invalid-json-output",
       "code": "ISS-0021",
@@ -182,6 +268,174 @@
     },
     {
       "type": "issue",
+      "slug": "prompt-only-works-after-retry",
+      "ontology_slug": "prompt-only-works-after-retry",
+      "code": "ISS-0005",
+      "title": "Prompt Only Works After Retry",
+      "summary": "The prompt fails, misroutes, or produces an unusable response on one attempt but works after retry without a meaningful change to the input.",
+      "url": "/workbench/issues/prompt-only-works-after-retry/",
+      "category": "inconsistent-behavior",
+      "category_title": "Inconsistent Behavior",
+      "primary_cat_code": "CAT-0090",
+      "secondary_cat_codes": [],
+      "primary_pattern": "non-deterministic-execution",
+      "patterns": [
+        "non-deterministic-execution",
+        "divergent-outputs",
+        "constraints-underspecified"
+      ],
+      "lenses": {
+        "primary": [
+          "constraint-sufficiency-lens",
+          "convergence-lens",
+          "determinism-lens",
+          "variance-entropy-lens"
+        ],
+        "secondary": [
+          "compression-lens",
+          "reference-stability-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "prompt only works after retry",
+        "AI only works when I try again",
+        "same prompt works on second try",
+        "retry fixes AI answer",
+        "prompt fails randomly",
+        "AI response changes after retry"
+      ],
+      "text": "AI only works when I try again AI response changes after retry CAT-0090 ISS-0005 Inconsistent Behavior Prompt Only Works After Retry The prompt fails, misroutes, or produces an unusable response on one attempt but works after retry without a meaningful change to the input. compression-lens constraint-sufficiency-lens constraints-underspecified convergence-lens determinism-lens divergent-outputs inconsistent-behavior non-deterministic-execution prompt fails randomly prompt only works after retry reference-stability-lens retry fixes AI answer same prompt works on second try variance-entropy-lens"
+    },
+    {
+      "type": "issue",
+      "slug": "retry-makes-the-problem-worse",
+      "ontology_slug": "retry-makes-the-problem-worse",
+      "code": "ISS-0007",
+      "title": "Retry Makes the Problem Worse",
+      "summary": "A retry, repair attempt, regeneration, or follow-up instruction increases the error, expands the failure, or creates additional breakage instead of narrowing the problem.",
+      "url": "/workbench/issues/retry-makes-the-problem-worse/",
+      "category": "spread-and-escalation",
+      "category_title": "Spread & Escalation",
+      "primary_cat_code": "CAT-0110",
+      "secondary_cat_codes": [
+        "CAT-0090"
+      ],
+      "primary_pattern": "escalation-growth",
+      "patterns": [
+        "escalation-growth",
+        "propagation-amplification",
+        "silent-mutation"
+      ],
+      "lenses": {
+        "primary": [
+          "determinism-lens",
+          "escalation-gradient-lens",
+          "propagation-lens",
+          "reference-stability-lens",
+          "variance-entropy-lens"
+        ],
+        "secondary": [
+          "provenance-trace-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "retry makes the problem worse",
+        "AI gets worse after retry",
+        "regeneration created more errors",
+        "fix attempt broke more things",
+        "retry expanded the problem",
+        "AI repair made new mistakes"
+      ],
+      "text": "A retry, repair attempt, regeneration, or follow-up instruction increases the error, expands the failure, or creates additional breakage instead of narrowing the problem. AI gets worse after retry AI repair made new mistakes CAT-0090 CAT-0110 ISS-0007 Retry Makes the Problem Worse Spread & Escalation determinism-lens escalation-gradient-lens escalation-growth fix attempt broke more things propagation-amplification propagation-lens provenance-trace-lens reference-stability-lens regeneration created more errors retry expanded the problem retry makes the problem worse silent-mutation spread-and-escalation variance-entropy-lens"
+    },
+    {
+      "type": "issue",
+      "slug": "saved-reference-no-longer-works",
+      "ontology_slug": "saved-reference-no-longer-works",
+      "code": "ISS-0004",
+      "title": "Saved Reference No Longer Works",
+      "summary": "A saved source, citation, file reference, prompt reference, or workflow pointer previously worked but no longer resolves to the expected object or meaning.",
+      "url": "/workbench/issues/saved-reference-no-longer-works/",
+      "category": "changes-and-versions",
+      "category_title": "Changes & Versions",
+      "primary_cat_code": "CAT-0080",
+      "secondary_cat_codes": [
+        "CAT-0010"
+      ],
+      "primary_pattern": "reference-instability",
+      "patterns": [
+        "reference-instability",
+        "contract-drift",
+        "compatibility-violation"
+      ],
+      "lenses": {
+        "primary": [
+          "compatibility-envelope-lens",
+          "convergence-lens",
+          "reconciliation-lens",
+          "reference-stability-lens"
+        ],
+        "secondary": [
+          "boundary-compliance-lens",
+          "determinism-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "saved reference no longer works",
+        "old AI citation link broke",
+        "saved source link stopped working",
+        "previous reference cannot be opened",
+        "reference worked before but not now",
+        "saved prompt reference changed"
+      ],
+      "text": "A saved source, citation, file reference, prompt reference, or workflow pointer previously worked but no longer resolves to the expected object or meaning. CAT-0010 CAT-0080 Changes & Versions ISS-0004 Saved Reference No Longer Works boundary-compliance-lens changes-and-versions compatibility-envelope-lens compatibility-violation contract-drift convergence-lens determinism-lens old AI citation link broke previous reference cannot be opened reconciliation-lens reference worked before but not now reference-instability reference-stability-lens saved prompt reference changed saved reference no longer works saved source link stopped working"
+    },
+    {
+      "type": "issue",
+      "slug": "similar-cases-route-to-different-outcomes",
+      "ontology_slug": "similar-cases-route-to-different-outcomes",
+      "code": "ISS-0001",
+      "title": "Similar Cases Route to Different Outcomes",
+      "summary": "Similar inputs, cases, prompts, or workflow states are routed to different outcomes without a declared difference that explains the split.",
+      "url": "/workbench/issues/similar-cases-route-to-different-outcomes/",
+      "category": "inconsistent-behavior",
+      "category_title": "Inconsistent Behavior",
+      "primary_cat_code": "CAT-0090",
+      "secondary_cat_codes": [],
+      "primary_pattern": "non-deterministic-execution",
+      "patterns": [
+        "non-deterministic-execution",
+        "divergent-outputs",
+        "authority-state-mismatch"
+      ],
+      "lenses": {
+        "primary": [
+          "convergence-lens",
+          "determinism-lens",
+          "reconciliation-lens",
+          "variance-entropy-lens"
+        ],
+        "secondary": [
+          "compression-lens",
+          "reference-stability-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "similar cases route to different outcomes",
+        "same case gets different result",
+        "AI routes similar requests differently",
+        "similar prompts produce different decisions",
+        "same workflow state gets different outcome",
+        "AI decision path is inconsistent"
+      ],
+      "text": "AI decision path is inconsistent AI routes similar requests differently CAT-0090 ISS-0001 Inconsistent Behavior Similar Cases Route to Different Outcomes Similar inputs, cases, prompts, or workflow states are routed to different outcomes without a declared difference that explains the split. authority-state-mismatch compression-lens convergence-lens determinism-lens divergent-outputs inconsistent-behavior non-deterministic-execution reconciliation-lens reference-stability-lens same case gets different result same workflow state gets different outcome similar cases route to different outcomes similar prompts produce different decisions variance-entropy-lens"
+    },
+    {
+      "type": "issue",
       "slug": "tool-call-contract-mismatch",
       "ontology_slug": "tool-call-contract-mismatch",
       "code": "ISS-0017",
@@ -225,6 +479,51 @@
         "tool choice is underspecified"
       ],
       "text": "AI called tool with wrong schema AI tool call wrong arguments CAT-0010 CAT-0040 ISS-0017 MCP, Tools & Integrations The AI or agent calls a tool with names, arguments, types, modes, or shapes that do not match the declared tool interface. Tool Call Contract Mismatch agent used wrong tool parameters boundary-compliance-lens compatibility-envelope-lens compatibility-violation conflict-lens function call invalid arguments interface-contract-lens interface-mismatch invariant-lens mcp-tools-and-integrations normalization-lens runtime-behavior-does-not-match-docs schema-breakage tool call contract mismatch tool choice is underspecified tool-not-supported-in-this-mode"
+    },
+    {
+      "type": "issue",
+      "slug": "validation-result-changes-on-retry",
+      "ontology_slug": "validation-result-changes-on-retry",
+      "code": "ISS-0006",
+      "title": "Validation Result Changes on Retry",
+      "summary": "A validation, grading, review, classification, or pass/fail result changes after retry even though the input and declared validation rules did not change.",
+      "url": "/workbench/issues/validation-result-changes-on-retry/",
+      "category": "inconsistent-behavior",
+      "category_title": "Inconsistent Behavior",
+      "primary_cat_code": "CAT-0090",
+      "secondary_cat_codes": [
+        "CAT-0010"
+      ],
+      "primary_pattern": "non-deterministic-execution",
+      "patterns": [
+        "non-deterministic-execution",
+        "divergent-outputs",
+        "schema-breakage"
+      ],
+      "lenses": {
+        "primary": [
+          "convergence-lens",
+          "determinism-lens",
+          "interface-contract-lens",
+          "invariant-lens",
+          "variance-entropy-lens"
+        ],
+        "secondary": [
+          "compression-lens",
+          "conflict-lens",
+          "reference-stability-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "validation result changes on retry",
+        "AI validation changes each time",
+        "same input gets different pass fail result",
+        "AI grader changes after retry",
+        "review result is inconsistent",
+        "validation output is not stable"
+      ],
+      "text": "A validation, grading, review, classification, or pass/fail result changes after retry even though the input and declared validation rules did not change. AI grader changes after retry AI validation changes each time CAT-0010 CAT-0090 ISS-0006 Inconsistent Behavior Validation Result Changes on Retry compression-lens conflict-lens convergence-lens determinism-lens divergent-outputs inconsistent-behavior interface-contract-lens invariant-lens non-deterministic-execution reference-stability-lens review result is inconsistent same input gets different pass fail result schema-breakage validation output is not stable validation result changes on retry variance-entropy-lens"
     },
     {
       "type": "ai_adj_issue",
@@ -302,8 +601,8 @@
         "ontology_slug": "changes-and-versions",
         "code": "CAT-0080",
         "title": "Changes & Versions",
-        "count": 0,
-        "primary_count": 0,
+        "count": 1,
+        "primary_count": 1,
         "secondary_count": 0
       },
       {
@@ -311,9 +610,9 @@
         "ontology_slug": "coverage-and-guidance",
         "code": "CAT-0120",
         "title": "Coverage & Guidance",
-        "count": 0,
+        "count": 2,
         "primary_count": 0,
-        "secondary_count": 0
+        "secondary_count": 2
       },
       {
         "slug": "duplication-and-overload",
@@ -329,9 +628,9 @@
         "ontology_slug": "inconsistent-behavior",
         "code": "CAT-0090",
         "title": "Inconsistent Behavior",
-        "count": 0,
-        "primary_count": 0,
-        "secondary_count": 0
+        "count": 4,
+        "primary_count": 3,
+        "secondary_count": 1
       },
       {
         "slug": "loops-and-resolution",
@@ -365,9 +664,9 @@
         "ontology_slug": "output",
         "code": "CAT-0010",
         "title": "Output",
-        "count": 2,
-        "primary_count": 1,
-        "secondary_count": 1
+        "count": 6,
+        "primary_count": 3,
+        "secondary_count": 3
       },
       {
         "slug": "permissions-and-approvals",
@@ -401,8 +700,8 @@
         "ontology_slug": "spread-and-escalation",
         "code": "CAT-0110",
         "title": "Spread & Escalation",
-        "count": 0,
-        "primary_count": 0,
+        "count": 1,
+        "primary_count": 1,
         "secondary_count": 0
       },
       {
@@ -449,7 +748,7 @@
         "ontology_slug": "authority-state-mismatch",
         "code": "PAT-0240",
         "title": "Authority-State Mismatch",
-        "count": 1
+        "count": 2
       },
       {
         "slug": "boundary-leakage",
@@ -470,21 +769,21 @@
         "ontology_slug": "compatibility-violation",
         "code": "PAT-0180",
         "title": "Compatibility Violation",
-        "count": 1
+        "count": 3
       },
       {
         "slug": "constraints-underspecified",
         "ontology_slug": "constraints-underspecified",
         "code": "PAT-0170",
         "title": "Constraints Underspecified",
-        "count": 2
+        "count": 3
       },
       {
         "slug": "contract-drift",
         "ontology_slug": "contract-drift",
         "code": "PAT-0190",
         "title": "Contract Drift",
-        "count": 1
+        "count": 2
       },
       {
         "slug": "convergence-failure",
@@ -512,35 +811,35 @@
         "ontology_slug": "density-vacuum",
         "code": "PAT-0280",
         "title": "Density Vacuum",
-        "count": 0
+        "count": 1
       },
       {
         "slug": "divergent-outputs",
         "ontology_slug": "divergent-outputs",
         "code": "PAT-0290",
         "title": "Divergent Outputs",
-        "count": 0
+        "count": 3
       },
       {
         "slug": "escalation-growth",
         "ontology_slug": "escalation-growth",
         "code": "PAT-0300",
         "title": "Escalation Growth",
-        "count": 0
+        "count": 1
       },
       {
         "slug": "incomplete-declaration",
         "ontology_slug": "incomplete-declaration",
         "code": "PAT-0130",
         "title": "Incomplete Declaration",
-        "count": 0
+        "count": 1
       },
       {
         "slug": "interface-mismatch",
         "ontology_slug": "interface-mismatch",
         "code": "PAT-0150",
         "title": "Interface Mismatch",
-        "count": 2
+        "count": 3
       },
       {
         "slug": "invariant-breakage",
@@ -561,7 +860,7 @@
         "ontology_slug": "non-deterministic-execution",
         "code": "PAT-0210",
         "title": "Non-Deterministic Execution",
-        "count": 0
+        "count": 3
       },
       {
         "slug": "orphaned-structure",
@@ -589,7 +888,7 @@
         "ontology_slug": "propagation-amplification",
         "code": "PAT-0360",
         "title": "Propagation Amplification",
-        "count": 0
+        "count": 1
       },
       {
         "slug": "redundant-declaration",
@@ -603,21 +902,21 @@
         "ontology_slug": "reference-instability",
         "code": "PAT-0200",
         "title": "Reference Instability",
-        "count": 0
+        "count": 3
       },
       {
         "slug": "schema-breakage",
         "ontology_slug": "schema-breakage",
         "code": "PAT-0160",
         "title": "Schema Breakage",
-        "count": 2
+        "count": 3
       },
       {
         "slug": "silent-mutation",
         "ontology_slug": "silent-mutation",
         "code": "PAT-0380",
         "title": "Silent Mutation",
-        "count": 0
+        "count": 1
       },
       {
         "slug": "threshold-breach",
@@ -654,7 +953,7 @@
         "ontology_slug": "absence-lens",
         "code": "LEN-0100",
         "title": "Absence Lens",
-        "count": 1
+        "count": 2
       },
       {
         "slug": "authority-overlay-lens",
@@ -668,70 +967,70 @@
         "ontology_slug": "boundary-compliance-lens",
         "code": "LEN-0120",
         "title": "Boundary Compliance Lens",
-        "count": 3
+        "count": 5
       },
       {
         "slug": "compatibility-envelope-lens",
         "ontology_slug": "compatibility-envelope-lens",
         "code": "LEN-0130",
         "title": "Compatibility Envelope Lens",
-        "count": 1
+        "count": 3
       },
       {
         "slug": "compression-lens",
         "ontology_slug": "compression-lens",
         "code": "LEN-0140",
         "title": "Compression Lens",
-        "count": 1
+        "count": 5
       },
       {
         "slug": "conflict-lens",
         "ontology_slug": "conflict-lens",
         "code": "LEN-0150",
         "title": "Conflict Lens",
-        "count": 3
+        "count": 4
       },
       {
         "slug": "constraint-sufficiency-lens",
         "ontology_slug": "constraint-sufficiency-lens",
         "code": "LEN-0160",
         "title": "Constraint Sufficiency Lens",
-        "count": 2
+        "count": 4
       },
       {
         "slug": "convergence-lens",
         "ontology_slug": "convergence-lens",
         "code": "LEN-0170",
         "title": "Convergence Lens",
-        "count": 3
+        "count": 7
       },
       {
         "slug": "determinism-lens",
         "ontology_slug": "determinism-lens",
         "code": "LEN-0180",
         "title": "Determinism Lens",
-        "count": 2
+        "count": 9
       },
       {
         "slug": "escalation-gradient-lens",
         "ontology_slug": "escalation-gradient-lens",
         "code": "LEN-0190",
         "title": "Escalation Gradient Lens",
-        "count": 1
+        "count": 2
       },
       {
         "slug": "interface-contract-lens",
         "ontology_slug": "interface-contract-lens",
         "code": "LEN-0200",
         "title": "Interface Contract Lens",
-        "count": 2
+        "count": 5
       },
       {
         "slug": "invariant-lens",
         "ontology_slug": "invariant-lens",
         "code": "LEN-0210",
         "title": "Invariant Lens",
-        "count": 2
+        "count": 3
       },
       {
         "slug": "isolation-boundary-lens",
@@ -745,7 +1044,7 @@
         "ontology_slug": "normalization-lens",
         "code": "LEN-0230",
         "title": "Normalization Lens",
-        "count": 2
+        "count": 3
       },
       {
         "slug": "overreach-lens",
@@ -759,35 +1058,35 @@
         "ontology_slug": "propagation-lens",
         "code": "LEN-0250",
         "title": "Propagation Lens",
-        "count": 2
+        "count": 3
       },
       {
         "slug": "provenance-trace-lens",
         "ontology_slug": "provenance-trace-lens",
         "code": "LEN-0260",
         "title": "Provenance Trace Lens",
-        "count": 0
+        "count": 1
       },
       {
         "slug": "reconciliation-lens",
         "ontology_slug": "reconciliation-lens",
         "code": "LEN-0270",
         "title": "Reconciliation Lens",
-        "count": 3
+        "count": 5
       },
       {
         "slug": "reference-stability-lens",
         "ontology_slug": "reference-stability-lens",
         "code": "LEN-0280",
         "title": "Reference Stability Lens",
-        "count": 2
+        "count": 9
       },
       {
         "slug": "variance-entropy-lens",
         "ontology_slug": "variance-entropy-lens",
         "code": "LEN-0290",
         "title": "Variance / Entropy Lens",
-        "count": 3
+        "count": 7
       }
     ]
   }

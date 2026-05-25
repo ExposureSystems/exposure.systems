@@ -429,6 +429,96 @@
       "markdown_url": "/workbench/issues/ai-forgets-earlier-constraints.md"
     },
     {
+      "slug": "answer-has-no-traceable-source-link",
+      "ontology_slug": "answer-has-no-traceable-source-link",
+      "code": "ISS-0002",
+      "title": "Answer Has No Traceable Source Link",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "The answer makes a claim, recommendation, citation, or factual statement without a source link or trace path that allows the user to verify where it came from.",
+      "category": "output",
+      "category_title": "Output",
+      "primary_cat_code": "CAT-0010",
+      "secondary_cat_codes": [
+        "CAT-0120"
+      ],
+      "primary_pattern": "incomplete-declaration",
+      "patterns": [
+        "incomplete-declaration",
+        "reference-instability",
+        "density-vacuum"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "absence-lens",
+          "compression-lens",
+          "constraint-sufficiency-lens",
+          "reference-stability-lens"
+        ],
+        "secondary": [
+          "determinism-lens",
+          "interface-contract-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "answer has no traceable source link",
+        "AI answer has no source",
+        "AI gave claim without citation",
+        "cannot verify where answer came from",
+        "missing source link in AI response",
+        "answer has no evidence trail"
+      ],
+      "url": "/workbench/issues/answer-has-no-traceable-source-link/",
+      "markdown_url": "/workbench/issues/answer-has-no-traceable-source-link.md"
+    },
+    {
+      "slug": "citation-points-to-wrong-source",
+      "ontology_slug": "citation-points-to-wrong-source",
+      "code": "ISS-0003",
+      "title": "Citation Points to Wrong Source",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "A citation, reference, link, or source pointer is present, but it points to the wrong source, wrong passage, wrong document, or unsupported evidence.",
+      "category": "output",
+      "category_title": "Output",
+      "primary_cat_code": "CAT-0010",
+      "secondary_cat_codes": [
+        "CAT-0120"
+      ],
+      "primary_pattern": "reference-instability",
+      "patterns": [
+        "reference-instability",
+        "interface-mismatch",
+        "compatibility-violation"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "compatibility-envelope-lens",
+          "interface-contract-lens",
+          "reference-stability-lens"
+        ],
+        "secondary": [
+          "boundary-compliance-lens",
+          "determinism-lens",
+          "normalization-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "citation points to wrong source",
+        "AI citation is wrong",
+        "source does not support the answer",
+        "citation link goes to wrong document",
+        "AI cited the wrong passage",
+        "reference points to unrelated source"
+      ],
+      "url": "/workbench/issues/citation-points-to-wrong-source/",
+      "markdown_url": "/workbench/issues/citation-points-to-wrong-source.md"
+    },
+    {
       "slug": "invalid-json-output",
       "ontology_slug": "invalid-json-output",
       "code": "ISS-0021",
@@ -521,6 +611,182 @@
       "markdown_url": "/workbench/issues/no-owner-for-agent-action.md"
     },
     {
+      "slug": "prompt-only-works-after-retry",
+      "ontology_slug": "prompt-only-works-after-retry",
+      "code": "ISS-0005",
+      "title": "Prompt Only Works After Retry",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "The prompt fails, misroutes, or produces an unusable response on one attempt but works after retry without a meaningful change to the input.",
+      "category": "inconsistent-behavior",
+      "category_title": "Inconsistent Behavior",
+      "primary_cat_code": "CAT-0090",
+      "secondary_cat_codes": [],
+      "primary_pattern": "non-deterministic-execution",
+      "patterns": [
+        "non-deterministic-execution",
+        "divergent-outputs",
+        "constraints-underspecified"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "constraint-sufficiency-lens",
+          "convergence-lens",
+          "determinism-lens",
+          "variance-entropy-lens"
+        ],
+        "secondary": [
+          "compression-lens",
+          "reference-stability-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "prompt only works after retry",
+        "AI only works when I try again",
+        "same prompt works on second try",
+        "retry fixes AI answer",
+        "prompt fails randomly",
+        "AI response changes after retry"
+      ],
+      "url": "/workbench/issues/prompt-only-works-after-retry/",
+      "markdown_url": "/workbench/issues/prompt-only-works-after-retry.md"
+    },
+    {
+      "slug": "retry-makes-the-problem-worse",
+      "ontology_slug": "retry-makes-the-problem-worse",
+      "code": "ISS-0007",
+      "title": "Retry Makes the Problem Worse",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "A retry, repair attempt, regeneration, or follow-up instruction increases the error, expands the failure, or creates additional breakage instead of narrowing the problem.",
+      "category": "spread-and-escalation",
+      "category_title": "Spread & Escalation",
+      "primary_cat_code": "CAT-0110",
+      "secondary_cat_codes": [
+        "CAT-0090"
+      ],
+      "primary_pattern": "escalation-growth",
+      "patterns": [
+        "escalation-growth",
+        "propagation-amplification",
+        "silent-mutation"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "determinism-lens",
+          "escalation-gradient-lens",
+          "propagation-lens",
+          "reference-stability-lens",
+          "variance-entropy-lens"
+        ],
+        "secondary": [
+          "provenance-trace-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "retry makes the problem worse",
+        "AI gets worse after retry",
+        "regeneration created more errors",
+        "fix attempt broke more things",
+        "retry expanded the problem",
+        "AI repair made new mistakes"
+      ],
+      "url": "/workbench/issues/retry-makes-the-problem-worse/",
+      "markdown_url": "/workbench/issues/retry-makes-the-problem-worse.md"
+    },
+    {
+      "slug": "saved-reference-no-longer-works",
+      "ontology_slug": "saved-reference-no-longer-works",
+      "code": "ISS-0004",
+      "title": "Saved Reference No Longer Works",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "A saved source, citation, file reference, prompt reference, or workflow pointer previously worked but no longer resolves to the expected object or meaning.",
+      "category": "changes-and-versions",
+      "category_title": "Changes & Versions",
+      "primary_cat_code": "CAT-0080",
+      "secondary_cat_codes": [
+        "CAT-0010"
+      ],
+      "primary_pattern": "reference-instability",
+      "patterns": [
+        "reference-instability",
+        "contract-drift",
+        "compatibility-violation"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "compatibility-envelope-lens",
+          "convergence-lens",
+          "reconciliation-lens",
+          "reference-stability-lens"
+        ],
+        "secondary": [
+          "boundary-compliance-lens",
+          "determinism-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "saved reference no longer works",
+        "old AI citation link broke",
+        "saved source link stopped working",
+        "previous reference cannot be opened",
+        "reference worked before but not now",
+        "saved prompt reference changed"
+      ],
+      "url": "/workbench/issues/saved-reference-no-longer-works/",
+      "markdown_url": "/workbench/issues/saved-reference-no-longer-works.md"
+    },
+    {
+      "slug": "similar-cases-route-to-different-outcomes",
+      "ontology_slug": "similar-cases-route-to-different-outcomes",
+      "code": "ISS-0001",
+      "title": "Similar Cases Route to Different Outcomes",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "Similar inputs, cases, prompts, or workflow states are routed to different outcomes without a declared difference that explains the split.",
+      "category": "inconsistent-behavior",
+      "category_title": "Inconsistent Behavior",
+      "primary_cat_code": "CAT-0090",
+      "secondary_cat_codes": [],
+      "primary_pattern": "non-deterministic-execution",
+      "patterns": [
+        "non-deterministic-execution",
+        "divergent-outputs",
+        "authority-state-mismatch"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "convergence-lens",
+          "determinism-lens",
+          "reconciliation-lens",
+          "variance-entropy-lens"
+        ],
+        "secondary": [
+          "compression-lens",
+          "reference-stability-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "similar cases route to different outcomes",
+        "same case gets different result",
+        "AI routes similar requests differently",
+        "similar prompts produce different decisions",
+        "same workflow state gets different outcome",
+        "AI decision path is inconsistent"
+      ],
+      "url": "/workbench/issues/similar-cases-route-to-different-outcomes/",
+      "markdown_url": "/workbench/issues/similar-cases-route-to-different-outcomes.md"
+    },
+    {
       "slug": "tool-call-contract-mismatch",
       "ontology_slug": "tool-call-contract-mismatch",
       "code": "ISS-0017",
@@ -567,6 +833,53 @@
       ],
       "url": "/workbench/issues/tool-call-contract-mismatch/",
       "markdown_url": "/workbench/issues/tool-call-contract-mismatch.md"
+    },
+    {
+      "slug": "validation-result-changes-on-retry",
+      "ontology_slug": "validation-result-changes-on-retry",
+      "code": "ISS-0006",
+      "title": "Validation Result Changes on Retry",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "A validation, grading, review, classification, or pass/fail result changes after retry even though the input and declared validation rules did not change.",
+      "category": "inconsistent-behavior",
+      "category_title": "Inconsistent Behavior",
+      "primary_cat_code": "CAT-0090",
+      "secondary_cat_codes": [
+        "CAT-0010"
+      ],
+      "primary_pattern": "non-deterministic-execution",
+      "patterns": [
+        "non-deterministic-execution",
+        "divergent-outputs",
+        "schema-breakage"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "convergence-lens",
+          "determinism-lens",
+          "interface-contract-lens",
+          "invariant-lens",
+          "variance-entropy-lens"
+        ],
+        "secondary": [
+          "compression-lens",
+          "conflict-lens",
+          "reference-stability-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "validation result changes on retry",
+        "AI validation changes each time",
+        "same input gets different pass fail result",
+        "AI grader changes after retry",
+        "review result is inconsistent",
+        "validation output is not stable"
+      ],
+      "url": "/workbench/issues/validation-result-changes-on-retry/",
+      "markdown_url": "/workbench/issues/validation-result-changes-on-retry.md"
     }
   ],
   "ai_adj_issues": [
@@ -759,7 +1072,8 @@
       "issues": {
         "primary": [],
         "supporting": [
-          "no-owner-for-agent-action"
+          "no-owner-for-agent-action",
+          "similar-cases-route-to-different-outcomes"
         ]
       },
       "url": "/workbench/patterns/authority-state-mismatch/",
@@ -835,6 +1149,8 @@
       "issues": {
         "primary": [],
         "supporting": [
+          "citation-points-to-wrong-source",
+          "saved-reference-no-longer-works",
           "tool-call-contract-mismatch"
         ]
       },
@@ -863,7 +1179,8 @@
         "primary": [],
         "supporting": [
           "ai-forgets-earlier-constraints",
-          "invalid-json-output"
+          "invalid-json-output",
+          "prompt-only-works-after-retry"
         ]
       },
       "url": "/workbench/patterns/constraints-underspecified/",
@@ -890,7 +1207,8 @@
       "issues": {
         "primary": [],
         "supporting": [
-          "ai-forgets-earlier-constraints"
+          "ai-forgets-earlier-constraints",
+          "saved-reference-no-longer-works"
         ]
       },
       "url": "/workbench/patterns/contract-drift/",
@@ -993,7 +1311,9 @@
       },
       "issues": {
         "primary": [],
-        "supporting": []
+        "supporting": [
+          "answer-has-no-traceable-source-link"
+        ]
       },
       "url": "/workbench/patterns/density-vacuum/",
       "markdown_url": "/workbench/patterns/density-vacuum.md"
@@ -1019,7 +1339,11 @@
       },
       "issues": {
         "primary": [],
-        "supporting": []
+        "supporting": [
+          "prompt-only-works-after-retry",
+          "similar-cases-route-to-different-outcomes",
+          "validation-result-changes-on-retry"
+        ]
       },
       "url": "/workbench/patterns/divergent-outputs/",
       "markdown_url": "/workbench/patterns/divergent-outputs.md"
@@ -1043,7 +1367,9 @@
         ]
       },
       "issues": {
-        "primary": [],
+        "primary": [
+          "retry-makes-the-problem-worse"
+        ],
         "supporting": []
       },
       "url": "/workbench/patterns/escalation-growth/",
@@ -1068,7 +1394,9 @@
         ]
       },
       "issues": {
-        "primary": [],
+        "primary": [
+          "answer-has-no-traceable-source-link"
+        ],
         "supporting": []
       },
       "url": "/workbench/patterns/incomplete-declaration/",
@@ -1096,6 +1424,7 @@
           "tool-call-contract-mismatch"
         ],
         "supporting": [
+          "citation-points-to-wrong-source",
           "invalid-json-output"
         ]
       },
@@ -1175,7 +1504,11 @@
         ]
       },
       "issues": {
-        "primary": [],
+        "primary": [
+          "prompt-only-works-after-retry",
+          "similar-cases-route-to-different-outcomes",
+          "validation-result-changes-on-retry"
+        ],
         "supporting": []
       },
       "url": "/workbench/patterns/non-deterministic-execution/",
@@ -1279,7 +1612,9 @@
       },
       "issues": {
         "primary": [],
-        "supporting": []
+        "supporting": [
+          "retry-makes-the-problem-worse"
+        ]
       },
       "url": "/workbench/patterns/propagation-amplification/",
       "markdown_url": "/workbench/patterns/propagation-amplification.md"
@@ -1327,8 +1662,13 @@
         ]
       },
       "issues": {
-        "primary": [],
-        "supporting": []
+        "primary": [
+          "citation-points-to-wrong-source",
+          "saved-reference-no-longer-works"
+        ],
+        "supporting": [
+          "answer-has-no-traceable-source-link"
+        ]
       },
       "url": "/workbench/patterns/reference-instability/",
       "markdown_url": "/workbench/patterns/reference-instability.md"
@@ -1356,7 +1696,8 @@
           "invalid-json-output"
         ],
         "supporting": [
-          "tool-call-contract-mismatch"
+          "tool-call-contract-mismatch",
+          "validation-result-changes-on-retry"
         ]
       },
       "url": "/workbench/patterns/schema-breakage/",
@@ -1382,7 +1723,9 @@
       },
       "issues": {
         "primary": [],
-        "supporting": []
+        "supporting": [
+          "retry-makes-the-problem-worse"
+        ]
       },
       "url": "/workbench/patterns/silent-mutation/",
       "markdown_url": "/workbench/patterns/silent-mutation.md"
@@ -1509,6 +1852,7 @@
         "secondary": []
       },
       "issues": [
+        "answer-has-no-traceable-source-link",
         "no-owner-for-agent-action"
       ],
       "url": "/workbench/lenses/absence-lens/",
@@ -1560,7 +1904,9 @@
       },
       "issues": [
         "agent-keeps-expanding-the-task",
+        "citation-points-to-wrong-source",
         "no-owner-for-agent-action",
+        "saved-reference-no-longer-works",
         "tool-call-contract-mismatch"
       ],
       "url": "/workbench/lenses/boundary-compliance-lens/",
@@ -1582,6 +1928,8 @@
         "secondary": []
       },
       "issues": [
+        "citation-points-to-wrong-source",
+        "saved-reference-no-longer-works",
         "tool-call-contract-mismatch"
       ],
       "url": "/workbench/lenses/compatibility-envelope-lens/",
@@ -1609,7 +1957,11 @@
         ]
       },
       "issues": [
-        "agent-keeps-expanding-the-task"
+        "agent-keeps-expanding-the-task",
+        "answer-has-no-traceable-source-link",
+        "prompt-only-works-after-retry",
+        "similar-cases-route-to-different-outcomes",
+        "validation-result-changes-on-retry"
       ],
       "url": "/workbench/lenses/compression-lens/",
       "markdown_url": "/workbench/lenses/compression-lens.md"
@@ -1640,7 +1992,8 @@
       "issues": [
         "invalid-json-output",
         "no-owner-for-agent-action",
-        "tool-call-contract-mismatch"
+        "tool-call-contract-mismatch",
+        "validation-result-changes-on-retry"
       ],
       "url": "/workbench/lenses/conflict-lens/",
       "markdown_url": "/workbench/lenses/conflict-lens.md"
@@ -1666,7 +2019,9 @@
       },
       "issues": [
         "ai-forgets-earlier-constraints",
-        "invalid-json-output"
+        "answer-has-no-traceable-source-link",
+        "invalid-json-output",
+        "prompt-only-works-after-retry"
       ],
       "url": "/workbench/lenses/constraint-sufficiency-lens/",
       "markdown_url": "/workbench/lenses/constraint-sufficiency-lens.md"
@@ -1695,7 +2050,11 @@
       "issues": [
         "agent-keeps-expanding-the-task",
         "ai-forgets-earlier-constraints",
-        "no-owner-for-agent-action"
+        "no-owner-for-agent-action",
+        "prompt-only-works-after-retry",
+        "saved-reference-no-longer-works",
+        "similar-cases-route-to-different-outcomes",
+        "validation-result-changes-on-retry"
       ],
       "url": "/workbench/lenses/convergence-lens/",
       "markdown_url": "/workbench/lenses/convergence-lens.md"
@@ -1724,7 +2083,14 @@
       },
       "issues": [
         "ai-forgets-earlier-constraints",
-        "invalid-json-output"
+        "answer-has-no-traceable-source-link",
+        "citation-points-to-wrong-source",
+        "invalid-json-output",
+        "prompt-only-works-after-retry",
+        "retry-makes-the-problem-worse",
+        "saved-reference-no-longer-works",
+        "similar-cases-route-to-different-outcomes",
+        "validation-result-changes-on-retry"
       ],
       "url": "/workbench/lenses/determinism-lens/",
       "markdown_url": "/workbench/lenses/determinism-lens.md"
@@ -1751,7 +2117,8 @@
         ]
       },
       "issues": [
-        "agent-keeps-expanding-the-task"
+        "agent-keeps-expanding-the-task",
+        "retry-makes-the-problem-worse"
       ],
       "url": "/workbench/lenses/escalation-gradient-lens/",
       "markdown_url": "/workbench/lenses/escalation-gradient-lens.md"
@@ -1776,8 +2143,11 @@
         ]
       },
       "issues": [
+        "answer-has-no-traceable-source-link",
+        "citation-points-to-wrong-source",
         "invalid-json-output",
-        "tool-call-contract-mismatch"
+        "tool-call-contract-mismatch",
+        "validation-result-changes-on-retry"
       ],
       "url": "/workbench/lenses/interface-contract-lens/",
       "markdown_url": "/workbench/lenses/interface-contract-lens.md"
@@ -1803,7 +2173,8 @@
       },
       "issues": [
         "invalid-json-output",
-        "tool-call-contract-mismatch"
+        "tool-call-contract-mismatch",
+        "validation-result-changes-on-retry"
       ],
       "url": "/workbench/lenses/invariant-lens/",
       "markdown_url": "/workbench/lenses/invariant-lens.md"
@@ -1850,6 +2221,7 @@
         ]
       },
       "issues": [
+        "citation-points-to-wrong-source",
         "invalid-json-output",
         "tool-call-contract-mismatch"
       ],
@@ -1904,7 +2276,8 @@
       },
       "issues": [
         "agent-keeps-expanding-the-task",
-        "no-owner-for-agent-action"
+        "no-owner-for-agent-action",
+        "retry-makes-the-problem-worse"
       ],
       "url": "/workbench/lenses/propagation-lens/",
       "markdown_url": "/workbench/lenses/propagation-lens.md"
@@ -1924,7 +2297,9 @@
           "silent-mutation"
         ]
       },
-      "issues": [],
+      "issues": [
+        "retry-makes-the-problem-worse"
+      ],
       "url": "/workbench/lenses/provenance-trace-lens/",
       "markdown_url": "/workbench/lenses/provenance-trace-lens.md"
     },
@@ -1953,7 +2328,9 @@
       "issues": [
         "agent-keeps-expanding-the-task",
         "ai-forgets-earlier-constraints",
-        "no-owner-for-agent-action"
+        "no-owner-for-agent-action",
+        "saved-reference-no-longer-works",
+        "similar-cases-route-to-different-outcomes"
       ],
       "url": "/workbench/lenses/reconciliation-lens/",
       "markdown_url": "/workbench/lenses/reconciliation-lens.md"
@@ -1980,7 +2357,14 @@
       },
       "issues": [
         "ai-forgets-earlier-constraints",
-        "no-owner-for-agent-action"
+        "answer-has-no-traceable-source-link",
+        "citation-points-to-wrong-source",
+        "no-owner-for-agent-action",
+        "prompt-only-works-after-retry",
+        "retry-makes-the-problem-worse",
+        "saved-reference-no-longer-works",
+        "similar-cases-route-to-different-outcomes",
+        "validation-result-changes-on-retry"
       ],
       "url": "/workbench/lenses/reference-stability-lens/",
       "markdown_url": "/workbench/lenses/reference-stability-lens.md"
@@ -2012,7 +2396,11 @@
       "issues": [
         "agent-keeps-expanding-the-task",
         "ai-forgets-earlier-constraints",
-        "invalid-json-output"
+        "invalid-json-output",
+        "prompt-only-works-after-retry",
+        "retry-makes-the-problem-worse",
+        "similar-cases-route-to-different-outcomes",
+        "validation-result-changes-on-retry"
       ],
       "url": "/workbench/lenses/variance-entropy-lens/",
       "markdown_url": "/workbench/lenses/variance-entropy-lens.md"
@@ -2048,8 +2436,12 @@
       "entry_version": "0.1.0",
       "updated_at": "2026-05-10T00:00:00Z",
       "summary": "Problems where model behavior, prompts, contracts, schemas, outputs, references, rubrics, or expectations change without the surrounding workflow updating correctly.",
-      "issues": [],
-      "primary_issues": [],
+      "issues": [
+        "saved-reference-no-longer-works"
+      ],
+      "primary_issues": [
+        "saved-reference-no-longer-works"
+      ],
       "secondary_issues": [],
       "url": "/workbench/categories/changes-and-versions/"
     },
@@ -2064,7 +2456,10 @@
       "summary": "Problems where prompts, rubrics, diagnostics, fallback rules, examples, requirements, or relationship maps are incomplete, underspecified, or missing needed guidance.",
       "issues": [],
       "primary_issues": [],
-      "secondary_issues": [],
+      "secondary_issues": [
+        "answer-has-no-traceable-source-link",
+        "citation-points-to-wrong-source"
+      ],
       "url": "/workbench/categories/coverage-and-guidance/"
     },
     {
@@ -2090,9 +2485,19 @@
       "entry_version": "0.1.0",
       "updated_at": "2026-05-10T00:00:00Z",
       "summary": "Problems where similar inputs, repeated attempts, validations, prompts, routes, or cases produce different results without a clear reason.",
-      "issues": [],
-      "primary_issues": [],
-      "secondary_issues": [],
+      "issues": [
+        "prompt-only-works-after-retry",
+        "similar-cases-route-to-different-outcomes",
+        "validation-result-changes-on-retry"
+      ],
+      "primary_issues": [
+        "prompt-only-works-after-retry",
+        "similar-cases-route-to-different-outcomes",
+        "validation-result-changes-on-retry"
+      ],
+      "secondary_issues": [
+        "retry-makes-the-problem-worse"
+      ],
       "url": "/workbench/categories/inconsistent-behavior/"
     },
     {
@@ -2155,13 +2560,19 @@
       "updated_at": "2026-05-10T00:00:00Z",
       "summary": "Problems where generated content, citations, fields, formats, parser-facing output, or structured responses are missing, malformed, unsupported, or unusable.",
       "issues": [
+        "answer-has-no-traceable-source-link",
+        "citation-points-to-wrong-source",
         "invalid-json-output"
       ],
       "primary_issues": [
+        "answer-has-no-traceable-source-link",
+        "citation-points-to-wrong-source",
         "invalid-json-output"
       ],
       "secondary_issues": [
-        "tool-call-contract-mismatch"
+        "saved-reference-no-longer-works",
+        "tool-call-contract-mismatch",
+        "validation-result-changes-on-retry"
       ],
       "url": "/workbench/categories/output/"
     },
@@ -2222,8 +2633,12 @@
       "entry_version": "0.1.0",
       "updated_at": "2026-05-10T00:00:00Z",
       "summary": "Problems where small errors, local exceptions, risk signals, retries, permissions, or outputs spread downstream, grow in consequence, or trigger broader actions.",
-      "issues": [],
-      "primary_issues": [],
+      "issues": [
+        "retry-makes-the-problem-worse"
+      ],
+      "primary_issues": [
+        "retry-makes-the-problem-worse"
+      ],
       "secondary_issues": [],
       "url": "/workbench/categories/spread-and-escalation/"
     },
