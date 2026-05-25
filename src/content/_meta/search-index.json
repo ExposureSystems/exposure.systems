@@ -180,6 +180,49 @@
     },
     {
       "type": "issue",
+      "slug": "agent-gets-conflicting-tool-authority",
+      "ontology_slug": "agent-gets-conflicting-tool-authority",
+      "code": "ISS-0115",
+      "title": "Agent Gets Conflicting Tool Authority",
+      "summary": "An agent receives conflicting authority signals about whether, when, or how it may use a tool, connector, function, or integration.",
+      "url": "/workbench/issues/agent-gets-conflicting-tool-authority/",
+      "category": "permissions-and-approvals",
+      "category_title": "Permissions & Approvals",
+      "primary_cat_code": "CAT-0050",
+      "secondary_cat_codes": [
+        "CAT-0040"
+      ],
+      "primary_pattern": "authority-collision",
+      "patterns": [
+        "authority-collision",
+        "interface-mismatch",
+        "authority-shadowing"
+      ],
+      "lenses": {
+        "primary": [
+          "authority-overlay-lens",
+          "conflict-lens",
+          "interface-contract-lens"
+        ],
+        "secondary": [
+          "invariant-lens",
+          "normalization-lens",
+          "reconciliation-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "agent gets conflicting tool authority",
+        "AI agent tool authority conflict",
+        "tool permission conflicts with prompt",
+        "agent allowed and blocked from tool",
+        "conflicting MCP tool authority",
+        "agent tool access rules conflict"
+      ],
+      "text": "AI agent tool authority conflict Agent Gets Conflicting Tool Authority An agent receives conflicting authority signals about whether, when, or how it may use a tool, connector, function, or integration. CAT-0040 CAT-0050 ISS-0115 Permissions & Approvals agent allowed and blocked from tool agent gets conflicting tool authority agent tool access rules conflict authority-collision authority-overlay-lens authority-shadowing conflict-lens conflicting MCP tool authority interface-contract-lens interface-mismatch invariant-lens normalization-lens permissions-and-approvals reconciliation-lens tool permission conflicts with prompt"
+    },
+    {
+      "type": "issue",
       "slug": "agent-keeps-expanding-the-task",
       "ontology_slug": "agent-keeps-expanding-the-task",
       "code": "ISS-0008",
@@ -224,6 +267,46 @@
         "diagnosis keeps expanding"
       ],
       "text": "AI keeps adding follow up work AI keeps adding more steps Agent Keeps Expanding the Task Agents CAT-0030 CAT-0100 ISS-0008 The agent repeatedly expands the task, plan, scope, or next-step list instead of completing the declared work. agent expands task on each pass agent keeps expanding the task agent keeps making the plan bigger agents ai-works-in-one-environment-not-another boundary-compliance-lens compression-lens convergence-failure convergence-lens diagnosis keeps expanding escalation-gradient-lens overreach overreach-lens propagation-lens reconciliation-lens unconstrained-expansion variance-entropy-lens"
+    },
+    {
+      "type": "issue",
+      "slug": "agent-modified-unrelated-state",
+      "ontology_slug": "agent-modified-unrelated-state",
+      "code": "ISS-0113",
+      "title": "Agent Modified Unrelated State",
+      "summary": "An agent changes state outside the requested task, target, file, record, workflow, or authorized scope.",
+      "url": "/workbench/issues/agent-modified-unrelated-state/",
+      "category": "scope-and-boundaries",
+      "category_title": "Scope & Boundaries",
+      "primary_cat_code": "CAT-0100",
+      "secondary_cat_codes": [
+        "CAT-0030"
+      ],
+      "primary_pattern": "boundary-leakage",
+      "patterns": [
+        "boundary-leakage",
+        "undeclared-side-effect",
+        "overreach"
+      ],
+      "lenses": {
+        "primary": [
+          "boundary-compliance-lens",
+          "isolation-boundary-lens",
+          "overreach-lens",
+          "propagation-lens"
+        ],
+        "secondary": []
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "agent modified unrelated state",
+        "AI agent changed unrelated state",
+        "agent changed something outside task",
+        "AI modified unrelated file",
+        "agent side effect changed state",
+        "AI action affected unrelated workflow"
+      ],
+      "text": "AI action affected unrelated workflow AI agent changed unrelated state AI modified unrelated file Agent Modified Unrelated State An agent changes state outside the requested task, target, file, record, workflow, or authorized scope. CAT-0030 CAT-0100 ISS-0113 Scope & Boundaries agent changed something outside task agent modified unrelated state agent side effect changed state boundary-compliance-lens boundary-leakage isolation-boundary-lens overreach overreach-lens propagation-lens scope-and-boundaries undeclared-side-effect"
     },
     {
       "type": "issue",
@@ -447,6 +530,52 @@
         "persistent memory affects output without rules"
       ],
       "text": "AI Memory Has No Governance AI memory has no governance AI memory not controlled AI memory scope unclear CAT-0020 CAT-0050 ChatGPT memory no governance ISS-0109 Memory & Context Saved or persistent AI memory affects output without clear rules for ownership, scope, review, update, expiry, or removal. absence-lens authority-overlay-lens boundary-compliance-lens boundary-leakage conflict-lens determinism-lens isolation-boundary-lens memory-and-context missing-authority persistence-instability persistent memory affects output without rules propagation-lens reconciliation-lens reference-stability-lens saved memory lacks approval"
+    },
+    {
+      "type": "issue",
+      "slug": "ai-memory-updated-without-asking",
+      "ontology_slug": "ai-memory-updated-without-asking",
+      "code": "ISS-0114",
+      "title": "AI Memory Updated Without Asking",
+      "summary": "AI memory, saved context, preference, or durable state is updated without the user clearly asking for or approving that update.",
+      "url": "/workbench/issues/ai-memory-updated-without-asking/",
+      "category": "memory-and-context",
+      "category_title": "Memory & Context",
+      "primary_cat_code": "CAT-0020",
+      "secondary_cat_codes": [
+        "CAT-0100"
+      ],
+      "primary_pattern": "missing-authority",
+      "patterns": [
+        "missing-authority",
+        "persistence-instability",
+        "boundary-leakage"
+      ],
+      "lenses": {
+        "primary": [
+          "absence-lens",
+          "authority-overlay-lens",
+          "isolation-boundary-lens",
+          "propagation-lens",
+          "reference-stability-lens"
+        ],
+        "secondary": [
+          "boundary-compliance-lens",
+          "conflict-lens",
+          "determinism-lens",
+          "reconciliation-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "AI memory updated without asking",
+        "ChatGPT memory changed without permission",
+        "AI saved memory without approval",
+        "memory updated unexpectedly",
+        "AI remembered something I did not ask it to",
+        "persistent memory changed without consent"
+      ],
+      "text": "AI Memory Updated Without Asking AI memory updated without asking AI memory, saved context, preference, or durable state is updated without the user clearly asking for or approving that update. AI remembered something I did not ask it to AI saved memory without approval CAT-0020 CAT-0100 ChatGPT memory changed without permission ISS-0114 Memory & Context absence-lens authority-overlay-lens boundary-compliance-lens boundary-leakage conflict-lens determinism-lens isolation-boundary-lens memory updated unexpectedly memory-and-context missing-authority persistence-instability persistent memory changed without consent propagation-lens reconciliation-lens reference-stability-lens"
     },
     {
       "type": "issue",
@@ -4949,9 +5078,9 @@
         "ontology_slug": "agents",
         "code": "CAT-0030",
         "title": "Agents",
-        "count": 6,
+        "count": 7,
         "primary_count": 3,
-        "secondary_count": 3
+        "secondary_count": 4
       },
       {
         "slug": "changes-and-versions",
@@ -5003,17 +5132,17 @@
         "ontology_slug": "mcp-tools-and-integrations",
         "code": "CAT-0040",
         "title": "MCP, Tools & Integrations",
-        "count": 9,
+        "count": 10,
         "primary_count": 5,
-        "secondary_count": 4
+        "secondary_count": 5
       },
       {
         "slug": "memory-and-context",
         "ontology_slug": "memory-and-context",
         "code": "CAT-0020",
         "title": "Memory & Context",
-        "count": 7,
-        "primary_count": 7,
+        "count": 8,
+        "primary_count": 8,
         "secondary_count": 0
       },
       {
@@ -5030,8 +5159,8 @@
         "ontology_slug": "permissions-and-approvals",
         "code": "CAT-0050",
         "title": "Permissions & Approvals",
-        "count": 23,
-        "primary_count": 10,
+        "count": 24,
+        "primary_count": 11,
         "secondary_count": 13
       },
       {
@@ -5048,9 +5177,9 @@
         "ontology_slug": "scope-and-boundaries",
         "code": "CAT-0100",
         "title": "Scope & Boundaries",
-        "count": 13,
-        "primary_count": 5,
-        "secondary_count": 8
+        "count": 15,
+        "primary_count": 6,
+        "secondary_count": 9
       },
       {
         "slug": "spread-and-escalation",
@@ -5084,7 +5213,7 @@
         "ontology_slug": "authority-collision",
         "code": "PAT-0100",
         "title": "Authority Collision",
-        "count": 9
+        "count": 10
       },
       {
         "slug": "authority-merge-conflict",
@@ -5098,7 +5227,7 @@
         "ontology_slug": "authority-shadowing",
         "code": "PAT-0230",
         "title": "Authority Shadowing",
-        "count": 6
+        "count": 7
       },
       {
         "slug": "authority-state-mismatch",
@@ -5112,7 +5241,7 @@
         "ontology_slug": "boundary-leakage",
         "code": "PAT-0140",
         "title": "Boundary Leakage",
-        "count": 14
+        "count": 16
       },
       {
         "slug": "circular-dependency",
@@ -5196,7 +5325,7 @@
         "ontology_slug": "interface-mismatch",
         "code": "PAT-0150",
         "title": "Interface Mismatch",
-        "count": 15
+        "count": 16
       },
       {
         "slug": "invariant-breakage",
@@ -5210,7 +5339,7 @@
         "ontology_slug": "missing-authority",
         "code": "PAT-0120",
         "title": "Missing Authority",
-        "count": 18
+        "count": 19
       },
       {
         "slug": "non-deterministic-execution",
@@ -5231,14 +5360,14 @@
         "ontology_slug": "overreach",
         "code": "PAT-0340",
         "title": "Overreach",
-        "count": 13
+        "count": 14
       },
       {
         "slug": "persistence-instability",
         "ontology_slug": "persistence-instability",
         "code": "PAT-0350",
         "title": "Persistence Instability",
-        "count": 11
+        "count": 12
       },
       {
         "slug": "propagation-amplification",
@@ -5301,7 +5430,7 @@
         "ontology_slug": "undeclared-side-effect",
         "code": "PAT-0420",
         "title": "Undeclared Side Effect",
-        "count": 10
+        "count": 11
       }
     ],
     "lenses": [
@@ -5310,21 +5439,21 @@
         "ontology_slug": "absence-lens",
         "code": "LEN-0100",
         "title": "Absence Lens",
-        "count": 37
+        "count": 38
       },
       {
         "slug": "authority-overlay-lens",
         "ontology_slug": "authority-overlay-lens",
         "code": "LEN-0110",
         "title": "Authority Overlay Lens",
-        "count": 29
+        "count": 31
       },
       {
         "slug": "boundary-compliance-lens",
         "ontology_slug": "boundary-compliance-lens",
         "code": "LEN-0120",
         "title": "Boundary Compliance Lens",
-        "count": 40
+        "count": 42
       },
       {
         "slug": "compatibility-envelope-lens",
@@ -5345,7 +5474,7 @@
         "ontology_slug": "conflict-lens",
         "code": "LEN-0150",
         "title": "Conflict Lens",
-        "count": 53
+        "count": 55
       },
       {
         "slug": "constraint-sufficiency-lens",
@@ -5366,7 +5495,7 @@
         "ontology_slug": "determinism-lens",
         "code": "LEN-0180",
         "title": "Determinism Lens",
-        "count": 52
+        "count": 53
       },
       {
         "slug": "escalation-gradient-lens",
@@ -5380,42 +5509,42 @@
         "ontology_slug": "interface-contract-lens",
         "code": "LEN-0200",
         "title": "Interface Contract Lens",
-        "count": 38
+        "count": 39
       },
       {
         "slug": "invariant-lens",
         "ontology_slug": "invariant-lens",
         "code": "LEN-0210",
         "title": "Invariant Lens",
-        "count": 30
+        "count": 31
       },
       {
         "slug": "isolation-boundary-lens",
         "ontology_slug": "isolation-boundary-lens",
         "code": "LEN-0220",
         "title": "Isolation Boundary Lens",
-        "count": 26
+        "count": 28
       },
       {
         "slug": "normalization-lens",
         "ontology_slug": "normalization-lens",
         "code": "LEN-0230",
         "title": "Normalization Lens",
-        "count": 32
+        "count": 33
       },
       {
         "slug": "overreach-lens",
         "ontology_slug": "overreach-lens",
         "code": "LEN-0240",
         "title": "Overreach Lens",
-        "count": 21
+        "count": 22
       },
       {
         "slug": "propagation-lens",
         "ontology_slug": "propagation-lens",
         "code": "LEN-0250",
         "title": "Propagation Lens",
-        "count": 53
+        "count": 55
       },
       {
         "slug": "provenance-trace-lens",
@@ -5429,14 +5558,14 @@
         "ontology_slug": "reconciliation-lens",
         "code": "LEN-0270",
         "title": "Reconciliation Lens",
-        "count": 61
+        "count": 63
       },
       {
         "slug": "reference-stability-lens",
         "ontology_slug": "reference-stability-lens",
         "code": "LEN-0280",
         "title": "Reference Stability Lens",
-        "count": 38
+        "count": 39
       },
       {
         "slug": "variance-entropy-lens",

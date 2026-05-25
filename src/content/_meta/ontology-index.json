@@ -519,6 +519,51 @@
       "markdown_url": "/workbench/issues/agent-cannot-choose-tool-without-tool-result.md"
     },
     {
+      "slug": "agent-gets-conflicting-tool-authority",
+      "ontology_slug": "agent-gets-conflicting-tool-authority",
+      "code": "ISS-0115",
+      "title": "Agent Gets Conflicting Tool Authority",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "An agent receives conflicting authority signals about whether, when, or how it may use a tool, connector, function, or integration.",
+      "category": "permissions-and-approvals",
+      "category_title": "Permissions & Approvals",
+      "primary_cat_code": "CAT-0050",
+      "secondary_cat_codes": [
+        "CAT-0040"
+      ],
+      "primary_pattern": "authority-collision",
+      "patterns": [
+        "authority-collision",
+        "interface-mismatch",
+        "authority-shadowing"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "authority-overlay-lens",
+          "conflict-lens",
+          "interface-contract-lens"
+        ],
+        "secondary": [
+          "invariant-lens",
+          "normalization-lens",
+          "reconciliation-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "agent gets conflicting tool authority",
+        "AI agent tool authority conflict",
+        "tool permission conflicts with prompt",
+        "agent allowed and blocked from tool",
+        "conflicting MCP tool authority",
+        "agent tool access rules conflict"
+      ],
+      "url": "/workbench/issues/agent-gets-conflicting-tool-authority/",
+      "markdown_url": "/workbench/issues/agent-gets-conflicting-tool-authority.md"
+    },
+    {
       "slug": "agent-keeps-expanding-the-task",
       "ontology_slug": "agent-keeps-expanding-the-task",
       "code": "ISS-0008",
@@ -566,6 +611,48 @@
       ],
       "url": "/workbench/issues/agent-keeps-expanding-the-task/",
       "markdown_url": "/workbench/issues/agent-keeps-expanding-the-task.md"
+    },
+    {
+      "slug": "agent-modified-unrelated-state",
+      "ontology_slug": "agent-modified-unrelated-state",
+      "code": "ISS-0113",
+      "title": "Agent Modified Unrelated State",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "An agent changes state outside the requested task, target, file, record, workflow, or authorized scope.",
+      "category": "scope-and-boundaries",
+      "category_title": "Scope & Boundaries",
+      "primary_cat_code": "CAT-0100",
+      "secondary_cat_codes": [
+        "CAT-0030"
+      ],
+      "primary_pattern": "boundary-leakage",
+      "patterns": [
+        "boundary-leakage",
+        "undeclared-side-effect",
+        "overreach"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "boundary-compliance-lens",
+          "isolation-boundary-lens",
+          "overreach-lens",
+          "propagation-lens"
+        ],
+        "secondary": []
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "agent modified unrelated state",
+        "AI agent changed unrelated state",
+        "agent changed something outside task",
+        "AI modified unrelated file",
+        "agent side effect changed state",
+        "AI action affected unrelated workflow"
+      ],
+      "url": "/workbench/issues/agent-modified-unrelated-state/",
+      "markdown_url": "/workbench/issues/agent-modified-unrelated-state.md"
     },
     {
       "slug": "agent-never-settles-on-final-answer",
@@ -799,6 +886,54 @@
       ],
       "url": "/workbench/issues/ai-memory-has-no-governance/",
       "markdown_url": "/workbench/issues/ai-memory-has-no-governance.md"
+    },
+    {
+      "slug": "ai-memory-updated-without-asking",
+      "ontology_slug": "ai-memory-updated-without-asking",
+      "code": "ISS-0114",
+      "title": "AI Memory Updated Without Asking",
+      "status": "stable",
+      "entry_version": "0.1.0",
+      "updated_at": "2026-05-10T00:00:00Z",
+      "summary": "AI memory, saved context, preference, or durable state is updated without the user clearly asking for or approving that update.",
+      "category": "memory-and-context",
+      "category_title": "Memory & Context",
+      "primary_cat_code": "CAT-0020",
+      "secondary_cat_codes": [
+        "CAT-0100"
+      ],
+      "primary_pattern": "missing-authority",
+      "patterns": [
+        "missing-authority",
+        "persistence-instability",
+        "boundary-leakage"
+      ],
+      "derived_lenses": {
+        "primary": [
+          "absence-lens",
+          "authority-overlay-lens",
+          "isolation-boundary-lens",
+          "propagation-lens",
+          "reference-stability-lens"
+        ],
+        "secondary": [
+          "boundary-compliance-lens",
+          "conflict-lens",
+          "determinism-lens",
+          "reconciliation-lens"
+        ]
+      },
+      "related_ai_adj_issues": [],
+      "search_intents": [
+        "AI memory updated without asking",
+        "ChatGPT memory changed without permission",
+        "AI saved memory without approval",
+        "memory updated unexpectedly",
+        "AI remembered something I did not ask it to",
+        "persistent memory changed without consent"
+      ],
+      "url": "/workbench/issues/ai-memory-updated-without-asking/",
+      "markdown_url": "/workbench/issues/ai-memory-updated-without-asking.md"
     },
     {
       "slug": "ai-output-breaks-parser",
@@ -5553,6 +5688,7 @@
       },
       "issues": {
         "primary": [
+          "agent-gets-conflicting-tool-authority",
           "conflicting-instructions-from-different-authorities",
           "human-review-and-automation-disagree",
           "permissions-conflict-after-being-combined",
@@ -5623,6 +5759,7 @@
           "hidden-rule-overrides-visible-instruction"
         ],
         "supporting": [
+          "agent-gets-conflicting-tool-authority",
           "behavior-does-not-match-declared-role",
           "conflicting-instructions-from-different-authorities",
           "permissions-conflict-after-being-combined",
@@ -5693,6 +5830,7 @@
       },
       "issues": {
         "primary": [
+          "agent-modified-unrelated-state",
           "ai-uses-external-information-when-forbidden",
           "context-leaks-between-tasks",
           "file-bounded-task-uses-outside-content",
@@ -5702,6 +5840,7 @@
         "supporting": [
           "action-changed-something-else-too",
           "ai-memory-has-no-governance",
+          "ai-memory-updated-without-asking",
           "ai-touches-unrelated-scope",
           "hidden-rule-overrides-visible-instruction",
           "local-exception-grows-into-policy",
@@ -6169,6 +6308,7 @@
         ],
         "supporting": [
           "agent-cannot-choose-tool-without-tool-result",
+          "agent-gets-conflicting-tool-authority",
           "ai-output-breaks-parser",
           "citation-points-to-wrong-source",
           "invalid-json-output",
@@ -6236,6 +6376,7 @@
       "issues": {
         "primary": [
           "ai-memory-has-no-governance",
+          "ai-memory-updated-without-asking",
           "automation-skips-required-approval",
           "fallback-authority-is-missing",
           "no-owner-for-agent-action",
@@ -6355,6 +6496,7 @@
         ],
         "supporting": [
           "agent-keeps-expanding-the-task",
+          "agent-modified-unrelated-state",
           "agent-permission-expands-over-steps",
           "ai-uses-external-information-when-forbidden",
           "behavior-does-not-match-declared-role",
@@ -6393,6 +6535,7 @@
         ],
         "supporting": [
           "ai-memory-has-no-governance",
+          "ai-memory-updated-without-asking",
           "context-changes-after-restore",
           "context-leaks-between-tasks",
           "old-output-expectations-survive-migration",
@@ -6713,6 +6856,7 @@
           "model-output-triggers-unapproved-action"
         ],
         "supporting": [
+          "agent-modified-unrelated-state",
           "ai-adds-work-not-requested",
           "ai-uses-external-information-when-forbidden",
           "automation-skips-required-approval",
@@ -6751,6 +6895,7 @@
         "agent-cannot-choose-tool-without-tool-result",
         "agent-permission-expands-over-steps",
         "ai-memory-has-no-governance",
+        "ai-memory-updated-without-asking",
         "answer-has-no-traceable-source-link",
         "approval-depends-on-output-that-needs-approval",
         "automation-skips-required-approval",
@@ -6810,8 +6955,10 @@
       "issues": [
         "action-triggered-by-confidence-score",
         "agent-cannot-choose-tool-without-tool-result",
+        "agent-gets-conflicting-tool-authority",
         "agent-permission-expands-over-steps",
         "ai-memory-has-no-governance",
+        "ai-memory-updated-without-asking",
         "approval-depends-on-output-that-needs-approval",
         "automation-skips-required-approval",
         "behavior-does-not-match-declared-role",
@@ -6864,9 +7011,11 @@
         "action-changed-something-else-too",
         "action-triggered-by-confidence-score",
         "agent-keeps-expanding-the-task",
+        "agent-modified-unrelated-state",
         "agent-permission-expands-over-steps",
         "ai-adds-work-not-requested",
         "ai-memory-has-no-governance",
+        "ai-memory-updated-without-asking",
         "ai-output-breaks-parser",
         "ai-touches-unrelated-scope",
         "ai-uses-external-information-when-forbidden",
@@ -7023,9 +7172,11 @@
       "issues": [
         "action-triggered-by-confidence-score",
         "agent-cannot-choose-tool-without-tool-result",
+        "agent-gets-conflicting-tool-authority",
         "agent-never-settles-on-final-answer",
         "agent-permission-expands-over-steps",
         "ai-memory-has-no-governance",
+        "ai-memory-updated-without-asking",
         "ai-output-breaks-parser",
         "approval-depends-on-output-that-needs-approval",
         "automation-skips-required-approval",
@@ -7232,6 +7383,7 @@
         "actual-policy-differs-from-declared-policy",
         "ai-forgets-earlier-constraints",
         "ai-memory-has-no-governance",
+        "ai-memory-updated-without-asking",
         "answer-has-no-traceable-source-link",
         "answer-has-too-many-paths",
         "cannot-identify-authoritative-state",
@@ -7376,6 +7528,7 @@
       },
       "issues": [
         "agent-cannot-choose-tool-without-tool-result",
+        "agent-gets-conflicting-tool-authority",
         "ai-output-breaks-parser",
         "answer-has-no-traceable-source-link",
         "citation-points-to-wrong-source",
@@ -7438,6 +7591,7 @@
       },
       "issues": [
         "action-triggered-by-confidence-score",
+        "agent-gets-conflicting-tool-authority",
         "ai-output-breaks-parser",
         "approval-depends-on-output-that-needs-approval",
         "conflicting-instructions-from-different-authorities",
@@ -7492,8 +7646,10 @@
       },
       "issues": [
         "action-changed-something-else-too",
+        "agent-modified-unrelated-state",
         "ai-adds-work-not-requested",
         "ai-memory-has-no-governance",
+        "ai-memory-updated-without-asking",
         "ai-touches-unrelated-scope",
         "ai-uses-external-information-when-forbidden",
         "answer-has-too-many-paths",
@@ -7541,6 +7697,7 @@
       },
       "issues": [
         "agent-cannot-choose-tool-without-tool-result",
+        "agent-gets-conflicting-tool-authority",
         "agent-never-settles-on-final-answer",
         "ai-output-breaks-parser",
         "approval-depends-on-output-that-needs-approval",
@@ -7595,6 +7752,7 @@
       "issues": [
         "action-changed-something-else-too",
         "agent-keeps-expanding-the-task",
+        "agent-modified-unrelated-state",
         "agent-permission-expands-over-steps",
         "ai-adds-work-not-requested",
         "ai-touches-unrelated-scope",
@@ -7646,10 +7804,12 @@
         "action-triggered-by-confidence-score",
         "agent-cannot-choose-tool-without-tool-result",
         "agent-keeps-expanding-the-task",
+        "agent-modified-unrelated-state",
         "agent-never-settles-on-final-answer",
         "agent-permission-expands-over-steps",
         "ai-adds-work-not-requested",
         "ai-memory-has-no-governance",
+        "ai-memory-updated-without-asking",
         "ai-touches-unrelated-scope",
         "ai-uses-external-information-when-forbidden",
         "approval-depends-on-output-that-needs-approval",
@@ -7751,11 +7911,13 @@
         "action-triggered-by-confidence-score",
         "actual-policy-differs-from-declared-policy",
         "agent-cannot-choose-tool-without-tool-result",
+        "agent-gets-conflicting-tool-authority",
         "agent-keeps-expanding-the-task",
         "agent-never-settles-on-final-answer",
         "agent-permission-expands-over-steps",
         "ai-forgets-earlier-constraints",
         "ai-memory-has-no-governance",
+        "ai-memory-updated-without-asking",
         "approval-depends-on-output-that-needs-approval",
         "automation-skips-required-approval",
         "behavior-does-not-match-declared-role",
@@ -7837,6 +7999,7 @@
         "actual-policy-differs-from-declared-policy",
         "ai-forgets-earlier-constraints",
         "ai-memory-has-no-governance",
+        "ai-memory-updated-without-asking",
         "answer-has-no-traceable-source-link",
         "behavior-does-not-match-declared-role",
         "cannot-identify-authoritative-state",
@@ -7989,6 +8152,7 @@
         "routing-overrides-task-intent"
       ],
       "secondary_issues": [
+        "agent-modified-unrelated-state",
         "agent-never-settles-on-final-answer",
         "ai-touches-unrelated-scope",
         "no-owner-for-agent-action"
@@ -8209,6 +8373,7 @@
       ],
       "secondary_issues": [
         "agent-cannot-choose-tool-without-tool-result",
+        "agent-gets-conflicting-tool-authority",
         "ai-output-breaks-parser",
         "tool-can-act-without-responsible-authority",
         "tool-rules-and-prompt-rules-conflict"
@@ -8227,6 +8392,7 @@
       "issues": [
         "ai-forgets-earlier-constraints",
         "ai-memory-has-no-governance",
+        "ai-memory-updated-without-asking",
         "context-changes-after-restore",
         "context-leaks-between-tasks",
         "saved-memory-not-used",
@@ -8236,6 +8402,7 @@
       "primary_issues": [
         "ai-forgets-earlier-constraints",
         "ai-memory-has-no-governance",
+        "ai-memory-updated-without-asking",
         "context-changes-after-restore",
         "context-leaks-between-tasks",
         "saved-memory-not-used",
@@ -8311,6 +8478,7 @@
       "summary": "Problems where ownership, approval, authority, permission state, responsible control, or action rights are missing, stale, bypassed, conflicting, or unclear.",
       "issues": [
         "action-triggered-by-confidence-score",
+        "agent-gets-conflicting-tool-authority",
         "automation-skips-required-approval",
         "behavior-does-not-match-declared-role",
         "declared-owner-cannot-control-outcome",
@@ -8323,6 +8491,7 @@
       ],
       "primary_issues": [
         "action-triggered-by-confidence-score",
+        "agent-gets-conflicting-tool-authority",
         "automation-skips-required-approval",
         "behavior-does-not-match-declared-role",
         "declared-owner-cannot-control-outcome",
@@ -8403,6 +8572,7 @@
       "updated_at": "2026-05-10T00:00:00Z",
       "summary": "Problems where tasks, files, context, retrieval, permissions, actions, or outputs cross limits, use outside information, or lack clear operating boundaries.",
       "issues": [
+        "agent-modified-unrelated-state",
         "ai-touches-unrelated-scope",
         "ai-uses-external-information-when-forbidden",
         "file-bounded-task-uses-outside-content",
@@ -8410,6 +8580,7 @@
         "task-has-no-clear-limit"
       ],
       "primary_issues": [
+        "agent-modified-unrelated-state",
         "ai-touches-unrelated-scope",
         "ai-uses-external-information-when-forbidden",
         "file-bounded-task-uses-outside-content",
@@ -8420,6 +8591,7 @@
         "action-changed-something-else-too",
         "agent-keeps-expanding-the-task",
         "ai-adds-work-not-requested",
+        "ai-memory-updated-without-asking",
         "answer-has-too-many-paths",
         "context-leaks-between-tasks",
         "hallucinated-fields",
