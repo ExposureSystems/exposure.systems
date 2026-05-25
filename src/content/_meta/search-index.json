@@ -292,98 +292,126 @@
         "ontology_slug": "agents",
         "code": "CAT-0030",
         "title": "Agents",
-        "count": 1
+        "count": 2,
+        "primary_count": 1,
+        "secondary_count": 1
       },
       {
         "slug": "changes-and-versions",
         "ontology_slug": "changes-and-versions",
         "code": "CAT-0080",
         "title": "Changes & Versions",
-        "count": 0
+        "count": 0,
+        "primary_count": 0,
+        "secondary_count": 0
       },
       {
         "slug": "coverage-and-guidance",
         "ontology_slug": "coverage-and-guidance",
         "code": "CAT-0120",
         "title": "Coverage & Guidance",
-        "count": 0
+        "count": 0,
+        "primary_count": 0,
+        "secondary_count": 0
       },
       {
         "slug": "duplication-and-overload",
         "ontology_slug": "duplication-and-overload",
         "code": "CAT-0140",
         "title": "Duplication & Overload",
-        "count": 0
+        "count": 0,
+        "primary_count": 0,
+        "secondary_count": 0
       },
       {
         "slug": "inconsistent-behavior",
         "ontology_slug": "inconsistent-behavior",
         "code": "CAT-0090",
         "title": "Inconsistent Behavior",
-        "count": 0
+        "count": 0,
+        "primary_count": 0,
+        "secondary_count": 0
       },
       {
         "slug": "loops-and-resolution",
         "ontology_slug": "loops-and-resolution",
         "code": "CAT-0130",
         "title": "Loops & Resolution",
-        "count": 0
+        "count": 0,
+        "primary_count": 0,
+        "secondary_count": 0
       },
       {
         "slug": "mcp-tools-and-integrations",
         "ontology_slug": "mcp-tools-and-integrations",
         "code": "CAT-0040",
         "title": "MCP, Tools & Integrations",
-        "count": 1
+        "count": 1,
+        "primary_count": 1,
+        "secondary_count": 0
       },
       {
         "slug": "memory-and-context",
         "ontology_slug": "memory-and-context",
         "code": "CAT-0020",
         "title": "Memory & Context",
-        "count": 1
+        "count": 1,
+        "primary_count": 1,
+        "secondary_count": 0
       },
       {
         "slug": "output",
         "ontology_slug": "output",
         "code": "CAT-0010",
         "title": "Output",
-        "count": 1
+        "count": 2,
+        "primary_count": 1,
+        "secondary_count": 1
       },
       {
         "slug": "permissions-and-approvals",
         "ontology_slug": "permissions-and-approvals",
         "code": "CAT-0050",
         "title": "Permissions & Approvals",
-        "count": 1
+        "count": 1,
+        "primary_count": 1,
+        "secondary_count": 0
       },
       {
         "slug": "rules-and-policies",
         "ontology_slug": "rules-and-policies",
         "code": "CAT-0060",
         "title": "Rules & Policies",
-        "count": 0
+        "count": 0,
+        "primary_count": 0,
+        "secondary_count": 0
       },
       {
         "slug": "scope-and-boundaries",
         "ontology_slug": "scope-and-boundaries",
         "code": "CAT-0100",
         "title": "Scope & Boundaries",
-        "count": 0
+        "count": 1,
+        "primary_count": 0,
+        "secondary_count": 1
       },
       {
         "slug": "spread-and-escalation",
         "ontology_slug": "spread-and-escalation",
         "code": "CAT-0110",
         "title": "Spread & Escalation",
-        "count": 0
+        "count": 0,
+        "primary_count": 0,
+        "secondary_count": 0
       },
       {
         "slug": "workflow-and-handoffs",
         "ontology_slug": "workflow-and-handoffs",
         "code": "CAT-0070",
         "title": "Workflow & Handoffs",
-        "count": 0
+        "count": 0,
+        "primary_count": 0,
+        "secondary_count": 0
       }
     ],
     "patterns": [

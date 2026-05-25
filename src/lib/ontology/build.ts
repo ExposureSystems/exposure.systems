@@ -248,9 +248,14 @@ function main() {
     };
   });
 
-  const derivedCategories = categories.map((category) => {
-    const issueSlugs = derivedIssues
+    const derivedCategories = categories.map((category) => {
+    const primaryIssueSlugs = derivedIssues
       .filter((issue) => issue.category === category.slug)
+      .map((issue) => issue.slug)
+      .sort();
+
+    const secondaryIssueSlugs = derivedIssues
+      .filter((issue) => issue.secondary_cat_codes.includes(category.code))
       .map((issue) => issue.slug)
       .sort();
 
@@ -263,7 +268,9 @@ function main() {
       entry_version: category.entry_version,
       updated_at: category.updated_at,
       summary: category.summary,
-      issues: issueSlugs,
+      issues: primaryIssueSlugs,
+      primary_issues: primaryIssueSlugs,
+      secondary_issues: secondaryIssueSlugs,
       url: `/workbench/categories/${category.slug}/`,
     };
   });
@@ -435,7 +442,9 @@ function main() {
         ontology_slug: category.ontology_slug,
         code: category.code,
         title: category.title,
-        count: category.issues.length,
+        count: category.primary_issues.length + category.secondary_issues.length,
+        primary_count: category.primary_issues.length,
+        secondary_count: category.secondary_issues.length,
       })),
       patterns: derivedPatterns.map((pattern) => ({
         slug: pattern.slug,

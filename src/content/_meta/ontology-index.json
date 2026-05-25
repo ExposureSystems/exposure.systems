@@ -2030,6 +2030,12 @@
       "issues": [
         "agent-keeps-expanding-the-task"
       ],
+      "primary_issues": [
+        "agent-keeps-expanding-the-task"
+      ],
+      "secondary_issues": [
+        "no-owner-for-agent-action"
+      ],
       "url": "/workbench/categories/agents/"
     },
     {
@@ -2042,6 +2048,8 @@
       "updated_at": "2026-05-10T00:00:00Z",
       "summary": "Problems where model behavior, prompts, contracts, schemas, outputs, references, rubrics, or expectations change without the surrounding workflow updating correctly.",
       "issues": [],
+      "primary_issues": [],
+      "secondary_issues": [],
       "url": "/workbench/categories/changes-and-versions/"
     },
     {
@@ -2054,6 +2062,8 @@
       "updated_at": "2026-05-10T00:00:00Z",
       "summary": "Problems where prompts, rubrics, diagnostics, fallback rules, examples, requirements, or relationship maps are incomplete, underspecified, or missing needed guidance.",
       "issues": [],
+      "primary_issues": [],
+      "secondary_issues": [],
       "url": "/workbench/categories/coverage-and-guidance/"
     },
     {
@@ -2066,6 +2076,8 @@
       "updated_at": "2026-05-10T00:00:00Z",
       "summary": "Problems where fields, sections, rules, checks, prompts, workflow steps, or review queues become duplicated, overloaded, bottlenecked, or carry too many meanings.",
       "issues": [],
+      "primary_issues": [],
+      "secondary_issues": [],
       "url": "/workbench/categories/duplication-and-overload/"
     },
     {
@@ -2078,6 +2090,8 @@
       "updated_at": "2026-05-10T00:00:00Z",
       "summary": "Problems where similar inputs, repeated attempts, validations, prompts, routes, or cases produce different results without a clear reason.",
       "issues": [],
+      "primary_issues": [],
+      "secondary_issues": [],
       "url": "/workbench/categories/inconsistent-behavior/"
     },
     {
@@ -2090,6 +2104,8 @@
       "updated_at": "2026-05-10T00:00:00Z",
       "summary": "Problems where agents, workflows, reviews, approvals, policies, schemas, or routing paths loop, wait on themselves, fail to settle, or cannot identify a final state.",
       "issues": [],
+      "primary_issues": [],
+      "secondary_issues": [],
       "url": "/workbench/categories/loops-and-resolution/"
     },
     {
@@ -2104,6 +2120,10 @@
       "issues": [
         "tool-call-contract-mismatch"
       ],
+      "primary_issues": [
+        "tool-call-contract-mismatch"
+      ],
+      "secondary_issues": [],
       "url": "/workbench/categories/mcp-tools-and-integrations/"
     },
     {
@@ -2118,6 +2138,10 @@
       "issues": [
         "ai-forgets-earlier-constraints"
       ],
+      "primary_issues": [
+        "ai-forgets-earlier-constraints"
+      ],
+      "secondary_issues": [],
       "url": "/workbench/categories/memory-and-context/"
     },
     {
@@ -2131,6 +2155,12 @@
       "summary": "Problems where generated content, citations, fields, formats, parser-facing output, or structured responses are missing, malformed, unsupported, or unusable.",
       "issues": [
         "invalid-json-output"
+      ],
+      "primary_issues": [
+        "invalid-json-output"
+      ],
+      "secondary_issues": [
+        "tool-call-contract-mismatch"
       ],
       "url": "/workbench/categories/output/"
     },
@@ -2146,6 +2176,10 @@
       "issues": [
         "no-owner-for-agent-action"
       ],
+      "primary_issues": [
+        "no-owner-for-agent-action"
+      ],
+      "secondary_issues": [],
       "url": "/workbench/categories/permissions-and-approvals/"
     },
     {
@@ -2158,6 +2192,8 @@
       "updated_at": "2026-05-10T00:00:00Z",
       "summary": "Problems where prompts, policies, rules, roles, constraints, or declared behavior conflict, drift, duplicate each other, or fail to match actual behavior.",
       "issues": [],
+      "primary_issues": [],
+      "secondary_issues": [],
       "url": "/workbench/categories/rules-and-policies/"
     },
     {
@@ -2170,6 +2206,10 @@
       "updated_at": "2026-05-10T00:00:00Z",
       "summary": "Problems where tasks, files, context, retrieval, permissions, actions, or outputs cross limits, use outside information, or lack clear operating boundaries.",
       "issues": [],
+      "primary_issues": [],
+      "secondary_issues": [
+        "agent-keeps-expanding-the-task"
+      ],
       "url": "/workbench/categories/scope-and-boundaries/"
     },
     {
@@ -2182,6 +2222,8 @@
       "updated_at": "2026-05-10T00:00:00Z",
       "summary": "Problems where small errors, local exceptions, risk signals, retries, permissions, or outputs spread downstream, grow in consequence, or trigger broader actions.",
       "issues": [],
+      "primary_issues": [],
+      "secondary_issues": [],
       "url": "/workbench/categories/spread-and-escalation/"
     },
     {
@@ -2194,6 +2236,8 @@
       "updated_at": "2026-05-10T00:00:00Z",
       "summary": "Problems where review steps, handoffs, task progress, workflow ownership, downstream steps, or process coordination break, loop, disagree, or lose resolution.",
       "issues": [],
+      "primary_issues": [],
+      "secondary_issues": [],
       "url": "/workbench/categories/workflow-and-handoffs/"
     }
   ],
