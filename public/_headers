@@ -21,3 +21,6 @@
 /workbench/llms.txt
   X-Robots-Tag: index, follow
   Cache-Control: public, max-age=300
+/llms.txt
+  X-Robots-Tag: index, follow
+  Cache-Control: public, max-age=300
