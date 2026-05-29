@@ -28,7 +28,9 @@ const categories = ontologyIndex.categories;
       <div class="wb-row-list">
         {categories.map((category) => (
           <section class="wb-row">
-            <h2>{category.title}</h2>
+            <h2>
+              <a href={category.url}>{category.title}</a>
+            </h2>
             <p>{category.summary}</p>
           </section>
         ))}
