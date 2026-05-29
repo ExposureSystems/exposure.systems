@@ -5,10 +5,10 @@ title: Spread & Escalation
 status: stable
 entry_version: 0.1.0
 updated_at: "2026-05-10T00:00:00Z"
-summary: Problems where small errors, local exceptions, risk signals, retries, permissions, or outputs spread downstream, grow in consequence, or trigger broader actions.
+summary: Failures where small errors, exceptions, retries, risk signals, permissions, or outputs grow into larger downstream consequences.
 code: CAT-0110
 ---
 
 # Spread & Escalation
 
-Spread & Escalation covers problems where small errors, local exceptions, risk signals, retries, permissions, or outputs spread downstream, grow in consequence, or trigger broader actions.
+Spread & Escalation covers failures where small errors, exceptions, retries, risk signals, permissions, or outputs grow into larger downstream consequences.

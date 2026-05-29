@@ -8619,7 +8619,7 @@
       "status": "stable",
       "entry_version": "0.1.0",
       "updated_at": "2026-05-10T00:00:00Z",
-      "summary": "Problems where agent behavior expands, acts outside intent, fails to finish, modifies state, or chooses actions without enough stable control.",
+      "summary": "Agent-related failures where work expands, stalls, chooses the wrong tool, or acts beyond the intended task boundary.",
       "issues": [
         "agent-keeps-expanding-the-task",
         "ai-adds-work-not-requested",
@@ -8646,7 +8646,7 @@
       "status": "stable",
       "entry_version": "0.1.0",
       "updated_at": "2026-05-10T00:00:00Z",
-      "summary": "Problems where model behavior, prompts, contracts, schemas, outputs, references, rubrics, or expectations change without the surrounding workflow updating correctly.",
+      "summary": "Failures caused by model, prompt, schema, contract, output, reference, or rubric changes that the surrounding workflow did not absorb.",
       "issues": [
         "old-output-expectations-survive-migration",
         "output-breaks-after-model-change",
@@ -8687,7 +8687,7 @@
       "status": "stable",
       "entry_version": "0.1.0",
       "updated_at": "2026-05-10T00:00:00Z",
-      "summary": "Problems where prompts, rubrics, diagnostics, fallback rules, examples, requirements, or relationship maps are incomplete, underspecified, or missing needed guidance.",
+      "summary": "Missing or weak guidance that leaves prompts, rubrics, examples, requirements, diagnostics, or fallback paths underdefined.",
       "issues": [
         "diagnostic-area-has-no-coverage",
         "evaluation-rubric-has-coverage-gap",
@@ -8731,7 +8731,7 @@
       "status": "stable",
       "entry_version": "0.1.0",
       "updated_at": "2026-05-10T00:00:00Z",
-      "summary": "Problems where fields, sections, rules, checks, prompts, workflow steps, or review queues become duplicated, overloaded, bottlenecked, or carry too many meanings.",
+      "summary": "Overloaded structures where fields, rules, checks, prompts, sections, or review steps repeat, conflict, or carry too many meanings.",
       "issues": [
         "duplicate-fields-with-same-meaning",
         "duplicate-output-sections",
@@ -8767,7 +8767,7 @@
       "status": "stable",
       "entry_version": "0.1.0",
       "updated_at": "2026-05-10T00:00:00Z",
-      "summary": "Problems where similar inputs, repeated attempts, validations, prompts, routes, or cases produce different results without a clear reason.",
+      "summary": "Cases where similar inputs, retries, routes, or validations produce different outcomes without a clear structural reason.",
       "issues": [
         "prompt-only-works-after-retry",
         "results-vary-too-much",
@@ -8797,7 +8797,7 @@
       "status": "stable",
       "entry_version": "0.1.0",
       "updated_at": "2026-05-10T00:00:00Z",
-      "summary": "Problems where agents, workflows, reviews, approvals, policies, schemas, or routing paths loop, wait on themselves, fail to settle, or cannot identify a final state.",
+      "summary": "Failures where agents, workflows, reviews, approvals, policies, schemas, or routes loop without reaching a stable final state.",
       "issues": [
         "agent-cannot-choose-tool-without-tool-result",
         "agent-never-settles-on-final-answer",
@@ -8835,7 +8835,7 @@
       "status": "stable",
       "entry_version": "0.1.0",
       "updated_at": "2026-05-10T00:00:00Z",
-      "summary": "Problems involving tool calls, MCP surfaces, integration contracts, required tool inputs, tool results, parser consumers, or downstream systems that depend on AI output.",
+      "summary": "Tool and integration failures involving tool calls, MCP surfaces, contracts, required inputs, parser consumers, or downstream systems.",
       "issues": [
         "output-breaks-the-next-step",
         "too-many-tool-calls",
@@ -8867,7 +8867,7 @@
       "status": "stable",
       "entry_version": "0.1.0",
       "updated_at": "2026-05-10T00:00:00Z",
-      "summary": "Problems where task state, prior instructions, saved memory, restored context, stale information, or cross-task context affects behavior incorrectly.",
+      "summary": "Failures caused by stale, restored, saved, missing, or cross-task context affecting behavior in the wrong place.",
       "issues": [
         "ai-forgets-earlier-constraints",
         "ai-memory-has-no-governance",
@@ -8899,7 +8899,7 @@
       "status": "stable",
       "entry_version": "0.1.0",
       "updated_at": "2026-05-10T00:00:00Z",
-      "summary": "Problems where generated content, citations, fields, formats, parser-facing output, or structured responses are missing, malformed, unsupported, or unusable.",
+      "summary": "Output failures where generated content, citations, fields, formats, parser-facing responses, or structured data cannot be used reliably.",
       "issues": [
         "ai-output-breaks-parser",
         "answer-has-no-traceable-source-link",
@@ -8954,7 +8954,7 @@
       "status": "stable",
       "entry_version": "0.1.0",
       "updated_at": "2026-05-10T00:00:00Z",
-      "summary": "Problems where ownership, approval, authority, permission state, responsible control, or action rights are missing, stale, bypassed, conflicting, or unclear.",
+      "summary": "Failures involving unclear ownership, stale approval, missing authority, conflicting permissions, or bypassed action control.",
       "issues": [
         "action-triggered-by-confidence-score",
         "agent-gets-conflicting-tool-authority",
@@ -9006,7 +9006,7 @@
       "status": "stable",
       "entry_version": "0.1.0",
       "updated_at": "2026-05-10T00:00:00Z",
-      "summary": "Problems where prompts, policies, rules, roles, constraints, or declared behavior conflict, drift, duplicate each other, or fail to match actual behavior.",
+      "summary": "Rule and policy failures where prompts, roles, constraints, declarations, or actual behavior conflict or drift apart.",
       "issues": [
         "actual-policy-differs-from-declared-policy",
         "conflicting-instructions-from-different-authorities",
@@ -9049,7 +9049,7 @@
       "status": "stable",
       "entry_version": "0.1.0",
       "updated_at": "2026-05-10T00:00:00Z",
-      "summary": "Problems where tasks, files, context, retrieval, permissions, actions, or outputs cross limits, use outside information, or lack clear operating boundaries.",
+      "summary": "Boundary failures where tasks, files, retrieval, context, permissions, actions, or outputs cross limits they should not cross.",
       "issues": [
         "agent-modified-unrelated-state",
         "ai-touches-unrelated-scope",
@@ -9087,7 +9087,7 @@
       "status": "stable",
       "entry_version": "0.1.0",
       "updated_at": "2026-05-10T00:00:00Z",
-      "summary": "Problems where small errors, local exceptions, risk signals, retries, permissions, or outputs spread downstream, grow in consequence, or trigger broader actions.",
+      "summary": "Failures where small errors, exceptions, retries, risk signals, permissions, or outputs grow into larger downstream consequences.",
       "issues": [
         "action-changed-something-else-too",
         "agent-permission-expands-over-steps",
@@ -9139,7 +9139,7 @@
       "status": "stable",
       "entry_version": "0.1.0",
       "updated_at": "2026-05-10T00:00:00Z",
-      "summary": "Problems where review steps, handoffs, task progress, workflow ownership, downstream steps, or process coordination break, loop, disagree, or lose resolution.",
+      "summary": "Process failures where handoffs, review steps, task progress, ownership, downstream coordination, or resolution break down.",
       "issues": [
         "human-review-and-automation-disagree",
         "model-and-workflow-disagree-on-next-step",
