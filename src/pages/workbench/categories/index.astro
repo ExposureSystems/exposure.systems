@@ -1,46 +1,38 @@
 ---
+import WorkbenchLayout from "../../../layouts/WorkbenchLayout.astro";
 import ontologyIndex from "../../../content/_meta/ontology-index.json";
 
 const categories = ontologyIndex.categories;
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Categories | Workbench</title>
-    <meta
-      name="description"
-      content="Navigation categories for Workbench issues."
-    />
-  </head>
-  <body>
-    <main>
-      <p><a href="/workbench/">Workbench</a></p>
+<WorkbenchLayout
+  title="Categories | PENGO Workbench"
+  description="Browse Workbench issue categories."
+  url="https://pengosystems.com/workbench/categories/"
+  active="issues"
+  breadcrumbs={[
+    { label: "Issues", href: "/workbench/issues/" },
+    { label: "Categories" },
+  ]}
+>
+  <article class="wb-content wb-template">
+    <p class="wb-type-label">Category Index</p>
+    <h1>Categories</h1>
+    <p class="wb-lede">
+      Browse Workbench issue categories.
+    </p>
 
-      <h1>Categories</h1>
-
-      <p>
-        Categories are navigation shelves for Issues. They do not replace
-        Patterns or Lenses.
-      </p>
-
-      <section aria-labelledby="category-list">
-        <h2 id="category-list">Category Index</h2>
-
-        <ul>
-          {categories.map((category) => (
-            <li>
-              <h3>
-                <a href={category.url}>{category.title}</a>
-              </h3>
-
-              <p>{category.summary}</p>
-
-              <p>Issues: {category.issues.length}</p>
-            </li>
-          ))}
-        </ul>
-      </section>
-    </main>
-  </body>
-</html>
+    <section class="wb-section" aria-label="Categories">
+      <div class="wb-row-list">
+        {categories.map((category) => (
+          <section class="wb-row">
+            <h2>
+              <a href={category.url}>{category.title}</a>
+            </h2>
+            <p>{category.summary}</p>
+          </section>
+        ))}
+      </div>
+    </section>
+  </article>
+</WorkbenchLayout>

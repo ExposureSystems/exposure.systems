@@ -1,13 +1,6 @@
 ---
+import WorkbenchLayout from "../../../layouts/WorkbenchLayout.astro";
 import ontologyIndex from "../../../content/_meta/ontology-index.json";
-import changelog from "../../../ontology/changelog.public.json";
-import release from "../../../ontology/ontology-release.json";
-import {
-  getChangeTypeLabel,
-  getObjectHistory,
-  getReceiptImpactLabel,
-  getVersionLabel,
-} from "../../../lib/ontology/page-metadata";
 
 export function getStaticPaths() {
   return ontologyIndex.categories.map((category) => ({
@@ -36,113 +29,62 @@ const hiddenSecondaryIssueCount = Math.max(
   secondaryIssues.length - displayedSecondaryIssues.length,
   0,
 );
-
-const history = getObjectHistory(changelog, category);
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>{category.title} | Workbench Category</title>
-    <meta name="description" content={category.summary} />
-  </head>
-  <body>
-    <main>
-      <p>
-        <a href="/workbench/">Workbench</a>
-        {" / "}
-        <a href="/workbench/categories/">Categories</a>
-      </p>
+<WorkbenchLayout
+  title={`${category.title} | PENGO Workbench`}
+  description={category.summary}
+  url={`https://pengosystems.com${category.url}`}
+  active="issues"
+  breadcrumbs={[
+    { label: "Issues", href: "/workbench/issues/" },
+    { label: "Categories", href: "/workbench/categories/" },
+    { label: category.title },
+  ]}
+>
+  <article class="wb-content wb-template">
+    <p class="wb-type-label">Category</p>
+    <h1>{category.title}</h1>
+    <p class="wb-lede">{category.summary}</p>
 
-      <h1>{category.title}</h1>
+    <section class="wb-section">
+      <h2>Primary Issues</h2>
 
-      <p>{category.summary}</p>
+      {primaryIssues.length > 0 ? (
+        <div class="wb-row-list">
+          {primaryIssues.map((issue) => (
+            <a class="wb-row" href={issue.url}>
+              <p class="wb-row-meta">{issue.category_title}</p>
+              <h2>{issue.title}</h2>
+              <p>{issue.summary}</p>
+            </a>
+          ))}
+        </div>
+      ) : (
+        <p>No primary issues in this category.</p>
+      )}
+    </section>
 
-     <section aria-labelledby="primary-issues">
-        <h2 id="primary-issues">Primary Issues</h2>
+    {secondaryIssues.length > 0 && (
+      <section class="wb-section">
+        <h2>Also Related Issues</h2>
 
-        {primaryIssues.length > 0 ? (
-          <ul>
-            {primaryIssues.map((issue) => (
-              <li>
-                <a href={issue.url}>{issue.title}</a>
-                <p>{issue.summary}</p>
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <p>No primary issues in this category.</p>
-        )}
-      </section>
-
-      <section aria-labelledby="also-related-issues">
-        <h2 id="also-related-issues">Also Related Issues</h2>
-
-        {secondaryIssues.length > 0 ? (
-          <>
-            {hiddenSecondaryIssueCount > 0 ? (
-              <p>
-                Showing {displayedSecondaryIssues.length} of {secondaryIssues.length} cross-listed issues.
-              </p>
-            ) : null}
-
-            <ul>
-              {displayedSecondaryIssues.map((issue) => (
-                <li>
-                  <a href={issue.url}>{issue.title}</a>
-                  <p>{issue.summary}</p>
-                </li>
-              ))}
-            </ul>
-          </>
-        ) : (
-          <p>No cross-listed issues in this category.</p>
-        )}
-      </section>
-
-      <section aria-labelledby="ontology-metadata">
-        <h2 id="ontology-metadata">Ontology Metadata</h2>
-
-        <dl>
-          <dt>Code</dt>
-          <dd><code translate="no" class="notranslate" lang="en">{category.code}</code></dd>
-
-          <dt>Version</dt>
-          <dd><code translate="no" class="notranslate" lang="en">{getVersionLabel(category)}</code></dd>
-
-          <dt>Ontology release</dt>
-          <dd>{release.ontology_release}</dd>
-
-          <dt>Updated</dt>
-          <dd>{category.updated_at}</dd>
-        </dl>
-
-        <h3>History</h3>
-
-        {history.length > 0 ? (
-          <ul>
-            {history.map((entry) => (
-              <li>
-                <p>
-                  <strong>{entry.entry_version}</strong>
-                  {" — "}
-                  {entry.date}
-                  {" — "}
-                  {getChangeTypeLabel(entry.change_type)}
-                </p>
-                <p>{entry.public_summary}</p>
-                <p>Receipt impact: {getReceiptImpactLabel(entry.receipt_impact)}</p>
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <p>No public history entries recorded.</p>
+        {hiddenSecondaryIssueCount > 0 && (
+          <p>
+            Showing {displayedSecondaryIssues.length} of {secondaryIssues.length} cross-listed issues.
+          </p>
         )}
 
-        <p>
-          <a href="/workbench/ontology/changelog/">View full ontology changelog</a>
-        </p>
+        <div class="wb-row-list">
+          {displayedSecondaryIssues.map((issue) => (
+            <a class="wb-row" href={issue.url}>
+              <p class="wb-row-meta">{issue.category_title}</p>
+              <h2>{issue.title}</h2>
+              <p>{issue.summary}</p>
+            </a>
+          ))}
+        </div>
       </section>
-    </main>
-  </body>
-</html>
+    )}
+  </article>
+</WorkbenchLayout>
