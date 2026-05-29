@@ -3109,3 +3109,18 @@ a {
     line-height: 1.6;
   }
 }
+
+/* ---- WORKBENCH UTILITY NAV ACTIVE STATE ----
+   Utility/info links should not use the primary 4-box active marker.
+   They use orange text only when active.
+*/
+
+.wb-nav-group.is-info .wb-nav-link.is-active,
+.wb-drawer-nav .wb-nav-group.is-info .wb-nav-link.is-active {
+  color: var(--color-accent) !important;
+}
+
+.wb-nav-group.is-info .wb-nav-link.is-active .wb-nav-marker,
+.wb-drawer-nav .wb-nav-group.is-info .wb-nav-link.is-active .wb-nav-marker {
+  opacity: 0 !important;
+}
