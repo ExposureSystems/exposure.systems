@@ -3210,3 +3210,13 @@ a {
     max-width: none !important;
   }
 }
+
+/* ---- WORKBENCH PAGE MODE ACTION MOBILE TUNING ---- */
+
+@media (max-width: 760px) {
+  .wb-page-action {
+    gap: 0.7rem !important;
+    font-size: 0.82rem !important;
+    margin: 0 0 0.65rem 0 !important;
+  }
+}
