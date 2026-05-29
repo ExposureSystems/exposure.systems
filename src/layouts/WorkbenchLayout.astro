@@ -9,7 +9,14 @@ const {
   url = "",
   active = "",
   breadcrumb = "",
+  breadcrumbs = [],
 } = Astro.props;
+
+const breadcrumbItems = breadcrumbs.length > 0
+  ? breadcrumbs
+  : breadcrumb
+    ? [{ label: breadcrumb }]
+    : [];
 ---
 
 <PengoLayout
@@ -75,12 +82,16 @@ const {
             <a href="/">PENGO</a>
             <span>/</span>
             <a href="/workbench/">Workbench</a>
-            {breadcrumb && (
+            {breadcrumbItems.map((item) => (
               <>
                 <span>/</span>
-                <span>{breadcrumb}</span>
+                {item.href ? (
+                  <a href={item.href}>{item.label}</a>
+                ) : (
+                  <span>{item.label}</span>
+                )}
               </>
-            )}
+            ))}
           </div>
         </div>
 

@@ -49,7 +49,10 @@ const relatedAiAdjIssues = (issue.related_ai_adj_issues ?? [])
   description={issue.summary}
   url={`https://pengosystems.com${issue.url}`}
   active="issues"
-  breadcrumb={issue.title}
+  breadcrumbs={[
+    { label: "Issues", href: "/workbench/issues/" },
+    { label: issue.title },
+  ]}
 >
   <article class="wb-content wb-template">
     <p class="wb-type-label">Issue</p>
