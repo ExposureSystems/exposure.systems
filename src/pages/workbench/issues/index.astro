@@ -2,76 +2,34 @@
 import WorkbenchLayout from "../../../layouts/WorkbenchLayout.astro";
 import ontologyIndex from "../../../content/_meta/ontology-index.json";
 
-const categories = ontologyIndex.categories
-  .map((category) => {
-    const primaryIssues = category.primary_issues
-      .map((slug) => ontologyIndex.issues.find((issue) => issue.slug === slug))
-      .filter(Boolean);
-
-    const secondaryIssues = category.secondary_issues
-      .map((slug) => ontologyIndex.issues.find((issue) => issue.slug === slug))
-      .filter(Boolean);
-
-    return {
-      ...category,
-      primaryIssues,
-      secondaryIssues,
-    };
-  })
-  .filter((category) => category.primaryIssues.length > 0 || category.secondaryIssues.length > 0);
+const categories = ontologyIndex.categories;
 ---
 
 <WorkbenchLayout
   title="Issues | PENGO Workbench"
-  description="Browse public issue intake surfaces grouped by category."
+  description="Browse common AI-era failure modes by category."
   url="https://pengosystems.com/workbench/issues/"
   active="issues"
   breadcrumb="Issues"
 >
   <article class="wb-content wb-template">
-    <p class="wb-type-label">Issue index</p>
+    <div class="wb-page-action">
+      <span aria-current="page">Browse by Category</span>
+      <a href="/workbench/issues/all/">See All Issues</a>
+    </div>
+
+    <p class="wb-type-label">Issue Browsing</p>
     <h1>Issues</h1>
     <p class="wb-lede">
-      Issues are public intake and search surfaces. Start with the visible problem, then trace the structural pattern behind it.
+      Browse common AI-era failure modes by category. Categories are navigation shelves for issues.
     </p>
 
-    <section class="wb-section">
-      <h2>Browse by Category</h2>
-
+    <section class="wb-section" aria-label="Issue categories">
       <div class="wb-row-list">
         {categories.map((category) => (
           <section class="wb-row">
-            <p class="wb-row-meta">{category.code}</p>
-            <h2>
-              <a href={category.url}>{category.title}</a>
-            </h2>
+            <h2>{category.title}</h2>
             <p>{category.summary}</p>
-
-            {category.primaryIssues.length > 0 && (
-              <div class="wb-mini-list">
-                <h3>Primary Issues</h3>
-                <ul>
-                  {category.primaryIssues.map((issue) => (
-                    <li>
-                      <a href={issue.url}>{issue.title}</a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-
-            {category.secondaryIssues.length > 0 && (
-              <div class="wb-mini-list">
-                <h3>Related Issues</h3>
-                <ul>
-                  {category.secondaryIssues.map((issue) => (
-                    <li>
-                      <a href={issue.url}>{issue.title}</a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
           </section>
         ))}
       </div>

@@ -1,0 +1,39 @@
+---
+import WorkbenchLayout from "../../../../layouts/WorkbenchLayout.astro";
+import ontologyIndex from "../../../../content/_meta/ontology-index.json";
+
+const issues = ontologyIndex.issues;
+---
+
+<WorkbenchLayout
+  title="All Issues | PENGO Workbench"
+  description="A flat reference list of sampled Workbench issues."
+  url="https://pengosystems.com/workbench/issues/all/"
+  active="issues"
+  breadcrumb="All Issues"
+>
+  <article class="wb-content wb-template">
+    <div class="wb-page-action">
+      <a href="/workbench/issues/">Browse by Category</a>
+      <span aria-current="page">See All Issues</span>
+    </div>
+
+    <p class="wb-type-label">Issue Index</p>
+    <h1>All Issues</h1>
+    <p class="wb-lede">
+      A flat reference list of sampled issues. The primary issues page remains category-first.
+    </p>
+
+    <section class="wb-section" aria-label="All issues">
+      <div class="wb-row-list">
+        {issues.map((issue) => (
+          <a class="wb-row" href={issue.url}>
+            <p class="wb-row-meta">{issue.category_title}</p>
+            <h2>{issue.title}</h2>
+            <p>{issue.summary}</p>
+          </a>
+        ))}
+      </div>
+    </section>
+  </article>
+</WorkbenchLayout>
