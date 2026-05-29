@@ -3192,3 +3192,21 @@ a {
 .wb-page-action span[aria-current="page"] {
   color: var(--color-accent) !important;
 }
+
+/* ---- WORKBENCH PAGE MODE ACTION POSITIONING ----
+   Keep page mode switches out of the main reading flow.
+*/
+
+.wb-page-action {
+  justify-content: flex-end !important;
+  margin: -0.35rem 0 0.85rem auto !important;
+  max-width: max-content !important;
+}
+
+@media (max-width: 760px) {
+  .wb-page-action {
+    justify-content: flex-start !important;
+    margin: 0 0 0.85rem 0 !important;
+    max-width: none !important;
+  }
+}
