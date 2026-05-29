@@ -3224,17 +3224,17 @@ a {
 /* ---- WORKBENCH ISSUES CATEGORY BROWSE COMPACTNESS ---- */
 
 @media (max-width: 760px) {
-  .wb-content .wb-row-list .wb-row {
+  .wb-issue-browse .wb-row-list .wb-row {
     padding: 0.9rem 0 !important;
   }
 
-  .wb-content .wb-row-list .wb-row h2 {
+  .wb-issue-browse .wb-row-list .wb-row h2 {
     font-size: 1rem !important;
     line-height: 1.18 !important;
     margin: 0 0 0.28rem !important;
   }
 
-  .wb-content .wb-row-list .wb-row p {
+  .wb-issue-browse .wb-row-list .wb-row p {
     font-size: 0.92rem !important;
     line-height: 1.35 !important;
     margin: 0 !important;
@@ -3266,18 +3266,18 @@ a {
     margin: 0 0 0.55rem 0 !important;
   }
 
-  .wb-template > .wb-type-label {
+  .wb-issue-browse > .wb-type-label {
     font-size: 0.72rem !important;
     margin-bottom: 0.55rem !important;
   }
 
-  .wb-template > h1 {
+  .wb-issue-browse > h1 {
     font-size: clamp(2.15rem, 11vw, 3rem) !important;
     line-height: 0.95 !important;
     margin-bottom: 1rem !important;
   }
 
-  .wb-template > .wb-lede {
+  .wb-issue-browse > .wb-lede {
     font-size: 1rem !important;
     line-height: 1.38 !important;
     margin-bottom: 1.65rem !important;
