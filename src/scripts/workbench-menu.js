@@ -9,7 +9,7 @@ function setWorkbenchDrawerOpen(isOpen) {
   menuButton.setAttribute("aria-expanded", String(isOpen));
   drawer.setAttribute("aria-hidden", String(!isOpen));
   backdrop.hidden = !isOpen;
-  document.documentElement.classList.toggle("wb-drawer-open", isOpen);
+  document.documentElement.classList.toggle("drawer-open", isOpen);
 }
 
 menuButton?.addEventListener("click", () => {
