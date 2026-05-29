@@ -3124,3 +3124,17 @@ a {
 .wb-drawer-nav .wb-nav-group.is-info .wb-nav-link.is-active .wb-nav-marker {
   opacity: 0 !important;
 }
+
+/* ---- WORKBENCH ROW HEADING LINKS ----
+   Row/card headings can be links without browser-default underlines.
+*/
+
+.wb-row h2 a {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+.wb-row h2 a:hover {
+  color: var(--color-accent) !important;
+  text-decoration: none !important;
+}
