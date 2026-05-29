@@ -3320,3 +3320,20 @@ a {
     letter-spacing: 0.065em !important;
   }
 }
+
+/* ---- WORKBENCH PAGE MODE ACTIONS NEUTRAL STATE ----
+   Browse/All switch should not show an active page state.
+   It only changes on hover.
+*/
+
+.wb-page-action span[aria-current="page"],
+.wb-page-action a {
+  color: var(--color-muted) !important;
+  text-decoration: none !important;
+}
+
+.wb-page-action span[aria-current="page"]:hover,
+.wb-page-action a:hover {
+  color: var(--color-accent) !important;
+  text-decoration: none !important;
+}
