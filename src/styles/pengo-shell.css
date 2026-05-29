@@ -3244,3 +3244,79 @@ a {
     gap: 0 !important;
   }
 }
+
+/* ---- WORKBENCH ISSUE BROWSE MOBILE HARD OVERRIDE ----
+   Mobile issue/category browse pages need to behave like compact indexes,
+   not oversized article sections.
+*/
+
+@media (max-width: 760px) {
+  .wb-main {
+    padding-inline: 1.15rem !important;
+  }
+
+  .wb-page-top {
+    margin-bottom: 1.2rem !important;
+  }
+
+  .wb-page-action {
+    gap: 0.75rem !important;
+    font-size: 0.78rem !important;
+    line-height: 1.1 !important;
+    margin: 0 0 0.55rem 0 !important;
+  }
+
+  .wb-template > .wb-type-label {
+    font-size: 0.72rem !important;
+    margin-bottom: 0.55rem !important;
+  }
+
+  .wb-template > h1 {
+    font-size: clamp(2.15rem, 11vw, 3rem) !important;
+    line-height: 0.95 !important;
+    margin-bottom: 1rem !important;
+  }
+
+  .wb-template > .wb-lede {
+    font-size: 1rem !important;
+    line-height: 1.38 !important;
+    margin-bottom: 1.65rem !important;
+  }
+
+  .wb-section {
+    margin-top: 1.35rem !important;
+  }
+
+  .wb-row-list {
+    gap: 0 !important;
+  }
+
+  .wb-row,
+  .wb-row-list > .wb-row,
+  .wb-row-list > section.wb-row,
+  .wb-row-list > a.wb-row {
+    padding: 0.72rem 0 !important;
+    border-top: 1px solid rgba(244, 243, 241, 0.11) !important;
+  }
+
+  .wb-row h2,
+  .wb-row-list .wb-row h2 {
+    font-size: 0.98rem !important;
+    line-height: 1.15 !important;
+    margin: 0 0 0.22rem !important;
+  }
+
+  .wb-row p,
+  .wb-row-list .wb-row p {
+    font-size: 0.86rem !important;
+    line-height: 1.3 !important;
+    margin: 0 !important;
+  }
+
+  .wb-row-meta {
+    font-size: 0.7rem !important;
+    line-height: 1.05 !important;
+    margin-bottom: 0.18rem !important;
+    letter-spacing: 0.065em !important;
+  }
+}
