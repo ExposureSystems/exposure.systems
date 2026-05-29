@@ -3337,15 +3337,3 @@ a {
   color: var(--color-accent) !important;
   text-decoration: none !important;
 }
-
-/* ---- WORKBENCH READING SUBSECTION SPACING ----
-   Markdown issue-body headings need separation from the previous paragraph.
-*/
-
-.wb-reading-section h2 + p {
-  margin-top: 0 !important;
-}
-
-.wb-reading-section p + h2 {
-  margin-top: 1.55rem !important;
-}
