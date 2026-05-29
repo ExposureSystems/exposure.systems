@@ -3138,3 +3138,57 @@ a {
   color: var(--color-accent) !important;
   text-decoration: none !important;
 }
+
+/* ---- WORKBENCH PAGE MODE ACTIONS ---- */
+
+.wb-page-action {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.85rem !important;
+  margin: 0 0 0.35rem !important;
+  font-size: 0.9rem !important;
+  font-weight: 760 !important;
+  line-height: 1.2 !important;
+}
+
+.wb-page-action a,
+.wb-page-action span {
+  color: var(--color-muted) !important;
+  text-decoration: none !important;
+}
+
+.wb-page-action a:hover {
+  color: var(--color-accent) !important;
+  text-decoration: none !important;
+}
+
+.wb-page-action span[aria-current="page"] {
+  color: var(--color-accent) !important;
+}
+
+/* ---- WORKBENCH PAGE MODE ACTIONS ---- */
+
+.wb-page-action {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.85rem !important;
+  margin: 0 0 0.35rem !important;
+  font-size: 0.9rem !important;
+  font-weight: 760 !important;
+  line-height: 1.2 !important;
+}
+
+.wb-page-action a,
+.wb-page-action span {
+  color: var(--color-muted) !important;
+  text-decoration: none !important;
+}
+
+.wb-page-action a:hover {
+  color: var(--color-accent) !important;
+  text-decoration: none !important;
+}
+
+.wb-page-action span[aria-current="page"] {
+  color: var(--color-accent) !important;
+}
