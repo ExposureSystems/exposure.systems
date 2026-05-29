@@ -1,5 +1,5 @@
 ---
-const { active = "" } = Astro.props;
+const { active = "", className = "wb-nav" } = Astro.props;
 
 const navGroups = [
   {
@@ -39,7 +39,7 @@ const navGroups = [
 ];
 ---
 
-<nav class="wb-nav" aria-label="Workbench navigation">
+<nav class={className} aria-label="Workbench navigation">
   {navGroups.map((group) => (
     <div class={`wb-nav-group ${group.className}`}>
       {group.items.map((item) => (
