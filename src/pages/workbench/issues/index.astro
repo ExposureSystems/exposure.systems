@@ -1,54 +1,80 @@
 ---
+import WorkbenchLayout from "../../../layouts/WorkbenchLayout.astro";
 import ontologyIndex from "../../../content/_meta/ontology-index.json";
 
-const issues = ontologyIndex.issues;
+const categories = ontologyIndex.categories
+  .map((category) => {
+    const primaryIssues = category.primary_issues
+      .map((slug) => ontologyIndex.issues.find((issue) => issue.slug === slug))
+      .filter(Boolean);
+
+    const secondaryIssues = category.secondary_issues
+      .map((slug) => ontologyIndex.issues.find((issue) => issue.slug === slug))
+      .filter(Boolean);
+
+    return {
+      ...category,
+      primaryIssues,
+      secondaryIssues,
+    };
+  })
+  .filter((category) => category.primaryIssues.length > 0 || category.secondaryIssues.length > 0);
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Issues | Workbench</title>
-    <meta
-      name="description"
-      content="Public issue intake pages in the Workbench ontology."
-    />
-  </head>
-  <body>
-    <main>
-      <p><a href="/workbench/">Workbench</a></p>
+<WorkbenchLayout
+  title="Issues | PENGO Workbench"
+  description="Browse public issue intake surfaces grouped by category."
+  url="https://pengosystems.com/workbench/issues/"
+  active="issues"
+  breadcrumb="Issues"
+>
+  <article class="wb-content wb-template">
+    <p class="wb-type-label">Issue index</p>
+    <h1>Issues</h1>
+    <p class="wb-lede">
+      Issues are public intake and search surfaces. Start with the visible problem, then trace the structural pattern behind it.
+    </p>
 
-      <h1>Issues</h1>
+    <section class="wb-section">
+      <h2>Browse by Category</h2>
 
-      <p>
-        Issues are public intake and search surfaces. They declare patterns.
-        Lenses are derived through the Pattern → Lens matrix.
-      </p>
+      <div class="wb-row-list">
+        {categories.map((category) => (
+          <section class="wb-row">
+            <p class="wb-row-meta">{category.code}</p>
+            <h2>
+              <a href={category.url}>{category.title}</a>
+            </h2>
+            <p>{category.summary}</p>
 
-      <section aria-labelledby="issue-list">
-        <h2 id="issue-list">Issue Index</h2>
+            {category.primaryIssues.length > 0 && (
+              <div class="wb-mini-list">
+                <h3>Primary Issues</h3>
+                <ul>
+                  {category.primaryIssues.map((issue) => (
+                    <li>
+                      <a href={issue.url}>{issue.title}</a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
 
-        <ul>
-          {issues.map((issue) => (
-            <li>
-              <h3>
-                <a href={issue.url}>{issue.title}</a>
-              </h3>
-
-              <p>{issue.summary}</p>
-
-              <p>
-                Category: {issue.category_title}
-                {" | "}
-                Patterns: {issue.patterns.length}
-                {" | "}
-                Primary lenses: {issue.derived_lenses.primary.length}
-                {" | "}
-                Secondary lenses: {issue.derived_lenses.secondary.length}
-              </p>
-            </li>
-          ))}
-        </ul>
-      </section>
-    </main>
-  </body>
-</html>
+            {category.secondaryIssues.length > 0 && (
+              <div class="wb-mini-list">
+                <h3>Related Issues</h3>
+                <ul>
+                  {category.secondaryIssues.map((issue) => (
+                    <li>
+                      <a href={issue.url}>{issue.title}</a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </section>
+        ))}
+      </div>
+    </section>
+  </article>
+</WorkbenchLayout>
