@@ -1,0 +1,30 @@
+---
+const { active = "" } = Astro.props;
+---
+
+<header class="site-header">
+  <a class="brand-link" href="/" aria-label="Pengo Systems home">
+    <picture>
+      <source
+        srcset="https://assets.pengosystems.com/pengo-main/pengo-logo-main-light_1.svg"
+        media="(prefers-color-scheme: dark)"
+      />
+      <img
+        class="brand-logo"
+        src="https://assets.pengosystems.com/pengo-main/pengo-logo-main-dark_1.svg"
+        width="210"
+        height="70"
+        alt="Pengo Systems"
+      />
+    </picture>
+  </a>
+
+  <nav class="site-nav" aria-label="Primary navigation">
+    <a href="/workbench/" aria-current={active === "workbench" ? "page" : undefined}>
+      Workbench
+    </a>
+    <a href="/about/" aria-current={active === "about" ? "page" : undefined}>
+      About
+    </a>
+  </nav>
+</header>

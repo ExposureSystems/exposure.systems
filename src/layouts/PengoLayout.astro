@@ -1,0 +1,59 @@
+---
+import "../styles/global.css";
+import "../styles/pengo-shell.css";
+import PengoHeader from "../components/PengoHeader.astro";
+import PengoFooter from "../components/PengoFooter.astro";
+
+const {
+  title = "Pengo Systems",
+  description = "Diagnostic systems for automation and AI-era work.",
+  url = "",
+  image = "https://assets.pengosystems.com/pengo-main/pengo-og-image.png",
+  active = "",
+  updated,
+} = Astro.props;
+
+const jsonld = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: title,
+  description,
+  url,
+  dateModified: updated,
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    {url && <link rel="canonical" href={url} />}
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    {image && <meta property="og:image" content={image} />}
+    {url && <meta property="og:url" content={url} />}
+
+    <meta name="twitter:card" content="summary_large_image" />
+    {image && <meta name="twitter:image" content={image} />}
+
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://assets.pengosystems.com/pengo-main/pengo-favicon.png"
+    />
+
+    <script type="application/ld+json">{JSON.stringify(jsonld)}</script>
+  </head>
+
+  <body>
+    <PengoHeader active={active} />
+    <slot />
+    <PengoFooter />
+  </body>
+</html>

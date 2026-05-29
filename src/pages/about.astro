@@ -1,91 +1,57 @@
 ---
-import SEOPage from "../layouts/SEOPage.astro";
+import PengoLayout from "../layouts/PengoLayout.astro";
 ---
 
-<SEOPage
-  title="About | Pengo AI Structural Workbench"
-  description="About the Pengo AI Structural Workbench: a practical inspection surface for finding where AI work loses structure."
+<PengoLayout
+  title="About Pengo Systems"
+  description="Pengo Systems builds products for the seams where work becomes action and consequences matter."
   url="https://pengosystems.com/about/"
+  active="about"
 >
-  <main class="px-4 py-10 mx-auto max-w-screen-md">
-    <p class="text-sm uppercase tracking-wide text-gray-500">
-      About the Workbench
-    </p>
-
-    <h1 class="mt-3 text-3xl md:text-4xl font-bold">
-      About the Pengo AI Structural Workbench
-    </h1>
-
-    <p class="mt-5 text-xl text-gray-700">
-      Stop waiting for AI to magically get better.
-    </p>
-
-    <p class="mt-4 text-lg text-gray-700">
-      Find the structure. Use it to observe, control, and report what AI systems
-      actually do.
-    </p>
-
-    <section class="mt-8">
-      <h2 class="text-2xl font-semibold">Why it exists</h2>
-
-      <p class="mt-3 text-gray-700">
-        Most AI problems are described with loose words: hallucination, drift,
-        overreach, instability, bad prompt, or model failure.
-      </p>
-
-      <p class="mt-3 text-gray-700">
-        The Workbench gives those problems a structural inspection surface. It
-        helps users inspect asks, visible failure surfaces, recurring Patterns,
-        and diagnostic Lenses before jumping to blame, scores, or governance claims.
+  <main>
+    <section class="page-hero section-shell">
+      <h1>About Pengo Systems</h1>
+      <p>
+        Pengo Systems builds products for the seams where work becomes action and consequences matter.
       </p>
     </section>
 
-    <section class="mt-8">
-      <h2 class="text-2xl font-semibold">What it does</h2>
-
-      <ul class="mt-3 list-disc space-y-2 pl-6 text-gray-700">
-        <li>Check what an ask forces an AI system to guess.</li>
-        <li>Surface controlled gap terms through Check Input.</li>
-        <li>Map Detected Gaps to related Patterns and useful Lenses.</li>
-        <li>Explore visible Issue surfaces through structural language.</li>
-        <li>Provide machine-readable indexes and Markdown artifacts.</li>
-      </ul>
-    </section>
-
-    <section class="mt-8">
-      <h2 class="text-2xl font-semibold">What it does not do</h2>
-
-      <ul class="mt-3 list-disc space-y-2 pl-6 text-gray-700">
-        <li>It is not a chatbot.</li>
-        <li>It is not a model judge.</li>
-        <li>It is not a risk score.</li>
-        <li>It is not a receipt system.</li>
-        <li>It is not a governance platform.</li>
-        <li>It is not a promise that AI will magically get better.</li>
-      </ul>
-    </section>
-
-    <section class="mt-8">
-      <h2 class="text-2xl font-semibold">How it fits</h2>
-
-      <p class="mt-3 text-gray-700">
-        The Workbench helps find and inspect structure. That structure can later
-        support systems that observe, control, and report what AI systems actually do.
+    <article class="article-shell">
+      <p>
+        As AI and automation move deeper into real workflows, existing software plumbing is being asked to carry a new kind of load. Specs can become build instructions. Code changes can become deployments. Tool calls can cross systems. Payment, access, infrastructure, and workflow actions can become real.
       </p>
-    </section>
 
-    <nav class="mt-8 flex flex-wrap gap-3" aria-label="About navigation">
-      <a href="/workbench/" class="rounded-xl px-5 py-3 bg-black text-white text-sm font-semibold">
-        Open Workbench
-      </a>
+      <p>
+        Many systems were built around human-paced review, manual judgment, and informal handoffs. Machine-to-machine work changes that rhythm. It can chain steps quickly, route around friction, and turn small gaps into real outcomes.
+      </p>
 
-      <a href="/workbench/check-input/" class="rounded-xl px-5 py-3 border border-gray-300 text-sm font-semibold">
-        Start Check Input
-      </a>
+      <p class="pull-line">
+        The answer is not to rebuild everything.
+      </p>
 
-      <a href="/" class="rounded-xl px-5 py-3 border border-gray-300 text-sm font-semibold">
-        Back Home
-      </a>
-    </nav>
+      <p>
+        The answer is to add better checkpoints, observations, controls, and receipts at the points where consequence begins.
+      </p>
+
+      <p>
+        Pengo products help teams see what is present, what is missing, what changed, what crossed a boundary, what action was attempted, and what proof exists afterward.
+      </p>
+
+      <p>
+        We use AI where it helps — to extract, compare, draft, classify, and surface useful shape — but AI is not the authority. Pengo products are built around declared requirements, deterministic checks, bounded execution, and receipt-backed evidence.
+      </p>
+
+      <p>
+        Our product family includes tools for artifact checks, repo/change mapping, AI output observation, callable boundary control, action gating, and evidence packeting.
+      </p>
+
+      <p>
+        Pengo does not ask teams to replace the systems they already use. We build defensive layers that can be added around existing tools, workflows, and action surfaces so teams can implement controls faster, reduce blind spots, and produce evidence when it matters.
+      </p>
+
+      <p>
+        Pengo helps teams control machine-to-machine work without pretending identity, prompts, logs, or dashboards are enough.
+      </p>
+    </article>
   </main>
-</SEOPage>
+</PengoLayout>

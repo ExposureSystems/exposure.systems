@@ -1,145 +1,58 @@
 ---
-import ontologyIndex from "../../content/_meta/ontology-index.json";
-
-const issueCount = ontologyIndex.issues.length;
-const patternCount = ontologyIndex.patterns.length;
-const lensCount = ontologyIndex.lenses.length;
-const categoryCount = ontologyIndex.categories.length;
-const aiAdjIssueCount = ontologyIndex.ai_adj_issues?.length ?? 0;
-
-const sections = [
-  {
-    title: "Start Here",
-    href: "/workbench/start-here/",
-    description:
-      "Understand why AI workflow failures often come from structural conditions.",
-  },
-  {
-    title: "Check Input",
-    href: "/workbench/check-input/",
-    description: "Narrow the ask before blaming the model.",
-  },
-  {
-    title: "Gap Explorer",
-    href: "/workbench/gap-explorer/",
-    description: "Paste Detected Gaps and explore related Patterns and useful Lenses.",
-  },
-  {
-    title: "Issues",
-    href: "/workbench/issues/",
-    description: "Start with the visible failure surface.",
-  },
-  {
-  title: "AI-Adjacent Issues",
-  href: "/workbench/ai-adj-issues/",
-  description:
-    "Browse problems users may experience as AI failures, but which may involve tools, apps, permissions, runtime behavior, configuration, or integrations.",
-  },
-  {
-    title: "Patterns",
-    href: "/workbench/patterns/",
-    description: "Find the recurring structural form behind the problem.",
-  },
-  {
-    title: "Lenses",
-    href: "/workbench/lenses/",
-    description: "Apply diagnostic views to inspect Patterns from different angles.",
-  },
-  {
-    title: "Ontology Changelog",
-    href: "/workbench/ontology/changelog/",
-    description: "Review public changes to Issues, Patterns, Lenses, and Categories.",
-  },
-  {
-    title: "Search",
-    href: "/workbench/search/",
-    description: "Find Workbench references by symptoms, gap terms, names, or codes.",
-  },
-  {
-    title: "Examples",
-    href: "/workbench/examples/",
-    description: "See the structural language applied to real AI-work situations.",
-  },
-  {
-    title: "Field Notes",
-    href: "/workbench/field-notes/",
-    description: "Read informal observations, implementation notes, and structural breakdowns.",
-  },
-  {
-    title: "Articles",
-    href: "/workbench/articles/",
-    description: "Read long-form explanations of Workbench concepts and boundaries.",
-  },
-  {
-    title: "Videos",
-    href: "/workbench/videos/",
-    description: "Watch walkthroughs, explainers, and demonstrations.",
-  },
-];
+import WorkbenchLayout from "../../layouts/WorkbenchLayout.astro";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Pengo Workbench</title>
-    <meta
-      name="description"
-      content="A practical workbench for inspecting where AI work and systems lose structure."
-    />
-  </head>
-  <body>
-    <main>
-      <p><a href="/">Home</a></p>
+<WorkbenchLayout
+  title="PENGO Workbench | Pengo Systems"
+  description="Important updates, recently added reference material, and useful paths into the Workbench."
+  url="https://pengosystems.com/workbench/"
+  active=""
+>
+  <article class="wb-content wb-template">
+    <p class="wb-type-label">Workbench home</p>
+    <h1>PENGO Workbench</h1>
+    <p class="wb-lede">
+      Important updates, recently added reference material, and useful paths into the Workbench.
+    </p>
 
-      <h1>Pengo Workbench</h1>
+    <section class="wb-section">
+      <h2>Latest</h2>
+      <div class="wb-highlight-list">
+        <a class="wb-row" href="/workbench/start-here/">
+          <p class="wb-row-meta">Start</p>
+          <h2>Start Here</h2>
+          <p>Understand why AI workflow failures often come from structural conditions.</p>
+        </a>
 
-      <p><strong>Stop waiting for AI to magically get better.</strong></p>
+        <a class="wb-row" href="/workbench/issues/">
+          <p class="wb-row-meta">Issues</p>
+          <h2>Browse visible failure surfaces</h2>
+          <p>Issues describe real-world symptoms in plain language and map them to structural patterns.</p>
+        </a>
+      </div>
+    </section>
 
-      <p>
-        Find the structure. Use it to observe, control, and report what AI systems
-        actually do.
-      </p>
+    <section class="wb-section">
+      <h2>Recently added</h2>
+      <div class="wb-row-list">
+        <a class="wb-row" href="/workbench/issues/actual-policy-differs-from-declared-policy/">
+          <p class="wb-row-meta">Issue</p>
+          <h2>Actual Policy Differs From Declared Policy</h2>
+          <p>The policy the AI or workflow actually follows differs from the policy that is documented, declared, displayed, or expected.</p>
+        </a>
 
-      <p>
-        The Workbench helps you inspect unclear asks, visible failure surfaces,
-        recurring structural Patterns, and diagnostic Lenses before jumping to
-        blame, scores, or governance claims.
-      </p>
+        <a class="wb-row" href="/workbench/lenses/conflict-lens/">
+          <p class="wb-row-meta">Lens</p>
+          <h2>Conflict Lens</h2>
+          <p>Detects mutually incompatible constraints, claims, states, or declarations that cannot be simultaneously satisfied.</p>
+        </a>
 
-      <section aria-labelledby="counts">
-        <h2 id="counts">Current Index</h2>
-
-        <ul>
-          <li>Issues: {issueCount}</li>
-          <li>AI-Adjacent Issues: {aiAdjIssueCount}</li>
-          <li>Patterns: {patternCount}</li>
-          <li>Lenses: {lensCount}</li>
-          <li>Categories: {categoryCount}</li>
-        </ul>
-      </section>
-
-      <section aria-labelledby="sections">
-        <h2 id="sections">Workbench Areas</h2>
-
-        <ul>
-          {sections.map((section) => (
-            <li>
-              <h3><a href={section.href}>{section.title}</a></h3>
-              <p>{section.description}</p>
-            </li>
-          ))}
-        </ul>
-      </section>
-
-      <section aria-labelledby="what-this-is">
-        <h2 id="what-this-is">What This Is</h2>
-
-        <p>
-          The Workbench is not a chatbot, risk score, or governance platform. It
-          is a structured set of protocols, indexes, examples, field notes, and
-          machine-readable references for inspecting where AI work and systems lose structure.
-        </p>
-      </section>
-    </main>
-  </body>
-</html>
+        <a class="wb-row" href="/workbench/patterns/circular-dependency/">
+          <p class="wb-row-meta">Pattern</p>
+          <h2>Circular Dependency</h2>
+          <p>A structural condition where two or more elements depend on each other in a closed loop without an independent base condition.</p>
+        </a>
+      </div>
+    </section>
+  </article>
+</WorkbenchLayout>

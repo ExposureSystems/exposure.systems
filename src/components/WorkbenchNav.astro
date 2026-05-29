@@ -1,0 +1,57 @@
+---
+const { active = "" } = Astro.props;
+
+const navGroups = [
+  {
+    className: "is-primary",
+    items: [
+      { key: "start-here", label: "Start Here", href: "/workbench/start-here/" },
+      { key: "issues", label: "Issues", href: "/workbench/issues/" },
+      { key: "ai-adjacent", label: "AI-Adjacent Issues", href: "/workbench/ai-adj-issues/" },
+      { key: "patterns", label: "Patterns", href: "/workbench/patterns/" },
+      { key: "lenses", label: "Lenses", href: "/workbench/lenses/" },
+      { key: "search", label: "Search", href: "/workbench/search/" },
+      { key: "check-inputs", label: "Check Inputs", href: "/workbench/check-input/" },
+    ],
+  },
+  {
+    className: "is-content",
+    items: [
+      { key: "field-notes", label: "Field Notes", href: "/workbench/field-notes/" },
+      { key: "articles", label: "Articles", href: "/workbench/articles/" },
+      { key: "videos", label: "Video", href: "/workbench/videos/" },
+    ],
+  },
+  {
+    className: "is-training",
+    items: [
+      { key: "training", label: "AI Field Training", href: "#" },
+    ],
+  },
+  {
+    className: "is-info",
+    items: [
+      { key: "ontology-updates", label: "Ontology Updates", href: "/workbench/ontology/changelog/" },
+      { key: "use-attribution", label: "Use & Attribution", href: "/workbench/use-attribution/" },
+      { key: "terms", label: "Workbench Terms", href: "/workbench/terms/" },
+    ],
+  },
+];
+---
+
+<nav class="wb-nav" aria-label="Workbench navigation">
+  {navGroups.map((group) => (
+    <div class={`wb-nav-group ${group.className}`}>
+      {group.items.map((item) => (
+        <a
+          class={`wb-nav-link ${active === item.key ? "is-active" : ""}`}
+          href={item.href}
+          aria-current={active === item.key ? "page" : undefined}
+        >
+          <span class="wb-nav-marker" aria-hidden="true"></span>
+          <span>{item.label}</span>
+        </a>
+      ))}
+    </div>
+  ))}
+</nav>

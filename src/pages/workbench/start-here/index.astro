@@ -1,274 +1,100 @@
 ---
-const title = "Start Here";
-const description =
-  "A plain-language entry point for understanding why AI workflow failures often come from structural conditions.";
+import WorkbenchLayout from "../../../layouts/WorkbenchLayout.astro";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>{title} | Pengo Workbench</title>
-    <meta name="description" content={description} />
-  </head>
-  <body>
-    <main>
+<WorkbenchLayout
+  title="Start Here | PENGO Workbench"
+  description="A plain-language entry point for understanding why AI workflow failures often come from structural conditions."
+  url="https://pengosystems.com/workbench/start-here/"
+  active="start-here"
+  breadcrumb="Start Here"
+>
+  <article class="wb-content wb-template">
+    <p class="wb-type-label">Why This Exists</p>
+    <h1>Start Here</h1>
+
+    <section class="wb-reading-section">
+      <h2>Why This Exists</h2>
       <p>
-        <a href="/workbench/">Workbench</a>
+        AI systems are increasingly embedded into real workflows: code generation, customer support, security review, infrastructure provisioning, internal automation, and multi-agent orchestration.
       </p>
+      <p>
+        As their scope expands, teams are noticing something: the same input produces different outputs. Policies appear declared but are bypassed. Agents escalate unexpectedly. Memory changes behavior over time. Guardrails exist, yet failures slip through.
+      </p>
+      <p>
+        These are usually described as hallucinations, drift, guardrail failure, or agent instability. Those words describe behavior. They do not describe the structure that behavior is executing against.
+      </p>
+    </section>
 
-      <h1>Start Here</h1>
+    <section class="wb-reading-section">
+      <h2>The Structural Gap</h2>
+      <p>
+        Modern AI systems are layered: inputs, prompts, policies, tools, memory, permissions, adapters, and outputs.
+      </p>
+      <p>
+        When behavior diverges, the model is often blamed. In practice, many failures emerge from structural conditions: constraints that were never fully specified, authorities layered without clear precedence, boundaries declared but not enforced, references that change silently, scope that expands incrementally, and parallel systems that fail to converge.
+      </p>
+      <p>AI does not create these conditions. It executes them.</p>
+    </section>
 
-      <section aria-labelledby="why-this-exists">
-        <h2 id="why-this-exists">Why This Exists</h2>
+    <section class="wb-reading-section">
+      <h2>Why This Is Showing Up Now</h2>
+      <p>
+        For years, complex systems relied on human interpretation. When something behaved unexpectedly, a developer stepped in, an operator overrode a decision, a reviewer noticed something felt off, or a team compensated for edge cases.
+      </p>
+      <p>
+        Small structural inconsistencies were often absorbed by human judgment. As execution becomes increasingly mechanical and autonomous, that buffer disappears. Agents execute. Workflows chain automatically. State persists. Decisions propagate instantly.
+      </p>
+    </section>
 
-        <p>AI systems are increasingly embedded into real workflows:</p>
+    <blockquote class="wb-pullquote">
+      <p>Mechanical systems do not absorb ambiguity.<br />They execute it.</p>
+      <cite>— PENGO</cite>
+    </blockquote>
 
-        <ul>
-          <li>Code generation</li>
-          <li>Customer support</li>
-          <li>Security review</li>
-          <li>Infrastructure provisioning</li>
-          <li>Internal automation</li>
-          <li>Multi-agent orchestration</li>
-        </ul>
+    <section class="wb-reading-section">
+      <h2>What This Library Does</h2>
+      <p>
+        This reference library defines recurring structural patterns, analytical lenses used to detect them, deterministic tests where applicable, and clear, bounded terminology.
+      </p>
+      <p>
+        It does not provide policy advice, replace model providers, offer guardrail products, or interpret intent. It names structure.
+      </p>
+    </section>
 
-        <p>As their scope expands, teams are noticing something:</p>
+    <section class="wb-reading-section">
+      <h2>Why Naming Structure Matters</h2>
+      <p>
+        When something is described as a hallucination, investigation often stops.
+      </p>
+      <p>
+        When something is described as Non-Deterministic Execution, Constraint Underspecified, Authority Collision, Boundary Leakage, or Convergence Failure, it becomes analyzable. Once analyzable, it becomes measurable. Once measurable, it becomes controllable.
+      </p>
+    </section>
 
-        <ul>
-          <li>The same input produces different outputs.</li>
-          <li>Policies appear declared but are bypassed.</li>
-          <li>Agents escalate unexpectedly.</li>
-          <li>Memory changes behavior over time.</li>
-          <li>Guardrails exist, yet failures slip through.</li>
-        </ul>
+    <section class="wb-reading-section">
+      <h2>The Goal</h2>
+      <p>AI systems are not behaving unpredictably. They are executing structure.</p>
+      <p>
+        If structure is ambiguous, behavior will diverge. If authority overlaps, behavior will conflict. If boundaries are unclear, scope will expand.
+      </p>
+      <p>Clarity begins with naming the structural condition.</p>
+    </section>
 
-        <p>These are usually described as:</p>
-
-        <ul>
-          <li>Hallucinations</li>
-          <li>Drift</li>
-          <li>Guardrail failure</li>
-          <li>Agent instability</li>
-        </ul>
-
-        <aside aria-label="Structural note">
-          <p>
-            Those words describe behavior. They do not describe the structure
-            that behavior is executing against.
-          </p>
-        </aside>
-      </section>
-
-      <section aria-labelledby="the-structural-gap">
-        <h2 id="the-structural-gap">The Structural Gap</h2>
-
-        <p>Modern AI systems are layered:</p>
-
-        <ul>
-          <li>Inputs</li>
-          <li>Prompts</li>
-          <li>Policies</li>
-          <li>Tools</li>
-          <li>Memory</li>
-          <li>Permissions</li>
-          <li>Adapters</li>
-          <li>Outputs</li>
-        </ul>
-
-        <p>When behavior diverges, the model is often blamed.</p>
-
-        <p>In practice, many failures emerge from structural conditions:</p>
-
-        <ul>
-          <li>Constraints that were never fully specified.</li>
-          <li>Authorities layered without clear precedence.</li>
-          <li>Boundaries declared but not enforced.</li>
-          <li>References that change silently.</li>
-          <li>Scope that expands incrementally.</li>
-          <li>Parallel systems that fail to converge.</li>
-        </ul>
-
-        <p>AI does not create these conditions. It executes them.</p>
-      </section>
-
-      <section aria-labelledby="why-this-is-showing-up-now">
-        <h2 id="why-this-is-showing-up-now">Why This Is Showing Up Now</h2>
-
-        <p>For years, complex systems relied on human interpretation.</p>
-
-        <p>When something behaved unexpectedly:</p>
-
-        <ul>
-          <li>A developer stepped in.</li>
-          <li>An operator overrode a decision.</li>
-          <li>A reviewer noticed something felt off.</li>
-          <li>A team compensated for edge cases.</li>
-        </ul>
-
-        <p>Small structural inconsistencies were often absorbed by human judgment.</p>
-
-        <p>
-          As execution becomes increasingly mechanical and autonomous, that buffer
-          disappears.
-        </p>
-
-        <ul>
-          <li>Agents execute.</li>
-          <li>Workflows chain automatically.</li>
-          <li>State persists.</li>
-          <li>Decisions propagate instantly.</li>
-        </ul>
-
-        <aside aria-label="Structural note">
-          <p>Mechanical systems do not absorb ambiguity. They execute it.</p>
-        </aside>
-
-        <p>When structure is underspecified, execution diverges.</p>
-        <p>When authority overlaps, behavior conflicts.</p>
-        <p>When boundaries are unclear, scope expands.</p>
-
-        <p>AI does not introduce these conditions. It exposes them at machine speed.</p>
-      </section>
-
-      <section aria-labelledby="what-the-workbench-does">
-        <h2 id="what-the-workbench-does">What the Workbench Does</h2>
-
-        <p>
-          The Workbench gives teams a way to name, inspect, and trace recurring
-          structural failures in AI work.
-        </p>
-
-        <p>It gives you:</p>
-
-        <ul>
-          <li>Recurring structural patterns.</li>
-          <li>Analytical lenses used to inspect them.</li>
-          <li>Repeatable checks where applicable.</li>
-          <li>Clear, bounded terminology.</li>
-        </ul>
-
-        <p>It does not:</p>
-
-        <ul>
-          <li>Provide policy advice.</li>
-          <li>Replace model providers.</li>
-          <li>Sell guardrail products.</li>
-          <li>Infer hidden intent.</li>
-          <li>Decide who is right.</li>
-        </ul>
-
-        <p>It names the structure so the work can continue.</p>
-      </section>
-
-      <section aria-labelledby="why-naming-structure-matters">
-        <h2 id="why-naming-structure-matters">Why Naming Structure Matters</h2>
-
-        <p>When something is described as a hallucination, investigation often stops.</p>
-
-        <p>When something is described as:</p>
-
-        <ul>
-          <li>
-            <span translate="no" class="notranslate" lang="en">
-              Non-Deterministic Execution
-            </span>
-          </li>
-          <li>
-            <span translate="no" class="notranslate" lang="en">
-              Constraint Underspecified
-            </span>
-          </li>
-          <li>
-            <span translate="no" class="notranslate" lang="en">
-              Authority Collision
-            </span>
-          </li>
-          <li>
-            <span translate="no" class="notranslate" lang="en">
-              Boundary Leakage
-            </span>
-          </li>
-          <li>
-            <span translate="no" class="notranslate" lang="en">
-              Convergence Failure
-            </span>
-          </li>
-        </ul>
-
-        <p>It becomes analyzable.</p>
-        <p>Once analyzable, it becomes measurable.</p>
-        <p>Once measurable, it can be governed.</p>
-      </section>
-
-      <section aria-labelledby="the-goal">
-        <h2 id="the-goal">The Goal</h2>
-
-        <p>AI systems are not behaving unpredictably.</p>
-
-        <p>They are executing structure.</p>
-
-        <p>If structure is ambiguous, behavior will diverge.</p>
-        <p>If authority overlaps, behavior will conflict.</p>
-        <p>If boundaries are unclear, scope will expand.</p>
-
-        <p>Clarity begins with naming the structural condition.</p>
-      </section>
-
-      <aside aria-labelledby="start-with-check-input">
-        <h2 id="start-with-check-input">Start with Check Input</h2>
-
-        <p>
-          Have an input you are about to give an AI system?
-        </p>
-
-        <p>
-          Check it before the model has to guess.
-        </p>
-
-        <p>
-          Use Check Input to find missing, unclear, ambiguous, conflicting,
-          unstated, undefined, incomplete, or implied criteria in the input.
-        </p>
-
-        <p>
-          <a href="/workbench/check-input/">Open Check Input</a>
-        </p>
-
-        <p>
-          Already know the Issue, Pattern, Lens, category, or code you need?
-          <a href="/workbench/search/">Use Search</a>.
-        </p>
-      </aside>
-
-      <section aria-labelledby="where-to-start">
-        <h2 id="where-to-start">Where To Start</h2>
-
-        <p>Most readers do not begin with Patterns or Lenses.</p>
-
-        <p>They begin with a problem.</p>
-
-        <p>
-          Start with <a href="/workbench/check-input/">Check Input</a> when you
-          have an input you are about to give an AI system.
-        </p>
-
-        <p>
-          Start with <a href="/workbench/issues/">Issues</a> when you want to
-          browse visible failure surfaces.
-        </p>
-
-        <p>
-          Start with <a href="/workbench/ai-adj-issues/">AI-Adjacent Issues</a>
-          when the problem appears tied to runtime, tools, product surface,
-          permissions, workspace state, memory, configuration, or environment
-          differences.
-        </p>
-
-        <p>
-          Use <a href="/workbench/search/">Search</a> when you already know what
-          you are looking for.
-        </p>
-      </section>
-    </main>
-  </body>
-</html>
+    <section class="wb-reading-section">
+      <h2>Where To Start</h2>
+      <p>
+        Most readers do not begin with patterns or analytical lenses. They begin with a problem.
+      </p>
+      <p>
+        If you are seeing different outputs from the same input, unexpected escalation, policies that appear declared but fail, agents that behave inconsistently, or systems that drift over time, start with Issues.
+      </p>
+      <p>
+        Issues describe real-world symptoms in plain language and map them to structural patterns. From there, you can trace the structure.
+      </p>
+      <p class="wb-next-link">
+        <a href="/workbench/issues/">Start with Issues</a>
+      </p>
+    </section>
+  </article>
+</WorkbenchLayout>

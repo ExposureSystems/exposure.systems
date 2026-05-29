@@ -1,0 +1,95 @@
+---
+import PengoLayout from "./PengoLayout.astro";
+import WorkbenchNav from "../components/WorkbenchNav.astro";
+import workbenchMenuScript from "../scripts/workbench-menu.js?url";
+
+const {
+  title = "PENGO Workbench",
+  description = "PENGO Workbench reference shell.",
+  url = "",
+  active = "",
+  breadcrumb = "",
+} = Astro.props;
+---
+
+<PengoLayout
+  title={title}
+  description={description}
+  url={url}
+  active="workbench"
+>
+  <div class="wb-backdrop" data-workbench-backdrop hidden></div>
+
+  <aside
+    class="wb-drawer"
+    id="workbench-drawer"
+    data-workbench-drawer
+    aria-hidden="true"
+  >
+    <div class="wb-drawer-head">
+      <strong>PENGO Workbench</strong>
+      <button type="button" data-workbench-close aria-label="Close Workbench menu">
+        ×
+      </button>
+    </div>
+
+    <label class="wb-drawer-search">
+      <span>Search</span>
+      <input type="search" placeholder="Search Workbench..." />
+    </label>
+
+    <nav class="wb-drawer-nav" aria-label="Workbench navigation">
+      <WorkbenchNav active={active} />
+    </nav>
+  </aside>
+
+  <main class="wb-shell">
+    <div class="wb-mobile-bar">
+      <button
+        class="wb-menu-button"
+        type="button"
+        data-workbench-menu
+        aria-label="Open Workbench menu"
+        aria-expanded="false"
+        aria-controls="workbench-drawer"
+      >
+        <span aria-hidden="true">☰</span>
+      </button>
+      <strong>PENGO Workbench</strong>
+    </div>
+
+    <div class="wb-layout">
+      <aside class="wb-sidebar">
+        <div class="wb-sidebar-head">
+          <p>PENGO Workbench</p>
+          <label class="wb-sidebar-search">
+            <span>Search</span>
+            <input type="search" placeholder="Quick search..." />
+          </label>
+        </div>
+
+        <WorkbenchNav active={active} />
+      </aside>
+
+      <section class="wb-main">
+        <div class="wb-page-top">
+          <div class="wb-breadcrumbs">
+            <a href="/">PENGO</a>
+            <span>/</span>
+            <a href="/workbench/">Workbench</a>
+            {breadcrumb && (
+              <>
+                <span>/</span>
+                <span>{breadcrumb}</span>
+              </>
+            )}
+          </div>
+        </div>
+
+        <slot />
+      </section>
+    </div>
+  </main>
+
+  <script src={workbenchMenuScript}></script>
+</PengoLayout>
