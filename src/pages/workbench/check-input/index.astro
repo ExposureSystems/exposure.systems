@@ -1,4 +1,6 @@
 ---
+import WorkbenchLayout from "../../../layouts/WorkbenchLayout.astro";
+
 const protocolText = `AI Input Check Protocol
 
 Review the following input for missing or ambiguous criteria that could force an AI system to guess.
@@ -102,104 +104,95 @@ const gapTypes = [
 ];
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Check Input | Pengo AI Structural Workbench</title>
-    <meta
-      name="description"
-      content="A copyable protocol for inspecting what an AI ask leaves open for the model to guess."
-    />
-  </head>
-  <body>
-    <main>
-      <p><a href="/workbench/">Workbench</a></p>
+<WorkbenchLayout
+  title="Check Input | PENGO Workbench"
+  description="A copyable protocol for inspecting what an AI ask leaves open for the model to guess."
+  url="https://pengosystems.com/workbench/check-input/"
+  active="check-input"
+  breadcrumb="Check Input"
+>
+  <article class="wb-content wb-template">
+    <p class="wb-type-label">Input Inspection</p>
+    <h1>Check Input</h1>
+    <p class="wb-lede">
+      Stop guessing. Narrow the ask.
+    </p>
 
-      <h1>Check Input</h1>
+    <section class="wb-reading-section">
+      <h2>What It Is</h2>
+      <p>
+        Check Input is a public protocol for inspecting an AI ask before blaming the model.
+        It helps identify what the input left missing, unclear, implied, conflicting, or unstated.
+      </p>
+      <p>
+        Use the protocol with any AI system. It should return an Input Summary and a Detected Gaps list using controlled terms.
+      </p>
+    </section>
 
-      <p><strong>Narrow the ask before blaming the model.</strong></p>
+    <section class="wb-reading-section">
+      <h2>What It Does</h2>
+      <p>
+        Check Input helps you inspect the original ask and identify what it forced the AI system to guess.
+      </p>
+      <p>
+        Detected gap terms can be explored through the Workbench reference library. Gap Explorer is the reference exploration surface for that path.
+      </p>
+      <p class="wb-next-link">
+        <a href="/workbench/gap-explorer/">Open Gap Explorer</a>
+      </p>
+    </section>
+
+    <section class="wb-reading-section">
+      <h2>What It Does Not Do</h2>
+      <ul>
+        <li>It does not diagnose the model.</li>
+        <li>It does not prove causality.</li>
+        <li>It does not validate correctness.</li>
+        <li>It does not classify a failure.</li>
+        <li>It does not produce receipts.</li>
+        <li>It does not replace DIVU.</li>
+      </ul>
+    </section>
+
+    <section class="wb-reading-section">
+      <h2>Copyable Protocol</h2>
+      <p>
+        Copy this protocol and paste it into an AI system with the input you want inspected.
+      </p>
+
+      <pre><code>{protocolText}</code></pre>
+    </section>
+
+    <section class="wb-reading-section">
+      <h2>Controlled Vocabulary</h2>
+
+      <h3>Elements</h3>
+      <ul>
+        {elements.map((element) => (
+          <li>{element}</li>
+        ))}
+      </ul>
+
+      <h3>Gap Types</h3>
+      <ul>
+        {gapTypes.map((gapType) => (
+          <li>{gapType}</li>
+        ))}
+      </ul>
 
       <p>
-        Check Input helps you inspect the original ask and identify what it left
-        missing, unclear, implied, conflicting, or unstated.
+        Every finding should use this shape: <code>[gap type] [element]</code>.
       </p>
 
       <p>
-        It is the first move in the Workbench: before assuming the model failed,
-        inspect what structure the ask actually declared and what it forced the
-        model to guess.
+        Examples: <code>missing actor</code>, <code>unclear scope</code>, <code>unstated constraint</code>, <code>conflicting dependency</code>.
       </p>
+    </section>
 
-      <section aria-labelledby="does">
-        <h2 id="does">What It Does</h2>
+    <section class="wb-reading-section">
+      <h2>Example Output</h2>
 
-        <p>
-          Step 1: Copy the protocol below and run it with any AI system.
-        </p>
-
-        <p>
-          Step 2: Take the resulting Detected Gaps to the Gap Explorer.
-        </p>
-
-        <p>
-          <a href="/workbench/gap-explorer/">Open Gap Explorer</a>
-        </p>
-      </section>
-
-      <section aria-labelledby="does-not">
-        <h2 id="does-not">What It Does Not Do</h2>
-
-        <ul>
-          <li>It does not diagnose the model.</li>
-          <li>It does not prove causality.</li>
-          <li>It does not classify a failure.</li>
-          <li>It does not produce receipts.</li>
-          <li>It does not replace DIVU.</li>
-          <li>It does not use Issues as Step 2 targets.</li>
-        </ul>
-      </section>
-
-      <section aria-labelledby="protocol">
-        <h2 id="protocol">Copyable Protocol</h2>
-
-        <p>
-          Copy this artifact and paste it into an AI system with the input you want inspected.
-        </p>
-
-        <pre><code>{protocolText}</code></pre>
-      </section>
-
-      <section aria-labelledby="vocabulary">
-        <h2 id="vocabulary">Controlled Vocabulary</h2>
-
-        <h3>Elements</h3>
-        <ul>
-          {elements.map((element) => (
-            <li>{element}</li>
-          ))}
-        </ul>
-
-        <h3>Gap Types</h3>
-        <ul>
-          {gapTypes.map((gapType) => (
-            <li>{gapType}</li>
-          ))}
-        </ul>
-
-        <p>
-          Every finding should use this shape: <code>[gap type] [element]</code>.
-        </p>
-
-        <p>
-          Examples: <code>missing actor</code>, <code>unclear scope</code>,
-          <code>unstated constraint</code>, <code>conflicting dependency</code>.
-        </p>
-      </section>
-
-      <section aria-labelledby="example">
-        <h2 id="example">Example Output</h2>
-
-        <pre><code>{`Input Summary
+      <pre><code>{`Input Summary
 - actor: not specified
 - trigger: not specified
 - action: write a refund email
@@ -215,23 +208,16 @@ Detected Gaps
 - unclear scope
 - unstated constraint
 - missing dependency`}</code></pre>
-      </section>
+    </section>
 
-      <section aria-labelledby="boundary">
-        <h2 id="boundary">Boundary</h2>
-
-        <p>
-          Check Input surfaces controlled gap terms. The Gap Explorer uses those
-          terms to surface related Patterns and useful Lenses. These are related
-          structural references, not a final diagnosis.
-        </p>
-
-        <p>
-          The Workbench helps find the structure. DIVU and related control systems
-          can use declared structure to observe, control, and report what AI systems
-          actually do.
-        </p>
-      </section>
-    </main>
-  </body>
-</html>
+    <section class="wb-reading-section">
+      <h2>Boundary</h2>
+      <p>
+        Check Input surfaces controlled gap terms. These terms can help surface related Patterns and useful Lenses, but they are related structural references, not a final diagnosis.
+      </p>
+      <p>
+        Check Input turns an AI problem back toward the ask.
+      </p>
+    </section>
+  </article>
+</WorkbenchLayout>
