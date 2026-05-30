@@ -3035,10 +3035,14 @@ a {
 }
 
 .wb-reading-section h2 {
-  margin: 0 0 0.55rem !important;
+  margin: 1.85rem 0 0.55rem !important;
   font-size: clamp(1.05rem, 1.45vw, 1.24rem) !important;
   line-height: 1.18 !important;
   letter-spacing: -0.015em !important;
+}
+
+.wb-reading-section h2:first-child {
+  margin-top: 0 !important;
 }
 
 .wb-reading-section p {
