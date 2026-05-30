@@ -1,13 +1,6 @@
 ---
+import WorkbenchLayout from "../../../layouts/WorkbenchLayout.astro";
 import ontologyIndex from "../../../content/_meta/ontology-index.json";
-import changelog from "../../../ontology/changelog.public.json";
-import release from "../../../ontology/ontology-release.json";
-import {
-  getChangeTypeLabel,
-  getObjectHistory,
-  getReceiptImpactLabel,
-  getVersionLabel,
-} from "../../../lib/ontology/page-metadata";
 
 export function getStaticPaths() {
   return ontologyIndex.lenses.map((lens) => ({
@@ -29,134 +22,89 @@ const secondaryPatterns = lens.patterns.secondary
 const relatedIssues = lens.issues
   .map((slug) => ontologyIndex.issues.find((issue) => issue.slug === slug))
   .filter(Boolean);
-
-const history = getObjectHistory(changelog, lens);
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>{lens.code} - {lens.title} | Workbench Lens</title>
-    <meta name="description" content={lens.summary} />
-  </head>
-  <body>
-    <main>
-      <p>
-        <a href="/workbench/">Workbench</a>
-        {" / "}
-        <a href="/workbench/lenses/">Lenses</a>
-      </p>
+<WorkbenchLayout
+  title={`${lens.code} - ${lens.title} | PENGO Workbench`}
+  description={lens.summary}
+  url={`https://pengosystems.com${lens.url}`}
+  active="lenses"
+  breadcrumbs={[
+    { label: "Lenses", href: "/workbench/lenses/" },
+    { label: lens.title },
+  ]}
+>
+  <article class="wb-content wb-template">
+    <p class="wb-type-label" translate="no" class:list={["notranslate"]} lang="en">
+      {lens.code}
+    </p>
 
-      <h1>
-        <span class="canonical-term notranslate" translate="no">
-          {lens.code} - {lens.title}
-        </span>
-      </h1>
+    <h1>
+      <span translate="no" class="notranslate" lang="en">{lens.title}</span>
+    </h1>
 
-      <p>{lens.summary}</p>
+    <p class="wb-lede">{lens.summary}</p>
 
-      <section aria-labelledby="primary-patterns">
-        <h2 id="primary-patterns">Primary Pattern Matches</h2>
+    <section class="wb-section">
+      <h2>Primary Pattern Matches</h2>
 
-        {primaryPatterns.length > 0 ? (
-          <ul>
-            {primaryPatterns.map((pattern) => (
-              <li>
-                <a href={pattern.url}>
-                  <span class="canonical-term notranslate" translate="no">
-                    {pattern.code} - {pattern.title}
-                  </span>
-                </a>
-                <p>{pattern.summary}</p>
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <p>No primary pattern matches.</p>
-        )}
+      {primaryPatterns.length > 0 ? (
+        <div class="wb-row-list">
+          {primaryPatterns.map((pattern) => (
+            <a class="wb-row" href={pattern.url}>
+              <p class="wb-row-meta" translate="no" class="notranslate" lang="en">
+                {pattern.code}
+              </p>
+              <h2>
+                <span translate="no" class="notranslate" lang="en">{pattern.title}</span>
+              </h2>
+              <p>{pattern.summary}</p>
+            </a>
+          ))}
+        </div>
+      ) : (
+        <p>No primary pattern matches.</p>
+      )}
+    </section>
+
+    {secondaryPatterns.length > 0 && (
+      <section class="wb-section">
+        <h2>Secondary Pattern Matches</h2>
+
+        <div class="wb-row-list">
+          {secondaryPatterns.map((pattern) => (
+            <a class="wb-row" href={pattern.url}>
+              <p class="wb-row-meta" translate="no" class="notranslate" lang="en">
+                {pattern.code}
+              </p>
+              <h2>
+                <span translate="no" class="notranslate" lang="en">{pattern.title}</span>
+              </h2>
+              <p>{pattern.summary}</p>
+            </a>
+          ))}
+        </div>
       </section>
+    )}
 
-      <section aria-labelledby="secondary-patterns">
-        <h2 id="secondary-patterns">Secondary Pattern Matches</h2>
+    <section class="wb-section">
+      <h2>Related Issues</h2>
 
-        {secondaryPatterns.length > 0 ? (
-          <ul>
-            {secondaryPatterns.map((pattern) => (
-              <li>
-                <a href={pattern.url}>
-                  <span class="canonical-term notranslate" translate="no">
-                    {pattern.code} - {pattern.title}
-                  </span>
-                </a>
-                <p>{pattern.summary}</p>
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <p>No secondary pattern matches.</p>
-        )}
-      </section>
-
-      <section aria-labelledby="related-issues">
-        <h2 id="related-issues">Related Issues</h2>
-
-        {relatedIssues.length > 0 ? (
-          <ul>
-            {relatedIssues.map((issue) => (
-              <li>
-                <a href={issue.url}>{issue.title}</a>
-                <p>{issue.summary}</p>
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <p>No related issues.</p>
-        )}
-      </section>
-
-      <section aria-labelledby="ontology-metadata">
-        <h2 id="ontology-metadata">Ontology Metadata</h2>
-
-        <dl>
-          <dt>Code</dt>
-          <dd><code translate="no" class="notranslate" lang="en">{lens.code}</code></dd>
-
-          <dt>Version</dt>
-          <dd><code translate="no" class="notranslate" lang="en">{getVersionLabel(lens)}</code></dd>
-
-          <dt>Ontology release</dt>
-          <dd>{release.ontology_release}</dd>
-
-          <dt>Updated</dt>
-          <dd>{lens.updated_at}</dd>
-        </dl>
-
-        <h3>History</h3>
-
-        {history.length > 0 ? (
-          <ul>
-            {history.map((entry) => (
-              <li>
-                <p>
-                  <strong>{entry.entry_version}</strong>
-                  {" — "}
-                  {entry.date}
-                  {" — "}
-                  {getChangeTypeLabel(entry.change_type)}
-                </p>
-                <p>{entry.public_summary}</p>
-                <p>Receipt impact: {getReceiptImpactLabel(entry.receipt_impact)}</p>
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <p>No public history entries recorded.</p>
-        )}
-
-        <p>
-          <a href="/workbench/ontology/changelog/">View full ontology changelog</a>
-        </p>
-      </section>
-    </main>
-  </body>
-</html>
+      {relatedIssues.length > 0 ? (
+        <div class="wb-row-list">
+          {relatedIssues.map((issue) => (
+            <a class="wb-row" href={issue.url}>
+              <p class="wb-row-meta" translate="no" class="notranslate" lang="en">
+                {issue.code}
+              </p>
+              <h2>{issue.title}</h2>
+              <p>{issue.summary}</p>
+            </a>
+          ))}
+        </div>
+      ) : (
+        <p>No related issues.</p>
+      )}
+    </section>
+  </article>
+</WorkbenchLayout>
