@@ -1,58 +1,40 @@
 ---
+import WorkbenchLayout from "../../../layouts/WorkbenchLayout.astro";
 import ontologyIndex from "../../../content/_meta/ontology-index.json";
 
 const aiAdjIssues = ontologyIndex.ai_adj_issues ?? [];
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>AI-Adjacent Issues | Workbench</title>
-    <meta
-      name="description"
-      content="Browse AI-Adjacent Issues: problems users may experience as AI failures, but which may involve tools, apps, permissions, runtime behavior, configuration, or integrations."
-    />
-  </head>
-  <body>
-    <main>
-      <p><a href="/workbench/">Workbench</a></p>
+<WorkbenchLayout
+  title="AI-Adjacent Issues | PENGO Workbench"
+  description="Browse AI-adjacent issues: problems users may experience as AI failures, but which may involve tools, apps, permissions, runtime behavior, configuration, or integrations."
+  url="https://pengosystems.com/workbench/ai-adj-issues/"
+  active="ai-adj-issues"
+  breadcrumb="AI-Adjacent Issues"
+>
+  <article class="wb-content wb-template">
+    <p class="wb-type-label">Issue Boundary</p>
+    <h1>AI-Adjacent Issues</h1>
+    <p class="wb-lede">
+      Problems users may experience as AI failures, but which may involve tools, apps, permissions, runtime behavior, configuration, product surfaces, or integrations.
+    </p>
 
-      <h1>AI-Adjacent Issues</h1>
-
-      <p>
-        AI-Adjacent Issues are problems users may experience as AI failures, but
-        which may involve tools, apps, permissions, runtime behavior,
-        configuration, product surfaces, or integrations.
-      </p>
-
-      <p>
-        These pages are separate from Workbench Issues. They point to related
-        Workbench Issues when a structural diagnosis may apply.
-      </p>
-
-      <section aria-labelledby="ai-adj-issues">
-        <h2 id="ai-adj-issues">Current AI-Adjacent Issues</h2>
-
-        {aiAdjIssues.length > 0 ? (
-          <ul>
-            {aiAdjIssues.map((entry) => (
-              <li>
-                <h3>
-                  <a href={entry.url}>{entry.title}</a>
-                </h3>
-                <p>{entry.summary}</p>
-                <p>
-                  <code>{entry.code}</code>
-                  {" | "}
-                  Related Workbench Issues: {entry.related_issues.length}
-                </p>
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <p>No AI-Adjacent Issues are currently published.</p>
-        )}
-      </section>
-    </main>
-  </body>
-</html>
+    <section class="wb-section" aria-label="AI-Adjacent Issues">
+      {aiAdjIssues.length > 0 ? (
+        <div class="wb-row-list">
+          {aiAdjIssues.map((entry) => (
+            <a class="wb-row" href={entry.url}>
+              <p class="wb-row-meta" translate="no" class="notranslate" lang="en">
+                {entry.code}
+              </p>
+              <h2>{entry.title}</h2>
+              <p>{entry.summary}</p>
+            </a>
+          ))}
+        </div>
+      ) : (
+        <p>No AI-Adjacent Issues are currently published.</p>
+      )}
+    </section>
+  </article>
+</WorkbenchLayout>
