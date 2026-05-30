@@ -160,7 +160,14 @@ const gapTypes = [
         Copy this protocol and paste it into an AI system with the input you want inspected.
       </p>
 
-      <pre><code>{protocolText}</code></pre>
+      <div class="wb-copy-panel">
+        <div class="wb-copy-panel__bar">
+          <p>AI Input Check Protocol</p>
+          <button type="button" data-copy-protocol>Copy</button>
+        </div>
+
+        <textarea readonly rows="28" data-protocol-text>{protocolText}</textarea>
+      </div>
     </section>
 
     <section class="wb-reading-section">
@@ -220,4 +227,95 @@ Detected Gaps
       </p>
     </section>
   </article>
-</WorkbenchLayout>
+
+<style>
+  .wb-copy-panel {
+    margin-top: 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: 18px;
+    background: var(--color-surface);
+    overflow: hidden;
+  }
+
+  .wb-copy-panel__bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.75rem 0.9rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .wb-copy-panel__bar p {
+    margin: 0 !important;
+    color: var(--color-text) !important;
+    font-size: 0.82rem !important;
+    line-height: 1.1 !important;
+    font-weight: 850 !important;
+  }
+
+  .wb-copy-panel__bar button {
+    appearance: none;
+    border: 1px solid var(--color-accent);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--color-accent);
+    padding: 0.42rem 0.75rem;
+    font: inherit;
+    font-size: 0.74rem;
+    line-height: 1;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    cursor: pointer;
+  }
+
+  .wb-copy-panel__bar button:hover {
+    background: var(--color-accent);
+    color: var(--color-bg);
+  }
+
+  .wb-copy-panel textarea {
+    display: block;
+    width: 100%;
+    min-height: 34rem;
+    padding: 1rem;
+    border: 0;
+    resize: vertical;
+    background: transparent;
+    color: var(--color-text);
+    font: 0.82rem/1.55 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    white-space: pre;
+  }
+
+  .wb-copy-panel textarea:focus {
+    outline: 2px solid var(--color-accent);
+    outline-offset: -2px;
+  }
+</style>
+
+<script>
+  const copyButton = document.querySelector("[data-copy-protocol]");
+  const protocolTextArea = document.querySelector("[data-protocol-text]");
+
+  copyButton?.addEventListener("click", async () => {
+    if (!(protocolTextArea instanceof HTMLTextAreaElement)) return;
+
+    try {
+      await navigator.clipboard.writeText(protocolTextArea.value);
+      copyButton.textContent = "Copied";
+      window.setTimeout(() => {
+        copyButton.textContent = "Copy";
+      }, 1600);
+    } catch {
+      protocolTextArea.focus();
+      protocolTextArea.select();
+      document.execCommand("copy");
+      copyButton.textContent = "Copied";
+      window.setTimeout(() => {
+        copyButton.textContent = "Copy";
+      }, 1600);
+    }
+  });
+</script>
+\n</WorkbenchLayout>
