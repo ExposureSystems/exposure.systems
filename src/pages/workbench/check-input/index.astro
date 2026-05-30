@@ -59,6 +59,9 @@ Rules for findings:
 - Keep findings short and literal
 - List only meaningful gaps that could change interpretation, behavior, or output
 - If the input would require the AI system to guess, mark the relevant element as not specified or as a detected gap
+- Every Detected Gap must use only one allowed gap type and one allowed element
+- Do not create new elements such as audience, channel, sender, recipient, tone, service details, format, or booking method
+- If a missing detail does not fit the allowed element list, map it to the nearest allowed element or omit it
 
 Return results in exactly this format:
 
