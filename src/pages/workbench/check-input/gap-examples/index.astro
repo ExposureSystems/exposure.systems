@@ -71,15 +71,47 @@ const examplesByGapType = gapTypes.map((gapType) => ({
         <h2>{group.gapType}</h2>
         <p>{group.meaning}.</p>
 
-        <div class="wb-row-list">
+        <dl class="wb-gap-example-list">
           {group.examples.map((example) => (
-            <article class="wb-row">
-              <h2>{example.term}</h2>
-              <p>{example.meaning}</p>
-            </article>
+            <div class="wb-gap-example">
+              <dt>{example.term}</dt>
+              <dd>{example.meaning}</dd>
+            </div>
           ))}
-        </div>
+        </dl>
       </section>
     ))}
   </article>
+
+  <style>
+    .wb-gap-example-list {
+      display: grid;
+      gap: 0;
+      margin: 1rem 0 0;
+      padding: 0;
+    }
+
+    .wb-gap-example {
+      border-top: 1px solid var(--color-border);
+      padding: 0.85rem 0;
+    }
+
+    .wb-gap-example:last-child {
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .wb-gap-example dt {
+      margin: 0;
+      color: var(--color-text);
+      font-weight: 850;
+      line-height: 1.25;
+    }
+
+    .wb-gap-example dd {
+      margin: 0.35rem 0 0;
+      color: var(--color-muted);
+      line-height: 1.55;
+    }
+  </style>
+
 </WorkbenchLayout>
