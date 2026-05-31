@@ -1,0 +1,183 @@
+---
+import WorkbenchLayout from "../../../layouts/WorkbenchLayout.astro";
+import checkInputIndex from "../../../content/_meta/check-input-index.json";
+
+const results = checkInputIndex.results;
+
+const acceptedExamples = results.map((result) => result.detected_gap);
+
+const ignoredExamples = [
+  "the model might hallucinate",
+  "needs more context",
+  "could be better",
+  "bad prompt",
+  "unclear business logic",
+];
+---
+
+<WorkbenchLayout
+  title="Explore Results | PENGO Workbench"
+  description="Map Check Input output into related Workbench Patterns and useful Lenses."
+  url="https://pengosystems.com/workbench/explore-results/"
+  active="check-input"
+  breadcrumb="Explore Results"
+>
+  <article class="wb-content wb-template">
+    <div class="wb-page-action">
+      <a href="/workbench/check-input/">Check Input</a>
+      <span aria-current="page">Explore Results</span>
+    </div>
+
+    <p class="wb-type-label">Input Mapping</p>
+    <h1>Explore Results</h1>
+    <p class="wb-lede">
+      Bring the AI output back to PENGO and map it into the Workbench.
+    </p>
+
+    <section class="wb-reading-section">
+      <h2>How This Works</h2>
+      <ol>
+        <li>Run Check Input with any AI.</li>
+        <li>Bring the AI output back to PENGO.</li>
+        <li>Use the Detected Gaps list.</li>
+        <li>Map the gaps into related Patterns.</li>
+        <li>Explore useful Lenses for those Patterns.</li>
+      </ol>
+
+      <p>
+        These are related structural references, not a final diagnosis.
+      </p>
+    </section>
+
+    <section class="wb-reading-section">
+      <h2>Accepted Input Shape</h2>
+      <p>
+        Explore Results uses controlled Detected Gap lines from Check Input.
+        Freeform explanations are ignored.
+      </p>
+
+      <pre><code>{`Input Summary
+- actor: ...
+- trigger: ...
+- action: ...
+- outcome: ...
+- scope: ...
+- constraint: ...
+- dependency: ...
+- sequence: ...
+
+Detected Gaps
+- missing actor
+- unclear scope
+- unstated constraint`}</code></pre>
+    </section>
+
+    <section class="wb-reading-section">
+      <h2>Accepted Gap Terms</h2>
+      <p>
+        Every accepted line must match: <code>[gap type] [element]</code>.
+      </p>
+
+      <ul>
+        {acceptedExamples.map((example) => (
+          <li><code>{example}</code></li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="wb-section">
+      <h2>Current Exploration Results</h2>
+
+      {results.map((result) => (
+        <article class="wb-reading-section">
+          <h2>{result.detected_gap}</h2>
+          <p>{result.caveat}</p>
+
+          <section class="wb-section">
+            <h2>Related Patterns</h2>
+
+            {result.patterns.primary.length > 0 && (
+              <>
+                <h3>Primary</h3>
+                <div class="wb-row-list">
+                  {result.patterns.primary.map((pattern) => (
+                    <a class="wb-row" href={pattern.url}>
+                      <p class="wb-row-meta" translate="no" class="notranslate" lang="en">
+                        {pattern.code}
+                      </p>
+                      <h2>
+                        <span translate="no" class="notranslate" lang="en">{pattern.title}</span>
+                      </h2>
+                      <p>{pattern.summary}</p>
+                    </a>
+                  ))}
+                </div>
+              </>
+            )}
+
+            {result.patterns.secondary.length > 0 && (
+              <>
+                <h3>Secondary</h3>
+                <div class="wb-row-list">
+                  {result.patterns.secondary.map((pattern) => (
+                    <a class="wb-row" href={pattern.url}>
+                      <p class="wb-row-meta" translate="no" class="notranslate" lang="en">
+                        {pattern.code}
+                      </p>
+                      <h2>
+                        <span translate="no" class="notranslate" lang="en">{pattern.title}</span>
+                      </h2>
+                      <p>{pattern.summary}</p>
+                    </a>
+                  ))}
+                </div>
+              </>
+            )}
+          </section>
+
+          <section class="wb-section">
+            <h2>Useful Lenses</h2>
+
+            {result.useful_lenses.length > 0 ? (
+              <div class="wb-row-list">
+                {result.useful_lenses.map((lens) => (
+                  <a class="wb-row" href={lens.url}>
+                    <p class="wb-row-meta" translate="no" class="notranslate" lang="en">
+                      {lens.code}
+                    </p>
+                    <h2>
+                      <span translate="no" class="notranslate" lang="en">{lens.title}</span>
+                    </h2>
+                    <p>{lens.summary}</p>
+                  </a>
+                ))}
+              </div>
+            ) : (
+              <p>No useful Lenses derived.</p>
+            )}
+          </section>
+        </article>
+      ))}
+    </section>
+
+    <section class="wb-reading-section">
+      <h2>Ignored Examples</h2>
+      <p>
+        Freeform labels do not drive exploration.
+      </p>
+
+      <ul>
+        {ignoredExamples.map((example) => (
+          <li><code>{example}</code></li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="wb-reading-section">
+      <h2>Boundary</h2>
+      <p>
+        Explore Results does not prove why an AI system failed. It maps controlled Check Input output into related Workbench Patterns and Lenses so you can inspect the structure the original ask left open.
+      </p>
+    </section>
+  </article>
+</WorkbenchLayout>
