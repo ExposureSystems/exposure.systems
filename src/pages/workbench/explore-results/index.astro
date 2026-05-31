@@ -400,7 +400,9 @@ Detected Gaps
       const ignored = [];
       const seen = new Set();
 
-      for (const rawLine of value.split(/\\r?\\n/)) {
+      const rawLines = value.replaceAll("\r\n", "\n").replaceAll("\r", "\n").split("\n");
+
+      for (const rawLine of rawLines) {
         const line = normalizeLine(rawLine);
 
         if (!line || line === "detected gaps" || line === "input summary") {
