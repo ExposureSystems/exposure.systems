@@ -1,19 +1,98 @@
 ---
 import WorkbenchLayout from "../../../layouts/WorkbenchLayout.astro";
 import searchIndex from "../../../content/_meta/search-index.json";
+import ontologyIndex from "../../../content/_meta/ontology-index.json";
 
-const items = searchIndex.items;
-const issueItems = items.filter((item) => item.type === "issue");
-const aiAdjIssueItems = items.filter((item) => item.type === "ai_adj_issue");
+const issues = ontologyIndex.issues;
+const aiAdjIssues = ontologyIndex.ai_adj_issues ?? [];
+const patterns = ontologyIndex.patterns;
+const lenses = ontologyIndex.lenses;
 
-const categories = searchIndex.facets.categories;
-const patterns = searchIndex.facets.patterns;
-const lenses = searchIndex.facets.lenses;
+const searchEntries = [
+  ...issues.map((issue) => ({
+    type: "Issue",
+    title: issue.title,
+    summary: issue.summary,
+    url: issue.url,
+    code: issue.code,
+    meta: issue.category_title,
+    searchable: [
+      issue.code,
+      issue.title,
+      issue.summary,
+      issue.category_title,
+      issue.primary_pattern,
+      ...(issue.patterns ?? []),
+      ...((issue.lenses?.primary ?? [])),
+      ...((issue.lenses?.secondary ?? [])),
+    ].filter(Boolean).join(" "),
+  })),
+
+  ...aiAdjIssues.map((issue) => ({
+    type: "AI-Adjacent Issue",
+    title: issue.title,
+    summary: issue.summary,
+    url: issue.url,
+    code: issue.code,
+    meta: `${issue.related_issues?.length ?? 0} related Workbench Issues`,
+    searchable: [
+      issue.code,
+      issue.title,
+      issue.summary,
+      ...(issue.search_intents ?? []),
+      ...(issue.related_issues ?? []),
+    ].filter(Boolean).join(" "),
+  })),
+
+  ...patterns.map((pattern) => ({
+    type: "Pattern",
+    title: pattern.title,
+    summary: pattern.summary,
+    url: pattern.url,
+    code: pattern.code,
+    meta: `${pattern.issues?.primary?.length ?? 0} primary issue matches`,
+    searchable: [
+      pattern.code,
+      pattern.title,
+      pattern.summary,
+      pattern.slug,
+      ...(pattern.issues?.primary ?? []),
+      ...(pattern.issues?.supporting ?? []),
+      ...(pattern.lenses?.primary ?? []),
+      ...(pattern.lenses?.secondary ?? []),
+    ].filter(Boolean).join(" "),
+  })),
+
+  ...lenses.map((lens) => ({
+    type: "Lens",
+    title: lens.title,
+    summary: lens.summary,
+    url: lens.url,
+    code: lens.code,
+    meta: `${lens.issues?.length ?? 0} related issues`,
+    searchable: [
+      lens.code,
+      lens.title,
+      lens.summary,
+      lens.slug,
+      ...(lens.issues ?? []),
+      ...(lens.patterns?.primary ?? []),
+      ...(lens.patterns?.secondary ?? []),
+    ].filter(Boolean).join(" "),
+  })),
+];
+
+const browseLinks = [
+  { label: "Issues", href: "/workbench/issues/", count: issues.length },
+  { label: "AI-Adjacent Issues", href: "/workbench/ai-adj-issues/", count: aiAdjIssues.length },
+  { label: "Patterns", href: "/workbench/patterns/", count: patterns.length },
+  { label: "Lenses", href: "/workbench/lenses/", count: lenses.length },
+];
 ---
 
 <WorkbenchLayout
   title="Search | PENGO Workbench"
-  description="Search PENGO Workbench Issues, AI-Adjacent Issues, Patterns, Lenses, Categories, gap terms, names, and codes."
+  description="Search PENGO Workbench Issues, AI-Adjacent Issues, Patterns, Lenses, names, and codes."
   url="https://pengosystems.com/workbench/search/"
   active="search"
   breadcrumb="Search"
@@ -25,109 +104,40 @@ const lenses = searchIndex.facets.lenses;
       Find the structure behind the visible failure surface.
     </p>
 
-    <section class="wb-reading-section">
-      <h2>What This Page Contains</h2>
-      <p>{searchIndex.note}</p>
-      <p>
-        This is a generated reference gateway for the current public Workbench index.
-        Interactive search and filtering can be added later.
-      </p>
-    </section>
-
-    <section class="wb-section">
-      <h2>Reference Areas</h2>
-
-      <div class="wb-row-list">
-        <a class="wb-row" href="/workbench/issues/">
-          <p class="wb-row-meta">{issueItems.length} indexed</p>
-          <h2>Issues</h2>
-          <p>Visible failure surfaces users may experience or search for.</p>
-        </a>
-
-        <a class="wb-row" href="/workbench/ai-adj-issues/">
-          <p class="wb-row-meta">{aiAdjIssueItems.length} indexed</p>
-          <h2>AI-Adjacent Issues</h2>
-          <p>Problems users may experience as AI failures, but which may involve tools, apps, permissions, runtime behavior, configuration, or integrations.</p>
-        </a>
-
-        <a class="wb-row" href="/workbench/patterns/">
-          <p class="wb-row-meta">{patterns.length} indexed</p>
-          <h2>Patterns</h2>
-          <p>Canonical structural forms declared by Workbench Issues and connected to analytical Lenses.</p>
-        </a>
-
-        <a class="wb-row" href="/workbench/lenses/">
-          <p class="wb-row-meta">{lenses.length} indexed</p>
-          <h2>Lenses</h2>
-          <p>Diagnostic views derived from structural Patterns through the Pattern-to-Lens Matrix.</p>
-        </a>
-
-        <a class="wb-row" href="/workbench/check-input/">
-          <p class="wb-row-meta">Protocol</p>
-          <h2>Check Input</h2>
-          <p>Inspect an AI ask, produce controlled gap terms, and map results into Workbench references.</p>
-        </a>
+    <section class="wb-section" aria-label="Search Workbench">
+      <div class="wb-search-panel">
+        <label for="workbench-search-input">Search Workbench</label>
+        <input
+          id="workbench-search-input"
+          type="search"
+          autocomplete="off"
+          spellcheck="false"
+          data-workbench-search-input
+          placeholder="Search issues, patterns, lenses, codes, or AI-adjacent problems..."
+        />
+        <p>
+          Search across Workbench Issues, AI-Adjacent Issues, Patterns, Lenses, names, summaries, and codes.
+        </p>
       </div>
     </section>
 
-    <section class="wb-section">
-      <h2>Index Counts</h2>
-
-      <ul>
-        <li>{issueItems.length} Issues</li>
-        <li>{aiAdjIssueItems.length} AI-Adjacent Issues</li>
-        <li>{categories.length} Categories</li>
-        <li>{patterns.length} Patterns</li>
-        <li>{lenses.length} Lenses</li>
-      </ul>
+    <section class="wb-section" data-search-results-section>
+      <h2>Results</h2>
+      <p data-search-status>Start typing to search Workbench references.</p>
+      <div class="wb-row-list" data-search-results></div>
     </section>
 
     <section class="wb-section">
-      <h2>Derived Facets</h2>
+      <h2>Browse instead</h2>
 
-      <p>
-        Facets help you explore the structural language around each visible Issue surface.
-        They do not prove cause or diagnose the model.
-      </p>
-
-      <details class="wb-search-facet">
-        <summary>Categories - {categories.length}</summary>
-        <ul>
-          {categories.map((category) => (
-            <li>{category.title} - {category.count}</li>
-          ))}
-        </ul>
-      </details>
-
-      <details class="wb-search-facet">
-        <summary>Patterns - {patterns.length}</summary>
-        <ul>
-          {patterns.map((pattern) => (
-            <li>
-              <span translate="no" class="notranslate" lang="en">
-                {pattern.code} - {pattern.title}
-              </span>
-              {" - "}
-              {pattern.count}
-            </li>
-          ))}
-        </ul>
-      </details>
-
-      <details class="wb-search-facet">
-        <summary>Lenses - {lenses.length}</summary>
-        <ul>
-          {lenses.map((lens) => (
-            <li>
-              <span translate="no" class="notranslate" lang="en">
-                {lens.code} - {lens.title}
-              </span>
-              {" - "}
-              {lens.count}
-            </li>
-          ))}
-        </ul>
-      </details>
+      <div class="wb-browse-simple">
+        {browseLinks.map((item) => (
+          <a href={item.href}>
+            <span>{item.label}</span>
+            <small>{item.count}</small>
+          </a>
+        ))}
+      </div>
     </section>
 
     <section class="wb-reading-section">
@@ -140,33 +150,225 @@ const lenses = searchIndex.facets.lenses;
     </section>
   </article>
 
+  <script
+    type="application/json"
+    id="workbench-search-data"
+    set:html={JSON.stringify(searchEntries)}
+  ></script>
+
   <style>
-    .wb-search-facet {
-      margin-top: 0.85rem;
+    .wb-search-panel {
       border: 1px solid var(--color-border);
-      border-radius: 16px;
+      border-radius: 18px;
       background: var(--color-surface);
-      padding: 0.85rem 0.95rem;
+      padding: 1rem;
     }
 
-    .wb-search-facet summary {
+    .wb-search-panel label {
+      display: block;
+      margin-bottom: 0.55rem;
       color: var(--color-text);
-      cursor: pointer;
-      font-size: 0.9rem;
-      line-height: 1.2;
+      font-size: 0.82rem;
+      line-height: 1.1;
       font-weight: 850;
     }
 
-    .wb-search-facet ul {
-      margin: 0.85rem 0 0;
-      padding-left: 1.1rem;
+    .wb-search-panel input {
+      display: block;
+      width: 100%;
+      border: 1px solid var(--color-border);
+      border-radius: 14px;
+      background: transparent;
+      color: var(--color-text);
+      padding: 0.85rem 0.95rem;
+      font: inherit;
+      font-size: 1rem;
+      line-height: 1.2;
     }
 
-    .wb-search-facet li {
-      margin-top: 0.38rem;
+    .wb-search-panel input:focus {
+      outline: 2px solid var(--color-accent);
+      outline-offset: 2px;
+    }
+
+    .wb-search-panel p {
+      margin: 0.7rem 0 0 !important;
+      color: var(--color-muted) !important;
+      font-size: 0.9rem !important;
+      line-height: 1.45 !important;
+    }
+
+    .wb-browse-simple {
+      display: grid;
+      gap: 0.4rem;
+      margin-top: 0.9rem;
+    }
+
+    .wb-browse-simple a {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 1rem;
+      border-bottom: 1px solid var(--color-border);
+      padding: 0.65rem 0;
+      color: var(--color-text);
+      text-decoration: none;
+    }
+
+    .wb-browse-simple a:hover span {
+      color: var(--color-accent);
+    }
+
+    .wb-browse-simple small {
       color: var(--color-muted);
-      font-size: 0.9rem;
-      line-height: 1.45;
+      font-size: 0.78rem;
+      font-weight: 800;
+    }
+
+    .wb-search-result-url {
+      margin-top: 0.18rem !important;
+      color: var(--color-faint) !important;
+      font-size: 0.72rem !important;
+      line-height: 1.35 !important;
+      word-break: break-all;
     }
   </style>
+
+  <script>
+    const dataElement = document.getElementById("workbench-search-data");
+    const input = document.querySelector("[data-workbench-search-input]");
+    const resultsList = document.querySelector("[data-search-results]");
+    const status = document.querySelector("[data-search-status]");
+
+    const entries = JSON.parse(dataElement?.textContent || "[]").map((entry) => ({
+      ...entry,
+      haystack: [
+        entry.type,
+        entry.code,
+        entry.title,
+        entry.summary,
+        entry.meta,
+        entry.searchable,
+      ].filter(Boolean).join(" ").toLowerCase(),
+    }));
+
+    function clearChildren(element) {
+      if (!element) return;
+      while (element.firstChild) {
+        element.removeChild(element.firstChild);
+      }
+    }
+
+    function appendTextElement(parent, tagName, text, className) {
+      const element = document.createElement(tagName);
+      element.textContent = text;
+      if (className) {
+        element.className = className;
+      }
+      parent.appendChild(element);
+      return element;
+    }
+
+    function renderRow(entry) {
+      const row = document.createElement("a");
+      row.className = "wb-row";
+      row.href = entry.url;
+
+      const metaParts = [entry.type, entry.code, entry.meta].filter(Boolean);
+      const meta = appendTextElement(row, "p", metaParts.join(" - "), "wb-row-meta");
+
+      if (entry.type === "Pattern" || entry.type === "Lens") {
+        meta.setAttribute("translate", "no");
+        meta.classList.add("notranslate");
+        meta.setAttribute("lang", "en");
+      }
+
+      const title = document.createElement("h2");
+
+      if (entry.type === "Pattern" || entry.type === "Lens") {
+        const span = appendTextElement(title, "span", entry.title, "notranslate");
+        span.setAttribute("translate", "no");
+        span.setAttribute("lang", "en");
+      } else {
+        title.textContent = entry.title;
+      }
+
+      row.appendChild(title);
+
+      appendTextElement(row, "p", entry.url.replace("https://pengosystems.com", ""), "wb-search-result-url");
+      appendTextElement(row, "p", entry.summary || "");
+
+      return row;
+    }
+
+    function scoreEntry(entry, query, terms) {
+      let score = 0;
+      const title = String(entry.title || "").toLowerCase();
+      const code = String(entry.code || "").toLowerCase();
+
+      if (code === query) score += 100;
+      if (code.includes(query)) score += 60;
+      if (title.includes(query)) score += 40;
+
+      for (const term of terms) {
+        if (code.includes(term)) score += 20;
+        if (title.includes(term)) score += 12;
+        if (entry.haystack.includes(term)) score += 4;
+      }
+
+      return score;
+    }
+
+    function updateSearch() {
+      if (!(input instanceof HTMLInputElement)) return;
+
+      const query = input.value.trim().toLowerCase();
+      clearChildren(resultsList);
+
+      const url = new URL(window.location.href);
+
+      if (query) {
+        url.searchParams.set("q", query);
+      } else {
+        url.searchParams.delete("q");
+      }
+
+      window.history.replaceState({}, "", url);
+
+      if (!query) {
+        status.textContent = "Start typing to search Workbench references.";
+        return;
+      }
+
+      const terms = query.split(/\s+/).filter(Boolean);
+
+      const matches = entries
+        .map((entry) => ({ entry, score: scoreEntry(entry, query, terms) }))
+        .filter(({ entry }) => terms.every((term) => entry.haystack.includes(term)))
+        .sort((a, b) => b.score - a.score || a.entry.title.localeCompare(b.entry.title))
+        .slice(0, 40)
+        .map(({ entry }) => entry);
+
+      if (matches.length === 0) {
+        status.textContent = "No matching Workbench references found. Try a code, issue phrase, Pattern name, Lens name, or category.";
+        return;
+      }
+
+      status.textContent = `Showing ${matches.length.toLocaleString()} matching Workbench reference${matches.length === 1 ? "" : "s"}.`;
+
+      for (const match of matches) {
+        resultsList.appendChild(renderRow(match));
+      }
+    }
+
+    const params = new URLSearchParams(window.location.search);
+    const initialQuery = params.get("q");
+
+    if (input instanceof HTMLInputElement && initialQuery) {
+      input.value = initialQuery;
+    }
+
+    input?.addEventListener("input", updateSearch);
+    updateSearch();
+  </script>
 </WorkbenchLayout>
