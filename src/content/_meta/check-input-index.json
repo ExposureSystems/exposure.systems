@@ -8,16 +8,38 @@
       "patterns": {
         "primary": [
           {
+            "code": "PAT-0120",
+            "slug": "missing-authority",
+            "title": "Missing Authority",
+            "summary": "A structural condition where a region, action, state, or decision path exists without a declared governing authority.",
+            "url": "/workbench/patterns/missing-authority/"
+          },
+          {
+            "code": "PAT-0130",
+            "slug": "incomplete-declaration",
+            "title": "Incomplete Declaration",
+            "summary": "A structural condition where an element is declared but required attributes, dependencies, or linked definitions are missing.",
+            "url": "/workbench/patterns/incomplete-declaration/"
+          }
+        ],
+        "secondary": [
+          {
             "code": "PAT-0100",
             "slug": "authority-collision",
             "title": "Authority Collision",
             "summary": "A structural condition where multiple authorities claim governance over the same region without a declared precedence or resolution rule.",
             "url": "/workbench/patterns/authority-collision/"
           }
-        ],
-        "secondary": []
+        ]
       },
       "useful_lenses": [
+        {
+          "code": "LEN-0100",
+          "slug": "absence-lens",
+          "title": "Absence Lens",
+          "summary": "Detects structurally required elements that are missing from the observed structure.",
+          "url": "/workbench/lenses/absence-lens/"
+        },
         {
           "code": "LEN-0110",
           "slug": "authority-overlay-lens",
@@ -33,6 +55,20 @@
           "url": "/workbench/lenses/conflict-lens/"
         },
         {
+          "code": "LEN-0160",
+          "slug": "constraint-sufficiency-lens",
+          "title": "Constraint Sufficiency Lens",
+          "summary": "Evaluates whether declared constraints are sufficient to eliminate structural degrees of freedom.",
+          "url": "/workbench/lenses/constraint-sufficiency-lens/"
+        },
+        {
+          "code": "LEN-0200",
+          "slug": "interface-contract-lens",
+          "title": "Interface Contract Lens",
+          "summary": "Compares declared interface structure to observed runtime structure to detect contract deviations.",
+          "url": "/workbench/lenses/interface-contract-lens/"
+        },
+        {
           "code": "LEN-0210",
           "slug": "invariant-lens",
           "title": "Invariant Lens",
@@ -45,6 +81,1413 @@
           "title": "Reconciliation Lens",
           "summary": "Evaluates whether structural changes align with declared authority updates, version changes, or reconciliation rules.",
           "url": "/workbench/lenses/reconciliation-lens/"
+        }
+      ],
+      "caveat": "These are related structural references, not a final diagnosis."
+    },
+    {
+      "detected_gap": "unclear actor",
+      "patterns": {
+        "primary": [
+          {
+            "code": "PAT-0170",
+            "slug": "constraints-underspecified",
+            "title": "Constraints Underspecified",
+            "summary": "A structural condition where declared constraints are insufficient to eliminate ambiguity or multiple admissible states.",
+            "url": "/workbench/patterns/constraints-underspecified/"
+          },
+          {
+            "code": "PAT-0130",
+            "slug": "incomplete-declaration",
+            "title": "Incomplete Declaration",
+            "summary": "A structural condition where an element is declared but required attributes, dependencies, or linked definitions are missing.",
+            "url": "/workbench/patterns/incomplete-declaration/"
+          }
+        ],
+        "secondary": [
+          {
+            "code": "PAT-0120",
+            "slug": "missing-authority",
+            "title": "Missing Authority",
+            "summary": "A structural condition where a region, action, state, or decision path exists without a declared governing authority.",
+            "url": "/workbench/patterns/missing-authority/"
+          },
+          {
+            "code": "PAT-0100",
+            "slug": "authority-collision",
+            "title": "Authority Collision",
+            "summary": "A structural condition where multiple authorities claim governance over the same region without a declared precedence or resolution rule.",
+            "url": "/workbench/patterns/authority-collision/"
+          }
+        ]
+      },
+      "useful_lenses": [
+        {
+          "code": "LEN-0100",
+          "slug": "absence-lens",
+          "title": "Absence Lens",
+          "summary": "Detects structurally required elements that are missing from the observed structure.",
+          "url": "/workbench/lenses/absence-lens/"
+        },
+        {
+          "code": "LEN-0110",
+          "slug": "authority-overlay-lens",
+          "title": "Authority Overlay Lens",
+          "summary": "Maps declared authority hierarchies onto observed structure to detect absence, override, or conflict.",
+          "url": "/workbench/lenses/authority-overlay-lens/"
+        },
+        {
+          "code": "LEN-0150",
+          "slug": "conflict-lens",
+          "title": "Conflict Lens",
+          "summary": "Detects mutually incompatible constraints, claims, states, or declarations that cannot be simultaneously satisfied.",
+          "url": "/workbench/lenses/conflict-lens/"
+        },
+        {
+          "code": "LEN-0160",
+          "slug": "constraint-sufficiency-lens",
+          "title": "Constraint Sufficiency Lens",
+          "summary": "Evaluates whether declared constraints are sufficient to eliminate structural degrees of freedom.",
+          "url": "/workbench/lenses/constraint-sufficiency-lens/"
+        },
+        {
+          "code": "LEN-0180",
+          "slug": "determinism-lens",
+          "title": "Determinism Lens",
+          "summary": "Evaluates whether identical structural inputs produce equivalent structural outputs across repeated executions.",
+          "url": "/workbench/lenses/determinism-lens/"
+        },
+        {
+          "code": "LEN-0200",
+          "slug": "interface-contract-lens",
+          "title": "Interface Contract Lens",
+          "summary": "Compares declared interface structure to observed runtime structure to detect contract deviations.",
+          "url": "/workbench/lenses/interface-contract-lens/"
+        },
+        {
+          "code": "LEN-0210",
+          "slug": "invariant-lens",
+          "title": "Invariant Lens",
+          "summary": "Verifies that declared invariants are structurally enforceable and not contradicted by observed structure.",
+          "url": "/workbench/lenses/invariant-lens/"
+        },
+        {
+          "code": "LEN-0270",
+          "slug": "reconciliation-lens",
+          "title": "Reconciliation Lens",
+          "summary": "Evaluates whether structural changes align with declared authority updates, version changes, or reconciliation rules.",
+          "url": "/workbench/lenses/reconciliation-lens/"
+        },
+        {
+          "code": "LEN-0290",
+          "slug": "variance-entropy-lens",
+          "title": "Variance / Entropy Lens",
+          "summary": "Measures structural variability across repeated or comparable evaluations and identifies divergence beyond expected bounds.",
+          "url": "/workbench/lenses/variance-entropy-lens/"
+        }
+      ],
+      "caveat": "These are related structural references, not a final diagnosis."
+    },
+    {
+      "detected_gap": "ambiguous actor",
+      "patterns": {
+        "primary": [
+          {
+            "code": "PAT-0170",
+            "slug": "constraints-underspecified",
+            "title": "Constraints Underspecified",
+            "summary": "A structural condition where declared constraints are insufficient to eliminate ambiguity or multiple admissible states.",
+            "url": "/workbench/patterns/constraints-underspecified/"
+          },
+          {
+            "code": "PAT-0100",
+            "slug": "authority-collision",
+            "title": "Authority Collision",
+            "summary": "A structural condition where multiple authorities claim governance over the same region without a declared precedence or resolution rule.",
+            "url": "/workbench/patterns/authority-collision/"
+          }
+        ],
+        "secondary": [
+          {
+            "code": "PAT-0120",
+            "slug": "missing-authority",
+            "title": "Missing Authority",
+            "summary": "A structural condition where a region, action, state, or decision path exists without a declared governing authority.",
+            "url": "/workbench/patterns/missing-authority/"
+          },
+          {
+            "code": "PAT-0130",
+            "slug": "incomplete-declaration",
+            "title": "Incomplete Declaration",
+            "summary": "A structural condition where an element is declared but required attributes, dependencies, or linked definitions are missing.",
+            "url": "/workbench/patterns/incomplete-declaration/"
+          }
+        ]
+      },
+      "useful_lenses": [
+        {
+          "code": "LEN-0100",
+          "slug": "absence-lens",
+          "title": "Absence Lens",
+          "summary": "Detects structurally required elements that are missing from the observed structure.",
+          "url": "/workbench/lenses/absence-lens/"
+        },
+        {
+          "code": "LEN-0110",
+          "slug": "authority-overlay-lens",
+          "title": "Authority Overlay Lens",
+          "summary": "Maps declared authority hierarchies onto observed structure to detect absence, override, or conflict.",
+          "url": "/workbench/lenses/authority-overlay-lens/"
+        },
+        {
+          "code": "LEN-0150",
+          "slug": "conflict-lens",
+          "title": "Conflict Lens",
+          "summary": "Detects mutually incompatible constraints, claims, states, or declarations that cannot be simultaneously satisfied.",
+          "url": "/workbench/lenses/conflict-lens/"
+        },
+        {
+          "code": "LEN-0160",
+          "slug": "constraint-sufficiency-lens",
+          "title": "Constraint Sufficiency Lens",
+          "summary": "Evaluates whether declared constraints are sufficient to eliminate structural degrees of freedom.",
+          "url": "/workbench/lenses/constraint-sufficiency-lens/"
+        },
+        {
+          "code": "LEN-0180",
+          "slug": "determinism-lens",
+          "title": "Determinism Lens",
+          "summary": "Evaluates whether identical structural inputs produce equivalent structural outputs across repeated executions.",
+          "url": "/workbench/lenses/determinism-lens/"
+        },
+        {
+          "code": "LEN-0200",
+          "slug": "interface-contract-lens",
+          "title": "Interface Contract Lens",
+          "summary": "Compares declared interface structure to observed runtime structure to detect contract deviations.",
+          "url": "/workbench/lenses/interface-contract-lens/"
+        },
+        {
+          "code": "LEN-0210",
+          "slug": "invariant-lens",
+          "title": "Invariant Lens",
+          "summary": "Verifies that declared invariants are structurally enforceable and not contradicted by observed structure.",
+          "url": "/workbench/lenses/invariant-lens/"
+        },
+        {
+          "code": "LEN-0270",
+          "slug": "reconciliation-lens",
+          "title": "Reconciliation Lens",
+          "summary": "Evaluates whether structural changes align with declared authority updates, version changes, or reconciliation rules.",
+          "url": "/workbench/lenses/reconciliation-lens/"
+        },
+        {
+          "code": "LEN-0290",
+          "slug": "variance-entropy-lens",
+          "title": "Variance / Entropy Lens",
+          "summary": "Measures structural variability across repeated or comparable evaluations and identifies divergence beyond expected bounds.",
+          "url": "/workbench/lenses/variance-entropy-lens/"
+        }
+      ],
+      "caveat": "These are related structural references, not a final diagnosis."
+    },
+    {
+      "detected_gap": "undefined actor",
+      "patterns": {
+        "primary": [
+          {
+            "code": "PAT-0120",
+            "slug": "missing-authority",
+            "title": "Missing Authority",
+            "summary": "A structural condition where a region, action, state, or decision path exists without a declared governing authority.",
+            "url": "/workbench/patterns/missing-authority/"
+          },
+          {
+            "code": "PAT-0130",
+            "slug": "incomplete-declaration",
+            "title": "Incomplete Declaration",
+            "summary": "A structural condition where an element is declared but required attributes, dependencies, or linked definitions are missing.",
+            "url": "/workbench/patterns/incomplete-declaration/"
+          }
+        ],
+        "secondary": [
+          {
+            "code": "PAT-0100",
+            "slug": "authority-collision",
+            "title": "Authority Collision",
+            "summary": "A structural condition where multiple authorities claim governance over the same region without a declared precedence or resolution rule.",
+            "url": "/workbench/patterns/authority-collision/"
+          }
+        ]
+      },
+      "useful_lenses": [
+        {
+          "code": "LEN-0100",
+          "slug": "absence-lens",
+          "title": "Absence Lens",
+          "summary": "Detects structurally required elements that are missing from the observed structure.",
+          "url": "/workbench/lenses/absence-lens/"
+        },
+        {
+          "code": "LEN-0110",
+          "slug": "authority-overlay-lens",
+          "title": "Authority Overlay Lens",
+          "summary": "Maps declared authority hierarchies onto observed structure to detect absence, override, or conflict.",
+          "url": "/workbench/lenses/authority-overlay-lens/"
+        },
+        {
+          "code": "LEN-0150",
+          "slug": "conflict-lens",
+          "title": "Conflict Lens",
+          "summary": "Detects mutually incompatible constraints, claims, states, or declarations that cannot be simultaneously satisfied.",
+          "url": "/workbench/lenses/conflict-lens/"
+        },
+        {
+          "code": "LEN-0160",
+          "slug": "constraint-sufficiency-lens",
+          "title": "Constraint Sufficiency Lens",
+          "summary": "Evaluates whether declared constraints are sufficient to eliminate structural degrees of freedom.",
+          "url": "/workbench/lenses/constraint-sufficiency-lens/"
+        },
+        {
+          "code": "LEN-0200",
+          "slug": "interface-contract-lens",
+          "title": "Interface Contract Lens",
+          "summary": "Compares declared interface structure to observed runtime structure to detect contract deviations.",
+          "url": "/workbench/lenses/interface-contract-lens/"
+        },
+        {
+          "code": "LEN-0210",
+          "slug": "invariant-lens",
+          "title": "Invariant Lens",
+          "summary": "Verifies that declared invariants are structurally enforceable and not contradicted by observed structure.",
+          "url": "/workbench/lenses/invariant-lens/"
+        },
+        {
+          "code": "LEN-0270",
+          "slug": "reconciliation-lens",
+          "title": "Reconciliation Lens",
+          "summary": "Evaluates whether structural changes align with declared authority updates, version changes, or reconciliation rules.",
+          "url": "/workbench/lenses/reconciliation-lens/"
+        }
+      ],
+      "caveat": "These are related structural references, not a final diagnosis."
+    },
+    {
+      "detected_gap": "missing trigger",
+      "patterns": {
+        "primary": [
+          {
+            "code": "PAT-0130",
+            "slug": "incomplete-declaration",
+            "title": "Incomplete Declaration",
+            "summary": "A structural condition where an element is declared but required attributes, dependencies, or linked definitions are missing.",
+            "url": "/workbench/patterns/incomplete-declaration/"
+          },
+          {
+            "code": "PAT-0420",
+            "slug": "undeclared-side-effect",
+            "title": "Undeclared Side Effect",
+            "summary": "A structural condition where an operation modifies regions outside its declared target scope without a declared propagation or side-effect rule.",
+            "url": "/workbench/patterns/undeclared-side-effect/"
+          }
+        ],
+        "secondary": [
+          {
+            "code": "PAT-0300",
+            "slug": "escalation-growth",
+            "title": "Escalation Growth",
+            "summary": "A structural condition where impact, authority, scope, or consequence increases across sequential states without a declared limiting mechanism.",
+            "url": "/workbench/patterns/escalation-growth/"
+          },
+          {
+            "code": "PAT-0320",
+            "slug": "convergence-failure",
+            "title": "Convergence Failure",
+            "summary": "A structural condition where sequential or parallel states fail to resolve into an equivalent or coherent structure under shared authority and constraints.",
+            "url": "/workbench/patterns/convergence-failure/"
+          }
+        ]
+      },
+      "useful_lenses": [
+        {
+          "code": "LEN-0100",
+          "slug": "absence-lens",
+          "title": "Absence Lens",
+          "summary": "Detects structurally required elements that are missing from the observed structure.",
+          "url": "/workbench/lenses/absence-lens/"
+        },
+        {
+          "code": "LEN-0160",
+          "slug": "constraint-sufficiency-lens",
+          "title": "Constraint Sufficiency Lens",
+          "summary": "Evaluates whether declared constraints are sufficient to eliminate structural degrees of freedom.",
+          "url": "/workbench/lenses/constraint-sufficiency-lens/"
+        },
+        {
+          "code": "LEN-0170",
+          "slug": "convergence-lens",
+          "title": "Convergence Lens",
+          "summary": "Compares parallel structural systems to determine whether they align under shared authority.",
+          "url": "/workbench/lenses/convergence-lens/"
+        },
+        {
+          "code": "LEN-0190",
+          "slug": "escalation-gradient-lens",
+          "title": "Escalation Gradient Lens",
+          "summary": "Measures structural growth or intensification across sequential executions, states, or transitions.",
+          "url": "/workbench/lenses/escalation-gradient-lens/"
+        },
+        {
+          "code": "LEN-0200",
+          "slug": "interface-contract-lens",
+          "title": "Interface Contract Lens",
+          "summary": "Compares declared interface structure to observed runtime structure to detect contract deviations.",
+          "url": "/workbench/lenses/interface-contract-lens/"
+        },
+        {
+          "code": "LEN-0220",
+          "slug": "isolation-boundary-lens",
+          "title": "Isolation Boundary Lens",
+          "summary": "Evaluates whether structural constraints, effects, and regions remain contained within declared boundaries.",
+          "url": "/workbench/lenses/isolation-boundary-lens/"
+        },
+        {
+          "code": "LEN-0240",
+          "slug": "overreach-lens",
+          "title": "Overreach Lens",
+          "summary": "Detects structure that exceeds declared scope or authority reach.",
+          "url": "/workbench/lenses/overreach-lens/"
+        },
+        {
+          "code": "LEN-0250",
+          "slug": "propagation-lens",
+          "title": "Propagation Lens",
+          "summary": "Traces how structural declarations, effects, or state changes propagate across boundaries or stages.",
+          "url": "/workbench/lenses/propagation-lens/"
+        },
+        {
+          "code": "LEN-0270",
+          "slug": "reconciliation-lens",
+          "title": "Reconciliation Lens",
+          "summary": "Evaluates whether structural changes align with declared authority updates, version changes, or reconciliation rules.",
+          "url": "/workbench/lenses/reconciliation-lens/"
+        },
+        {
+          "code": "LEN-0290",
+          "slug": "variance-entropy-lens",
+          "title": "Variance / Entropy Lens",
+          "summary": "Measures structural variability across repeated or comparable evaluations and identifies divergence beyond expected bounds.",
+          "url": "/workbench/lenses/variance-entropy-lens/"
+        }
+      ],
+      "caveat": "These are related structural references, not a final diagnosis."
+    },
+    {
+      "detected_gap": "unclear trigger",
+      "patterns": {
+        "primary": [
+          {
+            "code": "PAT-0170",
+            "slug": "constraints-underspecified",
+            "title": "Constraints Underspecified",
+            "summary": "A structural condition where declared constraints are insufficient to eliminate ambiguity or multiple admissible states.",
+            "url": "/workbench/patterns/constraints-underspecified/"
+          },
+          {
+            "code": "PAT-0130",
+            "slug": "incomplete-declaration",
+            "title": "Incomplete Declaration",
+            "summary": "A structural condition where an element is declared but required attributes, dependencies, or linked definitions are missing.",
+            "url": "/workbench/patterns/incomplete-declaration/"
+          }
+        ],
+        "secondary": [
+          {
+            "code": "PAT-0210",
+            "slug": "non-deterministic-execution",
+            "title": "Non-Deterministic Execution",
+            "summary": "A structural condition where equivalent inputs and declared constraints produce divergent outputs across executions.",
+            "url": "/workbench/patterns/non-deterministic-execution/"
+          },
+          {
+            "code": "PAT-0320",
+            "slug": "convergence-failure",
+            "title": "Convergence Failure",
+            "summary": "A structural condition where sequential or parallel states fail to resolve into an equivalent or coherent structure under shared authority and constraints.",
+            "url": "/workbench/patterns/convergence-failure/"
+          }
+        ]
+      },
+      "useful_lenses": [
+        {
+          "code": "LEN-0100",
+          "slug": "absence-lens",
+          "title": "Absence Lens",
+          "summary": "Detects structurally required elements that are missing from the observed structure.",
+          "url": "/workbench/lenses/absence-lens/"
+        },
+        {
+          "code": "LEN-0160",
+          "slug": "constraint-sufficiency-lens",
+          "title": "Constraint Sufficiency Lens",
+          "summary": "Evaluates whether declared constraints are sufficient to eliminate structural degrees of freedom.",
+          "url": "/workbench/lenses/constraint-sufficiency-lens/"
+        },
+        {
+          "code": "LEN-0170",
+          "slug": "convergence-lens",
+          "title": "Convergence Lens",
+          "summary": "Compares parallel structural systems to determine whether they align under shared authority.",
+          "url": "/workbench/lenses/convergence-lens/"
+        },
+        {
+          "code": "LEN-0180",
+          "slug": "determinism-lens",
+          "title": "Determinism Lens",
+          "summary": "Evaluates whether identical structural inputs produce equivalent structural outputs across repeated executions.",
+          "url": "/workbench/lenses/determinism-lens/"
+        },
+        {
+          "code": "LEN-0200",
+          "slug": "interface-contract-lens",
+          "title": "Interface Contract Lens",
+          "summary": "Compares declared interface structure to observed runtime structure to detect contract deviations.",
+          "url": "/workbench/lenses/interface-contract-lens/"
+        },
+        {
+          "code": "LEN-0270",
+          "slug": "reconciliation-lens",
+          "title": "Reconciliation Lens",
+          "summary": "Evaluates whether structural changes align with declared authority updates, version changes, or reconciliation rules.",
+          "url": "/workbench/lenses/reconciliation-lens/"
+        },
+        {
+          "code": "LEN-0280",
+          "slug": "reference-stability-lens",
+          "title": "Reference Stability Lens",
+          "summary": "Evaluates whether structural references, identifiers, nodes, and edges remain consistent across execution cycles or comparable states.",
+          "url": "/workbench/lenses/reference-stability-lens/"
+        },
+        {
+          "code": "LEN-0290",
+          "slug": "variance-entropy-lens",
+          "title": "Variance / Entropy Lens",
+          "summary": "Measures structural variability across repeated or comparable evaluations and identifies divergence beyond expected bounds.",
+          "url": "/workbench/lenses/variance-entropy-lens/"
+        }
+      ],
+      "caveat": "These are related structural references, not a final diagnosis."
+    },
+    {
+      "detected_gap": "ambiguous trigger",
+      "patterns": {
+        "primary": [
+          {
+            "code": "PAT-0170",
+            "slug": "constraints-underspecified",
+            "title": "Constraints Underspecified",
+            "summary": "A structural condition where declared constraints are insufficient to eliminate ambiguity or multiple admissible states.",
+            "url": "/workbench/patterns/constraints-underspecified/"
+          },
+          {
+            "code": "PAT-0210",
+            "slug": "non-deterministic-execution",
+            "title": "Non-Deterministic Execution",
+            "summary": "A structural condition where equivalent inputs and declared constraints produce divergent outputs across executions.",
+            "url": "/workbench/patterns/non-deterministic-execution/"
+          }
+        ],
+        "secondary": [
+          {
+            "code": "PAT-0130",
+            "slug": "incomplete-declaration",
+            "title": "Incomplete Declaration",
+            "summary": "A structural condition where an element is declared but required attributes, dependencies, or linked definitions are missing.",
+            "url": "/workbench/patterns/incomplete-declaration/"
+          },
+          {
+            "code": "PAT-0320",
+            "slug": "convergence-failure",
+            "title": "Convergence Failure",
+            "summary": "A structural condition where sequential or parallel states fail to resolve into an equivalent or coherent structure under shared authority and constraints.",
+            "url": "/workbench/patterns/convergence-failure/"
+          }
+        ]
+      },
+      "useful_lenses": [
+        {
+          "code": "LEN-0100",
+          "slug": "absence-lens",
+          "title": "Absence Lens",
+          "summary": "Detects structurally required elements that are missing from the observed structure.",
+          "url": "/workbench/lenses/absence-lens/"
+        },
+        {
+          "code": "LEN-0160",
+          "slug": "constraint-sufficiency-lens",
+          "title": "Constraint Sufficiency Lens",
+          "summary": "Evaluates whether declared constraints are sufficient to eliminate structural degrees of freedom.",
+          "url": "/workbench/lenses/constraint-sufficiency-lens/"
+        },
+        {
+          "code": "LEN-0170",
+          "slug": "convergence-lens",
+          "title": "Convergence Lens",
+          "summary": "Compares parallel structural systems to determine whether they align under shared authority.",
+          "url": "/workbench/lenses/convergence-lens/"
+        },
+        {
+          "code": "LEN-0180",
+          "slug": "determinism-lens",
+          "title": "Determinism Lens",
+          "summary": "Evaluates whether identical structural inputs produce equivalent structural outputs across repeated executions.",
+          "url": "/workbench/lenses/determinism-lens/"
+        },
+        {
+          "code": "LEN-0200",
+          "slug": "interface-contract-lens",
+          "title": "Interface Contract Lens",
+          "summary": "Compares declared interface structure to observed runtime structure to detect contract deviations.",
+          "url": "/workbench/lenses/interface-contract-lens/"
+        },
+        {
+          "code": "LEN-0270",
+          "slug": "reconciliation-lens",
+          "title": "Reconciliation Lens",
+          "summary": "Evaluates whether structural changes align with declared authority updates, version changes, or reconciliation rules.",
+          "url": "/workbench/lenses/reconciliation-lens/"
+        },
+        {
+          "code": "LEN-0280",
+          "slug": "reference-stability-lens",
+          "title": "Reference Stability Lens",
+          "summary": "Evaluates whether structural references, identifiers, nodes, and edges remain consistent across execution cycles or comparable states.",
+          "url": "/workbench/lenses/reference-stability-lens/"
+        },
+        {
+          "code": "LEN-0290",
+          "slug": "variance-entropy-lens",
+          "title": "Variance / Entropy Lens",
+          "summary": "Measures structural variability across repeated or comparable evaluations and identifies divergence beyond expected bounds.",
+          "url": "/workbench/lenses/variance-entropy-lens/"
+        }
+      ],
+      "caveat": "These are related structural references, not a final diagnosis."
+    },
+    {
+      "detected_gap": "missing action",
+      "patterns": {
+        "primary": [
+          {
+            "code": "PAT-0130",
+            "slug": "incomplete-declaration",
+            "title": "Incomplete Declaration",
+            "summary": "A structural condition where an element is declared but required attributes, dependencies, or linked definitions are missing.",
+            "url": "/workbench/patterns/incomplete-declaration/"
+          },
+          {
+            "code": "PAT-0120",
+            "slug": "missing-authority",
+            "title": "Missing Authority",
+            "summary": "A structural condition where a region, action, state, or decision path exists without a declared governing authority.",
+            "url": "/workbench/patterns/missing-authority/"
+          }
+        ],
+        "secondary": [
+          {
+            "code": "PAT-0340",
+            "slug": "overreach",
+            "title": "Overreach",
+            "summary": "A structural condition where actions, effects, authority, or modifications extend beyond declared scope without authorization.",
+            "url": "/workbench/patterns/overreach/"
+          },
+          {
+            "code": "PAT-0420",
+            "slug": "undeclared-side-effect",
+            "title": "Undeclared Side Effect",
+            "summary": "A structural condition where an operation modifies regions outside its declared target scope without a declared propagation or side-effect rule.",
+            "url": "/workbench/patterns/undeclared-side-effect/"
+          }
+        ]
+      },
+      "useful_lenses": [
+        {
+          "code": "LEN-0100",
+          "slug": "absence-lens",
+          "title": "Absence Lens",
+          "summary": "Detects structurally required elements that are missing from the observed structure.",
+          "url": "/workbench/lenses/absence-lens/"
+        },
+        {
+          "code": "LEN-0110",
+          "slug": "authority-overlay-lens",
+          "title": "Authority Overlay Lens",
+          "summary": "Maps declared authority hierarchies onto observed structure to detect absence, override, or conflict.",
+          "url": "/workbench/lenses/authority-overlay-lens/"
+        },
+        {
+          "code": "LEN-0120",
+          "slug": "boundary-compliance-lens",
+          "title": "Boundary Compliance Lens",
+          "summary": "Evaluates observed structure against declared boundary posture, including allow, block, and exception rules.",
+          "url": "/workbench/lenses/boundary-compliance-lens/"
+        },
+        {
+          "code": "LEN-0150",
+          "slug": "conflict-lens",
+          "title": "Conflict Lens",
+          "summary": "Detects mutually incompatible constraints, claims, states, or declarations that cannot be simultaneously satisfied.",
+          "url": "/workbench/lenses/conflict-lens/"
+        },
+        {
+          "code": "LEN-0160",
+          "slug": "constraint-sufficiency-lens",
+          "title": "Constraint Sufficiency Lens",
+          "summary": "Evaluates whether declared constraints are sufficient to eliminate structural degrees of freedom.",
+          "url": "/workbench/lenses/constraint-sufficiency-lens/"
+        },
+        {
+          "code": "LEN-0200",
+          "slug": "interface-contract-lens",
+          "title": "Interface Contract Lens",
+          "summary": "Compares declared interface structure to observed runtime structure to detect contract deviations.",
+          "url": "/workbench/lenses/interface-contract-lens/"
+        },
+        {
+          "code": "LEN-0220",
+          "slug": "isolation-boundary-lens",
+          "title": "Isolation Boundary Lens",
+          "summary": "Evaluates whether structural constraints, effects, and regions remain contained within declared boundaries.",
+          "url": "/workbench/lenses/isolation-boundary-lens/"
+        },
+        {
+          "code": "LEN-0240",
+          "slug": "overreach-lens",
+          "title": "Overreach Lens",
+          "summary": "Detects structure that exceeds declared scope or authority reach.",
+          "url": "/workbench/lenses/overreach-lens/"
+        },
+        {
+          "code": "LEN-0250",
+          "slug": "propagation-lens",
+          "title": "Propagation Lens",
+          "summary": "Traces how structural declarations, effects, or state changes propagate across boundaries or stages.",
+          "url": "/workbench/lenses/propagation-lens/"
+        },
+        {
+          "code": "LEN-0270",
+          "slug": "reconciliation-lens",
+          "title": "Reconciliation Lens",
+          "summary": "Evaluates whether structural changes align with declared authority updates, version changes, or reconciliation rules.",
+          "url": "/workbench/lenses/reconciliation-lens/"
+        }
+      ],
+      "caveat": "These are related structural references, not a final diagnosis."
+    },
+    {
+      "detected_gap": "unclear action",
+      "patterns": {
+        "primary": [
+          {
+            "code": "PAT-0170",
+            "slug": "constraints-underspecified",
+            "title": "Constraints Underspecified",
+            "summary": "A structural condition where declared constraints are insufficient to eliminate ambiguity or multiple admissible states.",
+            "url": "/workbench/patterns/constraints-underspecified/"
+          },
+          {
+            "code": "PAT-0150",
+            "slug": "interface-mismatch",
+            "title": "Interface Mismatch",
+            "summary": "A structural condition where observed interface behavior, shape, or exchange differs from the declared interface contract.",
+            "url": "/workbench/patterns/interface-mismatch/"
+          }
+        ],
+        "secondary": [
+          {
+            "code": "PAT-0340",
+            "slug": "overreach",
+            "title": "Overreach",
+            "summary": "A structural condition where actions, effects, authority, or modifications extend beyond declared scope without authorization.",
+            "url": "/workbench/patterns/overreach/"
+          },
+          {
+            "code": "PAT-0420",
+            "slug": "undeclared-side-effect",
+            "title": "Undeclared Side Effect",
+            "summary": "A structural condition where an operation modifies regions outside its declared target scope without a declared propagation or side-effect rule.",
+            "url": "/workbench/patterns/undeclared-side-effect/"
+          }
+        ]
+      },
+      "useful_lenses": [
+        {
+          "code": "LEN-0120",
+          "slug": "boundary-compliance-lens",
+          "title": "Boundary Compliance Lens",
+          "summary": "Evaluates observed structure against declared boundary posture, including allow, block, and exception rules.",
+          "url": "/workbench/lenses/boundary-compliance-lens/"
+        },
+        {
+          "code": "LEN-0160",
+          "slug": "constraint-sufficiency-lens",
+          "title": "Constraint Sufficiency Lens",
+          "summary": "Evaluates whether declared constraints are sufficient to eliminate structural degrees of freedom.",
+          "url": "/workbench/lenses/constraint-sufficiency-lens/"
+        },
+        {
+          "code": "LEN-0180",
+          "slug": "determinism-lens",
+          "title": "Determinism Lens",
+          "summary": "Evaluates whether identical structural inputs produce equivalent structural outputs across repeated executions.",
+          "url": "/workbench/lenses/determinism-lens/"
+        },
+        {
+          "code": "LEN-0200",
+          "slug": "interface-contract-lens",
+          "title": "Interface Contract Lens",
+          "summary": "Compares declared interface structure to observed runtime structure to detect contract deviations.",
+          "url": "/workbench/lenses/interface-contract-lens/"
+        },
+        {
+          "code": "LEN-0220",
+          "slug": "isolation-boundary-lens",
+          "title": "Isolation Boundary Lens",
+          "summary": "Evaluates whether structural constraints, effects, and regions remain contained within declared boundaries.",
+          "url": "/workbench/lenses/isolation-boundary-lens/"
+        },
+        {
+          "code": "LEN-0230",
+          "slug": "normalization-lens",
+          "title": "Normalization Lens",
+          "summary": "Transforms structurally equivalent variants into a canonical form to prevent false divergence.",
+          "url": "/workbench/lenses/normalization-lens/"
+        },
+        {
+          "code": "LEN-0240",
+          "slug": "overreach-lens",
+          "title": "Overreach Lens",
+          "summary": "Detects structure that exceeds declared scope or authority reach.",
+          "url": "/workbench/lenses/overreach-lens/"
+        },
+        {
+          "code": "LEN-0250",
+          "slug": "propagation-lens",
+          "title": "Propagation Lens",
+          "summary": "Traces how structural declarations, effects, or state changes propagate across boundaries or stages.",
+          "url": "/workbench/lenses/propagation-lens/"
+        },
+        {
+          "code": "LEN-0290",
+          "slug": "variance-entropy-lens",
+          "title": "Variance / Entropy Lens",
+          "summary": "Measures structural variability across repeated or comparable evaluations and identifies divergence beyond expected bounds.",
+          "url": "/workbench/lenses/variance-entropy-lens/"
+        }
+      ],
+      "caveat": "These are related structural references, not a final diagnosis."
+    },
+    {
+      "detected_gap": "ambiguous action",
+      "patterns": {
+        "primary": [
+          {
+            "code": "PAT-0170",
+            "slug": "constraints-underspecified",
+            "title": "Constraints Underspecified",
+            "summary": "A structural condition where declared constraints are insufficient to eliminate ambiguity or multiple admissible states.",
+            "url": "/workbench/patterns/constraints-underspecified/"
+          },
+          {
+            "code": "PAT-0290",
+            "slug": "divergent-outputs",
+            "title": "Divergent Outputs",
+            "summary": "A structural condition where parallel evaluations under comparable scope and shared authority produce non-equivalent outputs.",
+            "url": "/workbench/patterns/divergent-outputs/"
+          }
+        ],
+        "secondary": [
+          {
+            "code": "PAT-0210",
+            "slug": "non-deterministic-execution",
+            "title": "Non-Deterministic Execution",
+            "summary": "A structural condition where equivalent inputs and declared constraints produce divergent outputs across executions.",
+            "url": "/workbench/patterns/non-deterministic-execution/"
+          },
+          {
+            "code": "PAT-0340",
+            "slug": "overreach",
+            "title": "Overreach",
+            "summary": "A structural condition where actions, effects, authority, or modifications extend beyond declared scope without authorization.",
+            "url": "/workbench/patterns/overreach/"
+          }
+        ]
+      },
+      "useful_lenses": [
+        {
+          "code": "LEN-0120",
+          "slug": "boundary-compliance-lens",
+          "title": "Boundary Compliance Lens",
+          "summary": "Evaluates observed structure against declared boundary posture, including allow, block, and exception rules.",
+          "url": "/workbench/lenses/boundary-compliance-lens/"
+        },
+        {
+          "code": "LEN-0140",
+          "slug": "compression-lens",
+          "title": "Compression Lens",
+          "summary": "Reduces structural graphs into stable minimal representations for comparison, redundancy detection, and diffing.",
+          "url": "/workbench/lenses/compression-lens/"
+        },
+        {
+          "code": "LEN-0160",
+          "slug": "constraint-sufficiency-lens",
+          "title": "Constraint Sufficiency Lens",
+          "summary": "Evaluates whether declared constraints are sufficient to eliminate structural degrees of freedom.",
+          "url": "/workbench/lenses/constraint-sufficiency-lens/"
+        },
+        {
+          "code": "LEN-0170",
+          "slug": "convergence-lens",
+          "title": "Convergence Lens",
+          "summary": "Compares parallel structural systems to determine whether they align under shared authority.",
+          "url": "/workbench/lenses/convergence-lens/"
+        },
+        {
+          "code": "LEN-0180",
+          "slug": "determinism-lens",
+          "title": "Determinism Lens",
+          "summary": "Evaluates whether identical structural inputs produce equivalent structural outputs across repeated executions.",
+          "url": "/workbench/lenses/determinism-lens/"
+        },
+        {
+          "code": "LEN-0240",
+          "slug": "overreach-lens",
+          "title": "Overreach Lens",
+          "summary": "Detects structure that exceeds declared scope or authority reach.",
+          "url": "/workbench/lenses/overreach-lens/"
+        },
+        {
+          "code": "LEN-0250",
+          "slug": "propagation-lens",
+          "title": "Propagation Lens",
+          "summary": "Traces how structural declarations, effects, or state changes propagate across boundaries or stages.",
+          "url": "/workbench/lenses/propagation-lens/"
+        },
+        {
+          "code": "LEN-0280",
+          "slug": "reference-stability-lens",
+          "title": "Reference Stability Lens",
+          "summary": "Evaluates whether structural references, identifiers, nodes, and edges remain consistent across execution cycles or comparable states.",
+          "url": "/workbench/lenses/reference-stability-lens/"
+        },
+        {
+          "code": "LEN-0290",
+          "slug": "variance-entropy-lens",
+          "title": "Variance / Entropy Lens",
+          "summary": "Measures structural variability across repeated or comparable evaluations and identifies divergence beyond expected bounds.",
+          "url": "/workbench/lenses/variance-entropy-lens/"
+        }
+      ],
+      "caveat": "These are related structural references, not a final diagnosis."
+    },
+    {
+      "detected_gap": "implied action",
+      "patterns": {
+        "primary": [
+          {
+            "code": "PAT-0420",
+            "slug": "undeclared-side-effect",
+            "title": "Undeclared Side Effect",
+            "summary": "A structural condition where an operation modifies regions outside its declared target scope without a declared propagation or side-effect rule.",
+            "url": "/workbench/patterns/undeclared-side-effect/"
+          },
+          {
+            "code": "PAT-0380",
+            "slug": "silent-mutation",
+            "title": "Silent Mutation",
+            "summary": "A structural condition where a change occurs without a corresponding declared update, authority update, or version change.",
+            "url": "/workbench/patterns/silent-mutation/"
+          }
+        ],
+        "secondary": [
+          {
+            "code": "PAT-0340",
+            "slug": "overreach",
+            "title": "Overreach",
+            "summary": "A structural condition where actions, effects, authority, or modifications extend beyond declared scope without authorization.",
+            "url": "/workbench/patterns/overreach/"
+          },
+          {
+            "code": "PAT-0360",
+            "slug": "propagation-amplification",
+            "title": "Propagation Amplification",
+            "summary": "A structural condition where an effect, declaration, authority, constraint, or state increases in scope or intensity as it propagates beyond declared bounds.",
+            "url": "/workbench/patterns/propagation-amplification/"
+          }
+        ]
+      },
+      "useful_lenses": [
+        {
+          "code": "LEN-0120",
+          "slug": "boundary-compliance-lens",
+          "title": "Boundary Compliance Lens",
+          "summary": "Evaluates observed structure against declared boundary posture, including allow, block, and exception rules.",
+          "url": "/workbench/lenses/boundary-compliance-lens/"
+        },
+        {
+          "code": "LEN-0180",
+          "slug": "determinism-lens",
+          "title": "Determinism Lens",
+          "summary": "Evaluates whether identical structural inputs produce equivalent structural outputs across repeated executions.",
+          "url": "/workbench/lenses/determinism-lens/"
+        },
+        {
+          "code": "LEN-0190",
+          "slug": "escalation-gradient-lens",
+          "title": "Escalation Gradient Lens",
+          "summary": "Measures structural growth or intensification across sequential executions, states, or transitions.",
+          "url": "/workbench/lenses/escalation-gradient-lens/"
+        },
+        {
+          "code": "LEN-0220",
+          "slug": "isolation-boundary-lens",
+          "title": "Isolation Boundary Lens",
+          "summary": "Evaluates whether structural constraints, effects, and regions remain contained within declared boundaries.",
+          "url": "/workbench/lenses/isolation-boundary-lens/"
+        },
+        {
+          "code": "LEN-0240",
+          "slug": "overreach-lens",
+          "title": "Overreach Lens",
+          "summary": "Detects structure that exceeds declared scope or authority reach.",
+          "url": "/workbench/lenses/overreach-lens/"
+        },
+        {
+          "code": "LEN-0250",
+          "slug": "propagation-lens",
+          "title": "Propagation Lens",
+          "summary": "Traces how structural declarations, effects, or state changes propagate across boundaries or stages.",
+          "url": "/workbench/lenses/propagation-lens/"
+        },
+        {
+          "code": "LEN-0260",
+          "slug": "provenance-trace-lens",
+          "title": "Provenance Trace Lens",
+          "summary": "Attaches stable lineage to structural regions by mapping origin, reference history, and transformation path.",
+          "url": "/workbench/lenses/provenance-trace-lens/"
+        },
+        {
+          "code": "LEN-0280",
+          "slug": "reference-stability-lens",
+          "title": "Reference Stability Lens",
+          "summary": "Evaluates whether structural references, identifiers, nodes, and edges remain consistent across execution cycles or comparable states.",
+          "url": "/workbench/lenses/reference-stability-lens/"
+        },
+        {
+          "code": "LEN-0290",
+          "slug": "variance-entropy-lens",
+          "title": "Variance / Entropy Lens",
+          "summary": "Measures structural variability across repeated or comparable evaluations and identifies divergence beyond expected bounds.",
+          "url": "/workbench/lenses/variance-entropy-lens/"
+        }
+      ],
+      "caveat": "These are related structural references, not a final diagnosis."
+    },
+    {
+      "detected_gap": "missing outcome",
+      "patterns": {
+        "primary": [
+          {
+            "code": "PAT-0130",
+            "slug": "incomplete-declaration",
+            "title": "Incomplete Declaration",
+            "summary": "A structural condition where an element is declared but required attributes, dependencies, or linked definitions are missing.",
+            "url": "/workbench/patterns/incomplete-declaration/"
+          },
+          {
+            "code": "PAT-0320",
+            "slug": "convergence-failure",
+            "title": "Convergence Failure",
+            "summary": "A structural condition where sequential or parallel states fail to resolve into an equivalent or coherent structure under shared authority and constraints.",
+            "url": "/workbench/patterns/convergence-failure/"
+          }
+        ],
+        "secondary": [
+          {
+            "code": "PAT-0290",
+            "slug": "divergent-outputs",
+            "title": "Divergent Outputs",
+            "summary": "A structural condition where parallel evaluations under comparable scope and shared authority produce non-equivalent outputs.",
+            "url": "/workbench/patterns/divergent-outputs/"
+          },
+          {
+            "code": "PAT-0330",
+            "slug": "invariant-breakage",
+            "title": "Invariant Breakage",
+            "summary": "A structural condition where an observed state violates a declared invariant that is supposed to remain true.",
+            "url": "/workbench/patterns/invariant-breakage/"
+          }
+        ]
+      },
+      "useful_lenses": [
+        {
+          "code": "LEN-0100",
+          "slug": "absence-lens",
+          "title": "Absence Lens",
+          "summary": "Detects structurally required elements that are missing from the observed structure.",
+          "url": "/workbench/lenses/absence-lens/"
+        },
+        {
+          "code": "LEN-0140",
+          "slug": "compression-lens",
+          "title": "Compression Lens",
+          "summary": "Reduces structural graphs into stable minimal representations for comparison, redundancy detection, and diffing.",
+          "url": "/workbench/lenses/compression-lens/"
+        },
+        {
+          "code": "LEN-0150",
+          "slug": "conflict-lens",
+          "title": "Conflict Lens",
+          "summary": "Detects mutually incompatible constraints, claims, states, or declarations that cannot be simultaneously satisfied.",
+          "url": "/workbench/lenses/conflict-lens/"
+        },
+        {
+          "code": "LEN-0160",
+          "slug": "constraint-sufficiency-lens",
+          "title": "Constraint Sufficiency Lens",
+          "summary": "Evaluates whether declared constraints are sufficient to eliminate structural degrees of freedom.",
+          "url": "/workbench/lenses/constraint-sufficiency-lens/"
+        },
+        {
+          "code": "LEN-0170",
+          "slug": "convergence-lens",
+          "title": "Convergence Lens",
+          "summary": "Compares parallel structural systems to determine whether they align under shared authority.",
+          "url": "/workbench/lenses/convergence-lens/"
+        },
+        {
+          "code": "LEN-0180",
+          "slug": "determinism-lens",
+          "title": "Determinism Lens",
+          "summary": "Evaluates whether identical structural inputs produce equivalent structural outputs across repeated executions.",
+          "url": "/workbench/lenses/determinism-lens/"
+        },
+        {
+          "code": "LEN-0200",
+          "slug": "interface-contract-lens",
+          "title": "Interface Contract Lens",
+          "summary": "Compares declared interface structure to observed runtime structure to detect contract deviations.",
+          "url": "/workbench/lenses/interface-contract-lens/"
+        },
+        {
+          "code": "LEN-0210",
+          "slug": "invariant-lens",
+          "title": "Invariant Lens",
+          "summary": "Verifies that declared invariants are structurally enforceable and not contradicted by observed structure.",
+          "url": "/workbench/lenses/invariant-lens/"
+        },
+        {
+          "code": "LEN-0270",
+          "slug": "reconciliation-lens",
+          "title": "Reconciliation Lens",
+          "summary": "Evaluates whether structural changes align with declared authority updates, version changes, or reconciliation rules.",
+          "url": "/workbench/lenses/reconciliation-lens/"
+        },
+        {
+          "code": "LEN-0290",
+          "slug": "variance-entropy-lens",
+          "title": "Variance / Entropy Lens",
+          "summary": "Measures structural variability across repeated or comparable evaluations and identifies divergence beyond expected bounds.",
+          "url": "/workbench/lenses/variance-entropy-lens/"
+        }
+      ],
+      "caveat": "These are related structural references, not a final diagnosis."
+    },
+    {
+      "detected_gap": "unclear outcome",
+      "patterns": {
+        "primary": [
+          {
+            "code": "PAT-0170",
+            "slug": "constraints-underspecified",
+            "title": "Constraints Underspecified",
+            "summary": "A structural condition where declared constraints are insufficient to eliminate ambiguity or multiple admissible states.",
+            "url": "/workbench/patterns/constraints-underspecified/"
+          },
+          {
+            "code": "PAT-0320",
+            "slug": "convergence-failure",
+            "title": "Convergence Failure",
+            "summary": "A structural condition where sequential or parallel states fail to resolve into an equivalent or coherent structure under shared authority and constraints.",
+            "url": "/workbench/patterns/convergence-failure/"
+          }
+        ],
+        "secondary": [
+          {
+            "code": "PAT-0290",
+            "slug": "divergent-outputs",
+            "title": "Divergent Outputs",
+            "summary": "A structural condition where parallel evaluations under comparable scope and shared authority produce non-equivalent outputs.",
+            "url": "/workbench/patterns/divergent-outputs/"
+          },
+          {
+            "code": "PAT-0330",
+            "slug": "invariant-breakage",
+            "title": "Invariant Breakage",
+            "summary": "A structural condition where an observed state violates a declared invariant that is supposed to remain true.",
+            "url": "/workbench/patterns/invariant-breakage/"
+          }
+        ]
+      },
+      "useful_lenses": [
+        {
+          "code": "LEN-0140",
+          "slug": "compression-lens",
+          "title": "Compression Lens",
+          "summary": "Reduces structural graphs into stable minimal representations for comparison, redundancy detection, and diffing.",
+          "url": "/workbench/lenses/compression-lens/"
+        },
+        {
+          "code": "LEN-0150",
+          "slug": "conflict-lens",
+          "title": "Conflict Lens",
+          "summary": "Detects mutually incompatible constraints, claims, states, or declarations that cannot be simultaneously satisfied.",
+          "url": "/workbench/lenses/conflict-lens/"
+        },
+        {
+          "code": "LEN-0160",
+          "slug": "constraint-sufficiency-lens",
+          "title": "Constraint Sufficiency Lens",
+          "summary": "Evaluates whether declared constraints are sufficient to eliminate structural degrees of freedom.",
+          "url": "/workbench/lenses/constraint-sufficiency-lens/"
+        },
+        {
+          "code": "LEN-0170",
+          "slug": "convergence-lens",
+          "title": "Convergence Lens",
+          "summary": "Compares parallel structural systems to determine whether they align under shared authority.",
+          "url": "/workbench/lenses/convergence-lens/"
+        },
+        {
+          "code": "LEN-0180",
+          "slug": "determinism-lens",
+          "title": "Determinism Lens",
+          "summary": "Evaluates whether identical structural inputs produce equivalent structural outputs across repeated executions.",
+          "url": "/workbench/lenses/determinism-lens/"
+        },
+        {
+          "code": "LEN-0200",
+          "slug": "interface-contract-lens",
+          "title": "Interface Contract Lens",
+          "summary": "Compares declared interface structure to observed runtime structure to detect contract deviations.",
+          "url": "/workbench/lenses/interface-contract-lens/"
+        },
+        {
+          "code": "LEN-0210",
+          "slug": "invariant-lens",
+          "title": "Invariant Lens",
+          "summary": "Verifies that declared invariants are structurally enforceable and not contradicted by observed structure.",
+          "url": "/workbench/lenses/invariant-lens/"
+        },
+        {
+          "code": "LEN-0270",
+          "slug": "reconciliation-lens",
+          "title": "Reconciliation Lens",
+          "summary": "Evaluates whether structural changes align with declared authority updates, version changes, or reconciliation rules.",
+          "url": "/workbench/lenses/reconciliation-lens/"
+        },
+        {
+          "code": "LEN-0290",
+          "slug": "variance-entropy-lens",
+          "title": "Variance / Entropy Lens",
+          "summary": "Measures structural variability across repeated or comparable evaluations and identifies divergence beyond expected bounds.",
+          "url": "/workbench/lenses/variance-entropy-lens/"
+        }
+      ],
+      "caveat": "These are related structural references, not a final diagnosis."
+    },
+    {
+      "detected_gap": "ambiguous outcome",
+      "patterns": {
+        "primary": [
+          {
+            "code": "PAT-0290",
+            "slug": "divergent-outputs",
+            "title": "Divergent Outputs",
+            "summary": "A structural condition where parallel evaluations under comparable scope and shared authority produce non-equivalent outputs.",
+            "url": "/workbench/patterns/divergent-outputs/"
+          },
+          {
+            "code": "PAT-0170",
+            "slug": "constraints-underspecified",
+            "title": "Constraints Underspecified",
+            "summary": "A structural condition where declared constraints are insufficient to eliminate ambiguity or multiple admissible states.",
+            "url": "/workbench/patterns/constraints-underspecified/"
+          }
+        ],
+        "secondary": [
+          {
+            "code": "PAT-0210",
+            "slug": "non-deterministic-execution",
+            "title": "Non-Deterministic Execution",
+            "summary": "A structural condition where equivalent inputs and declared constraints produce divergent outputs across executions.",
+            "url": "/workbench/patterns/non-deterministic-execution/"
+          },
+          {
+            "code": "PAT-0320",
+            "slug": "convergence-failure",
+            "title": "Convergence Failure",
+            "summary": "A structural condition where sequential or parallel states fail to resolve into an equivalent or coherent structure under shared authority and constraints.",
+            "url": "/workbench/patterns/convergence-failure/"
+          }
+        ]
+      },
+      "useful_lenses": [
+        {
+          "code": "LEN-0140",
+          "slug": "compression-lens",
+          "title": "Compression Lens",
+          "summary": "Reduces structural graphs into stable minimal representations for comparison, redundancy detection, and diffing.",
+          "url": "/workbench/lenses/compression-lens/"
+        },
+        {
+          "code": "LEN-0160",
+          "slug": "constraint-sufficiency-lens",
+          "title": "Constraint Sufficiency Lens",
+          "summary": "Evaluates whether declared constraints are sufficient to eliminate structural degrees of freedom.",
+          "url": "/workbench/lenses/constraint-sufficiency-lens/"
+        },
+        {
+          "code": "LEN-0170",
+          "slug": "convergence-lens",
+          "title": "Convergence Lens",
+          "summary": "Compares parallel structural systems to determine whether they align under shared authority.",
+          "url": "/workbench/lenses/convergence-lens/"
+        },
+        {
+          "code": "LEN-0180",
+          "slug": "determinism-lens",
+          "title": "Determinism Lens",
+          "summary": "Evaluates whether identical structural inputs produce equivalent structural outputs across repeated executions.",
+          "url": "/workbench/lenses/determinism-lens/"
+        },
+        {
+          "code": "LEN-0270",
+          "slug": "reconciliation-lens",
+          "title": "Reconciliation Lens",
+          "summary": "Evaluates whether structural changes align with declared authority updates, version changes, or reconciliation rules.",
+          "url": "/workbench/lenses/reconciliation-lens/"
+        },
+        {
+          "code": "LEN-0280",
+          "slug": "reference-stability-lens",
+          "title": "Reference Stability Lens",
+          "summary": "Evaluates whether structural references, identifiers, nodes, and edges remain consistent across execution cycles or comparable states.",
+          "url": "/workbench/lenses/reference-stability-lens/"
+        },
+        {
+          "code": "LEN-0290",
+          "slug": "variance-entropy-lens",
+          "title": "Variance / Entropy Lens",
+          "summary": "Measures structural variability across repeated or comparable evaluations and identifies divergence beyond expected bounds.",
+          "url": "/workbench/lenses/variance-entropy-lens/"
+        }
+      ],
+      "caveat": "These are related structural references, not a final diagnosis."
+    },
+    {
+      "detected_gap": "missing scope",
+      "patterns": {
+        "primary": [
+          {
+            "code": "PAT-0400",
+            "slug": "unbounded-scope",
+            "title": "Unbounded Scope",
+            "summary": "A structural condition where an operation, authority, rule, or expansion has no declared upper bound, boundary, or termination condition.",
+            "url": "/workbench/patterns/unbounded-scope/"
+          },
+          {
+            "code": "PAT-0130",
+            "slug": "incomplete-declaration",
+            "title": "Incomplete Declaration",
+            "summary": "A structural condition where an element is declared but required attributes, dependencies, or linked definitions are missing.",
+            "url": "/workbench/patterns/incomplete-declaration/"
+          }
+        ],
+        "secondary": [
+          {
+            "code": "PAT-0140",
+            "slug": "boundary-leakage",
+            "title": "Boundary Leakage",
+            "summary": "A structural condition where effects, permissions, state, data, or authority cross a declared boundary without an authorized exception.",
+            "url": "/workbench/patterns/boundary-leakage/"
+          },
+          {
+            "code": "PAT-0340",
+            "slug": "overreach",
+            "title": "Overreach",
+            "summary": "A structural condition where actions, effects, authority, or modifications extend beyond declared scope without authorization.",
+            "url": "/workbench/patterns/overreach/"
+          }
+        ]
+      },
+      "useful_lenses": [
+        {
+          "code": "LEN-0100",
+          "slug": "absence-lens",
+          "title": "Absence Lens",
+          "summary": "Detects structurally required elements that are missing from the observed structure.",
+          "url": "/workbench/lenses/absence-lens/"
+        },
+        {
+          "code": "LEN-0120",
+          "slug": "boundary-compliance-lens",
+          "title": "Boundary Compliance Lens",
+          "summary": "Evaluates observed structure against declared boundary posture, including allow, block, and exception rules.",
+          "url": "/workbench/lenses/boundary-compliance-lens/"
+        },
+        {
+          "code": "LEN-0160",
+          "slug": "constraint-sufficiency-lens",
+          "title": "Constraint Sufficiency Lens",
+          "summary": "Evaluates whether declared constraints are sufficient to eliminate structural degrees of freedom.",
+          "url": "/workbench/lenses/constraint-sufficiency-lens/"
+        },
+        {
+          "code": "LEN-0190",
+          "slug": "escalation-gradient-lens",
+          "title": "Escalation Gradient Lens",
+          "summary": "Measures structural growth or intensification across sequential executions, states, or transitions.",
+          "url": "/workbench/lenses/escalation-gradient-lens/"
+        },
+        {
+          "code": "LEN-0200",
+          "slug": "interface-contract-lens",
+          "title": "Interface Contract Lens",
+          "summary": "Compares declared interface structure to observed runtime structure to detect contract deviations.",
+          "url": "/workbench/lenses/interface-contract-lens/"
+        },
+        {
+          "code": "LEN-0220",
+          "slug": "isolation-boundary-lens",
+          "title": "Isolation Boundary Lens",
+          "summary": "Evaluates whether structural constraints, effects, and regions remain contained within declared boundaries.",
+          "url": "/workbench/lenses/isolation-boundary-lens/"
+        },
+        {
+          "code": "LEN-0240",
+          "slug": "overreach-lens",
+          "title": "Overreach Lens",
+          "summary": "Detects structure that exceeds declared scope or authority reach.",
+          "url": "/workbench/lenses/overreach-lens/"
+        },
+        {
+          "code": "LEN-0250",
+          "slug": "propagation-lens",
+          "title": "Propagation Lens",
+          "summary": "Traces how structural declarations, effects, or state changes propagate across boundaries or stages.",
+          "url": "/workbench/lenses/propagation-lens/"
         }
       ],
       "caveat": "These are related structural references, not a final diagnosis."
@@ -54,22 +1497,339 @@
       "patterns": {
         "primary": [
           {
-            "code": "PAT-0100",
-            "slug": "authority-collision",
-            "title": "Authority Collision",
-            "summary": "A structural condition where multiple authorities claim governance over the same region without a declared precedence or resolution rule.",
-            "url": "/workbench/patterns/authority-collision/"
+            "code": "PAT-0400",
+            "slug": "unbounded-scope",
+            "title": "Unbounded Scope",
+            "summary": "A structural condition where an operation, authority, rule, or expansion has no declared upper bound, boundary, or termination condition.",
+            "url": "/workbench/patterns/unbounded-scope/"
+          },
+          {
+            "code": "PAT-0170",
+            "slug": "constraints-underspecified",
+            "title": "Constraints Underspecified",
+            "summary": "A structural condition where declared constraints are insufficient to eliminate ambiguity or multiple admissible states.",
+            "url": "/workbench/patterns/constraints-underspecified/"
           }
         ],
-        "secondary": []
+        "secondary": [
+          {
+            "code": "PAT-0140",
+            "slug": "boundary-leakage",
+            "title": "Boundary Leakage",
+            "summary": "A structural condition where effects, permissions, state, data, or authority cross a declared boundary without an authorized exception.",
+            "url": "/workbench/patterns/boundary-leakage/"
+          },
+          {
+            "code": "PAT-0340",
+            "slug": "overreach",
+            "title": "Overreach",
+            "summary": "A structural condition where actions, effects, authority, or modifications extend beyond declared scope without authorization.",
+            "url": "/workbench/patterns/overreach/"
+          }
+        ]
       },
       "useful_lenses": [
         {
-          "code": "LEN-0110",
-          "slug": "authority-overlay-lens",
-          "title": "Authority Overlay Lens",
-          "summary": "Maps declared authority hierarchies onto observed structure to detect absence, override, or conflict.",
-          "url": "/workbench/lenses/authority-overlay-lens/"
+          "code": "LEN-0120",
+          "slug": "boundary-compliance-lens",
+          "title": "Boundary Compliance Lens",
+          "summary": "Evaluates observed structure against declared boundary posture, including allow, block, and exception rules.",
+          "url": "/workbench/lenses/boundary-compliance-lens/"
+        },
+        {
+          "code": "LEN-0160",
+          "slug": "constraint-sufficiency-lens",
+          "title": "Constraint Sufficiency Lens",
+          "summary": "Evaluates whether declared constraints are sufficient to eliminate structural degrees of freedom.",
+          "url": "/workbench/lenses/constraint-sufficiency-lens/"
+        },
+        {
+          "code": "LEN-0180",
+          "slug": "determinism-lens",
+          "title": "Determinism Lens",
+          "summary": "Evaluates whether identical structural inputs produce equivalent structural outputs across repeated executions.",
+          "url": "/workbench/lenses/determinism-lens/"
+        },
+        {
+          "code": "LEN-0190",
+          "slug": "escalation-gradient-lens",
+          "title": "Escalation Gradient Lens",
+          "summary": "Measures structural growth or intensification across sequential executions, states, or transitions.",
+          "url": "/workbench/lenses/escalation-gradient-lens/"
+        },
+        {
+          "code": "LEN-0220",
+          "slug": "isolation-boundary-lens",
+          "title": "Isolation Boundary Lens",
+          "summary": "Evaluates whether structural constraints, effects, and regions remain contained within declared boundaries.",
+          "url": "/workbench/lenses/isolation-boundary-lens/"
+        },
+        {
+          "code": "LEN-0240",
+          "slug": "overreach-lens",
+          "title": "Overreach Lens",
+          "summary": "Detects structure that exceeds declared scope or authority reach.",
+          "url": "/workbench/lenses/overreach-lens/"
+        },
+        {
+          "code": "LEN-0250",
+          "slug": "propagation-lens",
+          "title": "Propagation Lens",
+          "summary": "Traces how structural declarations, effects, or state changes propagate across boundaries or stages.",
+          "url": "/workbench/lenses/propagation-lens/"
+        },
+        {
+          "code": "LEN-0290",
+          "slug": "variance-entropy-lens",
+          "title": "Variance / Entropy Lens",
+          "summary": "Measures structural variability across repeated or comparable evaluations and identifies divergence beyond expected bounds.",
+          "url": "/workbench/lenses/variance-entropy-lens/"
+        }
+      ],
+      "caveat": "These are related structural references, not a final diagnosis."
+    },
+    {
+      "detected_gap": "ambiguous scope",
+      "patterns": {
+        "primary": [
+          {
+            "code": "PAT-0400",
+            "slug": "unbounded-scope",
+            "title": "Unbounded Scope",
+            "summary": "A structural condition where an operation, authority, rule, or expansion has no declared upper bound, boundary, or termination condition.",
+            "url": "/workbench/patterns/unbounded-scope/"
+          },
+          {
+            "code": "PAT-0340",
+            "slug": "overreach",
+            "title": "Overreach",
+            "summary": "A structural condition where actions, effects, authority, or modifications extend beyond declared scope without authorization.",
+            "url": "/workbench/patterns/overreach/"
+          }
+        ],
+        "secondary": [
+          {
+            "code": "PAT-0140",
+            "slug": "boundary-leakage",
+            "title": "Boundary Leakage",
+            "summary": "A structural condition where effects, permissions, state, data, or authority cross a declared boundary without an authorized exception.",
+            "url": "/workbench/patterns/boundary-leakage/"
+          },
+          {
+            "code": "PAT-0410",
+            "slug": "unconstrained-expansion",
+            "title": "Unconstrained Expansion",
+            "summary": "A structural condition where a region, process, authority, or effect expands without governing constraints limiting growth.",
+            "url": "/workbench/patterns/unconstrained-expansion/"
+          }
+        ]
+      },
+      "useful_lenses": [
+        {
+          "code": "LEN-0120",
+          "slug": "boundary-compliance-lens",
+          "title": "Boundary Compliance Lens",
+          "summary": "Evaluates observed structure against declared boundary posture, including allow, block, and exception rules.",
+          "url": "/workbench/lenses/boundary-compliance-lens/"
+        },
+        {
+          "code": "LEN-0140",
+          "slug": "compression-lens",
+          "title": "Compression Lens",
+          "summary": "Reduces structural graphs into stable minimal representations for comparison, redundancy detection, and diffing.",
+          "url": "/workbench/lenses/compression-lens/"
+        },
+        {
+          "code": "LEN-0160",
+          "slug": "constraint-sufficiency-lens",
+          "title": "Constraint Sufficiency Lens",
+          "summary": "Evaluates whether declared constraints are sufficient to eliminate structural degrees of freedom.",
+          "url": "/workbench/lenses/constraint-sufficiency-lens/"
+        },
+        {
+          "code": "LEN-0190",
+          "slug": "escalation-gradient-lens",
+          "title": "Escalation Gradient Lens",
+          "summary": "Measures structural growth or intensification across sequential executions, states, or transitions.",
+          "url": "/workbench/lenses/escalation-gradient-lens/"
+        },
+        {
+          "code": "LEN-0220",
+          "slug": "isolation-boundary-lens",
+          "title": "Isolation Boundary Lens",
+          "summary": "Evaluates whether structural constraints, effects, and regions remain contained within declared boundaries.",
+          "url": "/workbench/lenses/isolation-boundary-lens/"
+        },
+        {
+          "code": "LEN-0240",
+          "slug": "overreach-lens",
+          "title": "Overreach Lens",
+          "summary": "Detects structure that exceeds declared scope or authority reach.",
+          "url": "/workbench/lenses/overreach-lens/"
+        },
+        {
+          "code": "LEN-0250",
+          "slug": "propagation-lens",
+          "title": "Propagation Lens",
+          "summary": "Traces how structural declarations, effects, or state changes propagate across boundaries or stages.",
+          "url": "/workbench/lenses/propagation-lens/"
+        },
+        {
+          "code": "LEN-0290",
+          "slug": "variance-entropy-lens",
+          "title": "Variance / Entropy Lens",
+          "summary": "Measures structural variability across repeated or comparable evaluations and identifies divergence beyond expected bounds.",
+          "url": "/workbench/lenses/variance-entropy-lens/"
+        }
+      ],
+      "caveat": "These are related structural references, not a final diagnosis."
+    },
+    {
+      "detected_gap": "incomplete scope",
+      "patterns": {
+        "primary": [
+          {
+            "code": "PAT-0400",
+            "slug": "unbounded-scope",
+            "title": "Unbounded Scope",
+            "summary": "A structural condition where an operation, authority, rule, or expansion has no declared upper bound, boundary, or termination condition.",
+            "url": "/workbench/patterns/unbounded-scope/"
+          },
+          {
+            "code": "PAT-0130",
+            "slug": "incomplete-declaration",
+            "title": "Incomplete Declaration",
+            "summary": "A structural condition where an element is declared but required attributes, dependencies, or linked definitions are missing.",
+            "url": "/workbench/patterns/incomplete-declaration/"
+          }
+        ],
+        "secondary": [
+          {
+            "code": "PAT-0340",
+            "slug": "overreach",
+            "title": "Overreach",
+            "summary": "A structural condition where actions, effects, authority, or modifications extend beyond declared scope without authorization.",
+            "url": "/workbench/patterns/overreach/"
+          },
+          {
+            "code": "PAT-0140",
+            "slug": "boundary-leakage",
+            "title": "Boundary Leakage",
+            "summary": "A structural condition where effects, permissions, state, data, or authority cross a declared boundary without an authorized exception.",
+            "url": "/workbench/patterns/boundary-leakage/"
+          }
+        ]
+      },
+      "useful_lenses": [
+        {
+          "code": "LEN-0100",
+          "slug": "absence-lens",
+          "title": "Absence Lens",
+          "summary": "Detects structurally required elements that are missing from the observed structure.",
+          "url": "/workbench/lenses/absence-lens/"
+        },
+        {
+          "code": "LEN-0120",
+          "slug": "boundary-compliance-lens",
+          "title": "Boundary Compliance Lens",
+          "summary": "Evaluates observed structure against declared boundary posture, including allow, block, and exception rules.",
+          "url": "/workbench/lenses/boundary-compliance-lens/"
+        },
+        {
+          "code": "LEN-0160",
+          "slug": "constraint-sufficiency-lens",
+          "title": "Constraint Sufficiency Lens",
+          "summary": "Evaluates whether declared constraints are sufficient to eliminate structural degrees of freedom.",
+          "url": "/workbench/lenses/constraint-sufficiency-lens/"
+        },
+        {
+          "code": "LEN-0190",
+          "slug": "escalation-gradient-lens",
+          "title": "Escalation Gradient Lens",
+          "summary": "Measures structural growth or intensification across sequential executions, states, or transitions.",
+          "url": "/workbench/lenses/escalation-gradient-lens/"
+        },
+        {
+          "code": "LEN-0200",
+          "slug": "interface-contract-lens",
+          "title": "Interface Contract Lens",
+          "summary": "Compares declared interface structure to observed runtime structure to detect contract deviations.",
+          "url": "/workbench/lenses/interface-contract-lens/"
+        },
+        {
+          "code": "LEN-0220",
+          "slug": "isolation-boundary-lens",
+          "title": "Isolation Boundary Lens",
+          "summary": "Evaluates whether structural constraints, effects, and regions remain contained within declared boundaries.",
+          "url": "/workbench/lenses/isolation-boundary-lens/"
+        },
+        {
+          "code": "LEN-0240",
+          "slug": "overreach-lens",
+          "title": "Overreach Lens",
+          "summary": "Detects structure that exceeds declared scope or authority reach.",
+          "url": "/workbench/lenses/overreach-lens/"
+        },
+        {
+          "code": "LEN-0250",
+          "slug": "propagation-lens",
+          "title": "Propagation Lens",
+          "summary": "Traces how structural declarations, effects, or state changes propagate across boundaries or stages.",
+          "url": "/workbench/lenses/propagation-lens/"
+        }
+      ],
+      "caveat": "These are related structural references, not a final diagnosis."
+    },
+    {
+      "detected_gap": "missing constraint",
+      "patterns": {
+        "primary": [
+          {
+            "code": "PAT-0170",
+            "slug": "constraints-underspecified",
+            "title": "Constraints Underspecified",
+            "summary": "A structural condition where declared constraints are insufficient to eliminate ambiguity or multiple admissible states.",
+            "url": "/workbench/patterns/constraints-underspecified/"
+          },
+          {
+            "code": "PAT-0130",
+            "slug": "incomplete-declaration",
+            "title": "Incomplete Declaration",
+            "summary": "A structural condition where an element is declared but required attributes, dependencies, or linked definitions are missing.",
+            "url": "/workbench/patterns/incomplete-declaration/"
+          }
+        ],
+        "secondary": [
+          {
+            "code": "PAT-0390",
+            "slug": "threshold-breach",
+            "title": "Threshold Breach",
+            "summary": "A structural condition where an observed metric, value, state, or condition exceeds a declared quantitative or qualitative threshold.",
+            "url": "/workbench/patterns/threshold-breach/"
+          },
+          {
+            "code": "PAT-0330",
+            "slug": "invariant-breakage",
+            "title": "Invariant Breakage",
+            "summary": "A structural condition where an observed state violates a declared invariant that is supposed to remain true.",
+            "url": "/workbench/patterns/invariant-breakage/"
+          }
+        ]
+      },
+      "useful_lenses": [
+        {
+          "code": "LEN-0100",
+          "slug": "absence-lens",
+          "title": "Absence Lens",
+          "summary": "Detects structurally required elements that are missing from the observed structure.",
+          "url": "/workbench/lenses/absence-lens/"
+        },
+        {
+          "code": "LEN-0120",
+          "slug": "boundary-compliance-lens",
+          "title": "Boundary Compliance Lens",
+          "summary": "Evaluates observed structure against declared boundary posture, including allow, block, and exception rules.",
+          "url": "/workbench/lenses/boundary-compliance-lens/"
         },
         {
           "code": "LEN-0150",
@@ -79,6 +1839,27 @@
           "url": "/workbench/lenses/conflict-lens/"
         },
         {
+          "code": "LEN-0160",
+          "slug": "constraint-sufficiency-lens",
+          "title": "Constraint Sufficiency Lens",
+          "summary": "Evaluates whether declared constraints are sufficient to eliminate structural degrees of freedom.",
+          "url": "/workbench/lenses/constraint-sufficiency-lens/"
+        },
+        {
+          "code": "LEN-0180",
+          "slug": "determinism-lens",
+          "title": "Determinism Lens",
+          "summary": "Evaluates whether identical structural inputs produce equivalent structural outputs across repeated executions.",
+          "url": "/workbench/lenses/determinism-lens/"
+        },
+        {
+          "code": "LEN-0200",
+          "slug": "interface-contract-lens",
+          "title": "Interface Contract Lens",
+          "summary": "Compares declared interface structure to observed runtime structure to detect contract deviations.",
+          "url": "/workbench/lenses/interface-contract-lens/"
+        },
+        {
           "code": "LEN-0210",
           "slug": "invariant-lens",
           "title": "Invariant Lens",
@@ -86,11 +1867,189 @@
           "url": "/workbench/lenses/invariant-lens/"
         },
         {
-          "code": "LEN-0270",
-          "slug": "reconciliation-lens",
-          "title": "Reconciliation Lens",
-          "summary": "Evaluates whether structural changes align with declared authority updates, version changes, or reconciliation rules.",
-          "url": "/workbench/lenses/reconciliation-lens/"
+          "code": "LEN-0290",
+          "slug": "variance-entropy-lens",
+          "title": "Variance / Entropy Lens",
+          "summary": "Measures structural variability across repeated or comparable evaluations and identifies divergence beyond expected bounds.",
+          "url": "/workbench/lenses/variance-entropy-lens/"
+        }
+      ],
+      "caveat": "These are related structural references, not a final diagnosis."
+    },
+    {
+      "detected_gap": "unclear constraint",
+      "patterns": {
+        "primary": [
+          {
+            "code": "PAT-0170",
+            "slug": "constraints-underspecified",
+            "title": "Constraints Underspecified",
+            "summary": "A structural condition where declared constraints are insufficient to eliminate ambiguity or multiple admissible states.",
+            "url": "/workbench/patterns/constraints-underspecified/"
+          }
+        ],
+        "secondary": [
+          {
+            "code": "PAT-0390",
+            "slug": "threshold-breach",
+            "title": "Threshold Breach",
+            "summary": "A structural condition where an observed metric, value, state, or condition exceeds a declared quantitative or qualitative threshold.",
+            "url": "/workbench/patterns/threshold-breach/"
+          },
+          {
+            "code": "PAT-0330",
+            "slug": "invariant-breakage",
+            "title": "Invariant Breakage",
+            "summary": "A structural condition where an observed state violates a declared invariant that is supposed to remain true.",
+            "url": "/workbench/patterns/invariant-breakage/"
+          }
+        ]
+      },
+      "useful_lenses": [
+        {
+          "code": "LEN-0120",
+          "slug": "boundary-compliance-lens",
+          "title": "Boundary Compliance Lens",
+          "summary": "Evaluates observed structure against declared boundary posture, including allow, block, and exception rules.",
+          "url": "/workbench/lenses/boundary-compliance-lens/"
+        },
+        {
+          "code": "LEN-0150",
+          "slug": "conflict-lens",
+          "title": "Conflict Lens",
+          "summary": "Detects mutually incompatible constraints, claims, states, or declarations that cannot be simultaneously satisfied.",
+          "url": "/workbench/lenses/conflict-lens/"
+        },
+        {
+          "code": "LEN-0160",
+          "slug": "constraint-sufficiency-lens",
+          "title": "Constraint Sufficiency Lens",
+          "summary": "Evaluates whether declared constraints are sufficient to eliminate structural degrees of freedom.",
+          "url": "/workbench/lenses/constraint-sufficiency-lens/"
+        },
+        {
+          "code": "LEN-0180",
+          "slug": "determinism-lens",
+          "title": "Determinism Lens",
+          "summary": "Evaluates whether identical structural inputs produce equivalent structural outputs across repeated executions.",
+          "url": "/workbench/lenses/determinism-lens/"
+        },
+        {
+          "code": "LEN-0200",
+          "slug": "interface-contract-lens",
+          "title": "Interface Contract Lens",
+          "summary": "Compares declared interface structure to observed runtime structure to detect contract deviations.",
+          "url": "/workbench/lenses/interface-contract-lens/"
+        },
+        {
+          "code": "LEN-0210",
+          "slug": "invariant-lens",
+          "title": "Invariant Lens",
+          "summary": "Verifies that declared invariants are structurally enforceable and not contradicted by observed structure.",
+          "url": "/workbench/lenses/invariant-lens/"
+        },
+        {
+          "code": "LEN-0290",
+          "slug": "variance-entropy-lens",
+          "title": "Variance / Entropy Lens",
+          "summary": "Measures structural variability across repeated or comparable evaluations and identifies divergence beyond expected bounds.",
+          "url": "/workbench/lenses/variance-entropy-lens/"
+        }
+      ],
+      "caveat": "These are related structural references, not a final diagnosis."
+    },
+    {
+      "detected_gap": "ambiguous constraint",
+      "patterns": {
+        "primary": [
+          {
+            "code": "PAT-0170",
+            "slug": "constraints-underspecified",
+            "title": "Constraints Underspecified",
+            "summary": "A structural condition where declared constraints are insufficient to eliminate ambiguity or multiple admissible states.",
+            "url": "/workbench/patterns/constraints-underspecified/"
+          },
+          {
+            "code": "PAT-0180",
+            "slug": "compatibility-violation",
+            "title": "Compatibility Violation",
+            "summary": "A structural condition where a graph, object, behavior, or runtime state exceeds a declared compatibility envelope without an authorized exception.",
+            "url": "/workbench/patterns/compatibility-violation/"
+          }
+        ],
+        "secondary": [
+          {
+            "code": "PAT-0390",
+            "slug": "threshold-breach",
+            "title": "Threshold Breach",
+            "summary": "A structural condition where an observed metric, value, state, or condition exceeds a declared quantitative or qualitative threshold.",
+            "url": "/workbench/patterns/threshold-breach/"
+          },
+          {
+            "code": "PAT-0330",
+            "slug": "invariant-breakage",
+            "title": "Invariant Breakage",
+            "summary": "A structural condition where an observed state violates a declared invariant that is supposed to remain true.",
+            "url": "/workbench/patterns/invariant-breakage/"
+          }
+        ]
+      },
+      "useful_lenses": [
+        {
+          "code": "LEN-0120",
+          "slug": "boundary-compliance-lens",
+          "title": "Boundary Compliance Lens",
+          "summary": "Evaluates observed structure against declared boundary posture, including allow, block, and exception rules.",
+          "url": "/workbench/lenses/boundary-compliance-lens/"
+        },
+        {
+          "code": "LEN-0130",
+          "slug": "compatibility-envelope-lens",
+          "title": "Compatibility Envelope Lens",
+          "summary": "Determines whether structure fits within declared runtime, platform, version, or support constraints.",
+          "url": "/workbench/lenses/compatibility-envelope-lens/"
+        },
+        {
+          "code": "LEN-0150",
+          "slug": "conflict-lens",
+          "title": "Conflict Lens",
+          "summary": "Detects mutually incompatible constraints, claims, states, or declarations that cannot be simultaneously satisfied.",
+          "url": "/workbench/lenses/conflict-lens/"
+        },
+        {
+          "code": "LEN-0160",
+          "slug": "constraint-sufficiency-lens",
+          "title": "Constraint Sufficiency Lens",
+          "summary": "Evaluates whether declared constraints are sufficient to eliminate structural degrees of freedom.",
+          "url": "/workbench/lenses/constraint-sufficiency-lens/"
+        },
+        {
+          "code": "LEN-0180",
+          "slug": "determinism-lens",
+          "title": "Determinism Lens",
+          "summary": "Evaluates whether identical structural inputs produce equivalent structural outputs across repeated executions.",
+          "url": "/workbench/lenses/determinism-lens/"
+        },
+        {
+          "code": "LEN-0200",
+          "slug": "interface-contract-lens",
+          "title": "Interface Contract Lens",
+          "summary": "Compares declared interface structure to observed runtime structure to detect contract deviations.",
+          "url": "/workbench/lenses/interface-contract-lens/"
+        },
+        {
+          "code": "LEN-0210",
+          "slug": "invariant-lens",
+          "title": "Invariant Lens",
+          "summary": "Verifies that declared invariants are structurally enforceable and not contradicted by observed structure.",
+          "url": "/workbench/lenses/invariant-lens/"
+        },
+        {
+          "code": "LEN-0290",
+          "slug": "variance-entropy-lens",
+          "title": "Variance / Entropy Lens",
+          "summary": "Measures structural variability across repeated or comparable evaluations and identifies divergence beyond expected bounds.",
+          "url": "/workbench/lenses/variance-entropy-lens/"
         }
       ],
       "caveat": "These are related structural references, not a final diagnosis."
@@ -100,22 +2059,51 @@
       "patterns": {
         "primary": [
           {
-            "code": "PAT-0100",
-            "slug": "authority-collision",
-            "title": "Authority Collision",
-            "summary": "A structural condition where multiple authorities claim governance over the same region without a declared precedence or resolution rule.",
-            "url": "/workbench/patterns/authority-collision/"
+            "code": "PAT-0170",
+            "slug": "constraints-underspecified",
+            "title": "Constraints Underspecified",
+            "summary": "A structural condition where declared constraints are insufficient to eliminate ambiguity or multiple admissible states.",
+            "url": "/workbench/patterns/constraints-underspecified/"
+          },
+          {
+            "code": "PAT-0130",
+            "slug": "incomplete-declaration",
+            "title": "Incomplete Declaration",
+            "summary": "A structural condition where an element is declared but required attributes, dependencies, or linked definitions are missing.",
+            "url": "/workbench/patterns/incomplete-declaration/"
           }
         ],
-        "secondary": []
+        "secondary": [
+          {
+            "code": "PAT-0390",
+            "slug": "threshold-breach",
+            "title": "Threshold Breach",
+            "summary": "A structural condition where an observed metric, value, state, or condition exceeds a declared quantitative or qualitative threshold.",
+            "url": "/workbench/patterns/threshold-breach/"
+          },
+          {
+            "code": "PAT-0330",
+            "slug": "invariant-breakage",
+            "title": "Invariant Breakage",
+            "summary": "A structural condition where an observed state violates a declared invariant that is supposed to remain true.",
+            "url": "/workbench/patterns/invariant-breakage/"
+          }
+        ]
       },
       "useful_lenses": [
         {
-          "code": "LEN-0110",
-          "slug": "authority-overlay-lens",
-          "title": "Authority Overlay Lens",
-          "summary": "Maps declared authority hierarchies onto observed structure to detect absence, override, or conflict.",
-          "url": "/workbench/lenses/authority-overlay-lens/"
+          "code": "LEN-0100",
+          "slug": "absence-lens",
+          "title": "Absence Lens",
+          "summary": "Detects structurally required elements that are missing from the observed structure.",
+          "url": "/workbench/lenses/absence-lens/"
+        },
+        {
+          "code": "LEN-0120",
+          "slug": "boundary-compliance-lens",
+          "title": "Boundary Compliance Lens",
+          "summary": "Evaluates observed structure against declared boundary posture, including allow, block, and exception rules.",
+          "url": "/workbench/lenses/boundary-compliance-lens/"
         },
         {
           "code": "LEN-0150",
@@ -125,11 +2113,135 @@
           "url": "/workbench/lenses/conflict-lens/"
         },
         {
+          "code": "LEN-0160",
+          "slug": "constraint-sufficiency-lens",
+          "title": "Constraint Sufficiency Lens",
+          "summary": "Evaluates whether declared constraints are sufficient to eliminate structural degrees of freedom.",
+          "url": "/workbench/lenses/constraint-sufficiency-lens/"
+        },
+        {
+          "code": "LEN-0180",
+          "slug": "determinism-lens",
+          "title": "Determinism Lens",
+          "summary": "Evaluates whether identical structural inputs produce equivalent structural outputs across repeated executions.",
+          "url": "/workbench/lenses/determinism-lens/"
+        },
+        {
+          "code": "LEN-0200",
+          "slug": "interface-contract-lens",
+          "title": "Interface Contract Lens",
+          "summary": "Compares declared interface structure to observed runtime structure to detect contract deviations.",
+          "url": "/workbench/lenses/interface-contract-lens/"
+        },
+        {
           "code": "LEN-0210",
           "slug": "invariant-lens",
           "title": "Invariant Lens",
           "summary": "Verifies that declared invariants are structurally enforceable and not contradicted by observed structure.",
           "url": "/workbench/lenses/invariant-lens/"
+        },
+        {
+          "code": "LEN-0290",
+          "slug": "variance-entropy-lens",
+          "title": "Variance / Entropy Lens",
+          "summary": "Measures structural variability across repeated or comparable evaluations and identifies divergence beyond expected bounds.",
+          "url": "/workbench/lenses/variance-entropy-lens/"
+        }
+      ],
+      "caveat": "These are related structural references, not a final diagnosis."
+    },
+    {
+      "detected_gap": "missing dependency",
+      "patterns": {
+        "primary": [
+          {
+            "code": "PAT-0130",
+            "slug": "incomplete-declaration",
+            "title": "Incomplete Declaration",
+            "summary": "A structural condition where an element is declared but required attributes, dependencies, or linked definitions are missing.",
+            "url": "/workbench/patterns/incomplete-declaration/"
+          },
+          {
+            "code": "PAT-0310",
+            "slug": "orphaned-structure",
+            "title": "Orphaned Structure",
+            "summary": "A structural condition where a node, region, object, state, or declaration exists without linkage to the governing graph or integration pathway.",
+            "url": "/workbench/patterns/orphaned-structure/"
+          }
+        ],
+        "secondary": [
+          {
+            "code": "PAT-0250",
+            "slug": "circular-dependency",
+            "title": "Circular Dependency",
+            "summary": "A structural condition where two or more elements depend on each other in a closed loop without an independent base condition or declared resolution mechanism.",
+            "url": "/workbench/patterns/circular-dependency/"
+          },
+          {
+            "code": "PAT-0190",
+            "slug": "contract-drift",
+            "title": "Contract Drift",
+            "summary": "A structural condition where a declared contract changes but connected structures, implementations, consumers, or expectations do not update in sync.",
+            "url": "/workbench/patterns/contract-drift/"
+          }
+        ]
+      },
+      "useful_lenses": [
+        {
+          "code": "LEN-0100",
+          "slug": "absence-lens",
+          "title": "Absence Lens",
+          "summary": "Detects structurally required elements that are missing from the observed structure.",
+          "url": "/workbench/lenses/absence-lens/"
+        },
+        {
+          "code": "LEN-0150",
+          "slug": "conflict-lens",
+          "title": "Conflict Lens",
+          "summary": "Detects mutually incompatible constraints, claims, states, or declarations that cannot be simultaneously satisfied.",
+          "url": "/workbench/lenses/conflict-lens/"
+        },
+        {
+          "code": "LEN-0160",
+          "slug": "constraint-sufficiency-lens",
+          "title": "Constraint Sufficiency Lens",
+          "summary": "Evaluates whether declared constraints are sufficient to eliminate structural degrees of freedom.",
+          "url": "/workbench/lenses/constraint-sufficiency-lens/"
+        },
+        {
+          "code": "LEN-0170",
+          "slug": "convergence-lens",
+          "title": "Convergence Lens",
+          "summary": "Compares parallel structural systems to determine whether they align under shared authority.",
+          "url": "/workbench/lenses/convergence-lens/"
+        },
+        {
+          "code": "LEN-0180",
+          "slug": "determinism-lens",
+          "title": "Determinism Lens",
+          "summary": "Evaluates whether identical structural inputs produce equivalent structural outputs across repeated executions.",
+          "url": "/workbench/lenses/determinism-lens/"
+        },
+        {
+          "code": "LEN-0200",
+          "slug": "interface-contract-lens",
+          "title": "Interface Contract Lens",
+          "summary": "Compares declared interface structure to observed runtime structure to detect contract deviations.",
+          "url": "/workbench/lenses/interface-contract-lens/"
+        },
+        {
+          "code": "LEN-0230",
+          "slug": "normalization-lens",
+          "title": "Normalization Lens",
+          "summary": "Transforms structurally equivalent variants into a canonical form to prevent false divergence.",
+          "url": "/workbench/lenses/normalization-lens/"
+        },
+        {
+          "code": "LEN-0250",
+          "slug": "propagation-lens",
+          "title": "Propagation Lens",
+          "summary": "Traces how structural declarations, effects, or state changes propagate across boundaries or stages.",
+          "url": "/workbench/lenses/propagation-lens/"
         },
         {
           "code": "LEN-0270",
@@ -142,9 +2254,119 @@
       "caveat": "These are related structural references, not a final diagnosis."
     },
     {
+      "detected_gap": "unclear dependency",
+      "patterns": {
+        "primary": [
+          {
+            "code": "PAT-0170",
+            "slug": "constraints-underspecified",
+            "title": "Constraints Underspecified",
+            "summary": "A structural condition where declared constraints are insufficient to eliminate ambiguity or multiple admissible states.",
+            "url": "/workbench/patterns/constraints-underspecified/"
+          },
+          {
+            "code": "PAT-0310",
+            "slug": "orphaned-structure",
+            "title": "Orphaned Structure",
+            "summary": "A structural condition where a node, region, object, state, or declaration exists without linkage to the governing graph or integration pathway.",
+            "url": "/workbench/patterns/orphaned-structure/"
+          }
+        ],
+        "secondary": [
+          {
+            "code": "PAT-0250",
+            "slug": "circular-dependency",
+            "title": "Circular Dependency",
+            "summary": "A structural condition where two or more elements depend on each other in a closed loop without an independent base condition or declared resolution mechanism.",
+            "url": "/workbench/patterns/circular-dependency/"
+          },
+          {
+            "code": "PAT-0190",
+            "slug": "contract-drift",
+            "title": "Contract Drift",
+            "summary": "A structural condition where a declared contract changes but connected structures, implementations, consumers, or expectations do not update in sync.",
+            "url": "/workbench/patterns/contract-drift/"
+          }
+        ]
+      },
+      "useful_lenses": [
+        {
+          "code": "LEN-0100",
+          "slug": "absence-lens",
+          "title": "Absence Lens",
+          "summary": "Detects structurally required elements that are missing from the observed structure.",
+          "url": "/workbench/lenses/absence-lens/"
+        },
+        {
+          "code": "LEN-0150",
+          "slug": "conflict-lens",
+          "title": "Conflict Lens",
+          "summary": "Detects mutually incompatible constraints, claims, states, or declarations that cannot be simultaneously satisfied.",
+          "url": "/workbench/lenses/conflict-lens/"
+        },
+        {
+          "code": "LEN-0160",
+          "slug": "constraint-sufficiency-lens",
+          "title": "Constraint Sufficiency Lens",
+          "summary": "Evaluates whether declared constraints are sufficient to eliminate structural degrees of freedom.",
+          "url": "/workbench/lenses/constraint-sufficiency-lens/"
+        },
+        {
+          "code": "LEN-0170",
+          "slug": "convergence-lens",
+          "title": "Convergence Lens",
+          "summary": "Compares parallel structural systems to determine whether they align under shared authority.",
+          "url": "/workbench/lenses/convergence-lens/"
+        },
+        {
+          "code": "LEN-0180",
+          "slug": "determinism-lens",
+          "title": "Determinism Lens",
+          "summary": "Evaluates whether identical structural inputs produce equivalent structural outputs across repeated executions.",
+          "url": "/workbench/lenses/determinism-lens/"
+        },
+        {
+          "code": "LEN-0230",
+          "slug": "normalization-lens",
+          "title": "Normalization Lens",
+          "summary": "Transforms structurally equivalent variants into a canonical form to prevent false divergence.",
+          "url": "/workbench/lenses/normalization-lens/"
+        },
+        {
+          "code": "LEN-0250",
+          "slug": "propagation-lens",
+          "title": "Propagation Lens",
+          "summary": "Traces how structural declarations, effects, or state changes propagate across boundaries or stages.",
+          "url": "/workbench/lenses/propagation-lens/"
+        },
+        {
+          "code": "LEN-0270",
+          "slug": "reconciliation-lens",
+          "title": "Reconciliation Lens",
+          "summary": "Evaluates whether structural changes align with declared authority updates, version changes, or reconciliation rules.",
+          "url": "/workbench/lenses/reconciliation-lens/"
+        },
+        {
+          "code": "LEN-0290",
+          "slug": "variance-entropy-lens",
+          "title": "Variance / Entropy Lens",
+          "summary": "Measures structural variability across repeated or comparable evaluations and identifies divergence beyond expected bounds.",
+          "url": "/workbench/lenses/variance-entropy-lens/"
+        }
+      ],
+      "caveat": "These are related structural references, not a final diagnosis."
+    },
+    {
       "detected_gap": "conflicting dependency",
       "patterns": {
         "primary": [
+          {
+            "code": "PAT-0250",
+            "slug": "circular-dependency",
+            "title": "Circular Dependency",
+            "summary": "A structural condition where two or more elements depend on each other in a closed loop without an independent base condition or declared resolution mechanism.",
+            "url": "/workbench/patterns/circular-dependency/"
+          },
           {
             "code": "PAT-0100",
             "slug": "authority-collision",
@@ -153,7 +2375,22 @@
             "url": "/workbench/patterns/authority-collision/"
           }
         ],
-        "secondary": []
+        "secondary": [
+          {
+            "code": "PAT-0180",
+            "slug": "compatibility-violation",
+            "title": "Compatibility Violation",
+            "summary": "A structural condition where a graph, object, behavior, or runtime state exceeds a declared compatibility envelope without an authorized exception.",
+            "url": "/workbench/patterns/compatibility-violation/"
+          },
+          {
+            "code": "PAT-0190",
+            "slug": "contract-drift",
+            "title": "Contract Drift",
+            "summary": "A structural condition where a declared contract changes but connected structures, implementations, consumers, or expectations do not update in sync.",
+            "url": "/workbench/patterns/contract-drift/"
+          }
+        ]
       },
       "useful_lenses": [
         {
@@ -164,11 +2401,39 @@
           "url": "/workbench/lenses/authority-overlay-lens/"
         },
         {
+          "code": "LEN-0120",
+          "slug": "boundary-compliance-lens",
+          "title": "Boundary Compliance Lens",
+          "summary": "Evaluates observed structure against declared boundary posture, including allow, block, and exception rules.",
+          "url": "/workbench/lenses/boundary-compliance-lens/"
+        },
+        {
+          "code": "LEN-0130",
+          "slug": "compatibility-envelope-lens",
+          "title": "Compatibility Envelope Lens",
+          "summary": "Determines whether structure fits within declared runtime, platform, version, or support constraints.",
+          "url": "/workbench/lenses/compatibility-envelope-lens/"
+        },
+        {
           "code": "LEN-0150",
           "slug": "conflict-lens",
           "title": "Conflict Lens",
           "summary": "Detects mutually incompatible constraints, claims, states, or declarations that cannot be simultaneously satisfied.",
           "url": "/workbench/lenses/conflict-lens/"
+        },
+        {
+          "code": "LEN-0170",
+          "slug": "convergence-lens",
+          "title": "Convergence Lens",
+          "summary": "Compares parallel structural systems to determine whether they align under shared authority.",
+          "url": "/workbench/lenses/convergence-lens/"
+        },
+        {
+          "code": "LEN-0180",
+          "slug": "determinism-lens",
+          "title": "Determinism Lens",
+          "summary": "Evaluates whether identical structural inputs produce equivalent structural outputs across repeated executions.",
+          "url": "/workbench/lenses/determinism-lens/"
         },
         {
           "code": "LEN-0210",
@@ -178,11 +2443,484 @@
           "url": "/workbench/lenses/invariant-lens/"
         },
         {
+          "code": "LEN-0230",
+          "slug": "normalization-lens",
+          "title": "Normalization Lens",
+          "summary": "Transforms structurally equivalent variants into a canonical form to prevent false divergence.",
+          "url": "/workbench/lenses/normalization-lens/"
+        },
+        {
+          "code": "LEN-0250",
+          "slug": "propagation-lens",
+          "title": "Propagation Lens",
+          "summary": "Traces how structural declarations, effects, or state changes propagate across boundaries or stages.",
+          "url": "/workbench/lenses/propagation-lens/"
+        },
+        {
           "code": "LEN-0270",
           "slug": "reconciliation-lens",
           "title": "Reconciliation Lens",
           "summary": "Evaluates whether structural changes align with declared authority updates, version changes, or reconciliation rules.",
           "url": "/workbench/lenses/reconciliation-lens/"
+        }
+      ],
+      "caveat": "These are related structural references, not a final diagnosis."
+    },
+    {
+      "detected_gap": "incomplete dependency",
+      "patterns": {
+        "primary": [
+          {
+            "code": "PAT-0130",
+            "slug": "incomplete-declaration",
+            "title": "Incomplete Declaration",
+            "summary": "A structural condition where an element is declared but required attributes, dependencies, or linked definitions are missing.",
+            "url": "/workbench/patterns/incomplete-declaration/"
+          },
+          {
+            "code": "PAT-0310",
+            "slug": "orphaned-structure",
+            "title": "Orphaned Structure",
+            "summary": "A structural condition where a node, region, object, state, or declaration exists without linkage to the governing graph or integration pathway.",
+            "url": "/workbench/patterns/orphaned-structure/"
+          }
+        ],
+        "secondary": [
+          {
+            "code": "PAT-0250",
+            "slug": "circular-dependency",
+            "title": "Circular Dependency",
+            "summary": "A structural condition where two or more elements depend on each other in a closed loop without an independent base condition or declared resolution mechanism.",
+            "url": "/workbench/patterns/circular-dependency/"
+          },
+          {
+            "code": "PAT-0190",
+            "slug": "contract-drift",
+            "title": "Contract Drift",
+            "summary": "A structural condition where a declared contract changes but connected structures, implementations, consumers, or expectations do not update in sync.",
+            "url": "/workbench/patterns/contract-drift/"
+          }
+        ]
+      },
+      "useful_lenses": [
+        {
+          "code": "LEN-0100",
+          "slug": "absence-lens",
+          "title": "Absence Lens",
+          "summary": "Detects structurally required elements that are missing from the observed structure.",
+          "url": "/workbench/lenses/absence-lens/"
+        },
+        {
+          "code": "LEN-0150",
+          "slug": "conflict-lens",
+          "title": "Conflict Lens",
+          "summary": "Detects mutually incompatible constraints, claims, states, or declarations that cannot be simultaneously satisfied.",
+          "url": "/workbench/lenses/conflict-lens/"
+        },
+        {
+          "code": "LEN-0160",
+          "slug": "constraint-sufficiency-lens",
+          "title": "Constraint Sufficiency Lens",
+          "summary": "Evaluates whether declared constraints are sufficient to eliminate structural degrees of freedom.",
+          "url": "/workbench/lenses/constraint-sufficiency-lens/"
+        },
+        {
+          "code": "LEN-0170",
+          "slug": "convergence-lens",
+          "title": "Convergence Lens",
+          "summary": "Compares parallel structural systems to determine whether they align under shared authority.",
+          "url": "/workbench/lenses/convergence-lens/"
+        },
+        {
+          "code": "LEN-0180",
+          "slug": "determinism-lens",
+          "title": "Determinism Lens",
+          "summary": "Evaluates whether identical structural inputs produce equivalent structural outputs across repeated executions.",
+          "url": "/workbench/lenses/determinism-lens/"
+        },
+        {
+          "code": "LEN-0200",
+          "slug": "interface-contract-lens",
+          "title": "Interface Contract Lens",
+          "summary": "Compares declared interface structure to observed runtime structure to detect contract deviations.",
+          "url": "/workbench/lenses/interface-contract-lens/"
+        },
+        {
+          "code": "LEN-0230",
+          "slug": "normalization-lens",
+          "title": "Normalization Lens",
+          "summary": "Transforms structurally equivalent variants into a canonical form to prevent false divergence.",
+          "url": "/workbench/lenses/normalization-lens/"
+        },
+        {
+          "code": "LEN-0250",
+          "slug": "propagation-lens",
+          "title": "Propagation Lens",
+          "summary": "Traces how structural declarations, effects, or state changes propagate across boundaries or stages.",
+          "url": "/workbench/lenses/propagation-lens/"
+        },
+        {
+          "code": "LEN-0270",
+          "slug": "reconciliation-lens",
+          "title": "Reconciliation Lens",
+          "summary": "Evaluates whether structural changes align with declared authority updates, version changes, or reconciliation rules.",
+          "url": "/workbench/lenses/reconciliation-lens/"
+        }
+      ],
+      "caveat": "These are related structural references, not a final diagnosis."
+    },
+    {
+      "detected_gap": "missing sequence",
+      "patterns": {
+        "primary": [
+          {
+            "code": "PAT-0130",
+            "slug": "incomplete-declaration",
+            "title": "Incomplete Declaration",
+            "summary": "A structural condition where an element is declared but required attributes, dependencies, or linked definitions are missing.",
+            "url": "/workbench/patterns/incomplete-declaration/"
+          },
+          {
+            "code": "PAT-0320",
+            "slug": "convergence-failure",
+            "title": "Convergence Failure",
+            "summary": "A structural condition where sequential or parallel states fail to resolve into an equivalent or coherent structure under shared authority and constraints.",
+            "url": "/workbench/patterns/convergence-failure/"
+          }
+        ],
+        "secondary": [
+          {
+            "code": "PAT-0210",
+            "slug": "non-deterministic-execution",
+            "title": "Non-Deterministic Execution",
+            "summary": "A structural condition where equivalent inputs and declared constraints produce divergent outputs across executions.",
+            "url": "/workbench/patterns/non-deterministic-execution/"
+          },
+          {
+            "code": "PAT-0350",
+            "slug": "persistence-instability",
+            "title": "Persistence Instability",
+            "summary": "A structural condition where persisted state cannot be stored and restored into an equivalent structure without alteration.",
+            "url": "/workbench/patterns/persistence-instability/"
+          }
+        ]
+      },
+      "useful_lenses": [
+        {
+          "code": "LEN-0100",
+          "slug": "absence-lens",
+          "title": "Absence Lens",
+          "summary": "Detects structurally required elements that are missing from the observed structure.",
+          "url": "/workbench/lenses/absence-lens/"
+        },
+        {
+          "code": "LEN-0160",
+          "slug": "constraint-sufficiency-lens",
+          "title": "Constraint Sufficiency Lens",
+          "summary": "Evaluates whether declared constraints are sufficient to eliminate structural degrees of freedom.",
+          "url": "/workbench/lenses/constraint-sufficiency-lens/"
+        },
+        {
+          "code": "LEN-0170",
+          "slug": "convergence-lens",
+          "title": "Convergence Lens",
+          "summary": "Compares parallel structural systems to determine whether they align under shared authority.",
+          "url": "/workbench/lenses/convergence-lens/"
+        },
+        {
+          "code": "LEN-0180",
+          "slug": "determinism-lens",
+          "title": "Determinism Lens",
+          "summary": "Evaluates whether identical structural inputs produce equivalent structural outputs across repeated executions.",
+          "url": "/workbench/lenses/determinism-lens/"
+        },
+        {
+          "code": "LEN-0200",
+          "slug": "interface-contract-lens",
+          "title": "Interface Contract Lens",
+          "summary": "Compares declared interface structure to observed runtime structure to detect contract deviations.",
+          "url": "/workbench/lenses/interface-contract-lens/"
+        },
+        {
+          "code": "LEN-0270",
+          "slug": "reconciliation-lens",
+          "title": "Reconciliation Lens",
+          "summary": "Evaluates whether structural changes align with declared authority updates, version changes, or reconciliation rules.",
+          "url": "/workbench/lenses/reconciliation-lens/"
+        },
+        {
+          "code": "LEN-0280",
+          "slug": "reference-stability-lens",
+          "title": "Reference Stability Lens",
+          "summary": "Evaluates whether structural references, identifiers, nodes, and edges remain consistent across execution cycles or comparable states.",
+          "url": "/workbench/lenses/reference-stability-lens/"
+        },
+        {
+          "code": "LEN-0290",
+          "slug": "variance-entropy-lens",
+          "title": "Variance / Entropy Lens",
+          "summary": "Measures structural variability across repeated or comparable evaluations and identifies divergence beyond expected bounds.",
+          "url": "/workbench/lenses/variance-entropy-lens/"
+        }
+      ],
+      "caveat": "These are related structural references, not a final diagnosis."
+    },
+    {
+      "detected_gap": "unclear sequence",
+      "patterns": {
+        "primary": [
+          {
+            "code": "PAT-0320",
+            "slug": "convergence-failure",
+            "title": "Convergence Failure",
+            "summary": "A structural condition where sequential or parallel states fail to resolve into an equivalent or coherent structure under shared authority and constraints.",
+            "url": "/workbench/patterns/convergence-failure/"
+          },
+          {
+            "code": "PAT-0210",
+            "slug": "non-deterministic-execution",
+            "title": "Non-Deterministic Execution",
+            "summary": "A structural condition where equivalent inputs and declared constraints produce divergent outputs across executions.",
+            "url": "/workbench/patterns/non-deterministic-execution/"
+          }
+        ],
+        "secondary": [
+          {
+            "code": "PAT-0350",
+            "slug": "persistence-instability",
+            "title": "Persistence Instability",
+            "summary": "A structural condition where persisted state cannot be stored and restored into an equivalent structure without alteration.",
+            "url": "/workbench/patterns/persistence-instability/"
+          },
+          {
+            "code": "PAT-0380",
+            "slug": "silent-mutation",
+            "title": "Silent Mutation",
+            "summary": "A structural condition where a change occurs without a corresponding declared update, authority update, or version change.",
+            "url": "/workbench/patterns/silent-mutation/"
+          }
+        ]
+      },
+      "useful_lenses": [
+        {
+          "code": "LEN-0170",
+          "slug": "convergence-lens",
+          "title": "Convergence Lens",
+          "summary": "Compares parallel structural systems to determine whether they align under shared authority.",
+          "url": "/workbench/lenses/convergence-lens/"
+        },
+        {
+          "code": "LEN-0180",
+          "slug": "determinism-lens",
+          "title": "Determinism Lens",
+          "summary": "Evaluates whether identical structural inputs produce equivalent structural outputs across repeated executions.",
+          "url": "/workbench/lenses/determinism-lens/"
+        },
+        {
+          "code": "LEN-0260",
+          "slug": "provenance-trace-lens",
+          "title": "Provenance Trace Lens",
+          "summary": "Attaches stable lineage to structural regions by mapping origin, reference history, and transformation path.",
+          "url": "/workbench/lenses/provenance-trace-lens/"
+        },
+        {
+          "code": "LEN-0270",
+          "slug": "reconciliation-lens",
+          "title": "Reconciliation Lens",
+          "summary": "Evaluates whether structural changes align with declared authority updates, version changes, or reconciliation rules.",
+          "url": "/workbench/lenses/reconciliation-lens/"
+        },
+        {
+          "code": "LEN-0280",
+          "slug": "reference-stability-lens",
+          "title": "Reference Stability Lens",
+          "summary": "Evaluates whether structural references, identifiers, nodes, and edges remain consistent across execution cycles or comparable states.",
+          "url": "/workbench/lenses/reference-stability-lens/"
+        },
+        {
+          "code": "LEN-0290",
+          "slug": "variance-entropy-lens",
+          "title": "Variance / Entropy Lens",
+          "summary": "Measures structural variability across repeated or comparable evaluations and identifies divergence beyond expected bounds.",
+          "url": "/workbench/lenses/variance-entropy-lens/"
+        }
+      ],
+      "caveat": "These are related structural references, not a final diagnosis."
+    },
+    {
+      "detected_gap": "ambiguous sequence",
+      "patterns": {
+        "primary": [
+          {
+            "code": "PAT-0210",
+            "slug": "non-deterministic-execution",
+            "title": "Non-Deterministic Execution",
+            "summary": "A structural condition where equivalent inputs and declared constraints produce divergent outputs across executions.",
+            "url": "/workbench/patterns/non-deterministic-execution/"
+          },
+          {
+            "code": "PAT-0320",
+            "slug": "convergence-failure",
+            "title": "Convergence Failure",
+            "summary": "A structural condition where sequential or parallel states fail to resolve into an equivalent or coherent structure under shared authority and constraints.",
+            "url": "/workbench/patterns/convergence-failure/"
+          }
+        ],
+        "secondary": [
+          {
+            "code": "PAT-0290",
+            "slug": "divergent-outputs",
+            "title": "Divergent Outputs",
+            "summary": "A structural condition where parallel evaluations under comparable scope and shared authority produce non-equivalent outputs.",
+            "url": "/workbench/patterns/divergent-outputs/"
+          },
+          {
+            "code": "PAT-0350",
+            "slug": "persistence-instability",
+            "title": "Persistence Instability",
+            "summary": "A structural condition where persisted state cannot be stored and restored into an equivalent structure without alteration.",
+            "url": "/workbench/patterns/persistence-instability/"
+          }
+        ]
+      },
+      "useful_lenses": [
+        {
+          "code": "LEN-0140",
+          "slug": "compression-lens",
+          "title": "Compression Lens",
+          "summary": "Reduces structural graphs into stable minimal representations for comparison, redundancy detection, and diffing.",
+          "url": "/workbench/lenses/compression-lens/"
+        },
+        {
+          "code": "LEN-0170",
+          "slug": "convergence-lens",
+          "title": "Convergence Lens",
+          "summary": "Compares parallel structural systems to determine whether they align under shared authority.",
+          "url": "/workbench/lenses/convergence-lens/"
+        },
+        {
+          "code": "LEN-0180",
+          "slug": "determinism-lens",
+          "title": "Determinism Lens",
+          "summary": "Evaluates whether identical structural inputs produce equivalent structural outputs across repeated executions.",
+          "url": "/workbench/lenses/determinism-lens/"
+        },
+        {
+          "code": "LEN-0270",
+          "slug": "reconciliation-lens",
+          "title": "Reconciliation Lens",
+          "summary": "Evaluates whether structural changes align with declared authority updates, version changes, or reconciliation rules.",
+          "url": "/workbench/lenses/reconciliation-lens/"
+        },
+        {
+          "code": "LEN-0280",
+          "slug": "reference-stability-lens",
+          "title": "Reference Stability Lens",
+          "summary": "Evaluates whether structural references, identifiers, nodes, and edges remain consistent across execution cycles or comparable states.",
+          "url": "/workbench/lenses/reference-stability-lens/"
+        },
+        {
+          "code": "LEN-0290",
+          "slug": "variance-entropy-lens",
+          "title": "Variance / Entropy Lens",
+          "summary": "Measures structural variability across repeated or comparable evaluations and identifies divergence beyond expected bounds.",
+          "url": "/workbench/lenses/variance-entropy-lens/"
+        }
+      ],
+      "caveat": "These are related structural references, not a final diagnosis."
+    },
+    {
+      "detected_gap": "incomplete sequence",
+      "patterns": {
+        "primary": [
+          {
+            "code": "PAT-0320",
+            "slug": "convergence-failure",
+            "title": "Convergence Failure",
+            "summary": "A structural condition where sequential or parallel states fail to resolve into an equivalent or coherent structure under shared authority and constraints.",
+            "url": "/workbench/patterns/convergence-failure/"
+          },
+          {
+            "code": "PAT-0130",
+            "slug": "incomplete-declaration",
+            "title": "Incomplete Declaration",
+            "summary": "A structural condition where an element is declared but required attributes, dependencies, or linked definitions are missing.",
+            "url": "/workbench/patterns/incomplete-declaration/"
+          }
+        ],
+        "secondary": [
+          {
+            "code": "PAT-0210",
+            "slug": "non-deterministic-execution",
+            "title": "Non-Deterministic Execution",
+            "summary": "A structural condition where equivalent inputs and declared constraints produce divergent outputs across executions.",
+            "url": "/workbench/patterns/non-deterministic-execution/"
+          },
+          {
+            "code": "PAT-0350",
+            "slug": "persistence-instability",
+            "title": "Persistence Instability",
+            "summary": "A structural condition where persisted state cannot be stored and restored into an equivalent structure without alteration.",
+            "url": "/workbench/patterns/persistence-instability/"
+          }
+        ]
+      },
+      "useful_lenses": [
+        {
+          "code": "LEN-0100",
+          "slug": "absence-lens",
+          "title": "Absence Lens",
+          "summary": "Detects structurally required elements that are missing from the observed structure.",
+          "url": "/workbench/lenses/absence-lens/"
+        },
+        {
+          "code": "LEN-0160",
+          "slug": "constraint-sufficiency-lens",
+          "title": "Constraint Sufficiency Lens",
+          "summary": "Evaluates whether declared constraints are sufficient to eliminate structural degrees of freedom.",
+          "url": "/workbench/lenses/constraint-sufficiency-lens/"
+        },
+        {
+          "code": "LEN-0170",
+          "slug": "convergence-lens",
+          "title": "Convergence Lens",
+          "summary": "Compares parallel structural systems to determine whether they align under shared authority.",
+          "url": "/workbench/lenses/convergence-lens/"
+        },
+        {
+          "code": "LEN-0180",
+          "slug": "determinism-lens",
+          "title": "Determinism Lens",
+          "summary": "Evaluates whether identical structural inputs produce equivalent structural outputs across repeated executions.",
+          "url": "/workbench/lenses/determinism-lens/"
+        },
+        {
+          "code": "LEN-0200",
+          "slug": "interface-contract-lens",
+          "title": "Interface Contract Lens",
+          "summary": "Compares declared interface structure to observed runtime structure to detect contract deviations.",
+          "url": "/workbench/lenses/interface-contract-lens/"
+        },
+        {
+          "code": "LEN-0270",
+          "slug": "reconciliation-lens",
+          "title": "Reconciliation Lens",
+          "summary": "Evaluates whether structural changes align with declared authority updates, version changes, or reconciliation rules.",
+          "url": "/workbench/lenses/reconciliation-lens/"
+        },
+        {
+          "code": "LEN-0280",
+          "slug": "reference-stability-lens",
+          "title": "Reference Stability Lens",
+          "summary": "Evaluates whether structural references, identifiers, nodes, and edges remain consistent across execution cycles or comparable states.",
+          "url": "/workbench/lenses/reference-stability-lens/"
+        },
+        {
+          "code": "LEN-0290",
+          "slug": "variance-entropy-lens",
+          "title": "Variance / Entropy Lens",
+          "summary": "Measures structural variability across repeated or comparable evaluations and identifies divergence beyond expected bounds.",
+          "url": "/workbench/lenses/variance-entropy-lens/"
         }
       ],
       "caveat": "These are related structural references, not a final diagnosis."

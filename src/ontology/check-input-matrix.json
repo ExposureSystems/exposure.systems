@@ -1,34 +1,189 @@
 {
   "missing actor": {
     "patterns": {
-      "primary": [
-        "PAT-0100"
-      ],
-      "secondary": []
+      "primary": ["PAT-0120", "PAT-0130"],
+      "secondary": ["PAT-0100"]
+    }
+  },
+  "unclear actor": {
+    "patterns": {
+      "primary": ["PAT-0170", "PAT-0130"],
+      "secondary": ["PAT-0120", "PAT-0100"]
+    }
+  },
+  "ambiguous actor": {
+    "patterns": {
+      "primary": ["PAT-0170", "PAT-0100"],
+      "secondary": ["PAT-0120", "PAT-0130"]
+    }
+  },
+  "undefined actor": {
+    "patterns": {
+      "primary": ["PAT-0120", "PAT-0130"],
+      "secondary": ["PAT-0100"]
+    }
+  },
+
+  "missing trigger": {
+    "patterns": {
+      "primary": ["PAT-0130", "PAT-0420"],
+      "secondary": ["PAT-0300", "PAT-0320"]
+    }
+  },
+  "unclear trigger": {
+    "patterns": {
+      "primary": ["PAT-0170", "PAT-0130"],
+      "secondary": ["PAT-0210", "PAT-0320"]
+    }
+  },
+  "ambiguous trigger": {
+    "patterns": {
+      "primary": ["PAT-0170", "PAT-0210"],
+      "secondary": ["PAT-0130", "PAT-0320"]
+    }
+  },
+
+  "missing action": {
+    "patterns": {
+      "primary": ["PAT-0130", "PAT-0120"],
+      "secondary": ["PAT-0340", "PAT-0420"]
+    }
+  },
+  "unclear action": {
+    "patterns": {
+      "primary": ["PAT-0170", "PAT-0150"],
+      "secondary": ["PAT-0340", "PAT-0420"]
+    }
+  },
+  "ambiguous action": {
+    "patterns": {
+      "primary": ["PAT-0170", "PAT-0290"],
+      "secondary": ["PAT-0210", "PAT-0340"]
+    }
+  },
+  "implied action": {
+    "patterns": {
+      "primary": ["PAT-0420", "PAT-0380"],
+      "secondary": ["PAT-0340", "PAT-0360"]
+    }
+  },
+
+  "missing outcome": {
+    "patterns": {
+      "primary": ["PAT-0130", "PAT-0320"],
+      "secondary": ["PAT-0290", "PAT-0330"]
+    }
+  },
+  "unclear outcome": {
+    "patterns": {
+      "primary": ["PAT-0170", "PAT-0320"],
+      "secondary": ["PAT-0290", "PAT-0330"]
+    }
+  },
+  "ambiguous outcome": {
+    "patterns": {
+      "primary": ["PAT-0290", "PAT-0170"],
+      "secondary": ["PAT-0210", "PAT-0320"]
+    }
+  },
+
+  "missing scope": {
+    "patterns": {
+      "primary": ["PAT-0400", "PAT-0130"],
+      "secondary": ["PAT-0140", "PAT-0340"]
     }
   },
   "unclear scope": {
     "patterns": {
-      "primary": [
-        "PAT-0100"
-      ],
-      "secondary": []
+      "primary": ["PAT-0400", "PAT-0170"],
+      "secondary": ["PAT-0140", "PAT-0340"]
+    }
+  },
+  "ambiguous scope": {
+    "patterns": {
+      "primary": ["PAT-0400", "PAT-0340"],
+      "secondary": ["PAT-0140", "PAT-0410"]
+    }
+  },
+  "incomplete scope": {
+    "patterns": {
+      "primary": ["PAT-0400", "PAT-0130"],
+      "secondary": ["PAT-0340", "PAT-0140"]
+    }
+  },
+
+  "missing constraint": {
+    "patterns": {
+      "primary": ["PAT-0170", "PAT-0130"],
+      "secondary": ["PAT-0390", "PAT-0330"]
+    }
+  },
+  "unclear constraint": {
+    "patterns": {
+      "primary": ["PAT-0170"],
+      "secondary": ["PAT-0390", "PAT-0330"]
+    }
+  },
+  "ambiguous constraint": {
+    "patterns": {
+      "primary": ["PAT-0170", "PAT-0180"],
+      "secondary": ["PAT-0390", "PAT-0330"]
     }
   },
   "unstated constraint": {
     "patterns": {
-      "primary": [
-        "PAT-0100"
-      ],
-      "secondary": []
+      "primary": ["PAT-0170", "PAT-0130"],
+      "secondary": ["PAT-0390", "PAT-0330"]
+    }
+  },
+
+  "missing dependency": {
+    "patterns": {
+      "primary": ["PAT-0130", "PAT-0310"],
+      "secondary": ["PAT-0250", "PAT-0190"]
+    }
+  },
+  "unclear dependency": {
+    "patterns": {
+      "primary": ["PAT-0170", "PAT-0310"],
+      "secondary": ["PAT-0250", "PAT-0190"]
     }
   },
   "conflicting dependency": {
     "patterns": {
-      "primary": [
-        "PAT-0100"
-      ],
-      "secondary": []
+      "primary": ["PAT-0250", "PAT-0100"],
+      "secondary": ["PAT-0180", "PAT-0190"]
+    }
+  },
+  "incomplete dependency": {
+    "patterns": {
+      "primary": ["PAT-0130", "PAT-0310"],
+      "secondary": ["PAT-0250", "PAT-0190"]
+    }
+  },
+
+  "missing sequence": {
+    "patterns": {
+      "primary": ["PAT-0130", "PAT-0320"],
+      "secondary": ["PAT-0210", "PAT-0350"]
+    }
+  },
+  "unclear sequence": {
+    "patterns": {
+      "primary": ["PAT-0320", "PAT-0210"],
+      "secondary": ["PAT-0350", "PAT-0380"]
+    }
+  },
+  "ambiguous sequence": {
+    "patterns": {
+      "primary": ["PAT-0210", "PAT-0320"],
+      "secondary": ["PAT-0290", "PAT-0350"]
+    }
+  },
+  "incomplete sequence": {
+    "patterns": {
+      "primary": ["PAT-0320", "PAT-0130"],
+      "secondary": ["PAT-0210", "PAT-0350"]
     }
   }
 }
