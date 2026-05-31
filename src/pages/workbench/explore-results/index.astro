@@ -2,17 +2,35 @@
 import WorkbenchLayout from "../../../layouts/WorkbenchLayout.astro";
 import checkInputIndex from "../../../content/_meta/check-input-index.json";
 
-const results = checkInputIndex.results;
+const characterLimit = 12000;
 
-const acceptedExamples = results.map((result) => result.detected_gap);
-
-const ignoredExamples = [
-  "the model might hallucinate",
-  "needs more context",
-  "could be better",
-  "bad prompt",
-  "unclear business logic",
-];
+const explorationData = checkInputIndex.results.map((result) => ({
+  detectedGap: result.detected_gap,
+  caveat: result.caveat,
+  patterns: {
+    primary: result.patterns.primary.map((pattern) => ({
+      code: pattern.code,
+      title: pattern.title,
+      summary: pattern.summary,
+      url: pattern.url,
+      absoluteUrl: `https://pengosystems.com${pattern.url}`,
+    })),
+    secondary: result.patterns.secondary.map((pattern) => ({
+      code: pattern.code,
+      title: pattern.title,
+      summary: pattern.summary,
+      url: pattern.url,
+      absoluteUrl: `https://pengosystems.com${pattern.url}`,
+    })),
+  },
+  usefulLenses: result.useful_lenses.map((lens) => ({
+    code: lens.code,
+    title: lens.title,
+    summary: lens.summary,
+    url: lens.url,
+    absoluteUrl: `https://pengosystems.com${lens.url}`,
+  })),
+}));
 ---
 
 <WorkbenchLayout
@@ -39,8 +57,8 @@ const ignoredExamples = [
       <ol>
         <li>Run Check Input with any AI.</li>
         <li>Bring the AI output back to PENGO.</li>
-        <li>Use the Detected Gaps list.</li>
-        <li>Map the gaps into related Patterns.</li>
+        <li>Paste the Input Summary and Detected Gaps below.</li>
+        <li>Map the controlled gaps into related Patterns.</li>
         <li>Explore useful Lenses for those Patterns.</li>
       </ol>
 
@@ -49,14 +67,17 @@ const ignoredExamples = [
       </p>
     </section>
 
-    <section class="wb-reading-section">
-      <h2>Accepted Input Shape</h2>
-      <p>
-        Explore Results uses controlled Detected Gap lines from Check Input.
-        Freeform explanations are ignored.
-      </p>
+    <section class="wb-section" aria-label="Paste Check Input output">
+      <h2>Map Your AI Output</h2>
 
-      <pre><code>{`Input Summary
+      <div class="explore-input-grid">
+        <div class="explore-input-panel">
+          <label for="check-input-output">Paste Check Input output</label>
+          <textarea
+            id="check-input-output"
+            rows="16"
+            data-explore-input
+            placeholder={`Input Summary
 - actor: ...
 - trigger: ...
 - action: ...
@@ -69,108 +90,67 @@ const ignoredExamples = [
 Detected Gaps
 - missing actor
 - unclear scope
-- unstated constraint`}</code></pre>
+- unstated constraint`}
+          ></textarea>
+
+          <p class="explore-warning" data-explore-warning hidden></p>
+
+          <div class="explore-actions">
+            <button type="button" data-map-results disabled>
+              Map Into Workbench
+            </button>
+            <button type="button" data-copy-results hidden>
+              Copy Workbench Results
+            </button>
+          </div>
+        </div>
+
+        <details class="explore-rules" open>
+          <summary>Formatting Rules</summary>
+
+          <div>
+            <p>
+              Paste plain text from Check Input.
+            </p>
+            <p>
+              Mapped lines must match:
+              <code>[gap type] [element]</code>
+            </p>
+            <ul>
+              <li><code>missing actor</code></li>
+              <li><code>unclear scope</code></li>
+              <li><code>unstated constraint</code></li>
+            </ul>
+            <p>
+              Freeform text is ignored. HTML and code are treated as plain text.
+            </p>
+            <p>
+              Limit: {characterLimit.toLocaleString()} characters.
+            </p>
+          </div>
+        </details>
+      </div>
     </section>
 
-    <section class="wb-reading-section">
-      <h2>Accepted Gap Terms</h2>
+    <section class="wb-section" data-results-section hidden>
+      <h2>Mapped Results</h2>
+      <div data-results-list></div>
+    </section>
+
+    <section class="wb-section" data-no-results-section hidden>
+      <h2>No Controlled Gaps Found</h2>
       <p>
-        Every accepted line must match: <code>[gap type] [element]</code>.
+        No controlled Check Input gaps were found. Run Check Input first, then paste the Input Summary and Detected Gaps here.
       </p>
-
-      <ul>
-        {acceptedExamples.map((example) => (
-          <li><code>{example}</code></li>
-        ))}
-      </ul>
+      <p class="wb-next-link">
+        <a href="/workbench/check-input/">Open Check Input</a>
+      </p>
     </section>
 
-    <section class="wb-section">
-      <h2>Current Exploration Results</h2>
-
-      {results.map((result) => (
-        <article class="wb-reading-section">
-          <h2>{result.detected_gap}</h2>
-          <p>{result.caveat}</p>
-
-          <section class="wb-section">
-            <h2>Related Patterns</h2>
-
-            {result.patterns.primary.length > 0 && (
-              <>
-                <h3>Primary</h3>
-                <div class="wb-row-list">
-                  {result.patterns.primary.map((pattern) => (
-                    <a class="wb-row" href={pattern.url}>
-                      <p class="wb-row-meta" translate="no" class="notranslate" lang="en">
-                        {pattern.code}
-                      </p>
-                      <h2>
-                        <span translate="no" class="notranslate" lang="en">{pattern.title}</span>
-                      </h2>
-                      <p>{pattern.summary}</p>
-                    </a>
-                  ))}
-                </div>
-              </>
-            )}
-
-            {result.patterns.secondary.length > 0 && (
-              <>
-                <h3>Secondary</h3>
-                <div class="wb-row-list">
-                  {result.patterns.secondary.map((pattern) => (
-                    <a class="wb-row" href={pattern.url}>
-                      <p class="wb-row-meta" translate="no" class="notranslate" lang="en">
-                        {pattern.code}
-                      </p>
-                      <h2>
-                        <span translate="no" class="notranslate" lang="en">{pattern.title}</span>
-                      </h2>
-                      <p>{pattern.summary}</p>
-                    </a>
-                  ))}
-                </div>
-              </>
-            )}
-          </section>
-
-          <section class="wb-section">
-            <h2>Useful Lenses</h2>
-
-            {result.useful_lenses.length > 0 ? (
-              <div class="wb-row-list">
-                {result.useful_lenses.map((lens) => (
-                  <a class="wb-row" href={lens.url}>
-                    <p class="wb-row-meta" translate="no" class="notranslate" lang="en">
-                      {lens.code}
-                    </p>
-                    <h2>
-                      <span translate="no" class="notranslate" lang="en">{lens.title}</span>
-                    </h2>
-                    <p>{lens.summary}</p>
-                  </a>
-                ))}
-              </div>
-            ) : (
-              <p>No useful Lenses derived.</p>
-            )}
-          </section>
-        </article>
-      ))}
-    </section>
-
-    <section class="wb-reading-section">
-      <h2>Ignored Examples</h2>
-      <p>
-        Freeform labels do not drive exploration.
-      </p>
-
-      <ul>
-        {ignoredExamples.map((example) => (
-          <li><code>{example}</code></li>
-        ))}
-      </ul>
+    <section class="wb-section" data-ignored-section hidden>
+      <h2>Ignored Lines</h2>
+      <p data-ignored-summary></p>
+      <ul data-ignored-list></ul>
     </section>
 
     <section class="wb-reading-section">
@@ -180,4 +160,413 @@ Detected Gaps
       </p>
     </section>
   </article>
+
+  <script
+    type="application/json"
+    id="explore-results-data"
+    set:html={JSON.stringify(explorationData)}
+  ></script>
+
+  <style>
+    .explore-input-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(210px, 270px);
+      gap: 1rem;
+      align-items: start;
+      margin-top: 1rem;
+    }
+
+    .explore-input-panel {
+      border: 1px solid var(--color-border);
+      border-radius: 18px;
+      background: var(--color-surface);
+      overflow: hidden;
+    }
+
+    .explore-input-panel label {
+      display: block;
+      padding: 0.8rem 0.95rem;
+      border-bottom: 1px solid var(--color-border);
+      color: var(--color-text);
+      font-size: 0.82rem;
+      line-height: 1.1;
+      font-weight: 850;
+    }
+
+    .explore-input-panel textarea {
+      display: block;
+      width: 100%;
+      min-height: 18rem;
+      padding: 1rem;
+      border: 0;
+      resize: vertical;
+      background: transparent;
+      color: var(--color-text);
+      font: 0.86rem/1.55 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      white-space: pre;
+    }
+
+    .explore-input-panel textarea:focus {
+      outline: 2px solid var(--color-accent);
+      outline-offset: -2px;
+    }
+
+    .explore-warning {
+      margin: 0 !important;
+      padding: 0 1rem 0.85rem;
+      color: var(--color-accent) !important;
+      font-size: 0.85rem !important;
+      line-height: 1.4 !important;
+      font-weight: 750 !important;
+    }
+
+    .explore-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+      padding: 0.85rem 0.95rem;
+      border-top: 1px solid var(--color-border);
+    }
+
+    .explore-actions button {
+      appearance: none;
+      border: 1px solid var(--color-accent);
+      border-radius: 999px;
+      background: transparent;
+      color: var(--color-accent);
+      padding: 0.5rem 0.8rem;
+      font: inherit;
+      font-size: 0.74rem;
+      line-height: 1;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      cursor: pointer;
+    }
+
+    .explore-actions button:hover:not(:disabled) {
+      background: var(--color-accent);
+      color: var(--color-bg);
+    }
+
+    .explore-actions button:disabled {
+      cursor: not-allowed;
+      opacity: 0.42;
+    }
+
+    .explore-rules {
+      border: 1px solid var(--color-border);
+      border-radius: 18px;
+      background: var(--color-surface);
+      padding: 0.85rem 0.95rem;
+    }
+
+    .explore-rules summary {
+      color: var(--color-text);
+      cursor: pointer;
+      font-size: 0.82rem;
+      line-height: 1.2;
+      font-weight: 850;
+    }
+
+    .explore-rules div {
+      margin-top: 0.8rem;
+    }
+
+    .explore-rules p,
+    .explore-rules li {
+      font-size: 0.85rem !important;
+      line-height: 1.45 !important;
+    }
+
+    .explore-url {
+      margin-top: 0.18rem !important;
+      color: var(--color-faint) !important;
+      font-size: 0.72rem !important;
+      line-height: 1.35 !important;
+      word-break: break-all;
+    }
+
+    @media (max-width: 760px) {
+      .explore-input-grid {
+        display: flex;
+        flex-direction: column-reverse;
+      }
+
+      .explore-rules {
+        width: 100%;
+      }
+
+      .explore-rules[open] {
+        padding-bottom: 0.95rem;
+      }
+    }
+  </style>
+
+  <script>
+    const DATA_LIMIT = 12000;
+    const dataElement = document.getElementById("explore-results-data");
+    const input = document.querySelector("[data-explore-input]");
+    const warning = document.querySelector("[data-explore-warning]");
+    const mapButton = document.querySelector("[data-map-results]");
+    const copyButton = document.querySelector("[data-copy-results]");
+    const resultsSection = document.querySelector("[data-results-section]");
+    const noResultsSection = document.querySelector("[data-no-results-section]");
+    const ignoredSection = document.querySelector("[data-ignored-section]");
+    const resultsList = document.querySelector("[data-results-list]");
+    const ignoredList = document.querySelector("[data-ignored-list]");
+    const ignoredSummary = document.querySelector("[data-ignored-summary]");
+
+    const explorationData = JSON.parse(dataElement?.textContent || "[]");
+    const resultByGap = new Map(
+      explorationData.map((item) => [item.detectedGap.toLowerCase(), item])
+    );
+
+    let lastCopyText = "";
+
+    function normalizeLine(line) {
+      return line
+        .trim()
+        .replace(/^[-*•]+\\s*/, "")
+        .replace(/\\s+/g, " ")
+        .toLowerCase();
+    }
+
+    function updateInputState() {
+      if (!(input instanceof HTMLTextAreaElement)) return;
+
+      const overage = input.value.length - DATA_LIMIT;
+      const hasText = input.value.trim().length > 0;
+
+      if (overage > 0) {
+        warning.hidden = false;
+        warning.textContent = `-${overage.toLocaleString()} characters. Please reduce input size.`;
+      } else {
+        warning.hidden = true;
+        warning.textContent = "";
+      }
+
+      if (mapButton instanceof HTMLButtonElement) {
+        mapButton.disabled = !hasText || overage > 0;
+      }
+    }
+
+    function clearChildren(element) {
+      if (!element) return;
+      while (element.firstChild) {
+        element.removeChild(element.firstChild);
+      }
+    }
+
+    function appendTextElement(parent, tagName, text, className) {
+      const element = document.createElement(tagName);
+      element.textContent = text;
+      if (className) {
+        element.className = className;
+      }
+      parent.appendChild(element);
+      return element;
+    }
+
+    function appendRow(parent, item) {
+      const row = document.createElement("a");
+      row.className = "wb-row";
+      row.href = item.url;
+
+      appendTextElement(row, "p", item.code, "wb-row-meta").setAttribute("translate", "no");
+
+      const title = document.createElement("h2");
+      const titleSpan = appendTextElement(title, "span", item.title, "notranslate");
+      titleSpan.setAttribute("translate", "no");
+      titleSpan.setAttribute("lang", "en");
+      row.appendChild(title);
+
+      const urlText = item.absoluteUrl.replace("https://", "");
+      appendTextElement(row, "p", urlText, "explore-url");
+
+      appendTextElement(row, "p", item.summary);
+
+      parent.appendChild(row);
+    }
+
+    function parseInput(value) {
+      const mapped = [];
+      const ignored = [];
+      const seen = new Set();
+
+      for (const rawLine of value.split(/\\r?\\n/)) {
+        const line = normalizeLine(rawLine);
+
+        if (!line || line === "detected gaps" || line === "input summary") {
+          continue;
+        }
+
+        if (resultByGap.has(line)) {
+          if (!seen.has(line)) {
+            mapped.push(resultByGap.get(line));
+            seen.add(line);
+          }
+          continue;
+        }
+
+        if (rawLine.trim()) {
+          ignored.push(rawLine.trim());
+        }
+      }
+
+      return { mapped, ignored };
+    }
+
+    function buildCopyText(mapped) {
+      const lines = [
+        "Explore Results",
+        "",
+        "Controlled gaps mapped:",
+        ...mapped.map((item) => `- ${item.detectedGap}`),
+        "",
+        "Related Patterns:",
+      ];
+
+      const patternSeen = new Set();
+      const lensSeen = new Set();
+      const patternLines = [];
+      const lensLines = [];
+
+      for (const result of mapped) {
+        for (const group of [result.patterns.primary, result.patterns.secondary]) {
+          for (const pattern of group) {
+            if (patternSeen.has(pattern.code)) continue;
+            patternSeen.add(pattern.code);
+            patternLines.push(`- ${pattern.code} — ${pattern.title}`);
+            patternLines.push(`  ${pattern.absoluteUrl}`);
+            patternLines.push(`  ${pattern.summary}`);
+          }
+        }
+
+        for (const lens of result.usefulLenses) {
+          if (lensSeen.has(lens.code)) continue;
+          lensSeen.add(lens.code);
+          lensLines.push(`- ${lens.code} — ${lens.title}`);
+          lensLines.push(`  ${lens.absoluteUrl}`);
+          lensLines.push(`  ${lens.summary}`);
+        }
+      }
+
+      lines.push(...patternLines);
+      lines.push("");
+      lines.push("Useful Lenses:");
+      lines.push(...lensLines);
+      lines.push("");
+      lines.push("Boundary:");
+      lines.push("These are related structural references, not a final diagnosis.");
+
+      return lines.join("\\n");
+    }
+
+    function renderResults() {
+      if (!(input instanceof HTMLTextAreaElement)) return;
+
+      const { mapped, ignored } = parseInput(input.value);
+
+      clearChildren(resultsList);
+      clearChildren(ignoredList);
+      lastCopyText = "";
+
+      if (mapped.length > 0) {
+        resultsSection.hidden = false;
+        noResultsSection.hidden = true;
+
+        for (const result of mapped) {
+          const article = document.createElement("article");
+          article.className = "wb-reading-section";
+
+          appendTextElement(article, "h2", result.detectedGap);
+          appendTextElement(article, "p", result.caveat);
+
+          const patternsSection = document.createElement("section");
+          patternsSection.className = "wb-section";
+          appendTextElement(patternsSection, "h2", "Related Patterns");
+
+          if (result.patterns.primary.length > 0) {
+            appendTextElement(patternsSection, "h3", "Primary");
+            const primaryList = document.createElement("div");
+            primaryList.className = "wb-row-list";
+            result.patterns.primary.forEach((pattern) => appendRow(primaryList, pattern));
+            patternsSection.appendChild(primaryList);
+          }
+
+          if (result.patterns.secondary.length > 0) {
+            appendTextElement(patternsSection, "h3", "Secondary");
+            const secondaryList = document.createElement("div");
+            secondaryList.className = "wb-row-list";
+            result.patterns.secondary.forEach((pattern) => appendRow(secondaryList, pattern));
+            patternsSection.appendChild(secondaryList);
+          }
+
+          article.appendChild(patternsSection);
+
+          const lensSection = document.createElement("section");
+          lensSection.className = "wb-section";
+          appendTextElement(lensSection, "h2", "Useful Lenses");
+
+          if (result.usefulLenses.length > 0) {
+            const lensList = document.createElement("div");
+            lensList.className = "wb-row-list";
+            result.usefulLenses.forEach((lens) => appendRow(lensList, lens));
+            lensSection.appendChild(lensList);
+          } else {
+            appendTextElement(lensSection, "p", "No useful Lenses derived.");
+          }
+
+          article.appendChild(lensSection);
+          resultsList.appendChild(article);
+        }
+
+        lastCopyText = buildCopyText(mapped);
+        copyButton.hidden = false;
+      } else {
+        resultsSection.hidden = true;
+        noResultsSection.hidden = false;
+        copyButton.hidden = true;
+      }
+
+      if (ignored.length > 0) {
+        ignoredSection.hidden = false;
+        ignoredSummary.textContent = `${ignored.length.toLocaleString()} pasted line${ignored.length === 1 ? "" : "s"} ignored because they did not match controlled Check Input gap terms.`;
+
+        for (const line of ignored.slice(0, 5)) {
+          appendTextElement(ignoredList, "li", line);
+        }
+
+        if (ignored.length > 5) {
+          appendTextElement(ignoredList, "li", "Additional ignored lines hidden.");
+        }
+      } else {
+        ignoredSection.hidden = true;
+        ignoredSummary.textContent = "";
+      }
+    }
+
+    input?.addEventListener("input", updateInputState);
+    mapButton?.addEventListener("click", renderResults);
+
+    copyButton?.addEventListener("click", async () => {
+      if (!lastCopyText) return;
+
+      try {
+        await navigator.clipboard.writeText(lastCopyText);
+        copyButton.textContent = "Copied";
+        window.setTimeout(() => {
+          copyButton.textContent = "Copy Workbench Results";
+        }, 1600);
+      } catch {
+        copyButton.textContent = "Copy failed";
+        window.setTimeout(() => {
+          copyButton.textContent = "Copy Workbench Results";
+        }, 1600);
+      }
+    });
+
+    updateInputState();
+  </script>
 </WorkbenchLayout>
