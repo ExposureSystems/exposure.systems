@@ -1,4 +1,5 @@
 ---
+import WorkbenchLayout from "../../../../layouts/WorkbenchLayout.astro";
 import changelog from "../../../../ontology/changelog.public.json";
 import release from "../../../../ontology/ontology-release.json";
 
@@ -40,104 +41,87 @@ const entries = [...changelog.entries].sort((a, b) => {
 });
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Ontology Changelog | Pengo AI Structural Workbench</title>
-    <meta
-      name="description"
-      content="Public changelog for Workbench Issues, Patterns, Lenses, Categories, and Subcategories."
-    />
-  </head>
-  <body>
-    <main>
+<WorkbenchLayout
+  title="Ontology Updates | PENGO Workbench"
+  description="Public changelog for Workbench Issues, Patterns, Lenses, Categories, and Subcategories."
+  url="https://pengosystems.com/workbench/ontology/changelog/"
+  active="ontology-updates"
+  breadcrumb="Ontology Updates"
+>
+  <article class="wb-content wb-template">
+    <p class="wb-type-label">Ontology Updates</p>
+    <h1>Ontology Updates</h1>
+    <p class="wb-lede">
+      Public change history for Workbench Issues, Patterns, Lenses, Categories, and Subcategories.
+    </p>
+
+    <section class="wb-reading-section">
+      <h2>Current Ontology Release</h2>
+
+      <dl>
+        <dt>Release</dt>
+        <dd>{release.ontology_release}</dd>
+
+        <dt>Released</dt>
+        <dd>{release.released_at}</dd>
+
+        <dt>Public state</dt>
+        <dd>{release.public_state}</dd>
+
+        <dt>Notes</dt>
+        <dd>{release.notes}</dd>
+      </dl>
+    </section>
+
+    <section class="wb-reading-section">
+      <h2>Scope</h2>
+
+      <p>This changelog records public ontology-object changes only.</p>
+
+      <ul>
+        <li>Issues: <code>ISS-####</code></li>
+        <li>Patterns: <code>PAT-####</code></li>
+        <li>Lenses: <code>LEN-####</code></li>
+        <li>Categories/Subcategories: <code>CAT-####</code></li>
+      </ul>
+
       <p>
-        <a href="/workbench/">Workbench</a>
+        It does not include repository maintenance, Cloudflare configuration,
+        README edits, build tooling, or internal import-audit decisions.
       </p>
+    </section>
 
-      <h1>Ontology Changelog</h1>
+    <section class="wb-section">
+      <h2>Changes</h2>
 
-      <p>
-        Public change history for Workbench Issues, Patterns, Lenses, Categories,
-        and Subcategories.
-      </p>
-
-      <section aria-labelledby="current-release">
-        <h2 id="current-release">Current Ontology Release</h2>
-
-        <dl>
-          <dt>Release</dt>
-          <dd>{release.ontology_release}</dd>
-
-          <dt>Released</dt>
-          <dd>{release.released_at}</dd>
-
-          <dt>Public state</dt>
-          <dd>{release.public_state}</dd>
-
-          <dt>Notes</dt>
-          <dd>{release.notes}</dd>
-        </dl>
-      </section>
-
-      <section aria-labelledby="scope">
-        <h2 id="scope">Scope</h2>
-
-        <p>This changelog records public ontology-object changes only.</p>
-
-        <ul>
-          <li>Issues: <code>ISS-####</code></li>
-          <li>Patterns: <code>PAT-####</code></li>
-          <li>Lenses: <code>LEN-####</code></li>
-          <li>Categories/Subcategories: <code>CAT-####</code></li>
-        </ul>
-
-        <p>
-          It does not include repository maintenance, Cloudflare configuration,
-          README edits, build tooling, or internal import-audit decisions.
-        </p>
-      </section>
-
-      <section aria-labelledby="entries">
-        <h2 id="entries">Changes</h2>
-
-        {entries.length === 0 ? (
-          <p>No public ontology changes recorded yet.</p>
-        ) : (
-          <ol>
-            {entries.map((entry) => (
-              <li id={`${entry.object_code.toLowerCase()}-${entry.entry_version.replaceAll(".", "-")}`}>
-                <article>
-                  <h3>
-                    <code>{entry.object_code}@{entry.entry_version}</code>
-                    {" — "}
-                    {entry.object_slug}
-                  </h3>
-
-                  <dl>
-                    <dt>Date</dt>
-                    <dd>{entry.date}</dd>
-
-                    <dt>Ontology release</dt>
-                    <dd>{entry.ontology_release}</dd>
-
-                    <dt>Object type</dt>
-                    <dd>{typeLabels[entry.object_type] ?? entry.object_type}</dd>
-
-                    <dt>Change</dt>
-                    <dd>{changeTypeLabels[entry.change_type] ?? entry.change_type}</dd>
-
-                    <dt>Receipt impact</dt>
-                    <dd>{receiptImpactLabels[entry.receipt_impact] ?? entry.receipt_impact}</dd>
-                  </dl>
-
-                  <p>{entry.public_summary}</p>
-                </article>
-              </li>
-            ))}
-          </ol>
-        )}
-      </section>
-    </main>
-  </body>
-</html>
+      {entries.length === 0 ? (
+        <p>No public ontology changes recorded yet.</p>
+      ) : (
+        <div class="wb-row-list">
+          {entries.map((entry) => (
+            <article class="wb-row" id={`${entry.object_code.toLowerCase()}-${entry.entry_version.replaceAll(".", "-")}`}>
+              <p class="wb-row-meta" translate="no" class="notranslate" lang="en">
+                {entry.object_code}@{entry.entry_version}
+              </p>
+              <h2>
+                <span translate="no" class="notranslate" lang="en">
+                  {entry.object_slug}
+                </span>
+              </h2>
+              <p>{entry.public_summary}</p>
+              <p>
+                {entry.date}
+                {" - "}
+                {typeLabels[entry.object_type] ?? entry.object_type}
+                {" - "}
+                {changeTypeLabels[entry.change_type] ?? entry.change_type}
+                {" - Receipt impact: "}
+                {receiptImpactLabels[entry.receipt_impact] ?? entry.receipt_impact}
+              </p>
+            </article>
+          ))}
+        </div>
+      )}
+    </section>
+  </article>
+</WorkbenchLayout>
