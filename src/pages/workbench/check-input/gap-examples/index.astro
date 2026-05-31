@@ -67,7 +67,7 @@ const examplesByGapType = gapTypes.map((gapType) => ({
     </section>
 
     {examplesByGapType.map((group) => (
-      <section class="wb-section" aria-label={`${group.gapType} examples`}>
+      <section class="wb-section wb-gap-type-section" aria-label={`${group.gapType} examples`}>
         <h2>{group.gapType}</h2>
         <p>{group.meaning}.</p>
 
@@ -84,17 +84,30 @@ const examplesByGapType = gapTypes.map((gapType) => ({
   </article>
 
   <style>
+    .wb-gap-type-section > h2 {
+      color: var(--color-accent) !important;
+      font-size: 1rem !important;
+      letter-spacing: 0.02em !important;
+      text-transform: uppercase !important;
+    }
+
+    .wb-gap-type-section > p {
+      max-width: 44rem;
+      color: var(--color-text) !important;
+      font-size: 1rem !important;
+    }
+
     .wb-gap-example-list {
       display: grid;
       gap: 0;
-      margin: 1rem 0 0 1rem;
-      padding: 0 0 0 1rem;
-      border-left: 1px solid var(--color-border);
+      margin: 1rem 0 0 2rem !important;
+      padding: 0 0 0 1rem !important;
+      border-left: 2px solid var(--color-border);
     }
 
     .wb-gap-example {
       border-top: 1px solid var(--color-border);
-      padding: 0.75rem 0;
+      padding: 0.7rem 0;
     }
 
     .wb-gap-example:last-child {
@@ -103,16 +116,16 @@ const examplesByGapType = gapTypes.map((gapType) => ({
 
     .wb-gap-example dt {
       margin: 0;
-      color: var(--color-muted);
-      font-size: 0.92rem;
+      color: var(--color-muted) !important;
+      font-size: 0.86rem !important;
       font-weight: 850;
       line-height: 1.25;
     }
 
     .wb-gap-example dd {
-      margin: 0.3rem 0 0;
-      color: var(--color-muted);
-      font-size: 0.94rem;
+      margin: 0.28rem 0 0;
+      color: var(--color-muted) !important;
+      font-size: 0.9rem !important;
       line-height: 1.5;
     }
   </style>
