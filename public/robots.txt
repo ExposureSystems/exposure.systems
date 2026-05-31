@@ -4,5 +4,6 @@ Allow: /
 Sitemap: https://pengosystems.com/sitemap-index.xml
 Sitemap: https://pengosystems.com/workbench/machine-sitemap.xml
 
-# AI / machine-readable Workbench references
+# AI / machine-readable references
+# Site LLM reference: https://pengosystems.com/llms.txt
 # Workbench LLM reference: https://pengosystems.com/workbench/llms.txt

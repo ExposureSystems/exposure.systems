@@ -14,6 +14,7 @@ export function GET() {
 
   const urls = [
     "/workbench/llms.txt",
+    "/workbench/ontology.json",
     ...ontologyIndex.issues.map((issue) => issue.markdown_url),
     ...ontologyIndex.patterns.map((pattern) => pattern.markdown_url),
     ...ontologyIndex.lenses.map((lens) => lens.markdown_url),
