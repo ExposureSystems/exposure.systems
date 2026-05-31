@@ -290,11 +290,16 @@ Detected Gaps
     @media (max-width: 760px) {
       .explore-input-grid {
         display: flex;
-        flex-direction: column-reverse;
+        flex-direction: column;
       }
 
+      .explore-input-panel,
       .explore-rules {
         width: 100%;
+      }
+
+      .explore-input-panel textarea {
+        min-height: 14rem;
       }
 
       .explore-rules[open] {
