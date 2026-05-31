@@ -1,5 +1,63 @@
 ---
 import WorkbenchLayout from "../../layouts/WorkbenchLayout.astro";
+
+const commonIssues = [
+  {
+    title: "AI Adds Work Not Requested",
+    href: "/workbench/issues/ai-adds-work-not-requested/",
+    summary: "The AI adds tasks, steps, analysis, checks, changes, or follow-up work that the user did not ask for.",
+  },
+  {
+    title: "Prompt Has Too Many Valid Interpretations",
+    href: "/workbench/issues/prompt-has-too-many-valid-interpretations/",
+    summary: "The prompt allows too many reasonable interpretations, causing the AI to choose among valid paths without enough guidance.",
+  },
+  {
+    title: "Task Has No Clear Limit",
+    href: "/workbench/issues/task-has-no-clear-limit/",
+    summary: "The task does not declare where the AI should stop, what is out of scope, or what counts as enough work.",
+  },
+  {
+    title: "Tool Result Not Integrated Correctly",
+    href: "/workbench/issues/tool-result-not-integrated-correctly/",
+    summary: "The AI receives a tool result but misreads, ignores, overwrites, misplaces, or fails to incorporate it correctly.",
+  },
+  {
+    title: "Output Breaks the Next Step",
+    href: "/workbench/issues/output-breaks-the-next-step/",
+    summary: "The AI output looks acceptable by itself but cannot be used by the next tool, workflow step, parser, reviewer, or downstream consumer.",
+  },
+];
+
+const references = [
+  {
+    title: "Issues",
+    href: "/workbench/issues/",
+    summary: "Visible failure surfaces users may experience or search for.",
+  },
+  {
+    title: "AI-Adjacent Issues",
+    href: "/workbench/ai-adj-issues/",
+    summary: "Problems that may look like AI failures but involve tools, apps, permissions, configuration, or integrations.",
+  },
+  {
+    title: "Patterns",
+    href: "/workbench/patterns/",
+    summary: "Structural forms used to inspect why visible failure surfaces appear.",
+  },
+  {
+    title: "Lenses",
+    href: "/workbench/lenses/",
+    summary: "Diagnostic views for inspecting structure without treating the reference as a final diagnosis.",
+  },
+];
+
+const learning = [
+  { title: "Field Notes", href: "/workbench/field-notes/" },
+  { title: "Articles", href: "/workbench/articles/" },
+  { title: "Video", href: "/workbench/videos/" },
+  { title: "AI Field Training", href: "/workbench/aift/" },
+];
 ---
 
 <WorkbenchLayout
@@ -8,70 +66,84 @@ import WorkbenchLayout from "../../layouts/WorkbenchLayout.astro";
   url="https://pengosystems.com/workbench/"
   active=""
 >
-  <article class="wb-content wb-template">
-    <p class="wb-type-label">Workbench Home</p>
-    <h1>PENGO Workbench</h1>
-    <p class="wb-lede">
-      Inspect AI-facing failures by separating visible symptoms, missing input structure, structural Patterns, and diagnostic Lenses.
-    </p>
+  <article class="wb-content wb-template wb-home">
+    <section class="wb-home-hero">
+      <p class="wb-type-label">Workbench Home</p>
+      <h1>PENGO Workbench</h1>
+      <p class="wb-lede">
+        AI failures are often structural before they are mysterious.
+      </p>
+      <p>
+        Use the Workbench to inspect the ask, search known failure surfaces,
+        map controlled gaps, and follow the structure behind the visible result.
+      </p>
+
+      <div class="wb-home-hero-actions">
+        <a href="/workbench/check-input/">Check an AI Ask</a>
+        <a href="/workbench/search/">Search Workbench</a>
+      </div>
+    </section>
 
     <section class="wb-section">
-      <h2>Start with the job</h2>
+      <h2>Workbench paths</h2>
 
-      <div class="wb-row-list">
-        <a class="wb-row" href="/workbench/search/">
-          <p class="wb-row-meta">Search</p>
-          <h2>Search the Workbench</h2>
-          <p>Find Issues, AI-Adjacent Issues, Patterns, Lenses, codes, and related reference pages.</p>
+      <div class="wb-home-path-grid">
+        <a href="/workbench/check-input/">
+          <span>Inspect</span>
+          <strong>Check Input</strong>
+          <p>Surface missing, unclear, ambiguous, unstated, conflicting, incomplete, or implied parts of an ask.</p>
         </a>
 
-        <a class="wb-row" href="/workbench/check-input/">
-          <p class="wb-row-meta">Input inspection</p>
-          <h2>Check an AI Ask</h2>
-          <p>Use Check Input to surface missing, unclear, ambiguous, unstated, conflicting, incomplete, or implied parts of an ask.</p>
+        <a href="/workbench/explore-results/">
+          <span>Map</span>
+          <strong>Explore Results</strong>
+          <p>Turn controlled Check Input gaps into inspection lanes and related Workbench references.</p>
         </a>
 
-        <a class="wb-row" href="/workbench/explore-results/">
-          <p class="wb-row-meta">Result mapping</p>
-          <h2>Explore Check Input Results</h2>
-          <p>Map controlled Check Input gaps into inspection lanes and related Workbench references.</p>
-        </a>
-
-        <a class="wb-row" href="/workbench/issues/">
-          <p class="wb-row-meta">Browse</p>
-          <h2>Browse visible failure surfaces</h2>
-          <p>Browse common AI-era failure symptoms and the structural Patterns they may surface.</p>
+        <a href="/workbench/search/">
+          <span>Find</span>
+          <strong>Search</strong>
+          <p>Search Issues, AI-Adjacent Issues, Patterns, Lenses, names, codes, and terms.</p>
         </a>
       </div>
     </section>
 
     <section class="wb-section">
-      <h2>Reference Areas</h2>
+      <h2>Common Issues</h2>
 
-      <div class="wb-row-list">
-        <a class="wb-row" href="/workbench/issues/">
-          <p class="wb-row-meta">Issues</p>
-          <h2>Issues</h2>
-          <p>Visible failure surfaces users may experience or search for.</p>
-        </a>
+      <div class="wb-home-issue-list">
+        {commonIssues.map((issue) => (
+          <a href={issue.href}>
+            <h3>{issue.title}</h3>
+            <p>{issue.summary}</p>
+          </a>
+        ))}
+      </div>
+    </section>
 
-        <a class="wb-row" href="/workbench/ai-adj-issues/">
-          <p class="wb-row-meta">AI-Adjacent Issues</p>
-          <h2>AI-Adjacent Issues</h2>
-          <p>Problems users may experience as AI failures, but which may involve tools, apps, permissions, configuration, or integrations.</p>
-        </a>
+    <section class="wb-section">
+      <h2>Reference Library</h2>
 
-        <a class="wb-row" href="/workbench/patterns/">
-          <p class="wb-row-meta">Patterns</p>
-          <h2>Patterns</h2>
-          <p>Canonical structural forms used to inspect why a visible failure surface may appear.</p>
-        </a>
+      <div class="wb-home-reference-grid">
+        {references.map((item) => (
+          <a href={item.href}>
+            <h3>{item.title}</h3>
+            <p>{item.summary}</p>
+          </a>
+        ))}
+      </div>
+    </section>
 
-        <a class="wb-row" href="/workbench/lenses/">
-          <p class="wb-row-meta">Lenses</p>
-          <h2>Lenses</h2>
-          <p>Diagnostic views for inspecting structure without treating the reference as a final diagnosis.</p>
-        </a>
+    <section class="wb-section">
+      <h2>Learning Layer</h2>
+      <p>
+        Temporary paths for field notes, articles, video, and training material as the public Workbench expands.
+      </p>
+
+      <div class="wb-home-learning-links">
+        {learning.map((item) => (
+          <a href={item.href}>{item.title}</a>
+        ))}
       </div>
     </section>
 
@@ -83,4 +155,142 @@ import WorkbenchLayout from "../../layouts/WorkbenchLayout.astro";
       </p>
     </section>
   </article>
+
+  <style>
+    .wb-home-hero {
+      border: 1px solid var(--color-border);
+      border-radius: 24px;
+      background:
+        radial-gradient(circle at top right, rgba(255, 84, 0, 0.18), transparent 34%),
+        var(--color-surface);
+      padding: clamp(1.25rem, 3vw, 2rem);
+    }
+
+    .wb-home-hero p:not(.wb-type-label):not(.wb-lede) {
+      max-width: 44rem;
+      color: var(--color-muted);
+      font-size: 1rem;
+      line-height: 1.65;
+    }
+
+    .wb-home-hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+      margin-top: 1.15rem;
+    }
+
+    .wb-home-hero-actions a,
+    .wb-home-learning-links a {
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid var(--color-accent);
+      border-radius: 999px;
+      padding: 0.45rem 0.78rem;
+      color: var(--color-accent);
+      text-decoration: none;
+      font-size: 0.82rem;
+      line-height: 1.1;
+      font-weight: 900;
+    }
+
+    .wb-home-hero-actions a:hover,
+    .wb-home-learning-links a:hover {
+      background: var(--color-accent);
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    .wb-home-path-grid,
+    .wb-home-reference-grid {
+      display: grid;
+      gap: 0.85rem;
+      margin-top: 1rem;
+    }
+
+    .wb-home-path-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .wb-home-reference-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .wb-home-path-grid a,
+    .wb-home-reference-grid a,
+    .wb-home-issue-list a {
+      display: block;
+      border: 1px solid var(--color-border);
+      border-radius: 18px;
+      background: var(--color-surface);
+      padding: 1rem;
+      color: var(--color-text);
+      text-decoration: none;
+    }
+
+    .wb-home-path-grid a:hover,
+    .wb-home-reference-grid a:hover,
+    .wb-home-issue-list a:hover {
+      border-color: var(--color-accent);
+      text-decoration: none;
+    }
+
+    .wb-home-path-grid span {
+      display: block;
+      margin-bottom: 0.45rem;
+      color: var(--color-accent);
+      font-size: 0.72rem;
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .wb-home-path-grid strong {
+      display: block;
+      font-size: 1.05rem;
+      line-height: 1.25;
+    }
+
+    .wb-home-path-grid p,
+    .wb-home-reference-grid p,
+    .wb-home-issue-list p {
+      margin: 0.45rem 0 0 !important;
+      color: var(--color-muted) !important;
+      font-size: 0.9rem !important;
+      line-height: 1.5 !important;
+    }
+
+    .wb-home-reference-grid h3,
+    .wb-home-issue-list h3 {
+      margin: 0;
+      color: var(--color-text);
+      font-size: 1rem;
+      line-height: 1.25;
+    }
+
+    .wb-home-issue-list {
+      display: grid;
+      gap: 0.55rem;
+      margin-top: 1rem;
+    }
+
+    .wb-home-issue-list a {
+      padding: 0.85rem 1rem;
+    }
+
+    .wb-home-learning-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      margin-top: 1rem;
+    }
+
+    @media (max-width: 760px) {
+      .wb-home-path-grid,
+      .wb-home-reference-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </WorkbenchLayout>
