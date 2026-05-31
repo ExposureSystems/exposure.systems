@@ -1,47 +1,47 @@
 ---
+import WorkbenchLayout from "../../../layouts/WorkbenchLayout.astro";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Articles | Workbench</title>
-    <meta
-      name="description"
-      content="Long-form explanatory articles related to Workbench patterns, lenses, issues, and inspection workflows."
-    />
-  </head>
-  <body>
-    <main>
-      <p><a href="/workbench/">Workbench</a></p>
+<WorkbenchLayout
+  title="Articles | PENGO Workbench"
+  description="Long-form explanatory articles related to Workbench patterns, lenses, issues, and inspection workflows."
+  url="https://pengosystems.com/workbench/articles/"
+  active="articles"
+  breadcrumb="Articles"
+>
+  <article class="wb-content wb-template">
+    <p class="wb-type-label">Long-form Context</p>
+    <h1>Articles</h1>
+    <p class="wb-lede">
+      Long-form explanatory writing related to Workbench concepts, workflows, and system boundaries.
+    </p>
 
-      <h1>Articles</h1>
-
+    <section class="wb-reading-section">
+      <h2>Purpose</h2>
       <p>
-        Articles are long-form explanatory writing related to Workbench concepts,
-        workflows, and system boundaries.
+        Articles can explain ideas, compare approaches, introduce Workbench concepts,
+        and provide deeper context around Patterns, Lenses, Issues, Check Input,
+        Explore Results, and machine-readable outputs.
       </p>
+    </section>
 
-      <section aria-labelledby="purpose">
-        <h2 id="purpose">Purpose</h2>
+    <section class="wb-reading-section">
+      <h2>Planned Article Types</h2>
+      <ul>
+        <li>Concept explainers</li>
+        <li>Workflow walkthroughs</li>
+        <li>Pattern and Lens comparisons</li>
+        <li>AI-adjacent failure discussions</li>
+        <li>Reference-library design notes</li>
+      </ul>
+    </section>
 
-        <p>
-          Articles can explain ideas, compare approaches, introduce Workbench
-          concepts, and provide deeper context around Patterns, Lenses, Issues,
-          Check Input, Gap Explorer, and machine-readable outputs.
-        </p>
-      </section>
-
-      <section aria-labelledby="boundaries">
-        <h2 id="boundaries">Boundaries</h2>
-
-        <ul>
-          <li>Articles are not canonical Pattern definitions.</li>
-          <li>Articles are not canonical Lens definitions.</li>
-          <li>Articles are not Issue source-of-truth pages.</li>
-          <li>Articles are not validator rules.</li>
-          <li>Articles are not receipts.</li>
-        </ul>
-      </section>
-    </main>
-  </body>
-</html>
+    <section class="wb-reading-section">
+      <h2>How to Read This</h2>
+      <p>
+        Articles are explanatory material. They are not canonical Pattern definitions,
+        Lens definitions, Issue source-of-truth pages, validator rules, or receipts.
+      </p>
+    </section>
+  </article>
+</WorkbenchLayout>

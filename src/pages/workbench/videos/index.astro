@@ -1,47 +1,38 @@
 ---
+import WorkbenchLayout from "../../../layouts/WorkbenchLayout.astro";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Videos | Workbench</title>
-    <meta
-      name="description"
-      content="Video explainers, walkthroughs, and demonstrations for Workbench concepts and workflows."
-    />
-  </head>
-  <body>
-    <main>
-      <p><a href="/workbench/">Workbench</a></p>
+<WorkbenchLayout
+  title="Video | PENGO Workbench"
+  description="Video explainers, walkthroughs, and demonstrations for Workbench concepts and workflows."
+  url="https://pengosystems.com/workbench/videos/"
+  active="videos"
+  breadcrumb="Video"
+>
+  <article class="wb-content wb-template">
+    <p class="wb-type-label">Video</p>
+    <h1>Video</h1>
+    <p class="wb-lede">
+      Explainers, walkthroughs, demonstrations, and visual introductions to Workbench concepts and workflows.
+    </p>
 
-      <h1>Videos</h1>
+    <section class="wb-reading-section">
+      <h2>Planned Video Types</h2>
+      <ul>
+        <li>Check Input walkthroughs</li>
+        <li>Explore Results demonstrations</li>
+        <li>Pattern and Lens explainers</li>
+        <li>Workbench navigation walkthroughs</li>
+        <li>Machine-readable output explainers</li>
+      </ul>
+    </section>
 
+    <section class="wb-reading-section">
+      <h2>How to Read This</h2>
       <p>
-        Videos will provide explainers, walkthroughs, demonstrations, and visual
-        introductions to Workbench concepts and workflows.
+        Videos are explanatory media. They may cite Workbench references, but they do not
+        define canonical Issues, Patterns, Lenses, Categories, or validation rules.
       </p>
-
-      <section aria-labelledby="planned">
-        <h2 id="planned">Planned Video Types</h2>
-
-        <ul>
-          <li>Check Input walkthroughs</li>
-          <li>Gap Explorer demonstrations</li>
-          <li>Pattern and Lens explainers</li>
-          <li>Workbench navigation walkthroughs</li>
-          <li>Machine-readable output explainers</li>
-        </ul>
-      </section>
-
-      <section aria-labelledby="boundaries">
-        <h2 id="boundaries">Boundaries</h2>
-
-        <p>
-          Videos are explanatory media. They may cite Workbench references, but
-          they do not define canonical Issues, Patterns, Lenses, Categories, or
-          validation rules.
-        </p>
-      </section>
-    </main>
-  </body>
-</html>
+    </section>
+  </article>
+</WorkbenchLayout>
