@@ -37,8 +37,11 @@ const explorationData = checkInputIndex.results.map((result) => ({
   title="Explore Results | PENGO Workbench"
   description="Map Check Input output into related Workbench Patterns and useful Lenses."
   url="https://pengosystems.com/workbench/explore-results/"
-  active="check-input"
-  breadcrumb="Explore Results"
+  active="check-inputs"
+  breadcrumbs={[
+    { label: "Check Input", href: "/workbench/check-input/" },
+    { label: "Explore Results" },
+  ]}
 >
   <article class="wb-content wb-template">
     <div class="wb-page-action">
