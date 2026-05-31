@@ -92,14 +92,17 @@ const nextPage = currentPage < totalPages ? currentPage + 1 : null;
     text-decoration: none;
   }
 
-  .wb-pagination__controls a:hover {
+  .wb-pagination__controls a:hover,
+  .wb-pagination__controls a:focus-visible {
     border-color: var(--color-accent);
+    background: rgba(255, 91, 0, 0.12);
     color: var(--color-accent);
   }
 
   .wb-pagination__controls span[aria-current="page"] {
     border-color: var(--color-accent);
-    color: var(--color-accent);
+    background: var(--color-accent);
+    color: #fff;
   }
 
   .wb-pagination__controls span[aria-disabled="true"] {
