@@ -1,0 +1,85 @@
+---
+import WorkbenchLayout from "../../../../layouts/WorkbenchLayout.astro";
+import vocabulary from "../../../../ontology/check-input-vocabulary.json";
+
+const gapTypeMeanings = {
+  missing: "is not present in the ask",
+  unclear: "is present, but not specific enough to use safely",
+  ambiguous: "allows more than one reasonable interpretation",
+  unstated: "is being assumed but was not said",
+  undefined: "is named or implied without a usable definition",
+  conflicting: "may block, contradict, or compete with another requirement",
+  incomplete: "is started but missing required pieces",
+  implied: "is suggested indirectly but not stated",
+};
+
+const elementMeanings = {
+  actor: "who is responsible, affected, addressed, approving, deciding, or expected to act",
+  trigger: "what starts the action, workflow, state change, or decision",
+  action: "what should happen",
+  outcome: "what result should exist when it is done",
+  scope: "where the request applies, and where it stops",
+  constraint: "what rule, limit, requirement, exclusion, or success condition governs it",
+  dependency: "what must exist, happen, connect, or be true first",
+  sequence: "what order, timing, or progression matters",
+};
+
+const gapTypes = vocabulary.gap_types;
+const elements = vocabulary.elements;
+
+const examplesByGapType = gapTypes.map((gapType) => ({
+  gapType,
+  meaning: gapTypeMeanings[gapType],
+  examples: elements.map((element) => ({
+    term: `${gapType} ${element}`,
+    meaning: `${elementMeanings[element]} ${gapTypeMeanings[gapType]}.`,
+  })),
+}));
+---
+
+<WorkbenchLayout
+  title="Gap Examples | PENGO Workbench"
+  description="Examples of controlled Check Input gap terms using the [gap type] [element] finding shape."
+  url="https://pengosystems.com/workbench/check-input/gap-examples/"
+  active="check-inputs"
+  breadcrumbs={[
+    { label: "Check Input", href: "/workbench/check-input/" },
+    { label: "Gap Examples" },
+  ]}
+>
+  <article class="wb-content wb-template">
+    <p class="wb-type-label">Check Input Reference</p>
+    <h1>Gap Examples</h1>
+    <p class="wb-lede">
+      Examples of controlled Check Input findings using the <code>[gap type] [element]</code> shape.
+    </p>
+
+    <section class="wb-reading-section">
+      <h2>How to Read These</h2>
+      <p>
+        A Check Input finding combines a gap type with an element. The gap type
+        names the kind of problem. The element names the part of the ask affected.
+      </p>
+      <p>
+        These examples are reading aids. They do not change the controlled vocabulary
+        or add new valid gap terms.
+      </p>
+    </section>
+
+    {examplesByGapType.map((group) => (
+      <section class="wb-section" aria-label={`${group.gapType} examples`}>
+        <h2>{group.gapType}</h2>
+        <p>{group.meaning}.</p>
+
+        <div class="wb-row-list">
+          {group.examples.map((example) => (
+            <article class="wb-row">
+              <h2>{example.term}</h2>
+              <p>{example.meaning}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+    ))}
+  </article>
+</WorkbenchLayout>
