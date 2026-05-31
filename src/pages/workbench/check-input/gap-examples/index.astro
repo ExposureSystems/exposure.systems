@@ -65,9 +65,19 @@ const examplesByGapType = gapTypes.map((gapType) => ({
         or add new valid gap terms.
       </p>
     </section>
+    <nav class="wb-gap-jump" aria-label="Jump to gap type">
+      <span>Jump to:</span>
+      {gapTypes.map((gapType, index) => (
+        <>
+          <a href={`#${gapType}`}>{gapType}</a>
+          {index < gapTypes.length - 1 ? <span aria-hidden="true">·</span> : null}
+        </>
+      ))}
+    </nav>
+
 
     {examplesByGapType.map((group) => (
-      <section class="wb-section wb-gap-type-section" aria-label={`${group.gapType} examples`}>
+      <section id={group.gapType} class="wb-section wb-gap-type-section" aria-label={`${group.gapType} examples`}>
         <h2>{group.gapType}</h2>
         <p>{group.meaning}.</p>
 
@@ -84,6 +94,28 @@ const examplesByGapType = gapTypes.map((gapType) => ({
   </article>
 
   <style>
+    .wb-gap-jump {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      align-items: baseline;
+      margin: 1rem 0 1.5rem;
+      color: var(--color-muted);
+      font-size: 0.86rem;
+      line-height: 1.5;
+    }
+
+    .wb-gap-jump a {
+      color: var(--color-text);
+      text-decoration: none;
+      font-weight: 750;
+    }
+
+    .wb-gap-jump a:hover {
+      color: var(--color-accent);
+      text-decoration: none;
+    }
+
     .wb-gap-type-section > h2 {
       color: var(--color-accent) !important;
       font-size: 1rem !important;
@@ -101,8 +133,7 @@ const examplesByGapType = gapTypes.map((gapType) => ({
       display: grid;
       gap: 0;
       margin: 1rem 0 0 2rem !important;
-      padding: 0 0 0 1rem !important;
-      border-left: 2px solid var(--color-border);
+      padding: 0 !important;
     }
 
     .wb-gap-example {
