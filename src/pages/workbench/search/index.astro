@@ -1,4 +1,5 @@
 ---
+import WorkbenchLayout from "../../../layouts/WorkbenchLayout.astro";
 import searchIndex from "../../../content/_meta/search-index.json";
 
 const items = searchIndex.items;
@@ -10,133 +11,132 @@ const patterns = searchIndex.facets.patterns;
 const lenses = searchIndex.facets.lenses;
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Search | Pengo Workbench</title>
-    <meta
-      name="description"
-      content="Search Pengo Workbench Issues, AI-Adjacent Issues, Patterns, Lenses, Categories, gap terms, names, and codes."
-    />
-  </head>
-  <body>
-    <main>
-      <p><a href="/workbench/">Workbench</a></p>
+<WorkbenchLayout
+  title="Search | PENGO Workbench"
+  description="Search PENGO Workbench Issues, AI-Adjacent Issues, Patterns, Lenses, Categories, gap terms, names, and codes."
+  url="https://pengosystems.com/workbench/search/"
+  active="search"
+  breadcrumb="Search"
+>
+  <article class="wb-content wb-template">
+    <p class="wb-type-label">Workbench Search</p>
+    <h1>Search</h1>
+    <p class="wb-lede">
+      Find the structure behind the visible failure surface.
+    </p>
 
-      <h1>Search</h1>
+    <section class="wb-reading-section">
+      <h2>What This Page Contains</h2>
+      <p>{searchIndex.note}</p>
+      <p>
+        This is a generated reference gateway for the current public Workbench index.
+        Interactive search and filtering can be added later.
+      </p>
+    </section>
 
-      <p><strong>Find the structure behind the visible failure surface.</strong></p>
+    <section class="wb-section">
+      <h2>Reference Areas</h2>
+
+      <div class="wb-row-list">
+        <a class="wb-row" href="/workbench/issues/">
+          <p class="wb-row-meta">{issueItems.length} indexed</p>
+          <h2>Issues</h2>
+          <p>Visible failure surfaces users may experience or search for.</p>
+        </a>
+
+        <a class="wb-row" href="/workbench/ai-adj-issues/">
+          <p class="wb-row-meta">{aiAdjIssueItems.length} indexed</p>
+          <h2>AI-Adjacent Issues</h2>
+          <p>Problems users may experience as AI failures, but which may involve tools, apps, permissions, runtime behavior, configuration, or integrations.</p>
+        </a>
+
+        <a class="wb-row" href="/workbench/patterns/">
+          <p class="wb-row-meta">{patterns.length} indexed</p>
+          <h2>Patterns</h2>
+          <p>Canonical structural forms declared by Workbench Issues and connected to analytical Lenses.</p>
+        </a>
+
+        <a class="wb-row" href="/workbench/lenses/">
+          <p class="wb-row-meta">{lenses.length} indexed</p>
+          <h2>Lenses</h2>
+          <p>Diagnostic views derived from structural Patterns through the Pattern-to-Lens Matrix.</p>
+        </a>
+
+        <a class="wb-row" href="/workbench/check-input/">
+          <p class="wb-row-meta">Protocol</p>
+          <h2>Check Input</h2>
+          <p>Inspect an AI ask, produce controlled gap terms, and map results into Workbench references.</p>
+        </a>
+      </div>
+    </section>
+
+    <section class="wb-section">
+      <h2>Index Counts</h2>
+
+      <ul>
+        <li>{issueItems.length} Issues</li>
+        <li>{aiAdjIssueItems.length} AI-Adjacent Issues</li>
+        <li>{categories.length} Categories</li>
+        <li>{patterns.length} Patterns</li>
+        <li>{lenses.length} Lenses</li>
+      </ul>
+    </section>
+
+    <section class="wb-section">
+      <h2>Derived Facets</h2>
 
       <p>
-        {searchIndex.note}
+        Facets help you explore the structural language around each visible Issue surface.
+        They do not prove cause or diagnose the model.
       </p>
 
-      <section aria-labelledby="results">
-  <h2 id="results">Issue Results</h2>
-
-  {issueItems.length > 0 ? (
-    <ul>
-      {issueItems.map((item) => (
-        <li>
-          <h3>
-            <a href={item.url}>{item.title}</a>
-          </h3>
-
-          <p>{item.summary}</p>
-
-          <p>
-            Category: {item.category_title}
-            {" | "}
-            Primary Pattern: {item.primary_pattern}
-            {" | "}
-            Patterns: {item.patterns.length}
-            {" | "}
-            Primary Lenses: {item.lenses.primary.length}
-            {" | "}
-            Secondary Lenses: {item.lenses.secondary.length}
-          </p>
-        </li>
-      ))}
-    </ul>
-  ) : (
-    <p>No Issue results.</p>
-  )}
-</section>
-
-<section aria-labelledby="ai-adj-results">
-  <h2 id="ai-adj-results">AI-Adjacent Issues</h2>
-
-  {aiAdjIssueItems.length > 0 ? (
-    <ul>
-      {aiAdjIssueItems.map((item) => (
-        <li>
-          <h3>
-            <a href={item.url}>{item.title}</a>
-          </h3>
-
-          <p>{item.summary}</p>
-
-          <p>Related Workbench Issues: {item.related_issues.length}</p>
-        </li>
-      ))}
-    </ul>
-  ) : (
-    <p>No AI-Adjacent Issues.</p>
-  )}
-</section>
-
-      <section aria-labelledby="facets">
-        <h2 id="facets">Derived Facets</h2>
-
-        <p>
-          Facets help you explore the structural language around each visible
-          Issue surface. They do not prove cause or diagnose the model.
-        </p>
-
-        <h3>Categories</h3>
+      <section class="wb-reading-section">
+        <h2>Categories</h2>
         <ul>
           {categories.map((category) => (
-            <li>
-              {category.title} — {category.count}
-            </li>
+            <li>{category.title} — {category.count}</li>
           ))}
         </ul>
+      </section>
 
-        <h3>Patterns</h3>
+      <section class="wb-reading-section">
+        <h2>Patterns</h2>
         <ul>
           {patterns.map((pattern) => (
             <li>
               <span translate="no" class="notranslate" lang="en">
-                {pattern.code} — {pattern.title}
+                {pattern.code} - {pattern.title}
               </span>
-              {" — "}
+              {" - "}
               {pattern.count}
             </li>
           ))}
         </ul>
+      </section>
 
-        <h3>Lenses</h3>
+      <section class="wb-reading-section">
+        <h2>Lenses</h2>
         <ul>
           {lenses.map((lens) => (
             <li>
               <span translate="no" class="notranslate" lang="en">
-                {lens.code} — {lens.title}
+                {lens.code} - {lens.title}
               </span>
-              {" — "}
+              {" - "}
               {lens.count}
             </li>
           ))}
         </ul>
       </section>
+    </section>
 
-      <section aria-labelledby="boundary">
-        <h2 id="boundary">Boundary</h2>
+    <section class="wb-reading-section">
+      <h2>How to Read This</h2>
 
-        <p>
-          Search helps surface related Workbench references. It does not validate
-          a prompt, score a model, prove causality, or replace Check Input.
-        </p>
-      </section>
-    </main>
-  </body>
-</html>
+      <p>
+        Search helps surface related Workbench references. It does not validate a prompt,
+        score a model, prove causality, or replace Check Input.
+      </p>
+    </section>
+  </article>
+</WorkbenchLayout>
