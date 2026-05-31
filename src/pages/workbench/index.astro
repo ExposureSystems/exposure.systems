@@ -4,55 +4,83 @@ import WorkbenchLayout from "../../layouts/WorkbenchLayout.astro";
 
 <WorkbenchLayout
   title="PENGO Workbench | Pengo Systems"
-  description="Important updates, recently added reference material, and useful paths into the Workbench."
+  description="A public reference system for inspecting AI-facing failure surfaces, structural Patterns, Lenses, and Check Input results."
   url="https://pengosystems.com/workbench/"
   active=""
 >
   <article class="wb-content wb-template">
-    <p class="wb-type-label">Workbench home</p>
+    <p class="wb-type-label">Workbench Home</p>
     <h1>PENGO Workbench</h1>
     <p class="wb-lede">
-      Important updates, recently added reference material, and useful paths into the Workbench.
+      Inspect AI-facing failures by separating visible symptoms, missing input structure, structural Patterns, and diagnostic Lenses.
     </p>
 
     <section class="wb-section">
-      <h2>Latest</h2>
-      <div class="wb-highlight-list">
-        <a class="wb-row" href="/workbench/start-here/">
-          <p class="wb-row-meta">Start</p>
-          <h2>Start Here</h2>
-          <p>Understand why AI workflow failures often come from structural conditions.</p>
+      <h2>Start with the job</h2>
+
+      <div class="wb-row-list">
+        <a class="wb-row" href="/workbench/search/">
+          <p class="wb-row-meta">Search</p>
+          <h2>Search the Workbench</h2>
+          <p>Find Issues, AI-Adjacent Issues, Patterns, Lenses, codes, and related reference pages.</p>
+        </a>
+
+        <a class="wb-row" href="/workbench/check-input/">
+          <p class="wb-row-meta">Input inspection</p>
+          <h2>Check an AI Ask</h2>
+          <p>Use Check Input to surface missing, unclear, ambiguous, unstated, conflicting, incomplete, or implied parts of an ask.</p>
+        </a>
+
+        <a class="wb-row" href="/workbench/explore-results/">
+          <p class="wb-row-meta">Result mapping</p>
+          <h2>Explore Check Input Results</h2>
+          <p>Map controlled Check Input gaps into inspection lanes and related Workbench references.</p>
         </a>
 
         <a class="wb-row" href="/workbench/issues/">
-          <p class="wb-row-meta">Issues</p>
+          <p class="wb-row-meta">Browse</p>
           <h2>Browse visible failure surfaces</h2>
-          <p>Issues describe real-world symptoms in plain language and map them to structural patterns.</p>
+          <p>Browse common AI-era failure symptoms and the structural Patterns they may surface.</p>
         </a>
       </div>
     </section>
 
     <section class="wb-section">
-      <h2>Recently added</h2>
+      <h2>Reference Areas</h2>
+
       <div class="wb-row-list">
-        <a class="wb-row" href="/workbench/issues/actual-policy-differs-from-declared-policy/">
-          <p class="wb-row-meta">Issue</p>
-          <h2>Actual Policy Differs From Declared Policy</h2>
-          <p>The policy the AI or workflow actually follows differs from the policy that is documented, declared, displayed, or expected.</p>
+        <a class="wb-row" href="/workbench/issues/">
+          <p class="wb-row-meta">Issues</p>
+          <h2>Issues</h2>
+          <p>Visible failure surfaces users may experience or search for.</p>
         </a>
 
-        <a class="wb-row" href="/workbench/lenses/conflict-lens/">
-          <p class="wb-row-meta">Lens</p>
-          <h2>Conflict Lens</h2>
-          <p>Detects mutually incompatible constraints, claims, states, or declarations that cannot be simultaneously satisfied.</p>
+        <a class="wb-row" href="/workbench/ai-adj-issues/">
+          <p class="wb-row-meta">AI-Adjacent Issues</p>
+          <h2>AI-Adjacent Issues</h2>
+          <p>Problems users may experience as AI failures, but which may involve tools, apps, permissions, configuration, or integrations.</p>
         </a>
 
-        <a class="wb-row" href="/workbench/patterns/circular-dependency/">
-          <p class="wb-row-meta">Pattern</p>
-          <h2>Circular Dependency</h2>
-          <p>A structural condition where two or more elements depend on each other in a closed loop without an independent base condition.</p>
+        <a class="wb-row" href="/workbench/patterns/">
+          <p class="wb-row-meta">Patterns</p>
+          <h2>Patterns</h2>
+          <p>Canonical structural forms used to inspect why a visible failure surface may appear.</p>
+        </a>
+
+        <a class="wb-row" href="/workbench/lenses/">
+          <p class="wb-row-meta">Lenses</p>
+          <h2>Lenses</h2>
+          <p>Diagnostic views for inspecting structure without treating the reference as a final diagnosis.</p>
         </a>
       </div>
+    </section>
+
+    <section class="wb-reading-section">
+      <h2>Boundary</h2>
+      <p>
+        Workbench references help inspect structure. They do not prove causality,
+        diagnose a model, validate a prompt, score a system, or replace human review.
+      </p>
     </section>
   </article>
 </WorkbenchLayout>
