@@ -310,6 +310,88 @@ Detected Gaps
         padding-bottom: 0.95rem;
       }
     }
+
+    .explore-lane-list {
+      display: grid;
+      gap: 0.85rem;
+      margin-top: 1rem;
+    }
+
+    .explore-lane {
+      border: 1px solid var(--color-border);
+      border-radius: 16px;
+      background: var(--color-surface);
+      padding: 0.95rem;
+    }
+
+    .explore-lane h3 {
+      margin: 0;
+      color: var(--color-accent);
+      font-size: 0.92rem;
+      line-height: 1.2;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+
+    .explore-lane-summary {
+      margin: 0.55rem 0 0 !important;
+      color: var(--color-text) !important;
+      line-height: 1.5 !important;
+    }
+
+    .explore-lane-label {
+      margin: 0.75rem 0 0.25rem !important;
+      color: var(--color-muted) !important;
+      font-size: 0.82rem !important;
+      font-weight: 850 !important;
+    }
+
+    .explore-lane ul {
+      margin: 0.35rem 0 0 !important;
+      padding-left: 1.15rem !important;
+    }
+
+    .explore-lane li {
+      margin: 0.28rem 0 !important;
+      color: var(--color-muted) !important;
+    }
+
+    .explore-lane a {
+      color: var(--color-text);
+      text-decoration: none;
+      font-weight: 850;
+    }
+
+    .explore-lane a:hover {
+      color: var(--color-accent);
+      text-decoration: none;
+    }
+
+    .explore-lane-code {
+      color: var(--color-faint);
+      font-size: 0.78rem;
+      font-weight: 850;
+    }
+
+    .explore-reference-details {
+      margin-top: 0.85rem;
+      border: 1px solid var(--color-border);
+      border-radius: 16px;
+      background: var(--color-surface);
+      padding: 0.85rem 0.95rem;
+    }
+
+    .explore-reference-details summary {
+      cursor: pointer;
+      color: var(--color-text);
+      font-size: 0.92rem;
+      font-weight: 850;
+    }
+
+    .explore-reference-details .wb-row-list {
+      margin-top: 0.85rem;
+    }
+
   </style>
 
   <script>
@@ -334,9 +416,17 @@ Detected Gaps
     let lastCopyText = "";
 
     function normalizeLine(line) {
-      return line
-        .trim()
-        .replace(/^[-*â€¢]+\\s*/, "")
+      let normalized = line.trim();
+
+      while (
+        normalized.startsWith("- ") ||
+        normalized.startsWith("* ") ||
+        normalized.startsWith("• ")
+      ) {
+        normalized = normalized.slice(2).trimStart();
+      }
+
+      return normalized
         .replace(/\s+/g, " ")
         .toLowerCase();
     }
@@ -540,39 +630,110 @@ Detected Gaps
         gapsSection.appendChild(gapsList);
         resultsList.appendChild(gapsSection);
 
-        const patternsSection = document.createElement("section");
-        patternsSection.className = "wb-section";
-        appendTextElement(patternsSection, "h2", "Related Patterns");
+        const laneDescriptions = {
+          "missing actor": "Look for missing owner, authority, audience, responsible party, or affected party.",
+          "unclear scope": "Look for unclear boundary, reach, usage area, or stopping condition.",
+          "unstated constraint": "Look for a missing rule, limit, threshold, invariant, requirement, or exclusion.",
+          "conflicting dependency": "Look for dependencies that block, contradict, or compete with each other.",
+        };
 
-        if (aggregates.patterns.length > 0) {
-          const patternList = document.createElement("div");
-          patternList.className = "wb-row-list";
-          aggregates.patterns.forEach((pattern) =>
-            appendRow(patternList, pattern, pattern.surfacedBy)
-          );
-          patternsSection.appendChild(patternList);
-        } else {
-          appendTextElement(patternsSection, "p", "No related Patterns surfaced.");
+        function laneDescription(gap) {
+          return laneDescriptions[gap] || "Look for the part of the ask this controlled gap leaves open.";
         }
 
-        resultsList.appendChild(patternsSection);
+        function lanePatterns(result) {
+          const items = [];
 
-        const lensSection = document.createElement("section");
-        lensSection.className = "wb-section";
-        appendTextElement(lensSection, "h2", "Useful Lenses");
+          for (const pattern of result.patterns.primary) {
+            items.push(pattern);
+          }
 
-        if (aggregates.lenses.length > 0) {
-          const lensList = document.createElement("div");
-          lensList.className = "wb-row-list";
-          aggregates.lenses.forEach((lens) =>
-            appendRow(lensList, lens, lens.surfacedBy)
-          );
-          lensSection.appendChild(lensList);
-        } else {
-          appendTextElement(lensSection, "p", "No useful Lenses derived.");
+          for (const pattern of result.patterns.secondary) {
+            if (items.length >= 3) break;
+
+            if (!items.some((item) => item.code === pattern.code)) {
+              items.push(pattern);
+            }
+          }
+
+          return items.slice(0, 3);
         }
 
-        resultsList.appendChild(lensSection);
+        const lanesSection = document.createElement("section");
+        lanesSection.className = "wb-section";
+        appendTextElement(lanesSection, "h2", "Inspection Lanes");
+
+        const laneList = document.createElement("div");
+        laneList.className = "explore-lane-list";
+
+        for (const result of mapped) {
+          const lane = document.createElement("article");
+          lane.className = "explore-lane";
+
+          appendTextElement(lane, "h3", result.detectedGap);
+          appendTextElement(lane, "p", laneDescription(result.detectedGap), "explore-lane-summary");
+          appendTextElement(lane, "p", "Inspect:", "explore-lane-label");
+
+          const list = document.createElement("ul");
+
+          for (const pattern of lanePatterns(result)) {
+            const item = document.createElement("li");
+            const link = document.createElement("a");
+            link.href = pattern.url;
+            link.textContent = pattern.title;
+            item.appendChild(link);
+            appendTextElement(item, "span", ` ${pattern.code}`, "explore-lane-code");
+            list.appendChild(item);
+          }
+
+          lane.appendChild(list);
+          laneList.appendChild(lane);
+        }
+
+        lanesSection.appendChild(laneList);
+        resultsList.appendChild(lanesSection);
+
+        const referencesSection = document.createElement("section");
+        referencesSection.className = "wb-section";
+        appendTextElement(referencesSection, "h2", "More References");
+
+        function appendReferenceDetails(summaryText, items, emptyText) {
+          const details = document.createElement("details");
+          details.className = "explore-reference-details";
+
+          const summary = document.createElement("summary");
+          summary.textContent = summaryText;
+          details.appendChild(summary);
+
+          if (items.length > 0) {
+            const list = document.createElement("div");
+            list.className = "wb-row-list";
+
+            for (const item of items) {
+              appendRow(list, item, item.surfacedBy);
+            }
+
+            details.appendChild(list);
+          } else {
+            appendTextElement(details, "p", emptyText);
+          }
+
+          referencesSection.appendChild(details);
+        }
+
+        appendReferenceDetails(
+          `All related Patterns (${aggregates.patterns.length.toLocaleString()})`,
+          aggregates.patterns,
+          "No related Patterns surfaced."
+        );
+
+        appendReferenceDetails(
+          `Useful Lenses (${aggregates.lenses.length.toLocaleString()})`,
+          aggregates.lenses,
+          "No useful Lenses derived."
+        );
+
+        resultsList.appendChild(referencesSection);
 
         lastCopyText = buildCopyText(mapped);
         copyButton.hidden = false;
