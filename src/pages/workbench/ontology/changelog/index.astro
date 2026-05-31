@@ -40,12 +40,6 @@ const entries = [...changelog.entries].sort((a, b) => {
   return a.object_code.localeCompare(b.object_code);
 });
 
-const entryCounts = entries.reduce((counts, entry) => {
-  const label = typeLabels[entry.object_type] ?? entry.object_type;
-  counts[label] = (counts[label] ?? 0) + 1;
-  return counts;
-}, {});
-
 const releaseSummaryItems = [
   "Added reviewed Pattern entries.",
   "Added reviewed Lens entries.",
@@ -136,19 +130,6 @@ const releaseSummaryItems = [
           Full object-level entries are available below for traceability.
         </p>
       </article>
-    </section>
-
-    <section class="wb-section">
-      <h2>Entry Counts</h2>
-
-      <div class="wb-ontology-counts">
-        {Object.entries(entryCounts).map(([label, count]) => (
-          <div>
-            <strong>{count}</strong>
-            <span>{label}</span>
-          </div>
-        ))}
-      </div>
     </section>
 
     <section class="wb-section">
@@ -261,35 +242,6 @@ const releaseSummaryItems = [
     .wb-release-note p:last-child {
       margin-bottom: 0;
       color: var(--color-muted);
-    }
-
-    .wb-ontology-counts {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 0.75rem;
-      margin-top: 1rem;
-    }
-
-    .wb-ontology-counts div {
-      border: 1px solid var(--color-border);
-      border-radius: 16px;
-      background: var(--color-surface);
-      padding: 0.85rem;
-    }
-
-    .wb-ontology-counts strong {
-      display: block;
-      color: var(--color-accent);
-      font-size: 1.25rem;
-      line-height: 1;
-    }
-
-    .wb-ontology-counts span {
-      display: block;
-      margin-top: 0.35rem;
-      color: var(--color-muted);
-      font-size: 0.82rem;
-      font-weight: 850;
     }
 
     .wb-full-changelog {
