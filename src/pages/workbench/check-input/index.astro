@@ -115,6 +115,11 @@ const gapTypes = [
   breadcrumb="Check Input"
 >
   <article class="wb-content wb-template">
+    <div class="wb-page-action">
+      <span aria-current="page">Check Input</span>
+      <a href="/workbench/explore-results/">Explore Results</a>
+    </div>
+
     <p class="wb-type-label">Input Inspection</p>
     <h1>Check Input</h1>
     <p class="wb-lede">
@@ -138,10 +143,10 @@ const gapTypes = [
         Check Input helps you inspect the original ask and identify what it forced the AI system to guess.
       </p>
       <p>
-        Detected gap terms can be explored through the Workbench reference library. Gap Explorer is the reference exploration surface for that path.
+        After the AI returns an Input Summary and Detected Gaps, bring that output back to PENGO and map it into the Workbench.
       </p>
       <p class="wb-next-link">
-        <a href="/workbench/gap-explorer/">Open Gap Explorer</a>
+        <a href="/workbench/explore-results/">Open Explore Results</a>
       </p>
     </section>
 
@@ -171,6 +176,10 @@ const gapTypes = [
 
         <textarea readonly rows="28" data-protocol-text>{protocolText}</textarea>
       </div>
+
+      <p>
+        After the AI returns an Input Summary and Detected Gaps, bring the output back to PENGO and use Explore Results to map it into related Patterns and useful Lenses.
+      </p>
     </section>
 
     <section class="wb-reading-section">
