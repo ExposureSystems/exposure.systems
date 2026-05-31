@@ -484,7 +484,7 @@ Detected Gaps
       ];
 
       for (const pattern of aggregates.patterns) {
-        lines.push(`- ${pattern.code} — ${pattern.title}`);
+        lines.push(`- ${pattern.code} - ${pattern.title}`);
         lines.push(`  ${pattern.absoluteUrl}`);
         lines.push(`  Surfaced by: ${pattern.surfacedBy.join(", ")}`);
         lines.push(`  ${pattern.summary}`);
@@ -494,7 +494,7 @@ Detected Gaps
       lines.push("Useful Lenses:");
 
       for (const lens of aggregates.lenses) {
-        lines.push(`- ${lens.code} — ${lens.title}`);
+        lines.push(`- ${lens.code} - ${lens.title}`);
         lines.push(`  ${lens.absoluteUrl}`);
         lines.push(`  Surfaced by: ${lens.surfacedBy.join(", ")}`);
         lines.push(`  ${lens.summary}`);
