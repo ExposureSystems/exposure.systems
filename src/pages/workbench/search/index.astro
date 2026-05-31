@@ -280,15 +280,6 @@ const browseLinks = [
       row.className = "wb-row";
       row.href = entry.url;
 
-      const metaParts = [entry.type, entry.code, entry.meta].filter(Boolean);
-      const meta = appendTextElement(row, "p", metaParts.join(" - "), "wb-row-meta");
-
-      if (entry.type === "Pattern" || entry.type === "Lens") {
-        meta.setAttribute("translate", "no");
-        meta.classList.add("notranslate");
-        meta.setAttribute("lang", "en");
-      }
-
       const title = document.createElement("h2");
 
       if (entry.type === "Pattern" || entry.type === "Lens") {
@@ -301,8 +292,8 @@ const browseLinks = [
 
       row.appendChild(title);
 
-      appendTextElement(row, "p", entry.url.replace("https://pengosystems.com", ""), "wb-search-result-url");
       appendTextElement(row, "p", entry.summary || "");
+      appendTextElement(row, "p", entry.url.replace("https://pengosystems.com", ""), "wb-search-result-url");
 
       return row;
     }
