@@ -374,12 +374,15 @@ Detected Gaps
       return element;
     }
 
-    function appendRow(parent, item) {
+    function appendRow(parent, item, surfacedBy = []) {
       const row = document.createElement("a");
       row.className = "wb-row";
       row.href = item.url;
 
-      appendTextElement(row, "p", item.code, "wb-row-meta").setAttribute("translate", "no");
+      const code = appendTextElement(row, "p", item.code, "wb-row-meta");
+      code.setAttribute("translate", "no");
+      code.classList.add("notranslate");
+      code.setAttribute("lang", "en");
 
       const title = document.createElement("h2");
       const titleSpan = appendTextElement(title, "span", item.title, "notranslate");
@@ -390,9 +393,52 @@ Detected Gaps
       const urlText = item.absoluteUrl.replace("https://", "");
       appendTextElement(row, "p", urlText, "explore-url");
 
+      if (surfacedBy.length > 0) {
+        appendTextElement(row, "p", `Surfaced by: ${surfacedBy.join(", ")}`, "explore-url");
+      }
+
       appendTextElement(row, "p", item.summary);
 
       parent.appendChild(row);
+    }
+
+    function addAggregateItem(map, item, detectedGap) {
+      if (!map.has(item.code)) {
+        map.set(item.code, {
+          ...item,
+          surfacedBy: [],
+        });
+      }
+
+      const aggregate = map.get(item.code);
+
+      if (!aggregate.surfacedBy.includes(detectedGap)) {
+        aggregate.surfacedBy.push(detectedGap);
+      }
+    }
+
+    function collectAggregates(mapped) {
+      const patternMap = new Map();
+      const lensMap = new Map();
+
+      for (const result of mapped) {
+        for (const pattern of result.patterns.primary) {
+          addAggregateItem(patternMap, pattern, result.detectedGap);
+        }
+
+        for (const pattern of result.patterns.secondary) {
+          addAggregateItem(patternMap, pattern, result.detectedGap);
+        }
+
+        for (const lens of result.usefulLenses) {
+          addAggregateItem(lensMap, lens, result.detectedGap);
+        }
+      }
+
+      return {
+        patterns: Array.from(patternMap.values()),
+        lenses: Array.from(lensMap.values()),
+      };
     }
 
     function parseInput(value) {
@@ -426,6 +472,8 @@ Detected Gaps
     }
 
     function buildCopyText(mapped) {
+      const aggregates = collectAggregates(mapped);
+
       const lines = [
         "Explore Results",
         "",
@@ -435,40 +483,28 @@ Detected Gaps
         "Related Patterns:",
       ];
 
-      const patternSeen = new Set();
-      const lensSeen = new Set();
-      const patternLines = [];
-      const lensLines = [];
-
-      for (const result of mapped) {
-        for (const group of [result.patterns.primary, result.patterns.secondary]) {
-          for (const pattern of group) {
-            if (patternSeen.has(pattern.code)) continue;
-            patternSeen.add(pattern.code);
-            patternLines.push(`- ${pattern.code} â€” ${pattern.title}`);
-            patternLines.push(`  ${pattern.absoluteUrl}`);
-            patternLines.push(`  ${pattern.summary}`);
-          }
-        }
-
-        for (const lens of result.usefulLenses) {
-          if (lensSeen.has(lens.code)) continue;
-          lensSeen.add(lens.code);
-          lensLines.push(`- ${lens.code} â€” ${lens.title}`);
-          lensLines.push(`  ${lens.absoluteUrl}`);
-          lensLines.push(`  ${lens.summary}`);
-        }
+      for (const pattern of aggregates.patterns) {
+        lines.push(`- ${pattern.code} — ${pattern.title}`);
+        lines.push(`  ${pattern.absoluteUrl}`);
+        lines.push(`  Surfaced by: ${pattern.surfacedBy.join(", ")}`);
+        lines.push(`  ${pattern.summary}`);
       }
 
-      lines.push(...patternLines);
       lines.push("");
       lines.push("Useful Lenses:");
-      lines.push(...lensLines);
+
+      for (const lens of aggregates.lenses) {
+        lines.push(`- ${lens.code} — ${lens.title}`);
+        lines.push(`  ${lens.absoluteUrl}`);
+        lines.push(`  Surfaced by: ${lens.surfacedBy.join(", ")}`);
+        lines.push(`  ${lens.summary}`);
+      }
+
       lines.push("");
       lines.push("Boundary:");
       lines.push("These are related structural references, not a final diagnosis.");
 
-      return lines.join("\\n");
+      return lines.join("\n");
     }
 
     function renderResults() {
@@ -481,54 +517,55 @@ Detected Gaps
       lastCopyText = "";
 
       if (mapped.length > 0) {
+        const aggregates = collectAggregates(mapped);
+
         resultsSection.hidden = false;
         noResultsSection.hidden = true;
 
+        const gapsSection = document.createElement("section");
+        gapsSection.className = "wb-reading-section";
+        appendTextElement(gapsSection, "h2", "Controlled Gaps Mapped");
+
+        const gapsList = document.createElement("ul");
         for (const result of mapped) {
-          const article = document.createElement("article");
-          article.className = "wb-reading-section";
-
-          appendTextElement(article, "h2", result.detectedGap);
-          appendTextElement(article, "p", result.caveat);
-
-          const patternsSection = document.createElement("section");
-          patternsSection.className = "wb-section";
-          appendTextElement(patternsSection, "h2", "Related Patterns");
-
-          if (result.patterns.primary.length > 0) {
-            appendTextElement(patternsSection, "h3", "Primary");
-            const primaryList = document.createElement("div");
-            primaryList.className = "wb-row-list";
-            result.patterns.primary.forEach((pattern) => appendRow(primaryList, pattern));
-            patternsSection.appendChild(primaryList);
-          }
-
-          if (result.patterns.secondary.length > 0) {
-            appendTextElement(patternsSection, "h3", "Secondary");
-            const secondaryList = document.createElement("div");
-            secondaryList.className = "wb-row-list";
-            result.patterns.secondary.forEach((pattern) => appendRow(secondaryList, pattern));
-            patternsSection.appendChild(secondaryList);
-          }
-
-          article.appendChild(patternsSection);
-
-          const lensSection = document.createElement("section");
-          lensSection.className = "wb-section";
-          appendTextElement(lensSection, "h2", "Useful Lenses");
-
-          if (result.usefulLenses.length > 0) {
-            const lensList = document.createElement("div");
-            lensList.className = "wb-row-list";
-            result.usefulLenses.forEach((lens) => appendRow(lensList, lens));
-            lensSection.appendChild(lensList);
-          } else {
-            appendTextElement(lensSection, "p", "No useful Lenses derived.");
-          }
-
-          article.appendChild(lensSection);
-          resultsList.appendChild(article);
+          appendTextElement(gapsList, "li", result.detectedGap);
         }
+        gapsSection.appendChild(gapsList);
+        resultsList.appendChild(gapsSection);
+
+        const patternsSection = document.createElement("section");
+        patternsSection.className = "wb-section";
+        appendTextElement(patternsSection, "h2", "Related Patterns");
+
+        if (aggregates.patterns.length > 0) {
+          const patternList = document.createElement("div");
+          patternList.className = "wb-row-list";
+          aggregates.patterns.forEach((pattern) =>
+            appendRow(patternList, pattern, pattern.surfacedBy)
+          );
+          patternsSection.appendChild(patternList);
+        } else {
+          appendTextElement(patternsSection, "p", "No related Patterns surfaced.");
+        }
+
+        resultsList.appendChild(patternsSection);
+
+        const lensSection = document.createElement("section");
+        lensSection.className = "wb-section";
+        appendTextElement(lensSection, "h2", "Useful Lenses");
+
+        if (aggregates.lenses.length > 0) {
+          const lensList = document.createElement("div");
+          lensList.className = "wb-row-list";
+          aggregates.lenses.forEach((lens) =>
+            appendRow(lensList, lens, lens.surfacedBy)
+          );
+          lensSection.appendChild(lensList);
+        } else {
+          appendTextElement(lensSection, "p", "No useful Lenses derived.");
+        }
+
+        resultsList.appendChild(lensSection);
 
         lastCopyText = buildCopyText(mapped);
         copyButton.hidden = false;
