@@ -5,15 +5,30 @@ import ontologyIndex from "../../../../content/_meta/ontology-index.json";
 
 const issues = ontologyIndex.issues;
 const pageSize = 24;
-const currentPage = 1;
 const totalPages = Math.ceil(issues.length / pageSize);
-const pageIssues = issues.slice(0, pageSize);
+
+export function getStaticPaths() {
+  const pageSizeForPaths = 24;
+  const totalPagesForPaths = Math.ceil(ontologyIndex.issues.length / pageSizeForPaths);
+
+  return Array.from({ length: Math.max(totalPagesForPaths - 1, 0) }, (_, index) => {
+    const page = index + 2;
+
+    return {
+      params: { page: String(page) },
+      props: { currentPage: page },
+    };
+  });
+}
+
+const { currentPage } = Astro.props;
+const pageIssues = issues.slice((currentPage - 1) * pageSize, currentPage * pageSize);
 ---
 
 <WorkbenchLayout
-  title="All Issues | PENGO Workbench"
+  title={`All Issues, Page ${currentPage} | PENGO Workbench`}
   description="A flat reference list of sampled Workbench issues."
-  url="https://pengosystems.com/workbench/issues/all/"
+  url={`https://pengosystems.com/workbench/issues/all/${currentPage}/`}
   active="issues"
   breadcrumb="All Issues"
 >
@@ -36,7 +51,7 @@ const pageIssues = issues.slice(0, pageSize);
       pageSize={pageSize}
     />
 
-    <section class="wb-section" aria-label="All issues">
+    <section class="wb-section" aria-label={`All issues, page ${currentPage}`}>
       <div class="wb-row-list">
         {pageIssues.map((issue) => (
           <a class="wb-row" href={issue.url}>

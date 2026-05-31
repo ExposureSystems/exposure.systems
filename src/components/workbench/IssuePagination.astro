@@ -1,0 +1,139 @@
+---
+const {
+  currentPage,
+  totalPages,
+  totalItems,
+  pageSize,
+  basePath = "/workbench/issues/all/",
+} = Astro.props;
+
+const startItem = totalItems === 0 ? 0 : (currentPage - 1) * pageSize + 1;
+const endItem = Math.min(currentPage * pageSize, totalItems);
+
+const pageHref = (page) => (page === 1 ? basePath : `${basePath}${page}/`);
+
+const pages = Array.from({ length: totalPages }, (_, index) => index + 1);
+const previousPage = currentPage > 1 ? currentPage - 1 : null;
+const nextPage = currentPage < totalPages ? currentPage + 1 : null;
+---
+
+<nav class="wb-pagination" aria-label="Issue pagination">
+  <p>
+    Showing {startItem}-{endItem} of {totalItems} issues
+    <span>Page {currentPage} of {totalPages}</span>
+  </p>
+
+  <div class="wb-pagination__controls">
+    {previousPage ? (
+      <a href={pageHref(previousPage)}>Previous</a>
+    ) : (
+      <span aria-disabled="true">Previous</span>
+    )}
+
+    <div class="wb-pagination__pages" aria-label="Pages">
+      {pages.map((page) =>
+        page === currentPage ? (
+          <span aria-current="page">{page}</span>
+        ) : (
+          <a href={pageHref(page)}>{page}</a>
+        )
+      )}
+    </div>
+
+    {nextPage ? (
+      <a href={pageHref(nextPage)}>Next</a>
+    ) : (
+      <span aria-disabled="true">Next</span>
+    )}
+  </div>
+</nav>
+
+<style>
+  .wb-pagination {
+    margin: 1.3rem 0;
+    padding: 0.9rem 0;
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .wb-pagination p {
+    margin: 0 0 0.75rem !important;
+    color: var(--color-muted) !important;
+    font-size: 0.9rem !important;
+    line-height: 1.4 !important;
+  }
+
+  .wb-pagination p span {
+    display: inline-block;
+    margin-left: 0.45rem;
+    color: var(--color-faint);
+  }
+
+  .wb-pagination__controls {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    flex-wrap: wrap;
+  }
+
+  .wb-pagination__controls a,
+  .wb-pagination__controls span {
+    display: inline-flex;
+    min-height: 2rem;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    padding: 0.38rem 0.72rem;
+    color: var(--color-muted);
+    font-size: 0.78rem;
+    line-height: 1;
+    font-weight: 800;
+    text-decoration: none;
+  }
+
+  .wb-pagination__controls a:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+  }
+
+  .wb-pagination__controls span[aria-current="page"] {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+  }
+
+  .wb-pagination__controls span[aria-disabled="true"] {
+    opacity: 0.42;
+  }
+
+  .wb-pagination__pages {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 760px) {
+    .wb-pagination {
+      margin: 1rem 0;
+    }
+
+    .wb-pagination p span {
+      display: block;
+      margin: 0.2rem 0 0;
+    }
+
+    .wb-pagination__controls {
+      justify-content: space-between;
+    }
+
+    .wb-pagination__pages {
+      display: none;
+    }
+
+    .wb-pagination__controls > a,
+    .wb-pagination__controls > span {
+      min-width: 7.2rem;
+    }
+  }
+</style>
