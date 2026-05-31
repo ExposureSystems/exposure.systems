@@ -39,44 +39,72 @@ const entries = [...changelog.entries].sort((a, b) => {
 
   return a.object_code.localeCompare(b.object_code);
 });
+
+const entryCounts = entries.reduce((counts, entry) => {
+  const label = typeLabels[entry.object_type] ?? entry.object_type;
+  counts[label] = (counts[label] ?? 0) + 1;
+  return counts;
+}, {});
+
+const releaseSummaryItems = [
+  "Added reviewed Pattern entries.",
+  "Added reviewed Lens entries.",
+  "Added initial Category and Issue scaffolding for validation.",
+  "Published the first public ontology release state.",
+];
 ---
 
 <WorkbenchLayout
   title="Ontology Updates | PENGO Workbench"
-  description="Public changelog for Workbench Issues, Patterns, Lenses, Categories, and Subcategories."
+  description="Public release history for Workbench Issues, Patterns, Lenses, Categories, and Subcategories."
   url="https://pengosystems.com/workbench/ontology/changelog/"
   active="ontology-updates"
   breadcrumb="Ontology Updates"
 >
-  <article class="wb-content wb-template">
+  <article class="wb-content wb-template wb-ontology-updates">
     <p class="wb-type-label">Ontology Updates</p>
     <h1>Ontology Updates</h1>
     <p class="wb-lede">
-      Public change history for Workbench Issues, Patterns, Lenses, Categories, and Subcategories.
+      Public release history for the Workbench ontology.
     </p>
 
-    <section class="wb-reading-section">
-      <h2>Current Ontology Release</h2>
+    <section class="wb-ontology-release">
+      <div>
+        <p class="wb-row-meta">Current Release</p>
+        <h2>{release.ontology_release}</h2>
+        <p>{release.notes}</p>
+      </div>
 
       <dl>
-        <dt>Release</dt>
-        <dd>{release.ontology_release}</dd>
-
-        <dt>Released</dt>
-        <dd>{release.released_at}</dd>
-
-        <dt>Public state</dt>
-        <dd>{release.public_state}</dd>
-
-        <dt>Notes</dt>
-        <dd>{release.notes}</dd>
+        <div>
+          <dt>Released</dt>
+          <dd>{release.released_at}</dd>
+        </div>
+        <div>
+          <dt>Public state</dt>
+          <dd>{release.public_state}</dd>
+        </div>
       </dl>
     </section>
 
-    <section class="wb-reading-section">
-      <h2>Scope</h2>
+    <section class="wb-section">
+      <h2>Raw Ontology Export</h2>
+      <p>
+        The public Workbench ontology is available as a raw export for inspection,
+        archiving, and machine-readable use.
+      </p>
+      <p class="wb-next-link">
+        <a href="/workbench/ontology.json" target="_blank" rel="noopener">
+          View raw ontology export
+        </a>
+      </p>
+    </section>
 
-      <p>This changelog records public ontology-object changes only.</p>
+    <section class="wb-section">
+      <h2>What This Page Tracks</h2>
+      <p>
+        This changelog records public ontology-object changes only.
+      </p>
 
       <ul>
         <li>Issues: <code>ISS-####</code></li>
@@ -92,36 +120,200 @@ const entries = [...changelog.entries].sort((a, b) => {
     </section>
 
     <section class="wb-section">
-      <h2>Changes</h2>
+      <h2>Release Notes</h2>
 
-      {entries.length === 0 ? (
-        <p>No public ontology changes recorded yet.</p>
-      ) : (
-        <div class="wb-row-list">
-          {entries.map((entry) => (
-            <article class="wb-row" id={`${entry.object_code.toLowerCase()}-${entry.entry_version.replaceAll(".", "-")}`}>
-              <p class="wb-row-meta" translate="no" class="notranslate" lang="en">
-                {entry.object_code}@{entry.entry_version}
-              </p>
-              <h2>
-                <span translate="no" class="notranslate" lang="en">
-                  {entry.object_slug}
-                </span>
-              </h2>
-              <p>{entry.public_summary}</p>
-              <p>
-                {entry.date}
-                {" - "}
-                {typeLabels[entry.object_type] ?? entry.object_type}
-                {" - "}
-                {changeTypeLabels[entry.change_type] ?? entry.change_type}
-                {" - Receipt impact: "}
-                {receiptImpactLabels[entry.receipt_impact] ?? entry.receipt_impact}
-              </p>
-            </article>
+      <article class="wb-release-note">
+        <p class="wb-row-meta">{release.released_at}</p>
+        <h3>{release.ontology_release} — {release.notes}</h3>
+
+        <ul>
+          {releaseSummaryItems.map((item) => (
+            <li>{item}</li>
           ))}
-        </div>
-      )}
+        </ul>
+
+        <p>
+          Full object-level entries are available below for traceability.
+        </p>
+      </article>
+    </section>
+
+    <section class="wb-section">
+      <h2>Entry Counts</h2>
+
+      <div class="wb-ontology-counts">
+        {Object.entries(entryCounts).map(([label, count]) => (
+          <div>
+            <strong>{count}</strong>
+            <span>{label}</span>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="wb-section">
+      <details class="wb-full-changelog">
+        <summary>Full Changelog ({entries.length.toLocaleString()} entries)</summary>
+
+        {entries.length === 0 ? (
+          <p>No public ontology changes recorded yet.</p>
+        ) : (
+          <div class="wb-row-list">
+            {entries.map((entry) => (
+              <article class="wb-row" id={`${entry.object_code.toLowerCase()}-${entry.entry_version.replaceAll(".", "-")}`}>
+                <p class="wb-row-meta">
+                  <span translate="no" class="notranslate" lang="en">
+                    {entry.object_code}@{entry.entry_version}
+                  </span>
+                </p>
+
+                <h2>
+                  <span translate="no" class="notranslate" lang="en">
+                    {entry.object_slug}
+                  </span>
+                </h2>
+
+                <p>{entry.public_summary}</p>
+
+                <p>
+                  {entry.date}
+                  {" - "}
+                  {typeLabels[entry.object_type] ?? entry.object_type}
+                  {" - "}
+                  {changeTypeLabels[entry.change_type] ?? entry.change_type}
+                  {" - Receipt impact: "}
+                  {receiptImpactLabels[entry.receipt_impact] ?? entry.receipt_impact}
+                </p>
+              </article>
+            ))}
+          </div>
+        )}
+      </details>
     </section>
   </article>
+
+  <style>
+    .wb-ontology-release {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(220px, 280px);
+      gap: 1rem;
+      border: 1px solid var(--color-border);
+      border-radius: 24px;
+      background:
+        radial-gradient(circle at top right, rgba(255, 84, 0, 0.16), transparent 34%),
+        var(--color-surface);
+      padding: clamp(1rem, 3vw, 1.5rem);
+    }
+
+    .wb-ontology-release h2 {
+      margin: 0.2rem 0 0;
+      color: var(--color-text);
+      font-size: clamp(1.8rem, 5vw, 3rem);
+      line-height: 1;
+    }
+
+    .wb-ontology-release p:not(.wb-row-meta) {
+      margin: 0.7rem 0 0;
+      color: var(--color-muted);
+      line-height: 1.55;
+    }
+
+    .wb-ontology-release dl {
+      display: grid;
+      gap: 0.75rem;
+      margin: 0;
+    }
+
+    .wb-ontology-release dt {
+      color: var(--color-muted);
+      font-size: 0.72rem;
+      font-weight: 850;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .wb-ontology-release dd {
+      margin: 0.15rem 0 0;
+      color: var(--color-text);
+      font-weight: 850;
+      word-break: break-word;
+    }
+
+    .wb-release-note {
+      border: 1px solid var(--color-border);
+      border-radius: 18px;
+      background: var(--color-surface);
+      padding: 1rem;
+    }
+
+    .wb-release-note h3 {
+      margin: 0.25rem 0 0;
+      color: var(--color-text);
+      font-size: 1rem;
+      line-height: 1.35;
+    }
+
+    .wb-release-note ul {
+      margin: 0.8rem 0 0;
+      padding-left: 1.15rem;
+    }
+
+    .wb-release-note p:last-child {
+      margin-bottom: 0;
+      color: var(--color-muted);
+    }
+
+    .wb-ontology-counts {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+
+    .wb-ontology-counts div {
+      border: 1px solid var(--color-border);
+      border-radius: 16px;
+      background: var(--color-surface);
+      padding: 0.85rem;
+    }
+
+    .wb-ontology-counts strong {
+      display: block;
+      color: var(--color-accent);
+      font-size: 1.25rem;
+      line-height: 1;
+    }
+
+    .wb-ontology-counts span {
+      display: block;
+      margin-top: 0.35rem;
+      color: var(--color-muted);
+      font-size: 0.82rem;
+      font-weight: 850;
+    }
+
+    .wb-full-changelog {
+      border: 1px solid var(--color-border);
+      border-radius: 18px;
+      background: var(--color-surface);
+      padding: 0.95rem;
+    }
+
+    .wb-full-changelog summary {
+      cursor: pointer;
+      color: var(--color-text);
+      font-weight: 850;
+    }
+
+    .wb-full-changelog .wb-row-list {
+      margin-top: 1rem;
+    }
+
+    @media (max-width: 760px) {
+      .wb-ontology-release,
+      .wb-ontology-counts {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </WorkbenchLayout>
