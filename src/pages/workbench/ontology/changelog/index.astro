@@ -40,6 +40,17 @@ const entries = [...changelog.entries].sort((a, b) => {
   return a.object_code.localeCompare(b.object_code);
 });
 
+const dateFormatter = new Intl.DateTimeFormat("en-US", {
+  month: "long",
+  day: "numeric",
+  year: "numeric",
+  timeZone: "UTC",
+});
+
+function formatDate(value) {
+  return dateFormatter.format(new Date(value));
+}
+
 const releaseSummaryItems = [
   "Added reviewed Pattern entries.",
   "Added reviewed Lens entries.",
@@ -72,7 +83,7 @@ const releaseSummaryItems = [
       <dl>
         <div>
           <dt>Released</dt>
-          <dd>{release.released_at}</dd>
+          <dd>{formatDate(release.released_at)}</dd>
         </div>
         <div>
           <dt>Public state</dt>
@@ -117,7 +128,7 @@ const releaseSummaryItems = [
       <h2>Release Notes</h2>
 
       <article class="wb-release-note">
-        <p class="wb-row-meta">{release.released_at}</p>
+        <p class="wb-row-meta">{formatDate(release.released_at)}</p>
         <h3>{release.ontology_release} — {release.notes}</h3>
 
         <ul>
@@ -157,7 +168,7 @@ const releaseSummaryItems = [
                 <p>{entry.public_summary}</p>
 
                 <p>
-                  {entry.date}
+                  {formatDate(entry.date)}
                   {" - "}
                   {typeLabels[entry.object_type] ?? entry.object_type}
                   {" - "}
