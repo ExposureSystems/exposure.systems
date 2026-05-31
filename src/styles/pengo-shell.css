@@ -2421,9 +2421,14 @@ a {
 }
 
 .wb-shell-brand {
+  display: inline-block;
   color: inherit !important;
   text-decoration: none !important;
   cursor: pointer;
+  font-size: 1rem !important;
+  line-height: 1.1 !important;
+  font-weight: 850 !important;
+  letter-spacing: -0.018em !important;
 }
 
 .wb-shell-brand:hover,
