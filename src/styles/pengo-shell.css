@@ -2420,6 +2420,20 @@ a {
   letter-spacing: -0.018em !important;
 }
 
+.wb-shell-brand {
+  color: inherit !important;
+  text-decoration: none !important;
+  cursor: pointer;
+}
+
+.wb-shell-brand:hover,
+.wb-shell-brand:focus,
+.wb-shell-brand:active,
+.wb-shell-brand[aria-current="page"] {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
 .wb-sidebar-search input,
 .wb-drawer-search input {
   border-radius: 10px !important;
