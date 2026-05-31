@@ -104,20 +104,19 @@ const browseLinks = [
       Find the structure behind the visible failure surface.
     </p>
 
-    <section class="wb-section" aria-label="Search Workbench">
-      <div class="wb-search-panel">
-        <label for="workbench-search-input">Search Workbench</label>
+    <section class="wb-section wb-search-entry" aria-label="Search Workbench">
+      <div class="wb-search-bar">
         <input
           id="workbench-search-input"
           type="search"
           autocomplete="off"
           spellcheck="false"
           data-workbench-search-input
-          placeholder="Search issues, patterns, lenses, codes, or AI-adjacent problems..."
+          placeholder="Search Workbench..."
         />
-        <p>
-          Search across Workbench Issues, AI-Adjacent Issues, Patterns, Lenses, names, summaries, and codes.
-        </p>
+        <button type="button" data-clear-search hidden>
+          Clear results
+        </button>
       </div>
     </section>
 
@@ -157,45 +156,51 @@ const browseLinks = [
   ></script>
 
   <style>
-    .wb-search-panel {
-      border: 1px solid var(--color-border);
-      border-radius: 18px;
-      background: var(--color-surface);
-      padding: 1rem;
+    .wb-search-entry {
+      margin-top: 1.1rem;
     }
 
-    .wb-search-panel label {
-      display: block;
-      margin-bottom: 0.55rem;
-      color: var(--color-text);
-      font-size: 0.82rem;
-      line-height: 1.1;
-      font-weight: 850;
+    .wb-search-bar {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
     }
 
-    .wb-search-panel input {
+    .wb-search-bar input {
       display: block;
       width: 100%;
       border: 1px solid var(--color-border);
       border-radius: 14px;
-      background: transparent;
+      background: var(--color-surface);
       color: var(--color-text);
-      padding: 0.85rem 0.95rem;
+      padding: 0.9rem 1rem;
       font: inherit;
       font-size: 1rem;
       line-height: 1.2;
     }
 
-    .wb-search-panel input:focus {
+    .wb-search-bar input:focus {
+      border-color: var(--color-accent);
       outline: 2px solid var(--color-accent);
       outline-offset: 2px;
     }
 
-    .wb-search-panel p {
-      margin: 0.7rem 0 0 !important;
-      color: var(--color-muted) !important;
-      font-size: 0.9rem !important;
-      line-height: 1.45 !important;
+    .wb-search-bar button {
+      appearance: none;
+      flex: 0 0 auto;
+      border: 0;
+      background: transparent;
+      color: var(--color-accent);
+      padding: 0.4rem 0;
+      font: inherit;
+      font-size: 0.78rem;
+      line-height: 1;
+      font-weight: 850;
+      cursor: pointer;
+    }
+
+    .wb-search-bar button:hover {
+      text-decoration: underline;
     }
 
     .wb-browse-simple {
@@ -207,8 +212,8 @@ const browseLinks = [
     .wb-browse-simple a {
       display: flex;
       align-items: baseline;
-      justify-content: space-between;
-      gap: 1rem;
+      justify-content: flex-start;
+      gap: 0.55rem;
       border-bottom: 1px solid var(--color-border);
       padding: 0.65rem 0;
       color: var(--color-text);
@@ -237,6 +242,7 @@ const browseLinks = [
   <script>
     const dataElement = document.getElementById("workbench-search-data");
     const input = document.querySelector("[data-workbench-search-input]");
+    const clearButton = document.querySelector("[data-clear-search]");
     const resultsList = document.querySelector("[data-search-results]");
     const status = document.querySelector("[data-search-status]");
 
@@ -335,6 +341,10 @@ const browseLinks = [
 
       window.history.replaceState({}, "", url);
 
+      if (clearButton instanceof HTMLButtonElement) {
+        clearButton.hidden = !query;
+      }
+
       if (!query) {
         status.textContent = "Start typing to search Workbench references.";
         return;
@@ -369,6 +379,15 @@ const browseLinks = [
     }
 
     input?.addEventListener("input", updateSearch);
+
+    clearButton?.addEventListener("click", () => {
+      if (!(input instanceof HTMLInputElement)) return;
+
+      input.value = "";
+      input.focus();
+      updateSearch();
+    });
+
     updateSearch();
   </script>
 </WorkbenchLayout>
