@@ -90,17 +90,17 @@ const lenses = searchIndex.facets.lenses;
         They do not prove cause or diagnose the model.
       </p>
 
-      <section class="wb-reading-section">
-        <h2>Categories</h2>
+      <details class="wb-search-facet">
+        <summary>Categories - {categories.length}</summary>
         <ul>
           {categories.map((category) => (
-            <li>{category.title} — {category.count}</li>
+            <li>{category.title} - {category.count}</li>
           ))}
         </ul>
-      </section>
+      </details>
 
-      <section class="wb-reading-section">
-        <h2>Patterns</h2>
+      <details class="wb-search-facet">
+        <summary>Patterns - {patterns.length}</summary>
         <ul>
           {patterns.map((pattern) => (
             <li>
@@ -112,10 +112,10 @@ const lenses = searchIndex.facets.lenses;
             </li>
           ))}
         </ul>
-      </section>
+      </details>
 
-      <section class="wb-reading-section">
-        <h2>Lenses</h2>
+      <details class="wb-search-facet">
+        <summary>Lenses - {lenses.length}</summary>
         <ul>
           {lenses.map((lens) => (
             <li>
@@ -127,7 +127,7 @@ const lenses = searchIndex.facets.lenses;
             </li>
           ))}
         </ul>
-      </section>
+      </details>
     </section>
 
     <section class="wb-reading-section">
@@ -169,4 +169,4 @@ const lenses = searchIndex.facets.lenses;
       line-height: 1.45;
     }
   </style>
-\n</WorkbenchLayout>
+</WorkbenchLayout>
