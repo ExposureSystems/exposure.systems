@@ -1,0 +1,79 @@
+---
+import PengoLayout from "../../layouts/PengoLayout.astro";
+---
+
+<PengoLayout
+  title="Contact | Pengo Systems"
+  description="Contact Pengo Systems for general questions and billing."
+  url="https://pengosystems.com/contact/"
+>
+  <main class="site-page">
+    <section class="site-page-content">
+      <p class="eyebrow">Contact</p>
+      <h1>Contact Pengo Systems</h1>
+      <p class="lede">
+        Use the appropriate email below for general questions or billing.
+      </p>
+
+      <div class="contact-list">
+        <article>
+          <h2>General</h2>
+          <p>
+            For general questions, Workbench references, or site inquiries:
+          </p>
+          <p>
+            <a href="mailto:info@pengosystems.com">info@pengosystems.com</a>
+          </p>
+        </article>
+
+        <article>
+          <h2>Billing</h2>
+          <p>
+            For billing questions:
+          </p>
+          <p>
+            <a href="mailto:billing@pengosystems.com">billing@pengosystems.com</a>
+          </p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <style>
+    .contact-list {
+      display: grid;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .contact-list article {
+      border: 1px solid var(--color-border);
+      border-radius: 18px;
+      background: var(--color-surface);
+      padding: 1rem;
+    }
+
+    .contact-list h2 {
+      margin: 0;
+      color: var(--color-text);
+      font-size: 1.05rem;
+      line-height: 1.25;
+    }
+
+    .contact-list p {
+      margin: 0.55rem 0 0;
+      color: var(--color-muted);
+      line-height: 1.55;
+    }
+
+    .contact-list a {
+      color: var(--color-accent);
+      font-weight: 850;
+      text-decoration: none;
+    }
+
+    .contact-list a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</PengoLayout>
