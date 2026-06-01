@@ -9,14 +9,14 @@ import PengoLayout from "../../layouts/PengoLayout.astro";
 >
   <main class="site-page">
     <section class="site-page-content">
-      <p class="eyebrow">Contact</p>
+      <p class="site-page-kicker">Contact</p>
       <h1>Contact Pengo Systems</h1>
-      <p class="lede">
+      <p class="site-page-lede">
         Use the appropriate email below for general questions or billing.
       </p>
 
-      <div class="contact-list">
-        <article>
+      <div class="site-card-grid is-two">
+        <article class="site-card">
           <h2>General</h2>
           <p>
             For general questions, Workbench references, or site inquiries:
@@ -26,7 +26,7 @@ import PengoLayout from "../../layouts/PengoLayout.astro";
           </p>
         </article>
 
-        <article>
+        <article class="site-card">
           <h2>Billing</h2>
           <p>
             For billing questions:
@@ -39,41 +39,4 @@ import PengoLayout from "../../layouts/PengoLayout.astro";
     </section>
   </main>
 
-  <style>
-    .contact-list {
-      display: grid;
-      gap: 1rem;
-      margin-top: 1.5rem;
-    }
-
-    .contact-list article {
-      border: 1px solid var(--color-border);
-      border-radius: 18px;
-      background: var(--color-surface);
-      padding: 1rem;
-    }
-
-    .contact-list h2 {
-      margin: 0;
-      color: var(--color-text);
-      font-size: 1.05rem;
-      line-height: 1.25;
-    }
-
-    .contact-list p {
-      margin: 0.55rem 0 0;
-      color: var(--color-muted);
-      line-height: 1.55;
-    }
-
-    .contact-list a {
-      color: var(--color-accent);
-      font-weight: 850;
-      text-decoration: none;
-    }
-
-    .contact-list a:hover {
-      text-decoration: underline;
-    }
-  </style>
 </PengoLayout>
